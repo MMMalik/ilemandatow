@@ -1,0 +1,4 @@
+.shadow-4-hover:hover {
+  border-color: transparent;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.2);
+}
