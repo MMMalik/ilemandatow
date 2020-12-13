@@ -1,18 +1,18 @@
 export const routes = {
   election: {
-    path: "/wybory/:id",
-    link: (id: string) => `/wybory/${id}`,
+    path: "/elections/:id",
+    link: (id: string) => `/elections/${id}`,
   },
-  calculate: {
-    path: "/oblicz",
-    link: () => `/oblicz`,
+  newPoll: {
+    path: "/new-poll",
+    link: () => `/new-poll`,
   },
   poll: {
-    path: "/sondaz/:id",
-    link: (id: string) => `/sondaz/${id}`,
+    path: "/poll/:id",
+    link: (id: string) => `/poll/${id}`,
   },
   about: {
-    path: "/o-nas",
-    link: () => `/o-nas`,
+    path: "/about",
+    link: () => `/about`,
   },
 };

@@ -7,11 +7,13 @@ import { Theme } from "./types";
 export type ThemeName = "light" | "dark";
 
 export interface ThemeContextType {
+  name: ThemeName;
   theme: Theme;
   toggleTheme: () => void;
 }
 
 export const ThemeContext = React.createContext<ThemeContextType>({
+  name: "light",
   theme: light,
   toggleTheme: noOp,
 });

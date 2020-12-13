@@ -11,7 +11,7 @@ const TopbarLink: React.FC<Props> = ({ to, children }) => {
   const { textPrimary } = theme;
 
   return (
-    <Link to={to} className={`link dim f6 ma3 dib ${textPrimary}`}>
+    <Link to={to} className={`link dim ma3 dib ${textPrimary}`}>
       {children}
     </Link>
   );

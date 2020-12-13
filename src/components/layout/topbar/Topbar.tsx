@@ -1,51 +1,63 @@
 import * as React from "react";
-import { useTheme } from "@theme";
+import { useTranslation } from "react-i18next";
 import { routes } from "@routes";
-import TopbarLink from "./TopbarLink";
-import TopbarIcon from "./TopbarIcon";
-import TopbarOverlay from "./TopbarOverlay";
+import Topbar, { TopbarButtonLink } from "@components/ui/topbar";
+import AboutUs from "./AboutUs";
+import ThemeIcon from "./ThemeIcon";
+import LanguageIcon from "./LanguageIcon";
+import SearchIcon from "./SearchIcon";
 
-const Topbar: React.FC = () => {
-  const [openMenu, setOpenMenu] = React.useState(false);
-  const { toggleTheme } = useTheme();
+const AppTopbar: React.FC = () => {
+  const [searchOpen, setSearchOpen] = React.useState(false);
+  const { t } = useTranslation();
 
-  const toggleMenu = () => {
-    setOpenMenu((current) => !current);
+  const toggleSearch = () => {
+    setSearchOpen((current) => !current);
   };
 
-  const links = (
-    <>
-      <TopbarLink to={routes.calculate.path}>{"Oblicz"}</TopbarLink>
-      <TopbarLink to={routes.about.path}>{"O nas"}</TopbarLink>
-    </>
-  );
-
   return (
-    <nav className="flex items-center ph2">
-      <div className="w-25">
+    <Topbar
+      links={
+        <>
+          <img
+            src="http://tachyons.io/img/logo.jpg"
+            className="dib mh2 w2 h2 br-100 ph2"
+            alt="Site Name"
+          />
+          <AboutUs />
+        </>
+      }
+      mobileLinks={
         <img
           src="http://tachyons.io/img/logo.jpg"
-          className="dib mh2 w2 h2 br-100"
+          className="dib mh2 w2 h2 br-100 ph2"
           alt="Site Name"
         />
-      </div>
-      <div className="w-75 tr">
-        <div className="dn db-ns">
-          {links}
-          <TopbarIcon icon="adjust" onClick={toggleTheme} />
-        </div>
-        <div className="db dn-ns">
-          <TopbarIcon icon="adjust" onClick={toggleTheme} />
-          <TopbarIcon icon="bars" onClick={toggleMenu} />
-        </div>
-      </div>
-      <div className="dn-ns">
-        <TopbarOverlay open={openMenu} toggleOpen={toggleMenu}>
-          {links}
-        </TopbarOverlay>
-      </div>
-    </nav>
+      }
+      menuItems={
+        <>
+          <SearchIcon toggleSearch={toggleSearch} />
+          <ThemeIcon />
+          <LanguageIcon />
+          <TopbarButtonLink to={routes.newPoll.path}>
+            {t("newPoll")}
+          </TopbarButtonLink>
+        </>
+      }
+      mobileMenuItems={
+        <>
+          <SearchIcon toggleSearch={toggleSearch} />
+        </>
+      }
+      mobileOverlayMenuItems={
+        <>
+          <AboutUs />
+          <ThemeIcon withTooltip={false} />
+          <LanguageIcon withTooltip={false} />
+        </>
+      }
+    />
   );
 };
 
-export default Topbar;
+export default AppTopbar;

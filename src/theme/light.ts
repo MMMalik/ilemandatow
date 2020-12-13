@@ -3,7 +3,7 @@ import { Theme } from "./types";
 export const light: Theme = {
   primary: "blue",
   bgPrimary: "white",
-  bgSecondary: "near-white",
+  bgSecondary: "light-gray",
   textPrimary: "dark-gray",
   textMuted: "gray",
   textDisabled: "light-gray",

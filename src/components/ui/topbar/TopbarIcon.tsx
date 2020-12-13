@@ -8,7 +8,7 @@ interface Props {
 
 const TopbarIcon: React.FC<Props> = ({ icon, onClick }) => {
   return (
-    <div className="mv3 mh2 mh3-ns dib">
+    <div className="ma3 dib">
       <Icon icon={icon} onClick={onClick} />
     </div>
   );

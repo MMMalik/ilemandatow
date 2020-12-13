@@ -10,7 +10,7 @@ const ThemeProvider: React.FC = ({ children }) => {
 
   return (
     <ThemeContext.Provider
-      value={{ toggleTheme, theme: themeMap[currentTheme] }}
+      value={{ name: currentTheme, toggleTheme, theme: themeMap[currentTheme] }}
     >
       {children}
     </ThemeContext.Provider>
