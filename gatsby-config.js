@@ -9,7 +9,12 @@ module.exports = {
         documentPaths: ["./src/**/*.{ts,tsx}"],
       },
     },
-    "gatsby-plugin-netlify-cms",
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: "./src/cms/cms.ts",
+      },
+    },
     "gatsby-transformer-json",
     {
       resolve: "gatsby-source-filesystem",

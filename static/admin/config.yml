@@ -1,23 +1,32 @@
 backend:
   name: github
-  branch: master
+  repo: MMMalik/dev
 
 media_folder: static/img
 public_folder: /img
 
 collections:
   - name: "poll"
+    identifier_field: "id"
     label: "Poll"
     folder: "content/polls"
     create: true
-    slug: "index"
-    media_folder: ""
-    public_folder: ""
-    path: "{{id}}"
-    editor:
-      preview: false
+    slug: "{{id}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Id", name: "id", widget: "nanoid" }
+      - { label: "Published At", name: "publishedAt", widget: "datetime" }
+      - { label: "Published By", name: "publishedBy", widget: "string" }
+      - { label: "Polled By", name: "polledBy", widget: "string" }
+      - { label: "Poll Started At", name: "pollStartedAt", widget: "datetime" }
+      - { label: "Poll Ended At", name: "pollEndedAt", widget: "datetime" }
+
+  - name: "party"
+    label: "Party"
+    folder: "content/parties"
+    create: true
+    slug: "index"
+    path: "{{id}}"
+    fields:
+      - { label: "Id", name: "id", widget: "nanoid" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "media" }
