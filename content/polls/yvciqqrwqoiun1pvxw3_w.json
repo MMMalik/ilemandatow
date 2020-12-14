@@ -2,10 +2,13 @@
   "participantsMightVote": 10.1,
   "method": "CATI",
   "publishedAt": "2020-11-29",
+  "participantsUndecided": 2.7,
+  "participantsMightNotVote": 19.6,
   "summary": "WP, IBRiS",
+  "participantsWillNotVote": 27.8,
   "polledBy___NODE": "yL9_efYD_xUz0V27P1cHs",
   "pollEndedAt": "2020-11-27",
-  "participantsCount": 1101,
+  "participantsCount": 1100,
   "pollStartedAt": "2020-11-27",
   "results": [
     {
