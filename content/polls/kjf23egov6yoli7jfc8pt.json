@@ -1,0 +1,18 @@
+{
+  "pollStartedAt": "",
+  "pollEndedAt": "",
+  "id": "KJF23eGov6YOLi7jfC8PT",
+  "publishedAt": "2020-12-14T17:30:42.219Z",
+  "polledBy___NODE": "yL9_efYD_xUz0V27P1cHs",
+  "publishedBy___NODE": "Z0abx5vltMrLburMkQ5Ow",
+  "results": [
+    {
+      "party___NODE": "NYcLrcxN9kYAqVcysgWo4",
+      "result": 34
+    },
+    {
+      "party___NODE": "r2VzWi2b9H63MStoKhn2X",
+      "result": 23.4
+    }
+  ]
+}
