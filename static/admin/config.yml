@@ -8,25 +8,128 @@ public_folder: /img
 
 collections:
   - name: "polls"
-    identifier_field: "id"
+    identifier_field: id
+    summary: "{{publishedAt}} / {{summary}}"
     label: "Polls"
     folder: "content/polls"
     create: true
     extension: json
-    slug: "{{polledBy}}/{{id}}"
+    slug: "{{id}}"
     fields:
       - { label: "Id", name: "id", widget: "nanoid" }
-      - { label: "Published At", name: "publishedAt", widget: "datetime" }
-      - { label: "Published By", name: "publishedBy", widget: "string" }
-      - { label: "Polled By", name: "polledBy", widget: "string" }
-      - { label: "Poll Started At", name: "pollStartedAt", widget: "datetime" }
-      - { label: "Poll Ended At", name: "pollEndedAt", widget: "datetime" }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - { label: "Source", name: "source", widget: "string" }
+      - {
+          label: "Published By",
+          name: "publishedBy___NODE",
+          widget: "relation",
+          collection: "publishers",
+          value_field: "id",
+          search_fields: ["name"],
+          display_fields: ["name"],
+        }
+      - {
+          label: "Published At",
+          name: "publishedAt",
+          widget: "datetime",
+          format: YYYY-MM-DD,
+        }
+      - {
+          label: "Polled By",
+          name: "polledBy___NODE",
+          widget: "relation",
+          collection: "pollCompanies",
+          value_field: "id",
+          search_fields: ["name"],
+          display_fields: ["name"],
+        }
+      - {
+          label: "Poll Started At",
+          name: "pollStartedAt",
+          widget: "datetime",
+          format: YYYY-MM-DD,
+          default: "",
+        }
+      - {
+          label: "Poll Ended At",
+          name: "pollEndedAt",
+          widget: "datetime",
+          format: YYYY-MM-DD,
+          default: "",
+        }
+      - {
+          label: "Method",
+          name: "method",
+          widget: "select",
+          options: ["CATI", "Unknown"],
+          default: ["Unknown"],
+        }
+      - { label: "Margin of error", name: "error", widget: "number" }
+      - {
+          label: "Participants Count",
+          name: "participantsCount",
+          widget: "number",
+        }
+      - {
+          label: "Participants will vote",
+          name: "participantsWillVote",
+          widget: "number",
+          value_type: "float",
+          min: 0.0,
+          max: 100.0,
+          step: 1.0,
+        }
+      - {
+          label: "Participants might vote",
+          name: "participantsMightVote",
+          widget: "number",
+          value_type: "float",
+          min: 0.0,
+          max: 100.0,
+          step: 1.0,
+        }
+      - {
+          label: "Participants undecided",
+          name: "participantsUndecided",
+          widget: "number",
+          value_type: "float",
+          min: 0.0,
+          max: 100.0,
+          step: 1.0,
+        }
+      - {
+          label: "Participants might not vote",
+          name: "participantsMightNotVote",
+          widget: "number",
+          value_type: "float",
+          min: 0.0,
+          max: 100.0,
+          step: 1.0,
+        }
+      - {
+          label: "Participants will not vote",
+          name: "participantsWillNotVote",
+          widget: "number",
+          value_type: "float",
+          min: 0.0,
+          max: 100.0,
+          step: 1.0,
+        }
       - {
           label: "Results",
           name: "results",
           widget: "list",
           fields:
             [
+              {
+                label: "Party",
+                name: "party___NODE",
+                widget: "relation",
+                collection: "parties",
+                value_field: "id",
+                search_fields: ["name"],
+                display_fields: ["name"],
+              },
               {
                 label: "Result",
                 name: "result",
@@ -36,21 +139,13 @@ collections:
                 max: 100.0,
                 step: 1.0,
               },
-              {
-                label: "Party",
-                name: "party___NODE",
-                widget: "relation",
-                collection: "parties",
-                value_field: "id",
-                search_fields: ["name"],
-                display_fields: ["name"],
-              },
             ],
         }
 
   - name: "parties"
     identifier_field: id
     label: "Parties"
+    summary: "{{name}}"
     folder: "content/parties"
     create: true
     extension: json
@@ -59,16 +154,12 @@ collections:
       - { label: "Id", name: "id", widget: "nanoid" }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Full Name", name: "fullName", widget: "string" }
-      - {
-          label: "Abbreviation",
-          name: "abbr",
-          widget: "string",
-          pattern: ["[A-Z]{2}", "Must have exactly 2 uppercase letters"],
-        }
+      - { label: "Abbreviation", name: "abbr", widget: "string" }
       - {
           label: "Member Parties",
           name: "memberParties",
           widget: "list",
+          default: [],
           fields:
             [
               {
@@ -80,18 +171,32 @@ collections:
                 search_fields: ["name"],
                 display_fields: ["name"],
               },
-              {
-                label: "Joined At",
-                name: "joinedAt",
-                widget: "datetime",
-                default: "",
-              },
-              {
-                label: "Left At",
-                name: "leftAt",
-                widget: "datetime",
-                default: "",
-              },
             ],
         }
       - { label: "Logo", name: "logo", widget: "image" }
+
+  - name: "pollCompanies"
+    identifier_field: id
+    summary: "{{name}}"
+    label: "Poll Companies"
+    folder: "content/pollCompanies"
+    create: true
+    extension: json
+    slug: "{{id}}"
+    fields:
+      - { label: "Id", name: "id", widget: "nanoid" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Abbreviation", name: "abbr", widget: "string" }
+
+  - name: "publishers"
+    identifier_field: id
+    summary: "{{name}}"
+    label: "Publishers"
+    folder: "content/publishers"
+    create: true
+    extension: json
+    slug: "{{id}}"
+    fields:
+      - { label: "Id", name: "id", widget: "nanoid" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Abbreviation", name: "abbr", widget: "string" }

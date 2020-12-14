@@ -9,8 +9,10 @@ export const NanoIdControl: React.FC<WidgetControlProps> = ({
   value,
 }) => {
   React.useEffect(() => {
-    onChange(nanoid());
-  }, []);
+    if (!value) {
+      onChange(nanoid());
+    }
+  }, [value]);
 
   return (
     <input
