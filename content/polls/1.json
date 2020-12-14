@@ -1,0 +1,18 @@
+{
+  "id": "1",
+  "publishedAt": 1607889933529,
+  "publishedBy": "Newspaper",
+  "polledBy": "Company",
+  "pollStartedAt": 1607889933529,
+  "pollEndedAt": 1607889933529,
+  "results": [
+    {
+      "party___NODE": "A",
+      "result": 20.0
+    },
+    {
+      "party___NODE": "B",
+      "result": 80.0
+    }
+  ]
+}

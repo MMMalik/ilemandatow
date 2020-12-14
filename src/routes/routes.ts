@@ -1,4 +1,8 @@
 export const routes = {
+  home: {
+    path: "/",
+    link: () => `/`,
+  },
   election: {
     path: "/elections/:id",
     link: (id: string) => `/elections/${id}`,

@@ -1,33 +1,38 @@
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import Card from "@components/ui/card";
 import Stats from "@components/ui/stats";
+import { PollInfoFragment } from "@graphql/types";
+import { routes } from "@routes";
 
 export type PollsView = "list" | "grid";
 
 interface Props {
+  polls: PollInfoFragment[];
   pollsView: PollsView;
 }
 
-const Polls: React.FC<Props> = ({ pollsView }) => {
+const Polls: React.FC<Props> = ({ pollsView, polls }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="cf">
-      {Array.from({ length: 100 }).map((_, i) => {
+      {polls.map(({ id, polledBy, publishedAt, results }) => {
         return (
-          <div key={i} className={`fl w-100 w-50-m w-third-l pa3`}>
+          <div key={id} className={`fl w-100 w-50-m w-third-l pa3`}>
             <Card
-              title="Title"
-              titleRightSide="10/12/2020"
-              linkLabel="See Details"
-              linkTo="/"
+              title={polledBy ?? ""}
+              titleRightSide={new Date(publishedAt ?? 0).toLocaleString()}
+              linkLabel={t("seeDetails")}
+              linkTo={routes.home.link()}
             >
               <Stats
-                stats={[
-                  { label: "Label1", value: "Value1" },
-                  { label: "Label2", value: "Value2" },
-                  { label: "Label3", value: "Value3" },
-                  { label: "Label4", value: "Value4" },
-                  { label: "Label5", value: "Value5" },
-                ]}
+                stats={
+                  results?.map((result) => ({
+                    value: String(result?.result ?? 0),
+                    label: result?.party?.name ?? "",
+                  })) ?? []
+                }
               />
             </Card>
           </div>
