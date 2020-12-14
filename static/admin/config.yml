@@ -1,6 +1,7 @@
 backend:
   name: github
-  repo: MMMalik/dev
+  repo: MMMalik/ilemandatow
+  branch: dev
 
 media_folder: static/img
 public_folder: /img
@@ -11,6 +12,7 @@ collections:
     label: "Poll"
     folder: "content/polls"
     create: true
+    extension: json
     slug: "{{id}}"
     fields:
       - { label: "Id", name: "id", widget: "nanoid" }
@@ -21,12 +23,23 @@ collections:
       - { label: "Poll Ended At", name: "pollEndedAt", widget: "datetime" }
 
   - name: "party"
+    identifier_field: name
     label: "Party"
     folder: "content/parties"
     create: true
-    slug: "index"
-    path: "{{id}}"
+    extension: json
+    slug: "{{name}}"
     fields:
       - { label: "Id", name: "id", widget: "nanoid" }
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Logo", name: "logo", widget: "media" }
+      - { label: "Abbreviation", name: "abbr", widget: "string" }
+      - {
+          label: "Parties",
+          name: "parties",
+          widget: "relation",
+          collection: "party",
+          value_field: "id",
+          search_fields: ["name"],
+          display_fields: ["name"],
+        }
+      - { label: "Logo", name: "logo", widget: "image" }

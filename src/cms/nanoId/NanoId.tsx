@@ -1,16 +1,27 @@
 import * as React from "react";
 import { nanoid } from "nanoid";
+import { WidgetPreviewProps, WidgetControlProps } from "../common";
 
-export const NanoIdControl: React.FC = () => {
-  const [nanoId, setNanoId] = React.useState<string | undefined>();
-
+export const NanoIdControl: React.FC<WidgetControlProps> = ({
+  onChange,
+  forId,
+  classNameWrapper,
+  value,
+}) => {
   React.useEffect(() => {
-    setNanoId(nanoid());
+    onChange(nanoid());
   }, []);
 
-  return <input value={nanoId} disabled={true} />;
+  return (
+    <input
+      id={forId}
+      value={value}
+      className={classNameWrapper}
+      disabled={true}
+    />
+  );
 };
 
-export const NanoIdPreview: React.FC<{ value: string }> = ({ value }) => {
-  return <p>{value}</p>;
+export const NanoIdPreview: React.FC<WidgetPreviewProps> = (props) => {
+  return <div>{props.value}</div>;
 };
