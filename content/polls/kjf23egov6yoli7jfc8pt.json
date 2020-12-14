@@ -1,7 +1,7 @@
 {
   "pollStartedAt": "",
   "pollEndedAt": "",
-  "id": "5iOhSqf8v4atVFTdwnpZR",
+  "id": "VGOmkJzGTiJbqBUu67IUa",
   "publishedAt": "2020-12-14T17:30:42.219Z",
   "polledBy___NODE": "yL9_efYD_xUz0V27P1cHs",
   "publishedBy___NODE": "Z0abx5vltMrLburMkQ5Ow",
@@ -15,5 +15,5 @@
       "result": 23.4
     }
   ],
-  "summary": "WP / IBRiS"
+  "summary": "WP, IBRiS"
 }
