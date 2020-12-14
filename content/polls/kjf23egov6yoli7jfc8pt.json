@@ -1,8 +1,10 @@
 {
+  "participantsMightVote": 6.1,
   "method": "CATI",
   "publishedAt": "2020-12-13",
   "summary": "WP, IBRiS",
   "error": 3,
+  "participantsWillNotVote": 25.8,
   "polledBy___NODE": "yL9_efYD_xUz0V27P1cHs",
   "pollEndedAt": "2020-12-12",
   "participantsCount": 1100,
@@ -34,7 +36,7 @@
     }
   ],
   "source": "https://wiadomosci.wp.pl/najnowszy-sondaz-ibris-dla-wp-pis-umacnia-prowadzenie-konfederacja-znow-pod-progiem-6585563538397888a",
-  "id": "n9UcN-NOevH-upK0KGorv",
+  "id": "foRD6YARQxgx5tibC5vgi",
   "publishedBy___NODE": "Z0abx5vltMrLburMkQ5Ow",
-  "participantsWillVote": ""
+  "participantsWillVote": 44.8
 }
