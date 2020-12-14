@@ -7,13 +7,13 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "poll"
+  - name: "polls"
     identifier_field: "id"
-    label: "Poll"
+    label: "Polls"
     folder: "content/polls"
     create: true
     extension: json
-    slug: "{{id}}"
+    slug: "{{polledBy}}/{{id}}"
     fields:
       - { label: "Id", name: "id", widget: "nanoid" }
       - { label: "Published At", name: "publishedAt", widget: "datetime" }
@@ -21,25 +21,77 @@ collections:
       - { label: "Polled By", name: "polledBy", widget: "string" }
       - { label: "Poll Started At", name: "pollStartedAt", widget: "datetime" }
       - { label: "Poll Ended At", name: "pollEndedAt", widget: "datetime" }
+      - {
+          label: "Results",
+          name: "results",
+          widget: "list",
+          fields:
+            [
+              {
+                label: "Result",
+                name: "result",
+                widget: "number",
+                value_type: "float",
+                min: 0.0,
+                max: 100.0,
+                step: 1.0,
+              },
+              {
+                label: "Party",
+                name: "party___NODE",
+                widget: "relation",
+                collection: "parties",
+                value_field: "id",
+                search_fields: ["name"],
+                display_fields: ["name"],
+              },
+            ],
+        }
 
-  - name: "party"
-    identifier_field: name
-    label: "Party"
+  - name: "parties"
+    identifier_field: id
+    label: "Parties"
     folder: "content/parties"
     create: true
     extension: json
-    slug: "{{name}}"
+    slug: "{{id}}"
     fields:
       - { label: "Id", name: "id", widget: "nanoid" }
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Abbreviation", name: "abbr", widget: "string" }
+      - { label: "Full Name", name: "fullName", widget: "string" }
       - {
-          label: "Parties",
-          name: "parties",
-          widget: "relation",
-          collection: "party",
-          value_field: "id",
-          search_fields: ["name"],
-          display_fields: ["name"],
+          label: "Abbreviation",
+          name: "abbr",
+          widget: "string",
+          pattern: ["[A-Z]{2}", "Must have exactly 2 uppercase letters"],
+        }
+      - {
+          label: "Member Parties",
+          name: "memberParties",
+          widget: "list",
+          fields:
+            [
+              {
+                label: "Party",
+                name: "party___NODE",
+                widget: "relation",
+                collection: "parties",
+                value_field: "id",
+                search_fields: ["name"],
+                display_fields: ["name"],
+              },
+              {
+                label: "Joined At",
+                name: "joinedAt",
+                widget: "datetime",
+                default: "",
+              },
+              {
+                label: "Left At",
+                name: "leftAt",
+                widget: "datetime",
+                default: "",
+              },
+            ],
         }
       - { label: "Logo", name: "logo", widget: "image" }
