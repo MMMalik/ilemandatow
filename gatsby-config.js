@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby`,
-    siteUrl: `https://www.gatsbyjs.com`,
-    description: `Blazing fast modern site generator for React`,
+    title: "ilemandatow",
+    siteUrl: "https://www.ilemandatow.pl",
+    description: "Sondaże parlamentarne i nie tylko",
   },
   plugins: [
     "gatsby-plugin-typescript",
