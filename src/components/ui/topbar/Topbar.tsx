@@ -26,7 +26,7 @@ const Topbar: React.FC<Props> = ({
   };
 
   return (
-    <nav className="flex items-center">
+    <nav className={`flex items-center bg-${bgPrimary}`}>
       <div className="w-25">
         <div className="dn db-ns">
           <div className="flex items-center">{links}</div>

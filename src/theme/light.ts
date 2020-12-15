@@ -1,10 +1,11 @@
 import { Theme } from "./types";
 
 export const light: Theme = {
-  primary: "blue",
+  primary: "purple",
   bgPrimary: "white",
-  bgSecondary: "light-gray",
+  bgSecondary: "near-white",
   textPrimary: "dark-gray",
+  textOnPrimary: "white",
   textMuted: "gray",
   textDisabled: "light-gray",
   defs: {

@@ -1,17 +1,13 @@
 import * as React from "react";
-import { Link } from "gatsby";
-import { useTheme } from "@theme";
+import Link from "../link";
 
 interface Props {
   to: string;
 }
 
 const TopbarLink: React.FC<Props> = ({ to, children }) => {
-  const { theme } = useTheme();
-  const { textPrimary } = theme;
-
   return (
-    <Link to={to} className={`link dim ma3 dib ${textPrimary}`}>
+    <Link to={to} className="pa3">
       {children}
     </Link>
   );

@@ -16,7 +16,9 @@
       "@routes": ["./src/routes"],
       "@theme": ["./src/theme"],
       "@utils": ["./src/utils"],
-      "@hooks": ["./src/hooks"],
+      "@data": ["src/data"],
+      "@date": ["src/date"],
+      "@constants": ["src/constants"],
       "@graphql/types": ["./types/generated/gatsby-graphql.ts"],
       "@components/*": ["./src/components/*"]
     }

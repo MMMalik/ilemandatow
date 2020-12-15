@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useGetAllPolls } from "@hooks";
+import { useGetAllPolls } from "src/data";
 
 const Search: React.FC = () => {
   const data = useGetAllPolls();

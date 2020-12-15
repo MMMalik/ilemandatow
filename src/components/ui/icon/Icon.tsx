@@ -1,4 +1,5 @@
 import * as React from "react";
+import clsx from "clsx";
 import {
   FontAwesomeIcon,
   FontAwesomeIconProps,
@@ -9,15 +10,17 @@ export type IconProp = FontAwesomeIconProps["icon"];
 interface Props {
   icon: IconProp;
   onClick?: () => void;
+  className?: string;
 }
 
-const Icon: React.FC<Props> = ({ icon, onClick }) => {
+const Icon: React.FC<Props> = ({ icon, onClick, className }) => {
   return (
-    <FontAwesomeIcon
-      icon={icon}
+    <div
+      className={clsx(className, onClick && "dim dib pointer")}
       onClick={onClick}
-      className={onClick ? "dim pointer" : undefined}
-    />
+    >
+      <FontAwesomeIcon icon={icon} />
+    </div>
   );
 };
 

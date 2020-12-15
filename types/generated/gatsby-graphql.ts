@@ -390,7 +390,9 @@ export type File = Node & {
   children: Array<Node>;
   internal: Internal;
   childPartiesJson?: Maybe<PartiesJson>;
+  childPollCompaniesJson?: Maybe<PollCompaniesJson>;
   childPollsJson?: Maybe<PollsJson>;
+  childPublishersJson?: Maybe<PublishersJson>;
 };
 
 
@@ -635,9 +637,58 @@ export type FileFieldsEnum =
   | 'childPartiesJson___internal___mediaType'
   | 'childPartiesJson___internal___owner'
   | 'childPartiesJson___internal___type'
+  | 'childPartiesJson___memberParties'
+  | 'childPartiesJson___memberParties___party___id'
+  | 'childPartiesJson___memberParties___party___children'
+  | 'childPartiesJson___memberParties___party___memberParties'
+  | 'childPartiesJson___memberParties___party___name'
+  | 'childPartiesJson___memberParties___party___abbr'
+  | 'childPartiesJson___memberParties___party___fullName'
+  | 'childPartiesJson___memberParties___joinedAt'
+  | 'childPartiesJson___memberParties___leftAt'
   | 'childPartiesJson___name'
-  | 'childPartiesJson___logo'
   | 'childPartiesJson___abbr'
+  | 'childPartiesJson___fullName'
+  | 'childPollCompaniesJson___id'
+  | 'childPollCompaniesJson___parent___id'
+  | 'childPollCompaniesJson___parent___parent___id'
+  | 'childPollCompaniesJson___parent___parent___children'
+  | 'childPollCompaniesJson___parent___children'
+  | 'childPollCompaniesJson___parent___children___id'
+  | 'childPollCompaniesJson___parent___children___children'
+  | 'childPollCompaniesJson___parent___internal___content'
+  | 'childPollCompaniesJson___parent___internal___contentDigest'
+  | 'childPollCompaniesJson___parent___internal___description'
+  | 'childPollCompaniesJson___parent___internal___fieldOwners'
+  | 'childPollCompaniesJson___parent___internal___ignoreType'
+  | 'childPollCompaniesJson___parent___internal___mediaType'
+  | 'childPollCompaniesJson___parent___internal___owner'
+  | 'childPollCompaniesJson___parent___internal___type'
+  | 'childPollCompaniesJson___children'
+  | 'childPollCompaniesJson___children___id'
+  | 'childPollCompaniesJson___children___parent___id'
+  | 'childPollCompaniesJson___children___parent___children'
+  | 'childPollCompaniesJson___children___children'
+  | 'childPollCompaniesJson___children___children___id'
+  | 'childPollCompaniesJson___children___children___children'
+  | 'childPollCompaniesJson___children___internal___content'
+  | 'childPollCompaniesJson___children___internal___contentDigest'
+  | 'childPollCompaniesJson___children___internal___description'
+  | 'childPollCompaniesJson___children___internal___fieldOwners'
+  | 'childPollCompaniesJson___children___internal___ignoreType'
+  | 'childPollCompaniesJson___children___internal___mediaType'
+  | 'childPollCompaniesJson___children___internal___owner'
+  | 'childPollCompaniesJson___children___internal___type'
+  | 'childPollCompaniesJson___internal___content'
+  | 'childPollCompaniesJson___internal___contentDigest'
+  | 'childPollCompaniesJson___internal___description'
+  | 'childPollCompaniesJson___internal___fieldOwners'
+  | 'childPollCompaniesJson___internal___ignoreType'
+  | 'childPollCompaniesJson___internal___mediaType'
+  | 'childPollCompaniesJson___internal___owner'
+  | 'childPollCompaniesJson___internal___type'
+  | 'childPollCompaniesJson___name'
+  | 'childPollCompaniesJson___abbr'
   | 'childPollsJson___id'
   | 'childPollsJson___parent___id'
   | 'childPollsJson___parent___parent___id'
@@ -676,18 +727,99 @@ export type FileFieldsEnum =
   | 'childPollsJson___internal___mediaType'
   | 'childPollsJson___internal___owner'
   | 'childPollsJson___internal___type'
+  | 'childPollsJson___method'
   | 'childPollsJson___publishedAt'
-  | 'childPollsJson___publishedBy'
-  | 'childPollsJson___polledBy'
-  | 'childPollsJson___pollStartedAt'
+  | 'childPollsJson___summary'
+  | 'childPollsJson___polledBy___id'
+  | 'childPollsJson___polledBy___parent___id'
+  | 'childPollsJson___polledBy___parent___children'
+  | 'childPollsJson___polledBy___children'
+  | 'childPollsJson___polledBy___children___id'
+  | 'childPollsJson___polledBy___children___children'
+  | 'childPollsJson___polledBy___internal___content'
+  | 'childPollsJson___polledBy___internal___contentDigest'
+  | 'childPollsJson___polledBy___internal___description'
+  | 'childPollsJson___polledBy___internal___fieldOwners'
+  | 'childPollsJson___polledBy___internal___ignoreType'
+  | 'childPollsJson___polledBy___internal___mediaType'
+  | 'childPollsJson___polledBy___internal___owner'
+  | 'childPollsJson___polledBy___internal___type'
+  | 'childPollsJson___polledBy___name'
+  | 'childPollsJson___polledBy___abbr'
   | 'childPollsJson___pollEndedAt'
+  | 'childPollsJson___participantsCount'
+  | 'childPollsJson___pollStartedAt'
   | 'childPollsJson___results'
   | 'childPollsJson___results___party___id'
   | 'childPollsJson___results___party___children'
+  | 'childPollsJson___results___party___memberParties'
   | 'childPollsJson___results___party___name'
-  | 'childPollsJson___results___party___logo'
   | 'childPollsJson___results___party___abbr'
-  | 'childPollsJson___results___result';
+  | 'childPollsJson___results___party___fullName'
+  | 'childPollsJson___results___result'
+  | 'childPollsJson___source'
+  | 'childPollsJson___publishedBy___id'
+  | 'childPollsJson___publishedBy___parent___id'
+  | 'childPollsJson___publishedBy___parent___children'
+  | 'childPollsJson___publishedBy___children'
+  | 'childPollsJson___publishedBy___children___id'
+  | 'childPollsJson___publishedBy___children___children'
+  | 'childPollsJson___publishedBy___internal___content'
+  | 'childPollsJson___publishedBy___internal___contentDigest'
+  | 'childPollsJson___publishedBy___internal___description'
+  | 'childPollsJson___publishedBy___internal___fieldOwners'
+  | 'childPollsJson___publishedBy___internal___ignoreType'
+  | 'childPollsJson___publishedBy___internal___mediaType'
+  | 'childPollsJson___publishedBy___internal___owner'
+  | 'childPollsJson___publishedBy___internal___type'
+  | 'childPollsJson___publishedBy___name'
+  | 'childPollsJson___publishedBy___abbr'
+  | 'childPollsJson___participantsMightVote'
+  | 'childPollsJson___participantsUndecided'
+  | 'childPollsJson___participantsMightNotVote'
+  | 'childPollsJson___participantsWillNotVote'
+  | 'childPollsJson___participantsWillVote'
+  | 'childPollsJson___error'
+  | 'childPublishersJson___id'
+  | 'childPublishersJson___parent___id'
+  | 'childPublishersJson___parent___parent___id'
+  | 'childPublishersJson___parent___parent___children'
+  | 'childPublishersJson___parent___children'
+  | 'childPublishersJson___parent___children___id'
+  | 'childPublishersJson___parent___children___children'
+  | 'childPublishersJson___parent___internal___content'
+  | 'childPublishersJson___parent___internal___contentDigest'
+  | 'childPublishersJson___parent___internal___description'
+  | 'childPublishersJson___parent___internal___fieldOwners'
+  | 'childPublishersJson___parent___internal___ignoreType'
+  | 'childPublishersJson___parent___internal___mediaType'
+  | 'childPublishersJson___parent___internal___owner'
+  | 'childPublishersJson___parent___internal___type'
+  | 'childPublishersJson___children'
+  | 'childPublishersJson___children___id'
+  | 'childPublishersJson___children___parent___id'
+  | 'childPublishersJson___children___parent___children'
+  | 'childPublishersJson___children___children'
+  | 'childPublishersJson___children___children___id'
+  | 'childPublishersJson___children___children___children'
+  | 'childPublishersJson___children___internal___content'
+  | 'childPublishersJson___children___internal___contentDigest'
+  | 'childPublishersJson___children___internal___description'
+  | 'childPublishersJson___children___internal___fieldOwners'
+  | 'childPublishersJson___children___internal___ignoreType'
+  | 'childPublishersJson___children___internal___mediaType'
+  | 'childPublishersJson___children___internal___owner'
+  | 'childPublishersJson___children___internal___type'
+  | 'childPublishersJson___internal___content'
+  | 'childPublishersJson___internal___contentDigest'
+  | 'childPublishersJson___internal___description'
+  | 'childPublishersJson___internal___fieldOwners'
+  | 'childPublishersJson___internal___ignoreType'
+  | 'childPublishersJson___internal___mediaType'
+  | 'childPublishersJson___internal___owner'
+  | 'childPublishersJson___internal___type'
+  | 'childPublishersJson___name'
+  | 'childPublishersJson___abbr';
 
 export type FileFilterInput = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -729,7 +861,9 @@ export type FileFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childPartiesJson?: Maybe<PartiesJsonFilterInput>;
+  childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
   childPollsJson?: Maybe<PollsJsonFilterInput>;
+  childPublishersJson?: Maybe<PublishersJsonFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -825,9 +959,10 @@ export type PartiesJson = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
+  memberParties?: Maybe<Array<Maybe<PartiesJsonMemberParties>>>;
   name?: Maybe<Scalars['String']>;
-  logo?: Maybe<Scalars['String']>;
   abbr?: Maybe<Scalars['String']>;
+  fullName?: Maybe<Scalars['String']>;
 };
 
 export type PartiesJsonConnection = {
@@ -944,18 +1079,42 @@ export type PartiesJsonFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
+  | 'memberParties'
+  | 'memberParties___party___id'
+  | 'memberParties___party___parent___id'
+  | 'memberParties___party___parent___children'
+  | 'memberParties___party___children'
+  | 'memberParties___party___children___id'
+  | 'memberParties___party___children___children'
+  | 'memberParties___party___internal___content'
+  | 'memberParties___party___internal___contentDigest'
+  | 'memberParties___party___internal___description'
+  | 'memberParties___party___internal___fieldOwners'
+  | 'memberParties___party___internal___ignoreType'
+  | 'memberParties___party___internal___mediaType'
+  | 'memberParties___party___internal___owner'
+  | 'memberParties___party___internal___type'
+  | 'memberParties___party___memberParties'
+  | 'memberParties___party___memberParties___joinedAt'
+  | 'memberParties___party___memberParties___leftAt'
+  | 'memberParties___party___name'
+  | 'memberParties___party___abbr'
+  | 'memberParties___party___fullName'
+  | 'memberParties___joinedAt'
+  | 'memberParties___leftAt'
   | 'name'
-  | 'logo'
-  | 'abbr';
+  | 'abbr'
+  | 'fullName';
 
 export type PartiesJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+  memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  logo?: Maybe<StringQueryOperatorInput>;
   abbr?: Maybe<StringQueryOperatorInput>;
+  fullName?: Maybe<StringQueryOperatorInput>;
 };
 
 export type PartiesJsonGroupConnection = {
@@ -967,8 +1126,173 @@ export type PartiesJsonGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+export type PartiesJsonMemberParties = {
+  party?: Maybe<PartiesJson>;
+  joinedAt?: Maybe<Scalars['String']>;
+  leftAt?: Maybe<Scalars['String']>;
+};
+
+export type PartiesJsonMemberPartiesFilterInput = {
+  party?: Maybe<PartiesJsonFilterInput>;
+  joinedAt?: Maybe<StringQueryOperatorInput>;
+  leftAt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PartiesJsonMemberPartiesFilterListInput = {
+  elemMatch?: Maybe<PartiesJsonMemberPartiesFilterInput>;
+};
+
 export type PartiesJsonSortInput = {
   fields?: Maybe<Array<Maybe<PartiesJsonFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type PollCompaniesJson = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  name?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+};
+
+export type PollCompaniesJsonConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<PollCompaniesJsonEdge>;
+  nodes: Array<PollCompaniesJson>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<PollCompaniesJsonGroupConnection>;
+};
+
+
+export type PollCompaniesJsonConnectionDistinctArgs = {
+  field: PollCompaniesJsonFieldsEnum;
+};
+
+
+export type PollCompaniesJsonConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: PollCompaniesJsonFieldsEnum;
+};
+
+export type PollCompaniesJsonEdge = {
+  next?: Maybe<PollCompaniesJson>;
+  node: PollCompaniesJson;
+  previous?: Maybe<PollCompaniesJson>;
+};
+
+export type PollCompaniesJsonFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'name'
+  | 'abbr';
+
+export type PollCompaniesJsonFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PollCompaniesJsonGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<PollCompaniesJsonEdge>;
+  nodes: Array<PollCompaniesJson>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type PollCompaniesJsonSortInput = {
+  fields?: Maybe<Array<Maybe<PollCompaniesJsonFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
@@ -977,12 +1301,46 @@ export type PollsJson = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  publishedAt?: Maybe<Scalars['Float']>;
-  publishedBy?: Maybe<Scalars['String']>;
-  polledBy?: Maybe<Scalars['String']>;
-  pollStartedAt?: Maybe<Scalars['Float']>;
-  pollEndedAt?: Maybe<Scalars['Float']>;
+  method?: Maybe<Scalars['String']>;
+  publishedAt?: Maybe<Scalars['Date']>;
+  summary?: Maybe<Scalars['String']>;
+  polledBy?: Maybe<PollCompaniesJson>;
+  pollEndedAt?: Maybe<Scalars['Date']>;
+  participantsCount?: Maybe<Scalars['Int']>;
+  pollStartedAt?: Maybe<Scalars['Date']>;
   results?: Maybe<Array<Maybe<PollsJsonResults>>>;
+  source?: Maybe<Scalars['String']>;
+  publishedBy?: Maybe<PublishersJson>;
+  participantsMightVote?: Maybe<Scalars['Float']>;
+  participantsUndecided?: Maybe<Scalars['Float']>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsWillNotVote?: Maybe<Scalars['Float']>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
+  error?: Maybe<Scalars['Int']>;
+};
+
+
+export type PollsJsonPublishedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type PollsJsonPollEndedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type PollsJsonPollStartedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 export type PollsJsonConnection = {
@@ -1099,11 +1457,52 @@ export type PollsJsonFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
+  | 'method'
   | 'publishedAt'
-  | 'publishedBy'
-  | 'polledBy'
-  | 'pollStartedAt'
+  | 'summary'
+  | 'polledBy___id'
+  | 'polledBy___parent___id'
+  | 'polledBy___parent___parent___id'
+  | 'polledBy___parent___parent___children'
+  | 'polledBy___parent___children'
+  | 'polledBy___parent___children___id'
+  | 'polledBy___parent___children___children'
+  | 'polledBy___parent___internal___content'
+  | 'polledBy___parent___internal___contentDigest'
+  | 'polledBy___parent___internal___description'
+  | 'polledBy___parent___internal___fieldOwners'
+  | 'polledBy___parent___internal___ignoreType'
+  | 'polledBy___parent___internal___mediaType'
+  | 'polledBy___parent___internal___owner'
+  | 'polledBy___parent___internal___type'
+  | 'polledBy___children'
+  | 'polledBy___children___id'
+  | 'polledBy___children___parent___id'
+  | 'polledBy___children___parent___children'
+  | 'polledBy___children___children'
+  | 'polledBy___children___children___id'
+  | 'polledBy___children___children___children'
+  | 'polledBy___children___internal___content'
+  | 'polledBy___children___internal___contentDigest'
+  | 'polledBy___children___internal___description'
+  | 'polledBy___children___internal___fieldOwners'
+  | 'polledBy___children___internal___ignoreType'
+  | 'polledBy___children___internal___mediaType'
+  | 'polledBy___children___internal___owner'
+  | 'polledBy___children___internal___type'
+  | 'polledBy___internal___content'
+  | 'polledBy___internal___contentDigest'
+  | 'polledBy___internal___description'
+  | 'polledBy___internal___fieldOwners'
+  | 'polledBy___internal___ignoreType'
+  | 'polledBy___internal___mediaType'
+  | 'polledBy___internal___owner'
+  | 'polledBy___internal___type'
+  | 'polledBy___name'
+  | 'polledBy___abbr'
   | 'pollEndedAt'
+  | 'participantsCount'
+  | 'pollStartedAt'
   | 'results'
   | 'results___party___id'
   | 'results___party___parent___id'
@@ -1119,22 +1518,82 @@ export type PollsJsonFieldsEnum =
   | 'results___party___internal___mediaType'
   | 'results___party___internal___owner'
   | 'results___party___internal___type'
+  | 'results___party___memberParties'
+  | 'results___party___memberParties___joinedAt'
+  | 'results___party___memberParties___leftAt'
   | 'results___party___name'
-  | 'results___party___logo'
   | 'results___party___abbr'
-  | 'results___result';
+  | 'results___party___fullName'
+  | 'results___result'
+  | 'source'
+  | 'publishedBy___id'
+  | 'publishedBy___parent___id'
+  | 'publishedBy___parent___parent___id'
+  | 'publishedBy___parent___parent___children'
+  | 'publishedBy___parent___children'
+  | 'publishedBy___parent___children___id'
+  | 'publishedBy___parent___children___children'
+  | 'publishedBy___parent___internal___content'
+  | 'publishedBy___parent___internal___contentDigest'
+  | 'publishedBy___parent___internal___description'
+  | 'publishedBy___parent___internal___fieldOwners'
+  | 'publishedBy___parent___internal___ignoreType'
+  | 'publishedBy___parent___internal___mediaType'
+  | 'publishedBy___parent___internal___owner'
+  | 'publishedBy___parent___internal___type'
+  | 'publishedBy___children'
+  | 'publishedBy___children___id'
+  | 'publishedBy___children___parent___id'
+  | 'publishedBy___children___parent___children'
+  | 'publishedBy___children___children'
+  | 'publishedBy___children___children___id'
+  | 'publishedBy___children___children___children'
+  | 'publishedBy___children___internal___content'
+  | 'publishedBy___children___internal___contentDigest'
+  | 'publishedBy___children___internal___description'
+  | 'publishedBy___children___internal___fieldOwners'
+  | 'publishedBy___children___internal___ignoreType'
+  | 'publishedBy___children___internal___mediaType'
+  | 'publishedBy___children___internal___owner'
+  | 'publishedBy___children___internal___type'
+  | 'publishedBy___internal___content'
+  | 'publishedBy___internal___contentDigest'
+  | 'publishedBy___internal___description'
+  | 'publishedBy___internal___fieldOwners'
+  | 'publishedBy___internal___ignoreType'
+  | 'publishedBy___internal___mediaType'
+  | 'publishedBy___internal___owner'
+  | 'publishedBy___internal___type'
+  | 'publishedBy___name'
+  | 'publishedBy___abbr'
+  | 'participantsMightVote'
+  | 'participantsUndecided'
+  | 'participantsMightNotVote'
+  | 'participantsWillNotVote'
+  | 'participantsWillVote'
+  | 'error';
 
 export type PollsJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  publishedAt?: Maybe<FloatQueryOperatorInput>;
-  publishedBy?: Maybe<StringQueryOperatorInput>;
-  polledBy?: Maybe<StringQueryOperatorInput>;
-  pollStartedAt?: Maybe<FloatQueryOperatorInput>;
-  pollEndedAt?: Maybe<FloatQueryOperatorInput>;
+  method?: Maybe<StringQueryOperatorInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
+  summary?: Maybe<StringQueryOperatorInput>;
+  polledBy?: Maybe<PollCompaniesJsonFilterInput>;
+  pollEndedAt?: Maybe<DateQueryOperatorInput>;
+  participantsCount?: Maybe<IntQueryOperatorInput>;
+  pollStartedAt?: Maybe<DateQueryOperatorInput>;
   results?: Maybe<PollsJsonResultsFilterListInput>;
+  source?: Maybe<StringQueryOperatorInput>;
+  publishedBy?: Maybe<PublishersJsonFilterInput>;
+  participantsMightVote?: Maybe<FloatQueryOperatorInput>;
+  participantsUndecided?: Maybe<FloatQueryOperatorInput>;
+  participantsMightNotVote?: Maybe<FloatQueryOperatorInput>;
+  participantsWillNotVote?: Maybe<FloatQueryOperatorInput>;
+  participantsWillVote?: Maybe<FloatQueryOperatorInput>;
+  error?: Maybe<IntQueryOperatorInput>;
 };
 
 export type PollsJsonGroupConnection = {
@@ -1148,12 +1607,12 @@ export type PollsJsonGroupConnection = {
 
 export type PollsJsonResults = {
   party?: Maybe<PartiesJson>;
-  result?: Maybe<Scalars['Int']>;
+  result?: Maybe<Scalars['Float']>;
 };
 
 export type PollsJsonResultsFilterInput = {
   party?: Maybe<PartiesJsonFilterInput>;
-  result?: Maybe<IntQueryOperatorInput>;
+  result?: Maybe<FloatQueryOperatorInput>;
 };
 
 export type PollsJsonResultsFilterListInput = {
@@ -1162,6 +1621,155 @@ export type PollsJsonResultsFilterListInput = {
 
 export type PollsJsonSortInput = {
   fields?: Maybe<Array<Maybe<PollsJsonFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type PublishersJson = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  name?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+};
+
+export type PublishersJsonConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<PublishersJsonEdge>;
+  nodes: Array<PublishersJson>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<PublishersJsonGroupConnection>;
+};
+
+
+export type PublishersJsonConnectionDistinctArgs = {
+  field: PublishersJsonFieldsEnum;
+};
+
+
+export type PublishersJsonConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: PublishersJsonFieldsEnum;
+};
+
+export type PublishersJsonEdge = {
+  next?: Maybe<PublishersJson>;
+  node: PublishersJson;
+  previous?: Maybe<PublishersJson>;
+};
+
+export type PublishersJsonFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'name'
+  | 'abbr';
+
+export type PublishersJsonFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PublishersJsonGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<PublishersJsonEdge>;
+  nodes: Array<PublishersJson>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type PublishersJsonSortInput = {
+  fields?: Maybe<Array<Maybe<PublishersJsonFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
@@ -1174,8 +1782,12 @@ export type Query = {
   allSite: SiteConnection;
   sitePage?: Maybe<SitePage>;
   allSitePage: SitePageConnection;
+  publishersJson?: Maybe<PublishersJson>;
+  allPublishersJson: PublishersJsonConnection;
   pollsJson?: Maybe<PollsJson>;
   allPollsJson: PollsJsonConnection;
+  pollCompaniesJson?: Maybe<PollCompaniesJson>;
+  allPollCompaniesJson: PollCompaniesJsonConnection;
   partiesJson?: Maybe<PartiesJson>;
   allPartiesJson: PartiesJsonConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
@@ -1225,7 +1837,9 @@ export type QueryFileArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childPartiesJson?: Maybe<PartiesJsonFilterInput>;
+  childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
   childPollsJson?: Maybe<PollsJsonFilterInput>;
+  childPublishersJson?: Maybe<PublishersJsonFilterInput>;
 };
 
 
@@ -1289,8 +1903,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -1314,14 +1926,14 @@ export type QuerySitePageArgs = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
-  pluginCreator?: Maybe<SitePluginFilterInput>;
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
-  componentPath?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  pluginCreator?: Maybe<SitePluginFilterInput>;
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
+  componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -1333,17 +1945,45 @@ export type QueryAllSitePageArgs = {
 };
 
 
+export type QueryPublishersJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllPublishersJsonArgs = {
+  filter?: Maybe<PublishersJsonFilterInput>;
+  sort?: Maybe<PublishersJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryPollsJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  publishedAt?: Maybe<FloatQueryOperatorInput>;
-  publishedBy?: Maybe<StringQueryOperatorInput>;
-  polledBy?: Maybe<StringQueryOperatorInput>;
-  pollStartedAt?: Maybe<FloatQueryOperatorInput>;
-  pollEndedAt?: Maybe<FloatQueryOperatorInput>;
+  method?: Maybe<StringQueryOperatorInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
+  summary?: Maybe<StringQueryOperatorInput>;
+  polledBy?: Maybe<PollCompaniesJsonFilterInput>;
+  pollEndedAt?: Maybe<DateQueryOperatorInput>;
+  participantsCount?: Maybe<IntQueryOperatorInput>;
+  pollStartedAt?: Maybe<DateQueryOperatorInput>;
   results?: Maybe<PollsJsonResultsFilterListInput>;
+  source?: Maybe<StringQueryOperatorInput>;
+  publishedBy?: Maybe<PublishersJsonFilterInput>;
+  participantsMightVote?: Maybe<FloatQueryOperatorInput>;
+  participantsUndecided?: Maybe<FloatQueryOperatorInput>;
+  participantsMightNotVote?: Maybe<FloatQueryOperatorInput>;
+  participantsWillNotVote?: Maybe<FloatQueryOperatorInput>;
+  participantsWillVote?: Maybe<FloatQueryOperatorInput>;
+  error?: Maybe<IntQueryOperatorInput>;
 };
 
 
@@ -1355,14 +1995,33 @@ export type QueryAllPollsJsonArgs = {
 };
 
 
-export type QueryPartiesJsonArgs = {
+export type QueryPollCompaniesJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  logo?: Maybe<StringQueryOperatorInput>;
   abbr?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllPollCompaniesJsonArgs = {
+  filter?: Maybe<PollCompaniesJsonFilterInput>;
+  sort?: Maybe<PollCompaniesJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryPartiesJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
+  fullName?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -1402,6 +2061,7 @@ export type QuerySitePluginArgs = {
   pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
   nodeAPIs?: Maybe<StringQueryOperatorInput>;
   browserAPIs?: Maybe<StringQueryOperatorInput>;
+  ssrAPIs?: Maybe<StringQueryOperatorInput>;
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
 };
@@ -1417,8 +2077,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -1620,8 +2278,7 @@ export type SiteFieldsEnum =
   | 'buildTime'
   | 'siteMetadata___title'
   | 'siteMetadata___description'
-  | 'port'
-  | 'host'
+  | 'siteMetadata___siteUrl'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -1714,8 +2371,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -1739,14 +2394,14 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String'];
   componentChunkName: Scalars['String'];
   matchPath?: Maybe<Scalars['String']>;
-  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
-  pluginCreator?: Maybe<SitePlugin>;
-  pluginCreatorId?: Maybe<Scalars['String']>;
-  componentPath?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
+  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
+  pluginCreator?: Maybe<SitePlugin>;
+  pluginCreatorId?: Maybe<Scalars['String']>;
+  componentPath?: Maybe<Scalars['String']>;
 };
 
 export type SitePageConnection = {
@@ -1782,77 +2437,6 @@ export type SitePageFieldsEnum =
   | 'internalComponentName'
   | 'componentChunkName'
   | 'matchPath'
-  | 'isCreatedByStatefulCreatePages'
-  | 'pluginCreator___id'
-  | 'pluginCreator___parent___id'
-  | 'pluginCreator___parent___parent___id'
-  | 'pluginCreator___parent___parent___children'
-  | 'pluginCreator___parent___children'
-  | 'pluginCreator___parent___children___id'
-  | 'pluginCreator___parent___children___children'
-  | 'pluginCreator___parent___internal___content'
-  | 'pluginCreator___parent___internal___contentDigest'
-  | 'pluginCreator___parent___internal___description'
-  | 'pluginCreator___parent___internal___fieldOwners'
-  | 'pluginCreator___parent___internal___ignoreType'
-  | 'pluginCreator___parent___internal___mediaType'
-  | 'pluginCreator___parent___internal___owner'
-  | 'pluginCreator___parent___internal___type'
-  | 'pluginCreator___children'
-  | 'pluginCreator___children___id'
-  | 'pluginCreator___children___parent___id'
-  | 'pluginCreator___children___parent___children'
-  | 'pluginCreator___children___children'
-  | 'pluginCreator___children___children___id'
-  | 'pluginCreator___children___children___children'
-  | 'pluginCreator___children___internal___content'
-  | 'pluginCreator___children___internal___contentDigest'
-  | 'pluginCreator___children___internal___description'
-  | 'pluginCreator___children___internal___fieldOwners'
-  | 'pluginCreator___children___internal___ignoreType'
-  | 'pluginCreator___children___internal___mediaType'
-  | 'pluginCreator___children___internal___owner'
-  | 'pluginCreator___children___internal___type'
-  | 'pluginCreator___internal___content'
-  | 'pluginCreator___internal___contentDigest'
-  | 'pluginCreator___internal___description'
-  | 'pluginCreator___internal___fieldOwners'
-  | 'pluginCreator___internal___ignoreType'
-  | 'pluginCreator___internal___mediaType'
-  | 'pluginCreator___internal___owner'
-  | 'pluginCreator___internal___type'
-  | 'pluginCreator___resolve'
-  | 'pluginCreator___name'
-  | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___isTSX'
-  | 'pluginCreator___pluginOptions___jsxPragma'
-  | 'pluginCreator___pluginOptions___allExtensions'
-  | 'pluginCreator___pluginOptions___fileName'
-  | 'pluginCreator___pluginOptions___documentPaths'
-  | 'pluginCreator___pluginOptions___modulePath'
-  | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___pathCheck'
-  | 'pluginCreator___nodeAPIs'
-  | 'pluginCreator___browserAPIs'
-  | 'pluginCreator___pluginFilepath'
-  | 'pluginCreator___packageJson___name'
-  | 'pluginCreator___packageJson___description'
-  | 'pluginCreator___packageJson___version'
-  | 'pluginCreator___packageJson___main'
-  | 'pluginCreator___packageJson___author'
-  | 'pluginCreator___packageJson___license'
-  | 'pluginCreator___packageJson___dependencies'
-  | 'pluginCreator___packageJson___dependencies___name'
-  | 'pluginCreator___packageJson___dependencies___version'
-  | 'pluginCreator___packageJson___devDependencies'
-  | 'pluginCreator___packageJson___devDependencies___name'
-  | 'pluginCreator___packageJson___devDependencies___version'
-  | 'pluginCreator___packageJson___peerDependencies'
-  | 'pluginCreator___packageJson___peerDependencies___name'
-  | 'pluginCreator___packageJson___peerDependencies___version'
-  | 'pluginCreator___packageJson___keywords'
-  | 'pluginCreatorId'
-  | 'componentPath'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1938,7 +2522,79 @@ export type SitePageFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type';
+  | 'internal___type'
+  | 'isCreatedByStatefulCreatePages'
+  | 'pluginCreator___id'
+  | 'pluginCreator___parent___id'
+  | 'pluginCreator___parent___parent___id'
+  | 'pluginCreator___parent___parent___children'
+  | 'pluginCreator___parent___children'
+  | 'pluginCreator___parent___children___id'
+  | 'pluginCreator___parent___children___children'
+  | 'pluginCreator___parent___internal___content'
+  | 'pluginCreator___parent___internal___contentDigest'
+  | 'pluginCreator___parent___internal___description'
+  | 'pluginCreator___parent___internal___fieldOwners'
+  | 'pluginCreator___parent___internal___ignoreType'
+  | 'pluginCreator___parent___internal___mediaType'
+  | 'pluginCreator___parent___internal___owner'
+  | 'pluginCreator___parent___internal___type'
+  | 'pluginCreator___children'
+  | 'pluginCreator___children___id'
+  | 'pluginCreator___children___parent___id'
+  | 'pluginCreator___children___parent___children'
+  | 'pluginCreator___children___children'
+  | 'pluginCreator___children___children___id'
+  | 'pluginCreator___children___children___children'
+  | 'pluginCreator___children___internal___content'
+  | 'pluginCreator___children___internal___contentDigest'
+  | 'pluginCreator___children___internal___description'
+  | 'pluginCreator___children___internal___fieldOwners'
+  | 'pluginCreator___children___internal___ignoreType'
+  | 'pluginCreator___children___internal___mediaType'
+  | 'pluginCreator___children___internal___owner'
+  | 'pluginCreator___children___internal___type'
+  | 'pluginCreator___internal___content'
+  | 'pluginCreator___internal___contentDigest'
+  | 'pluginCreator___internal___description'
+  | 'pluginCreator___internal___fieldOwners'
+  | 'pluginCreator___internal___ignoreType'
+  | 'pluginCreator___internal___mediaType'
+  | 'pluginCreator___internal___owner'
+  | 'pluginCreator___internal___type'
+  | 'pluginCreator___resolve'
+  | 'pluginCreator___name'
+  | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___isTSX'
+  | 'pluginCreator___pluginOptions___jsxPragma'
+  | 'pluginCreator___pluginOptions___allExtensions'
+  | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___documentPaths'
+  | 'pluginCreator___pluginOptions___modulePath'
+  | 'pluginCreator___pluginOptions___path'
+  | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___nodeAPIs'
+  | 'pluginCreator___browserAPIs'
+  | 'pluginCreator___ssrAPIs'
+  | 'pluginCreator___pluginFilepath'
+  | 'pluginCreator___packageJson___name'
+  | 'pluginCreator___packageJson___description'
+  | 'pluginCreator___packageJson___version'
+  | 'pluginCreator___packageJson___main'
+  | 'pluginCreator___packageJson___author'
+  | 'pluginCreator___packageJson___license'
+  | 'pluginCreator___packageJson___dependencies'
+  | 'pluginCreator___packageJson___dependencies___name'
+  | 'pluginCreator___packageJson___dependencies___version'
+  | 'pluginCreator___packageJson___devDependencies'
+  | 'pluginCreator___packageJson___devDependencies___name'
+  | 'pluginCreator___packageJson___devDependencies___version'
+  | 'pluginCreator___packageJson___peerDependencies'
+  | 'pluginCreator___packageJson___peerDependencies___name'
+  | 'pluginCreator___packageJson___peerDependencies___version'
+  | 'pluginCreator___packageJson___keywords'
+  | 'pluginCreatorId'
+  | 'componentPath';
 
 export type SitePageFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
@@ -1946,14 +2602,14 @@ export type SitePageFilterInput = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
-  pluginCreator?: Maybe<SitePluginFilterInput>;
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
-  componentPath?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  pluginCreator?: Maybe<SitePluginFilterInput>;
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
+  componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageGroupConnection = {
@@ -1981,6 +2637,7 @@ export type SitePlugin = Node & {
   pluginOptions?: Maybe<SitePluginPluginOptions>;
   nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   pluginFilepath?: Maybe<Scalars['String']>;
   packageJson?: Maybe<SitePluginPackageJson>;
 };
@@ -2112,6 +2769,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
+  | 'ssrAPIs'
   | 'pluginFilepath'
   | 'packageJson___name'
   | 'packageJson___description'
@@ -2141,6 +2799,7 @@ export type SitePluginFilterInput = {
   pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
   nodeAPIs?: Maybe<StringQueryOperatorInput>;
   browserAPIs?: Maybe<StringQueryOperatorInput>;
+  ssrAPIs?: Maybe<StringQueryOperatorInput>;
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
 };
@@ -2252,11 +2911,13 @@ export type SitePluginSortInput = {
 export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  siteUrl?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  siteUrl?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -2277,17 +2938,23 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type PartyInfoFragment = Pick<PartiesJson, 'id' | 'logo' | 'name'>;
-
-export type PollInfoFragment = (
-  Pick<PollsJson, 'id' | 'publishedAt' | 'publishedBy' | 'polledBy' | 'pollStartedAt' | 'pollEndedAt'>
-  & { results?: Maybe<Array<Maybe<(
-    Pick<PollsJsonResults, 'result'>
-    & { party?: Maybe<PartyInfoFragment> }
-  )>>> }
-);
-
 export type AllPollsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type AllPollsQueryQuery = { allPollsJson: { nodes: Array<PollInfoFragment> } };
+
+export type PartyInfoFragment = Pick<PartiesJson, 'id' | 'name' | 'abbr'>;
+
+export type PollCompanyInfoFragment = Pick<PollCompaniesJson, 'id' | 'name' | 'abbr'>;
+
+export type PollResultFragment = (
+  Pick<PollsJsonResults, 'result'>
+  & { party?: Maybe<PartyInfoFragment> }
+);
+
+export type PollInfoFragment = (
+  Pick<PollsJson, 'id' | 'publishedAt' | 'source'>
+  & { publishedBy?: Maybe<PublisherInfoFragment>, polledBy?: Maybe<PollCompanyInfoFragment>, results?: Maybe<Array<Maybe<PollResultFragment>>> }
+);
+
+export type PublisherInfoFragment = Pick<PublishersJson, 'id' | 'name' | 'abbr'>;

@@ -4,12 +4,12 @@ import Topbar from "../topbar";
 
 const Layout: React.FC = ({ children }) => {
   const { theme } = useTheme();
-  const { textPrimary, textDisabled, bgPrimary } = theme;
+  const { textPrimary, bgSecondary } = theme;
 
   return (
-    <div className={`${textPrimary} bg-${bgPrimary}`}>
+    <div className={`${textPrimary} bg-${bgSecondary}`}>
       <Topbar />
-      <div className={`bt b--${textDisabled} pa3 pa4-m pa5-l`}>{children}</div>
+      <div className="pa3 pa4-m pa5-l">{children}</div>
       <footer></footer>
     </div>
   );

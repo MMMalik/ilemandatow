@@ -6,7 +6,7 @@ interface Props {
 
 const TopbarAction: React.FC<Props> = ({ children, onClick }) => {
   return (
-    <div className="pointer ma3 dib" onClick={onClick}>
+    <div className="pointer dim pa3 dib" onClick={onClick}>
       {children}
     </div>
   );

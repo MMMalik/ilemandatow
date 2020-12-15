@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useGetAllPolls } from "@hooks";
+import { useGetAllPolls } from "@data";
 import Page from "@components/layout/page";
 import PollsToolbar from "@components/core/pollsToolbar";
 import Polls, { PollsView } from "@components/core/polls";
@@ -18,10 +18,10 @@ const Index: React.FC = () => {
 
   return (
     <Page>
-      <PollsToolbar
+      {/* <PollsToolbar
         onGridViewClick={handleGridViewClick}
         onListViewClick={handleListViewClick}
-      />
+      /> */}
       <Polls pollsView={pollsView} polls={polls.allPollsJson.nodes} />
     </Page>
   );

@@ -7,11 +7,7 @@ interface Props {
 }
 
 const TopbarIcon: React.FC<Props> = ({ icon, onClick }) => {
-  return (
-    <div className="ma3 dib">
-      <Icon icon={icon} onClick={onClick} />
-    </div>
-  );
+  return <Icon icon={icon} onClick={onClick} className="pa3" />;
 };
 
 export default TopbarIcon;

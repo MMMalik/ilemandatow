@@ -1,4 +1,4 @@
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { config, library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
   faAdjust,
@@ -9,7 +9,10 @@ import {
   faTh,
   faSun,
   faMoon,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
+
+config.autoAddCss = false;
 
 library.add(
   fab,
@@ -20,5 +23,6 @@ library.add(
   faList,
   faTh,
   faSun,
-  faMoon
+  faMoon,
+  faExternalLinkAlt
 );

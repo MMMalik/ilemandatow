@@ -20,7 +20,7 @@ const Tooltip: React.FC<Props> = ({ children, title }) => {
     popperElement
   );
   const { theme } = useTheme();
-  const { bgSecondary, textMuted } = theme;
+  const { bgPrimary, textMuted, textDisabled } = theme;
 
   React.useEffect(() => {
     if (update) {
@@ -35,7 +35,7 @@ const Tooltip: React.FC<Props> = ({ children, title }) => {
       </div>
       <div
         ref={setPopperElement}
-        className={`tooltiptext f6 br2 pa1 ${textMuted} bg-${bgSecondary}`}
+        className={`ba b--${textDisabled} tooltiptext f6 br2 pa1 ${textMuted} bg-${bgPrimary}`}
         style={styles.popper}
         {...attributes.popper}
       >

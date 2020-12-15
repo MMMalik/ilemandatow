@@ -3,6 +3,7 @@ export interface Theme {
   bgPrimary: string;
   bgSecondary: string;
   textPrimary: string;
+  textOnPrimary: string;
   textMuted: string;
   textDisabled: string;
   defs: { [key: string]: string };
