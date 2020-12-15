@@ -1,0 +1,47 @@
+{
+  "participantsMightVote": 12,
+  "method": "CATI",
+  "publishedAt": "2020-11-15",
+  "participantsUndecided": 6.1,
+  "participantsMightNotVote": 17.3,
+  "summary": "WP, IBRiS",
+  "participantsWillNotVote": 26.7,
+  "polledBy___NODE": "yL9_efYD_xUz0V27P1cHs",
+  "pollEndedAt": "2020-11-14",
+  "participantsCount": 1100,
+  "pollStartedAt": "2020-11-13",
+  "results": [
+    {
+      "party___NODE": "NYcLrcxN9kYAqVcysgWo4",
+      "result": 33
+    },
+    {
+      "party___NODE": "U4oQqW7Kd027-7B6GB1q1",
+      "result": 24.1
+    },
+    {
+      "party___NODE": "wqZMyC6p6YeqfPQdsM93P",
+      "result": 13.1
+    },
+    {
+      "party___NODE": "KSmBIP6ZDoRuco1stc0XO",
+      "result": 8.4
+    },
+    {
+      "party___NODE": "DyawCPELgfgeJobDSIwL4",
+      "result": 2.3
+    },
+    {
+      "party___NODE": "VdRq9QfHmuH6n3eLtWDhA",
+      "result": 14
+    },
+    {
+      "party___NODE": "6qjBBWK1IsEOmdpVDK-vf",
+      "result": 5
+    }
+  ],
+  "source": "https://wiadomosci.wp.pl/najnowszy-sondaz-ibris-dla-wp-pis-przerywa-zla-passe-6575852050074528a",
+  "id": "kwIN7s8Nw0cHZu7uplM5H",
+  "publishedBy___NODE": "rnrqnHoG0itjELh5oMtaI",
+  "participantsWillVote": 37.6
+}

@@ -2,10 +2,13 @@
   "participantsMightVote": 10.1,
   "method": "CATI",
   "publishedAt": "2020-11-29",
+  "participantsUndecided": 2.7,
+  "participantsMightNotVote": 19.6,
   "summary": "WP, IBRiS",
+  "participantsWillNotVote": 27.8,
   "polledBy___NODE": "yL9_efYD_xUz0V27P1cHs",
   "pollEndedAt": "2020-11-27",
-  "participantsCount": 1101,
+  "participantsCount": 1100,
   "pollStartedAt": "2020-11-27",
   "results": [
     {
@@ -31,6 +34,10 @@
     {
       "party___NODE": "DyawCPELgfgeJobDSIwL4",
       "result": 5.4
+    },
+    {
+      "party___NODE": "VdRq9QfHmuH6n3eLtWDhA",
+      "result": 11
     }
   ],
   "source": "https://wiadomosci.wp.pl/najnowszy-sondaz-ibris-dla-wp-spadki-w-poparciu-sa-trzy-wyjatki-6580619974478752a",

@@ -4,31 +4,32 @@
   "summary": "SE, Pollster",
   "polledBy___NODE": "nNyP7vKL9mJMIWmHO-h7h",
   "pollEndedAt": "2020-12-12",
+  "participantsCount": 1067,
   "pollStartedAt": "2020-12-12",
   "results": [
     {
       "party___NODE": "NYcLrcxN9kYAqVcysgWo4",
-      "result": 40.05
+      "result": 34
     },
     {
       "party___NODE": "U4oQqW7Kd027-7B6GB1q1",
-      "result": 26.29
+      "result": 23.4
     },
     {
       "party___NODE": "wqZMyC6p6YeqfPQdsM93P",
-      "result": 12.44
+      "result": 14.4
     },
     {
       "party___NODE": "KSmBIP6ZDoRuco1stc0XO",
-      "result": 8.52
+      "result": 9.7
     },
     {
       "party___NODE": "DyawCPELgfgeJobDSIwL4",
-      "result": 6.03
+      "result": 6.2
     },
     {
       "party___NODE": "78QC5o-Z_wejx3EiRw5Tf",
-      "result": 5.27
+      "result": 4
     }
   ],
   "source": "https://www.se.pl/wiadomosci/polityka/pierwszy-sondaz-po-unijnym-szczycie-morawiecki-ratuje-pis-aa-1yze-KRmE-admH.html",
