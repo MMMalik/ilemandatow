@@ -22,7 +22,7 @@ const AppTopbar: React.FC = () => {
         links={
           <>
             <img
-              src="http://tachyons.io/img/logo.jpg"
+              src="https://tachyons.io/img/logo.jpg"
               className="dib mh2 w2 h2 br-100 ph2"
               alt="Site Name"
             />

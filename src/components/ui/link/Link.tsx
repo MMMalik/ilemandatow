@@ -27,7 +27,7 @@ const Link: React.FC<Props> = ({
 
   if (external) {
     return (
-      <a className={cls} href={to} target="_blank">
+      <a className={cls} href={to} rel="noopener" target="_blank">
         {children}
       </a>
     );
