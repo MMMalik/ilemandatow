@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-plugin-netlify`,
       options: {
         headers: {
-          "/*.(woff|woff2)": [{ "Cache-Control": "public, max-age=31536000" }],
+          "/*.(woff|woff2)": ["Cache-Control: public, max-age=31536000"],
         },
       },
     },
