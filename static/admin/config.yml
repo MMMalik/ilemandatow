@@ -10,6 +10,7 @@ collections:
   - name: "polls"
     identifier_field: id
     summary: "{{publishedAt}} / {{summary}}"
+    sortable_fields: ["publishedAt"]
     label: "Polls"
     folder: "content/polls"
     create: true
@@ -146,6 +147,7 @@ collections:
     identifier_field: id
     label: "Parties"
     summary: "{{name}}"
+    sortable_fields: ["name"]
     folder: "content/parties"
     create: true
     extension: json
