@@ -778,9 +778,9 @@ export type FileFieldsEnum =
   | 'childPollsJson___participantsMightVote'
   | 'childPollsJson___participantsUndecided'
   | 'childPollsJson___participantsMightNotVote'
+  | 'childPollsJson___error'
   | 'childPollsJson___participantsWillNotVote'
   | 'childPollsJson___participantsWillVote'
-  | 'childPollsJson___error'
   | 'childPublishersJson___id'
   | 'childPublishersJson___parent___id'
   | 'childPublishersJson___parent___parent___id'
@@ -861,6 +861,7 @@ export type FileFieldsEnum =
   | 'childTranslationsJson___internal___type'
   | 'childTranslationsJson___aboutUs'
   | 'childTranslationsJson___newPoll'
+  | 'childTranslationsJson___poll'
   | 'childTranslationsJson___faq'
   | 'childTranslationsJson___changeLanguage'
   | 'childTranslationsJson___search'
@@ -868,7 +869,8 @@ export type FileFieldsEnum =
   | 'childTranslationsJson___pl'
   | 'childTranslationsJson___en'
   | 'childTranslationsJson___seeDetails'
-  | 'childTranslationsJson___source';
+  | 'childTranslationsJson___source'
+  | 'childTranslationsJson___home';
 
 export type FileFilterInput = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -1364,9 +1366,9 @@ export type PollsJson = Node & {
   participantsMightVote?: Maybe<Scalars['Float']>;
   participantsUndecided?: Maybe<Scalars['Float']>;
   participantsMightNotVote?: Maybe<Scalars['Float']>;
+  error?: Maybe<Scalars['Int']>;
   participantsWillNotVote?: Maybe<Scalars['Float']>;
   participantsWillVote?: Maybe<Scalars['Float']>;
-  error?: Maybe<Scalars['Int']>;
 };
 
 
@@ -1619,9 +1621,9 @@ export type PollsJsonFieldsEnum =
   | 'participantsMightVote'
   | 'participantsUndecided'
   | 'participantsMightNotVote'
+  | 'error'
   | 'participantsWillNotVote'
-  | 'participantsWillVote'
-  | 'error';
+  | 'participantsWillVote';
 
 export type PollsJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -1641,9 +1643,9 @@ export type PollsJsonFilterInput = {
   participantsMightVote?: Maybe<FloatQueryOperatorInput>;
   participantsUndecided?: Maybe<FloatQueryOperatorInput>;
   participantsMightNotVote?: Maybe<FloatQueryOperatorInput>;
+  error?: Maybe<IntQueryOperatorInput>;
   participantsWillNotVote?: Maybe<FloatQueryOperatorInput>;
   participantsWillVote?: Maybe<FloatQueryOperatorInput>;
-  error?: Maybe<IntQueryOperatorInput>;
 };
 
 export type PollsJsonGroupConnection = {
@@ -2006,6 +2008,7 @@ export type QueryTranslationsJsonArgs = {
   internal?: Maybe<InternalFilterInput>;
   aboutUs?: Maybe<StringQueryOperatorInput>;
   newPoll?: Maybe<StringQueryOperatorInput>;
+  poll?: Maybe<StringQueryOperatorInput>;
   faq?: Maybe<StringQueryOperatorInput>;
   changeLanguage?: Maybe<StringQueryOperatorInput>;
   search?: Maybe<StringQueryOperatorInput>;
@@ -2014,6 +2017,7 @@ export type QueryTranslationsJsonArgs = {
   en?: Maybe<StringQueryOperatorInput>;
   seeDetails?: Maybe<StringQueryOperatorInput>;
   source?: Maybe<StringQueryOperatorInput>;
+  home?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2061,9 +2065,9 @@ export type QueryPollsJsonArgs = {
   participantsMightVote?: Maybe<FloatQueryOperatorInput>;
   participantsUndecided?: Maybe<FloatQueryOperatorInput>;
   participantsMightNotVote?: Maybe<FloatQueryOperatorInput>;
+  error?: Maybe<IntQueryOperatorInput>;
   participantsWillNotVote?: Maybe<FloatQueryOperatorInput>;
   participantsWillVote?: Maybe<FloatQueryOperatorInput>;
-  error?: Maybe<IntQueryOperatorInput>;
 };
 
 
@@ -2507,10 +2511,12 @@ export type SitePageConnectionGroupArgs = {
 };
 
 export type SitePageContext = {
+  id?: Maybe<Scalars['String']>;
   i18nCtx?: Maybe<SitePageContextI18nCtx>;
 };
 
 export type SitePageContextFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
   i18nCtx?: Maybe<SitePageContextI18nCtxFilterInput>;
 };
 
@@ -2541,6 +2547,7 @@ export type SitePageContextI18nCtxFilterInput = {
 export type SitePageContextI18nCtxTranslations = {
   aboutUs?: Maybe<Scalars['String']>;
   newPoll?: Maybe<Scalars['String']>;
+  poll?: Maybe<Scalars['String']>;
   faq?: Maybe<Scalars['String']>;
   changeLanguage?: Maybe<Scalars['String']>;
   search?: Maybe<Scalars['String']>;
@@ -2549,11 +2556,13 @@ export type SitePageContextI18nCtxTranslations = {
   en?: Maybe<Scalars['String']>;
   seeDetails?: Maybe<Scalars['String']>;
   source?: Maybe<Scalars['String']>;
+  home?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextI18nCtxTranslationsFilterInput = {
   aboutUs?: Maybe<StringQueryOperatorInput>;
   newPoll?: Maybe<StringQueryOperatorInput>;
+  poll?: Maybe<StringQueryOperatorInput>;
   faq?: Maybe<StringQueryOperatorInput>;
   changeLanguage?: Maybe<StringQueryOperatorInput>;
   search?: Maybe<StringQueryOperatorInput>;
@@ -2562,6 +2571,7 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   en?: Maybe<StringQueryOperatorInput>;
   seeDetails?: Maybe<StringQueryOperatorInput>;
   source?: Maybe<StringQueryOperatorInput>;
+  home?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2663,6 +2673,7 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___id'
   | 'context___i18nCtx___default'
   | 'context___i18nCtx___path'
   | 'context___i18nCtx___locale'
@@ -2673,6 +2684,7 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___defaultDescription'
   | 'context___i18nCtx___translations___aboutUs'
   | 'context___i18nCtx___translations___newPoll'
+  | 'context___i18nCtx___translations___poll'
   | 'context___i18nCtx___translations___faq'
   | 'context___i18nCtx___translations___changeLanguage'
   | 'context___i18nCtx___translations___search'
@@ -2681,6 +2693,7 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___en'
   | 'context___i18nCtx___translations___seeDetails'
   | 'context___i18nCtx___translations___source'
+  | 'context___i18nCtx___translations___home'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3119,6 +3132,7 @@ export type TranslationsJson = Node & {
   internal: Internal;
   aboutUs?: Maybe<Scalars['String']>;
   newPoll?: Maybe<Scalars['String']>;
+  poll?: Maybe<Scalars['String']>;
   faq?: Maybe<Scalars['String']>;
   changeLanguage?: Maybe<Scalars['String']>;
   search?: Maybe<Scalars['String']>;
@@ -3127,6 +3141,7 @@ export type TranslationsJson = Node & {
   en?: Maybe<Scalars['String']>;
   seeDetails?: Maybe<Scalars['String']>;
   source?: Maybe<Scalars['String']>;
+  home?: Maybe<Scalars['String']>;
 };
 
 export type TranslationsJsonConnection = {
@@ -3245,6 +3260,7 @@ export type TranslationsJsonFieldsEnum =
   | 'internal___type'
   | 'aboutUs'
   | 'newPoll'
+  | 'poll'
   | 'faq'
   | 'changeLanguage'
   | 'search'
@@ -3252,7 +3268,8 @@ export type TranslationsJsonFieldsEnum =
   | 'pl'
   | 'en'
   | 'seeDetails'
-  | 'source';
+  | 'source'
+  | 'home';
 
 export type TranslationsJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -3261,6 +3278,7 @@ export type TranslationsJsonFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   aboutUs?: Maybe<StringQueryOperatorInput>;
   newPoll?: Maybe<StringQueryOperatorInput>;
+  poll?: Maybe<StringQueryOperatorInput>;
   faq?: Maybe<StringQueryOperatorInput>;
   changeLanguage?: Maybe<StringQueryOperatorInput>;
   search?: Maybe<StringQueryOperatorInput>;
@@ -3269,6 +3287,7 @@ export type TranslationsJsonFilterInput = {
   en?: Maybe<StringQueryOperatorInput>;
   seeDetails?: Maybe<StringQueryOperatorInput>;
   source?: Maybe<StringQueryOperatorInput>;
+  home?: Maybe<StringQueryOperatorInput>;
 };
 
 export type TranslationsJsonGroupConnection = {
@@ -3285,11 +3304,6 @@ export type TranslationsJsonSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type AllPollsQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type AllPollsQueryQuery = { allPollsJson: { nodes: Array<PollInfoFragment> } };
-
 export type PartyInfoFragment = Pick<PartiesJson, 'id' | 'name' | 'abbr'>;
 
 export type PollCompanyInfoFragment = Pick<PollCompaniesJson, 'id' | 'name' | 'abbr'>;
@@ -3305,3 +3319,15 @@ export type PollInfoFragment = (
 );
 
 export type PublisherInfoFragment = Pick<PublishersJson, 'id' | 'name' | 'abbr'>;
+
+export type GetAllPollsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllPollsQuery = { allPollsJson: { nodes: Array<PollInfoFragment> } };
+
+export type GetPollInfoQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type GetPollInfoQuery = { allPollsJson: { nodes: Array<Pick<PollsJson, 'id' | 'method'>> } };

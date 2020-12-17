@@ -1,18 +1,18 @@
 import * as React from "react";
-import { useTranslation } from "react-i18next";
-import { Maybe } from "@graphql/types";
-import { routes } from "@routes";
+import { useTranslation } from "@i18n";
+import { useRoutes } from "@routes";
 import Icon from "@components/ui/icon";
 import Link from "@components/ui/link";
 import Tooltip from "@components/ui/tooltip";
 
 interface Props {
   pollId: string;
-  source?: Maybe<string>;
+  source?: string | null;
 }
 
 const PollCardFooter: React.FC<Props> = ({ pollId, source }) => {
   const { t } = useTranslation();
+  const { routes } = useRoutes();
 
   return (
     <div className="flex justify-between">

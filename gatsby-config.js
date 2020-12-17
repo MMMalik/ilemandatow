@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "ilemandatow",
     siteUrl: "https://www.ilemandatow.pl",
-    description: "Sondaże parlamentarne i nie tylko",
+    description: "Polskie sondaże parlamentarne i nie tylko",
   },
   plugins: [
     "gatsby-plugin-typescript",
@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-graphql-codegen",
       options: {
-        fileName: "./types/generated/gatsby-graphql.ts",
+        fileName: "./generated/graphql.ts",
         documentPaths: ["./src/**/*.{ts,tsx}"],
       },
     },
@@ -20,15 +20,23 @@ module.exports = {
         modulePath: "./src/cms/cms.ts",
       },
     },
-    "gatsby-transformer-json",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: "./content/",
+        path: "./content",
+        name: "content",
       },
     },
     {
-      resolve: `gatsby-plugin-netlify`,
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: "./locales/translations",
+        name: "translations",
+      },
+    },
+    "gatsby-transformer-json",
+    {
+      resolve: "gatsby-plugin-netlify",
       options: {
         headers: {
           "/*.(woff|woff2)": ["Cache-Control: public, max-age=31536000"],

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PollInfoFragment } from "@graphql/types";
+import { PollInfoFragment } from "@utils/types";
 import PollCard from "./PollCard";
 
 export type PollsView = "list" | "grid";

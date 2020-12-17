@@ -7,7 +7,7 @@ interface Props {
 
 const TopbarLink: React.FC<Props> = ({ to, children }) => {
   return (
-    <Link to={to} className="pa3">
+    <Link to={to} className="pa3 db">
       {children}
     </Link>
   );

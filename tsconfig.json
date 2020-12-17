@@ -17,12 +17,12 @@
       "@theme": ["./src/theme"],
       "@utils": ["./src/utils"],
       "@data": ["src/data"],
-      "@date": ["src/date"],
       "@constants": ["src/constants"],
-      "@graphql/types": ["./types/generated/gatsby-graphql.ts"],
+      "@i18n": ["src/i18n"],
+      "@utils/types": ["src/types"],
       "@components/*": ["./src/components/*"]
     }
   },
-  "include": ["./src/**/*", "./types/**/*"],
+  "include": ["./src/**/*", "src/types/**/*"],
   "exclude": ["./node_modules/*"]
 }

@@ -1,11 +1,24 @@
 import * as React from "react";
-import { useGetAllPolls } from "@data";
-import Page from "@components/layout/page";
+import { graphql } from "gatsby";
 import PollsToolbar from "@components/core/pollsToolbar";
 import Polls, { PollsView } from "@components/core/polls";
+import { GetAllPollsQuery } from "generated/graphql";
 
-const Index: React.FC = () => {
-  const polls = useGetAllPolls();
+export const query = graphql`
+  query getAllPolls {
+    allPollsJson {
+      nodes {
+        ...PollInfo
+      }
+    }
+  }
+`;
+
+interface Props {
+  data: GetAllPollsQuery;
+}
+
+const Index: React.FC<Props> = ({ data }) => {
   const [pollsView, setPollsView] = React.useState<PollsView>("grid");
 
   const handleGridViewClick = () => {
@@ -16,15 +29,7 @@ const Index: React.FC = () => {
     setPollsView("list");
   };
 
-  return (
-    <Page>
-      {/* <PollsToolbar
-        onGridViewClick={handleGridViewClick}
-        onListViewClick={handleListViewClick}
-      /> */}
-      <Polls pollsView={pollsView} polls={polls.allPollsJson.nodes} />
-    </Page>
-  );
+  return <Polls pollsView={pollsView} polls={data.allPollsJson.nodes} />;
 };
 
 export default Index;

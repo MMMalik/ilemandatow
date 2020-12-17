@@ -1,7 +1,6 @@
 import { useTheme } from "@theme";
 import * as React from "react";
 import ReactSelect from "react-select";
-import { ThemeConfig } from "react-select/src/theme";
 
 interface SelectOption {
   label: React.ReactNode;

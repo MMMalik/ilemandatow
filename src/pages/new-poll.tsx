@@ -1,9 +1,9 @@
 import { useTranslation } from "@i18n";
 import * as React from "react";
 
-const About: React.FC = () => {
+const NewPoll: React.FC = () => {
   const { t } = useTranslation();
-  return <>{t("aboutUs")}</>;
+  return <>{t("newPoll")}</>;
 };
 
-export default About;
+export default NewPoll;

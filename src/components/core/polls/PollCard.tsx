@@ -1,6 +1,6 @@
 import * as React from "react";
-import { useDateFormat } from "@date";
-import { PollInfoFragment } from "@graphql/types";
+import { useDateFormat } from "@i18n";
+import { PollInfoFragment } from "@utils/types";
 import Card from "@components/ui/card";
 import PollCardStats from "./PollCardStats";
 import PollCardFooter from "./PollCardFooter";
@@ -16,7 +16,7 @@ const PollCard: React.FC<Props> = ({ pollInfo }) => {
   return (
     <Card
       title={polledBy?.abbr ?? ""}
-      titleRightSide={format(new Date(publishedAt), "dd/MM/yyyy")}
+      titleRightSide={format(new Date(publishedAt))}
       footer={<PollCardFooter pollId={id} source={source} />}
     >
       <PollCardStats results={results} />
