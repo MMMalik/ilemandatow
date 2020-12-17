@@ -7,7 +7,7 @@ export const useRoutes = () => {
   const { pathname } = useLocation();
 
   const replaceCurrentRouteLang = (langKey: string) => {
-    return pathname.replace(`/${path}/`, `/${langKey}/`);
+    return pathname.replace(new RegExp(`^/${path}`, "gi"), `/${langKey}`);
   };
 
   return {
