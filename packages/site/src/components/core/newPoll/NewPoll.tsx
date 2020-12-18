@@ -3,7 +3,7 @@ import { dhondt } from "@ilemandatow/seats";
 
 const NewPoll: React.FC = () => {
   console.log({ dhondt: dhondt({ results: [], threshold: 5 }) });
-  return <div></div>;
+  return <div>{"Test"}</div>;
 };
 
 export default NewPoll;
