@@ -1,5 +1,4 @@
 import * as React from "react";
-import Select from "@components/ui/select";
 import Icon from "@components/ui/icon";
 import { useTheme } from "@theme";
 
@@ -26,14 +25,7 @@ const PollsToolbar: React.FC<Props> = ({
         </span>
       </div>
       <div className="flex items-center w-50 w-30-m w-20-l">
-        <div className="w-100">
-          <Select
-            options={[
-              { label: "Data publikacji: najwcześniej", value: "Value1" },
-              { label: "Data publikacji: najpóźniej", value: "Value2" },
-            ]}
-          />
-        </div>
+        <div className="w-100"></div>
       </div>
     </div>
   );

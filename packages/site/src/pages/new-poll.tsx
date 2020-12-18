@@ -1,9 +1,15 @@
 import { useTranslation } from "@i18n";
 import * as React from "react";
+import NewPoll from "@components/core/newPoll";
 
-const NewPoll: React.FC = () => {
+const NewPollPage: React.FC = () => {
   const { t } = useTranslation();
-  return <>{t("newPoll")}</>;
+  return (
+    <>
+      {t("newPoll")}
+      <NewPoll />
+    </>
+  );
 };
 
-export default NewPoll;
+export default NewPollPage;

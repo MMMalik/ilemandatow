@@ -12,7 +12,7 @@ collections:
     summary: "{{publishedAt}} / {{summary}}"
     sortable_fields: ["publishedAt"]
     label: "Polls"
-    folder: "content/polls"
+    folder: "packages/site/content/polls"
     create: true
     extension: json
     slug: "{{id}}"
@@ -148,7 +148,7 @@ collections:
     label: "Parties"
     summary: "{{name}}"
     sortable_fields: ["name"]
-    folder: "content/parties"
+    folder: "packages/site/content/parties"
     create: true
     extension: json
     slug: "{{id}}"
@@ -181,7 +181,7 @@ collections:
     identifier_field: id
     summary: "{{name}}"
     label: "Poll Companies"
-    folder: "content/pollCompanies"
+    folder: "packages/site/content/pollCompanies"
     create: true
     extension: json
     slug: "{{id}}"
@@ -194,7 +194,7 @@ collections:
     identifier_field: id
     summary: "{{name}}"
     label: "Publishers"
-    folder: "content/publishers"
+    folder: "packages/site/content/publishers"
     create: true
     extension: json
     slug: "{{id}}"

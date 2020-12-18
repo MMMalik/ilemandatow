@@ -4,12 +4,15 @@
   "workspaces": {
     "packages": [
       "packages/site",
-      "packages/seats"
+      "packages/seats",
+      "packages/cms"
     ]
   },
   "scripts": {
     "build": "lerna run build",
+    "clean": "lerna run clean",
     "lint": "eslint \"packages/**/src/**/*.{tsx,ts,js}\"",
+    "test": "lerna run test && yarn lint",
     "develop:cms": "cd packages/cms && yarn develop",
     "develop:site": "cd packages/site && yarn develop"
   },

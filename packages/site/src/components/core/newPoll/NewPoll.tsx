@@ -1,17 +1,8 @@
 import * as React from "react";
 import { dhondt } from "@ilemandatow/seats";
 
-interface Result {
-  name: string;
-  result: number;
-}
-
-interface Props {
-  results: Result[];
-  threshold: number;
-}
-
-const NewPoll: React.FC<Props> = () => {
+const NewPoll: React.FC = () => {
+  console.log({ dhondt: dhondt({ results: [], threshold: 5 }) });
   return <div></div>;
 };
 

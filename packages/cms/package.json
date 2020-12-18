@@ -11,7 +11,9 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "check-types": "tsc",
+    "test": "yarn check-types"
   },
   "dependencies": {
     "gatsby": "^2.29.1",
@@ -21,6 +23,7 @@
     "react-dom": "^16.4.0"
   },
   "devDependencies": {
-    "gatsby-plugin-netlify-cms": "^4.6.0"
+    "gatsby-plugin-netlify-cms": "^4.6.0",
+    "gatsby-plugin-typescript": "^2.9.0"
   }
 }

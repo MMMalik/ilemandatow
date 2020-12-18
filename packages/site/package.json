@@ -11,7 +11,9 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "check-types": "tsc",
+    "test": "yarn check-types"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
