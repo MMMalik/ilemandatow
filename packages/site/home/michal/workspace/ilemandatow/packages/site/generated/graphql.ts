@@ -643,13 +643,13 @@ export type FileFieldsEnum =
   | 'childPartiesJson___memberParties___party___children'
   | 'childPartiesJson___memberParties___party___memberParties'
   | 'childPartiesJson___memberParties___party___name'
-  | 'childPartiesJson___memberParties___party___abbr'
   | 'childPartiesJson___memberParties___party___fullName'
+  | 'childPartiesJson___memberParties___party___abbr'
   | 'childPartiesJson___memberParties___joinedAt'
   | 'childPartiesJson___memberParties___leftAt'
   | 'childPartiesJson___name'
-  | 'childPartiesJson___abbr'
   | 'childPartiesJson___fullName'
+  | 'childPartiesJson___abbr'
   | 'childPollCompaniesJson___id'
   | 'childPollCompaniesJson___parent___id'
   | 'childPollCompaniesJson___parent___parent___id'
@@ -755,8 +755,8 @@ export type FileFieldsEnum =
   | 'childPollsJson___results___party___children'
   | 'childPollsJson___results___party___memberParties'
   | 'childPollsJson___results___party___name'
-  | 'childPollsJson___results___party___abbr'
   | 'childPollsJson___results___party___fullName'
+  | 'childPollsJson___results___party___abbr'
   | 'childPollsJson___results___result'
   | 'childPollsJson___source'
   | 'childPollsJson___publishedBy___id'
@@ -778,9 +778,9 @@ export type FileFieldsEnum =
   | 'childPollsJson___participantsMightVote'
   | 'childPollsJson___participantsUndecided'
   | 'childPollsJson___participantsMightNotVote'
-  | 'childPollsJson___error'
   | 'childPollsJson___participantsWillNotVote'
   | 'childPollsJson___participantsWillVote'
+  | 'childPollsJson___error'
   | 'childPublishersJson___id'
   | 'childPublishersJson___parent___id'
   | 'childPublishersJson___parent___parent___id'
@@ -1013,8 +1013,8 @@ export type PartiesJson = Node & {
   internal: Internal;
   memberParties?: Maybe<Array<Maybe<PartiesJsonMemberParties>>>;
   name?: Maybe<Scalars['String']>;
-  abbr?: Maybe<Scalars['String']>;
   fullName?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
 };
 
 export type PartiesJsonConnection = {
@@ -1150,13 +1150,13 @@ export type PartiesJsonFieldsEnum =
   | 'memberParties___party___memberParties___joinedAt'
   | 'memberParties___party___memberParties___leftAt'
   | 'memberParties___party___name'
-  | 'memberParties___party___abbr'
   | 'memberParties___party___fullName'
+  | 'memberParties___party___abbr'
   | 'memberParties___joinedAt'
   | 'memberParties___leftAt'
   | 'name'
-  | 'abbr'
-  | 'fullName';
+  | 'fullName'
+  | 'abbr';
 
 export type PartiesJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -1165,8 +1165,8 @@ export type PartiesJsonFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
   fullName?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
 };
 
 export type PartiesJsonGroupConnection = {
@@ -1366,9 +1366,9 @@ export type PollsJson = Node & {
   participantsMightVote?: Maybe<Scalars['Float']>;
   participantsUndecided?: Maybe<Scalars['Float']>;
   participantsMightNotVote?: Maybe<Scalars['Float']>;
-  error?: Maybe<Scalars['Int']>;
   participantsWillNotVote?: Maybe<Scalars['Float']>;
   participantsWillVote?: Maybe<Scalars['Float']>;
+  error?: Maybe<Scalars['Int']>;
 };
 
 
@@ -1574,8 +1574,8 @@ export type PollsJsonFieldsEnum =
   | 'results___party___memberParties___joinedAt'
   | 'results___party___memberParties___leftAt'
   | 'results___party___name'
-  | 'results___party___abbr'
   | 'results___party___fullName'
+  | 'results___party___abbr'
   | 'results___result'
   | 'source'
   | 'publishedBy___id'
@@ -1621,9 +1621,9 @@ export type PollsJsonFieldsEnum =
   | 'participantsMightVote'
   | 'participantsUndecided'
   | 'participantsMightNotVote'
-  | 'error'
   | 'participantsWillNotVote'
-  | 'participantsWillVote';
+  | 'participantsWillVote'
+  | 'error';
 
 export type PollsJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -1643,9 +1643,9 @@ export type PollsJsonFilterInput = {
   participantsMightVote?: Maybe<FloatQueryOperatorInput>;
   participantsUndecided?: Maybe<FloatQueryOperatorInput>;
   participantsMightNotVote?: Maybe<FloatQueryOperatorInput>;
-  error?: Maybe<IntQueryOperatorInput>;
   participantsWillNotVote?: Maybe<FloatQueryOperatorInput>;
   participantsWillVote?: Maybe<FloatQueryOperatorInput>;
+  error?: Maybe<IntQueryOperatorInput>;
 };
 
 export type PollsJsonGroupConnection = {
@@ -2065,9 +2065,9 @@ export type QueryPollsJsonArgs = {
   participantsMightVote?: Maybe<FloatQueryOperatorInput>;
   participantsUndecided?: Maybe<FloatQueryOperatorInput>;
   participantsMightNotVote?: Maybe<FloatQueryOperatorInput>;
-  error?: Maybe<IntQueryOperatorInput>;
   participantsWillNotVote?: Maybe<FloatQueryOperatorInput>;
   participantsWillVote?: Maybe<FloatQueryOperatorInput>;
+  error?: Maybe<IntQueryOperatorInput>;
 };
 
 
@@ -2104,8 +2104,8 @@ export type QueryPartiesJsonArgs = {
   internal?: Maybe<InternalFilterInput>;
   memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
   fullName?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
 };
 
 

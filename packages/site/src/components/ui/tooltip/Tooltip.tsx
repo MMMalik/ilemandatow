@@ -1,6 +1,6 @@
 import * as React from "react";
 import { usePopper } from "react-popper";
-import { useTheme } from "@theme";
+import { useTheme } from "../../../theme";
 
 interface Props {
   title: string;

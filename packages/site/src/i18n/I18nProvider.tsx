@@ -1,5 +1,5 @@
 import * as React from "react";
-import { I18nCtx } from "@utils/types";
+import { I18nCtx } from "../types";
 import { I18nContext } from "./I18nContext";
 
 interface Props {

@@ -12,8 +12,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "check-types": "tsc",
-    "test": "yarn check-types"
+    "jest": "jest",
+    "check-types": "tsc"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -35,7 +35,6 @@
   "devDependencies": {
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-netlify": "^2.8.0",
-    "gatsby-plugin-tsconfig-paths": "^1.0.2",
     "gatsby-plugin-typescript": "^2.8.0",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-json": "^2.7.0"

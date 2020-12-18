@@ -1,5 +1,5 @@
 import { useLocation } from "@reach/router";
-import { useTranslation } from "@i18n";
+import { useTranslation } from "../i18n";
 import { getRoutes } from "./getRoutes";
 
 export const useRoutes = () => {

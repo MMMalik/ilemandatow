@@ -1,7 +1,7 @@
 import * as React from "react";
 import { WrapPageElementBrowserArgs } from "gatsby";
-import { PageContext } from "@utils/types";
-import I18nProvider from "@i18n";
+import { PageContext } from "../../types";
+import I18nProvider from "../../i18n";
 import Page from "../page";
 
 const wrapPageElement = ({

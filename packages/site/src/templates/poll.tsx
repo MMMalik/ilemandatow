@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { useTranslation } from "@i18n";
-import { GetPollInfoQuery } from "@utils/types";
+import { useTranslation } from "../i18n";
+import { GetPollInfoQuery } from "../types";
 
 export const query = graphql`
   query getPollInfo($id: String!) {

@@ -6,7 +6,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-typescript",
-    "gatsby-plugin-tsconfig-paths",
     {
       resolve: "gatsby-plugin-graphql-codegen",
       options: {

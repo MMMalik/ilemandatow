@@ -8,6 +8,8 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc"
+    "build": "tsc",
+    "jest": "jest",
+    "check-types": "tsc"
   }
 }

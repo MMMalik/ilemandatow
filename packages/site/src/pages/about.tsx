@@ -1,5 +1,5 @@
-import { useTranslation } from "@i18n";
 import * as React from "react";
+import { useTranslation } from "../i18n";
 
 const About: React.FC = () => {
   const { t } = useTranslation();

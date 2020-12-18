@@ -1,5 +1,5 @@
 import * as React from "react";
-import Icon, { IconProp } from "@components/ui/icon";
+import Icon, { IconProp } from "../icon";
 
 interface Props {
   onClick: () => void;

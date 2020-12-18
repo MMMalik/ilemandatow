@@ -12,11 +12,15 @@
     "build": "lerna run build",
     "clean": "lerna run clean",
     "lint": "eslint \"packages/**/src/**/*.{tsx,ts,js}\"",
-    "test": "lerna run test && yarn lint",
+    "test": "lerna run test && yarn jest && yarn lint",
     "develop:cms": "cd packages/cms && yarn develop",
     "develop:site": "cd packages/site && yarn develop"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/jest": "^26.0.19",
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -25,10 +29,10 @@
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-prettier": "^3.2.0",
+    "jest": "^26.6.3",
     "lerna": "^3.22.1",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "ts-node": "^9.1.1",
     "typescript": "^4.1.2"
   }
 }

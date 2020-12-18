@@ -1,8 +1,8 @@
 import * as React from "react";
-import { useTranslation } from "@i18n";
-import Tooltip from "@components/ui/tooltip";
-import { TopbarLink } from "@components/ui/topbar";
-import { useRoutes } from "@routes";
+import { useTranslation } from "../../i18n";
+import { useRoutes } from "../../routes";
+import Tooltip from "../../components/ui/tooltip";
+import { TopbarLink } from "../../components/ui/topbar";
 
 interface Props {
   withTooltip?: boolean;

@@ -1,4 +1,4 @@
-import { PollResultFragment } from "@utils/types";
+import { PollResultFragment } from "../../types";
 
 export const sortDataResults = (
   { result: result1 }: PollResultFragment,
