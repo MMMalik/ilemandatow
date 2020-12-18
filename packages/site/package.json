@@ -12,7 +12,6 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "jest": "jest",
     "check-types": "tsc"
   },
   "dependencies": {

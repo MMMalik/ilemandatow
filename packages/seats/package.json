@@ -9,7 +9,6 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
-    "jest": "jest",
     "check-types": "tsc"
   }
 }

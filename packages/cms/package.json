@@ -12,8 +12,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "check-types": "tsc",
-    "test": "yarn check-types"
+    "check-types": "tsc"
   },
   "dependencies": {
     "gatsby": "^2.29.1",
