@@ -34,8 +34,8 @@
   "devDependencies": {
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-netlify": "^2.8.0",
-    "gatsby-plugin-typescript": "^2.8.0",
-    "gatsby-source-filesystem": "^2.7.0",
-    "gatsby-transformer-json": "^2.7.0"
+    "gatsby-plugin-typescript": "^2.9.0",
+    "gatsby-source-filesystem": "^2.8.0",
+    "gatsby-transformer-json": "^2.8.0"
   }
 }
