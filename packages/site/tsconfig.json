@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@routes": ["./src/routes"],
+      "@theme": ["./src/theme"],
+      "@data": ["src/data"],
+      "@constants": ["src/constants"],
+      "@i18n": ["src/i18n"],
+      "@utils": ["./src/utils"],
+      "@utils/types": ["src/types"],
+      "@components/*": ["./src/components/*"]
+    }
+  }
+}
