@@ -1,10 +1,10 @@
-name: "Draft new release"
+name: "Create new release"
 
 on: workflow_dispatch
 
 jobs:
-  draft-new-release:
-    name: "Draft a new release"
+  create-new-release:
+    name: "Create a new release"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -16,7 +16,7 @@ jobs:
           git config user.email noreply@github.com
 
       - name: Bump version via lerna
-        run: yarn lerna version minor --no-git-tag-version --yes
+        run: npx lerna version minor --no-git-tag-version --yes
 
       - id: set_release_version
         name: Set release version
