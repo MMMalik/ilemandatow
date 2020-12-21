@@ -65,3 +65,11 @@ jobs:
           body: |
             Hi @${{ github.actor }}!
             This PR was created in response to a manual trigger of the release workflow here: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+
+      - name: Deploy main version to dev
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
+        with:
+          args: deploy --dir=packages/site/public --prod
