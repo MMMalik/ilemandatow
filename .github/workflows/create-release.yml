@@ -16,7 +16,7 @@ jobs:
           git config user.email noreply@github.com
 
       - name: Bump version via lerna
-        run: npx lerna version minor --no-git-tag-version --yes
+        run: npx lerna version minor --no-git-tag-version --conventional-commits --yes
 
       - id: set_lerna_json
         name: Set lerna json
