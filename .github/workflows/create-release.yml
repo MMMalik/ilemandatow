@@ -40,7 +40,7 @@ jobs:
       - name: Push new branch
         run: git push origin release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
 
-      - name: Create pull request
+      - name: Create pull request - main
         uses: thomaseizinger/create-pull-request@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -51,7 +51,17 @@ jobs:
           reviewers: ${{ github.actor }}
           body: |
             Hi @${{ github.actor }}!
-
             This PR was created in response to a manual trigger of the release workflow here: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
-            Merging this PR will create a GitHub release and upload any assets that are created as part of the release build.
+      - name: Create pull request - dev
+        uses: thomaseizinger/create-pull-request@1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          head: release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+          base: dev
+          title: Release version ${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+          reviewers: ${{ github.actor }}
+          body: |
+            Hi @${{ github.actor }}!
+            This PR was created in response to a manual trigger of the release workflow here: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
