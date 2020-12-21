@@ -40,7 +40,7 @@ jobs:
       - name: Push new branch
         run: git push origin release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
 
-      - name: Create pull request - main
+      - name: Create pull request to main for review
         uses: thomaseizinger/create-pull-request@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,18 +53,10 @@ jobs:
             Hi @${{ github.actor }}!
             This PR was created in response to a manual trigger of the release workflow here: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
-      - name: Create pull request - dev
-        uses: thomaseizinger/create-pull-request@1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          head: release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
-          base: dev
-          title: Release version ${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
-          reviewers: ${{ github.actor }}
-          body: |
-            Hi @${{ github.actor }}!
-            This PR was created in response to a manual trigger of the release workflow here: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+      - name: Merge back to dev
+        run: |
+          git checkout dev
+          git merge release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
 
       - name: Deploy main version to dev
         uses: netlify/actions/cli@master
