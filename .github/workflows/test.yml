@@ -4,23 +4,29 @@ on:
   pull_request:
     branches:
       - dev
+      - main
 
 jobs:
   test:
+    name: "Run tests"
     runs-on: ubuntu-latest
-
     steps:
-      # Get code from repo
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Install NodeJS
       - name: Use Node.js 12.x
         uses: actions/setup-node@v2
         with:
           node-version: "12"
 
-      # Run yarn install, build and test 
       - run: yarn install
       - run: yarn build
       - run: yarn test
+
+      - name: Deploy preview of main site to netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=packages/site/public
