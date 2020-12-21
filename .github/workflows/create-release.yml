@@ -16,7 +16,7 @@ jobs:
           git config user.email noreply@github.com
 
       - name: Bump version via lerna
-        run: lerna version minor --no-git-tag-version --yes
+        run: yarn lerna version minor --no-git-tag-version --yes
 
       - id: set_release_version
         name: Set release version
