@@ -1,5 +1,6 @@
 {
   "name": "@ilemandatow/ilemandatow",
+  "version": "0.1.0",
   "private": true,
   "workspaces": {
     "packages": [
