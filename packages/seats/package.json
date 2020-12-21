@@ -8,7 +8,6 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc",
-    "check-types": "tsc"
+    "build": "tsc"
   }
 }
