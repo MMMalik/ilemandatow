@@ -8,8 +8,4 @@ export const dark: Theme = {
   textOnPrimary: "light-gray",
   textMuted: "gray",
   textDisabled: "gray",
-  defs: {
-    primary: "#357EDD",
-    bgPrimary: "#333333",
-  },
 };
