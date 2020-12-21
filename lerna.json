@@ -1,17 +1,7 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "0.3.0",
-  "command": {
-    "version": {
-      "message": "chore(release): publish"
-    }
-  },
-  "ignoreChanges": [
-    "**/__tests__/**",
-    "**/*.md"
-  ]
+  "ignoreChanges": ["**/__tests__/**", "**/*.md"]
 }
