@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/seats",
-  "version": "0.0.0",
+  "version": "0.3.0",
   "description": "Calculates number of seats based on election results",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,6 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc",
-    "check-types": "tsc"
+    "build": "tsc"
   }
 }

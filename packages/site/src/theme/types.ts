@@ -6,5 +6,4 @@ export interface Theme {
   textOnPrimary: string;
   textMuted: string;
   textDisabled: string;
-  defs: { [key: string]: string };
 }
