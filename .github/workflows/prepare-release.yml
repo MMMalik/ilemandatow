@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "GitHub actions"
+          git config user.name "GitHub Action"
           git config user.email noreply@github.com
 
       - name: Bump version via lerna
@@ -32,22 +32,21 @@ jobs:
           echo "::set-output name=lernaJson::$content"
 
       - name: Create release branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git checkout -b release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
 
       - name: Commit versions
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add -A
           git commit --message "chore(release): prepare v${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}"
 
       - name: Push new branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git push origin release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          name: "GitHub Action"
+          email: noreply@github.com
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - run: git push origin release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
 
       - name: Create pull request to main for review
         uses: thomaseizinger/create-pull-request@1.0.0
