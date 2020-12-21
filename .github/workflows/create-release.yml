@@ -25,10 +25,11 @@ jobs:
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
-          echo "::set-output name=lernaJson::content"
+          echo "::set-output name=lernaJson::$content"
 
       - name: Create release branch
-        run: git checkout -b release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+        run: |
+          git checkout -b release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
 
       - name: Commit versions
         id: make-commit
