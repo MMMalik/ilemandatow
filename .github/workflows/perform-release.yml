@@ -1,17 +1,36 @@
-name: Deployment workflow
+name: "Perform release"
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
 
 jobs:
-  deploy:
-    name: Deployment workflow
+  create-new-release:
+    name: "Perform release"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Initialize mandatory git config
+        run: |
+          git config user.name "GitHub actions"
+          git config user.email noreply@github.com
+
+      - id: set_lerna_json
+        name: Set lerna json
+        run: |
+          content=`cat ./lerna.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=lernaJson::$content"
+
+      - name: Create and push new tag
+        run: |
+          git tag -a v${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }} -m "chore(release) next release"
+          git push --tags
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v2
@@ -28,7 +47,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         with:
           args: deploy --dir=packages/site/public --prod
-      
+
       - name: Deploy cms to netlify
         uses: netlify/actions/cli@master
         env:
