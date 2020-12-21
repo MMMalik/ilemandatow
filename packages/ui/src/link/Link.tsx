@@ -1,7 +1,7 @@
 import * as React from "react";
 import clsx from "clsx";
 import { Link as GatsbyLink } from "gatsby";
-import { useTheme } from "../../../theme";
+import { useTheme } from "../theme";
 
 interface Props {
   to: string;

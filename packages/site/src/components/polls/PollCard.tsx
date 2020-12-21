@@ -1,7 +1,7 @@
 import * as React from "react";
-import { useDateFormat } from "../../../i18n";
-import { PollInfoFragment } from "../../../types";
-import Card from "../../ui/card";
+import { Card } from "@ilemandatow/ui";
+import { useDateFormat } from "../../i18n";
+import { PollInfoFragment } from "../../types";
 import PollCardStats from "./PollCardStats";
 import PollCardFooter from "./PollCardFooter";
 

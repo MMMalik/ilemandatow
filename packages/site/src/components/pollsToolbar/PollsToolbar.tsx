@@ -1,6 +1,5 @@
 import * as React from "react";
-import Icon from "../../ui/icon";
-import { useTheme } from "../../../theme";
+import { Icon, useTheme } from "@ilemandatow/ui";
 
 interface Props {
   onListViewClick: () => void;

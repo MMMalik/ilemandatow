@@ -1,9 +1,12 @@
 import * as React from "react";
+import {
+  Tooltip,
+  TopbarAction,
+  TopbarIcon,
+  Icon,
+  useTheme,
+} from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
-import { useTheme } from "../../theme";
-import Tooltip from "../../components/ui/tooltip";
-import Icon from "../../components/ui/icon";
-import { TopbarAction, TopbarIcon } from "../../components/ui/topbar";
 
 interface Props {
   withTooltip?: boolean;

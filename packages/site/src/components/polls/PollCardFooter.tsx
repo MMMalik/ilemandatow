@@ -1,9 +1,7 @@
 import * as React from "react";
-import { useTranslation } from "../../../i18n";
-import { useRoutes } from "../../../routes";
-import Icon from "../../ui/icon";
-import Link from "../../ui/link";
-import Tooltip from "../../ui/tooltip";
+import { Icon, Link, Tooltip } from "@ilemandatow/ui";
+import { useTranslation } from "../../i18n";
+import { useRoutes } from "../../routes";
 
 interface Props {
   pollId: string;

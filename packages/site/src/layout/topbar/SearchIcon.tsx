@@ -1,7 +1,6 @@
 import * as React from "react";
+import { Tooltip, TopbarIcon } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
-import Tooltip from "../../components/ui/tooltip";
-import { TopbarIcon } from "../../components/ui/topbar";
 
 interface Props {
   toggleSearch: () => void;

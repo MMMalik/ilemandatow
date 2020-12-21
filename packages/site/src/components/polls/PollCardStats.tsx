@@ -1,8 +1,8 @@
 import * as React from "react";
-import { PollInfoFragment } from "../../../types";
-import { filterList, sortDataResults } from "../../../data";
-import { UNDECIDED_PARTY_ID } from "../../../constants";
-import Stats from "../../ui/stats";
+import { Stats } from "@ilemandatow/ui";
+import { PollInfoFragment } from "../../types";
+import { filterList, sortDataResults } from "../../data";
+import { UNDECIDED_PARTY_ID } from "../../constants";
 
 interface Props {
   results: PollInfoFragment["results"];

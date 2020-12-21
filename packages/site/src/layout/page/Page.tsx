@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useTheme } from "../../theme";
+import { useTheme } from "@ilemandatow/ui";
 import Topbar from "../topbar";
 
 const Page: React.FC = ({ children }) => {

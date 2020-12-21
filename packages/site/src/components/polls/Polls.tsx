@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PollInfoFragment } from "../../../types";
+import { PollInfoFragment } from "../../types";
 import PollCard from "./PollCard";
 
 export type PollsView = "list" | "grid";

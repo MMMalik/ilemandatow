@@ -1,7 +1,7 @@
 import * as React from "react";
+import { TopbarLink } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
 import { useRoutes } from "../../routes";
-import { TopbarLink } from "../../components/ui/topbar";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();

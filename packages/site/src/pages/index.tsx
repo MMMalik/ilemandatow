@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 // import PollsToolbar from "../components/core/pollsToolbar";
-import Polls, { PollsView } from "../components/core/polls";
+import Polls, { PollsView } from "../components/polls";
 import { GetAllPollsQuery } from "../types";
 
 export const query = graphql`

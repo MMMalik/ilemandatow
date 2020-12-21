@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useTheme } from "../../../theme";
+import { useTheme } from "../theme";
 import TopbarIcon from "./TopbarIcon";
 
 interface Props {
