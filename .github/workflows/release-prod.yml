@@ -1,4 +1,4 @@
-name: "Perform release"
+name: "Release prod"
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   create-new-release:
-    name: "Perform release"
+    name: "Finalize release and deploy prod"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
