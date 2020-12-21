@@ -1,12 +1,15 @@
 name: "Deploy dev"
 
 on:
+  create:
+    branches:
+      - "release/*"
   push:
     branches:
       - "release/*"
 
 jobs:
-  create-new-release:
+  deploy-dev:
     name: "Deploy dev"
     runs-on: ubuntu-latest
     steps:
