@@ -29,10 +29,10 @@ jobs:
 
       - name: Merge release branch to dev
         run: |
-          git checkout dev
-          git merge release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+          git checkout -b dev refs/remotes/origin/dev
+          git merge refs/remotes/origin/release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
           git push
 
       - name: Remove release branch
         run: |
-          git push origin --delete  release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+          git push origin --delete release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
