@@ -1,5 +1,5 @@
 import * as React from "react";
-import NewPoll from "../../src/components/core/newPoll";
+import NewPoll from "../../src/components/newPoll";
 
 describe("runs", () => {
   test("null", () => {

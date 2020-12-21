@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-graphql-codegen",
       options: {
-        fileName: `${__dirname}/generated/graphql.ts`,
+        fileName: `./generated/graphql.ts`,
         documentPaths: [`./src/**/*.{ts,tsx}`],
       },
     },

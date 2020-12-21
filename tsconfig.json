@@ -4,6 +4,7 @@
     "target": "es5",
     "moduleResolution": "node",
     "strict": true,
+    "importHelpers": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react"
   },

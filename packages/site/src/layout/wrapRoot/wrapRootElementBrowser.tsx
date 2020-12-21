@@ -1,6 +1,6 @@
 import * as React from "react";
 import { WrapPageElementBrowserArgs } from "gatsby";
-import ThemeProvider from "../../theme";
+import { ThemeProvider } from "@ilemandatow/ui";
 
 const wrapRootElementBrowser = ({ element }: WrapPageElementBrowserArgs) => {
   return <ThemeProvider>{element}</ThemeProvider>;

@@ -1,7 +1,7 @@
 import * as React from "react";
+import { Topbar, TopbarButtonLink } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
 import { useRoutes } from "../../routes";
-import Topbar, { TopbarButtonLink } from "../../components/ui/topbar";
 import AboutUs from "./AboutUs";
 import ThemeIcon from "./ThemeIcon";
 import LanguageIcon from "./LanguageIcon";
