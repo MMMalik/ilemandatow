@@ -1,0 +1,30 @@
+name: "Deploy dev"
+
+on:
+  push:
+    branches:
+      - "release/*"
+
+jobs:
+  create-new-release:
+    name: "Deploy dev"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+
+      - run: yarn install
+      - run: yarn build
+
+      - name: Deploy main site to netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
+        with:
+          args: deploy --dir=packages/site/public --prod
