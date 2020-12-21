@@ -1,0 +1,33 @@
+name: "Cleanup after release"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cleanup-after-release:
+    name: "Cleanup after release"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - id: set_lerna_json
+        name: Set lerna json
+        run: |
+          content=`cat ./lerna.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=lernaJson::$content"
+
+      - name: Merge release branch to dev
+        run: |
+          git checkout dev
+          git merge release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+          git push
+
+      - name: Remove release branch
+        run: |
+          git push origin --delete  release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}

@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  create-new-release:
+  release-prod:
     name: "Finalize release and deploy prod"
     runs-on: ubuntu-latest
     steps:
