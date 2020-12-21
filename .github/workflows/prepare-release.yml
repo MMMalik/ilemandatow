@@ -39,7 +39,7 @@ jobs:
           git commit --message "chore(release): prepare v${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}"
 
       - name: Push new branch
-        uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        uses: OleksiyRudenko/gha-git-credentials@v2
         with:
           name: "GitHub Action"
           email: noreply@github.com
