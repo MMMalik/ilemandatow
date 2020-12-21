@@ -16,6 +16,7 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email noreply@github.com
+          git config user.password ${{ secrets.GITHUB_TOKEN }}
 
       - name: Bump version via lerna
         run: npx lerna version minor --no-git-tag-version --conventional-commits --yes
@@ -37,13 +38,6 @@ jobs:
         run: |
           git add -A
           git commit --message "chore(release): prepare v${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}"
-
-      - name: Auth with a repo
-        uses: OleksiyRudenko/gha-git-credentials@v2
-        with:
-          name: "GitHub Action"
-          email: noreply@github.com
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push release branch
         run: |
