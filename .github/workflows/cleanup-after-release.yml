@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Fetch all branches
         run: |
           git remote set-branches origin '*'
           git fetch -v
@@ -32,6 +34,7 @@ jobs:
 
       - name: Merge release branch to dev
         run: |
+          git checkout release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
           git checkout dev
           git merge release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
           git push
