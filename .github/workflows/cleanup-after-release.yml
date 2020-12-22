@@ -12,8 +12,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          ref: dev
+        run: |
+          git remote set-branches origin '*'
+          git fetch -v
 
       - name: Initialize git config
         run: |
@@ -31,7 +32,8 @@ jobs:
 
       - name: Merge release branch to dev
         run: |
-          git pull origin release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+          git checkout dev
+          git merge release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
           git push
 
       - name: Remove release branch
