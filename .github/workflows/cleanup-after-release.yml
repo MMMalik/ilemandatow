@@ -34,6 +34,7 @@ jobs:
 
       - name: Merge release branch to dev
         run: |
+          git checkout release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
           git checkout dev
           git merge release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
           git push
