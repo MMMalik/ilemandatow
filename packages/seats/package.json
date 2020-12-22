@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/seats",
-  "version": "0.14.0",
+  "version": "0.0.0",
   "description": "Calculates number of seats based on election results",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
