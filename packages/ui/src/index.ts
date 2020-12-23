@@ -4,8 +4,14 @@ export { default as Card } from "./card";
 export * from "./icon";
 export { default as Icon } from "./icon";
 
+export * from "./footer";
+export { default as Footer } from "./footer";
+
 export * from "./link";
 export { default as Link } from "./link";
+
+export * from "./pageWrapper";
+export { default as PageWrapper } from "./pageWrapper";
 
 export * from "./stats";
 export { default as Stats } from "./stats";

@@ -1,17 +1,13 @@
 import * as React from "react";
-import { useTheme } from "@ilemandatow/ui";
+import { PageWrapper } from "@ilemandatow/ui";
 import Topbar from "../topbar";
+import Footer from "../footer";
 
 const Page: React.FC = ({ children }) => {
-  const { theme } = useTheme();
-  const { textPrimary, bgSecondary } = theme;
-
   return (
-    <div className={`${textPrimary} bg-${bgSecondary}`}>
-      <Topbar />
-      <div className="pa3 pa4-m pa5-l">{children}</div>
-      <footer></footer>
-    </div>
+    <PageWrapper topbar={<Topbar />} footer={<Footer />}>
+      {children}
+    </PageWrapper>
   );
 };
 

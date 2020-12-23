@@ -8,6 +8,7 @@ interface Props {
   external?: boolean;
   className?: string;
   btn?: boolean;
+  primary?: boolean;
 }
 
 const Link: React.FC<Props> = ({
@@ -16,12 +17,17 @@ const Link: React.FC<Props> = ({
   className,
   btn = false,
   external = false,
+  primary = false,
 }) => {
   const { theme } = useTheme();
-  const { primary, textOnPrimary } = theme;
+  const { primary: primaryColor, textPrimary, textOnPrimary } = theme;
   const cls = clsx(
     className,
-    btn ? `${textOnPrimary} bg-${primary}` : primary,
+    btn
+      ? `${textOnPrimary} bg-${primaryColor}`
+      : primary
+      ? primaryColor
+      : textPrimary,
     "link dim"
   );
 

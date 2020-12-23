@@ -870,7 +870,8 @@ export type FileFieldsEnum =
   | 'childTranslationsJson___en'
   | 'childTranslationsJson___seeDetails'
   | 'childTranslationsJson___source'
-  | 'childTranslationsJson___home';
+  | 'childTranslationsJson___home'
+  | 'childTranslationsJson___privacy';
 
 export type FileFilterInput = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -2020,6 +2021,7 @@ export type QueryTranslationsJsonArgs = {
   seeDetails?: Maybe<StringQueryOperatorInput>;
   source?: Maybe<StringQueryOperatorInput>;
   home?: Maybe<StringQueryOperatorInput>;
+  privacy?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2367,6 +2369,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___siteUrl'
+  | 'siteMetadata___repoUrl'
+  | 'siteMetadata___appVersion'
   | 'port'
   | 'host'
   | 'polyfill'
@@ -2565,6 +2569,7 @@ export type SitePageContextI18nCtxTranslations = {
   seeDetails?: Maybe<Scalars['String']>;
   source?: Maybe<Scalars['String']>;
   home?: Maybe<Scalars['String']>;
+  privacy?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextI18nCtxTranslationsFilterInput = {
@@ -2580,6 +2585,7 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   seeDetails?: Maybe<StringQueryOperatorInput>;
   source?: Maybe<StringQueryOperatorInput>;
   home?: Maybe<StringQueryOperatorInput>;
+  privacy?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2702,6 +2708,7 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___seeDetails'
   | 'context___i18nCtx___translations___source'
   | 'context___i18nCtx___translations___home'
+  | 'context___i18nCtx___translations___privacy'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3103,12 +3110,16 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   siteUrl?: Maybe<Scalars['String']>;
+  repoUrl?: Maybe<Scalars['String']>;
+  appVersion?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   siteUrl?: Maybe<StringQueryOperatorInput>;
+  repoUrl?: Maybe<StringQueryOperatorInput>;
+  appVersion?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -3146,6 +3157,7 @@ export type TranslationsJson = Node & {
   seeDetails?: Maybe<Scalars['String']>;
   source?: Maybe<Scalars['String']>;
   home?: Maybe<Scalars['String']>;
+  privacy?: Maybe<Scalars['String']>;
 };
 
 export type TranslationsJsonConnection = {
@@ -3273,7 +3285,8 @@ export type TranslationsJsonFieldsEnum =
   | 'en'
   | 'seeDetails'
   | 'source'
-  | 'home';
+  | 'home'
+  | 'privacy';
 
 export type TranslationsJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -3292,6 +3305,7 @@ export type TranslationsJsonFilterInput = {
   seeDetails?: Maybe<StringQueryOperatorInput>;
   source?: Maybe<StringQueryOperatorInput>;
   home?: Maybe<StringQueryOperatorInput>;
+  privacy?: Maybe<StringQueryOperatorInput>;
 };
 
 export type TranslationsJsonGroupConnection = {
@@ -3323,6 +3337,11 @@ export type PollInfoFragment = (
 );
 
 export type PublisherInfoFragment = Pick<PublishersJson, 'id' | 'name' | 'abbr'>;
+
+export type GetSiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetSiteMetaDataQuery = { allSite: { nodes: Array<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'appVersion' | 'description' | 'siteUrl' | 'repoUrl' | 'title'>> }> } };
 
 export type GetAllPollsQueryVariables = Exact<{ [key: string]: never; }>;
 

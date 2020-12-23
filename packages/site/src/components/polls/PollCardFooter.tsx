@@ -16,12 +16,14 @@ const PollCardFooter: React.FC<Props> = ({ pollId, source }) => {
     <div className="flex justify-between">
       {source && (
         <Tooltip title={t("source")}>
-          <Link to={source} external={true}>
+          <Link to={source} external={true} primary={true}>
             <Icon icon="external-link-alt" />
           </Link>
         </Tooltip>
       )}
-      <Link to={routes.poll.link(pollId)}>{t("seeDetails")}</Link>
+      <Link to={routes.poll.link(pollId)} primary={true}>
+        {t("seeDetails")}
+      </Link>
     </div>
   );
 };
