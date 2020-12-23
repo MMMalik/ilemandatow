@@ -1,9 +1,6 @@
 name: "Deploy dev"
 
 on:
-  create:
-    branches:
-      - "release/*"
   push:
     branches:
       - "release/*"
