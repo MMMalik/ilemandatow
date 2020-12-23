@@ -1,2 +1,3 @@
 export * from "./filterList";
-export * from "./sortDataResults";
+export * from "./filterPollResults";
+export * from "./sortPollResults";

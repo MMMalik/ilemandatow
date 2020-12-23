@@ -3334,4 +3334,4 @@ export type GetPollInfoQueryVariables = Exact<{
 }>;
 
 
-export type GetPollInfoQuery = { allPollsJson: { nodes: Array<Pick<PollsJson, 'id' | 'method'>> } };
+export type GetPollInfoQuery = { allPollsJson: { nodes: Array<PollInfoFragment> } };
