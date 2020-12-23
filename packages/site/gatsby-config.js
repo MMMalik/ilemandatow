@@ -1,8 +1,12 @@
+const pkg = require("./package.json");
+
 module.exports = {
   siteMetadata: {
     title: "ilemandatow",
     siteUrl: "https://www.ilemandatow.pl",
+    repoUrl: "https://github.com/mmmalik/ilemandatow",
     description: "Polskie sondaże parlamentarne i nie tylko",
+    appVersion: pkg.version,
   },
   plugins: [
     "gatsby-plugin-typescript",

@@ -17,5 +17,8 @@ export const getRoutes = (langPath = "") => {
     about: {
       link: () => `${baseLink}/about`,
     },
+    privacy: {
+      link: () => `${baseLink}/privacy`,
+    },
   };
 };
