@@ -9,7 +9,8 @@
   "scripts": {
     "cleanup": "rimraf dist",
     "build": "yarn cleanup && tsc",
-    "build:watch": "yarn cleanup && tsc --watch"
+    "build:watch": "yarn cleanup && tsc --watch",
+    "storybook": "start-storybook"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -19,6 +20,12 @@
     "clsx": "^1.1.1",
     "fontsource-lato": "^3.0.9",
     "gatsby": "^2.29.1",
-    "tachyons": "^4.12.0"
+    "tachyons": "^4.12.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^6.1.11",
+    "@storybook/react": "^6.1.11"
   }
 }
