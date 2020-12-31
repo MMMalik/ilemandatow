@@ -72,3 +72,6 @@ yarn-error.log
 
 # Build folders
 dist
+
+# Editor config
+.vscode
