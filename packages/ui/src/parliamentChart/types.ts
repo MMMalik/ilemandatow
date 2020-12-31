@@ -12,6 +12,8 @@ export interface ParliamentChartInput {
   seats: ParliamentChartParty[];
   opts: ParliamentChartOpts;
   totalSeats: number;
+  translateX: number;
+  translateY: number;
 }
 
 export interface ParliamentChartRow {
