@@ -24,7 +24,7 @@ const Chart: React.FC<Props> = ({ parties, totalSeats, innerR }) => {
       {groupedParties.map((groupedParty) => {
         return (
           <Party
-            key={groupedParty.party.label}
+            key={groupedParty.party.id}
             groupedParty={groupedParty}
             offset={vBoxMax / 2}
           />

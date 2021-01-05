@@ -45,7 +45,7 @@ export const getSeatsCoords = ({
           x,
           y,
           r: seatR,
-          label: partySeats[i]?.[j],
+          id: partySeats[i]?.[j],
         };
       });
     })
@@ -55,7 +55,7 @@ export const getSeatsCoords = ({
     groupedParties: parties.map((party) => {
       return {
         party,
-        seats: flattened.filter((seat) => seat.label === party.label),
+        seats: flattened.filter((seat) => seat.id === party.id),
       };
     }),
     maxX,

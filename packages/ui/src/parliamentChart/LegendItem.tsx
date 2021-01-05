@@ -7,7 +7,7 @@ interface Props {
 
 const LegendItem: React.FC<Props> = ({ label, backgroundColor }) => {
   return (
-    <div key={label} className="flex items-center ma2">
+    <div className="flex items-center ma2">
       <div
         className="ma1 br1"
         style={{

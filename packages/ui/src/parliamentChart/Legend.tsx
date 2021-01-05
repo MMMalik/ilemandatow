@@ -9,8 +9,8 @@ interface Props {
 const Legend: React.FC<Props> = ({ parties }) => {
   return (
     <div className="flex flex-wrap justify-center">
-      {parties.map(({ label, fill }) => {
-        return <LegendItem key={label} label={label} backgroundColor={fill} />;
+      {parties.map(({ id, label, fill }) => {
+        return <LegendItem key={id} label={label} backgroundColor={fill} />;
       })}
     </div>
   );

@@ -19,7 +19,11 @@ export interface ParliamentChartParty {
    */
   seats: number;
   /**
-   * Party unique label.
+   * Party's unique id.
+   */
+  id: string;
+  /**
+   * Party's label.
    */
   label: string;
 }
@@ -53,9 +57,9 @@ export interface ParliamentChartSeat {
    */
   r: number;
   /**
-   * Party's unique label.
+   * Party's unique id.
    */
-  label: string;
+  id: string;
 }
 
 export interface ParliamentGroupedParty {
