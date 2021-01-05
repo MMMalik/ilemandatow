@@ -14,28 +14,10 @@ const ParliamentChart: React.FC<Props> = ({
   parties,
   innerR = 50,
 }) => {
-  const [hoveredPartyId, setHoveredPartyId] = React.useState<
-    string | undefined
-  >(undefined);
-
-  const handleItemHover = (id?: string) => {
-    setHoveredPartyId(id);
-  };
-
   return (
     <div>
-      <Chart
-        hoveredPartyId={hoveredPartyId}
-        onItemHover={handleItemHover}
-        parties={parties}
-        totalSeats={totalSeats}
-        innerR={innerR}
-      />
-      <Legend
-        parties={parties}
-        hoveredPartyId={hoveredPartyId}
-        onItemHover={handleItemHover}
-      />
+      <Chart parties={parties} totalSeats={totalSeats} innerR={innerR} />
+      <Legend parties={parties} />
     </div>
   );
 };
