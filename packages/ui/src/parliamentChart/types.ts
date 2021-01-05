@@ -19,7 +19,7 @@ export interface ParliamentChartParty {
    */
   seats: number;
   /**
-   * Party label.
+   * Party unique label.
    */
   label: string;
 }
@@ -53,16 +53,21 @@ export interface ParliamentChartSeat {
    */
   r: number;
   /**
-   * Seat's fill.
+   * Party's unique label.
    */
-  fill: string;
+  label: string;
+}
+
+export interface ParliamentGroupedParty {
+  seats: ParliamentChartSeat[];
+  party: ParliamentChartParty;
 }
 
 export interface ParliamentChart {
   /**
-   * List of seats.
+   * List of parties seats coords.
    */
-  rows: ParliamentChartSeat[][];
+  groupedParties: ParliamentGroupedParty[];
   /**
    * Max value of x coordinate among seats.
    */

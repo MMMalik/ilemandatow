@@ -27,30 +27,37 @@ export const getSeatsCoords = ({
 
   let maxX = 0;
 
-  const rows = seatsPerRow.map((numberOfSeats, i) => {
-    const deltaRads = Math.PI / (numberOfSeats - 1);
-    const initX = -innerR - seatR * 3 * i;
-    const initY = 0;
+  const flattened = seatsPerRow
+    .map((numberOfSeats, i) => {
+      const deltaRads = Math.PI / (numberOfSeats - 1);
+      const initX = -innerR - seatR * 3 * i;
+      const initY = 0;
 
-    return Array.from({ length: numberOfSeats }).map((_, j) => {
-      const nextRads = deltaRads * j;
-      const x = initX * Math.cos(nextRads) + initY * Math.sin(nextRads);
-      const y = initY * Math.cos(nextRads) + initX * Math.sin(nextRads);
+      return Array.from({ length: numberOfSeats }).map((_, j) => {
+        const nextRads = deltaRads * j;
+        const x = initX * Math.cos(nextRads) + initY * Math.sin(nextRads);
+        const y = initY * Math.cos(nextRads) + initX * Math.sin(nextRads);
 
-      // Side-effect: assign max x coord
-      maxX = x > maxX ? x : maxX;
+        // Side-effect: assign max x coord
+        maxX = x > maxX ? x : maxX;
 
-      return {
-        x,
-        y,
-        r: seatR,
-        fill: partySeats[i]?.[j] ?? "black",
-      };
-    });
-  });
+        return {
+          x,
+          y,
+          r: seatR,
+          label: partySeats[i]?.[j],
+        };
+      });
+    })
+    .reduce((acc, g) => acc.concat(g), []);
 
   return {
-    rows,
+    groupedParties: parties.map((party) => {
+      return {
+        party,
+        seats: flattened.filter((seat) => seat.label === party.label),
+      };
+    }),
     maxX,
   };
 };

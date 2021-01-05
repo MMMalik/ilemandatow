@@ -1,6 +1,7 @@
 import * as React from "react";
-import { getSeatsCoords } from "./getSeatsCoords";
 import { ParliamentChartParty } from "./types";
+import Chart from "./Chart";
+import Legend from "./Legend";
 
 interface Props {
   parties: ParliamentChartParty[];
@@ -13,40 +14,29 @@ const ParliamentChart: React.FC<Props> = ({
   parties,
   innerR = 50,
 }) => {
-  const { rows, maxX } = getSeatsCoords({
-    parties,
-    totalSeats,
-    opts: {
-      innerR,
-    },
-  });
+  const [hoveredPartyId, setHoveredPartyId] = React.useState<
+    string | undefined
+  >(undefined);
 
-  const vBoxMax = maxX * 2 * 1.2;
+  const handleItemHover = (id?: string) => {
+    setHoveredPartyId(id);
+  };
 
   return (
-    <svg
-      viewBox={`0 0 ${vBoxMax} ${vBoxMax * 0.75}`}
-      width="100%"
-      height="100%"
-    >
-      {rows.map((row, i) => {
-        return (
-          <g key={i}>
-            {row.map(({ x, y, r, fill }, j) => {
-              return (
-                <circle
-                  key={j}
-                  style={{ fill }}
-                  cx={x + vBoxMax / 2}
-                  cy={y + vBoxMax / 2}
-                  r={r}
-                />
-              );
-            })}
-          </g>
-        );
-      })}
-    </svg>
+    <div>
+      <Chart
+        hoveredPartyId={hoveredPartyId}
+        onItemHover={handleItemHover}
+        parties={parties}
+        totalSeats={totalSeats}
+        innerR={innerR}
+      />
+      <Legend
+        parties={parties}
+        hoveredPartyId={hoveredPartyId}
+        onItemHover={handleItemHover}
+      />
+    </div>
   );
 };
 

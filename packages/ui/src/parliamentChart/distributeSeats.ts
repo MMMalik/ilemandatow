@@ -18,7 +18,7 @@ export const distributeSeats = (
   );
   const rowsTracker = [...seatsPerRow];
 
-  const result = parties.map(({ seats, label, fill }) => {
+  const result = parties.map(({ seats, label }) => {
     const partyResult = seatsPerRow.map((numberOfSeats, i) => {
       const seatsLeft = seatsTracker[label].seats;
       const rowSeatsLeft = rowsTracker[i];
@@ -33,7 +33,7 @@ export const distributeSeats = (
 
       return {
         rowSeats,
-        fill,
+        label,
       };
     });
 
@@ -60,7 +60,7 @@ export const distributeSeats = (
     return result.reduce((acc, r) => {
       const row = r[i];
       return acc.concat(
-        Array.from({ length: row.rowSeats }).map(() => row.fill)
+        Array.from({ length: row.rowSeats }).map(() => row.label)
       );
     }, [] as string[]);
   });
