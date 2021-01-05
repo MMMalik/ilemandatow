@@ -7,6 +7,19 @@ export const Template = (args) => <ParliamentChart {...args} />;
 
 # Parliament Chart
 
-<Story name="Main" args={{ test: false }}>
+<Story
+  name="Main"
+  args={{
+    innerR: 90,
+    totalSeats: 460,
+    parties: [
+      { label: "1", fill: "blue", seats: 150 },
+      { label: "2", fill: "red", seats: 50 },
+      { label: "3", fill: "yellow", seats: 10 },
+      { label: "4", fill: "pink", seats: 50 },
+      { label: "5", fill: "magenta", seats: 200 },
+    ],
+  }}
+>
   {Template.bind({})}
 </Story>

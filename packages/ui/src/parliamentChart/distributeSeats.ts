@@ -39,7 +39,10 @@ export const distributeSeats = (
 
     // Due to rounding, some seats might be not assigned.
     // Assign them to each row, starting from the lowest.
-    while (seatsTracker[label].seats > 0) {
+    while (
+      seatsTracker[label].seats > 0 &&
+      rowsTracker.reduce((acc, n) => acc + n, 0) > 0
+    ) {
       for (let i = rowsTracker.length - 1; i >= 0; i--) {
         if (rowsTracker[i] > 0 && seatsTracker[label].seats > 0) {
           // Side-effects: keep track of assigned seats

@@ -1,31 +1,47 @@
 import * as React from "react";
 import { getSeatsCoords } from "./getSeatsCoords";
+import { ParliamentChartParty } from "./types";
 
-const ParliamentChart: React.FC = () => {
+interface Props {
+  parties: ParliamentChartParty[];
+  totalSeats: number;
+  innerR?: number;
+}
+
+const ParliamentChart: React.FC<Props> = ({
+  totalSeats,
+  parties,
+  innerR = 50,
+}) => {
+  const { rows, maxX } = getSeatsCoords({
+    parties,
+    totalSeats,
+    opts: {
+      innerR,
+    },
+  });
+
+  const vBoxMax = maxX * 2 * 1.2;
+
   return (
-    <svg viewBox="0 0 800 400" width="500px">
-      {getSeatsCoords({
-        parties: [
-          { label: "1", fill: "blue", seats: 149 },
-          { label: "2", fill: "red", seats: 45 },
-          { label: "2.5", fill: "green", seats: 5 },
-          { label: "3", fill: "yellow", seats: 10 },
-          { label: "4", fill: "pink", seats: 50 },
-          { label: "1.5", fill: "silver", seats: 3 },
-          { label: "5", fill: "magenta", seats: 198 },
-        ],
-        totalSeats: 460,
-        opts: {
-          innerR: 50,
-          seatR: 5.5,
-          translateX: 400,
-          translateY: 300,
-        },
-      }).map((row, i) => {
+    <svg
+      viewBox={`0 0 ${vBoxMax} ${vBoxMax * 0.75}`}
+      width="100%"
+      height="100%"
+    >
+      {rows.map((row, i) => {
         return (
           <g key={i}>
             {row.map(({ x, y, r, fill }, j) => {
-              return <circle key={j} style={{ fill }} cx={x} cy={y} r={r} />;
+              return (
+                <circle
+                  key={j}
+                  style={{ fill }}
+                  cx={x + vBoxMax / 2}
+                  cy={y + vBoxMax / 2}
+                  r={r}
+                />
+              );
             })}
           </g>
         );

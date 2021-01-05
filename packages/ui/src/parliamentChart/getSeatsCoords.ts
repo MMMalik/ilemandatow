@@ -3,14 +3,12 @@ import { getSeatsPerRow } from "./getSeatsPerRow";
 import {
   ParliamentChartInput,
   ParliamentChartOpts,
-  ParliamentChartRows,
+  ParliamentChart,
 } from "./types";
 
 const defaultOpts: Required<ParliamentChartOpts> = {
   innerR: 20,
   seatR: 5,
-  translateX: 0,
-  translateY: 0,
 };
 
 /**
@@ -22,12 +20,14 @@ export const getSeatsCoords = ({
   parties,
   totalSeats,
   opts,
-}: ParliamentChartInput): ParliamentChartRows => {
-  const { innerR, seatR, translateX, translateY } = { ...defaultOpts, ...opts };
+}: ParliamentChartInput): ParliamentChart => {
+  const { innerR, seatR } = { ...defaultOpts, ...opts };
   const seatsPerRow = getSeatsPerRow(innerR, seatR, totalSeats);
   const partySeats = distributeSeats(parties, seatsPerRow, totalSeats);
 
-  return seatsPerRow.map((numberOfSeats, i) => {
+  let maxX = 0;
+
+  const rows = seatsPerRow.map((numberOfSeats, i) => {
     const deltaRads = Math.PI / (numberOfSeats - 1);
     const initX = -innerR - seatR * 3 * i;
     const initY = 0;
@@ -36,12 +36,21 @@ export const getSeatsCoords = ({
       const nextRads = deltaRads * j;
       const x = initX * Math.cos(nextRads) + initY * Math.sin(nextRads);
       const y = initY * Math.cos(nextRads) + initX * Math.sin(nextRads);
+
+      // Side-effect: assign max x coord
+      maxX = x > maxX ? x : maxX;
+
       return {
-        x: x + translateX,
-        y: y + translateY,
+        x,
+        y,
         r: seatR,
         fill: partySeats[i]?.[j] ?? "black",
       };
     });
   });
+
+  return {
+    rows,
+    maxX,
+  };
 };

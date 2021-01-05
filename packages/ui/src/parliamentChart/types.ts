@@ -7,14 +7,6 @@ export interface ParliamentChartOpts {
    * Radius of a seat circle.
    */
   seatR?: number;
-  /**
-   * Translates seat by a given value (x axis).
-   */
-  translateX?: number;
-  /*
-   * Translates seat by a given value (y axis).
-   */
-  translateY?: number;
 }
 
 export interface ParliamentChartParty {
@@ -66,4 +58,13 @@ export interface ParliamentChartSeat {
   fill: string;
 }
 
-export type ParliamentChartRows = ParliamentChartSeat[][];
+export interface ParliamentChart {
+  /**
+   * List of seats.
+   */
+  rows: ParliamentChartSeat[][];
+  /**
+   * Max value of x coordinate among seats.
+   */
+  maxX: number;
+}
