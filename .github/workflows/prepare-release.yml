@@ -70,7 +70,7 @@ jobs:
             Hi @${{ github.actor }}!
             This PR was created in response to a manual trigger of the release workflow here: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
-      - run: yarn cross-env ILEMANDATOW_ACTIVE_ENV=development build
+      - run: yarn build
 
       - name: Deploy main site to netlify (development)
         run: |

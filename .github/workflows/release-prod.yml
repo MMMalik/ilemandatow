@@ -57,7 +57,7 @@ jobs:
           node-version: "12"
 
       - run: yarn install
-      - run: yarn cross-env ILEMANDATOW_ACTIVE_ENV=production build
+      - run: ILEMANDATOW_ACTIVE_ENV=production yarn build
 
       - name: Deploy main site to netlify (production)
         run: |
