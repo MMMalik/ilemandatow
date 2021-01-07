@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: meta.siteUrl,
+        host: meta.host,
         sitemap: meta.siteMap,
         resolveEnv: () => meta.activeEnv,
         env: {
