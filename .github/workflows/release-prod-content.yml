@@ -1,15 +1,21 @@
-name: "Release content"
+#
+# This workflow is responsible for deploying new content to production site on Netlify.
+#
+
+name: Deploy new content to prod
 
 on:
   push:
     branches:
+      # Production branch
       - main
     paths:
-      - "packages/content/**"
+      # Trigger only for the following paths
+      - packages/content/**
 
 jobs:
-  release-prod:
-    name: "Deploy new content to prod"
+  release-prod-content:
+    name: Deploy new content to prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -23,9 +29,9 @@ jobs:
       - run: yarn install
       - run: yarn build
 
-      - name: Deploy main site to netlify
+      - name: Deploy main site to netlify (production)
         run: |
           yarn netlify deploy --dir=packages/site/public --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
