@@ -1,14 +1,15 @@
-name: "Deploy dev"
+name: "Release content"
 
 on:
   push:
     branches:
-      - polls
-      - "release/*"
+      - main
+    paths:
+      - "packages/content/**"
 
 jobs:
-  deploy-dev:
-    name: "Deploy dev"
+  release-prod:
+    name: "Deploy new content to prod"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -26,6 +27,6 @@ jobs:
         uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         with:
           args: deploy --dir=packages/site/public --prod
