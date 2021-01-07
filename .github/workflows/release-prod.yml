@@ -48,17 +48,15 @@ jobs:
       - run: yarn build
 
       - name: Deploy main site to netlify
-        uses: netlify/actions/cli@master
+        run: |
+          yarn netlify deploy --dir=packages/site/public --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        with:
-          args: deploy --dir=packages/site/public --prod
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
 
       - name: Deploy cms to netlify
-        uses: netlify/actions/cli@master
+        run: |
+          yarn netlify deploy --dir=packages/cms/public --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_CMS }}
-        with:
-          args: deploy --dir=packages/cms/public --prod

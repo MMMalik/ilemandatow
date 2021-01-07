@@ -20,8 +20,10 @@ jobs:
         with:
           node-version: "12"
 
+      - run: yarn install
+
       - name: Bump version via lerna
-        run: npx lerna version prerelease --no-git-tag-version --conventional-commits --yes
+        run: yarn lerna version prerelease --no-git-tag-version --conventional-commits --yes
 
       - id: set_lerna_json
         name: Set lerna json
@@ -58,13 +60,11 @@ jobs:
             Hi @${{ github.actor }}!
             This PR was created in response to a manual trigger of the release workflow here: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
-      - run: yarn install
       - run: yarn build
 
       - name: Deploy main site to netlify
-        uses: netlify/actions/cli@master
+        run: |
+          yarn netlify --dir=packages/site/public --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
-        with:
-          args: deploy --dir=packages/site/public --prod
