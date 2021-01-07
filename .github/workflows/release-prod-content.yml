@@ -1,15 +1,15 @@
-name: "Release content"
+name: Release content
 
 on:
   push:
     branches:
       - main
     paths:
-      - "packages/content/**"
+      - packages/content/**
 
 jobs:
   release-prod:
-    name: "Deploy new content to prod"
+    name: Deploy new content to prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

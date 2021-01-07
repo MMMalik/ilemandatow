@@ -1,10 +1,10 @@
-name: "Prepare new release"
+name: Prepare new release
 
 on: workflow_dispatch
 
 jobs:
   prepare-release:
-    name: "Prepare new release"
+    name: Prepare new release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

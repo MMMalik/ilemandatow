@@ -1,15 +1,15 @@
-name: "Release prod"
+name: Release prod
 
 on:
   push:
     branches:
       - main
     paths-ignore:
-      - "packages/content/**"
+      - packages/content/**
 
 jobs:
   release-prod:
-    name: "Finalize release and deploy prod"
+    name: Finalize release and deploy prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

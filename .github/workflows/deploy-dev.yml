@@ -1,14 +1,14 @@
-name: "Deploy dev"
+name: Deploy dev
 
 on:
   push:
     branches:
       - polls
-      - "release/*"
+      - dev
 
 jobs:
   deploy-dev:
-    name: "Deploy dev"
+    name: Deploy dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

@@ -1,4 +1,4 @@
-name: "Test workflow"
+name: Test workflow
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: "Test workflow"
+    name: Test workflow
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

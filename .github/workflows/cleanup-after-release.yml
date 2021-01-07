@@ -1,13 +1,15 @@
-name: "Cleanup after release"
+name: Cleanup after release
 
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - packages/content/**
 
 jobs:
   cleanup-after-release:
-    name: "Cleanup after release"
+    name: Cleanup after release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
