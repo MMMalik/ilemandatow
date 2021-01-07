@@ -159,6 +159,7 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Full Name", name: "fullName", widget: "string" }
       - { label: "Abbreviation", name: "abbr", widget: "string" }
+      - { label: "Color", name: "color", widget: "color" }
       - {
           label: "Member Parties",
           name: "memberParties",
@@ -198,7 +199,7 @@ collections:
     identifier_field: id
     summary: "{{name}}"
     label: "Publishers"
-    folder: "packages/site/content/publishers"
+    folder: "packages/content/publishers"
     create: true
     extension: json
     slug: "{{id}}"

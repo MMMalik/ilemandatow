@@ -9,7 +9,6 @@ module.exports = {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: "./src/cms/cms.ts",
-        publicPath: "",
       },
     },
   ],
