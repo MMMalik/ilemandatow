@@ -1,5 +1,15 @@
+#
+# This workflow is responsible for preparing release previews.
+# 
+# Main steps of this workflow:
+# - bump version of the project with lerna
+# - submit a PR for the new version
+# - deploy preview to development site on Netlify (there is a unique link per commit to release/* branch)
+#
+
 name: Prepare new release
 
+# Triggered manually via Github.
 on: workflow_dispatch
 
 jobs:
@@ -62,9 +72,9 @@ jobs:
 
       - run: yarn build
 
-      - name: Deploy main site to netlify
+      - name: Deploy main site to netlify (development)
         run: |
-          yarn netlify deploy --dir=packages/site/public --prod
+          yarn netlify deploy --dir=packages/site/public
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}

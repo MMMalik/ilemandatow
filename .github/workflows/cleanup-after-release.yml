@@ -1,10 +1,16 @@
+#
+# This workflow is responsible for merging changes from release branches back to dev.
+#
+
 name: Cleanup after release
 
 on:
   push:
     branches:
+      # Production branch
       - main
     paths-ignore:
+      # Ignore content changes
       - packages/content/**
 
 jobs:
@@ -40,7 +46,4 @@ jobs:
           git checkout dev
           git merge release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
           git push
-
-      - name: Remove release branch
-        run: |
           git push -d origin release/${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}

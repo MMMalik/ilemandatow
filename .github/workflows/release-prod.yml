@@ -1,15 +1,27 @@
+#
+# This workflow is responsible for deploying non-content changes to production site on Netlify.
+#
+# Main steps of this workflow:
+# - create and push new tag
+# - build project
+# - deploy main site to production site on Netlify
+# - deploy cms site to cms site on Netlify
+#
+
 name: Release prod
 
 on:
   push:
     branches:
+      # Production branch
       - main
     paths-ignore:
+      # Do not trigger for new content
       - packages/content/**
 
 jobs:
   release-prod:
-    name: Finalize release and deploy prod
+    name: Release prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -47,14 +59,14 @@ jobs:
       - run: yarn install
       - run: yarn build
 
-      - name: Deploy main site to netlify
+      - name: Deploy main site to netlify (production)
         run: |
           yarn netlify deploy --dir=packages/site/public --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
-      - name: Deploy cms to netlify
+      - name: Deploy cms to netlify (production)
         run: |
           yarn netlify deploy --dir=packages/cms/public --prod
         env:
