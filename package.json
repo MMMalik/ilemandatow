@@ -18,7 +18,7 @@
     "test": "yarn check-types && yarn jest && yarn lint",
     "develop:cms": "cd packages/cms && yarn develop",
     "develop:site": "cd packages/site && yarn develop",
-    "develop:ui": "cd packages/ui && yarn build:watch",
+    "develop:ui": "cd packages/ui && yarn storybook",
     "develop:seats": "cd packages/seats && yarn build:watch"
   },
   "devDependencies": {

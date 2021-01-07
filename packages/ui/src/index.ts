@@ -13,6 +13,9 @@ export { default as Link } from "./link";
 export * from "./pageWrapper";
 export { default as PageWrapper } from "./pageWrapper";
 
+export * from "./parliamentChart";
+export { default as ParliamentChart } from "./parliamentChart";
+
 export * from "./stats";
 export { default as Stats } from "./stats";
 
