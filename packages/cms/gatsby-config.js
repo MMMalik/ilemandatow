@@ -11,5 +11,13 @@ module.exports = {
         modulePath: "./src/cms/cms.ts",
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        sitemap: null,
+        host: null,
+        policy: [{ userAgent: "*", disallow: ["/"] }],
+      },
+    },
   ],
 };

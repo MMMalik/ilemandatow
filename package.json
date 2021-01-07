@@ -19,7 +19,9 @@
     "jest:watch": "yarn jest --watch",
     "test": "yarn check-types && yarn jest && yarn lint",
     "develop:cms": "cd packages/cms && yarn develop",
+    "serve:cms": "cd packages/cms && yarn serve",
     "develop:site": "cd packages/site && yarn develop",
+    "serve:site": "cd packages/site && yarn serve",
     "develop:ui": "cd packages/ui && yarn storybook",
     "develop:seats": "cd packages/seats && yarn build:watch"
   },
@@ -36,6 +38,7 @@
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-prettier": "^3.2.0",

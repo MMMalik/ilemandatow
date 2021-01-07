@@ -1,9 +1,10 @@
 const pkg = require("./package.json");
+const meta = require("./gatsby/envInfo");
 
 module.exports = {
   siteMetadata: {
     title: "ilemandatow",
-    siteUrl: "https://www.ilemandatow.pl",
+    siteUrl: meta.siteUrl,
     repoUrl: "https://github.com/mmmalik/ilemandatow",
     description: "Polskie sondaże parlamentarne i nie tylko",
     appVersion: pkg.version,
@@ -15,6 +16,23 @@ module.exports = {
       options: {
         fileName: `./generated/graphql.ts`,
         documentPaths: [`./src/**/*.{ts,tsx}`],
+      },
+    },
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: meta.siteUrl,
+        sitemap: meta.siteMap,
+        resolveEnv: () => meta.activeEnv,
+        env: {
+          development: {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+          },
+          production: {
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
       },
     },
     {
