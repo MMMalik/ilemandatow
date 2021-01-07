@@ -15,6 +15,8 @@
     "check-types": "tsc"
   },
   "dependencies": {
+    "@ilemandatow/content": "^0.0.0",
+    "@ilemandatow/locales": "^0.0.0",
     "@ilemandatow/seats": "^0.0.0",
     "@ilemandatow/ui": "^0.0.0",
     "@popperjs/core": "^2.5.4",

@@ -6,7 +6,9 @@
       "packages/site",
       "packages/seats",
       "packages/cms",
-      "packages/ui"
+      "packages/ui",
+      "packages/content",
+      "packages/locales"
     ]
   },
   "scripts": {

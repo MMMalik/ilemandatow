@@ -20,14 +20,14 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content`,
+        path: "../content",
         name: "content",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/locales/translations`,
+        path: `../locales/translations`,
         name: "translations",
       },
     },
