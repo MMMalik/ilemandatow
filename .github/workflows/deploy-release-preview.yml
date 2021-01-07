@@ -24,7 +24,7 @@ jobs:
           node-version: "12"
 
       - run: yarn install
-      - run: yarn build
+      - run: yarn cross-env ILEMANDATOW_ACTIVE_ENV=development build
 
       - name: Deploy main site to netlify
         run: |
