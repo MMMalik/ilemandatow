@@ -3,73 +3,9 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# 0.14.0 (2020-12-22)
-
-**Note:** Version bump only for package @ilemandatow/seats
-
-
-
-
-
-# 0.13.0 (2020-12-22)
-
-**Note:** Version bump only for package @ilemandatow/seats
-
-
-
-
-
-# 0.12.0 (2020-12-22)
+## 0.0.1-alpha.0 (2021-01-07)
 
 
 ### Bug Fixes
 
-* move config back to admin dir ([459df8f](https://github.com/MMMalik/ilemandatow/commit/459df8fc556cf8a7df2bf445c4268dd3e0cdd4c7))
-
-
-
-
-
-# 0.11.0 (2020-12-22)
-
-**Note:** Version bump only for package @ilemandatow/seats
-
-
-
-
-
-# 0.10.0 (2020-12-21)
-
-**Note:** Version bump only for package @ilemandatow/seats
-
-
-
-
-
-# 0.9.0 (2020-12-21)
-
-**Note:** Version bump only for package @ilemandatow/seats
-
-
-
-
-
-# 0.8.0 (2020-12-21)
-
-**Note:** Version bump only for package @ilemandatow/seats
-
-
-
-
-
-# 0.7.0 (2020-12-21)
-
-**Note:** Version bump only for package @ilemandatow/seats
-
-
-
-
-
-# 0.6.0 (2020-12-21)
-
-**Note:** Version bump only for package @ilemandatow/seats
+* **robots:** fix incorrect cmd, fix env info ([#35](https://github.com/MMMalik/ilemandatow/issues/35)) ([68952ca](https://github.com/MMMalik/ilemandatow/commit/68952ca5a1691736efb6e9a9ef1c597147470e03))

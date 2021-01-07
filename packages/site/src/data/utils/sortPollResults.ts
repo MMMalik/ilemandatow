@@ -1,6 +1,6 @@
 import { PollResultFragment } from "../../types";
 
-export const sortDataResults = (
+export const sortPollResults = (
   { result: result1 }: PollResultFragment,
   { result: result2 }: PollResultFragment
 ) => {

@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Stats } from "@ilemandatow/ui";
 import { PollInfoFragment } from "../../types";
-import { filterList, sortDataResults } from "../../data";
-import { UNDECIDED_PARTY_ID } from "../../constants";
+import { filterPollResults, sortPollResults } from "../../data";
 
 interface Props {
   results: PollInfoFragment["results"];
@@ -11,10 +10,9 @@ interface Props {
 const PollCardStats: React.FC<Props> = ({ results }) => {
   return (
     <Stats
-      stats={filterList(results)
-        .filter(({ party }) => party?.id !== UNDECIDED_PARTY_ID)
+      stats={filterPollResults(results)
         .slice(0, 6)
-        .sort(sortDataResults)
+        .sort(sortPollResults)
         .map(({ result, party }) => ({
           value: String(result ?? 0),
           label: party?.abbr ?? "",

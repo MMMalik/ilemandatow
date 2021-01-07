@@ -1,8 +1,13 @@
+const pkg = require("./package.json");
+const meta = require("./gatsby/envInfo");
+
 module.exports = {
   siteMetadata: {
     title: "ilemandatow",
-    siteUrl: "https://www.ilemandatow.pl",
+    siteUrl: meta.siteUrl,
+    repoUrl: "https://github.com/mmmalik/ilemandatow",
     description: "Polskie sondaże parlamentarne i nie tylko",
+    appVersion: pkg.version,
   },
   plugins: [
     "gatsby-plugin-typescript",
@@ -13,17 +18,34 @@ module.exports = {
         documentPaths: [`./src/**/*.{ts,tsx}`],
       },
     },
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: meta.host,
+        sitemap: meta.siteMap,
+        resolveEnv: () => meta.activeEnv,
+        env: {
+          development: {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+          },
+          production: {
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content`,
+        path: "../content",
         name: "content",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/locales/translations`,
+        path: `../locales/translations`,
         name: "translations",
       },
     },

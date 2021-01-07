@@ -1,16 +1,20 @@
-name: "Deploy dev"
+#
+# This workflow is responsible for deploying changes to dev and polls branches to development site on Netlify.
+#
+
+name: Deploy dev
 
 on:
-  create:
-    branches:
-      - "release/*"
   push:
     branches:
-      - "release/*"
+      # Review branch for new content
+      - polls
+      # Default development branch
+      - dev
 
 jobs:
   deploy-dev:
-    name: "Deploy dev"
+    name: Deploy dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -24,10 +28,9 @@ jobs:
       - run: yarn install
       - run: yarn build
 
-      - name: Deploy main site to netlify
-        uses: netlify/actions/cli@master
+      - name: Deploy main site to netlify (development)
+        run: |
+          yarn netlify deploy --dir=packages/site/public --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
-        with:
-          args: deploy --dir=packages/site/public --prod

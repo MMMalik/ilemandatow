@@ -1,0 +1,25 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import ParliamentChart from "./ParliamentChart";
+
+<Meta title="Parliament Chart" />
+
+export const Template = (args) => <ParliamentChart {...args} />;
+
+# Parliament Chart
+
+<Story
+  name="Main"
+  args={{
+    innerR: 90,
+    totalSeats: 460,
+    parties: [
+      { id: "P1", label: "Party 1", fill: "blue", seats: 150 },
+      { id: "P2", label: "Party 2", fill: "red", seats: 50 },
+      { id: "P3", label: "Party 3", fill: "green", seats: 10 },
+      { id: "P4", label: "Party 4", fill: "pink", seats: 50 },
+      { id: "P5", label: "Party 5", fill: "magenta", seats: 200 },
+    ],
+  }}
+>
+  {Template.bind({})}
+</Story>

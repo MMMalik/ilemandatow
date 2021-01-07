@@ -6,7 +6,9 @@
       "packages/site",
       "packages/seats",
       "packages/cms",
-      "packages/ui"
+      "packages/ui",
+      "packages/content",
+      "packages/locales"
     ]
   },
   "scripts": {
@@ -14,10 +16,13 @@
     "clean": "lerna run clean --stream",
     "check-types": "lerna run check-types --stream",
     "lint": "eslint \"packages/**/src/**/*.{tsx,ts,js}\"",
+    "jest:watch": "yarn jest --watch",
     "test": "yarn check-types && yarn jest && yarn lint",
     "develop:cms": "cd packages/cms && yarn develop",
+    "serve:cms": "cd packages/cms && yarn serve",
     "develop:site": "cd packages/site && yarn develop",
-    "develop:ui": "cd packages/ui && yarn build:watch",
+    "serve:site": "cd packages/site && yarn serve",
+    "develop:ui": "cd packages/ui && yarn storybook",
     "develop:seats": "cd packages/seats && yarn build:watch"
   },
   "devDependencies": {
@@ -39,6 +44,7 @@
     "husky": "^4.3.6",
     "jest": "^26.6.3",
     "lerna": "^3.22.1",
+    "netlify-cli": "^2.70.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.1.2"

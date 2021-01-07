@@ -1,0 +1,37 @@
+#
+# This workflow is responsible for deploying new content to production site on Netlify.
+#
+
+name: Deploy new content to prod
+
+on:
+  push:
+    branches:
+      # Production branch
+      - main
+    paths:
+      # Trigger only for the following paths
+      - packages/content/**
+
+jobs:
+  release-prod-content:
+    name: Deploy new content to prod
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+
+      - run: yarn install
+      - run: ILEMANDATOW_ACTIVE_ENV=production yarn build
+
+      - name: Deploy main site to netlify (production)
+        run: |
+          yarn netlify deploy --dir=packages/site/public --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

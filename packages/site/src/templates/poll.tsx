@@ -1,14 +1,13 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { useTranslation } from "../i18n";
 import { GetPollInfoQuery } from "../types";
+import PollResults from "../components/pollResults";
 
 export const query = graphql`
   query getPollInfo($id: String!) {
     allPollsJson(filter: { id: { eq: $id } }) {
       nodes {
-        id
-        method
+        ...PollInfo
       }
     }
   }
@@ -19,11 +18,9 @@ interface Props {
 }
 
 const Poll: React.FC<Props> = ({ data }) => {
-  const { t } = useTranslation();
   return (
     <>
-      <div>{t("poll")}</div>
-      <div>{data.allPollsJson.nodes[0]?.id}</div>
+      <PollResults results={data.allPollsJson.nodes[0]?.results} />
     </>
   );
 };

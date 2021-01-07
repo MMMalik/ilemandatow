@@ -1,18 +1,19 @@
 backend:
   name: github
   repo: MMMalik/ilemandatow
-  branch: dev
+  branch: main
 
 media_folder: static/img
 public_folder: /img
 
 collections:
   - name: "polls"
+    preview_path: polls
     identifier_field: id
     summary: "{{publishedAt}} / {{summary}}"
     sortable_fields: ["publishedAt"]
     label: "Polls"
-    folder: "packages/site/content/polls"
+    folder: "packages/content/polls"
     create: true
     extension: json
     slug: "{{id}}"
@@ -144,11 +145,12 @@ collections:
         }
 
   - name: "parties"
+    preview_path: polls
     identifier_field: id
     label: "Parties"
     summary: "{{name}}"
     sortable_fields: ["name"]
-    folder: "packages/site/content/parties"
+    folder: "packages/content/parties"
     create: true
     extension: json
     slug: "{{id}}"
@@ -157,6 +159,7 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Full Name", name: "fullName", widget: "string" }
       - { label: "Abbreviation", name: "abbr", widget: "string" }
+      - { label: "Color", name: "color", widget: "color" }
       - {
           label: "Member Parties",
           name: "memberParties",
@@ -178,10 +181,11 @@ collections:
       - { label: "Logo", name: "logo", widget: "image" }
 
   - name: "pollCompanies"
+    preview_path: polls
     identifier_field: id
     summary: "{{name}}"
     label: "Poll Companies"
-    folder: "packages/site/content/pollCompanies"
+    folder: "packages/content/pollCompanies"
     create: true
     extension: json
     slug: "{{id}}"
@@ -191,10 +195,11 @@ collections:
       - { label: "Abbreviation", name: "abbr", widget: "string" }
 
   - name: "publishers"
+    preview_path: polls
     identifier_field: id
     summary: "{{name}}"
     label: "Publishers"
-    folder: "packages/site/content/publishers"
+    folder: "packages/content/publishers"
     create: true
     extension: json
     slug: "{{id}}"
