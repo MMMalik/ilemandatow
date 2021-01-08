@@ -1,0 +1,35 @@
+#
+# This workflow is responsible for deploying changes to development site on Netlify.
+#
+
+name: Deploy dev
+
+on:
+  push:
+    branches:
+      # Default development branch
+      - dev
+
+jobs:
+  deploy-dev:
+    name: Deploy dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+
+      - run: yarn install
+      - run: yarn test
+      - run: yarn build
+
+      - name: Deploy main site to netlify (development)
+        run: |
+          yarn netlify deploy --dir=packages/site/public --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
