@@ -1,18 +1,18 @@
 #
-# This workflow is responsible for deploying changes to development site on Netlify.
+# This workflow is responsible for deploying content changes to development site on Netlify.
 #
 
-name: Deploy dev
+name: Deploy content preview
 
 on:
   push:
     branches:
-      # Default development branch
-      - dev
+      # Content branches
+      - cms/*
 
 jobs:
   deploy-dev:
-    name: Deploy dev
+    name: Deploy content preview
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy main site to netlify (development)
         run: |
-          yarn netlify deploy --dir=packages/site/public --prod
+          yarn netlify deploy --dir=packages/site/public
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
