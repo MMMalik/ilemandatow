@@ -7,8 +7,14 @@ name: Content preview
 on:
   pull_request:
     branches:
-      # Content branches
-      - cms/*
+      # Production branch
+      - main
+    paths:
+      # Trigger only for the following paths
+      - packages/content/**
+      # Do not trigger for meta files
+      - "!packages/content/package.json"
+      - "!packages/content/CHANGELOG.md"
 
 jobs:
   deploy-dev:
