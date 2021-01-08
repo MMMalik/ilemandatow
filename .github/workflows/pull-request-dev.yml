@@ -2,7 +2,7 @@
 # This workflow is responsible for running tests, linters, etc. for PRs to dev.
 #
 
-name: Test PR to dev
+name: PR to dev
 
 on:
   pull_request:

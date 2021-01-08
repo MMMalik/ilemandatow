@@ -6,9 +6,10 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+publish_mode: editorial_workflow
+
 collections:
   - name: "polls"
-    preview_path: polls
     identifier_field: id
     summary: "{{publishedAt}} / {{summary}}"
     sortable_fields: ["publishedAt"]
@@ -145,7 +146,6 @@ collections:
         }
 
   - name: "parties"
-    preview_path: polls
     identifier_field: id
     label: "Parties"
     summary: "{{name}}"
@@ -181,7 +181,6 @@ collections:
       - { label: "Logo", name: "logo", widget: "image" }
 
   - name: "pollCompanies"
-    preview_path: polls
     identifier_field: id
     summary: "{{name}}"
     label: "Poll Companies"
@@ -195,7 +194,6 @@ collections:
       - { label: "Abbreviation", name: "abbr", widget: "string" }
 
   - name: "publishers"
-    preview_path: polls
     identifier_field: id
     summary: "{{name}}"
     label: "Publishers"
