@@ -13,5 +13,7 @@
   "id": "DyawCPELgfgeJobDSIwL4",
   "name": "Konfederacja",
   "abbr": "KWiN",
-  "fullName": "Konfederacja Wolność i Niepodległość"
+  "fullName": "Konfederacja Wolność i Niepodległość",
+  "color": "#1b1d57",
+  "colorDarkTheme": "#47508e"
 }
