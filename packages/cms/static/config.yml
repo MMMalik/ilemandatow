@@ -64,7 +64,7 @@ collections:
           label: "Method",
           name: "method",
           widget: "select",
-          options: ["CATI", "Unknown"],
+          options: ["CATI", "CAWI", "Unknown"],
           default: ["Unknown"],
         }
       - { label: "Margin of error", name: "error", widget: "number" }

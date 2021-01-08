@@ -9,6 +9,8 @@ on:
     branches:
       # Default development branch
       - dev
+    paths:
+      - packages/**
 
 jobs:
   deploy-dev:
