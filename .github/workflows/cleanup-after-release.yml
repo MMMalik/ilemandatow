@@ -30,6 +30,7 @@ jobs:
 
       - name: Merge release branch to dev
         run: |
+          git checkout main
           git checkout dev
           git merge main
           git push
