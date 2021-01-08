@@ -2,7 +2,7 @@ import * as React from "react";
 import { dhondt } from "@ilemandatow/seats";
 import { ParliamentChart, useTheme } from "@ilemandatow/ui";
 import { PollResultFragment } from "../../types";
-import { TOTAL_SEATS } from "../../constants";
+import { ELECTIONS_THRESHOLD, TOTAL_SEATS } from "../../constants";
 import { getPartyColor } from "../../data";
 
 interface Props {
@@ -22,19 +22,22 @@ const PollParliamentChart: React.FC<Props> = ({ results }) => {
             votes: r?.result ?? 0,
           };
         }),
+        threshold: ELECTIONS_THRESHOLD,
         totalSeats: TOTAL_SEATS,
-      }).map(({ party: partyId, seats }) => {
-        const result = results.find((r) => partyId === r.party?.id);
-        const party = result?.party ?? undefined;
-        const label = party?.name ?? "";
-        const fill = getPartyColor(theme.name, party);
-        return {
-          id: partyId,
-          label,
-          seats,
-          fill,
-        };
-      })}
+      })
+        .filter(({ seats }) => seats > 0)
+        .map(({ party: partyId, seats }) => {
+          const result = results.find((r) => partyId === r.party?.id);
+          const party = result?.party ?? undefined;
+          const label = party?.name ?? "";
+          const fill = getPartyColor(theme.name, party);
+          return {
+            id: partyId,
+            label,
+            seats,
+            fill,
+          };
+        })}
     />
   );
 };

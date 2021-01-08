@@ -1,6 +1,8 @@
-import { GroupedQuotient, Quotient } from "./types";
+import { DhondtGroupedQuotient, DhondtQuotient } from "./types";
 
-export const groupQuotients = (quotients: Quotient[]): GroupedQuotient => {
+export const groupQuotients = (
+  quotients: DhondtQuotient[]
+): DhondtGroupedQuotient => {
   return quotients.reduce((acc, { party }) => {
     return {
       ...acc,
@@ -8,5 +10,5 @@ export const groupQuotients = (quotients: Quotient[]): GroupedQuotient => {
         seats: acc[party]?.seats ? acc[party].seats + 1 : 1,
       },
     };
-  }, {} as GroupedQuotient);
+  }, {} as DhondtGroupedQuotient);
 };

@@ -1,10 +1,18 @@
-import { Election, Quotient } from "./types";
+import { DhondtElection, DhondtQuotient } from "./types";
 
-export const getQuotients = ({ results, totalSeats }: Election): Quotient[] => {
+export const getQuotients = ({
+  results,
+  threshold,
+  totalSeats,
+}: DhondtElection): DhondtQuotient[] => {
+  const totalVotes = results.reduce((acc, r) => acc + r.votes, 0);
+  const filteredResults = results.filter((r) =>
+    threshold ? r.votes / totalVotes > threshold / 100 : true
+  );
   return Array.from({ length: totalSeats })
     .map((_, i) => {
       const nextN = i + 1;
-      return results.map(({ votes, party }) => {
+      return filteredResults.map(({ votes, party }) => {
         return {
           quotient: votes / nextN,
           party,
