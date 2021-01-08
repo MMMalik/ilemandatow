@@ -15,5 +15,7 @@
   ],
   "id": "U4oQqW7Kd027-7B6GB1q1",
   "name": "Koalicja Obywatelska",
-  "abbr": "KO"
+  "abbr": "KO",
+  "color": "#e38d00",
+  "colorDarkTheme": "#ffb70a"
 }
