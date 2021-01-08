@@ -13,8 +13,8 @@ on:
       # Trigger only for the following paths
       - packages/content/**
       # Do not trigger for meta files
-      - "!package.json"
-      - "!CHANGELOG.md"
+      - "!packages/content/package.json"
+      - "!packages/content/CHANGELOG.md"
 
 jobs:
   release-prod-content:
