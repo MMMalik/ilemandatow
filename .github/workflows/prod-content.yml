@@ -2,7 +2,7 @@
 # This workflow is responsible for deploying new content to production site on Netlify.
 #
 
-name: Deploy new content to prod
+name: Prod content
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
 
 jobs:
   release-prod-content:
-    name: Deploy new content to prod
+    name: Prod content
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
