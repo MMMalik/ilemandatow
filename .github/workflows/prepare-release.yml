@@ -7,14 +7,14 @@
 # - deploy preview to development site on Netlify (there is a unique link per commit to release/* branch)
 #
 
-name: Prepare new release
+name: Prepare release
 
 # Triggered manually via Github.
 on: workflow_dispatch
 
 jobs:
   prepare-release:
-    name: Prepare new release
+    name: Prepare release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -70,8 +70,8 @@ jobs:
             Hi @${{ github.actor }}!
             This PR was created in response to a manual trigger of the release workflow here: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
-      - run: yarn test
       - run: yarn build
+      - run: yarn test
 
       - name: Deploy main site to netlify (development)
         run: |

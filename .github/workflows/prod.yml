@@ -8,7 +8,7 @@
 # - deploy cms site to cms site on Netlify
 #
 
-name: Release prod
+name: Prod
 
 on:
   push:
@@ -21,7 +21,7 @@ on:
 
 jobs:
   release-prod:
-    name: Release prod
+    name: Prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -57,8 +57,8 @@ jobs:
           node-version: "12"
 
       - run: yarn install
-      - run: yarn test
       - run: ILEMANDATOW_ACTIVE_ENV=production yarn build
+      - run: yarn test
 
       - name: Deploy main site to netlify (production)
         run: |
