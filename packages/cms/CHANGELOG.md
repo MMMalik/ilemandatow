@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.2 (2021-01-08)
+
+
+### Bug Fixes
+
+* use pr event ([#41](https://github.com/MMMalik/ilemandatow/issues/41)) ([349f5a2](https://github.com/MMMalik/ilemandatow/commit/349f5a2b54741c27b7534a2f509f78d9b9f606be))
+
+
+
+
+
 ## 0.0.1-alpha.1 (2021-01-08)
 
 
