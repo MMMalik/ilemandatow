@@ -2,5 +2,7 @@
   "memberParties": [],
   "id": "2PVR6-MplsgYiTZLX0IVk",
   "name": "Partia Zieloni",
-  "abbr": "PZ"
+  "abbr": "PZ",
+  "color": "#58e51c",
+  "colorDarkTheme": "#5aff6b"
 }
