@@ -18,9 +18,22 @@ interface Props {
 }
 
 const Poll: React.FC<Props> = ({ data }) => {
+  const poll = data.allPollsJson.nodes[0];
+  const source = poll?.source;
+  const polledBy = poll?.polledBy;
+  const publishedBy = poll?.publishedBy;
+  const publishedAt = poll?.publishedAt;
+  const results = poll?.results;
+
   return (
     <>
-      <PollResults results={data.allPollsJson.nodes[0]?.results} />
+      <PollResults
+        results={results}
+        source={source}
+        polledBy={polledBy}
+        publishedBy={publishedBy}
+        publishedAt={publishedAt}
+      />
     </>
   );
 };
