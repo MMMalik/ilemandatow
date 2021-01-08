@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.4 (2021-01-08)
+
+
+### Bug Fixes
+
+* fetch main branch history ([9149acb](https://github.com/MMMalik/ilemandatow/commit/9149acb1d1c60fb8a3f68a8fbd9458db0348bc6a))
+
+
+
+
+
 ## 0.0.1-alpha.3 (2021-01-08)
 
 **Note:** Version bump only for package @ilemandatow/site
