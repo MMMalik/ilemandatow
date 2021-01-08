@@ -1,13 +1,19 @@
 {
   "memberParties": [
     {
-      "party___NODE": "78QC5o-Z_wejx3EiRw5Tf"
+      "party___NODE": "tT8dMn1h1pyl2_UaQ8Vpk"
     },
     {
-      "party___NODE": "cdPZEVds_Q-LJv_P2o5VI"
+      "party___NODE": "93HLFqf_ZY-dtOSyGOIl8"
+    },
+    {
+      "party___NODE": "mhbL6B6tHNdP3bzgvGBUz"
     }
   ],
   "id": "6qjBBWK1IsEOmdpVDK-vf",
   "name": "PSL i Kukiz'15",
-  "abbr": "PSL / K'15"
+  "abbr": "PSL / K'15",
+  "fullName": "Polskie Stronnictwo Ludowe i Kukiz'15",
+  "color": "#00c614",
+  "colorDarkTheme": "#1dff2a"
 }
