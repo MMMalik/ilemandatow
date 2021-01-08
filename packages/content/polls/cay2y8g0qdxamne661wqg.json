@@ -1,7 +1,11 @@
 {
-  "method": "Unknown",
+  "participantsMightVote": 22,
+  "method": "CAWI",
   "publishedAt": "2021-01-06",
-  "summary": "wPolityce.pl / Social Changes",
+  "participantsUndecided": 12,
+  "participantsMightNotVote": 11,
+  "summary": "wPolityce.pl, Social Changes",
+  "participantsWillNotVote": 8,
   "polledBy___NODE": "dFFJP7Auq2fZhxV4bk9S3",
   "pollEndedAt": "2021-01-05",
   "participantsCount": 1090,
@@ -9,30 +13,35 @@
   "results": [
     {
       "party___NODE": "Mfd0x7kZWp-qMWL_Qjm66",
-      "result": 33
+      "result": 31
     },
     {
       "party___NODE": "U4oQqW7Kd027-7B6GB1q1",
-      "result": 29
+      "result": 24
     },
     {
       "party___NODE": "KSmBIP6ZDoRuco1stc0XO",
-      "result": 12
+      "result": 19
     },
     {
       "party___NODE": "DyawCPELgfgeJobDSIwL4",
-      "result": 9
+      "result": 10
     },
     {
       "party___NODE": "cdPZEVds_Q-LJv_P2o5VI",
-      "result": 4
+      "result": 7
     },
     {
       "party___NODE": "78QC5o-Z_wejx3EiRw5Tf",
       "result": 4
+    },
+    {
+      "party___NODE": "78QC5o-Z_wejx3EiRw5Tf",
+      "result": 2
     }
   ],
   "source": "https://wpolityce.pl/polityka/533836-krajobraz-partyjny-najnowszy-sondaz-sprawdz-wyniki",
   "id": "cay2y8G0qdxAMNe661WqG",
-  "publishedBy___NODE": "_sVxVjb5xl0UtS838hcTs"
+  "publishedBy___NODE": "_sVxVjb5xl0UtS838hcTs",
+  "participantsWillVote": 44
 }
