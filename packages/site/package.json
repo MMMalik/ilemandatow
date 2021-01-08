@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/site",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "Website of ilemandatow",
   "author": "Michał Malik",
   "license": "MIT",
@@ -15,10 +15,10 @@
     "check-types": "tsc"
   },
   "dependencies": {
-    "@ilemandatow/content": "^0.0.1-alpha.2",
-    "@ilemandatow/locales": "^0.0.1-alpha.2",
-    "@ilemandatow/seats": "^0.0.1-alpha.2",
-    "@ilemandatow/ui": "^0.0.1-alpha.2",
+    "@ilemandatow/content": "^0.0.1-alpha.3",
+    "@ilemandatow/locales": "^0.0.1-alpha.3",
+    "@ilemandatow/seats": "^0.0.1-alpha.3",
+    "@ilemandatow/ui": "^0.0.1-alpha.3",
     "@popperjs/core": "^2.5.4",
     "@reach/router": "^1.3.4",
     "clsx": "^1.1.1",
