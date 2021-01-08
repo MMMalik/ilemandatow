@@ -18,5 +18,7 @@
   ],
   "id": "Mfd0x7kZWp-qMWL_Qjm66",
   "name": "Zjednoczona Prawica",
-  "abbr": "ZP"
+  "abbr": "ZP",
+  "color": "#2b2beb",
+  "colorDarkTheme": "#1f4fff"
 }
