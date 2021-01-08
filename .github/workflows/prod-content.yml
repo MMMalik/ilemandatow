@@ -12,6 +12,9 @@ on:
     paths:
       # Trigger only for the following paths
       - packages/content/**
+      # Do not trigger for meta files
+      - "!package.json"
+      - "!CHANGELOG.md"
 
 jobs:
   release-prod-content:
