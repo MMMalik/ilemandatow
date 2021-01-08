@@ -5,5 +5,7 @@ export const PartyInfo = graphql`
     id
     name
     abbr
+    color
+    colorDarkTheme
   }
 `;
