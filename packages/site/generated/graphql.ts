@@ -2720,6 +2720,7 @@ export type SitePageContextI18nCtxTranslations = {
   aboutUs?: Maybe<Scalars['String']>;
   newPoll?: Maybe<Scalars['String']>;
   poll?: Maybe<Scalars['String']>;
+  polls?: Maybe<Scalars['String']>;
   faq?: Maybe<Scalars['String']>;
   changeLanguage?: Maybe<Scalars['String']>;
   search?: Maybe<Scalars['String']>;
@@ -2746,6 +2747,7 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   aboutUs?: Maybe<StringQueryOperatorInput>;
   newPoll?: Maybe<StringQueryOperatorInput>;
   poll?: Maybe<StringQueryOperatorInput>;
+  polls?: Maybe<StringQueryOperatorInput>;
   faq?: Maybe<StringQueryOperatorInput>;
   changeLanguage?: Maybe<StringQueryOperatorInput>;
   search?: Maybe<StringQueryOperatorInput>;
@@ -2879,6 +2881,7 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___aboutUs'
   | 'context___i18nCtx___translations___newPoll'
   | 'context___i18nCtx___translations___poll'
+  | 'context___i18nCtx___translations___polls'
   | 'context___i18nCtx___translations___faq'
   | 'context___i18nCtx___translations___changeLanguage'
   | 'context___i18nCtx___translations___search'

@@ -31,6 +31,7 @@ const PollInfoList: React.FC<Props> = ({
       {polledBy && <DefinitionItem label={t("conductedBy")} value={polledBy} />}
       {publishedBy && source && (
         <DefinitionItem
+          className="ml5"
           label={t("commissionedBy")}
           value={
             <Link to={source} external={true} className="flex align-center">
@@ -42,6 +43,7 @@ const PollInfoList: React.FC<Props> = ({
       )}
       {publishedAt && (
         <DefinitionItem
+          className="ml5"
           label={t("publishedAt")}
           value={format(new Date(publishedAt))}
         />

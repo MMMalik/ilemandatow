@@ -2,6 +2,7 @@ import * as React from "react";
 import { Card } from "@ilemandatow/ui";
 import { useDateFormat } from "../../i18n";
 import { PollInfoFragment } from "../../types";
+import { filterPollResults } from "../../data";
 import PollCardStats from "./PollCardStats";
 import PollCardFooter from "./PollCardFooter";
 
@@ -19,7 +20,7 @@ const PollCard: React.FC<Props> = ({ pollInfo }) => {
       titleRightSide={format(new Date(publishedAt))}
       footer={<PollCardFooter pollId={id} source={source} />}
     >
-      <PollCardStats results={results} />
+      <PollCardStats results={filterPollResults(results)} />
     </Card>
   );
 };

@@ -1,3 +1,6 @@
+export * from "./pollCard";
+export { default as PollCard } from "./pollCard";
+
 export * from "./pollInfoList";
 export { default as PollInfoList } from "./pollInfoList";
 

@@ -32,9 +32,12 @@ const PollMethodology: React.FC<Props> = ({
           }
         />
       )}
-      {method && <DefinitionItem label={t("method")} value={method} />}
+      {method && (
+        <DefinitionItem className="ml5" label={t("method")} value={method} />
+      )}
       {participantsCount && (
         <DefinitionItem
+          className="ml5"
           label={t("participantsCount")}
           value={participantsCount}
         />

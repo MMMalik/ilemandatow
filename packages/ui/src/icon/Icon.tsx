@@ -12,15 +12,16 @@ interface Props {
   onClick?: () => void;
   className?: string;
   size?: FontAwesomeIconProps["size"];
+  style?: FontAwesomeIconProps["style"];
 }
 
-const Icon: React.FC<Props> = ({ icon, size, onClick, className }) => {
+const Icon: React.FC<Props> = ({ icon, size, onClick, className, style }) => {
   return (
     <div
-      className={clsx(className, onClick && "dim dib pointer")}
+      className={clsx("dib", className, onClick && "dim pointer")}
       onClick={onClick}
     >
-      <FontAwesomeIcon icon={icon} size={size} />
+      <FontAwesomeIcon icon={icon} size={size} style={style} />
     </div>
   );
 };

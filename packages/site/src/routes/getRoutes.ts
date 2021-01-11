@@ -14,6 +14,9 @@ export const getRoutes = (langPath = "") => {
     poll: {
       link: (id: string) => `${baseLink}/poll/${id}`,
     },
+    polls: {
+      link: () => `${baseLink}/polls`,
+    },
     about: {
       link: () => `${baseLink}/about`,
     },
