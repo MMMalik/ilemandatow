@@ -1,0 +1,12 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import ParliamentChart from "./Paper";
+
+<Meta title="Layout/Paper" />
+
+export const Template = (args) => <ParliamentChart {...args} />;
+
+# Paper
+
+<Story name="Main" args={{ children: <div className="pa3">Some text</div> }}>
+  {Template.bind({})}
+</Story>

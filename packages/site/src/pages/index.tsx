@@ -1,7 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-// import PollsToolbar from "../components/core/pollsToolbar";
-import Polls, { PollsView } from "../components/polls";
+import PollCards from "../components/pollsCards";
 import { GetAllPollsQuery } from "../types";
 
 export const query = graphql`
@@ -19,17 +18,7 @@ interface Props {
 }
 
 const Index: React.FC<Props> = ({ data }) => {
-  const [pollsView, setPollsView] = React.useState<PollsView>("grid");
-
-  // const handleGridViewClick = () => {
-  //   setPollsView("grid");
-  // };
-
-  // const handleListViewClick = () => {
-  //   setPollsView("list");
-  // };
-
-  return <Polls pollsView={pollsView} polls={data.allPollsJson.nodes} />;
+  return <PollCards polls={data.allPollsJson.nodes} />;
 };
 
 export default Index;

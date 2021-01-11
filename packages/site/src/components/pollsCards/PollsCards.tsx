@@ -2,14 +2,11 @@ import * as React from "react";
 import { PollInfoFragment } from "../../types";
 import PollCard from "./PollCard";
 
-export type PollsView = "list" | "grid";
-
 interface Props {
   polls: PollInfoFragment[];
-  pollsView: PollsView;
 }
 
-const Polls: React.FC<Props> = ({ polls }) => {
+const PollsCards: React.FC<Props> = ({ polls }) => {
   return (
     <div className="cf">
       {polls.map((pollInfo) => {
@@ -23,4 +20,4 @@ const Polls: React.FC<Props> = ({ polls }) => {
   );
 };
 
-export default Polls;
+export default PollsCards;

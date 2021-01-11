@@ -1,7 +1,9 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import { Paper } from "@ilemandatow/ui";
 import { GetPollInfoQuery } from "../types";
-import PollResults from "../components/pollResults";
+import { filterPollResults } from "../data";
+import PollParliamentChart from "../components/pollParliamentChart";
 
 export const query = graphql`
   query getPollInfo($id: String!) {
@@ -26,15 +28,19 @@ const Poll: React.FC<Props> = ({ data }) => {
   const results = poll?.results;
 
   return (
-    <>
-      <PollResults
-        results={results}
-        source={source}
-        polledBy={polledBy}
-        publishedBy={publishedBy}
-        publishedAt={publishedAt}
-      />
-    </>
+    <div>
+      <div>Title</div>
+      <div className="cf">
+        <div className="fl w-third pv3">
+          <Paper className="pa3">Table</Paper>
+        </div>
+        <div className="fl w-two-thirds pa3">
+          <Paper className="pa3">
+            <PollParliamentChart results={filterPollResults(results)} />
+          </Paper>
+        </div>
+      </div>
+    </div>
   );
 };
 
