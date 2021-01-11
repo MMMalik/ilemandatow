@@ -1,5 +1,5 @@
 import * as React from "react";
-import { DhondtParliamentSeat } from "@ilemandatow/seats";
+import { DhondtParliamentSeat, sortBySeats } from "@ilemandatow/seats";
 import {
   Table,
   TableHead,
@@ -29,7 +29,7 @@ const PollResultsTable: React.FC<Props> = ({ seats, results }) => {
         <TableHeadCell>{t("seats")}</TableHeadCell>
       </TableHead>
       <TableBody>
-        {seats.map(({ party: partyId, seats }, i) => {
+        {sortBySeats(seats).map(({ party: partyId, seats }, i) => {
           const result = getPartyFromResult(results, partyId);
           return (
             <TableRow key={result?.party?.id ?? i}>

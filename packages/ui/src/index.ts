@@ -28,9 +28,6 @@ export { default as Paper } from "./paper";
 export * from "./parliamentChart";
 export { default as ParliamentChart } from "./parliamentChart";
 
-export * from "./stats";
-export { default as Stats } from "./stats";
-
 export * from "./table";
 export { default as Table } from "./table";
 

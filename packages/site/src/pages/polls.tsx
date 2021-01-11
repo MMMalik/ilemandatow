@@ -4,7 +4,7 @@ import { Grid, GridItem, SectionTitle } from "@ilemandatow/ui";
 import { PollCard } from "../components";
 import { GetAllPollsQuery } from "../types";
 import { useTranslation } from "../i18n";
-import { filterPollResults } from "../data";
+import { filterPollResults, sortPollsByDate } from "../data";
 
 export const query = graphql`
   query getAllPolls {
@@ -27,8 +27,9 @@ const Polls: React.FC<Props> = ({ data }) => {
     <>
       <SectionTitle title={t("polls")} />
       <Grid>
-        {data.allPollsJson.nodes.map(
-          ({ id, polledBy, publishedAt, source, results }) => {
+        {data.allPollsJson.nodes
+          .sort(sortPollsByDate)
+          .map(({ id, polledBy, publishedAt, source, results }) => {
             return (
               <GridItem key={id} className="w-50-m w-third-l">
                 <PollCard
@@ -40,8 +41,7 @@ const Polls: React.FC<Props> = ({ data }) => {
                 />
               </GridItem>
             );
-          }
-        )}
+          })}
       </Grid>
     </>
   );
