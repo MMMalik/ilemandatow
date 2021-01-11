@@ -1,11 +1,11 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import PageTitle from "./Paper";
+import Paper from "./Paper";
 
 <Meta title="Layout/Paper" />
 
-export const Template = (args) => <PageTitle {...args} />;
+export const Template = (args) => <Paper {...args} />;
 
-# Paper
+### Paper
 
 <Story name="Main" args={{ children: <div className="pa3">Some text</div> }}>
   {Template.bind({})}

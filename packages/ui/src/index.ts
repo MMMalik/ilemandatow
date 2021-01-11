@@ -1,23 +1,23 @@
 export * from "./card";
 export { default as Card } from "./card";
 
+export * from "./definitionList";
+export { default as DefinitionList } from "./definitionList";
+
 export * from "./icon";
 export { default as Icon } from "./icon";
 
 export * from "./footer";
 export { default as Footer } from "./footer";
 
-export * from "./gridContainer";
-export { default as GridContainer } from "./gridContainer";
-
-export * from "./gridItem";
-export { default as GridItem } from "./gridItem";
+export * from "./grid";
+export { default as Grid } from "./grid";
 
 export * from "./link";
 export { default as Link } from "./link";
 
-export * from "./pageTitle";
-export { default as PageTitle } from "./pageTitle";
+export * from "./sectionTitle";
+export { default as SectionTitle } from "./sectionTitle";
 
 export * from "./pageWrapper";
 export { default as PageWrapper } from "./pageWrapper";
@@ -30,6 +30,9 @@ export { default as ParliamentChart } from "./parliamentChart";
 
 export * from "./stats";
 export { default as Stats } from "./stats";
+
+export * from "./table";
+export { default as Table } from "./table";
 
 export * from "./tooltip";
 export { default as Tooltip } from "./tooltip";

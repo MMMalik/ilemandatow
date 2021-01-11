@@ -15,8 +15,11 @@
   "pollResults": "Poll results",
   "commissionedBy": "Commissioned by",
   "conductedBy": "Conducted by",
-  "publishedAt": "Published at",
-  "conductedAt": "Conducted at",
+  "publishedAt": "Published",
+  "conductedAt": "Conducted",
   "method": "Method",
-  "participantsCount": "Number of participants"
+  "participantsCount": "Number of participants",
+  "party": "Party",
+  "result": "Result",
+  "seats": "Seats"
 }

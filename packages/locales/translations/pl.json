@@ -16,7 +16,10 @@
   "commissionedBy": "Na zlecenie",
   "conductedBy": "Przeprowadzony przez",
   "publishedAt": "Data publikacji",
-  "conductedAt": "Data przeprowadzenia",
+  "conductedAt": "Data badania",
   "method": "Metoda",
-  "participantsCount": "Próba"
+  "participantsCount": "Próba",
+  "party": "Partia",
+  "result": "Wynik",
+  "seats": "Mandaty"
 }

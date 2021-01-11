@@ -2737,6 +2737,9 @@ export type SitePageContextI18nCtxTranslations = {
   conductedAt?: Maybe<Scalars['String']>;
   method?: Maybe<Scalars['String']>;
   participantsCount?: Maybe<Scalars['String']>;
+  party?: Maybe<Scalars['String']>;
+  result?: Maybe<Scalars['String']>;
+  seats?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextI18nCtxTranslationsFilterInput = {
@@ -2760,6 +2763,9 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   conductedAt?: Maybe<StringQueryOperatorInput>;
   method?: Maybe<StringQueryOperatorInput>;
   participantsCount?: Maybe<StringQueryOperatorInput>;
+  party?: Maybe<StringQueryOperatorInput>;
+  result?: Maybe<StringQueryOperatorInput>;
+  seats?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2890,6 +2896,9 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___conductedAt'
   | 'context___i18nCtx___translations___method'
   | 'context___i18nCtx___translations___participantsCount'
+  | 'context___i18nCtx___translations___party'
+  | 'context___i18nCtx___translations___result'
+  | 'context___i18nCtx___translations___seats'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3397,7 +3406,7 @@ export type PollResultFragment = (
 );
 
 export type PollInfoFragment = (
-  Pick<PollsJson, 'id' | 'publishedAt' | 'source'>
+  Pick<PollsJson, 'id' | 'publishedAt' | 'source' | 'pollEndedAt' | 'pollStartedAt' | 'participantsCount' | 'method'>
   & { publishedBy?: Maybe<PublisherInfoFragment>, polledBy?: Maybe<PollCompanyInfoFragment>, results?: Maybe<Array<Maybe<PollResultFragment>>> }
 );
 

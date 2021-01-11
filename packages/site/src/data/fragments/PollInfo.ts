@@ -23,5 +23,9 @@ export const PollInfo = graphql`
     results {
       ...PollResult
     }
+    pollEndedAt
+    pollStartedAt
+    participantsCount
+    method
   }
 `;

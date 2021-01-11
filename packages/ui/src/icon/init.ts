@@ -11,6 +11,7 @@ import {
   faMoon,
   faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
 config.autoAddCss = false;
 
@@ -24,5 +25,6 @@ library.add(
   faTh,
   faSun,
   faMoon,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faQuestionCircle
 );

@@ -6,16 +6,16 @@ interface Props {
   subTitle?: React.ReactNode;
 }
 
-const PageTitle: React.FC<Props> = ({ title, subTitle }) => {
+const SectionTitle: React.FC<Props> = ({ title, subTitle }) => {
   const { theme } = useTheme();
   const { textMuted } = theme;
 
   return (
-    <div className="f3 mb3">
+    <div className="f3 mb4">
       <div className="mb1">{title}</div>
       {subTitle && <div className={`f5 ${textMuted}`}>{subTitle}</div>}
     </div>
   );
 };
 
-export default PageTitle;
+export default SectionTitle;
