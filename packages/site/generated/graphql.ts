@@ -552,7 +552,6 @@ export type File = Node & {
   childPollCompaniesJson?: Maybe<PollCompaniesJson>;
   childPollsJson?: Maybe<PollsJson>;
   childPublishersJson?: Maybe<PublishersJson>;
-  childTranslationsJson?: Maybe<TranslationsJson>;
 };
 
 
@@ -1028,58 +1027,7 @@ export type FileFieldsEnum =
   | 'childPublishersJson___internal___owner'
   | 'childPublishersJson___internal___type'
   | 'childPublishersJson___name'
-  | 'childPublishersJson___abbr'
-  | 'childTranslationsJson___id'
-  | 'childTranslationsJson___parent___id'
-  | 'childTranslationsJson___parent___parent___id'
-  | 'childTranslationsJson___parent___parent___children'
-  | 'childTranslationsJson___parent___children'
-  | 'childTranslationsJson___parent___children___id'
-  | 'childTranslationsJson___parent___children___children'
-  | 'childTranslationsJson___parent___internal___content'
-  | 'childTranslationsJson___parent___internal___contentDigest'
-  | 'childTranslationsJson___parent___internal___description'
-  | 'childTranslationsJson___parent___internal___fieldOwners'
-  | 'childTranslationsJson___parent___internal___ignoreType'
-  | 'childTranslationsJson___parent___internal___mediaType'
-  | 'childTranslationsJson___parent___internal___owner'
-  | 'childTranslationsJson___parent___internal___type'
-  | 'childTranslationsJson___children'
-  | 'childTranslationsJson___children___id'
-  | 'childTranslationsJson___children___parent___id'
-  | 'childTranslationsJson___children___parent___children'
-  | 'childTranslationsJson___children___children'
-  | 'childTranslationsJson___children___children___id'
-  | 'childTranslationsJson___children___children___children'
-  | 'childTranslationsJson___children___internal___content'
-  | 'childTranslationsJson___children___internal___contentDigest'
-  | 'childTranslationsJson___children___internal___description'
-  | 'childTranslationsJson___children___internal___fieldOwners'
-  | 'childTranslationsJson___children___internal___ignoreType'
-  | 'childTranslationsJson___children___internal___mediaType'
-  | 'childTranslationsJson___children___internal___owner'
-  | 'childTranslationsJson___children___internal___type'
-  | 'childTranslationsJson___internal___content'
-  | 'childTranslationsJson___internal___contentDigest'
-  | 'childTranslationsJson___internal___description'
-  | 'childTranslationsJson___internal___fieldOwners'
-  | 'childTranslationsJson___internal___ignoreType'
-  | 'childTranslationsJson___internal___mediaType'
-  | 'childTranslationsJson___internal___owner'
-  | 'childTranslationsJson___internal___type'
-  | 'childTranslationsJson___aboutUs'
-  | 'childTranslationsJson___newPoll'
-  | 'childTranslationsJson___poll'
-  | 'childTranslationsJson___faq'
-  | 'childTranslationsJson___changeLanguage'
-  | 'childTranslationsJson___search'
-  | 'childTranslationsJson___toggleTheme'
-  | 'childTranslationsJson___pl'
-  | 'childTranslationsJson___en'
-  | 'childTranslationsJson___seeDetails'
-  | 'childTranslationsJson___source'
-  | 'childTranslationsJson___home'
-  | 'childTranslationsJson___privacy';
+  | 'childPublishersJson___abbr';
 
 export type FileFilterInput = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -1125,7 +1073,6 @@ export type FileFilterInput = {
   childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
   childPollsJson?: Maybe<PollsJsonFilterInput>;
   childPublishersJson?: Maybe<PublishersJsonFilterInput>;
-  childTranslationsJson?: Maybe<TranslationsJsonFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -2054,18 +2001,16 @@ export type Query = {
   allSite: SiteConnection;
   sitePage?: Maybe<SitePage>;
   allSitePage: SitePageConnection;
-  translationsJson?: Maybe<TranslationsJson>;
-  allTranslationsJson: TranslationsJsonConnection;
   publishersJson?: Maybe<PublishersJson>;
   allPublishersJson: PublishersJsonConnection;
   pollsJson?: Maybe<PollsJson>;
   allPollsJson: PollsJsonConnection;
   pollCompaniesJson?: Maybe<PollCompaniesJson>;
   allPollCompaniesJson: PollCompaniesJsonConnection;
-  contentJson?: Maybe<ContentJson>;
-  allContentJson: ContentJsonConnection;
   partiesJson?: Maybe<PartiesJson>;
   allPartiesJson: PartiesJsonConnection;
+  contentJson?: Maybe<ContentJson>;
+  allContentJson: ContentJsonConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -2117,7 +2062,6 @@ export type QueryFileArgs = {
   childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
   childPollsJson?: Maybe<PollsJsonFilterInput>;
   childPublishersJson?: Maybe<PublishersJsonFilterInput>;
-  childTranslationsJson?: Maybe<TranslationsJsonFilterInput>;
 };
 
 
@@ -2226,35 +2170,6 @@ export type QueryAllSitePageArgs = {
 };
 
 
-export type QueryTranslationsJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  aboutUs?: Maybe<StringQueryOperatorInput>;
-  newPoll?: Maybe<StringQueryOperatorInput>;
-  poll?: Maybe<StringQueryOperatorInput>;
-  faq?: Maybe<StringQueryOperatorInput>;
-  changeLanguage?: Maybe<StringQueryOperatorInput>;
-  search?: Maybe<StringQueryOperatorInput>;
-  toggleTheme?: Maybe<StringQueryOperatorInput>;
-  pl?: Maybe<StringQueryOperatorInput>;
-  en?: Maybe<StringQueryOperatorInput>;
-  seeDetails?: Maybe<StringQueryOperatorInput>;
-  source?: Maybe<StringQueryOperatorInput>;
-  home?: Maybe<StringQueryOperatorInput>;
-  privacy?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllTranslationsJsonArgs = {
-  filter?: Maybe<TranslationsJsonFilterInput>;
-  sort?: Maybe<TranslationsJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryPublishersJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -2323,27 +2238,6 @@ export type QueryAllPollCompaniesJsonArgs = {
 };
 
 
-export type QueryContentJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  version?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
-  license?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllContentJsonArgs = {
-  filter?: Maybe<ContentJsonFilterInput>;
-  sort?: Maybe<ContentJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryPartiesJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -2361,6 +2255,27 @@ export type QueryPartiesJsonArgs = {
 export type QueryAllPartiesJsonArgs = {
   filter?: Maybe<PartiesJsonFilterInput>;
   sort?: Maybe<PartiesJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  author?: Maybe<StringQueryOperatorInput>;
+  license?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllContentJsonArgs = {
+  filter?: Maybe<ContentJsonFilterInput>;
+  sort?: Maybe<ContentJsonSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -2815,6 +2730,13 @@ export type SitePageContextI18nCtxTranslations = {
   source?: Maybe<Scalars['String']>;
   home?: Maybe<Scalars['String']>;
   privacy?: Maybe<Scalars['String']>;
+  pollResults?: Maybe<Scalars['String']>;
+  commissionedBy?: Maybe<Scalars['String']>;
+  conductedBy?: Maybe<Scalars['String']>;
+  publishedAt?: Maybe<Scalars['String']>;
+  conductedAt?: Maybe<Scalars['String']>;
+  method?: Maybe<Scalars['String']>;
+  participantsCount?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextI18nCtxTranslationsFilterInput = {
@@ -2831,6 +2753,13 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   source?: Maybe<StringQueryOperatorInput>;
   home?: Maybe<StringQueryOperatorInput>;
   privacy?: Maybe<StringQueryOperatorInput>;
+  pollResults?: Maybe<StringQueryOperatorInput>;
+  commissionedBy?: Maybe<StringQueryOperatorInput>;
+  conductedBy?: Maybe<StringQueryOperatorInput>;
+  publishedAt?: Maybe<StringQueryOperatorInput>;
+  conductedAt?: Maybe<StringQueryOperatorInput>;
+  method?: Maybe<StringQueryOperatorInput>;
+  participantsCount?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2954,6 +2883,13 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___source'
   | 'context___i18nCtx___translations___home'
   | 'context___i18nCtx___translations___privacy'
+  | 'context___i18nCtx___translations___pollResults'
+  | 'context___i18nCtx___translations___commissionedBy'
+  | 'context___i18nCtx___translations___conductedBy'
+  | 'context___i18nCtx___translations___publishedAt'
+  | 'context___i18nCtx___translations___conductedAt'
+  | 'context___i18nCtx___translations___method'
+  | 'context___i18nCtx___translations___participantsCount'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3449,188 +3385,6 @@ export type StringQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
-};
-
-export type TranslationsJson = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  aboutUs?: Maybe<Scalars['String']>;
-  newPoll?: Maybe<Scalars['String']>;
-  poll?: Maybe<Scalars['String']>;
-  faq?: Maybe<Scalars['String']>;
-  changeLanguage?: Maybe<Scalars['String']>;
-  search?: Maybe<Scalars['String']>;
-  toggleTheme?: Maybe<Scalars['String']>;
-  pl?: Maybe<Scalars['String']>;
-  en?: Maybe<Scalars['String']>;
-  seeDetails?: Maybe<Scalars['String']>;
-  source?: Maybe<Scalars['String']>;
-  home?: Maybe<Scalars['String']>;
-  privacy?: Maybe<Scalars['String']>;
-};
-
-export type TranslationsJsonConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<TranslationsJsonEdge>;
-  nodes: Array<TranslationsJson>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<TranslationsJsonGroupConnection>;
-};
-
-
-export type TranslationsJsonConnectionDistinctArgs = {
-  field: TranslationsJsonFieldsEnum;
-};
-
-
-export type TranslationsJsonConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: TranslationsJsonFieldsEnum;
-};
-
-export type TranslationsJsonEdge = {
-  next?: Maybe<TranslationsJson>;
-  node: TranslationsJson;
-  previous?: Maybe<TranslationsJson>;
-};
-
-export type TranslationsJsonFieldsEnum = 
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'aboutUs'
-  | 'newPoll'
-  | 'poll'
-  | 'faq'
-  | 'changeLanguage'
-  | 'search'
-  | 'toggleTheme'
-  | 'pl'
-  | 'en'
-  | 'seeDetails'
-  | 'source'
-  | 'home'
-  | 'privacy';
-
-export type TranslationsJsonFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  aboutUs?: Maybe<StringQueryOperatorInput>;
-  newPoll?: Maybe<StringQueryOperatorInput>;
-  poll?: Maybe<StringQueryOperatorInput>;
-  faq?: Maybe<StringQueryOperatorInput>;
-  changeLanguage?: Maybe<StringQueryOperatorInput>;
-  search?: Maybe<StringQueryOperatorInput>;
-  toggleTheme?: Maybe<StringQueryOperatorInput>;
-  pl?: Maybe<StringQueryOperatorInput>;
-  en?: Maybe<StringQueryOperatorInput>;
-  seeDetails?: Maybe<StringQueryOperatorInput>;
-  source?: Maybe<StringQueryOperatorInput>;
-  home?: Maybe<StringQueryOperatorInput>;
-  privacy?: Maybe<StringQueryOperatorInput>;
-};
-
-export type TranslationsJsonGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<TranslationsJsonEdge>;
-  nodes: Array<TranslationsJson>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type TranslationsJsonSortInput = {
-  fields?: Maybe<Array<Maybe<TranslationsJsonFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
 export type PartyInfoFragment = Pick<PartiesJson, 'id' | 'name' | 'abbr' | 'color' | 'colorDarkTheme'>;

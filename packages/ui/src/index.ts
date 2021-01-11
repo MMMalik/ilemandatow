@@ -7,8 +7,17 @@ export { default as Icon } from "./icon";
 export * from "./footer";
 export { default as Footer } from "./footer";
 
+export * from "./gridContainer";
+export { default as GridContainer } from "./gridContainer";
+
+export * from "./gridItem";
+export { default as GridItem } from "./gridItem";
+
 export * from "./link";
 export { default as Link } from "./link";
+
+export * from "./pageTitle";
+export { default as PageTitle } from "./pageTitle";
 
 export * from "./pageWrapper";
 export { default as PageWrapper } from "./pageWrapper";

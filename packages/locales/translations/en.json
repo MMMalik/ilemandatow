@@ -1,15 +1,22 @@
 {
-  "aboutUs": "About Us",
-  "newPoll": "New Poll",
+  "aboutUs": "About us",
+  "newPoll": "New poll",
   "poll": "Poll",
   "faq": "FAQ",
-  "changeLanguage": "Change Language",
+  "changeLanguage": "Change language",
   "search": "Search",
   "toggleTheme": "Dark / light mode",
   "pl": "PL",
   "en": "EN",
-  "seeDetails": "See Details",
+  "seeDetails": "See details",
   "source": "Source",
   "home": "Home",
-  "privacy": "Privacy"
+  "privacy": "Privacy",
+  "pollResults": "Poll results",
+  "commissionedBy": "Commissioned by",
+  "conductedBy": "Conducted by",
+  "publishedAt": "Published at",
+  "conductedAt": "Conducted at",
+  "method": "Method",
+  "participantsCount": "Number of participants"
 }

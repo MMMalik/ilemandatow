@@ -1,9 +1,10 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Paper } from "@ilemandatow/ui";
+import { GridContainer, GridItem, PageTitle, Paper } from "@ilemandatow/ui";
 import { GetPollInfoQuery } from "../types";
 import { filterPollResults } from "../data";
-import PollParliamentChart from "../components/pollParliamentChart";
+import { PollParliamentChart } from "../components";
+import { useTranslation } from "../i18n";
 
 export const query = graphql`
   query getPollInfo($id: String!) {
@@ -20,6 +21,7 @@ interface Props {
 }
 
 const Poll: React.FC<Props> = ({ data }) => {
+  const { t } = useTranslation();
   const poll = data.allPollsJson.nodes[0];
   const source = poll?.source;
   const polledBy = poll?.polledBy;
@@ -28,19 +30,22 @@ const Poll: React.FC<Props> = ({ data }) => {
   const results = poll?.results;
 
   return (
-    <div>
-      <div>Title</div>
-      <div className="cf">
-        <div className="fl w-third pv3">
+    <>
+      <PageTitle title={t("pollResults")} />
+      <GridContainer>
+        <GridItem>
           <Paper className="pa3">Table</Paper>
-        </div>
-        <div className="fl w-two-thirds pa3">
+        </GridItem>
+        <GridItem className="w-third">
+          <Paper className="pa3">Table</Paper>
+        </GridItem>
+        <GridItem className="w-two-thirds">
           <Paper className="pa3">
             <PollParliamentChart results={filterPollResults(results)} />
           </Paper>
-        </div>
-      </div>
-    </div>
+        </GridItem>
+      </GridContainer>
+    </>
   );
 };
 
