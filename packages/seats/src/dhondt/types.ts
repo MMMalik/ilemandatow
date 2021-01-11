@@ -1,4 +1,6 @@
-export interface Election {
+import { ParliamentSeat } from "../types";
+
+export interface DhondtElection {
   /**
    * Election results.
    */
@@ -16,9 +18,13 @@ export interface Election {
    * Total number of seats in the parliament.
    */
   totalSeats: number;
+  /**
+   * Percentage below which parties are excluded from seats assignment.
+   */
+  threshold?: number;
 }
 
-export type Quotient = {
+export type DhondtQuotient = {
   /**
    * Party identifier.
    */
@@ -29,7 +35,7 @@ export type Quotient = {
   quotient: number;
 };
 
-export type GroupedQuotient = {
+export type DhondtGroupedQuotient = {
   [key: string]: {
     /**
      * Number of seats won by the party.
@@ -38,13 +44,5 @@ export type GroupedQuotient = {
   };
 };
 
-export type ParliamentSeat = {
-  /**
-   * Party identifier.
-   */
-  party: string;
-  /**
-   * Number of seats won by the party.
-   */
-  seats: number;
-};
+/* eslint-disable-next-line */
+export interface DhondtParliamentSeat extends ParliamentSeat {}
