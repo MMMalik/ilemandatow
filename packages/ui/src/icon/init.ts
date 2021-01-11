@@ -10,6 +10,7 @@ import {
   faSun,
   faMoon,
   faExternalLinkAlt,
+  faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
@@ -26,5 +27,6 @@ library.add(
   faSun,
   faMoon,
   faExternalLinkAlt,
-  faQuestionCircle
+  faQuestionCircle,
+  faCircle
 );

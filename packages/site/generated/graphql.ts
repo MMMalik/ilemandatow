@@ -2125,8 +2125,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2325,8 +2323,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2531,8 +2527,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___repoUrl'
   | 'siteMetadata___appVersion'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2625,8 +2619,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2720,6 +2712,7 @@ export type SitePageContextI18nCtxTranslations = {
   aboutUs?: Maybe<Scalars['String']>;
   newPoll?: Maybe<Scalars['String']>;
   poll?: Maybe<Scalars['String']>;
+  polls?: Maybe<Scalars['String']>;
   faq?: Maybe<Scalars['String']>;
   changeLanguage?: Maybe<Scalars['String']>;
   search?: Maybe<Scalars['String']>;
@@ -2746,6 +2739,7 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   aboutUs?: Maybe<StringQueryOperatorInput>;
   newPoll?: Maybe<StringQueryOperatorInput>;
   poll?: Maybe<StringQueryOperatorInput>;
+  polls?: Maybe<StringQueryOperatorInput>;
   faq?: Maybe<StringQueryOperatorInput>;
   changeLanguage?: Maybe<StringQueryOperatorInput>;
   search?: Maybe<StringQueryOperatorInput>;
@@ -2879,6 +2873,7 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___aboutUs'
   | 'context___i18nCtx___translations___newPoll'
   | 'context___i18nCtx___translations___poll'
+  | 'context___i18nCtx___translations___polls'
   | 'context___i18nCtx___translations___faq'
   | 'context___i18nCtx___translations___changeLanguage'
   | 'context___i18nCtx___translations___search'
@@ -3400,14 +3395,14 @@ export type PartyInfoFragment = Pick<PartiesJson, 'id' | 'name' | 'abbr' | 'colo
 
 export type PollCompanyInfoFragment = Pick<PollCompaniesJson, 'id' | 'name' | 'abbr'>;
 
-export type PollResultFragment = (
-  Pick<PollsJsonResults, 'result'>
-  & { party?: Maybe<PartyInfoFragment> }
-);
-
 export type PollInfoFragment = (
   Pick<PollsJson, 'id' | 'publishedAt' | 'source' | 'pollEndedAt' | 'pollStartedAt' | 'participantsCount' | 'method'>
   & { publishedBy?: Maybe<PublisherInfoFragment>, polledBy?: Maybe<PollCompanyInfoFragment>, results?: Maybe<Array<Maybe<PollResultFragment>>> }
+);
+
+export type PollResultFragment = (
+  Pick<PollsJsonResults, 'result'>
+  & { party?: Maybe<PartyInfoFragment> }
 );
 
 export type PublisherInfoFragment = Pick<PublishersJson, 'id' | 'name' | 'abbr'>;

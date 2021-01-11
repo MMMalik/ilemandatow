@@ -5,17 +5,12 @@ import { useRoutes } from "../../routes";
 import AboutUs from "./AboutUs";
 import ThemeIcon from "./ThemeIcon";
 import LanguageIcon from "./LanguageIcon";
-import SearchIcon from "./SearchIcon";
 import Home from "./Home";
+import Polls from "./Polls";
 
 const AppTopbar: React.FC = () => {
-  const [searchOpen, setSearchOpen] = React.useState(false);
   const { t } = useTranslation();
   const { routes } = useRoutes();
-
-  const toggleSearch = () => {
-    setSearchOpen((current) => !current);
-  };
 
   return (
     <>
@@ -23,13 +18,13 @@ const AppTopbar: React.FC = () => {
         links={
           <>
             <Home />
+            <Polls />
             <AboutUs />
           </>
         }
         mobileLinks={<Home />}
         menuItems={
           <>
-            <SearchIcon toggleSearch={toggleSearch} />
             <ThemeIcon />
             <LanguageIcon />
             <TopbarButtonLink to={routes.newPoll.link()}>
@@ -37,13 +32,10 @@ const AppTopbar: React.FC = () => {
             </TopbarButtonLink>
           </>
         }
-        mobileMenuItems={
-          <>
-            <SearchIcon toggleSearch={toggleSearch} />
-          </>
-        }
+        mobileMenuItems={null}
         mobileOverlayMenuItems={
           <>
+            <Polls />
             <AboutUs />
             <ThemeIcon withTooltip={false} />
             <LanguageIcon withTooltip={false} />

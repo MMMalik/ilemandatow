@@ -1,14 +1,15 @@
 import * as React from "react";
 
 interface Props {
-  label: string;
+  label: React.ReactNode;
   value: React.ReactNode;
+  className?: string;
 }
 
-const DefinitionItem: React.FC<Props> = ({ label, value }) => {
+const DefinitionItem: React.FC<Props> = ({ label, value, className }) => {
   return (
-    <div className="pr5">
-      <div className="f6 mv2 b">{label}</div>
+    <div className={className}>
+      <div className="f6 mb2 b">{label}</div>
       <div>{value}</div>
     </div>
   );

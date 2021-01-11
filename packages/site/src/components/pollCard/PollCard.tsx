@@ -1,21 +1,30 @@
 import * as React from "react";
 import { Card } from "@ilemandatow/ui";
 import { useDateFormat } from "../../i18n";
-import { PollInfoFragment } from "../../types";
+import { PollResultFragment } from "../../types";
 import PollCardStats from "./PollCardStats";
 import PollCardFooter from "./PollCardFooter";
 
 interface Props {
-  pollInfo: PollInfoFragment;
+  id: string;
+  polledBy: string;
+  publishedAt: string;
+  source: string;
+  results: PollResultFragment[];
 }
 
-const PollCard: React.FC<Props> = ({ pollInfo }) => {
+const PollCard: React.FC<Props> = ({
+  id,
+  polledBy,
+  publishedAt,
+  source,
+  results,
+}) => {
   const format = useDateFormat();
-  const { id, polledBy, publishedAt, source, results } = pollInfo;
 
   return (
     <Card
-      title={polledBy?.abbr ?? ""}
+      title={polledBy}
       titleRightSide={format(new Date(publishedAt))}
       footer={<PollCardFooter pollId={id} source={source} />}
     >

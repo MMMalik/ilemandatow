@@ -1,8 +1,15 @@
 import * as React from "react";
-import NewPoll from "../components/newPoll";
+import { SectionTitle } from "@ilemandatow/ui";
+import { useTranslation } from "../i18n";
 
-const NewPollPage: React.FC = () => {
-  return <NewPoll />;
+const NewPoll: React.FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <SectionTitle title={t("newPoll")} />
+    </>
+  );
 };
 
-export default NewPollPage;
+export default NewPoll;
