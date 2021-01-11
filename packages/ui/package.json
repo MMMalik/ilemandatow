@@ -10,11 +10,12 @@
     "cleanup": "rimraf dist",
     "build": "yarn cleanup && tsc",
     "build:watch": "yarn cleanup && tsc --watch",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook -p 9009"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
     "clsx": "^1.1.1",

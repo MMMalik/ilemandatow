@@ -1,0 +1,12 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import SectionTitle from "./SectionTitle";
+
+<Meta title="Layout/SectionTitle" />
+
+export const Template = (args) => <SectionTitle {...args} />;
+
+### Page Title
+
+<Story name="Main" args={{ title: "Page Title", subTitle: "Some Subtitle" }}>
+  {Template.bind({})}
+</Story>

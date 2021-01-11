@@ -1,35 +1,27 @@
 import * as React from "react";
-import { dhondt } from "@ilemandatow/seats";
+import { DhondtParliamentSeat } from "@ilemandatow/seats";
 import { ParliamentChart, useTheme } from "@ilemandatow/ui";
+import { TOTAL_SEATS } from "../../constants";
+import { getPartyColor, getPartyFromResult } from "../../data";
 import { PollResultFragment } from "../../types";
-import { ELECTIONS_THRESHOLD, TOTAL_SEATS } from "../../constants";
-import { getPartyColor } from "../../data";
 
 interface Props {
   results: PollResultFragment[];
+  seats: DhondtParliamentSeat[];
 }
 
-const PollParliamentChart: React.FC<Props> = ({ results }) => {
+const PollParliamentChart: React.FC<Props> = ({ seats, results }) => {
   const theme = useTheme();
 
   return (
     <ParliamentChart
       totalSeats={TOTAL_SEATS}
-      parties={dhondt({
-        results: results.map((r) => {
-          return {
-            party: r?.party?.id ?? "",
-            votes: r?.result ?? 0,
-          };
-        }),
-        threshold: ELECTIONS_THRESHOLD,
-        totalSeats: TOTAL_SEATS,
-      })
+      parties={seats
         .filter(({ seats }) => seats > 0)
         .map(({ party: partyId, seats }) => {
-          const result = results.find((r) => partyId === r.party?.id);
+          const result = getPartyFromResult(results, partyId);
           const party = result?.party ?? undefined;
-          const label = party?.name ?? "";
+          const label = party?.abbr ?? "";
           const fill = getPartyColor(theme.name, party);
           return {
             id: partyId,

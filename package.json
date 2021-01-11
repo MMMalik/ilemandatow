@@ -22,7 +22,8 @@
     "serve:cms": "cd packages/cms && yarn serve",
     "develop:site": "cd packages/site && yarn develop",
     "serve:site": "cd packages/site && yarn serve",
-    "develop:ui": "cd packages/ui && yarn storybook",
+    "develop:ui": "cd packages/ui && yarn build:watch",
+    "develop:ui:sb": "cd packages/ui && yarn storybook",
     "develop:seats": "cd packages/seats && yarn build:watch"
   },
   "devDependencies": {

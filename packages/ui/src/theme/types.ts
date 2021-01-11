@@ -6,4 +6,5 @@ export interface Theme {
   textOnPrimary: string;
   textMuted: string;
   textDisabled: string;
+  textDivider: string;
 }

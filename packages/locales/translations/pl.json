@@ -1,6 +1,6 @@
 {
   "aboutUs": "O nas",
-  "newPoll": "Nowy Sondaż",
+  "newPoll": "Nowy sondaż",
   "poll": "Sondaż",
   "faq": "Jak to działa?",
   "changeLanguage": "Zmień język",
@@ -10,6 +10,16 @@
   "en": "EN",
   "seeDetails": "Szczegóły",
   "source": "Źródło",
-  "home": "Strona Główna",
-  "privacy": "Prywatność"
+  "home": "Strona główna",
+  "privacy": "Prywatność",
+  "pollResults": "Wyniki sondażu",
+  "commissionedBy": "Na zlecenie",
+  "conductedBy": "Przeprowadzony przez",
+  "publishedAt": "Data publikacji",
+  "conductedAt": "Data badania",
+  "method": "Metoda",
+  "participantsCount": "Próba",
+  "party": "Partia",
+  "result": "Wynik",
+  "seats": "Mandaty"
 }

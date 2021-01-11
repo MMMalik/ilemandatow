@@ -1,0 +1,41 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import Table from "./Table";
+import TableHead from "./TableHead";
+import TableBody from "./TableBody";
+import TableRow from "./TableRow";
+import TableCell from "./TableCell";
+import TableHeadCell from "./TableHeadCell";
+
+<Meta title="Data Display/Table" />
+
+export const Template = (args) => <Table {...args} />;
+
+### Table
+
+<Story
+  name="Main"
+  args={{
+    children: (
+      <>
+        <TableHead>
+          <TableHeadCell>Col 1</TableHeadCell>
+          <TableHeadCell>Col 2</TableHeadCell>
+          <TableHeadCell>Col 3</TableHeadCell>
+        </TableHead>
+        <TableBody>
+          {Array.from({ length: 3 }).map((_, i) => {
+            return (
+              <TableRow key={i}>
+                <TableCell>{`Row ${i + 1}, Col 1`}</TableCell>
+                <TableCell>{`Row ${i + 1}, Col 2`}</TableCell>
+                <TableCell>{`Row ${i + 1}, Col 3`}</TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </>
+    ),
+  }}
+>
+  {Template.bind({})}
+</Story>

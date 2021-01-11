@@ -4,8 +4,9 @@ export const light: Theme = {
   primary: "purple",
   bgPrimary: "white",
   bgSecondary: "near-white",
-  textPrimary: "dark-gray",
+  textPrimary: "mid-gray",
   textOnPrimary: "white",
-  textMuted: "gray",
+  textMuted: "silver",
   textDisabled: "light-gray",
+  textDivider: "moon-gray",
 };
