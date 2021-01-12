@@ -1,0 +1,22 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import InputField from "./InputField";
+
+<Meta title="Inputs/InputField" />
+
+export const Template = (args) => <InputField {...args} />;
+
+### Input Field
+
+<Story
+  name="Main"
+  args={{
+    name: "firstName",
+    label: "First Name",
+    helperText: "Enter your first name.",
+    bare: false,
+    type: "text",
+    placeholder: "",
+  }}
+>
+  {Template.bind({})}
+</Story>

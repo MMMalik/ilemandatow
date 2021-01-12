@@ -22,5 +22,19 @@
   "participantsCount": "Próba",
   "party": "Partia",
   "result": "Wynik",
-  "seats": "Mandaty"
+  "seats": "Mandaty",
+  "color": "Kolor",
+  "resultWithPerc": "Wynik (%)",
+  "pollResultsTableTitle": "Wyniki sondażu",
+  "pollResultsTableDescription": "Wprowadź dane do tabeli. Podaj nazwę partii, jej wynik oraz kolor, który będzie ją identyfikował na wykresach. Każdy wiersz odpowiada jednej partii.",
+  "partyName": "Nazwa partii",
+  "pollResult": "Wynik",
+  "providePartyColor": "Kolor",
+  "electionSettingsTitle": "Ustawienia wyborów",
+  "electionSettingsDescription": "Zmień ustawienia wyborów takie jak próg wyborczy czy liczba mandatów w parlamencie.",
+  "electionThreshold": "Próg wyborczy (%)",
+  "parliamentSeats": "Liczba mandatów w parlamencie",
+  "submit": "Potwierdź",
+  "cancel": "Resetuj",
+  "threshold": "Próg wyborczy"
 }

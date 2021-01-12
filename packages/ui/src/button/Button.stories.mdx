@@ -1,0 +1,17 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Button from "./Button";
+import * as template from "./Button.stories";
+
+<Meta title="Inputs/Button" component={Button} />
+
+### Button
+
+<Canvas>
+  <Story name="Variants" args={{ children: "Button" }}>
+    {template.Button.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable story="Variants" />

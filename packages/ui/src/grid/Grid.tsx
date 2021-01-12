@@ -1,8 +1,15 @@
 import * as React from "react";
+import clsx from "clsx";
 
-const Grid: React.FC = ({ children }) => {
+interface Props {
+  className?: string;
+}
+
+const Grid: React.FC<Props> = ({ children, className }) => {
   return (
-    <div className="flex flex-wrap items-stretch grid-fix2">{children}</div>
+    <div className={clsx("flex flex-wrap items-stretch grid-fix2", className)}>
+      {children}
+    </div>
   );
 };
 

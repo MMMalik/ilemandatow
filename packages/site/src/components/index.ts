@@ -1,3 +1,6 @@
+export * from "./newPollForm";
+export { default as NewPollForm } from "./newPollForm";
+
 export * from "./pollCard";
 export { default as PollCard } from "./pollCard";
 

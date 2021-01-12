@@ -4,6 +4,7 @@ import TableHead from "./TableHead";
 import TableBody from "./TableBody";
 import TableRow from "./TableRow";
 import TableCell from "./TableCell";
+import TableCellEditable from "./TableCellEditable";
 import TableHeadCell from "./TableHeadCell";
 
 <Meta title="Data Display/Table" />
@@ -29,6 +30,40 @@ export const Template = (args) => <Table {...args} />;
                 <TableCell>{`Row ${i + 1}, Col 1`}</TableCell>
                 <TableCell>{`Row ${i + 1}, Col 2`}</TableCell>
                 <TableCell>{`Row ${i + 1}, Col 3`}</TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </>
+    ),
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+<Story
+  name="Editable"
+  args={{
+    children: (
+      <>
+        <TableHead>
+          <TableHeadCell>Name</TableHeadCell>
+          <TableHeadCell>Value</TableHeadCell>
+        </TableHead>
+        <TableBody>
+          {Array.from({ length: 3 }).map((_, i) => {
+            return (
+              <TableRow key={i}>
+                <TableCellEditable
+                  name={`name_${i}`}
+                  value={`Name ${i}`}
+                  placeholder="Provide name"
+                />
+                <TableCellEditable
+                  name={`value_${i}`}
+                  value=""
+                  placeholder="Provide value"
+                />
               </TableRow>
             );
           })}

@@ -1,6 +1,7 @@
 import * as React from "react";
-import { SectionTitle } from "@ilemandatow/ui";
+import { Grid, GridItem, Paper, SectionTitle } from "@ilemandatow/ui";
 import { useTranslation } from "../i18n";
+import { NewPollForm } from "../components";
 
 const NewPoll: React.FC = () => {
   const { t } = useTranslation();
@@ -8,6 +9,13 @@ const NewPoll: React.FC = () => {
   return (
     <>
       <SectionTitle title={t("newPoll")} />
+      <Grid>
+        <GridItem>
+          <Paper className="pa4">
+            <NewPollForm />
+          </Paper>
+        </GridItem>
+      </Grid>
     </>
   );
 };

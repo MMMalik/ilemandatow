@@ -2125,6 +2125,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2323,6 +2325,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2527,6 +2531,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___repoUrl'
   | 'siteMetadata___appVersion'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2619,6 +2625,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2733,6 +2741,19 @@ export type SitePageContextI18nCtxTranslations = {
   party?: Maybe<Scalars['String']>;
   result?: Maybe<Scalars['String']>;
   seats?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
+  resultWithPerc?: Maybe<Scalars['String']>;
+  pollResultsTableTitle?: Maybe<Scalars['String']>;
+  pollResultsTableDescription?: Maybe<Scalars['String']>;
+  partyName?: Maybe<Scalars['String']>;
+  pollResult?: Maybe<Scalars['String']>;
+  providePartyColor?: Maybe<Scalars['String']>;
+  electionSettingsTitle?: Maybe<Scalars['String']>;
+  electionSettingsDescription?: Maybe<Scalars['String']>;
+  electionThreshold?: Maybe<Scalars['String']>;
+  parliamentSeats?: Maybe<Scalars['String']>;
+  submit?: Maybe<Scalars['String']>;
+  cancel?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextI18nCtxTranslationsFilterInput = {
@@ -2760,6 +2781,19 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   party?: Maybe<StringQueryOperatorInput>;
   result?: Maybe<StringQueryOperatorInput>;
   seats?: Maybe<StringQueryOperatorInput>;
+  color?: Maybe<StringQueryOperatorInput>;
+  resultWithPerc?: Maybe<StringQueryOperatorInput>;
+  pollResultsTableTitle?: Maybe<StringQueryOperatorInput>;
+  pollResultsTableDescription?: Maybe<StringQueryOperatorInput>;
+  partyName?: Maybe<StringQueryOperatorInput>;
+  pollResult?: Maybe<StringQueryOperatorInput>;
+  providePartyColor?: Maybe<StringQueryOperatorInput>;
+  electionSettingsTitle?: Maybe<StringQueryOperatorInput>;
+  electionSettingsDescription?: Maybe<StringQueryOperatorInput>;
+  electionThreshold?: Maybe<StringQueryOperatorInput>;
+  parliamentSeats?: Maybe<StringQueryOperatorInput>;
+  submit?: Maybe<StringQueryOperatorInput>;
+  cancel?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2894,6 +2928,19 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___party'
   | 'context___i18nCtx___translations___result'
   | 'context___i18nCtx___translations___seats'
+  | 'context___i18nCtx___translations___color'
+  | 'context___i18nCtx___translations___resultWithPerc'
+  | 'context___i18nCtx___translations___pollResultsTableTitle'
+  | 'context___i18nCtx___translations___pollResultsTableDescription'
+  | 'context___i18nCtx___translations___partyName'
+  | 'context___i18nCtx___translations___pollResult'
+  | 'context___i18nCtx___translations___providePartyColor'
+  | 'context___i18nCtx___translations___electionSettingsTitle'
+  | 'context___i18nCtx___translations___electionSettingsDescription'
+  | 'context___i18nCtx___translations___electionThreshold'
+  | 'context___i18nCtx___translations___parliamentSeats'
+  | 'context___i18nCtx___translations___submit'
+  | 'context___i18nCtx___translations___cancel'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'

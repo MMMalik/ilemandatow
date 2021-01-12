@@ -1,0 +1,47 @@
+import clsx from "clsx";
+import * as React from "react";
+import { useTheme } from "../theme";
+
+export interface Props {
+  /**
+   * Html type of the button.
+   */
+  htmlType?: "button" | "submit" | "reset";
+  /**
+   * Button styling variant.
+   */
+  btnType?: "primary" | "secondary";
+  /**
+   * Optional class passed to root component.
+   */
+  className?: string;
+}
+
+const Button: React.FC<Props> = ({
+  htmlType = "button",
+  btnType = "primary",
+  className,
+  children,
+}) => {
+  const { theme } = useTheme();
+  const { primary, bgSecondary, textPrimary, textOnPrimary } = theme;
+
+  const btnStyles = {
+    primary: `${textOnPrimary} bg-${primary}`,
+    secondary: `${textPrimary} bg-${bgSecondary}`,
+  };
+
+  return (
+    <button
+      type={htmlType}
+      className={clsx(
+        `bn pointer br2 ph3 pv2 dim ${btnStyles[btnType]}`,
+        className
+      )}
+    >
+      {children}
+    </button>
+  );
+};
+
+export default Button;
