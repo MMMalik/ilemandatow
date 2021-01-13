@@ -1,0 +1,15 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import DismissablePopper from "./DismissablePopper";
+import * as template from "./DismissablePopper.stories";
+
+<Meta title="Feedback/DismissablePopper" component={DismissablePopper} />
+
+### DismissablePopper
+
+<Canvas>
+  <Story name="Main">{template.DismissablePopper.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={DismissablePopper} />

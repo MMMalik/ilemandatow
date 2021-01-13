@@ -36,5 +36,11 @@
   "parliamentSeats": "Parliament Seats",
   "submit": "Submit",
   "cancel": "Cancel",
-  "threshold": "Threshold"
+  "threshold": "Threshold",
+  "party1": "Party 1",
+  "party2": "Party 2",
+  "party3": "Party 3",
+  "insertRowAbove": "Insert row above",
+  "insertRowBelow": "Insert row below",
+  "removeRow": "Remove row"
 }

@@ -4,6 +4,15 @@ export { default as Button } from "./button";
 export * from "./card";
 export { default as Card } from "./card";
 
+export * from "./colorPicker";
+export { default as ColorPicker } from "./colorPicker";
+
+export * from "./colorPickerMenu";
+export { default as ColorPickerMenu } from "./colorPickerMenu";
+
+export * from "./clickAway";
+export { default as ClickAway } from "./clickAway";
+
 export * from "./definitionList";
 export { default as DefinitionList } from "./definitionList";
 
@@ -25,6 +34,9 @@ export { default as Grid } from "./grid";
 export * from "./link";
 export { default as Link } from "./link";
 
+export * from "./menu";
+export { default as Menu } from "./menu";
+
 export * from "./sectionTitle";
 export { default as SectionTitle } from "./sectionTitle";
 
@@ -36,6 +48,9 @@ export { default as Paper } from "./paper";
 
 export * from "./parliamentChart";
 export { default as ParliamentChart } from "./parliamentChart";
+
+export * from "./popper";
+export { default as Popper } from "./popper";
 
 export * from "./table";
 export { default as Table } from "./table";

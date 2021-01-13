@@ -2754,6 +2754,13 @@ export type SitePageContextI18nCtxTranslations = {
   parliamentSeats?: Maybe<Scalars['String']>;
   submit?: Maybe<Scalars['String']>;
   cancel?: Maybe<Scalars['String']>;
+  threshold?: Maybe<Scalars['String']>;
+  party1?: Maybe<Scalars['String']>;
+  party2?: Maybe<Scalars['String']>;
+  party3?: Maybe<Scalars['String']>;
+  insertRowAbove?: Maybe<Scalars['String']>;
+  insertRowBelow?: Maybe<Scalars['String']>;
+  removeRow?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextI18nCtxTranslationsFilterInput = {
@@ -2794,6 +2801,13 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   parliamentSeats?: Maybe<StringQueryOperatorInput>;
   submit?: Maybe<StringQueryOperatorInput>;
   cancel?: Maybe<StringQueryOperatorInput>;
+  threshold?: Maybe<StringQueryOperatorInput>;
+  party1?: Maybe<StringQueryOperatorInput>;
+  party2?: Maybe<StringQueryOperatorInput>;
+  party3?: Maybe<StringQueryOperatorInput>;
+  insertRowAbove?: Maybe<StringQueryOperatorInput>;
+  insertRowBelow?: Maybe<StringQueryOperatorInput>;
+  removeRow?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2941,6 +2955,13 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___parliamentSeats'
   | 'context___i18nCtx___translations___submit'
   | 'context___i18nCtx___translations___cancel'
+  | 'context___i18nCtx___translations___threshold'
+  | 'context___i18nCtx___translations___party1'
+  | 'context___i18nCtx___translations___party2'
+  | 'context___i18nCtx___translations___party3'
+  | 'context___i18nCtx___translations___insertRowAbove'
+  | 'context___i18nCtx___translations___insertRowBelow'
+  | 'context___i18nCtx___translations___removeRow'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'

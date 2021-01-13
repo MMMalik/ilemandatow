@@ -1,0 +1,20 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Tooltip from "./Tooltip";
+import * as template from "./Tooltip.stories";
+
+<Meta title="Data Display/Tooltip" component={Tooltip} />
+
+### Tooltip
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{ children: <div>{"Hover here!"}</div>, title: "Tootlip text" }}
+  >
+    {template.Tooltip.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Tooltip} />

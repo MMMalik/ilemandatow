@@ -19030,6 +19030,11 @@ react-color@^2.17.0, react-color@^2.18.1:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
+react-colorful@^4.4.4:
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-4.4.4.tgz#38e7c5b7075bbf63d3cce22d8c61a439a58b7561"
+  integrity sha512-01V2/6rr6sa1vaZntWZJXZxnU7ew02NG2rqq0eoVp4d3gFU5Ug9lDzNMbr+8ns0byXsJbBR8LbwQTlAjz6x7Kg==
+
 react-datetime@^2.16.3:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/react-datetime/-/react-datetime-2.16.3.tgz#7f9ac7d4014a939c11c761d0c22d1fb506cb505e"

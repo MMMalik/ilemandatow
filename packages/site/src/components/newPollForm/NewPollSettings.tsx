@@ -1,19 +1,16 @@
 import * as React from "react";
-import { InputField, FormRegisterFn, Grid, GridItem } from "@ilemandatow/ui";
+import { InputField, Grid, GridItem, useFormContext } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
 
-interface Props {
-  registerFn: FormRegisterFn;
-}
-
-const NewPollSettings: React.FC<Props> = ({ registerFn }) => {
+const NewPollSettings: React.FC = () => {
   const { t } = useTranslation();
+  const { register } = useFormContext();
 
   return (
     <Grid>
       <GridItem className="w-50">
         <InputField
-          ref={registerFn({ required: true })}
+          ref={register({ required: true })}
           name="threshold"
           label={t("electionThreshold")}
           type="number"
@@ -23,7 +20,7 @@ const NewPollSettings: React.FC<Props> = ({ registerFn }) => {
       </GridItem>
       <GridItem className="w-50">
         <InputField
-          ref={registerFn({ required: true })}
+          ref={register({ required: true })}
           name="seats"
           label={t("parliamentSeats")}
           type="number"

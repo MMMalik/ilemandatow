@@ -1,8 +1,12 @@
-import clsx from "clsx";
 import * as React from "react";
+import clsx from "clsx";
 import { useTheme } from "../theme";
 
 export interface Props {
+  /**
+   * Optional click handler.
+   */
+  onClick?: (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /**
    * Html type of the button.
    */
@@ -21,6 +25,7 @@ const Button: React.FC<Props> = ({
   htmlType = "button",
   btnType = "primary",
   className,
+  onClick,
   children,
 }) => {
   const { theme } = useTheme();
@@ -33,6 +38,7 @@ const Button: React.FC<Props> = ({
 
   return (
     <button
+      onClick={onClick}
       type={htmlType}
       className={clsx(
         `bn pointer br2 ph3 pv2 dim ${btnStyles[btnType]}`,

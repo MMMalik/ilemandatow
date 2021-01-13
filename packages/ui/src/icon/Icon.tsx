@@ -9,7 +9,7 @@ export type IconProp = FontAwesomeIconProps["icon"];
 
 interface Props {
   icon: IconProp;
-  onClick?: () => void;
+  onClick?: (evt: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   className?: string;
   size?: FontAwesomeIconProps["size"];
   style?: FontAwesomeIconProps["style"];

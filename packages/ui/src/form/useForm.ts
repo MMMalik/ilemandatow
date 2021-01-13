@@ -12,7 +12,7 @@ const useForm = <T>({
   defaultValues,
   debug = process.env.NODE_ENV === "development",
 }: Props<T>) => {
-  const { handleSubmit, watch, register } = useRHForm({ defaultValues });
+  const { handleSubmit, watch, ...rest } = useRHForm({ defaultValues });
 
   if (debug) {
     const watchedValues = watch();
@@ -20,8 +20,12 @@ const useForm = <T>({
   }
 
   return {
-    onSubmit: handleSubmit(onSubmit),
-    register,
+    onSubmit: handleSubmit(async (data) => {
+      await onSubmit(data as any);
+    }),
+    watch,
+    handleSubmit,
+    ...rest,
   };
 };
 

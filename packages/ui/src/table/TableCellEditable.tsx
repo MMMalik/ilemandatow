@@ -3,27 +3,54 @@ import InputField, { InputType } from "../inputField";
 import TableCell from "./TableCell";
 
 interface Props {
+  /**
+   * Field name.
+   */
   name: string;
+  /**
+   * Input type.
+   */
   type?: InputType;
-  value?: string | number;
+  /**
+   * Input placeholder.
+   */
   placeholder?: string;
+  /**
+   * Form id.
+   */
   form?: string;
+  /**
+   * Field default value.
+   */
+  defaultValue?: string | number;
+  /**
+   * Optional class name passed to input.
+   */
+  inputClassName?: string;
+  /**
+   * Custom ref.
+   */
   ref?: any;
 }
 
 const TableCellEditable: React.FC<Props> = React.forwardRef<any, Props>(
-  ({ name, type, value, placeholder, form }, ref) => {
+  (
+    { name, type, placeholder, form, inputClassName, defaultValue, children },
+    ref
+  ) => {
     return (
       <TableCell>
         <InputField
           ref={ref}
+          className={inputClassName}
           name={name}
           type={type}
-          value={value}
           placeholder={placeholder}
+          defaultValue={defaultValue}
           form={form}
           bare={true}
         />
+        {children}
       </TableCell>
     );
   }

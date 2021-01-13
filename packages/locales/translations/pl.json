@@ -36,5 +36,11 @@
   "parliamentSeats": "Liczba mandatów w parlamencie",
   "submit": "Potwierdź",
   "cancel": "Resetuj",
-  "threshold": "Próg wyborczy"
+  "threshold": "Próg wyborczy",
+  "party1": "Partia 1",
+  "party2": "Partia 2",
+  "party3": "Partia 3",
+  "insertRowAbove": "Dodaj wiersz powyżej",
+  "insertRowBelow": "Dodaj wiersz poniżej",
+  "removeRow": "Usuń wiersz"
 }

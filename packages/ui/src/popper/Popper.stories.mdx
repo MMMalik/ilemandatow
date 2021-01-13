@@ -1,0 +1,15 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Popper from "./Popper";
+import * as template from "./Popper.stories";
+
+<Meta title="Feedback/Popper" component={Popper} />
+
+### Popper
+
+<Canvas>
+  <Story name="Main">{template.Popper.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Popper} />

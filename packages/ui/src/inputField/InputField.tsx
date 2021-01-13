@@ -4,19 +4,60 @@ import { useTheme } from "../theme";
 import Icon from "../icon";
 import Tooltip from "../tooltip";
 
-export type InputType = "text" | "number";
+export type InputType = "text" | "number" | "color" | "hidden";
 
 interface Props {
+  /**
+   * Field name.
+   */
   name: string;
+  /**
+   * Field value (used for controlled input).
+   */
   value?: string | number;
+  /**
+   * Field default value.
+   */
+  defaultValue?: string | number;
+  /**
+   * Input html type.
+   */
   type?: InputType;
+  /**
+   * Input label.
+   */
   label?: string;
+  /**
+   * Input html placeholder.
+   */
   placeholder?: string;
+  /**
+   * Helper text.
+   */
   helperText?: string;
+  /**
+   * Root class name.
+   */
+  className?: string;
+  /**
+   * Marks input as required.
+   */
   required?: boolean;
+  /**
+   * Disables all styling, helper texts, labels.
+   */
   bare?: boolean;
+  /**
+   * Form id.
+   */
   form?: string;
+  /**
+   * Callback fired on change (used for controlled input).
+   */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Custom ref.
+   */
   ref?: any;
 }
 
@@ -25,6 +66,8 @@ const InputField: React.FC<Props> = React.forwardRef<any, Props>(
     {
       name,
       value,
+      defaultValue,
+      className,
       type = "text",
       label,
       placeholder,
@@ -40,7 +83,7 @@ const InputField: React.FC<Props> = React.forwardRef<any, Props>(
     const { textPrimary, textDivider, textMuted } = theme;
 
     return (
-      <div>
+      <div className={className}>
         {label && !bare && (
           <label htmlFor={name} className="f6 db mb2">
             {label}
@@ -52,6 +95,7 @@ const InputField: React.FC<Props> = React.forwardRef<any, Props>(
             ref={ref}
             name={name}
             value={value}
+            defaultValue={defaultValue}
             type={type}
             placeholder={placeholder}
             form={form}
