@@ -2,11 +2,26 @@ import * as React from "react";
 import { useTheme } from "../theme";
 import TopbarIcon from "./TopbarIcon";
 
-interface Props {
+export interface Props {
+  /**
+   * Links to be displayed.
+   */
   links: React.ReactNode;
+  /**
+   * Links to be displayed on mobile resolution.
+   */
   mobileLinks: React.ReactNode;
+  /**
+   * Menu items to be displayed.
+   */
   menuItems: React.ReactNode;
+  /**
+   * Menu items to be displayed on mobile resolution.
+   */
   mobileMenuItems: React.ReactNode;
+  /**
+   * Menu items to be displayed on mobile resolution on the overlay.
+   */
   mobileOverlayMenuItems: React.ReactNode;
 }
 
@@ -27,13 +42,13 @@ const Topbar: React.FC<Props> = ({
 
   return (
     <nav className={`flex items-center bg-${bgPrimary}`}>
-      <div className="w-25">
+      <div className="w-50 w-25-l">
         <div className="dn db-ns">
           <div className="flex items-center">{links}</div>
         </div>
         <div className="db dn-ns">{mobileLinks}</div>
       </div>
-      <div className="w-75 tr">
+      <div className="w-50 w-75-l tr">
         <div className="dn db-ns">{menuItems}</div>
         <div className="db dn-ns">
           {mobileMenuItems}

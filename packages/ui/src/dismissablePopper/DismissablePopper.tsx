@@ -4,7 +4,7 @@ import Popper, { PopperPlacement } from "../popper";
 
 export interface Props {
   /**
-   * Component that toggles popper.
+   * Component that toggles popper. Provides `onClick` callback which must be passed down to clickable component.
    */
   clickableComponent: (
     onClick: (evt: React.MouseEvent<HTMLElement, MouseEvent>) => void

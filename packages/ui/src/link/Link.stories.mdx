@@ -1,0 +1,17 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Link from "./Link";
+import * as template from "./Link.stories";
+
+<Meta title="Data Display/Link" component={Link} />
+
+### Link
+
+<Canvas>
+  <Story name="Main" args={{ children: "Link Text" }}>
+    {template.Link.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Link} />

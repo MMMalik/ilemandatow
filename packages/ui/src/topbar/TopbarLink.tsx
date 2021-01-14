@@ -1,13 +1,12 @@
 import * as React from "react";
-import Link from "../link";
+import clsx from "clsx";
+import Link, { Props as LinkProps } from "../link";
 
-interface Props {
-  to: string;
-}
+export type Props = Omit<LinkProps, "className">;
 
-const TopbarLink: React.FC<Props> = ({ to, children }) => {
+const TopbarLink: React.FC<Props> = ({ children, ...rest }) => {
   return (
-    <Link to={to} className="pa3 db">
+    <Link className={clsx(!rest.btn && "pa3 db")} {...rest}>
       {children}
     </Link>
   );

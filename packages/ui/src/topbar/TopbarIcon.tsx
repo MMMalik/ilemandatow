@@ -1,8 +1,14 @@
 import * as React from "react";
 import Icon, { IconProp } from "../icon";
 
-interface Props {
-  onClick: () => void;
+export interface Props {
+  /**
+   * Callback fired upon clicking on root component.
+   */
+  onClick?: () => void;
+  /**
+   * Icon to display.
+   */
   icon: IconProp;
 }
 

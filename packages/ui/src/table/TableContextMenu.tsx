@@ -15,7 +15,7 @@ const TableContextMenu: React.FC = ({ children }) => {
         menuBtn={(onClick) => (
           <Icon
             onClick={onClick}
-            icon="ellipsis-v"
+            icon="cog"
             className={`pointer dim ${textMuted}`}
           />
         )}

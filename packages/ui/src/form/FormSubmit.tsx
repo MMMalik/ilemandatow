@@ -1,8 +1,14 @@
 import * as React from "react";
 import Button from "../button";
 
-interface Props {
+export interface Props {
+  /**
+   * Label for cancel / reset button.
+   */
   cancelLabel: string;
+  /**
+   * Label for submit button.
+   */
   submitLabel: string;
 }
 

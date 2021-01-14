@@ -1,7 +1,10 @@
 import * as React from "react";
 import clsx from "clsx";
 
-interface Props {
+export interface Props {
+  /**
+   * Use to change grid item's width. Use Tachyons class names. Default is `w-100`.
+   */
   className?: string;
 }
 

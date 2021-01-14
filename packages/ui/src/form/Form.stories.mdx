@@ -1,10 +1,17 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { Form } from "./Form.stories";
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Form from "./Form";
+import * as template from "./Form.stories";
 
 <Meta title="Form/Form" component={Form} />
 
 ### Form
 
-<Story name="Main" args={{}}>
-  {Form.bind({})}
-</Story>
+Root form component. Use it with other form components. Package `react-hooks-form` is used under the hood.
+
+<Canvas>
+  <Story name="Main">{template.Form.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Form} />

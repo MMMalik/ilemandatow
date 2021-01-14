@@ -1,9 +1,18 @@
 import * as React from "react";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface Props {
+  /**
+   * Component placed on the left side.
+   */
   left: React.ReactNode;
+  /**
+   * Component placed in the center.
+   */
   center: React.ReactNode;
+  /**
+   * Component placed on the right side.
+   */
   right: React.ReactNode;
 }
 

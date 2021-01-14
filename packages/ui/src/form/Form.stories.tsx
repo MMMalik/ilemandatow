@@ -72,6 +72,7 @@ export const Form: React.FC = () => {
             type="text"
             name="city"
             ref={register({ required: true })}
+            required={true}
             label="City"
             placeholder="Provide city name..."
           />

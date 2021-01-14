@@ -21,7 +21,7 @@ const NewPollForm: React.FC = () => {
         {
           name: t("party1"),
           result: 25,
-          color: "#ff0000",
+          color: "#5E2CA5",
         },
         {
           name: t("party2"),

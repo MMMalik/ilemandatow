@@ -6,29 +6,29 @@ import Tooltip from "../tooltip";
 
 export type InputType = "text" | "number" | "color" | "hidden";
 
-interface Props {
+export interface Props {
   /**
-   * Field name.
+   * Input field name.
    */
   name: string;
   /**
-   * Field value (used for controlled input).
+   * Input field value (used for controlled input).
    */
   value?: string | number;
   /**
-   * Field default value.
+   * Input field default value.
    */
   defaultValue?: string | number;
   /**
-   * Input html type.
+   * Input field html type.
    */
   type?: InputType;
   /**
-   * Input label.
+   * Input field label.
    */
   label?: string;
   /**
-   * Input html placeholder.
+   * Input field html placeholder.
    */
   placeholder?: string;
   /**
@@ -36,19 +36,19 @@ interface Props {
    */
   helperText?: string;
   /**
-   * Root class name.
+   * Optional root class name.
    */
   className?: string;
   /**
-   * Marks input as required.
+   * Marks input as required (UI only).
    */
   required?: boolean;
   /**
-   * Disables all styling, helper texts, labels.
+   * Disables all styling, helper texts, labels, etc.
    */
   bare?: boolean;
   /**
-   * Form id.
+   * Html form id.
    */
   form?: string;
   /**

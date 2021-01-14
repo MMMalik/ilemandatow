@@ -1,8 +1,14 @@
 import * as React from "react";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface Props {
+  /**
+   * Topbar component.
+   */
   topbar: React.ReactNode;
+  /**
+   * Footer component.
+   */
   footer: React.ReactNode;
 }
 

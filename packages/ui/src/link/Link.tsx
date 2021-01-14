@@ -1,13 +1,28 @@
 import * as React from "react";
 import clsx from "clsx";
-import { Link as GatsbyLink } from "gatsby";
 import { useTheme } from "../theme";
+import { useUIContext } from "../uiProvider";
 
-interface Props {
+export interface Props {
+  /**
+   * Link destination.
+   */
   to: string;
+  /**
+   * Use external link.
+   */
   external?: boolean;
+  /**
+   * Optional root class name.
+   */
   className?: string;
+  /**
+   * Display link as button.
+   */
   btn?: boolean;
+  /**
+   * Link color variant.
+   */
   primary?: boolean;
 }
 
@@ -20,15 +35,16 @@ const Link: React.FC<Props> = ({
   primary = false,
 }) => {
   const { theme } = useTheme();
+  const { LinkInternalComponent } = useUIContext();
   const { primary: primaryColor, textPrimary, textOnPrimary } = theme;
   const cls = clsx(
     className,
     btn
-      ? `${textOnPrimary} bg-${primaryColor}`
+      ? `br2 ph3 pv2 mh3 ${textOnPrimary} bg-${primaryColor}`
       : primary
       ? primaryColor
       : textPrimary,
-    "link dim"
+    "link dim pointer"
   );
 
   if (external) {
@@ -40,9 +56,9 @@ const Link: React.FC<Props> = ({
   }
 
   return (
-    <GatsbyLink to={to} className={cls}>
+    <LinkInternalComponent to={to} className={cls}>
       {children}
-    </GatsbyLink>
+    </LinkInternalComponent>
   );
 };
 

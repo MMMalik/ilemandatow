@@ -2,9 +2,18 @@ import * as React from "react";
 import Paper from "../paper";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface Props {
+  /**
+   * Card's title.
+   */
   title: string;
+  /**
+   * Part of the title that is shown on the right side.
+   */
   titleRightSide: string;
+  /**
+   * Card's footer.
+   */
   footer: React.ReactNode;
 }
 

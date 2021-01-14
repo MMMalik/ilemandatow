@@ -1,7 +1,10 @@
 import * as React from "react";
 
-interface Props {
-  onClick: () => void;
+export interface Props {
+  /**
+   * Callback fired upon clicking on root component.
+   */
+  onClick?: () => void;
 }
 
 const TopbarAction: React.FC<Props> = ({ children, onClick }) => {

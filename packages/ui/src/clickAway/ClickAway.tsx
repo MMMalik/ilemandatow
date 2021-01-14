@@ -1,6 +1,6 @@
 import * as React from "react";
 
-interface Props {
+export interface Props {
   /**
    * Callback fired when click outside of child component was detected.
    */

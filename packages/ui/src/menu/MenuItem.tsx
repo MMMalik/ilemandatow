@@ -6,7 +6,7 @@ export interface Props {
   /**
    * Callback fired upon clicking on item.
    */
-  onClick: () => void;
+  onClick?: () => void;
   /**
    * Name of the icon.
    */
@@ -19,7 +19,7 @@ const MenuItem: React.FC<Props> = ({ children, onClick, icon }) => {
 
   return (
     <li
-      className={`pa2 hover-bg-${bgSecondary} flex items-center`}
+      className={`pa2 pointer hover-bg-${bgSecondary} flex items-center`}
       onClick={onClick}
     >
       <Icon icon={icon} className={`mr2 ${textMuted}`} size="sm" />

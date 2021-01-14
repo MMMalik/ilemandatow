@@ -14,7 +14,7 @@ export interface Props {
   onChange: (hex: string) => void;
 }
 
-const ColorPickerDismissablePopper: React.FC<Props> = ({ color, onChange }) => {
+const ColorPickerMenu: React.FC<Props> = ({ color, onChange }) => {
   return (
     <DismissablePopper
       keepOpen={true}
@@ -27,4 +27,4 @@ const ColorPickerDismissablePopper: React.FC<Props> = ({ color, onChange }) => {
   );
 };
 
-export default ColorPickerDismissablePopper;
+export default ColorPickerMenu;

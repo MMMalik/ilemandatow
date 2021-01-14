@@ -1,54 +1,27 @@
 import * as React from "react";
-import InputField, { InputType } from "../inputField";
+import InputField, { Props as InputProps } from "../inputField";
 import TableCell from "./TableCell";
 
-interface Props {
+export interface Props extends Omit<InputProps, "className"> {
   /**
-   * Field name.
-   */
-  name: string;
-  /**
-   * Input type.
-   */
-  type?: InputType;
-  /**
-   * Input placeholder.
-   */
-  placeholder?: string;
-  /**
-   * Form id.
-   */
-  form?: string;
-  /**
-   * Field default value.
-   */
-  defaultValue?: string | number;
-  /**
-   * Optional class name passed to input.
+   * Optional class name passed to underlying `InputField` component.
    */
   inputClassName?: string;
   /**
-   * Custom ref.
+   * Makes input hidden.
    */
-  ref?: any;
+  hidden?: boolean;
 }
 
 const TableCellEditable: React.FC<Props> = React.forwardRef<any, Props>(
-  (
-    { name, type, placeholder, form, inputClassName, defaultValue, children },
-    ref
-  ) => {
+  ({ inputClassName, hidden, children, ...rest }, ref) => {
     return (
       <TableCell>
         <InputField
           ref={ref}
-          className={inputClassName}
-          name={name}
-          type={type}
-          placeholder={placeholder}
-          defaultValue={defaultValue}
-          form={form}
+          className={hidden ? "dn" : inputClassName}
           bare={true}
+          {...rest}
         />
         {children}
       </TableCell>

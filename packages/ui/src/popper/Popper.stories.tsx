@@ -15,7 +15,7 @@ export const Popper = (args: Props) => {
     <div>
       <Button onClick={handleClick}>{"Click me"}</Button>
       <PopperCmp {...args} refEl={refEl}>
-        {"Hello"}
+        <div className="pa3">{"Hello"}</div>
       </PopperCmp>
     </div>
   );

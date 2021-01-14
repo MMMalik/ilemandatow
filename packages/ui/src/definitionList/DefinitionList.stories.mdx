@@ -1,25 +1,22 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
 import DefinitionItem from "./DefinitionItem";
 import DefinitionList from "./DefinitionList";
+import * as template from "./DefinitionList.stories";
 
-<Meta title="Data Display/DefinitionList" />
+<Meta title="Data Display/DefinitionList" component={DefinitionList} />
 
-export const Template = (args) => <DefinitionList {...args} />;
+### Definition List
 
-### Page Title
+Default component for rendering definition lists.
 
-<Story
-  name="Main"
-  args={{
-    children: (
-      <>
-        <DefinitionItem label="Item 1" value="Value of item 1" />
-        <DefinitionItem label="Item 1" value="Value of item 2" />
-        <DefinitionItem label="Item 1" value="Value of item 3" />
-        <DefinitionItem label="Item 1" value="Value of item 4" />
-      </>
-    ),
-  }}
->
-  {Template.bind({})}
-</Story>
+<Canvas>
+  <Story name="Main">{template.DefinitionList.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={DefinitionList} />
+
+### Props - DefinitionItem
+
+<ArgsTable of={DefinitionItem} />

@@ -1,4 +1,5 @@
 import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Button from "../button";
 import DismissablePopper from "./DismissablePopper";
 import * as template from "./DismissablePopper.stories";
 
@@ -6,8 +7,20 @@ import * as template from "./DismissablePopper.stories";
 
 ### DismissablePopper
 
+This component serves as a base for menu-like components such as `Menu`. It's a wrapper around `Popper` component which makes poppers disappear upon clicking.
+
 <Canvas>
-  <Story name="Main">{template.DismissablePopper.bind({})}</Story>
+  <Story
+    name="Main"
+    args={{
+      children: <div className="pa3">{"Dismissiable popper's content"}</div>,
+      clickableComponent: (onClick) => (
+        <Button onClick={onClick}>{"Click me"}</Button>
+      ),
+    }}
+  >
+    {template.DismissablePopper.bind({})}
+  </Story>
 </Canvas>
 
 ### Props

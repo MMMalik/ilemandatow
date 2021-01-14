@@ -1,0 +1,32 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Topbar from "./Topbar";
+import TopbarAction from "./TopbarAction";
+import TopbarIcon from "./TopbarIcon";
+import TopbarLink from "./TopbarLink";
+import * as template from "./Topbar.stories";
+
+<Meta title="Layout/Topbar" component={Topbar} />
+
+### Topbar
+
+Default topbar component.
+
+<Canvas>
+  <Story name="Main">{template.Topbar.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Topbar} />
+
+### Props - TopbarAction
+
+<ArgsTable of={TopbarAction} />
+
+### Props - TopbarIcon
+
+<ArgsTable of={TopbarIcon} />
+
+### Props - TopbarLink
+
+<ArgsTable of={TopbarLink} />

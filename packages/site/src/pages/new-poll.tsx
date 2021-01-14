@@ -4,15 +4,21 @@ import { useTranslation } from "../i18n";
 import { NewPollForm } from "../components";
 
 const NewPoll: React.FC = () => {
+  const [newPollData, setNewPollData] = React.useState();
   const { t } = useTranslation();
+
+  const handleSubmit = (data) => {
+    setNewPollData(data);
+  };
 
   return (
     <>
       <SectionTitle title={t("newPoll")} />
+      {newPollData ? <div /> : <div />}
       <Grid>
         <GridItem>
           <Paper className="pa4">
-            <NewPollForm />
+            <NewPollForm onSubmit={handleSubmit} defaultValues={{}} />
           </Paper>
         </GridItem>
       </Grid>

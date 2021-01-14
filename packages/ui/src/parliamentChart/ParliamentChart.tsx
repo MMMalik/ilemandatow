@@ -3,9 +3,18 @@ import { ParliamentChartParty } from "./types";
 import Chart from "./Chart";
 import Legend from "./Legend";
 
-interface Props {
+export interface Props {
+  /**
+   * List of party results and configs.
+   */
   parties: ParliamentChartParty[];
+  /**
+   * Total number of seats in the parliament.
+   */
   totalSeats: number;
+  /**
+   * Unitless value of inner radius.
+   */
   innerR?: number;
 }
 

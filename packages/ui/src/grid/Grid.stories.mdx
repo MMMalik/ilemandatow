@@ -1,31 +1,22 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
-import Paper from "../paper";
-import GridItem from "./GridItem";
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
 import Grid from "./Grid";
+import GridItem from "./GridItem";
+import * as template from "./Grid.stories";
 
-<Meta title="Layout/Grid" />
-
-export const Template = (args) => <Grid {...args} />;
+<Meta title="Layout/Grid" component={Grid} />
 
 ### Grid
 
-<Story
-  name="Main"
-  args={{
-    children: (
-      <>
-        <GridItem className="w-50">
-          <Paper className="pa3">{"Item 1"}</Paper>
-        </GridItem>
-        <GridItem className="w-50">
-          <Paper className="pa3">{"Item 2"}</Paper>
-        </GridItem>
-        <GridItem className="w-100">
-          <Paper className="pa3">{"Item 3"}</Paper>
-        </GridItem>
-      </>
-    ),
-  }}
->
-  {Template.bind({})}
-</Story>
+Default grid component. Use it in pair with `GridItem`.
+
+<Canvas>
+  <Story name="Main">{template.Grid.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Grid} />
+
+### Props - GridItem
+
+<ArgsTable of={GridItem} />

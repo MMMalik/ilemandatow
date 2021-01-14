@@ -1,0 +1,23 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import ClickAway from "./ClickAway";
+import * as template from "./ClickAway.stories";
+
+<Meta
+  title="Utils/ClickAway"
+  component={ClickAway}
+  argTypes={{ onOutsideClick: { action: "clicked" } }}
+/>
+
+### ClickAway
+
+Detects clicks outside child component. Go to `Canvas/Actions` tab to see it working.
+
+<Canvas>
+  <Story name="Main" args={{ children: <div>{"Some component"}</div> }}>
+    {template.ClickAway.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={ClickAway} />

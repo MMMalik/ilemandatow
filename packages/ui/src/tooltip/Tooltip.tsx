@@ -19,7 +19,7 @@ const Tooltip: React.FC<Props> = ({ children, title }) => {
       <div className="tooltip dib" ref={setRefEl}>
         {children}
       </div>
-      <Popper refEl={refEl} className={`f6 tooltiptext ${textMuted}`}>
+      <Popper refEl={refEl} className={`f6 tooltiptext pa1 ${textMuted}`}>
         {title}
       </Popper>
     </>

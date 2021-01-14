@@ -2,7 +2,10 @@ import * as React from "react";
 import clsx from "clsx";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface Props {
+  /**
+   * Optional class name passed to root component.
+   */
   className?: string;
 }
 

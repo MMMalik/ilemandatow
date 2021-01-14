@@ -1,6 +1,9 @@
 import * as React from "react";
 
-interface Props {
+export interface Props {
+  /**
+   * Callback invoked on submitting form.
+   */
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 

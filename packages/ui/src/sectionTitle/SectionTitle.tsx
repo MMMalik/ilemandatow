@@ -1,8 +1,14 @@
 import * as React from "react";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface Props {
+  /**
+   * Section title.
+   */
   title: React.ReactNode;
+  /**
+   * Section subtitle.
+   */
   subTitle?: React.ReactNode;
 }
 

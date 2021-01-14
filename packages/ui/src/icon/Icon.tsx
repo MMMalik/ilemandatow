@@ -7,11 +7,26 @@ import {
 
 export type IconProp = FontAwesomeIconProps["icon"];
 
-interface Props {
+export interface Props {
+  /**
+   * Icon to show.
+   */
   icon: IconProp;
+  /**
+   * Callback fired upon clicking on root.
+   */
   onClick?: (evt: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  /**
+   * Optional class name passed to root.
+   */
   className?: string;
+  /**
+   * Icon's size.
+   */
   size?: FontAwesomeIconProps["size"];
+  /**
+   * Style passed to icon component.
+   */
   style?: FontAwesomeIconProps["style"];
 }
 

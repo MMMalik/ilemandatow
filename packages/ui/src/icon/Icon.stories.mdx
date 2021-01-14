@@ -1,0 +1,23 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Icon from "./Icon";
+import * as template from "./Icon.stories";
+
+<Meta
+  title="Icons/Icon"
+  component={Icon}
+  argTypes={{ onClick: { action: "clicked" } }}
+/>
+
+### Icon
+
+Default icon component. It's using Font Awesome under the hood.
+
+<Canvas>
+  <Story name="Main" args={{ icon: ["fab", "github"] }}>
+    {template.Icon.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Icon} />
