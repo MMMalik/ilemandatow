@@ -1,6 +1,6 @@
 import * as React from "react";
-import LinkCmp, { Props } from "./Link";
+import LinkCmp, { LinkProps } from "./Link";
 
-export const Link = (args: Props) => {
+export const Link = (args: LinkProps) => {
   return <LinkCmp {...args} />;
 };

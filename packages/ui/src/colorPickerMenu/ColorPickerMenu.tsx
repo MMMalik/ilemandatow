@@ -3,7 +3,7 @@ import ColorPicker from "../colorPicker";
 import Icon from "../icon";
 import DismissablePopper from "../dismissablePopper";
 
-export interface Props {
+export interface ColorPickerMenuProps {
   /**
    * Initial color.
    */
@@ -14,7 +14,10 @@ export interface Props {
   onChange: (hex: string) => void;
 }
 
-const ColorPickerMenu: React.FC<Props> = ({ color, onChange }) => {
+const ColorPickerMenu: React.FC<ColorPickerMenuProps> = ({
+  color,
+  onChange,
+}) => {
   return (
     <DismissablePopper
       keepOpen={true}

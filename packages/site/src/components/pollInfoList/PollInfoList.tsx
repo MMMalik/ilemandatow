@@ -33,6 +33,7 @@ const PollInfoList: React.FC<Props> = ({
         <DefinitionItem
           className="ml5"
           label={t("commissionedBy")}
+          
           value={
             <Link to={source} external={true} className="flex align-center">
               <span>{publishedBy}</span>

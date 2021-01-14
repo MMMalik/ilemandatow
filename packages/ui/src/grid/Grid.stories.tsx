@@ -1,9 +1,9 @@
 import * as React from "react";
 import Paper from "../paper";
-import GridCmp, { Props } from "./Grid";
+import GridCmp, { GridProps } from "./Grid";
 import GridItem from "./GridItem";
 
-export const Grid = (args: Props) => {
+export const Grid = (args: GridProps) => {
   return (
     <GridCmp {...args}>
       <GridItem className="w-50">

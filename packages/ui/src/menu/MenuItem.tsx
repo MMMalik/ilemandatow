@@ -2,7 +2,7 @@ import * as React from "react";
 import Icon, { IconProp } from "../icon";
 import { useTheme } from "../theme";
 
-export interface Props {
+export interface MenuItemProps {
   /**
    * Callback fired upon clicking on item.
    */
@@ -13,7 +13,7 @@ export interface Props {
   icon: IconProp;
 }
 
-const MenuItem: React.FC<Props> = ({ children, onClick, icon }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ children, onClick, icon }) => {
   const { theme } = useTheme();
   const { bgSecondary, textMuted } = theme;
 

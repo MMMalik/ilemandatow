@@ -1,6 +1,6 @@
 import * as React from "react";
-import TooltipCmp, { Props } from "./Tooltip";
+import TooltipCmp, { TooltipProps } from "./Tooltip";
 
-export const Tooltip = (args: Props) => {
+export const Tooltip = (args: TooltipProps) => {
   return <TooltipCmp {...args} />;
 };

@@ -1,6 +1,6 @@
 import * as React from "react";
-import InputFieldCmp, { Props } from "./InputField";
+import InputFieldCmp, { InputFieldProps } from "./InputField";
 
-export const InputField = (args: Props) => {
+export const InputField = (args: InputFieldProps) => {
   return <InputFieldCmp {...args} />;
 };

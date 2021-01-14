@@ -1,6 +1,6 @@
 import * as React from "react";
-import ParliamentChartCmp, { Props } from "./ParliamentChart";
+import ParliamentChartCmp, { ParliamentChartProps } from "./ParliamentChart";
 
-export const ParliamentChart = (args: Props) => {
+export const ParliamentChart = (args: ParliamentChartProps) => {
   return <ParliamentChartCmp {...args} />;
 };

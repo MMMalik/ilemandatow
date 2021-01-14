@@ -6,7 +6,7 @@ import Tooltip from "../tooltip";
 
 export type InputType = "text" | "number" | "color" | "hidden";
 
-export interface Props {
+export interface InputFieldProps {
   /**
    * Input field name.
    */
@@ -61,7 +61,10 @@ export interface Props {
   ref?: any;
 }
 
-const InputField: React.FC<Props> = React.forwardRef<any, Props>(
+const InputField: React.FC<InputFieldProps> = React.forwardRef<
+  any,
+  InputFieldProps
+>(
   (
     {
       name,

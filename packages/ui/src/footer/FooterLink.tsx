@@ -1,9 +1,9 @@
 import * as React from "react";
-import Link, { Props as LinkProps } from "../link";
+import Link, { LinkProps } from "../link";
 
-export type Props = Omit<LinkProps, "className">;
+export type FooterLinkProps = Omit<LinkProps, "className">;
 
-const FooterLink: React.FC<Props> = ({ children, ...rest }) => {
+const FooterLink: React.FC<FooterLinkProps> = ({ children, ...rest }) => {
   return (
     <Link className="pa3 db" {...rest}>
       {children}

@@ -3,13 +3,22 @@ import * as React from "react";
 import Grid, { GridItem } from "../grid";
 import { useTheme } from "../theme";
 
-interface Props {
+interface FormSectionProps {
+  /**
+   * Section title.
+   */
   title?: string;
+  /**
+   * Section description.
+   */
   description?: string;
+  /**
+   * Shows divider on top of the section.
+   */
   divider?: boolean;
 }
 
-const FormSection: React.FC<Props> = ({
+const FormSection: React.FC<FormSectionProps> = ({
   title,
   description,
   children,

@@ -2,7 +2,7 @@ import * as React from "react";
 import ClickAway from "../clickAway";
 import Popper, { PopperPlacement } from "../popper";
 
-export interface Props {
+export interface DismissablePopperProps {
   /**
    * Component that toggles popper. Provides `onClick` callback which must be passed down to clickable component.
    */
@@ -19,7 +19,7 @@ export interface Props {
   placement?: PopperPlacement;
 }
 
-const DismissablePopper: React.FC<Props> = ({
+const DismissablePopper: React.FC<DismissablePopperProps> = ({
   children,
   clickableComponent,
   placement,

@@ -1,8 +1,9 @@
 import * as React from "react";
-import InputField, { Props as InputProps } from "../inputField";
+import InputField, { InputFieldProps } from "../inputField";
 import TableCell from "./TableCell";
 
-export interface Props extends Omit<InputProps, "className"> {
+export interface TableCellEditableProps
+  extends Omit<InputFieldProps, "className"> {
   /**
    * Optional class name passed to underlying `InputField` component.
    */
@@ -13,20 +14,21 @@ export interface Props extends Omit<InputProps, "className"> {
   hidden?: boolean;
 }
 
-const TableCellEditable: React.FC<Props> = React.forwardRef<any, Props>(
-  ({ inputClassName, hidden, children, ...rest }, ref) => {
-    return (
-      <TableCell>
-        <InputField
-          ref={ref}
-          className={hidden ? "dn" : inputClassName}
-          bare={true}
-          {...rest}
-        />
-        {children}
-      </TableCell>
-    );
-  }
-);
+const TableCellEditable: React.FC<TableCellEditableProps> = React.forwardRef<
+  any,
+  TableCellEditableProps
+>(({ inputClassName, hidden, children, ...rest }, ref) => {
+  return (
+    <TableCell>
+      <InputField
+        ref={ref}
+        className={hidden ? "dn" : inputClassName}
+        bare={true}
+        {...rest}
+      />
+      {children}
+    </TableCell>
+  );
+});
 
 export default TableCellEditable;

@@ -1,13 +1,13 @@
 import * as React from "react";
 
-export interface Props {
+export interface FormProps {
   /**
    * Callback invoked on submitting form.
    */
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const Form: React.FC<Props> = ({ children, onSubmit }) => {
+const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
   return (
     <form autoComplete="off" onSubmit={onSubmit}>
       {children}

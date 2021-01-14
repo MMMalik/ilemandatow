@@ -1,7 +1,7 @@
 import * as React from "react";
-import CardCmp, { Props } from "./Card";
+import CardCmp, { CardProps } from "./Card";
 
-export const Card = (args: Props) => {
+export const Card = (args: CardProps) => {
   return (
     <div className="w5">
       <CardCmp {...args} />

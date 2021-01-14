@@ -2,14 +2,14 @@ import * as React from "react";
 import Popper from "../popper";
 import { useTheme } from "../theme";
 
-export interface Props {
+export interface TooltipProps {
   /**
    * Displayed message.
    */
   title: string;
 }
 
-const Tooltip: React.FC<Props> = ({ children, title }) => {
+const Tooltip: React.FC<TooltipProps> = ({ children, title }) => {
   const [refEl, setRefEl] = React.useState<HTMLDivElement | null>(null);
   const { theme } = useTheme();
   const { textMuted } = theme;

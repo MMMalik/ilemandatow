@@ -1,9 +1,9 @@
 import * as React from "react";
 import Icon from "../icon";
-import MenuCmp, { Props } from "./Menu";
+import MenuCmp, { MenuProps } from "./Menu";
 import MenuItem from "./MenuItem";
 
-export const Menu = (args: Props) => {
+export const Menu = (args: MenuProps) => {
   return (
     <MenuCmp
       {...args}

@@ -2,7 +2,7 @@ import * as React from "react";
 import DismissablePopper from "../dismissablePopper";
 import { PopperPlacement } from "../popper";
 
-export interface Props {
+export interface MenuProps {
   /**
    * Component that toggles menu. It is passed to underlying `DismissablePopper` component. Provides `onClick` callback which must be passed down to clickable component.
    */
@@ -15,7 +15,7 @@ export interface Props {
   placement?: PopperPlacement;
 }
 
-const Menu: React.FC<Props> = ({ menuBtn, placement, children }) => {
+const Menu: React.FC<MenuProps> = ({ menuBtn, placement, children }) => {
   return (
     <DismissablePopper clickableComponent={menuBtn} placement={placement}>
       <ul className="list pl0 mv1">{children}</ul>

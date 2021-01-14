@@ -3,7 +3,7 @@ import Icon from "../icon";
 import Link from "../link";
 import { useTheme } from "../theme";
 
-export interface Props {
+export interface DefinitionItemProps {
   /**
    * Item label.
    */
@@ -22,7 +22,7 @@ export interface Props {
   linkExternal?: boolean;
 }
 
-const DefinitionItem: React.FC<Props> = ({
+const DefinitionItem: React.FC<DefinitionItemProps> = ({
   label,
   value,
   linkTo,

@@ -1,6 +1,6 @@
 import * as React from "react";
-import ClickAwayCmp, { Props } from "./ClickAway";
+import ClickAwayCmp, { ClickAwayProps } from "./ClickAway";
 
-export const ClickAway = (args: Props) => {
+export const ClickAway = (args: ClickAwayProps) => {
   return <ClickAwayCmp {...args} />;
 };

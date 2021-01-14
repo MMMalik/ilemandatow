@@ -1,13 +1,10 @@
 import * as React from "react";
+import { noOp } from "../utils";
 import TopbarLink from "./TopbarLink";
-import TopbarCmp, { Props } from "./Topbar";
+import TopbarCmp, { TopbarProps } from "./Topbar";
 import TopbarIcon from "./TopbarIcon";
 
-export const Topbar = (args: Props) => {
-  const handleClick = () => {
-    //
-  };
-
+export const Topbar = (args: TopbarProps) => {
   return (
     <div style={{ width: "90vw" }}>
       <TopbarCmp
@@ -28,7 +25,7 @@ export const Topbar = (args: Props) => {
         }
         menuItems={
           <>
-            <TopbarIcon icon="cog" onClick={handleClick} />
+            <TopbarIcon icon="cog" onClick={noOp} />
             <TopbarLink to="https://onet.pl" external={true} btn={true}>
               {"Button 1"}
             </TopbarLink>
@@ -40,7 +37,7 @@ export const Topbar = (args: Props) => {
             <TopbarLink to="https://onet.pl" external={true}>
               {"Link 2"}
             </TopbarLink>
-            <TopbarIcon icon="cog" onClick={handleClick} />
+            <TopbarIcon icon="cog" onClick={noOp} />
           </>
         }
         {...args}

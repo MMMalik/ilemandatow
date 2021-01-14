@@ -1,6 +1,6 @@
 import * as React from "react";
-import PaperCmp, { Props } from "./Paper";
+import PaperCmp, { PaperProps } from "./Paper";
 
-export const Paper = (args: Props) => {
+export const Paper = (args: PaperProps) => {
   return <PaperCmp {...args} />;
 };

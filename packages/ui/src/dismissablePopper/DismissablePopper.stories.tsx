@@ -1,6 +1,8 @@
 import * as React from "react";
-import DismissablePopperCmp, { Props } from "./DismissablePopper";
+import DismissablePopperCmp, {
+  DismissablePopperProps,
+} from "./DismissablePopper";
 
-export const DismissablePopper = (args: Props) => {
+export const DismissablePopper = (args: DismissablePopperProps) => {
   return <DismissablePopperCmp {...args} />;
 };

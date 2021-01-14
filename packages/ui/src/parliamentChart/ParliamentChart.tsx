@@ -3,7 +3,7 @@ import { ParliamentChartParty } from "./types";
 import Chart from "./Chart";
 import Legend from "./Legend";
 
-export interface Props {
+export interface ParliamentChartProps {
   /**
    * List of party results and configs.
    */
@@ -18,7 +18,7 @@ export interface Props {
   innerR?: number;
 }
 
-const ParliamentChart: React.FC<Props> = ({
+const ParliamentChart: React.FC<ParliamentChartProps> = ({
   totalSeats,
   parties,
   innerR = 50,

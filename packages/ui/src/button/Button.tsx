@@ -2,7 +2,7 @@ import * as React from "react";
 import clsx from "clsx";
 import { useTheme } from "../theme";
 
-export interface Props {
+export interface ButtonProps {
   /**
    * Optional click handler.
    */
@@ -21,7 +21,7 @@ export interface Props {
   className?: string;
 }
 
-const Button: React.FC<Props> = ({
+const Button: React.FC<ButtonProps> = ({
   htmlType = "button",
   btnType = "primary",
   className,

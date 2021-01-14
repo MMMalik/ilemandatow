@@ -1,6 +1,6 @@
 import * as React from "react";
-import IconCmp, { Props } from "./Icon";
+import IconCmp, { IconProps } from "./Icon";
 
-export const Icon = (args: Props) => {
+export const Icon = (args: IconProps) => {
   return <IconCmp {...args} />;
 };

@@ -1,6 +1,6 @@
 import * as React from "react";
-import ColorPickerCmp, { Props } from "./ColorPicker";
+import ColorPickerCmp, { ColorPickerProps } from "./ColorPicker";
 
-export const ColorPicker = (args: Props) => {
+export const ColorPicker = (args: ColorPickerProps) => {
   return <ColorPickerCmp {...args} />;
 };

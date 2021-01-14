@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useTheme } from "../theme";
 
-export interface Props {
+export interface FooterProps {
   /**
    * Component placed on the left side.
    */
@@ -16,7 +16,7 @@ export interface Props {
   right: React.ReactNode;
 }
 
-const Footer: React.FC<Props> = ({ left, center, right }) => {
+const Footer: React.FC<FooterProps> = ({ left, center, right }) => {
   const { theme } = useTheme();
   const { textPrimary, bgPrimary } = theme;
 

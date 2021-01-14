@@ -7,7 +7,7 @@ import {
 
 export type IconProp = FontAwesomeIconProps["icon"];
 
-export interface Props {
+export interface IconProps {
   /**
    * Icon to show.
    */
@@ -30,7 +30,13 @@ export interface Props {
   style?: FontAwesomeIconProps["style"];
 }
 
-const Icon: React.FC<Props> = ({ icon, size, onClick, className, style }) => {
+const Icon: React.FC<IconProps> = ({
+  icon,
+  size,
+  onClick,
+  className,
+  style,
+}) => {
   return (
     <div
       className={clsx("dib", className, onClick && "dim pointer")}

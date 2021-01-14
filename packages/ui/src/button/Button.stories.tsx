@@ -1,6 +1,6 @@
 import * as React from "react";
-import ButtonCmp, { Props } from "./Button";
+import ButtonCmp, { ButtonProps } from "./Button";
 
-export const Button = (args: Props) => {
+export const Button = (args: ButtonProps) => {
   return <ButtonCmp {...args} />;
 };

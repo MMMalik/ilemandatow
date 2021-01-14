@@ -4,7 +4,7 @@ import { usePopper } from "react-popper";
 import { useTheme } from "../theme";
 import { PopperPlacement } from "./types";
 
-export interface Props {
+export interface PopperProps {
   /**
    * Reference element to which popper will be anchored.
    */
@@ -23,7 +23,7 @@ export interface Props {
   onClick?: () => void;
 }
 
-const Popper: React.FC<Props> = ({
+const Popper: React.FC<PopperProps> = ({
   children,
   className,
   placement,

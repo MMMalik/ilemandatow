@@ -1,8 +1,8 @@
 import * as React from "react";
 import Button from "../button";
-import PopperCmp, { Props } from "./Popper";
+import PopperCmp, { PopperProps } from "./Popper";
 
-export const Popper = (args: Props) => {
+export const Popper = (args: PopperProps) => {
   const [refEl, setRefEl] = React.useState<HTMLElement | null>(null);
 
   const handleClick = (

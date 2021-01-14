@@ -2,8 +2,17 @@ import { SubmitHandler, useForm as useRHForm } from "react-hook-form";
 import { FormValues } from "./types";
 
 interface Props<T> {
+  /**
+   * Submit handler.
+   */
   onSubmit: SubmitHandler<FormValues<T>>;
+  /**
+   * Form default / initial values.
+   */
   defaultValues: FormValues<T>;
+  /**
+   * Helps debug form. Enabled in `development` by default.
+   */
   debug?: boolean;
 }
 

@@ -2,7 +2,7 @@ import * as React from "react";
 import Paper from "../paper";
 import { useTheme } from "../theme";
 
-export interface Props {
+export interface CardProps {
   /**
    * Card's title.
    */
@@ -17,7 +17,12 @@ export interface Props {
   footer: React.ReactNode;
 }
 
-const Card: React.FC<Props> = ({ title, titleRightSide, children, footer }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  titleRightSide,
+  children,
+  footer,
+}) => {
   const { theme } = useTheme();
   const { bgPrimary, textMuted, textDisabled } = theme;
 

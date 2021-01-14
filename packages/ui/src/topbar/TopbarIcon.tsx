@@ -1,7 +1,7 @@
 import * as React from "react";
 import Icon, { IconProp } from "../icon";
 
-export interface Props {
+export interface TopbarIconProps {
   /**
    * Callback fired upon clicking on root component.
    */
@@ -12,7 +12,7 @@ export interface Props {
   icon: IconProp;
 }
 
-const TopbarIcon: React.FC<Props> = ({ icon, onClick }) => {
+const TopbarIcon: React.FC<TopbarIconProps> = ({ icon, onClick }) => {
   return <Icon icon={icon} onClick={onClick} className="pa3" />;
 };
 

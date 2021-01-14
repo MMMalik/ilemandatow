@@ -1,7 +1,7 @@
 import * as React from "react";
 import { HexColorPicker } from "react-colorful";
 
-export interface Props {
+export interface ColorPickerProps {
   /**
    * Initial color.
    */
@@ -12,7 +12,7 @@ export interface Props {
   onChange: (hex: string) => void;
 }
 
-const ColorPicker: React.FC<Props> = ({ color, onChange }) => {
+const ColorPicker: React.FC<ColorPickerProps> = ({ color, onChange }) => {
   return <HexColorPicker className="cp-sm" color={color} onChange={onChange} />;
 };
 

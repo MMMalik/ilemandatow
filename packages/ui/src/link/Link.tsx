@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { useTheme } from "../theme";
 import { useUIContext } from "../uiProvider";
 
-export interface Props {
+export interface LinkProps {
   /**
    * Link destination.
    */
@@ -26,7 +26,7 @@ export interface Props {
   primary?: boolean;
 }
 
-const Link: React.FC<Props> = ({
+const Link: React.FC<LinkProps> = ({
   to,
   children,
   className,

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useTheme } from "../theme";
 import TopbarIcon from "./TopbarIcon";
 
-export interface Props {
+export interface TopbarProps {
   /**
    * Links to be displayed.
    */
@@ -25,7 +25,7 @@ export interface Props {
   mobileOverlayMenuItems: React.ReactNode;
 }
 
-const Topbar: React.FC<Props> = ({
+const Topbar: React.FC<TopbarProps> = ({
   links,
   mobileLinks,
   menuItems,
