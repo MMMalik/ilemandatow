@@ -12,10 +12,10 @@ const Party: React.FC<Props> = ({ groupedParty, offset }) => {
 
   return (
     <g>
-      {seats.map(({ x, y, r, id }) => {
+      {seats.map(({ x, y, r, id }, i) => {
         return (
           <Seat
-            key={id}
+            key={`${id}_${i}`}
             fill={party.fill}
             cx={x + offset}
             cy={y + offset}

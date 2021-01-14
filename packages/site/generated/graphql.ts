@@ -2761,7 +2761,7 @@ export type SitePageContextI18nCtxTranslations = {
   insertRowAbove?: Maybe<Scalars['String']>;
   insertRowBelow?: Maybe<Scalars['String']>;
   removeRow?: Maybe<Scalars['String']>;
-  reCalculate?: Maybe<Scalars['String']>;
+  edit?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextI18nCtxTranslationsFilterInput = {
@@ -2809,7 +2809,7 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   insertRowAbove?: Maybe<StringQueryOperatorInput>;
   insertRowBelow?: Maybe<StringQueryOperatorInput>;
   removeRow?: Maybe<StringQueryOperatorInput>;
-  reCalculate?: Maybe<StringQueryOperatorInput>;
+  edit?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2964,7 +2964,7 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___insertRowAbove'
   | 'context___i18nCtx___translations___insertRowBelow'
   | 'context___i18nCtx___translations___removeRow'
-  | 'context___i18nCtx___translations___reCalculate'
+  | 'context___i18nCtx___translations___edit'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
