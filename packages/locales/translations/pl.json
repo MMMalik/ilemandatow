@@ -42,5 +42,6 @@
   "party3": "Partia 3",
   "insertRowAbove": "Dodaj wiersz powyżej",
   "insertRowBelow": "Dodaj wiersz poniżej",
-  "removeRow": "Usuń wiersz"
+  "removeRow": "Usuń wiersz",
+  "edit": "Edytuj"
 }

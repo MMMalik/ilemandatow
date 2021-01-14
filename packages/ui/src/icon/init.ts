@@ -18,6 +18,7 @@ import {
   faMoon,
   faExternalLinkAlt,
   faCircle,
+  faRedo,
 } from "@fortawesome/free-solid-svg-icons";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
@@ -27,6 +28,7 @@ library.add(
   faPlus,
   faMinus,
   faTrash,
+  faRedo,
   faAngleDown,
   faAngleUp,
   faCog,

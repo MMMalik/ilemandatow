@@ -1,10 +1,9 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Grid, GridItem, SectionTitle } from "@ilemandatow/ui";
-import { PollCard } from "../components";
+import { SectionTitle } from "@ilemandatow/ui";
 import { GetAllPollsQuery } from "../types";
 import { useTranslation } from "../i18n";
-import { filterPollResults, sortPollsByDate } from "../data";
+import { PollsGrid } from "../views";
 
 export const query = graphql`
   query getAllPolls {
@@ -26,23 +25,7 @@ const Polls: React.FC<Props> = ({ data }) => {
   return (
     <>
       <SectionTitle title={t("polls")} />
-      <Grid>
-        {data.allPollsJson.nodes
-          .sort(sortPollsByDate)
-          .map(({ id, polledBy, publishedAt, source, results }) => {
-            return (
-              <GridItem key={id} className="w-50-m w-third-l">
-                <PollCard
-                  id={id}
-                  polledBy={polledBy?.abbr ?? ""}
-                  publishedAt={publishedAt}
-                  source={source ?? ""}
-                  results={filterPollResults(results)}
-                />
-              </GridItem>
-            );
-          })}
-      </Grid>
+      <PollsGrid polls={data.allPollsJson.nodes} />
     </>
   );
 };

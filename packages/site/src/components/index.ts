@@ -1,3 +1,6 @@
+export * from "./electionSettingsList";
+export { default as ElectionSettingsList } from "./electionSettingsList";
+
 export * from "./newPollForm";
 export { default as NewPollForm } from "./newPollForm";
 

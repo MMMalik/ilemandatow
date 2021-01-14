@@ -63,3 +63,6 @@ export { default as Topbar } from "./topbar";
 
 export * from "./theme";
 export { default as ThemeProvider } from "./theme";
+
+export * from "./uiProvider";
+export { default as UIProvider } from "./uiProvider";

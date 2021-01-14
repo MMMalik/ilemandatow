@@ -4,39 +4,24 @@ import {
   FormProvider,
   FormSection,
   FormSubmit,
+  InputField,
   useForm,
 } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
 import NewPollResultsTable from "./NewPollResultsTable";
 import NewPollSettings from "./NewPollSettings";
+import { NewPollFormValues } from "./types";
 
-const NewPollForm: React.FC = () => {
+interface Props {
+  onSubmit: (data: NewPollFormValues) => void;
+  initValues: NewPollFormValues;
+}
+
+const NewPollForm: React.FC<Props> = ({ onSubmit, initValues }) => {
   const { t } = useTranslation();
-  const methods = useForm({
-    onSubmit: (data) => {
-      alert(JSON.stringify(data));
-    },
-    defaultValues: {
-      parties: [
-        {
-          name: t("party1"),
-          result: 25,
-          color: "#5E2CA5",
-        },
-        {
-          name: t("party2"),
-          result: 35,
-          color: "#fcba03",
-        },
-        {
-          name: t("party3"),
-          result: 40,
-          color: "#00f03c",
-        },
-      ],
-      threshold: 5.0,
-      seats: 460,
-    },
+  const methods = useForm<NewPollFormValues>({
+    onSubmit,
+    defaultValues: initValues,
   });
 
   return (

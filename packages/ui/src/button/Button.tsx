@@ -1,6 +1,7 @@
 import * as React from "react";
 import clsx from "clsx";
 import { useTheme } from "../theme";
+import Icon, { IconProp } from "../icon";
 
 export interface ButtonProps {
   /**
@@ -19,6 +20,10 @@ export interface ButtonProps {
    * Optional class passed to root component.
    */
   className?: string;
+  /**
+   * Icon name.
+   */
+  icon?: IconProp;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -27,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   onClick,
   children,
+  icon,
 }) => {
   const { theme } = useTheme();
   const { primary, bgSecondary, textPrimary, textOnPrimary } = theme;
@@ -42,9 +48,11 @@ const Button: React.FC<ButtonProps> = ({
       type={htmlType}
       className={clsx(
         `bn pointer br2 ph3 pv2 dim ${btnStyles[btnType]}`,
+        icon && "flex items-center",
         className
       )}
     >
+      {icon && <Icon className="mr1" icon={icon} />}
       {children}
     </button>
   );

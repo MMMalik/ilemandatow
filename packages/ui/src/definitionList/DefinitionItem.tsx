@@ -1,4 +1,5 @@
 import * as React from "react";
+import clsx from "clsx";
 import Icon from "../icon";
 import Link from "../link";
 import { useTheme } from "../theme";
@@ -20,6 +21,14 @@ export interface DefinitionItemProps {
    * Use external link.
    */
   linkExternal?: boolean;
+  /**
+   * Optional class name passed to root.
+   */
+  className?: string;
+  /**
+   * Disables margin on the root.
+   */
+  disableMargin?: boolean;
 }
 
 const DefinitionItem: React.FC<DefinitionItemProps> = ({
@@ -27,6 +36,8 @@ const DefinitionItem: React.FC<DefinitionItemProps> = ({
   value,
   linkTo,
   linkExternal,
+  className,
+  disableMargin,
 }) => {
   const { theme } = useTheme();
   const { textMuted } = theme;
@@ -41,7 +52,7 @@ const DefinitionItem: React.FC<DefinitionItemProps> = ({
   );
 
   return (
-    <div className="mr5">
+    <div className={clsx(!disableMargin && "mr5", className)}>
       <div className="f6 mb2 b">{label}</div>
       <div>{content}</div>
     </div>

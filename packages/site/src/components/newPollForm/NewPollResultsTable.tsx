@@ -1,32 +1,28 @@
 import * as React from "react";
 import {
-  MenuItem,
   Table,
   TableBody,
   TableHead,
   TableHeadCell,
-  TableContextMenu,
   useFieldArray,
 } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
+import { getNewParty } from "./getNewParty";
 import NewPollResultsTableRow from "./NewPollResultsTableRow";
-
-const defaultParty = {
-  name: "",
-  result: 0,
-  color: "#000000",
-};
 
 const NewPollResultsTable: React.FC = () => {
   const { t } = useTranslation();
-  const { fields, insert, remove } = useFieldArray({ name: "parties" });
+  const { fields, insert, remove } = useFieldArray({
+    name: "parties",
+    keyName: "_id",
+  });
 
   const insertRowAbove = (index: number) => () => {
-    insert(index, { ...defaultParty });
+    insert(index, getNewParty());
   };
 
   const insertRowBelow = (index: number) => () => {
-    insert(index + 1, { ...defaultParty });
+    insert(index + 1, getNewParty());
   };
 
   const removeRow = (index: number) => () => {
@@ -42,29 +38,21 @@ const NewPollResultsTable: React.FC = () => {
         <TableHeadCell />
       </TableHead>
       <TableBody>
-        {fields.map(({ id, name, result, color }, i) => {
+        {fields.map(({ _id, id, name, result, color }, i) => {
           return (
             <NewPollResultsTableRow
-              key={id}
+              key={_id}
+              partyIdField={`parties[${i}].id`}
+              defaultId={id}
               partyNameField={`parties[${i}].name`}
               defaultName={name}
               partyResultField={`parties[${i}].result`}
               defaultResult={result}
               partyColorField={`parties[${i}].color`}
               defaultColor={color}
-              settings={
-                <TableContextMenu>
-                  <MenuItem icon="angle-up" onClick={insertRowAbove(i)}>
-                    {t("insertRowAbove")}
-                  </MenuItem>
-                  <MenuItem icon="trash" onClick={removeRow(i)}>
-                    {t("removeRow")}
-                  </MenuItem>
-                  <MenuItem icon="angle-down" onClick={insertRowBelow(i)}>
-                    {t("insertRowBelow")}
-                  </MenuItem>
-                </TableContextMenu>
-              }
+              insertRowAbove={insertRowAbove(i)}
+              insertRowBelow={insertRowBelow(i)}
+              removeRow={removeRow(i)}
             />
           );
         })}

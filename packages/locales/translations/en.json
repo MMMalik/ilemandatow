@@ -42,5 +42,6 @@
   "party3": "Party 3",
   "insertRowAbove": "Insert row above",
   "insertRowBelow": "Insert row below",
-  "removeRow": "Remove row"
+  "removeRow": "Remove row",
+  "edit": "Edit"
 }
