@@ -9,6 +9,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
     "plugin:prettier/recommended",
     "prettier/react",
   ],
@@ -16,5 +17,11 @@ module.exports = {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "react/prop-types": "off",
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
 };

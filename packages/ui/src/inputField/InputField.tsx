@@ -64,63 +64,61 @@ export interface InputFieldProps {
 const InputField: React.FC<InputFieldProps> = React.forwardRef<
   any,
   InputFieldProps
->(
-  (
-    {
-      name,
-      value,
-      defaultValue,
-      className,
-      type = "text",
-      label,
-      placeholder,
-      helperText,
-      required,
-      bare,
-      form,
-      onChange,
-    },
-    ref
-  ) => {
-    const { theme } = useTheme();
-    const { textPrimary, textDivider, textMuted } = theme;
+>(function InputField(
+  {
+    name,
+    value,
+    defaultValue,
+    className,
+    type = "text",
+    label,
+    placeholder,
+    helperText,
+    required,
+    bare,
+    form,
+    onChange,
+  },
+  ref
+) {
+  const { theme } = useTheme();
+  const { textPrimary, textDivider, textMuted } = theme;
 
-    return (
-      <div className={className}>
-        {label && !bare && (
-          <label htmlFor={name} className="f6 db mb2">
-            {label}
-            {required && <span className="ml1">{"*"}</span>}
-          </label>
-        )}
-        <div className="flex items-center">
-          <input
-            ref={ref}
-            name={name}
-            value={value}
-            defaultValue={defaultValue}
-            type={type}
-            placeholder={placeholder}
-            form={form}
-            onChange={onChange}
-            className={clsx(
-              `input-reset db w-100 bg-transparent ${textPrimary}`,
-              bare ? "bn outline-0" : `br1 ba b--${textDivider} pa2`
-            )}
-          />
-          {helperText && (
-            <Tooltip title={helperText}>
-              <Icon
-                className={`ml2 ${textMuted}`}
-                size="lg"
-                icon={["far", "question-circle"]}
-              />
-            </Tooltip>
+  return (
+    <div className={className}>
+      {label && !bare && (
+        <label htmlFor={name} className="f6 db mb2">
+          {label}
+          {required && <span className="ml1">{"*"}</span>}
+        </label>
+      )}
+      <div className="flex items-center">
+        <input
+          ref={ref}
+          name={name}
+          value={value}
+          defaultValue={defaultValue}
+          type={type}
+          placeholder={placeholder}
+          form={form}
+          onChange={onChange}
+          className={clsx(
+            `input-reset db w-100 bg-transparent ${textPrimary}`,
+            bare ? "bn outline-0" : `br1 ba b--${textDivider} pa2`
           )}
-        </div>
+        />
+        {helperText && (
+          <Tooltip title={helperText}>
+            <Icon
+              className={`ml2 ${textMuted}`}
+              size="lg"
+              icon={["far", "question-circle"]}
+            />
+          </Tooltip>
+        )}
       </div>
-    );
-  }
-);
+    </div>
+  );
+});
 
 export default InputField;

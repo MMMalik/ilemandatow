@@ -17,7 +17,10 @@ export interface TableCellEditableProps
 const TableCellEditable: React.FC<TableCellEditableProps> = React.forwardRef<
   any,
   TableCellEditableProps
->(({ inputClassName, hidden, children, ...rest }, ref) => {
+>(function TableCellEditable(
+  { inputClassName, hidden, children, ...rest },
+  ref
+) {
   return (
     <TableCell>
       <InputField

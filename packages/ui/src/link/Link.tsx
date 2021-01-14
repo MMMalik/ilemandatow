@@ -49,7 +49,7 @@ const Link: React.FC<LinkProps> = ({
 
   if (external) {
     return (
-      <a className={cls} href={to} rel="noopener" target="_blank">
+      <a className={cls} href={to} rel="noreferrer" target="_blank">
         {children}
       </a>
     );
