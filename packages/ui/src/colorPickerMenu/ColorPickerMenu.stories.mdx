@@ -1,0 +1,21 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import ColorPickerMenu from "./ColorPickerMenu";
+import * as template from "./ColorPickerMenu.stories";
+
+<Meta
+  title="Feedback/ColorPickerMenu"
+  component={ColorPickerMenu}
+  argTypes={{ onChange: { action: "clicked" } }}
+/>
+
+### ColorPickerMenu
+
+Provides menu component around `ColorPicker` component.
+
+<Canvas>
+  <Story name="Main">{template.ColorPickerMenu.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={ColorPickerMenu} />

@@ -1,0 +1,17 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import PageWrapper from "./PageWrapper";
+import * as template from "./PageWrapper.stories";
+
+<Meta title="Layout/PageWrapper" component={PageWrapper} />
+
+### PageWrapper
+
+Page wrapper component. Pair it with `Footer` and `Topbar`.
+
+<Canvas>
+  <Story name="Main">{template.PageWrapper.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={PageWrapper} />

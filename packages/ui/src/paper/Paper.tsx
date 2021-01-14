@@ -2,11 +2,14 @@ import * as React from "react";
 import clsx from "clsx";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface PaperProps {
+  /**
+   * Optional class name passed to root component.
+   */
   className?: string;
 }
 
-const Paper: React.FC<Props> = ({ children, className }) => {
+const Paper: React.FC<PaperProps> = ({ children, className }) => {
   const { theme } = useTheme();
   const { textPrimary, bgPrimary } = theme;
 

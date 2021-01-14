@@ -16,9 +16,11 @@ const PollCardStats: React.FC<Props> = ({ results }) => {
         .map(({ result, party }) => {
           return (
             <DefinitionItem
+              key={party?.id}
               className="w-third"
               label={party?.abbr ?? ""}
               value={result ?? ""}
+              disableMargin={true}
             />
           );
         })}

@@ -1,12 +1,22 @@
 import * as React from "react";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface PageWrapperProps {
+  /**
+   * Topbar component.
+   */
   topbar: React.ReactNode;
+  /**
+   * Footer component.
+   */
   footer: React.ReactNode;
 }
 
-const PageWrapper: React.FC<Props> = ({ topbar, footer, children }) => {
+const PageWrapper: React.FC<PageWrapperProps> = ({
+  topbar,
+  footer,
+  children,
+}) => {
   const { theme } = useTheme();
   const { textPrimary, bgSecondary } = theme;
 

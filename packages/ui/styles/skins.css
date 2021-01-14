@@ -1,7 +1,23 @@
-.bg-grayer {
+.gray-c-1 {
+  color: #212121;
+}
+
+.bg-gray-c-1 {
   background-color: #212121;
 }
 
-.bg-grayer2 {
+.hover-bg-gray-c-1:hover {
+  background-color: #212121;
+}
+
+.gray-c-2 {
+  color: #2e2e2e;
+}
+
+.bg-gray-c-2 {
+  background-color: #2e2e2e;
+}
+
+.hover-bg-gray-c-2:hover {
   background-color: #2e2e2e;
 }

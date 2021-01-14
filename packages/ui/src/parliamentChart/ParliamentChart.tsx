@@ -3,13 +3,22 @@ import { ParliamentChartParty } from "./types";
 import Chart from "./Chart";
 import Legend from "./Legend";
 
-interface Props {
+export interface ParliamentChartProps {
+  /**
+   * List of party results and configs.
+   */
   parties: ParliamentChartParty[];
+  /**
+   * Total number of seats in the parliament.
+   */
   totalSeats: number;
+  /**
+   * Unitless value of inner radius.
+   */
   innerR?: number;
 }
 
-const ParliamentChart: React.FC<Props> = ({
+const ParliamentChart: React.FC<ParliamentChartProps> = ({
   totalSeats,
   parties,
   innerR = 50,

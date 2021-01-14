@@ -1,0 +1,17 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Footer from "./Footer";
+import * as template from "./Footer.stories";
+
+<Meta title="Layout/Footer" component={Footer} />
+
+### Footer
+
+Default footer component.
+
+<Canvas>
+  <Story name="Main">{template.Footer.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Footer} />

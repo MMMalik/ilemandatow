@@ -1,0 +1,17 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Popper from "./Popper";
+import * as template from "./Popper.stories";
+
+<Meta title="Feedback/Popper" component={Popper} />
+
+### Popper
+
+Default popper component. It is used as a base for other components and it is meant to be used internally. This component is extended with more features by `DismissablePopper`.
+
+<Canvas>
+  <Story name="Main">{template.Popper.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Popper} />

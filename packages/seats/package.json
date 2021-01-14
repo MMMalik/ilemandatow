@@ -9,6 +9,7 @@
   "scripts": {
     "cleanup": "rimraf dist",
     "build": "yarn cleanup && tsc",
-    "build:watch": "yarn cleanup && tsc --watch"
+    "build:watch": "yarn cleanup && tsc --watch",
+    "check-types": "tsc --noEmit"
   }
 }

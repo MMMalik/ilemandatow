@@ -24,11 +24,14 @@
     "clsx": "^1.1.1",
     "date-fns": "^2.16.1",
     "gatsby": "^2.29.1",
+    "nanoid": "^3.1.20",
+    "query-string": "^6.13.8",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-popper": "^2.2.4"
   },
   "devDependencies": {
+    "@types/query-string": "^6.3.0",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-netlify": "^2.8.0",
     "gatsby-plugin-robots-txt": "^1.5.5",

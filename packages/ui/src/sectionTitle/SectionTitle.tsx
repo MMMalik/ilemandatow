@@ -1,12 +1,18 @@
 import * as React from "react";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface SectionTitleProps {
+  /**
+   * Section title.
+   */
   title: React.ReactNode;
+  /**
+   * Section subtitle.
+   */
   subTitle?: React.ReactNode;
 }
 
-const SectionTitle: React.FC<Props> = ({ title, subTitle }) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ title, subTitle }) => {
   const { theme } = useTheme();
   const { textMuted } = theme;
 

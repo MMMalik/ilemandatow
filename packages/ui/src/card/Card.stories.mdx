@@ -1,0 +1,27 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Card from "./Card";
+import * as template from "./Card.stories";
+
+<Meta title="Data Display/Card" component={Card} />
+
+### Card
+
+Default card component.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      children: <div>{"Cards's child"}</div>,
+      footer: <div>{"Cards's footer"}</div>,
+      title: "Card's title",
+      titleRightSide: "Some content",
+    }}
+  >
+    {template.Card.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Card} />

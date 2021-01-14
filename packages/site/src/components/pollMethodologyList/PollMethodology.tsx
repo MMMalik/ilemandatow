@@ -1,6 +1,7 @@
 import * as React from "react";
 import { DefinitionList, DefinitionItem } from "@ilemandatow/ui";
-import { useDateFormat, useTranslation } from "../../i18n";
+import { useTranslation } from "../../i18n";
+import DateSpan from "../dateSpan";
 
 interface Props {
   pollStartedAt?: string;
@@ -16,28 +17,18 @@ const PollMethodology: React.FC<Props> = ({
   participantsCount,
 }) => {
   const { t } = useTranslation();
-  const format = useDateFormat();
 
   return (
     <DefinitionList>
       {pollStartedAt && (
         <DefinitionItem
           label={t("conductedAt")}
-          value={
-            pollEndedAt
-              ? `${format(new Date(pollStartedAt))} - ${format(
-                  new Date(pollEndedAt)
-                )}`
-              : format(new Date(pollStartedAt))
-          }
+          value={<DateSpan from={pollStartedAt} to={pollEndedAt} />}
         />
       )}
-      {method && (
-        <DefinitionItem className="ml5" label={t("method")} value={method} />
-      )}
+      {method && <DefinitionItem label={t("method")} value={method} />}
       {participantsCount && (
         <DefinitionItem
-          className="ml5"
           label={t("participantsCount")}
           value={participantsCount}
         />

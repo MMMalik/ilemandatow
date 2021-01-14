@@ -1,17 +1,13 @@
 import * as React from "react";
-import { Topbar, TopbarButtonLink } from "@ilemandatow/ui";
-import { useTranslation } from "../../i18n";
-import { useRoutes } from "../../routes";
+import { Topbar } from "@ilemandatow/ui";
 import AboutUs from "./AboutUs";
 import ThemeIcon from "./ThemeIcon";
 import LanguageIcon from "./LanguageIcon";
 import Home from "./Home";
 import Polls from "./Polls";
+import NextPoll from "./NextPoll";
 
 const AppTopbar: React.FC = () => {
-  const { t } = useTranslation();
-  const { routes } = useRoutes();
-
   return (
     <>
       <Topbar
@@ -27,9 +23,7 @@ const AppTopbar: React.FC = () => {
           <>
             <ThemeIcon />
             <LanguageIcon />
-            <TopbarButtonLink to={routes.newPoll.link()}>
-              {t("newPoll")}
-            </TopbarButtonLink>
+            <NextPoll />
           </>
         }
         mobileMenuItems={null}

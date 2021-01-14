@@ -1,12 +1,7 @@
 import * as React from "react";
-import {
-  DefinitionList,
-  DefinitionItem,
-  Icon,
-  Link,
-  useTheme,
-} from "@ilemandatow/ui";
-import { useDateFormat, useTranslation } from "../../i18n";
+import { DefinitionList, DefinitionItem } from "@ilemandatow/ui";
+import { useTranslation } from "../../i18n";
+import DateSpan from "../dateSpan";
 
 interface Props {
   polledBy?: string;
@@ -22,30 +17,22 @@ const PollInfoList: React.FC<Props> = ({
   source,
 }) => {
   const { t } = useTranslation();
-  const { theme } = useTheme();
-  const format = useDateFormat();
-  const { textMuted } = theme;
 
   return (
     <DefinitionList>
       {polledBy && <DefinitionItem label={t("conductedBy")} value={polledBy} />}
       {publishedBy && source && (
         <DefinitionItem
-          className="ml5"
           label={t("commissionedBy")}
-          value={
-            <Link to={source} external={true} className="flex align-center">
-              <span>{publishedBy}</span>
-              <Icon className={`ml1 ${textMuted}`} icon="external-link-alt" />
-            </Link>
-          }
+          value={publishedBy}
+          linkTo={source}
+          linkExternal={true}
         />
       )}
       {publishedAt && (
         <DefinitionItem
-          className="ml5"
           label={t("publishedAt")}
-          value={format(new Date(publishedAt))}
+          value={<DateSpan from={publishedAt} />}
         />
       )}
     </DefinitionList>

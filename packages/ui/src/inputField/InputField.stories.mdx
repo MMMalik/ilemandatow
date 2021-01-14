@@ -1,0 +1,31 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import InputField from "./InputField";
+import * as template from "./InputField.stories";
+
+<Meta
+  title="Inputs/InputField"
+  component={InputField}
+  argTypes={{ onChange: { action: "clicked" } }}
+/>
+
+### Input Field
+
+Default input field component. Contains boilerplate such as labels, helper texts, error messages. It does not assume usage of any form-control libraries.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      name: "firstName",
+      label: "First Name",
+      helperText: "Enter your first name.",
+      type: "text",
+    }}
+  >
+    {template.InputField.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={InputField} />
