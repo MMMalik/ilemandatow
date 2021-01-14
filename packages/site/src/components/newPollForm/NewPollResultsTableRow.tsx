@@ -7,7 +7,6 @@ import {
   ColorPickerMenu,
   TableContextMenu,
   MenuItem,
-  InputField,
 } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
 

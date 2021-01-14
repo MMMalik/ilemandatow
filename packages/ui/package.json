@@ -10,7 +10,8 @@
     "cleanup": "rimraf dist",
     "build": "yarn cleanup && tsc",
     "build:watch": "yarn cleanup && tsc --watch",
-    "storybook": "start-storybook -p 9009"
+    "storybook": "start-storybook -p 9009",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

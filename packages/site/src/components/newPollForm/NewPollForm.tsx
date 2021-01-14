@@ -4,7 +4,6 @@ import {
   FormProvider,
   FormSection,
   FormSubmit,
-  InputField,
   useForm,
 } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
