@@ -1,10 +1,13 @@
 import * as React from "react";
 
-interface Props {
-  onClick: () => void;
+export interface TopbarActionProps {
+  /**
+   * Callback fired upon clicking on root component.
+   */
+  onClick?: () => void;
 }
 
-const TopbarAction: React.FC<Props> = ({ children, onClick }) => {
+const TopbarAction: React.FC<TopbarActionProps> = ({ children, onClick }) => {
   return (
     <div className="pointer dim pa3 dib" onClick={onClick}>
       {children}

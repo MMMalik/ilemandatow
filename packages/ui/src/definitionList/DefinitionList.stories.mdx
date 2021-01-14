@@ -1,0 +1,22 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import DefinitionItem from "./DefinitionItem";
+import DefinitionList from "./DefinitionList";
+import * as template from "./DefinitionList.stories";
+
+<Meta title="Data Display/DefinitionList" component={DefinitionList} />
+
+### Definition List
+
+Default component for rendering definition lists.
+
+<Canvas>
+  <Story name="Main">{template.DefinitionList.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={DefinitionList} />
+
+### Props - DefinitionItem
+
+<ArgsTable of={DefinitionItem} />

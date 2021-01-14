@@ -8,11 +8,23 @@ export const getRoutes = (langPath = "") => {
     election: {
       link: (id: string) => `${baseLink}/elections/${id}`,
     },
-    newPoll: {
-      link: () => `${baseLink}/new-poll`,
+    newPollForm: {
+      link: (query?: string) =>
+        query
+          ? `${baseLink}/new-poll/form?${query}`
+          : `${baseLink}/new-poll/form`,
+    },
+    newPollViz: {
+      link: (query?: string) =>
+        query
+          ? `${baseLink}/new-poll/viz?${query}`
+          : `${baseLink}/new-poll/viz`,
     },
     poll: {
       link: (id: string) => `${baseLink}/poll/${id}`,
+    },
+    polls: {
+      link: () => `${baseLink}/polls`,
     },
     about: {
       link: () => `${baseLink}/about`,

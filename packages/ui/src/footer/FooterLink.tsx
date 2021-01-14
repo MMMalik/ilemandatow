@@ -1,14 +1,11 @@
 import * as React from "react";
-import Link from "../link";
+import Link, { LinkProps } from "../link";
 
-interface Props {
-  to: string;
-  external?: boolean;
-}
+export type FooterLinkProps = Omit<LinkProps, "className">;
 
-const FooterLink: React.FC<Props> = ({ to, external, children }) => {
+const FooterLink: React.FC<FooterLinkProps> = ({ children, ...rest }) => {
   return (
-    <Link to={to} external={external} className="pa3 db">
+    <Link className="pa3 db" {...rest}>
       {children}
     </Link>
   );

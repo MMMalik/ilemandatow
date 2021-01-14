@@ -1,5 +1,6 @@
 import "../styles/index.css";
 import ThemeProvider from "../src/theme";
+import UIProvider from "../src/uiProvider";
 
 export const parameters = {
   layout: "centered",
@@ -7,8 +8,10 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider>
-      <Story />
-    </ThemeProvider>
+    <UIProvider>
+      <ThemeProvider>
+        <Story />
+      </ThemeProvider>
+    </UIProvider>
   ),
 ];

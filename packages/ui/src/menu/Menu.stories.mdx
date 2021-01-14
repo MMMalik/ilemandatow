@@ -1,0 +1,22 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Menu from "./Menu";
+import MenuItem from "./MenuItem";
+import * as template from "./Menu.stories";
+
+<Meta title="Feedback/Menu" component={Menu} />
+
+### Menu
+
+Default menu component. It's a wrapper around `DismissablePopper` component which adds styling and boilerplate.
+
+<Canvas>
+  <Story name="Main">{template.Menu.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Menu} />
+
+### Props - MenuItem
+
+<ArgsTable of={MenuItem} />

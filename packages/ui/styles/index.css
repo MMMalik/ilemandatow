@@ -1,5 +1,6 @@
 @import "~fontsource-lato";
 @import "~tachyons/css/tachyons.css";
+@import "~react-colorful/dist/index.css";
 @import "~@fortawesome/fontawesome-svg-core/styles.css";
 
 @import "./layout.css";
@@ -7,3 +8,6 @@
 @import "./height.css";
 @import "./skins.css";
 @import "./tooltip.css";
+@import "./shadows.css";
+@import "./grid.css";
+@import "./colorful.css";

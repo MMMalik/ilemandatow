@@ -1,0 +1,19 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Paper from "./Paper";
+import * as template from "./Paper.stories";
+
+<Meta title="Layout/Paper" component={Paper} />
+
+### Paper
+
+Default paper component. It helps to differentiate various parts of the page.
+
+<Canvas>
+  <Story name="Main" args={{ children: <div className="pa3">Some text</div> }}>
+    {template.Paper.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Paper} />

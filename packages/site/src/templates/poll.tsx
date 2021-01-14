@@ -1,7 +1,9 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import { SectionTitle } from "@ilemandatow/ui";
 import { GetPollInfoQuery } from "../types";
-import PollResults from "../components/pollResults";
+import { useTranslation } from "../i18n";
+import { PollViz } from "../views";
 
 export const query = graphql`
   query getPollInfo($id: String!) {
@@ -18,9 +20,13 @@ interface Props {
 }
 
 const Poll: React.FC<Props> = ({ data }) => {
+  const { t } = useTranslation();
+  const poll = data.allPollsJson.nodes[0];
+
   return (
     <>
-      <PollResults results={data.allPollsJson.nodes[0]?.results} />
+      <SectionTitle title={t("pollResults")} />
+      <PollViz poll={poll} />
     </>
   );
 };

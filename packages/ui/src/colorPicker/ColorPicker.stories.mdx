@@ -1,0 +1,21 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import ColorPicker from "./ColorPicker";
+import * as template from "./ColorPicker.stories";
+
+<Meta
+  title="Inputs/ColorPicker"
+  component={ColorPicker}
+  argTypes={{ onChange: { action: "clicked" } }}
+/>
+
+### ColorPicker
+
+Default component for choosing colors. Provides colors as HEX values.
+
+<Canvas>
+  <Story name="Main">{template.ColorPicker.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={ColorPicker} />

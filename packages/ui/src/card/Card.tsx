@@ -1,18 +1,33 @@
 import * as React from "react";
+import Paper from "../paper";
 import { useTheme } from "../theme";
 
-interface Props {
+export interface CardProps {
+  /**
+   * Card's title.
+   */
   title: string;
+  /**
+   * Part of the title that is shown on the right side.
+   */
   titleRightSide: string;
+  /**
+   * Card's footer.
+   */
   footer: React.ReactNode;
 }
 
-const Card: React.FC<Props> = ({ title, titleRightSide, children, footer }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  titleRightSide,
+  children,
+  footer,
+}) => {
   const { theme } = useTheme();
   const { bgPrimary, textMuted, textDisabled } = theme;
 
   return (
-    <article className={`br2 bg-${bgPrimary} h5`}>
+    <Paper className={`br2 bg-${bgPrimary} h5`}>
       <div className="h-20">
         <div className={`flex justify-between bb b--${textDisabled} pa3`}>
           <div className="b">{title}</div>
@@ -21,7 +36,7 @@ const Card: React.FC<Props> = ({ title, titleRightSide, children, footer }) => {
       </div>
       <div className="h-60 pa3 overflow-auto">{children}</div>
       <div className="h-20 pa3">{footer}</div>
-    </article>
+    </Paper>
   );
 };
 

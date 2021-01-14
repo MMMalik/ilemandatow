@@ -1,0 +1,66 @@
+import { ArgsTable, Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
+import Table from "./Table";
+import TableHead from "./TableHead";
+import TableBody from "./TableBody";
+import TableRow from "./TableRow";
+import TableCell from "./TableCell";
+import TableCellEditable from "./TableCellEditable";
+import TableContextMenu from "./TableContextMenu";
+import TableHeadCell from "./TableHeadCell";
+import * as template from "./Table.stories";
+
+<Meta title="Data Display/Table" component={Table} />
+
+### Table
+
+Default table component.
+
+#### Main
+
+<Canvas>
+  <Story name="Main">{template.Table.bind({})}</Story>
+</Canvas>
+
+#### Editable content
+
+<Canvas>
+  <Story name="Editable">{template.TableEditable.bind({})}</Story>
+</Canvas>
+
+#### Context menu
+
+<Canvas>
+  <Story name="Context Menu">{template.TableCtxMenu.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Table} />
+
+### Props - TableHead
+
+<ArgsTable of={TableHead} />
+
+### Props - TableHeadCell
+
+<ArgsTable of={TableHeadCell} />
+
+### Props - TableBody
+
+<ArgsTable of={TableBody} />
+
+### Props - TableRow
+
+<ArgsTable of={TableRow} />
+
+### Props - TableCell
+
+<ArgsTable of={TableCell} />
+
+### Props - TableCellEditable
+
+<ArgsTable of={TableCellEditable} />
+
+### Props - TableContextMenu
+
+<ArgsTable of={TableContextMenu} />

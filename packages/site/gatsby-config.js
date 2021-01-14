@@ -42,13 +42,6 @@ module.exports = {
         name: "content",
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `../locales/translations`,
-        name: "translations",
-      },
-    },
     "gatsby-transformer-json",
     {
       resolve: "gatsby-plugin-netlify",

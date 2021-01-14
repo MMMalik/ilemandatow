@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/seats",
-  "version": "0.0.1-alpha.6",
+  "version": "0.0.1-alpha.7",
   "description": "Calculates number of seats based on election results",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,6 +9,7 @@
   "scripts": {
     "cleanup": "rimraf dist",
     "build": "yarn cleanup && tsc",
-    "build:watch": "yarn cleanup && tsc --watch"
+    "build:watch": "yarn cleanup && tsc --watch",
+    "check-types": "tsc --noEmit"
   }
 }

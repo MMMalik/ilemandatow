@@ -1,0 +1,22 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Grid from "./Grid";
+import GridItem from "./GridItem";
+import * as template from "./Grid.stories";
+
+<Meta title="Layout/Grid" component={Grid} />
+
+### Grid
+
+Default grid component. Use it in pair with `GridItem`.
+
+<Canvas>
+  <Story name="Main">{template.Grid.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Grid} />
+
+### Props - GridItem
+
+<ArgsTable of={GridItem} />
