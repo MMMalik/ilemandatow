@@ -1,6 +1,8 @@
 export * from "./electionSettingsList";
 export { default as ElectionSettingsList } from "./electionSettingsList";
 
+export * from "./flag";
+
 export * from "./newPollForm";
 export { default as NewPollForm } from "./newPollForm";
 
@@ -13,8 +15,8 @@ export { default as PollInfoList } from "./pollInfoList";
 export * from "./pollMethodologyList";
 export { default as PollMethodologyList } from "./pollMethodologyList";
 
-export * from "./pollParliamentChart";
-export { default as PollParliamentChart } from "./pollParliamentChart";
+export * from "./pollChart";
+export { default as PollChart } from "./pollChart";
 
 export * from "./pollResultsTable";
 export { default as PollResultsTable } from "./pollResultsTable";

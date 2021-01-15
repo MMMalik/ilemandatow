@@ -40,7 +40,7 @@ const Link: React.FC<LinkProps> = ({
   const cls = clsx(
     className,
     btn
-      ? `br2 ph3 pv2 mh3 ${textOnPrimary} bg-${primaryColor}`
+      ? `br2 ph3 pv2 ${textOnPrimary} bg-${primaryColor}`
       : primary
       ? primaryColor
       : textPrimary,

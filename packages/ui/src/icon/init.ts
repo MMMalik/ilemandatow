@@ -19,6 +19,10 @@ import {
   faExternalLinkAlt,
   faCircle,
   faRedo,
+  faPoll,
+  faPersonBooth,
+  faInfo,
+  faChartPie,
 } from "@fortawesome/free-solid-svg-icons";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
@@ -44,5 +48,9 @@ library.add(
   faMoon,
   faExternalLinkAlt,
   faQuestionCircle,
-  faCircle
+  faCircle,
+  faPoll,
+  faPersonBooth,
+  faInfo,
+  faChartPie
 );

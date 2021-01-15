@@ -16,17 +16,22 @@ export interface ParliamentChartProps {
    * Unitless value of inner radius.
    */
   innerR?: number;
+  /**
+   * Toggles legend.
+   */
+  showLegend?: boolean;
 }
 
 const ParliamentChart: React.FC<ParliamentChartProps> = ({
   totalSeats,
   parties,
   innerR = 50,
+  showLegend = true,
 }) => {
   return (
     <div>
       <Chart parties={parties} totalSeats={totalSeats} innerR={innerR} />
-      <Legend parties={parties} />
+      {showLegend && <Legend parties={parties} />}
     </div>
   );
 };

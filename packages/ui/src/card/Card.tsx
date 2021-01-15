@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import * as React from "react";
 import Paper from "../paper";
 import { useTheme } from "../theme";
@@ -8,34 +9,29 @@ export interface CardProps {
    */
   title: string;
   /**
-   * Part of the title that is shown on the right side.
+   * Content that goes to the bottom.
    */
-  titleRightSide: string;
+  footer?: React.ReactNode;
   /**
-   * Card's footer.
+   * Adds styling for clickable card.
    */
-  footer: React.ReactNode;
+  clickable?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({
-  title,
-  titleRightSide,
-  children,
-  footer,
-}) => {
+const Card: React.FC<CardProps> = ({ title, clickable, footer, children }) => {
   const { theme } = useTheme();
-  const { bgPrimary, textMuted, textDisabled } = theme;
+  const { textMuted } = theme;
 
   return (
-    <Paper className={`br2 bg-${bgPrimary} h5`}>
-      <div className="h-20">
-        <div className={`flex justify-between bb b--${textDisabled} pa3`}>
-          <div className="b">{title}</div>
-          <div className={`f6 ${textMuted}`}>{titleRightSide}</div>
-        </div>
-      </div>
-      <div className="h-60 pa3 overflow-auto">{children}</div>
-      <div className="h-20 pa3">{footer}</div>
+    <Paper
+      className={clsx(
+        "tc pa3 h-100 flex flex-column justify-between",
+        clickable && "pointer dim"
+      )}
+    >
+      <div className="b f5">{title}</div>
+      <div className="mv3 lh-copy">{children}</div>
+      <div className={`pa2 ${textMuted}`}>{footer}</div>
     </Paper>
   );
 };

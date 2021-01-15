@@ -2,7 +2,7 @@ import * as React from "react";
 import { Grid, GridItem, Paper } from "@ilemandatow/ui";
 import { filterPollResults, getDhondtResults, getPollMethod } from "../../data";
 import {
-  PollParliamentChart,
+  PollChart,
   PollInfoList,
   PollResultsTable,
   PollMethodologyList,
@@ -48,7 +48,7 @@ const Poll: React.FC<Props> = ({ poll }) => {
       </GridItem>
       <GridItem className="w-two-thirds">
         <Paper className="pa4 h-100">
-          <PollParliamentChart parties={parties} seats={seats} />
+          <PollChart parties={parties} seats={seats} />
         </Paper>
       </GridItem>
       <GridItem>
