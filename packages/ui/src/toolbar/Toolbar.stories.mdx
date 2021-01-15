@@ -1,0 +1,22 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import ToolbarItem from "./ToolbarItem";
+import Toolbar from "./Toolbar";
+import * as template from "./Toolbar.stories";
+
+<Meta title="Navigation/Toolbar" component={Toolbar} />
+
+### Toolbar
+
+Default toolbar component.
+
+<Canvas>
+  <Story name="Main">{template.Toolbar.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Toolbar} />
+
+### Props - ToolbarItem
+
+<ArgsTable of={ToolbarItem} />

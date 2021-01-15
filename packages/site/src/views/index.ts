@@ -1,3 +1,6 @@
+export * from "./hero";
+export { default as Hero } from "./hero";
+
 export * from "./newPollForm";
 export { default as NewPollForm } from "./newPollForm";
 
