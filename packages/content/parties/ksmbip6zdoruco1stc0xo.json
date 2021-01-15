@@ -15,7 +15,8 @@
   ],
   "id": "KSmBIP6ZDoRuco1stc0XO",
   "name": "Lewica",
-  "abbr": "L",
+  "abbr": "Lewica",
   "color": "#d20003",
-  "colorDarkTheme": "#ff1a1a"
+  "colorDarkTheme": "#ff1a1a",
+  "fullName": "Lewica"
 }
