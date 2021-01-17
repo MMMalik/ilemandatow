@@ -1,0 +1,42 @@
+{
+  "method": "CATI",
+  "publishedAt": "2020-12-30",
+  "summary": "DoRzeczy.pl, Estymator",
+  "polledBy___NODE": "_nPItTlPAZ7zcMENZz7l4",
+  "pollEndedAt": "2021-01-29",
+  "participantsCount": 1031,
+  "pollStartedAt": "2020-12-28",
+  "results": [
+    {
+      "party___NODE": "KSmBIP6ZDoRuco1stc0XO",
+      "result": 10.9
+    },
+    {
+      "party___NODE": "U4oQqW7Kd027-7B6GB1q1",
+      "result": 23.6
+    },
+    {
+      "party___NODE": "wqZMyC6p6YeqfPQdsM93P",
+      "result": 12.9
+    },
+    {
+      "party___NODE": "78QC5o-Z_wejx3EiRw5Tf",
+      "result": 7.4
+    },
+    {
+      "party___NODE": "DyawCPELgfgeJobDSIwL4",
+      "result": 4.8
+    },
+    {
+      "party___NODE": "NYcLrcxN9kYAqVcysgWo4",
+      "result": 39.2
+    },
+    {
+      "party___NODE": "-kIwWx8uAQmiMyFjtWpE2",
+      "result": 1.2
+    }
+  ],
+  "source": "https://dorzeczy.pl/kraj/166986/ostatni-sondaz-w-2020-roku-pis-psl-i-lewica-rosna-reszta-traci.html",
+  "id": "bzrAh3kGplb9Q8tWfuGot",
+  "publishedBy___NODE": "AnCYubwIMoNbUnh1EDuS5"
+}
