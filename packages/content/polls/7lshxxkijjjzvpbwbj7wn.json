@@ -1,0 +1,42 @@
+{
+  "method": "CATI",
+  "publishedAt": "2020-12-12",
+  "summary": "DoRzeczy.pl, Estymator",
+  "polledBy___NODE": "_nPItTlPAZ7zcMENZz7l4",
+  "pollEndedAt": "2020-12-11",
+  "participantsCount": 1023,
+  "pollStartedAt": "2020-12-10",
+  "results": [
+    {
+      "party___NODE": "KSmBIP6ZDoRuco1stc0XO",
+      "result": 10.6
+    },
+    {
+      "party___NODE": "U4oQqW7Kd027-7B6GB1q1",
+      "result": 25
+    },
+    {
+      "party___NODE": "wqZMyC6p6YeqfPQdsM93P",
+      "result": 13.8
+    },
+    {
+      "party___NODE": "sUA3gBokUO5hZikwmlmj6",
+      "result": 6.4
+    },
+    {
+      "party___NODE": "DyawCPELgfgeJobDSIwL4",
+      "result": 4.9
+    },
+    {
+      "party___NODE": "NYcLrcxN9kYAqVcysgWo4",
+      "result": 38.8
+    },
+    {
+      "party___NODE": "-kIwWx8uAQmiMyFjtWpE2",
+      "result": 0.5
+    }
+  ],
+  "source": "https://dorzeczy.pl/kraj/164687/pis-i-lewica-w-gore-po-i-ruch-holowni-notuja-strate.html",
+  "id": "7LShXXkIJJjZVpbwBJ7Wn",
+  "publishedBy___NODE": "AnCYubwIMoNbUnh1EDuS5"
+}
