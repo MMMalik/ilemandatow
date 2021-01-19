@@ -9,5 +9,6 @@ export interface Theme {
   textDivider: string;
   chart: {
     bgFill: string;
+    muted: string;
   };
 }

@@ -1,0 +1,29 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import BarChart from "./BarChart";
+import * as template from "./BarChart.stories";
+
+<Meta title="Charts/BarChart" component={BarChart} />
+
+### BarChart
+
+Chart visualizes data as bars.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      bars: [
+        { id: "P1", fill: "blue", value: 10 },
+        { id: "P2", fill: "red", value: 30 },
+        { id: "P3", fill: "green", value: 40 },
+        { id: "P4", fill: "magenta", value: 20 },
+      ],
+    }}
+  >
+    {template.BarChart.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={BarChart} />
