@@ -27,7 +27,6 @@ const NewPollForm: React.FC<Props> = ({ onSubmit, initValues }) => {
     <FormProvider {...methods}>
       <Form onSubmit={methods.onSubmit}>
         <FormSection
-          divider={false}
           title={t("pollResultsTableTitle")}
           description={t("pollResultsTableDescription")}
         >
@@ -39,7 +38,7 @@ const NewPollForm: React.FC<Props> = ({ onSubmit, initValues }) => {
         >
           <NewPollSettings />
         </FormSection>
-        <FormSection>
+        <FormSection divider={false}>
           <FormSubmit submitLabel={t("submit")} cancelLabel={t("cancel")} />
         </FormSection>
       </Form>

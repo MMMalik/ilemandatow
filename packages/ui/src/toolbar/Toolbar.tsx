@@ -12,7 +12,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ alignment = "right", children }) => {
   return (
     <div
       className={clsx(
-        "flex pa3",
+        "flex",
         alignment === "left" ? "justify-start" : "justify-end"
       )}
     >

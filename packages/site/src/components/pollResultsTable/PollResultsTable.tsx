@@ -23,19 +23,19 @@ const PollResultsTable: React.FC<Props> = ({ seats, parties }) => {
     <Table>
       <TableHead>
         <TableHeadCell>{t("party")}</TableHeadCell>
-        <TableHeadCell>{t("resultWithPerc")}</TableHeadCell>
-        <TableHeadCell>{t("seats")}</TableHeadCell>
+        <TableHeadCell className="tr">{t("resultWithPerc")}</TableHeadCell>
+        <TableHeadCell className="tr">{t("seats")}</TableHeadCell>
       </TableHead>
       <TableBody>
         {sortBySeats(seats).map(({ party: partyId, seats }, i) => {
           const result = parties.find((party) => party.id === partyId);
           return (
             <TableRow key={result?.id ?? i}>
-              <TableCell>
-                <div className="flex align-center">{result?.name ?? ""}</div>
+              <TableCell>{result?.abbr ?? result?.name ?? ""}</TableCell>
+              <TableCell className="tr">
+                {result?.result?.toFixed(1) ?? ""}
               </TableCell>
-              <TableCell>{result?.result?.toFixed(1) ?? ""}</TableCell>
-              <TableCell>{seats}</TableCell>
+              <TableCell className="tr">{seats}</TableCell>
             </TableRow>
           );
         })}

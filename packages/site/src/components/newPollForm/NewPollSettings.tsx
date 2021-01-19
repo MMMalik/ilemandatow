@@ -8,7 +8,7 @@ const NewPollSettings: React.FC = () => {
 
   return (
     <Grid>
-      <GridItem className="w-50">
+      <GridItem className="w-100 w-50-l">
         <InputField
           ref={register({ required: true })}
           name="threshold"
@@ -18,7 +18,7 @@ const NewPollSettings: React.FC = () => {
           placeholder={t("threshold")}
         />
       </GridItem>
-      <GridItem className="w-50">
+      <GridItem className="w-100 w-50-l">
         <InputField
           ref={register({ required: true })}
           name="seats"

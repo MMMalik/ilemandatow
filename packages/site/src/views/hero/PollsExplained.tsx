@@ -8,10 +8,10 @@ const PollsExplained: React.FC = () => {
   return (
     <div>
       <Grid>
-        <GridItem className="w-50 pa3">
+        <GridItem className="w-100 w-50-m w-50-l">
           <div className="f4 lh-copy">{t("pollsExplainedDesc")}</div>
         </GridItem>
-        <GridItem className="w-50">
+        <GridItem className="w-100 w-50-m w-50-l">
           <Paper>{"Search..."}</Paper>
         </GridItem>
       </Grid>

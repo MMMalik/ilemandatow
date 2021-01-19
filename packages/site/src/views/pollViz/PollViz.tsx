@@ -13,7 +13,7 @@ interface Props {
   poll: PollInfoFragment;
 }
 
-const Poll: React.FC<Props> = ({ poll }) => {
+const PollViz: React.FC<Props> = ({ poll }) => {
   const filteredResults = filterPollResults(poll?.results);
   const seats = getDhondtResults(
     filteredResults.map(({ party, result }) => ({
@@ -24,6 +24,7 @@ const Poll: React.FC<Props> = ({ poll }) => {
   const parties = filteredResults.map(({ party, result }) => ({
     id: party?.id ?? "",
     name: party?.name ?? "",
+    abbr: party?.abbr ?? "",
     result: result ?? 0,
     color: party?.color ?? "",
     colorDarkTheme: party?.colorDarkTheme ?? "",
@@ -31,7 +32,7 @@ const Poll: React.FC<Props> = ({ poll }) => {
 
   return (
     <Grid>
-      <GridItem>
+      <GridItem className="w-100">
         <Paper className="pa4">
           <PollInfoList
             source={poll?.source ?? undefined}
@@ -41,17 +42,17 @@ const Poll: React.FC<Props> = ({ poll }) => {
           />
         </Paper>
       </GridItem>
-      <GridItem className="w-third">
+      <GridItem className="w-100 w-40-l">
         <Paper className="pa4 h-100">
           <PollResultsTable parties={parties} seats={seats} />
         </Paper>
       </GridItem>
-      <GridItem className="w-two-thirds">
-        <Paper className="pa4 h-100">
+      <GridItem className="w-100 w-60-l">
+        <Paper className="pa3 h-100">
           <PollChart parties={parties} seats={seats} />
         </Paper>
       </GridItem>
-      <GridItem>
+      <GridItem className="w-100">
         <Paper className="pa4">
           <PollMethodologyList
             pollStartedAt={poll?.pollStartedAt ?? undefined}
@@ -65,4 +66,4 @@ const Poll: React.FC<Props> = ({ poll }) => {
   );
 };
 
-export default Poll;
+export default PollViz;

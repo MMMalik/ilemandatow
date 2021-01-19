@@ -15,44 +15,44 @@ const Hero: React.FC = () => {
   const { routes } = useRoutes();
   const { theme } = useTheme();
   const { textDivider } = theme;
-  const sectionCls = `pv5 ph3`;
+  const sectionCls = `pv5 ph3-l`;
   const dividerCls = `bb bw1 b--${textDivider}`;
 
   return (
-    <div className="pa4">
+    <div className="pv4 pa4-l">
       <div>
         <Grid>
-          <GridItem>
+          <GridItem className="w-100">
             <Intro />
           </GridItem>
         </Grid>
       </div>
       <div className={`${sectionCls} ${dividerCls}`}>
         <Grid>
-          <GridItem className="w-25">
+          <GridItem className="w-100 w-50-m w-25-l">
             <PollsCard linkTo={routes.polls.link()} />
           </GridItem>
-          <GridItem className="w-25">
+          <GridItem className="w-100 w-50-m w-25-l">
             <NewPollCard linkTo={routes.newPollForm.link()} />
           </GridItem>
-          <GridItem className="w-25">
+          <GridItem className="w-100 w-50-m w-25-l">
             <OpenSourceCard linkTo={repoUrl} />
           </GridItem>
-          <GridItem className="w-25">
+          <GridItem className="w-100 w-50-m w-25-l">
             <MoreInfo linkTo={routes.about.link()} />
           </GridItem>
         </Grid>
       </div>
       <div className={`${sectionCls} ${dividerCls}`}>
         <Grid>
-          <GridItem>
+          <GridItem className="w-100">
             <PollsExplained />
           </GridItem>
         </Grid>
       </div>
       <div className={sectionCls}>
         <Grid>
-          <GridItem>
+          <GridItem className="w-100">
             <QuickExample linkTo={routes.newPollForm.link()} />
           </GridItem>
         </Grid>
