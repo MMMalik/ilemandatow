@@ -9,6 +9,10 @@ export interface ParliamentChartOpts {
    * Radius of a seat circle.
    */
   seatR?: number;
+  /**
+   * Distance between two seats.
+   */
+  dist?: number;
 }
 
 export interface ParliamentChartInput {

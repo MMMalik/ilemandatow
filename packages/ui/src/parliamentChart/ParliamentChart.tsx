@@ -18,13 +18,13 @@ export interface ParliamentChartProps {
   innerR?: number;
 }
 
-const seatR = 7;
+const seatR = 5;
 const seatD = 2 * seatR;
 
 const ParliamentChart: React.FC<ParliamentChartProps> = ({
   totalSeats,
   parties,
-  innerR = 100,
+  innerR = 75,
 }) => {
   const { groupedParties, maxX } = getSeatsCoords({
     parties,
