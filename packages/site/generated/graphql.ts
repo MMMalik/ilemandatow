@@ -844,15 +844,15 @@ export type FileFieldsEnum =
   | 'childPartiesJson___memberParties___party___children'
   | 'childPartiesJson___memberParties___party___memberParties'
   | 'childPartiesJson___memberParties___party___name'
-  | 'childPartiesJson___memberParties___party___fullName'
   | 'childPartiesJson___memberParties___party___abbr'
+  | 'childPartiesJson___memberParties___party___fullName'
   | 'childPartiesJson___memberParties___party___color'
   | 'childPartiesJson___memberParties___party___colorDarkTheme'
   | 'childPartiesJson___memberParties___joinedAt'
   | 'childPartiesJson___memberParties___leftAt'
   | 'childPartiesJson___name'
-  | 'childPartiesJson___fullName'
   | 'childPartiesJson___abbr'
+  | 'childPartiesJson___fullName'
   | 'childPartiesJson___color'
   | 'childPartiesJson___colorDarkTheme'
   | 'childPollCompaniesJson___id'
@@ -960,8 +960,8 @@ export type FileFieldsEnum =
   | 'childPollsJson___results___party___children'
   | 'childPollsJson___results___party___memberParties'
   | 'childPollsJson___results___party___name'
-  | 'childPollsJson___results___party___fullName'
   | 'childPollsJson___results___party___abbr'
+  | 'childPollsJson___results___party___fullName'
   | 'childPollsJson___results___party___color'
   | 'childPollsJson___results___party___colorDarkTheme'
   | 'childPollsJson___results___result'
@@ -1170,8 +1170,8 @@ export type PartiesJson = Node & {
   internal: Internal;
   memberParties?: Maybe<Array<Maybe<PartiesJsonMemberParties>>>;
   name?: Maybe<Scalars['String']>;
-  fullName?: Maybe<Scalars['String']>;
   abbr?: Maybe<Scalars['String']>;
+  fullName?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
 };
@@ -1309,15 +1309,15 @@ export type PartiesJsonFieldsEnum =
   | 'memberParties___party___memberParties___joinedAt'
   | 'memberParties___party___memberParties___leftAt'
   | 'memberParties___party___name'
-  | 'memberParties___party___fullName'
   | 'memberParties___party___abbr'
+  | 'memberParties___party___fullName'
   | 'memberParties___party___color'
   | 'memberParties___party___colorDarkTheme'
   | 'memberParties___joinedAt'
   | 'memberParties___leftAt'
   | 'name'
-  | 'fullName'
   | 'abbr'
+  | 'fullName'
   | 'color'
   | 'colorDarkTheme';
 
@@ -1328,8 +1328,8 @@ export type PartiesJsonFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  fullName?: Maybe<StringQueryOperatorInput>;
   abbr?: Maybe<StringQueryOperatorInput>;
+  fullName?: Maybe<StringQueryOperatorInput>;
   color?: Maybe<StringQueryOperatorInput>;
   colorDarkTheme?: Maybe<StringQueryOperatorInput>;
 };
@@ -1739,8 +1739,8 @@ export type PollsJsonFieldsEnum =
   | 'results___party___memberParties___joinedAt'
   | 'results___party___memberParties___leftAt'
   | 'results___party___name'
-  | 'results___party___fullName'
   | 'results___party___abbr'
+  | 'results___party___fullName'
   | 'results___party___color'
   | 'results___party___colorDarkTheme'
   | 'results___result'
@@ -2007,10 +2007,10 @@ export type Query = {
   allPollsJson: PollsJsonConnection;
   pollCompaniesJson?: Maybe<PollCompaniesJson>;
   allPollCompaniesJson: PollCompaniesJsonConnection;
-  contentJson?: Maybe<ContentJson>;
-  allContentJson: ContentJsonConnection;
   partiesJson?: Maybe<PartiesJson>;
   allPartiesJson: PartiesJsonConnection;
+  contentJson?: Maybe<ContentJson>;
+  allContentJson: ContentJsonConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -2125,8 +2125,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2238,6 +2236,28 @@ export type QueryAllPollCompaniesJsonArgs = {
 };
 
 
+export type QueryPartiesJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
+  fullName?: Maybe<StringQueryOperatorInput>;
+  color?: Maybe<StringQueryOperatorInput>;
+  colorDarkTheme?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllPartiesJsonArgs = {
+  filter?: Maybe<PartiesJsonFilterInput>;
+  sort?: Maybe<PartiesJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryContentJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -2254,28 +2274,6 @@ export type QueryContentJsonArgs = {
 export type QueryAllContentJsonArgs = {
   filter?: Maybe<ContentJsonFilterInput>;
   sort?: Maybe<ContentJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryPartiesJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  fullName?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
-  color?: Maybe<StringQueryOperatorInput>;
-  colorDarkTheme?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllPartiesJsonArgs = {
-  filter?: Maybe<PartiesJsonFilterInput>;
-  sort?: Maybe<PartiesJsonSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -2325,8 +2323,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2531,8 +2527,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___repoUrl'
   | 'siteMetadata___appVersion'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2625,8 +2619,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
