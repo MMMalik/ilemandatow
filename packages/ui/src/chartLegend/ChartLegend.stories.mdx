@@ -1,18 +1,17 @@
 import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
-import ParliamentChart from "./ParliamentChart";
-import * as template from "./ParliamentChart.stories";
+import ChartLegend from "./ChartLegend";
+import * as template from "./ChartLegend.stories";
 
-<Meta title="Charts/ParliamentChart" component={ParliamentChart} />
+<Meta title="Charts/ChartLegend" component={ChartLegend} />
 
-### ParliamentChart
+### ChartLegend
 
-Chart used to visualize seat distribution in a parliament.
+Default ChartLegend component.
 
 <Canvas>
   <Story
     name="Main"
     args={{
-      totalSeats: 460,
       parties: [
         { id: "P1", label: "Party 1", fill: "blue", seats: 150 },
         { id: "P2", label: "Party 2", fill: "red", seats: 50 },
@@ -22,10 +21,10 @@ Chart used to visualize seat distribution in a parliament.
       ],
     }}
   >
-    {template.ParliamentChart.bind({})}
+    {template.ChartLegend.bind({})}
   </Story>
 </Canvas>
 
 ### Props
 
-<ArgsTable of={ParliamentChart} />
+<ArgsTable of={ChartLegend} />

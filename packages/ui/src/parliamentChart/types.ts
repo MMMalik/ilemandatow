@@ -1,3 +1,5 @@
+import { ChartParty } from "../chart";
+
 export interface ParliamentChartOpts {
   /**
    * Radius of inner circle. It constitutes an offset from the center.
@@ -9,30 +11,11 @@ export interface ParliamentChartOpts {
   seatR?: number;
 }
 
-export interface ParliamentChartParty {
-  /**
-   * Fill color of party's seats.
-   */
-  fill: string;
-  /**
-   * Number of party's seats.
-   */
-  seats: number;
-  /**
-   * Party's unique id.
-   */
-  id: string;
-  /**
-   * Party's label.
-   */
-  label: string;
-}
-
 export interface ParliamentChartInput {
   /**
    * List of parties.
    */
-  parties: ParliamentChartParty[];
+  parties: ChartParty[];
   /**
    * Total number of seats.
    */
@@ -64,7 +47,7 @@ export interface ParliamentChartSeat {
 
 export interface ParliamentGroupedParty {
   seats: ParliamentChartSeat[];
-  party: ParliamentChartParty;
+  party: ChartParty;
 }
 
 export interface ParliamentChart {

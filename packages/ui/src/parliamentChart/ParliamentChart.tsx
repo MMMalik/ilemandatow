@@ -1,13 +1,13 @@
 import * as React from "react";
-import { ParliamentChartParty } from "./types";
-import Chart from "./Chart";
-import Legend from "./Legend";
+import { ChartParty } from "../chart";
+import { getSeatsCoords } from "./getSeatsCoords";
+import Party from "./Party";
 
 export interface ParliamentChartProps {
   /**
    * List of party results and configs.
    */
-  parties: ParliamentChartParty[];
+  parties: ChartParty[];
   /**
    * Total number of seats in the parliament.
    */
@@ -16,23 +16,34 @@ export interface ParliamentChartProps {
    * Unitless value of inner radius.
    */
   innerR?: number;
-  /**
-   * Toggles legend.
-   */
-  showLegend?: boolean;
 }
 
 const ParliamentChart: React.FC<ParliamentChartProps> = ({
   totalSeats,
   parties,
   innerR = 100,
-  showLegend = true,
 }) => {
+  const { groupedParties, maxX } = getSeatsCoords({
+    parties,
+    totalSeats,
+    opts: {
+      innerR,
+    },
+  });
+  const vBoxMax = maxX * 2 * 1.2;
+
   return (
-    <div>
-      <Chart parties={parties} totalSeats={totalSeats} innerR={innerR} />
-      {showLegend && <Legend parties={parties} />}
-    </div>
+    <svg viewBox={`0 0 ${vBoxMax} ${vBoxMax * 0.55}`} width="100%">
+      {groupedParties.map((groupedParty) => {
+        return (
+          <Party
+            key={groupedParty.party.id}
+            groupedParty={groupedParty}
+            offset={vBoxMax / 2}
+          />
+        );
+      })}
+    </svg>
   );
 };
 

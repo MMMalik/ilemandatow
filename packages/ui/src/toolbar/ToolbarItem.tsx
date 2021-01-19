@@ -24,12 +24,12 @@ const ToolbarItem: React.FC<ToolbarItemProps> = ({
   active = false,
 }) => {
   const { theme } = useTheme();
-  const { textPrimary, textMuted } = theme;
+  const { primary, textMuted } = theme;
 
   return (
     <div onClick={onClick} className={clsx("pointer", !active && "dim")}>
       <Icon
-        className={clsx("mh2 pv1", active ? textPrimary : textMuted)}
+        className={clsx("mh2 pv1", active ? primary : textMuted)}
         icon={icon}
         size="lg"
       />

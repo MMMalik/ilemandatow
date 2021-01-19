@@ -1,4 +1,4 @@
-import { ParliamentChartParty } from "./types";
+import { ChartParty } from "../chart";
 
 /**
  * Iterates over list of parties and proportionately assigns seats to party for each row.
@@ -8,13 +8,13 @@ import { ParliamentChartParty } from "./types";
  * @param totalSeats total number of seats
  */
 export const distributeSeats = (
-  parties: ParliamentChartParty[],
+  parties: ChartParty[],
   seatsPerRow: number[],
   totalSeats: number
 ): string[][] => {
   const seatsTracker = parties.reduce(
     (acc, p) => ({ ...acc, [p.id]: { ...p } }),
-    {} as { [key: string]: ParliamentChartParty }
+    {} as { [key: string]: ChartParty }
   );
   const rowsTracker = [...seatsPerRow];
 

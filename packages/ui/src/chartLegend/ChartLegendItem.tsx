@@ -1,11 +1,17 @@
 import * as React from "react";
 
-interface Props {
+interface ChartLegendItemProps {
+  /**
+   * Chart item label.
+   */
   label: string;
-  backgroundColor: string;
+  /**
+   * Chart item background color.
+   */
+  fill: string;
 }
 
-const LegendItem: React.FC<Props> = ({ label, backgroundColor }) => {
+const ChartLegendItem: React.FC<ChartLegendItemProps> = ({ label, fill }) => {
   return (
     <div className="flex items-center ma2">
       <div
@@ -13,7 +19,7 @@ const LegendItem: React.FC<Props> = ({ label, backgroundColor }) => {
         style={{
           height: "10px",
           width: "10px",
-          backgroundColor,
+          backgroundColor: fill,
         }}
       />
       <div>{label}</div>
@@ -21,4 +27,4 @@ const LegendItem: React.FC<Props> = ({ label, backgroundColor }) => {
   );
 };
 
-export default LegendItem;
+export default ChartLegendItem;

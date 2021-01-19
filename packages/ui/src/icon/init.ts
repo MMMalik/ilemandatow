@@ -23,6 +23,8 @@ import {
   faPersonBooth,
   faInfo,
   faChartPie,
+  faChair,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
@@ -52,5 +54,7 @@ library.add(
   faPoll,
   faPersonBooth,
   faInfo,
-  faChartPie
+  faChartPie,
+  faChair,
+  faUser
 );
