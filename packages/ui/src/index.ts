@@ -16,6 +16,9 @@ export { default as ClickAway } from "./clickAway";
 export * from "./dataCard";
 export { default as DataCard } from "./dataCard";
 
+export * from "./divider";
+export { default as Divider } from "./divider";
+
 export * from "./definitionList";
 export { default as DefinitionList } from "./definitionList";
 

@@ -11,7 +11,7 @@ const QuickExample: React.FC<Props> = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="pa3">
       <Grid>
         <GridItem className="w-100">
           <div className="f4 lh-copy">

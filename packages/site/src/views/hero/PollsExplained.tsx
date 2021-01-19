@@ -6,7 +6,7 @@ const PollsExplained: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="pa3">
       <Grid>
         <GridItem className="w-100 w-50-m w-50-l">
           <div className="f4 lh-copy">{t("pollsExplainedDesc")}</div>

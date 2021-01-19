@@ -38,9 +38,7 @@ const NewPollForm: React.FC<Props> = ({ onSubmit, initValues }) => {
         >
           <NewPollSettings />
         </FormSection>
-        <FormSection divider={false}>
-          <FormSubmit submitLabel={t("submit")} cancelLabel={t("cancel")} />
-        </FormSection>
+        <FormSubmit submitLabel={t("submit")} cancelLabel={t("cancel")} />
       </Form>
     </FormProvider>
   );
