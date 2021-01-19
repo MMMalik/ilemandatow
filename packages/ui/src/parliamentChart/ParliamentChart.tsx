@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ChartParty } from "../chart";
+import { ChartValue } from "../chart";
 import { getSeatsCoords } from "./getSeatsCoords";
 import Party from "./Party";
 
@@ -7,7 +7,7 @@ export interface ParliamentChartProps {
   /**
    * List of party results and configs.
    */
-  parties: ChartParty[];
+  parties: ChartValue[];
   /**
    * Total number of seats in the parliament.
    */
@@ -17,6 +17,9 @@ export interface ParliamentChartProps {
    */
   innerR?: number;
 }
+
+const seatR = 7;
+const seatD = 2 * seatR;
 
 const ParliamentChart: React.FC<ParliamentChartProps> = ({
   totalSeats,
@@ -28,18 +31,20 @@ const ParliamentChart: React.FC<ParliamentChartProps> = ({
     totalSeats,
     opts: {
       innerR,
+      seatR,
     },
   });
-  const vBoxMax = maxX * 2 * 1.2;
+
+  const width = (maxX * 2 + seatD) * 1.025;
 
   return (
-    <svg viewBox={`0 0 ${vBoxMax} ${vBoxMax * 0.55}`} width="100%">
+    <svg viewBox={`${-seatR} ${-seatR} ${width} ${width / 2}`} width="100%">
       {groupedParties.map((groupedParty) => {
         return (
           <Party
             key={groupedParty.party.id}
             groupedParty={groupedParty}
-            offset={vBoxMax / 2}
+            offset={maxX}
           />
         );
       })}

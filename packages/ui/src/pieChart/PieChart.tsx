@@ -1,17 +1,14 @@
 import * as React from "react";
-import Pie from "./Pie";
+import { useTheme } from "../../dist";
 import { sumPies } from "./sumPies";
 import { PieChartPie } from "./types";
+import Pie from "./Pie";
 
 export interface PieChartProps {
   /**
    * List of pies.
    */
   pies: PieChartPie[];
-  /**
-   * Background fill.
-   */
-  bgFill?: string;
   /**
    * Show as half pie.
    */
@@ -28,11 +25,12 @@ const R = 1;
 const PieChart: React.FC<PieChartProps> = ({
   pies,
   halfPie,
-  bgFill = "white",
   innerCircle = true,
 }) => {
+  const { theme } = useTheme();
   const divider = halfPie ? 2 : 1;
   const transform = halfPie ? "rotate(-90deg)" : undefined;
+  const bgFill = theme.chart.bgFill;
 
   return (
     <svg viewBox={`${-R} ${-R} ${2 * R} ${(2 * R) / divider}`} width="100%">
@@ -43,9 +41,11 @@ const PieChart: React.FC<PieChartProps> = ({
               key={id}
               R={R}
               fill={fill}
+              bgFill={bgFill}
+              startPointX={0}
+              startPointY={-1}
               startValue={sumPies(pies.slice(0, i), divider)}
               endValue={sumPies(pies.slice(0, i + 1), divider)}
-              strokeFill={bgFill}
             />
           );
         })}

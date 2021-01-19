@@ -3,21 +3,18 @@ import { DhondtParliamentSeat } from "@ilemandatow/seats";
 import {
   ChartLegend,
   ChartLegendItem,
-  ParliamentChart,
-  PieChart,
   Toolbar,
   ToolbarItem,
 } from "@ilemandatow/ui";
 import { PartyWithResult } from "../../data";
-import { TOTAL_SEATS } from "../../constants";
-import { getParties } from "./getParties";
+import { parseParties } from "./parseParties";
+import { ChartView } from "./types";
+import Charts from "./Charts";
 
 interface Props {
   parties: PartyWithResult[];
   seats: DhondtParliamentSeat[];
 }
-
-type ChartView = "parliament" | "halfPie" | "pie";
 
 const PollChart: React.FC<Props> = ({ seats, parties }) => {
   const [view, setView] = React.useState<ChartView>("parliament");
@@ -26,7 +23,7 @@ const PollChart: React.FC<Props> = ({ seats, parties }) => {
     setView(view);
   };
 
-  const parsedParties = getParties(parties, seats);
+  const parsedParties = parseParties(parties, seats);
 
   return (
     <div>
@@ -47,23 +44,7 @@ const PollChart: React.FC<Props> = ({ seats, parties }) => {
           active={view === "pie"}
         />
       </Toolbar>
-      {view === "parliament" && (
-        <ParliamentChart totalSeats={TOTAL_SEATS} parties={parsedParties} />
-      )}
-      {view === "pie" && (
-        <div className="pa4">
-          <PieChart
-            pies={parsedParties.map(({ id, seats, fill }) => {
-              return {
-                id,
-                fill,
-                value: (seats * 100) / TOTAL_SEATS,
-              };
-            })}
-            halfPie={true}
-          />
-        </div>
-      )}
+      <Charts parsedParties={parsedParties} view={view} />
       <ChartLegend>
         {parsedParties.map(({ id, abbr, fill }) => {
           return <ChartLegendItem key={id} label={abbr} fill={fill} />;

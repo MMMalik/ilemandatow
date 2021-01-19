@@ -7,9 +7,9 @@ interface Props {
    */
   fill: string;
   /**
-   * Stroke fill.
+   * Background fill.
    */
-  strokeFill: string;
+  bgFill: string;
   /**
    * Chart radius.
    */
@@ -25,11 +25,11 @@ interface Props {
   /**
    * Start point x.
    */
-  startPointX?: number;
+  startPointX: number;
   /**
    * Start point y.
    */
-  startPointY?: number;
+  startPointY: number;
   /**
    * Start point x.
    */
@@ -43,7 +43,7 @@ interface Props {
 const Pie: React.FC<Props> = ({
   fill,
   R,
-  strokeFill,
+  bgFill,
   startValue,
   endValue,
   startPointX,
@@ -51,8 +51,8 @@ const Pie: React.FC<Props> = ({
   endPointX = 0,
   endPointY = 0,
 }) => {
-  const [startX, startY] = getCoords(startValue, startPointX, startPointY);
-  const [endX, endY] = getCoords(endValue, startPointX, startPointY);
+  const [startX, startY] = getCoords(startPointX, startPointY, startValue);
+  const [endX, endY] = getCoords(startPointX, startPointY, endValue);
   const start = `M ${startX} ${startY}`;
   const arc = `A ${R} ${R} 0 0 1 ${endX} ${endY}`;
   const end = `L ${endPointX} ${endPointY} Z`;
@@ -60,7 +60,7 @@ const Pie: React.FC<Props> = ({
   return (
     <path
       strokeWidth={0.01 * R}
-      stroke={strokeFill}
+      stroke={bgFill}
       fill={fill}
       d={`${start} ${arc} ${end}`}
     />

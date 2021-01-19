@@ -1,3 +1,4 @@
+import { rotateCoords } from "../chart";
 import { distributeSeats } from "./distributeSeats";
 import { getSeatsPerRow } from "./getSeatsPerRow";
 import {
@@ -34,9 +35,7 @@ export const getSeatsCoords = ({
       const initY = 0;
 
       return Array.from({ length: numberOfSeats }).map((_, j) => {
-        const nextRads = deltaRads * j;
-        const x = initX * Math.cos(nextRads) + initY * Math.sin(nextRads);
-        const y = initY * Math.cos(nextRads) + initX * Math.sin(nextRads);
+        const [x, y] = rotateCoords(initX, initY, deltaRads * j);
 
         // Side-effect: assign max x coord
         maxX = x > maxX ? x : maxX;

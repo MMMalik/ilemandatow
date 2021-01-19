@@ -1,4 +1,4 @@
-import { ChartParty } from "../chart";
+import { ChartValue } from "../chart";
 
 export interface ParliamentChartOpts {
   /**
@@ -15,7 +15,7 @@ export interface ParliamentChartInput {
   /**
    * List of parties.
    */
-  parties: ChartParty[];
+  parties: ChartValue[];
   /**
    * Total number of seats.
    */
@@ -47,7 +47,7 @@ export interface ParliamentChartSeat {
 
 export interface ParliamentGroupedParty {
   seats: ParliamentChartSeat[];
-  party: ChartParty;
+  party: ChartValue;
 }
 
 export interface ParliamentChart {

@@ -1,7 +1,7 @@
 import { DhondtParliamentSeat } from "@ilemandatow/seats";
 import { PartyWithResult } from "../../data";
 
-export const getParties = (
+export const parseParties = (
   parties: PartyWithResult[],
   seats: DhondtParliamentSeat[]
 ) => {
@@ -16,7 +16,7 @@ export const getParties = (
         id: partyId,
         label,
         abbr,
-        seats,
+        value: seats,
         fill,
       };
     });

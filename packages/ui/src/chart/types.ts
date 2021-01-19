@@ -1,18 +1,14 @@
-export interface ChartParty {
+export interface ChartValue {
   /**
-   * Fill color of party's seats.
-   */
-  fill: string;
-  /**
-   * Number of party's seats.
-   */
-  seats: number;
-  /**
-   * Party's unique id.
+   * Unique id.
    */
   id: string;
   /**
-   * Party's label.
+   * Value.
    */
-  label: string;
+  value: number;
+  /**
+   * Fill color representing the value.
+   */
+  fill: string;
 }
