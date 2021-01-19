@@ -4,6 +4,9 @@ export { default as Button } from "./button";
 export * from "./card";
 export { default as Card } from "./card";
 
+export * from "./chartLegend";
+export { default as ChartLegend } from "./chartLegend";
+
 export * from "./colorPicker";
 export { default as ColorPicker } from "./colorPicker";
 
@@ -54,6 +57,9 @@ export { default as Paper } from "./paper";
 
 export * from "./parliamentChart";
 export { default as ParliamentChart } from "./parliamentChart";
+
+export * from "./pieChart";
+export { default as PieChart } from "./pieChart";
 
 export * from "./popper";
 export { default as Popper } from "./popper";

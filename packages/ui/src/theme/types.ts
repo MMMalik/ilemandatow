@@ -7,4 +7,7 @@ export interface Theme {
   textMuted: string;
   textDisabled: string;
   textDivider: string;
+  chart: {
+    bgFill: string;
+  };
 }

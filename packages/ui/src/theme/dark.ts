@@ -9,4 +9,7 @@ export const dark: Theme = {
   textMuted: "gray",
   textDisabled: "gray",
   textDivider: "gray",
+  chart: {
+    bgFill: "#212121",
+  },
 };

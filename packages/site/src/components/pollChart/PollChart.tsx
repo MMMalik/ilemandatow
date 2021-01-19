@@ -1,15 +1,20 @@
 import * as React from "react";
 import { DhondtParliamentSeat } from "@ilemandatow/seats";
-import { ParliamentChart, Toolbar, ToolbarItem } from "@ilemandatow/ui";
-import { TOTAL_SEATS } from "../../constants";
+import {
+  ChartLegend,
+  ChartLegendItem,
+  Toolbar,
+  ToolbarItem,
+} from "@ilemandatow/ui";
 import { PartyWithResult } from "../../data";
+import { parseParties } from "./parseParties";
+import { ChartView } from "./types";
+import Charts from "./Charts";
 
 interface Props {
   parties: PartyWithResult[];
   seats: DhondtParliamentSeat[];
 }
-
-type ChartView = "parliament" | "halfPie" | "pie";
 
 const PollChart: React.FC<Props> = ({ seats, parties }) => {
   const [view, setView] = React.useState<ChartView>("parliament");
@@ -18,41 +23,33 @@ const PollChart: React.FC<Props> = ({ seats, parties }) => {
     setView(view);
   };
 
+  const parsedParties = parseParties(parties, seats);
+
   return (
     <div>
       <Toolbar>
         <ToolbarItem
-          icon="cog"
+          icon="user"
           onClick={handleViewChange("parliament")}
           active={view === "parliament"}
         />
-        <ToolbarItem
+        {/* <ToolbarItem
           icon="poll"
           onClick={handleViewChange("halfPie")}
           active={view === "halfPie"}
-        />
+        /> */}
         <ToolbarItem
           icon="chart-pie"
           onClick={handleViewChange("pie")}
           active={view === "pie"}
         />
       </Toolbar>
-      <ParliamentChart
-        totalSeats={TOTAL_SEATS}
-        parties={seats
-          .filter(({ seats }) => seats > 0)
-          .map(({ party: partyId, seats }) => {
-            const result = parties.find((party) => party.id === partyId);
-            const label = result?.abbr ?? result?.name ?? "";
-            const fill = result?.color ?? "";
-            return {
-              id: partyId,
-              label,
-              seats,
-              fill,
-            };
-          })}
-      />
+      <Charts parsedParties={parsedParties} view={view} />
+      <ChartLegend>
+        {parsedParties.map(({ id, abbr, fill }) => {
+          return <ChartLegendItem key={id} label={abbr} fill={fill} />;
+        })}
+      </ChartLegend>
     </div>
   );
 };
