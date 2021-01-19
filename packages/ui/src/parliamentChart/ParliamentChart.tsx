@@ -25,7 +25,7 @@ export interface ParliamentChartProps {
 const ParliamentChart: React.FC<ParliamentChartProps> = ({
   totalSeats,
   parties,
-  innerR = 50,
+  innerR = 100,
   showLegend = true,
 }) => {
   return (

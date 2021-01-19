@@ -9,34 +9,33 @@ import NextPoll from "./NextPoll";
 
 const AppTopbar: React.FC = () => {
   return (
-    <>
-      <Topbar
-        links={
-          <>
-            <Home />
-            <Polls />
-            <AboutUs />
-          </>
-        }
-        mobileLinks={<Home />}
-        menuItems={
-          <>
-            <ThemeIcon />
-            <LanguageIcon />
-            <NextPoll />
-          </>
-        }
-        mobileMenuItems={null}
-        mobileOverlayMenuItems={
-          <>
-            <Polls />
-            <AboutUs />
-            <ThemeIcon withTooltip={false} />
-            <LanguageIcon withTooltip={false} />
-          </>
-        }
-      />
-    </>
+    <Topbar
+      links={
+        <>
+          <Home />
+          <Polls />
+          <AboutUs />
+        </>
+      }
+      mobileLinks={<Home />}
+      menuItems={
+        <>
+          <ThemeIcon />
+          <LanguageIcon />
+          <NextPoll />
+        </>
+      }
+      mobileMenuItems={null}
+      mobileOverlayMenuItems={
+        <>
+          <Polls />
+          <AboutUs />
+          <NextPoll btn={false} />
+          <ThemeIcon withTooltip={false} />
+          <LanguageIcon withTooltip={false} />
+        </>
+      }
+    />
   );
 };
 

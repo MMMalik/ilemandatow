@@ -25,7 +25,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
       <div className="flex flex-column min-vh-100">
         <div className="flex-grow-0">{topbar}</div>
         <div className="flex-grow-1">
-          <div className="pa3 pa4-m pa5-l">{children}</div>
+          <div className="pa3 pv4 pa4-m pa5-l">{children}</div>
         </div>
         <div className="flex-grow-0">{footer}</div>
       </div>

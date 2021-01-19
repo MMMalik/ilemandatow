@@ -1,6 +1,7 @@
 import * as React from "react";
-import { DefinitionList, DefinitionItem } from "@ilemandatow/ui";
+import { DefinitionList } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
+import PollDefinitionItem from "../pollDefinitionItem";
 
 interface Props {
   threshold?: string;
@@ -15,9 +16,14 @@ const ElectionSettingsList: React.FC<Props> = ({
 
   return (
     <DefinitionList>
-      {threshold && <DefinitionItem label={t("threshold")} value={threshold} />}
+      {threshold && (
+        <PollDefinitionItem label={t("threshold")} value={threshold} />
+      )}
       {parliamentSeats && (
-        <DefinitionItem label={t("parliamentSeats")} value={parliamentSeats} />
+        <PollDefinitionItem
+          label={t("parliamentSeats")}
+          value={parliamentSeats}
+        />
       )}
     </DefinitionList>
   );

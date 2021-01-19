@@ -23,9 +23,9 @@ const Footer: React.FC<FooterProps> = ({ left, center, right }) => {
   return (
     <footer className={`${textPrimary} bg-${bgPrimary}`}>
       <div className="flex items-center justify-center">
-        <div className="w-40 w-10-ns tr">{left}</div>
-        <div className="w3 tc">{center}</div>
-        <div className="w-40 w-10-ns tl">{right}</div>
+        <div className="dib tr">{left}</div>
+        <div className="dib tc">{center}</div>
+        <div className="dib tl">{right}</div>
       </div>
     </footer>
   );

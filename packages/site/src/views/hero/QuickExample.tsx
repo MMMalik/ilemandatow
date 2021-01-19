@@ -11,17 +11,17 @@ const QuickExample: React.FC<Props> = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="pa3">
       <Grid>
-        <GridItem>
+        <GridItem className="w-100">
           <div className="f4 lh-copy">
             <div>{t("quickExampleDesc")}</div>
           </div>
         </GridItem>
-        <GridItem className="w-50">
-          <Paper className="h-100"></Paper>
+        <GridItem className="w-100 w-50-m w-50-l">
+          <Paper className="h-100">Test</Paper>
         </GridItem>
-        <GridItem className="w-50">
+        <GridItem className="w-100 w-50-m w-50-l">
           <Paper>
             <PollChart parties={[]} seats={[]} />
           </Paper>

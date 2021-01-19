@@ -12,17 +12,21 @@ export interface TableCellEditableProps
    * Makes input hidden.
    */
   hidden?: boolean;
+  /**
+   * Optional cell class name.
+   */
+  className?: string;
 }
 
 const TableCellEditable: React.FC<TableCellEditableProps> = React.forwardRef<
   any,
   TableCellEditableProps
 >(function TableCellEditable(
-  { inputClassName, hidden, children, ...rest },
+  { inputClassName, hidden, className, children, ...rest },
   ref
 ) {
   return (
-    <TableCell>
+    <TableCell className={className}>
       <InputField
         ref={ref}
         className={hidden ? "dn" : inputClassName}

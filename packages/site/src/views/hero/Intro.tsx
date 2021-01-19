@@ -7,7 +7,7 @@ const Intro: React.FC = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="lh-copy w-40 tc">
+      <div className="lh-copy w-50-l tc">
         <div className="f3 b mt2 mb3">
           <span>{"ilemandatow.pl"}</span>
           <span className="dib w2 mh2">

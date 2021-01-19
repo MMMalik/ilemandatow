@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import * as React from "react";
+import Divider from "../divider";
 import Grid, { GridItem } from "../grid";
 import { useTheme } from "../theme";
 
@@ -25,18 +26,25 @@ const FormSection: React.FC<FormSectionProps> = ({
   divider = true,
 }) => {
   const { theme } = useTheme();
-  const { textMuted, textDivider } = theme;
+  const { textMuted } = theme;
 
   return (
-    <div className="ph4">
-      <Grid className={clsx(divider && "bt", `pv4 b--${textDivider}`)}>
-        <GridItem className="w-third pv3 ph4">
-          <div className="f5 mb2">{title}</div>
-          <div className={`lh-copy ${textMuted}`}>{description}</div>
-        </GridItem>
-        <GridItem className="w-two-thirds pv3 ph4">{children}</GridItem>
-      </Grid>
-    </div>
+    <>
+      <div className={clsx(divider && "mb4", "pa3-l")}>
+        <Grid>
+          {title && (
+            <GridItem className="w-100 w-third-l pr3-l">
+              <div className="f5 mb2">{title}</div>
+              <div className={`lh-copy ${textMuted}`}>{description}</div>
+            </GridItem>
+          )}
+          <GridItem className={clsx(title ? "w-100 w-two-thirds-l" : "w-100")}>
+            {children}
+          </GridItem>
+        </Grid>
+      </div>
+      {divider && <Divider />}
+    </>
   );
 };
 

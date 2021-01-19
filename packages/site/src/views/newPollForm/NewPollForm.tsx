@@ -10,7 +10,7 @@ interface Props {
 const NewPollFormCmp: React.FC<Props> = ({ onSubmit, initValues }) => {
   return (
     <Grid>
-      <GridItem>
+      <GridItem className="w-100">
         <Paper className="pa4">
           <NewPollForm onSubmit={onSubmit} initValues={initValues} />
         </Paper>

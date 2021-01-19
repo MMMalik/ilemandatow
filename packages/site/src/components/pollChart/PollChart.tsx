@@ -43,7 +43,7 @@ const PollChart: React.FC<Props> = ({ seats, parties }) => {
           .filter(({ seats }) => seats > 0)
           .map(({ party: partyId, seats }) => {
             const result = parties.find((party) => party.id === partyId);
-            const label = result?.name ?? "";
+            const label = result?.abbr ?? result?.name ?? "";
             const fill = result?.color ?? "";
             return {
               id: partyId,
