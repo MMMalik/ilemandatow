@@ -11,5 +11,6 @@ export const dark: Theme = {
   textDivider: "gray",
   chart: {
     bgFill: "#212121",
+    muted: "#777777",
   },
 };

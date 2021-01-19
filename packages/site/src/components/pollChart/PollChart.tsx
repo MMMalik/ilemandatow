@@ -17,7 +17,7 @@ interface Props {
 }
 
 const PollChart: React.FC<Props> = ({ seats, parties }) => {
-  const [view, setView] = React.useState<ChartView>("parliament");
+  const [view, setView] = React.useState<ChartView>("pie");
 
   const handleViewChange = (view: ChartView) => () => {
     setView(view);
@@ -29,19 +29,19 @@ const PollChart: React.FC<Props> = ({ seats, parties }) => {
     <div>
       <Toolbar>
         <ToolbarItem
+          icon="chart-pie"
+          onClick={handleViewChange("pie")}
+          active={view === "pie"}
+        />
+        <ToolbarItem
           icon="user"
           onClick={handleViewChange("parliament")}
           active={view === "parliament"}
         />
-        {/* <ToolbarItem
-          icon="poll"
-          onClick={handleViewChange("halfPie")}
-          active={view === "halfPie"}
-        /> */}
         <ToolbarItem
-          icon="chart-pie"
-          onClick={handleViewChange("pie")}
-          active={view === "pie"}
+          icon="poll"
+          onClick={handleViewChange("bar")}
+          active={view === "bar"}
         />
       </Toolbar>
       <Charts parsedParties={parsedParties} view={view} />

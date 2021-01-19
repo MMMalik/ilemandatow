@@ -1,3 +1,6 @@
+export * from "./barChart";
+export { default as BarChart } from "./barChart";
+
 export * from "./button";
 export { default as Button } from "./button";
 

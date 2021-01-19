@@ -11,5 +11,6 @@ export const light: Theme = {
   textDivider: "light-gray",
   chart: {
     bgFill: "#ffffff",
+    muted: "#eeeeee",
   },
 };

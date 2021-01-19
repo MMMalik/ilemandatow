@@ -1,14 +1,14 @@
 import * as React from "react";
 import { useTheme } from "../theme";
+import { ChartValue } from "../chart";
 import { sumPies } from "./sumPies";
-import { PieChartPie } from "./types";
 import Pie from "./Pie";
 
 export interface PieChartProps {
   /**
    * List of pies.
    */
-  pies: PieChartPie[];
+  pies: ChartValue[];
   /**
    * Show as half pie.
    */
