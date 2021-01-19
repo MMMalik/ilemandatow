@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useTheme } from "../../dist";
+import { useTheme } from "../theme";
 import { sumPies } from "./sumPies";
 import { PieChartPie } from "./types";
 import Pie from "./Pie";
