@@ -1,0 +1,51 @@
+{
+  "participantsMightVote": 27,
+  "method": "CAWI",
+  "publishedAt": "2021-01-20",
+  "participantsUndecided": 9,
+  "participantsMightNotVote": 12,
+  "summary": "wPolityce, SC",
+  "participantsWillNotVote": 8,
+  "polledBy___NODE": "dFFJP7Auq2fZhxV4bk9S3",
+  "pollEndedAt": "2021-01-18",
+  "participantsCount": 1097,
+  "pollStartedAt": "2021-01-15",
+  "results": [
+    {
+      "party___NODE": "KSmBIP6ZDoRuco1stc0XO",
+      "result": 10
+    },
+    {
+      "party___NODE": "U4oQqW7Kd027-7B6GB1q1",
+      "result": 22
+    },
+    {
+      "party___NODE": "wqZMyC6p6YeqfPQdsM93P",
+      "result": 22
+    },
+    {
+      "party___NODE": "78QC5o-Z_wejx3EiRw5Tf",
+      "result": 2
+    },
+    {
+      "party___NODE": "cdPZEVds_Q-LJv_P2o5VI",
+      "result": 3
+    },
+    {
+      "party___NODE": "Mfd0x7kZWp-qMWL_Qjm66",
+      "result": 30
+    },
+    {
+      "party___NODE": "DyawCPELgfgeJobDSIwL4",
+      "result": 10
+    },
+    {
+      "party___NODE": "-kIwWx8uAQmiMyFjtWpE2",
+      "result": 1
+    }
+  ],
+  "source": "https://wpolityce.pl/polityka/535712-krajobraz-partyjny-polska-2050-i-ko-ida-leb-w-leb-sprawdz",
+  "id": "sUFNn-MoQsSSxgUweBiyl",
+  "publishedBy___NODE": "_sVxVjb5xl0UtS838hcTs",
+  "participantsWillVote": 43
+}
