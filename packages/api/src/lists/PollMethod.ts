@@ -1,8 +1,7 @@
-import { Relationship, Slug, Text, Uuid } from "@keystonejs/fields";
-import { Color } from "@keystonejs/fields-color";
+import { Text, Uuid, Slug } from "@keystonejs/fields";
 import { slugId } from "../utils";
 
-export const Party = {
+export const PollMethod = {
   fields: {
     id: {
       type: Uuid,
@@ -10,10 +9,6 @@ export const Party = {
     },
     name: { type: Text },
     fullName: { type: Text },
-    abbr: { type: Text },
-    color: { type: Color },
-    colorDarkTheme: { type: Color },
-    memberParties: { type: Relationship, ref: "Party", many: true },
     slug: { type: Slug, generate: slugId(["name"]), regenerateOnUpdate: false },
   },
 };

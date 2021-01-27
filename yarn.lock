@@ -3026,6 +3026,19 @@
     "@keystonejs/adapter-prisma" "^2.0.0"
     "@keystonejs/fields" "^21.0.2"
 
+"@keystonejs/fields-color@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@keystonejs/fields-color/-/fields-color-1.0.9.tgz#9c1be0d1fc7aeef39e43f65b2268bd49d74fb5aa"
+  integrity sha512-wRHdh8IYrjJNrUin5cdW6Ol0FS8HqJkbe3D75yTWww9i4YBOiBlaflcDLZDbaOlYGfp1hiOWYDa46l9VkIycSg==
+  dependencies:
+    "@arch-ui/button" "^0.0.22"
+    "@arch-ui/fields" "^3.0.5"
+    "@arch-ui/popout" "^0.0.23"
+    "@babel/runtime" "^7.12.5"
+    "@emotion/core" "^10.1.1"
+    "@keystonejs/fields" "^21.0.0"
+    react-color "^2.19.3"
+
 "@keystonejs/fields-mongoid@^9.1.1":
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/@keystonejs/fields-mongoid/-/fields-mongoid-9.1.2.tgz#1bfba9f336304345d06a42c8ec53aa75798cafe8"
@@ -3039,7 +3052,7 @@
     "@keystonejs/fields" "^21.0.2"
     react "^16.14.0"
 
-"@keystonejs/fields@^21.0.1", "@keystonejs/fields@^21.0.2":
+"@keystonejs/fields@^21.0.0", "@keystonejs/fields@^21.0.1", "@keystonejs/fields@^21.0.2":
   version "21.0.2"
   resolved "https://registry.yarnpkg.com/@keystonejs/fields/-/fields-21.0.2.tgz#9f34bd1e33025c01565d6db8dbe71eaf7abe6ad3"
   integrity sha512-rFKSXShgoxln3lKMLYUxFGQFwgWauc5inZEAv1Fagglj9hlE6To+rVAAhCPF42oBBzCszqk58apIkKwJa/v1vA==
@@ -5742,42 +5755,6 @@
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@types/keygrip/-/keygrip-1.0.2.tgz#513abfd256d7ad0bf1ee1873606317b33b1b2a72"
   integrity sha512-GJhpTepz2udxGexqos8wgaBx4I/zWIDPh/KOGEwAqtuGDkOUJu5eFvwmdBX4AmB8Odsr+9pHCQqiAqDL/yKMKw==
-
-"@types/keystonejs__adapter-mongoose@^5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@types/keystonejs__adapter-mongoose/-/keystonejs__adapter-mongoose-5.1.2.tgz#524c0bedc7365cf180f502e243dfe68557db72f8"
-  integrity sha512-IoK2aNIrCk9WPTTCTaWnoydn5Nfm4OEPaU2lXirYhlGREPG3zED7DblbzNpqHwcr/a1FMLzw9YUUNCjYOfYC1A==
-  dependencies:
-    "@types/keystonejs__keystone" "*"
-
-"@types/keystonejs__app-admin-ui@^5.9.0":
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/@types/keystonejs__app-admin-ui/-/keystonejs__app-admin-ui-5.9.0.tgz#883eddb4a15db2863c60720fc85f739697cfef74"
-  integrity sha512-kKNy1Gq2aGceR709w3/WUBsIC6xDiYX8MtuJpMVWFia3BmILBTdCDy9Bpb9j7KEkJ4ybxYV3CtjQAW5puMXxLA==
-  dependencies:
-    "@types/keystonejs__keystone" "*"
-
-"@types/keystonejs__app-graphql@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@types/keystonejs__app-graphql/-/keystonejs__app-graphql-5.1.0.tgz#29db3649dfe2eace98dcbe61bd93fc673ec5c529"
-  integrity sha512-vOZKShd8xxtk4tWR/jgbYrBMq8NrCvT0nmjTFv5750ktCTvO7lnEL/MK/EYLE/6sMY8c6ugrwMI38wZgw0/mmA==
-  dependencies:
-    "@types/express" "*"
-    "@types/keystonejs__keystone" "*"
-
-"@types/keystonejs__fields@*", "@types/keystonejs__fields@^5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@types/keystonejs__fields/-/keystonejs__fields-5.1.1.tgz#1c91718eeee0b2e58a2b3f57ad234967bad202df"
-  integrity sha512-m8Ny/rTXzzoKO33UDkcspmHK0Q/qP4teo2510+HG1NMxM7pF/jPPL/viGtAJF/eIYEsSZxzwNSTFWMw/DlPIwQ==
-
-"@types/keystonejs__keystone@*", "@types/keystonejs__keystone@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@types/keystonejs__keystone/-/keystonejs__keystone-7.0.0.tgz#92f2bd4aa8e8f041f0fd080df9fda4ec3ce3593b"
-  integrity sha512-RP0KzKzd3BrAV6MOhtdN8Pio22o1mUyw03+QrtRBu65CCAqyvITRCGOUr45yHs1pxViJIM+N11hXarulSOPRVg==
-  dependencies:
-    "@types/express" "*"
-    "@types/keystonejs__fields" "*"
-    graphql "^14.5.8"
 
 "@types/koa-compose@*":
   version "3.2.5"
@@ -14456,13 +14433,6 @@ graphql-ws@3.1.0:
   resolved "https://registry.yarnpkg.com/graphql-ws/-/graphql-ws-3.1.0.tgz#cd09d385a21ab88af4c226da79c19351df9b27e8"
   integrity sha512-zbex3FSiFz0iRgfkzDNWpOY/sYWoX+iZ5XUhakaDwOh99HSuk8rPt5suuxdXUVzEg5TGQ9rwzNaz/+mTPtS0yg==
 
-graphql@^14.5.8:
-  version "14.7.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.7.0.tgz#7fa79a80a69be4a31c27dda824dc04dac2035a72"
-  integrity sha512-l0xWZpoPKpppFzMfvVyFmp9vLN7w/ZZJPefUicMCepfJeQ8sMcztloGYY9DfjVPo6tIUDzU5Hw3MUbIjj9AVVA==
-  dependencies:
-    iterall "^1.2.2"
-
 graphql@^14.6.0:
   version "14.6.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.6.0.tgz#57822297111e874ea12f5cd4419616930cd83e49"
@@ -17179,7 +17149,7 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-knex@^0.21.15:
+knex@^0.21.15, knex@^0.21.16:
   version "0.21.16"
   resolved "https://registry.yarnpkg.com/knex/-/knex-0.21.16.tgz#5431efe66d7194cdcf34ba3a874c6c66d7229c1a"
   integrity sha512-M3FTFfby49AEngsx/0UXEJEMnKMjPjeKOtvk+AY6d6kboz9NsT7xDudl0wRNj+S0lq0yearCSb1v+YxgbU/kWA==
@@ -21335,6 +21305,11 @@ postgres-interval@^1.1.0:
   dependencies:
     xtend "^4.0.0"
 
+postgres@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/postgres/-/postgres-1.0.2.tgz#7b9f6769934f727cec0f1d7ef58d4915a327f5dd"
+  integrity sha512-zeLgt42KSUNgX/uvo+gbVxTAYwgSY6MIKuU/a8YWuObX4rtGuKrVWopvEAqIAPSO0FeHS1TsSKnqPjoufPy8NA==
+
 precinct@^6.3.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/precinct/-/precinct-6.3.1.tgz#8ad735a8afdfc48b56ed39c9ad3bf999b6b928dc"
@@ -21910,7 +21885,7 @@ react-codemirror@^1.0.0:
     lodash.isequal "^4.5.0"
     prop-types "^15.5.4"
 
-react-color@^2.17.0, react-color@^2.18.1:
+react-color@^2.17.0, react-color@^2.18.1, react-color@^2.19.3:
   version "2.19.3"
   resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.19.3.tgz#ec6c6b4568312a3c6a18420ab0472e146aa5683d"
   integrity sha512-LEeGE/ZzNLIsFWa1TMe8y5VYqr7bibneWmvJwm1pCn/eNmrabWDh659JSPn9BuaMpEfU83WTOJfnCcjDZwNQTA==
@@ -24153,7 +24128,7 @@ slide@^1.1.6:
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
   integrity sha1-VusCfWW00tzmyy4tMsTUr8nh1wc=
 
-slugify@^1.4.4:
+slugify@^1.4.4, slugify@^1.4.6:
   version "1.4.6"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.6.tgz#ef288d920a47fb01c2be56b3487b6722f5e34ace"
   integrity sha512-ZdJIgv9gdrYwhXqxsH9pv7nXxjUEyQ6nqhngRxoAAOlmMGA28FDq5O4/5US4G2/Nod7d1ovNcgURQJ7kHq50KQ==
