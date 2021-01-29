@@ -7,4 +7,7 @@ export const keystone = initKeystone();
 export default {
   keystone,
   apps: [new GraphQLApp(), new AdminUIApp()],
+  configureExpress: (app: any) => {
+    app.set("trust proxy", true);
+  },
 };

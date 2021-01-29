@@ -1,0 +1,38 @@
+#
+# This workflow is responsible for deploying to preprod environment.
+# It runs after release package is created in `main` branch.
+#
+
+name: Deploy preprod
+
+on:
+  workflow_run:
+    workflows: [Prod]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  deploy-preprod:
+    name: Deploy preprod
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - id: set_lerna_json
+        name: Set lerna json
+        run: |
+          content=`cat ./lerna.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=lernaJson::$content"
+
+      - name: Checkout tag
+        uses: actions/checkout@v2
+        with:
+          ref: v${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+
+      - name: Deploy to preprod
+        run: bash ./.github/workflows/deploy.sh

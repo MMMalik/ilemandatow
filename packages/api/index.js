@@ -1,2 +1,2 @@
-const keystone = require("./dist").default;
+const keystone = require("./build").default;
 module.exports = keystone;

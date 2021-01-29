@@ -3,13 +3,7 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/api",
-      "packages/cms",
-      "packages/content",
-      "packages/locales",
-      "packages/seats",
-      "packages/site",
-      "packages/ui"
+      "packages/*"
     ]
   },
   "scripts": {

@@ -7,10 +7,13 @@
   "keywords": [],
   "scripts": {
     "cleanup": "rimraf dist",
-    "build": "yarn cleanup && tsc",
-    "build:watch": "yarn cleanup && tsc --watch",
-    "develop": "yarn build && NODE_ENV=development keystone",
-    "start": "NODE_ENV=production keystone",
+    "build:keystone": "yarn keystone build",
+    "build:tsc": "tsc",
+    "prebuild": "yarn cleanup",
+    "build": "yarn build:tsc && yarn build:keystone",
+    "predevelop": "yarn cleanup && yarn build:tsc",
+    "develop": "NODE_ENV=development keystone",
+    "start": "NODE_ENV=production keystone start",
     "data:init": "NODE_ENV=development keystone create-tables",
     "data:seed": "NODE_ENV=development knex seed:run",
     "check-types": "tsc --noEmit"

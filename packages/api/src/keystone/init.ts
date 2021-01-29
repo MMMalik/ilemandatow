@@ -10,12 +10,22 @@ import {
 } from "../lists";
 import { config, isDev } from "../config";
 
+const pkg = require("../../package.json");
+
 export const initKeystone = () => {
+  const { secret: cookieSecret, ...cookie } = config.cookie;
+
   const keystone = new Keystone({
+    appVersion: {
+      version: pkg.version,
+      addVersionToHttpHeaders: true,
+    },
     adapter: new KnexAdapter({
       dropDatabase: isDev,
       knexOptions: config.db,
     }),
+    cookie,
+    cookieSecret,
   });
 
   keystone.createList("Party", Party);
