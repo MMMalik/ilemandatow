@@ -8,11 +8,8 @@
   "scripts": {
     "cleanup": "rimraf dist",
     "build:keystone": "yarn keystone build",
-    "build:tsc": "tsc",
-    "prebuild": "yarn cleanup",
-    "build": "yarn build:tsc && yarn build:keystone",
-    "predevelop": "yarn cleanup && yarn build:tsc",
-    "develop": "NODE_ENV=development keystone",
+    "build": "yarn cleanup && tsc",
+    "develop": "yarn build && NODE_ENV=development keystone",
     "start": "NODE_ENV=production keystone start",
     "data:init": "NODE_ENV=development keystone create-tables",
     "data:seed": "NODE_ENV=development knex seed:run",

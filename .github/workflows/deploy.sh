@@ -4,6 +4,9 @@ yarn install
 # Build project
 yarn build
 
+# Build Keystone app
+yarn build:api:keystone
+
 # Prune dev dependencies
 yarn install --production
 
