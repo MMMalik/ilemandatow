@@ -6,7 +6,6 @@ import {
   Text,
   Uuid,
   Slug,
-  Virtual,
 } from "@keystonejs/fields";
 import { slugId } from "../utils";
 
