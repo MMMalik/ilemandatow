@@ -1,0 +1,51 @@
+#
+# This workflow is responsible for deploying to preprod environment.
+# It runs after release package is created in `main` branch.
+#
+
+name: Deploy preprod
+
+on:
+  push:
+    branches:
+      - dev
+  # workflow_run:
+  #   workflows: [Prod]
+  #   branches: [main]
+  #   types:
+  #     - completed
+
+jobs:
+  deploy-preprod:
+    name: Deploy preprod
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - id: set_lerna_json
+        name: Set lerna json
+        run: |
+          content=`cat ./lerna.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=lernaJson::$content"
+
+      - name: Checkout tag
+        uses: actions/checkout@v2
+        with:
+          ref: v${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+
+      - name: Deploy to preprod
+        run: MD_SSH_KEY=${{ secrets.MD_SSH_KEY }} \
+          MD_SSH_HOST=${{ secrets.MD_SSH_HOST }} \
+          MD_SSH_DOMAIN=${{ secrets.MD_SSH_DOMAIN_PREPROD }} \
+          NETLIFY_AUTH_TOKEN=${{ secrets.NETLIFY_AUTH_TOKEN }} \
+          NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID_PREPROD }} \
+          DB_USER=${{ secrets.DB_USER_PREPROD }} \
+          DB_PASS=${{ secrets.DB_PASS_PREPROD }} \
+          DB_NAME=${{ secrets.DB_NAME_PREPROD }} \
+          DB_URI=${{ secrets.DB_URI_PREPROD }} \
+          COOKIE_SECRET=${{ secrets.COOKIE_SECRET_PREPROD }} \
+          bash ./.github/workflows/deploy.sh

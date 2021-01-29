@@ -3,28 +3,25 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/site",
-      "packages/seats",
-      "packages/cms",
-      "packages/ui",
-      "packages/content",
-      "packages/locales"
+      "packages/*"
     ]
   },
   "scripts": {
     "build": "lerna run build --stream",
-    "clean": "lerna run clean --stream",
     "check-types": "lerna run check-types --stream",
-    "lint": "eslint \"packages/**/src/**/*.{tsx,ts,js}\"",
-    "jest:watch": "yarn jest --watch",
-    "test": "yarn check-types && yarn jest && yarn lint",
+    "clean": "lerna run clean --stream",
+    "data:seed": "cd packages/api && yarn data:seed",
+    "develop:api": "cd packages/api && yarn develop",
     "develop:cms": "cd packages/cms && yarn develop",
-    "serve:cms": "cd packages/cms && yarn serve",
+    "develop:seats": "cd packages/seats && yarn build:watch",
     "develop:site": "cd packages/site && yarn develop",
-    "serve:site": "cd packages/site && yarn serve",
-    "develop:ui": "cd packages/ui && yarn build:watch",
     "develop:ui:sb": "cd packages/ui && yarn storybook",
-    "develop:seats": "cd packages/seats && yarn build:watch"
+    "develop:ui": "cd packages/ui && yarn build:watch",
+    "jest:watch": "yarn jest --watch",
+    "lint": "eslint \"packages/**/src/**/*.{tsx,ts,js}\"",
+    "serve:cms": "cd packages/cms && yarn serve",
+    "serve:site": "cd packages/site && yarn serve",
+    "test": "yarn check-types && yarn jest && yarn lint"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

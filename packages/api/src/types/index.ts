@@ -1,0 +1,9 @@
+declare module "@keystonejs/fields-color";
+declare module "@keystonejs/server-side-graphql-client";
+declare module "@keystonejs/app-graphql";
+declare module "@keystonejs/app-admin-ui";
+declare module "@keystonejs/keystone";
+declare module "@keystonejs/adapter-mongoose";
+declare module "@keystonejs/adapter-prisma";
+declare module "@keystonejs/adapter-knex";
+declare module "@keystonejs/fields";
