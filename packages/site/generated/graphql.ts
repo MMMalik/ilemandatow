@@ -838,8 +838,8 @@ export type FileFieldsEnum =
   | 'childrenPollsJson___results___party___children'
   | 'childrenPollsJson___results___party___memberParties'
   | 'childrenPollsJson___results___party___name'
-  | 'childrenPollsJson___results___party___abbr'
   | 'childrenPollsJson___results___party___fullName'
+  | 'childrenPollsJson___results___party___abbr'
   | 'childrenPollsJson___results___party___color'
   | 'childrenPollsJson___results___party___colorDarkTheme'
   | 'childrenPollsJson___results___result'
@@ -931,8 +931,8 @@ export type FileFieldsEnum =
   | 'childPollsJson___results___party___children'
   | 'childPollsJson___results___party___memberParties'
   | 'childPollsJson___results___party___name'
-  | 'childPollsJson___results___party___abbr'
   | 'childPollsJson___results___party___fullName'
+  | 'childPollsJson___results___party___abbr'
   | 'childPollsJson___results___party___color'
   | 'childPollsJson___results___party___colorDarkTheme'
   | 'childPollsJson___results___result'
@@ -1084,15 +1084,15 @@ export type FileFieldsEnum =
   | 'childrenPartiesJson___memberParties___party___children'
   | 'childrenPartiesJson___memberParties___party___memberParties'
   | 'childrenPartiesJson___memberParties___party___name'
-  | 'childrenPartiesJson___memberParties___party___abbr'
   | 'childrenPartiesJson___memberParties___party___fullName'
+  | 'childrenPartiesJson___memberParties___party___abbr'
   | 'childrenPartiesJson___memberParties___party___color'
   | 'childrenPartiesJson___memberParties___party___colorDarkTheme'
   | 'childrenPartiesJson___memberParties___joinedAt'
   | 'childrenPartiesJson___memberParties___leftAt'
   | 'childrenPartiesJson___name'
-  | 'childrenPartiesJson___abbr'
   | 'childrenPartiesJson___fullName'
+  | 'childrenPartiesJson___abbr'
   | 'childrenPartiesJson___color'
   | 'childrenPartiesJson___colorDarkTheme'
   | 'childPartiesJson___id'
@@ -1138,15 +1138,15 @@ export type FileFieldsEnum =
   | 'childPartiesJson___memberParties___party___children'
   | 'childPartiesJson___memberParties___party___memberParties'
   | 'childPartiesJson___memberParties___party___name'
-  | 'childPartiesJson___memberParties___party___abbr'
   | 'childPartiesJson___memberParties___party___fullName'
+  | 'childPartiesJson___memberParties___party___abbr'
   | 'childPartiesJson___memberParties___party___color'
   | 'childPartiesJson___memberParties___party___colorDarkTheme'
   | 'childPartiesJson___memberParties___joinedAt'
   | 'childPartiesJson___memberParties___leftAt'
   | 'childPartiesJson___name'
-  | 'childPartiesJson___abbr'
   | 'childPartiesJson___fullName'
+  | 'childPartiesJson___abbr'
   | 'childPartiesJson___color'
   | 'childPartiesJson___colorDarkTheme'
   | 'childrenContentJson'
@@ -1469,8 +1469,8 @@ export type PartiesJson = Node & {
   internal: Internal;
   memberParties?: Maybe<Array<Maybe<PartiesJsonMemberParties>>>;
   name?: Maybe<Scalars['String']>;
-  abbr?: Maybe<Scalars['String']>;
   fullName?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
 };
@@ -1608,15 +1608,15 @@ export type PartiesJsonFieldsEnum =
   | 'memberParties___party___memberParties___joinedAt'
   | 'memberParties___party___memberParties___leftAt'
   | 'memberParties___party___name'
-  | 'memberParties___party___abbr'
   | 'memberParties___party___fullName'
+  | 'memberParties___party___abbr'
   | 'memberParties___party___color'
   | 'memberParties___party___colorDarkTheme'
   | 'memberParties___joinedAt'
   | 'memberParties___leftAt'
   | 'name'
-  | 'abbr'
   | 'fullName'
+  | 'abbr'
   | 'color'
   | 'colorDarkTheme';
 
@@ -1627,8 +1627,8 @@ export type PartiesJsonFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
   fullName?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
   color?: Maybe<StringQueryOperatorInput>;
   colorDarkTheme?: Maybe<StringQueryOperatorInput>;
 };
@@ -2046,8 +2046,8 @@ export type PollsJsonFieldsEnum =
   | 'results___party___memberParties___joinedAt'
   | 'results___party___memberParties___leftAt'
   | 'results___party___name'
-  | 'results___party___abbr'
   | 'results___party___fullName'
+  | 'results___party___abbr'
   | 'results___party___color'
   | 'results___party___colorDarkTheme'
   | 'results___result'
@@ -2563,8 +2563,8 @@ export type QueryPartiesJsonArgs = {
   internal?: Maybe<InternalFilterInput>;
   memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
   fullName?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
   color?: Maybe<StringQueryOperatorInput>;
   colorDarkTheme?: Maybe<StringQueryOperatorInput>;
 };
