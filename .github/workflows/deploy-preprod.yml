@@ -39,13 +39,14 @@ jobs:
 
       - name: Deploy to preprod
         run: |
-          MD_SSH_KEY=${{ secrets.MD_SSH_KEY }} \
-          MD_SSH_HOST=${{ secrets.MD_SSH_HOST }} \
-          MD_SSH_DOMAIN=${{ secrets.MD_SSH_DOMAIN_PREPROD }} \
-          NETLIFY_AUTH_TOKEN=${{ secrets.NETLIFY_AUTH_TOKEN }} \
-          NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID_PREPROD }} \
-          DB_USER=${{ secrets.DB_USER_PREPROD }} \
-          DB_PASS=${{ secrets.DB_PASS_PREPROD }} \
-          DB_NAME=${{ secrets.DB_NAME_PREPROD }} \
-          DB_URI=${{ secrets.DB_URI_PREPROD }} \
-          COOKIE_SECRET=${{ secrets.COOKIE_SECRET_PREPROD }} bash ./.github/workflows/deploy.sh
+          MD_SSH_KEY="${{ secrets.MD_SSH_KEY }}" \
+          MD_SSH_HOST="${{ secrets.MD_SSH_HOST }}" \
+          MD_SSH_DOMAIN="${{ secrets.MD_SSH_DOMAIN_PREPROD }}" \
+          NETLIFY_AUTH_TOKEN="${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+          NETLIFY_SITE_ID="${{ secrets.NETLIFY_SITE_ID_PREPROD }}" \
+          DB_USER="${{ secrets.DB_USER_PREPROD }}" \
+          DB_PASS="${{ secrets.DB_PASS_PREPROD }}" \
+          DB_NAME="${{ secrets.DB_NAME_PREPROD }}" \
+          DB_URI="${{ secrets.DB_URI_PREPROD }}" \
+          COOKIE_SECRET="${{ secrets.COOKIE_SECRET_PREPROD }}" \
+          bash ./.github/workflows/deploy.sh
