@@ -9,6 +9,9 @@ on:
     branches:
       # Default development branch
       - dev
+    paths:
+      # Trigger only for the following paths
+      - packages/content/**
 
 jobs:
   test:
