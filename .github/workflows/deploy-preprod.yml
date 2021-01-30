@@ -40,6 +40,7 @@ jobs:
       - name: Deploy to preprod
         run: |
           MD_SSH_KEY="${{ secrets.MD_SSH_KEY }}" \
+          MD_SSH_USER="${{ secrets.MD_SSH_USER }}" \
           MD_SSH_HOST="${{ secrets.MD_SSH_HOST }}" \
           MD_SSH_DOMAIN="${{ secrets.MD_SSH_DOMAIN_PREPROD }}" \
           NETLIFY_AUTH_TOKEN="${{ secrets.NETLIFY_AUTH_TOKEN }}" \
