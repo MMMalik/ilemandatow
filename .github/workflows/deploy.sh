@@ -24,7 +24,7 @@ yarn install --production
 printf "\n%s\n\n" "Configure SSH"
 mkdir ~/.ssh
 printf "\n%s\n\n" "Save private key"
-printenv $MD_SSH_KEY >~/.ssh/id_ed25519
+printenv MD_SSH_KEY >~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519
 
 # Create .env file
