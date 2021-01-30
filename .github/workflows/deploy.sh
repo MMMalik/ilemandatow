@@ -18,6 +18,7 @@ yarn netlify deploy --dir=packages/site/public --prod
 # Requires MD_SSH_KEY, MD_SSH_HOST
 mkdir ~/.ssh
 printf $MD_SSH_KEY >~/.ssh/id_ed25519
+chmod 600 ~/.ssh/id_ed25519
 ssh-keyscan -H $MD_SSH_HOST >~/.ssh/known_hosts
 
 # Create .env file
