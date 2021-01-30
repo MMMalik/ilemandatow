@@ -26,9 +26,6 @@ mkdir ~/.ssh
 printf "\n%s\n\n" "Save private key"
 printenv $MD_SSH_KEY >~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519
-printf "\n%s\n\n" "Save known hosts"
-ssh-keyscan -H $MD_SSH_HOST >~/.ssh/known_hosts
-ls -al ~/.ssh
 
 # Create .env file
 # Requires variables: DB_USER, DB_PASS, DB_NAME, DB_URI, COOKIE_SECRET
