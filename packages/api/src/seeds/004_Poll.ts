@@ -38,22 +38,20 @@ export async function seed(knex: Knex): Promise<void> {
           participantsWillNotVote,
           error,
           method,
-          publishedBy___NODE,
-          polledBy___NODE,
         } = poll;
-        const publishedBy = publishers.find(
-          (p) => publishedBy___NODE === p.deprecatedId
-        );
         const foundMethod = methods.find((m) => m.name === method);
-        const polledBy = pollCompanies.find(
-          (p) => polledBy___NODE === p.deprecatedId
+        const publisher = publishers.find(
+          (p) => p.deprecatedId === poll.publishedBy___NODE
         );
-        const data = {
+        const pollCompany = pollCompanies.find(
+          (p) => p.deprecatedId === poll.polledBy___NODE
+        );
+        return {
           id: knex.raw("gen_random_uuid()"),
           deprecatedId: id,
-          publishedAt,
-          pollStartedAt,
-          pollEndedAt,
+          publishedAt: publishedAt || null,
+          pollStartedAt: pollStartedAt || null,
+          pollEndedAt: pollEndedAt || null,
           participantsCount,
           source,
           participantsWillVote,
@@ -63,27 +61,35 @@ export async function seed(knex: Knex): Promise<void> {
           participantsWillNotVote,
           errorMargin: error,
           method: foundMethod.id,
-          publishedBy: publishedBy.id,
-          polledBy: polledBy.id,
-        };
-        return {
-          ...data,
-          slug: slugId(["polledBy.name", "publishedBy.name", "publishedAt"])({
+          slug: slugId(["pollCompany.name", "publisher.name", "publishedAt"])({
             resolvedData: {
-              polledBy,
-              publishedBy,
               publishedAt,
+              pollCompany,
+              publisher,
             },
           }),
         };
       })
     );
 
-  const pollResultRows = insertedPolls.map((insertedPoll) => {
+  const pollRows = insertedPolls.map((insertedPoll) => {
     const poll = polls.find((p) => p.id === insertedPoll.deprecatedId);
+    const publisher = publishers.find(
+      (p) => p.deprecatedId === poll.publishedBy___NODE
+    );
+    const pollCompany = pollCompanies.find(
+      (p) => p.deprecatedId === poll.polledBy___NODE
+    );
     return {
-      poll,
       insertedPoll,
+      publishedBy: {
+        Poll_left_id: insertedPoll.id,
+        Publisher_right_id: publisher.id,
+      },
+      polledBy: {
+        Poll_left_id: insertedPoll.id,
+        PollCompany_right_id: pollCompany.id,
+      },
       results: poll.results.map((r: any) => {
         const party = parties.find((p) => p.deprecatedId === r.party___NODE);
         return {
@@ -96,10 +102,14 @@ export async function seed(knex: Knex): Promise<void> {
   });
 
   await Promise.all(
-    pollResultRows.map(async ({ insertedPoll, results }) => {
+    pollRows.map(async ({ insertedPoll, results, publishedBy, polledBy }) => {
       const insertedPollResults: any[] = await knex("PollResult")
         .returning("*")
         .insert(results);
+
+      await knex("Poll_polledBy_many").insert([polledBy]);
+
+      await knex("Poll_publishedBy_many").insert([publishedBy]);
 
       await knex("Poll_results_many").insert(
         insertedPollResults.map((r) => {

@@ -6,14 +6,14 @@
   "license": "MIT",
   "keywords": [],
   "scripts": {
-    "cleanup": "rimraf dist",
     "build:keystone": "yarn keystone build",
     "build": "yarn cleanup && tsc",
+    "check-types": "tsc --noEmit",
+    "cleanup": "rimraf dist && rimraf build",
+    "db:seed": "knex seed:run",
+    "db:setup": "keystone create-tables",
     "develop": "yarn build && NODE_ENV=development keystone",
-    "start": "NODE_ENV=production keystone start",
-    "data:init": "NODE_ENV=development keystone create-tables",
-    "data:seed": "NODE_ENV=development knex seed:run",
-    "check-types": "tsc --noEmit"
+    "start": "NODE_ENV=production keystone start"
   },
   "dependencies": {
     "@keystonejs/app-admin-ui": "^7.3.13",
