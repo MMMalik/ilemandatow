@@ -10,10 +10,8 @@ yarn build
 
 # Deploy static site
 # Requires variables: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID
-# Optional: ILEMANDATOW_ACTIVE_ENV
 printf "\n%s\n\n" "Deploy static site"
-ILEMANDATOW_ACTIVE_ENV=$ILEMANDATOW_ACTIVE_ENV \
-    yarn netlify deploy --dir=packages/site/public --prod
+yarn netlify deploy --dir=packages/site/public --prod
 
 # Build KeystoneJs app
 printf "\n%s\n\n" "Build KeystoneJs app"
@@ -39,14 +37,14 @@ printf "\n%s\n\n" "Save environment variables to .env"
 printf "DB_USER=$DB_USER\nDB_PASS=$DB_PASS\nDB_NAME=$DB_NAME\nDB_URI=$DB_URI\nCOOKIE_SECRET=$COOKIE_SECRET" >packages/api/.env
 
 # Copy API files
-# Requires variables: MD_SSH_USER, MD_SSH_HOST, MD_SSH_DOMAIN
+# Requires variables: MD_SSH_USER, MD_SSH_HOST, MD_DOMAIN
 printf "\n%s\n\n" "Run rsync to copy files"
 rsync -zavhR \
     app.js \
     node_modules \
     packages/api \
-    $MD_SSH_USER@$MD_SSH_HOST:/usr/home/$MD_SSH_USER/domains/$MD_SSH_DOMAIN/public_nodejs
+    $MD_SSH_USER@$MD_SSH_HOST:/usr/home/$MD_SSH_USER/domains/$MD_DOMAIN/public_nodejs
 
 # Restart server
 printf "\n%s\n\n" "Restart server"
-ssh $MD_SSH_USER@$MD_SSH_HOST "devil www restart $MD_SSH_DOMAIN"
+ssh $MD_SSH_USER@$MD_SSH_HOST "devil www restart $MD_DOMAIN"
