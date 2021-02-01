@@ -1,9 +1,9 @@
-import { join } from "path";
-
 export const isDev = process.env.NODE_ENV === "development";
 export const isProd = process.env.NODE_ENV === "production";
 
-require("dotenv").config({ path: join(__dirname, "../../.env") });
+const envConfig = isProd ? { path: process.env.API_ENV_PATH } : undefined;
+
+require("dotenv").config(envConfig);
 
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;

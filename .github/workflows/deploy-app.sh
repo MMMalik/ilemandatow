@@ -34,7 +34,7 @@ ssh-keyscan -H $MD_SSH_HOST >~/.ssh/known_hosts
 # Create .env file
 # Requires variables: DB_USER, DB_PASS, DB_NAME, DB_URI, COOKIE_SECRET
 printf "\n%s\n\n" "Save environment variables to .env"
-printf "DB_USER=$DB_USER\nDB_PASS=$DB_PASS\nDB_NAME=$DB_NAME\nDB_URI=$DB_URI\nCOOKIE_SECRET=$COOKIE_SECRET" >packages/api/.env
+printf "DB_USER=$DB_USER\nDB_PASS=$DB_PASS\nDB_NAME=$DB_NAME\nDB_URI=$DB_URI\nCOOKIE_SECRET=$COOKIE_SECRET" >~/.env
 
 # Copy API files
 # Requires variables: MD_SSH_USER, MD_SSH_HOST, MD_DOMAIN
@@ -44,6 +44,11 @@ rsync -zavhR \
     node_modules \
     packages/api \
     $MD_SSH_USER@$MD_SSH_HOST:/usr/home/$MD_SSH_USER/domains/$MD_DOMAIN/public_nodejs
+
+# Copy env variables
+# Requires variables: MD_SSH_USER, MD_SSH_HOST, MD_DOMAIN
+printf "\n%s\n\n" "Run rsync to copy env variables"
+rsync -zavhR .env $MD_SSH_USER@$MD_SSH_HOST:/usr/home/$MD_SSH_USER/domains/$MD_DOMAIN
 
 # Restart server
 printf "\n%s\n\n" "Restart server"
