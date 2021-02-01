@@ -1,5 +1,5 @@
 #
-# This workflow is responsible for deploying changes to development site on Netlify.
+# This workflow is responsible for testing dev branch.
 #
 
 name: Dev
@@ -8,6 +8,13 @@ on:
   push:
     branches:
       # Default development branch
+      - dev
+    paths:
+      # Trigger only for the following paths
+      - packages/**
+
+  pull_request:
+    branches:
       - dev
     paths:
       - packages/**
@@ -28,10 +35,3 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn test
-
-      - name: Deploy main site to netlify (development)
-        run: |
-          yarn netlify deploy --dir=packages/site/public --prod
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}

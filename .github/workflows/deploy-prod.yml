@@ -1,6 +1,5 @@
 #
-# This workflow is responsible for deploying to production environment.
-# It is triggered manually by providing a tag.
+# Workflow responsible for deploying to production environment. Triggered manually.
 #
 
 name: Deploy prod
@@ -15,6 +14,9 @@ on:
 jobs:
   deploy-preprod:
     name: Deploy preprod
+    environment:
+      name: production
+      url: https://ilemandatow.pl
     runs-on: ubuntu-latest
     steps:
       - name: Checkout tag
@@ -22,18 +24,21 @@ jobs:
         with:
           ref: ${{ github.event.inputs.tag }}
 
-      - name: Deploy to preprod
+      - name: Deploy API to preprod
         run: |
-          ILEMANDATOW_ACTIVE_ENV=production
           MD_SSH_KEY="${{ secrets.MD_SSH_KEY }}" \
           MD_SSH_USER="${{ secrets.MD_SSH_USER }}" \
           MD_SSH_HOST="${{ secrets.MD_SSH_HOST }}" \
-          MD_SSH_DOMAIN="${{ secrets.MD_SSH_DOMAIN_PROD }}" \
+          MD_DOMAIN="${{ secrets.MD_DOMAIN }}" \
+          DB_USER="${{ secrets.DB_USER }}" \
+          DB_PASS="${{ secrets.DB_PASS }}" \
+          DB_NAME="${{ secrets.DB_NAME }}" \
+          DB_URI="${{ secrets.DB_URI }}" \
+          COOKIE_SECRET="${{ secrets.COOKIE_SECRET }}" \
+          bash ./.github/workflows/deploy-api.sh
+
+      - name: Deploy Site to preprod
+        run: |
           NETLIFY_AUTH_TOKEN="${{ secrets.NETLIFY_AUTH_TOKEN }}" \
-          NETLIFY_SITE_ID="${{ secrets.NETLIFY_SITE_ID_PROD }}" \
-          DB_USER="${{ secrets.DB_USER_PROD }}" \
-          DB_PASS="${{ secrets.DB_PASS_PROD }}" \
-          DB_NAME="${{ secrets.DB_NAME_PROD }}" \
-          DB_URI="${{ secrets.DB_URI_PROD }}" \
-          COOKIE_SECRET="${{ secrets.COOKIE_SECRET_PROD }}" \
-          bash ./.github/workflows/deploy-app.sh
+          NETLIFY_SITE_ID="${{ secrets.NETLIFY_SITE_ID }}" \
+          bash ./.github/workflows/deploy-site.sh
