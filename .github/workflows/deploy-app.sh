@@ -39,7 +39,7 @@ printf "DB_USER=$DB_USER\nDB_PASS=$DB_PASS\nDB_NAME=$DB_NAME\nDB_URI=$DB_URI\nCO
 # Copy API files
 # Requires variables: MD_SSH_USER, MD_SSH_HOST, MD_DOMAIN
 printf "\n%s\n\n" "Run rsync to copy files"
-rsync -zavhR \
+rsync -zahr \
     app.js \
     node_modules \
     packages/api \
@@ -48,7 +48,7 @@ rsync -zavhR \
 # Copy env variables
 # Requires variables: MD_SSH_USER, MD_SSH_HOST, MD_DOMAIN
 printf "\n%s\n\n" "Run rsync to copy env variables"
-rsync -zavhR .env $MD_SSH_USER@$MD_SSH_HOST:/usr/home/$MD_SSH_USER/domains/$MD_DOMAIN
+rsync -zahr ~/.env $MD_SSH_USER@$MD_SSH_HOST:/usr/home/$MD_SSH_USER/domains/$MD_DOMAIN
 
 # Restart server
 printf "\n%s\n\n" "Restart server"
