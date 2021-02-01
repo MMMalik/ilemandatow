@@ -41,4 +41,16 @@ jobs:
       #     ref: v${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
 
       - name: Deploy to preprod
-        run: bash ./.github/workflows/deploy-app.sh
+        run: |
+          MD_SSH_KEY="${{ secrets.MD_SSH_KEY }}" \
+          MD_SSH_USER="${{ secrets.MD_SSH_USER }}" \
+          MD_SSH_HOST="${{ secrets.MD_SSH_HOST }}" \
+          MD_DOMAIN="${{ secrets.MD_DOMAIN }}" \
+          NETLIFY_AUTH_TOKEN="${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+          NETLIFY_SITE_ID="${{ secrets.NETLIFY_SITE_ID }}" \
+          DB_USER="${{ secrets.DB_USER }}" \
+          DB_PASS="${{ secrets.DB_PASS }}" \
+          DB_NAME="${{ secrets.DB_NAME }}" \
+          DB_URI="${{ secrets.DB_URI }}" \
+          COOKIE_SECRET="${{ secrets.COOKIE_SECRET }}" \
+          bash ./.github/workflows/deploy-app.sh
