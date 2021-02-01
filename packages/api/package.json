@@ -11,8 +11,8 @@
     "build": "yarn cleanup && tsc",
     "develop": "yarn build && NODE_ENV=development keystone",
     "start": "NODE_ENV=production keystone start",
-    "data:init": "NODE_ENV=development keystone create-tables",
-    "data:seed": "NODE_ENV=development knex seed:run",
+    "db:setup": "keystone create-tables",
+    "db:seed": "knex seed:run",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
