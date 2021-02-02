@@ -1,7 +1,7 @@
 import { Text, Slug } from "@keystonejs/fields";
 import { idField } from "../common";
 import { slugId } from "../../utils";
-import { canEdit, canView } from "../access";
+import { canEdit } from "../access";
 
 export const Publisher = {
   fields: {
@@ -11,7 +11,7 @@ export const Publisher = {
     slug: { type: Slug, generate: slugId(["name"]), regenerateOnUpdate: false },
   },
   access: {
-    read: canView,
+    read: true,
     create: canEdit,
     update: canEdit,
     delete: canEdit,

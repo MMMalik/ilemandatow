@@ -1,5 +1,5 @@
 import { Float, Relationship } from "@keystonejs/fields";
-import { canEdit, canView } from "../access";
+import { canEdit } from "../access";
 import { idField } from "../common";
 
 export const PollResult = {
@@ -9,7 +9,7 @@ export const PollResult = {
     party: { type: Relationship, ref: "Party" },
   },
   access: {
-    read: canView,
+    read: true,
     create: canEdit,
     update: canEdit,
     delete: canEdit,

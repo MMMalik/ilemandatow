@@ -6,7 +6,7 @@ import {
   Text,
   Slug,
 } from "@keystonejs/fields";
-import { canEdit, canView } from "../access";
+import { canEdit } from "../access";
 import { idField } from "../common";
 import slugResolveInput from "./slugResolveInput";
 
@@ -37,7 +37,7 @@ export const Poll = {
     },
   },
   access: {
-    read: canView,
+    read: true,
     create: canEdit,
     update: canEdit,
     delete: canEdit,

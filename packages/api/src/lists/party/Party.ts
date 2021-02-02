@@ -1,7 +1,7 @@
 import { Relationship, Slug, Text } from "@keystonejs/fields";
 import { Color } from "@keystonejs/fields-color";
 import { slugId } from "../../utils";
-import { canEdit, canView } from "../access";
+import { canEdit } from "../access";
 import { idField } from "../common";
 
 export const Party = {
@@ -16,7 +16,7 @@ export const Party = {
     slug: { type: Slug, generate: slugId(["name"]), regenerateOnUpdate: false },
   },
   access: {
-    read: canView,
+    read: true,
     create: canEdit,
     update: canEdit,
     delete: canEdit,
