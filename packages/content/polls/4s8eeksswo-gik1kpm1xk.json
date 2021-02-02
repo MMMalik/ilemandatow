@@ -1,0 +1,34 @@
+{
+  "method": "CATI",
+  "publishedAt": "2021-01-10",
+  "summary": "Rzeczpospolita, IBRiS, 2",
+  "polledBy___NODE": "yL9_efYD_xUz0V27P1cHs",
+  "pollEndedAt": "2021-01-09",
+  "participantsCount": 1100,
+  "pollStartedAt": "2021-01-08",
+  "results": [
+    {
+      "party___NODE": "Mfd0x7kZWp-qMWL_Qjm66",
+      "result": 32.7
+    },
+    {
+      "party___NODE": "Z8MQJ4u4irdRa6REMq4TV",
+      "result": 30.5
+    },
+    {
+      "party___NODE": "U_5-vi-K42X7h0fhZdEIb",
+      "result": 14.5
+    },
+    {
+      "party___NODE": "DyawCPELgfgeJobDSIwL4",
+      "result": 7.5
+    },
+    {
+      "party___NODE": "VdRq9QfHmuH6n3eLtWDhA",
+      "result": 14.8
+    }
+  ],
+  "source": "https://www.rp.pl/Polityka/301109950-Sondaz-Partia-rzadzaca-bliska-odbicia.html",
+  "id": "4s8eEKsswO-gIK1KpM1XK",
+  "publishedBy___NODE": "hTLV5nmLZ2Mz46U5EZV_t"
+}
