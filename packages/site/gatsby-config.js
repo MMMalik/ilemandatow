@@ -11,25 +11,18 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-typescript",
-    {
-      resolve: "gatsby-plugin-graphql-codegen",
-      options: {
-        fileName: `./generated/graphql.ts`,
-        documentPaths: [`./src/**/*.{ts,tsx}`],
-      },
-    },
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: meta.host,
         sitemap: meta.siteMap,
-        resolveEnv: () => meta.activeEnv,
+        resolveEnv: () => meta.robots,
         env: {
-          development: {
+          disallow: {
             policy: [{ userAgent: "*", disallow: ["/"] }],
           },
-          production: {
+          allow: {
             policy: [{ userAgent: "*", allow: "/" }],
           },
         },
@@ -38,22 +31,18 @@ module.exports = {
     {
       resolve: "gatsby-source-graphql",
       options: {
-        // Arbitrary name for the remote schema Query type
         typeName: "IleMandatow",
-        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "ilemandatow",
-        // Url to query from
-        url: "http://localhost:3000/admin/api",
+        url: meta.apiUrl,
       },
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     path: "../content",
-    //     name: "content",
-    //   },
-    // },
-    // "gatsby-transformer-json",
+    {
+      resolve: "gatsby-plugin-graphql-codegen",
+      options: {
+        fileName: `./generated/graphql.ts`,
+        documentPaths: [`./src/**/*.{ts,tsx}`],
+      },
+    },
     {
       resolve: "gatsby-plugin-netlify",
       options: {
