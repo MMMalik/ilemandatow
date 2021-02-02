@@ -6,7 +6,7 @@ export type TopbarLinkProps = Omit<LinkProps, "className">;
 
 const TopbarLink: React.FC<TopbarLinkProps> = ({ children, ...rest }) => {
   return (
-    <Link className={clsx(!rest.btn && "pa3 db")} {...rest}>
+    <Link className={clsx(rest.btn ? "mh3" : "pa3 db")} {...rest}>
       {children}
     </Link>
   );

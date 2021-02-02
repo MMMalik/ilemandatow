@@ -3,15 +3,12 @@ import clsx from "clsx";
 
 export interface GridItemProps {
   /**
-   * Use to change grid item's width. Use Tachyons class names. Default is `w-100`.
+   * Use to change grid item's width. Pair it with Tachyons `w-` classes.
    */
   className?: string;
 }
 
-const GridItem: React.FC<GridItemProps> = ({
-  children,
-  className = "w-100",
-}) => {
+const GridItem: React.FC<GridItemProps> = ({ children, className }) => {
   return <div className={clsx("fl pa2", className)}>{children}</div>;
 };
 

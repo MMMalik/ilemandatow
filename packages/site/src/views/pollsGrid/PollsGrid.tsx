@@ -15,7 +15,7 @@ const PollsGrid: React.FC<Props> = ({ polls }) => {
         .sort(sortPollsByDate)
         .map(({ id, polledBy, publishedAt, source, results }) => {
           return (
-            <GridItem key={id} className="w-50-m w-third-l">
+            <GridItem key={id} className="w-100 w-50-m w-third-l">
               <PollCard
                 id={id}
                 polledBy={polledBy?.abbr ?? ""}

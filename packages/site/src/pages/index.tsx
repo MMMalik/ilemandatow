@@ -1,13 +1,10 @@
 import * as React from "react";
-import { SectionTitle } from "@ilemandatow/ui";
-import { useTranslation } from "../i18n";
+import { Hero } from "../views";
 
 const Index: React.FC = () => {
-  const { t } = useTranslation();
-
   return (
     <>
-      <SectionTitle title={t("home")} />
+      <Hero />
     </>
   );
 };

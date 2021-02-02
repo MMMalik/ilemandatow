@@ -1,0 +1,17 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Divider from "./Divider";
+import * as template from "./Divider.stories";
+
+<Meta title="Layout/Divider" component={Divider} />
+
+### Divider
+
+Default Divider component.
+
+<Canvas>
+  <Story name="Main">{template.Divider.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Divider} />

@@ -1,3 +1,4 @@
+import { rotateCoords } from "../chart";
 import { distributeSeats } from "./distributeSeats";
 import { getSeatsPerRow } from "./getSeatsPerRow";
 import {
@@ -9,6 +10,7 @@ import {
 const defaultOpts: Required<ParliamentChartOpts> = {
   innerR: 20,
   seatR: 5,
+  dist: 2.4,
 };
 
 /**
@@ -21,8 +23,8 @@ export const getSeatsCoords = ({
   totalSeats,
   opts,
 }: ParliamentChartInput): ParliamentChart => {
-  const { innerR, seatR } = { ...defaultOpts, ...opts };
-  const seatsPerRow = getSeatsPerRow(innerR, seatR, totalSeats);
+  const { innerR, dist, seatR } = { ...defaultOpts, ...opts };
+  const seatsPerRow = getSeatsPerRow(innerR, seatR, totalSeats, dist);
   const partySeats = distributeSeats(parties, seatsPerRow, totalSeats);
 
   let maxX = 0;
@@ -30,13 +32,11 @@ export const getSeatsCoords = ({
   const flattened = seatsPerRow
     .map((numberOfSeats, i) => {
       const deltaRads = Math.PI / (numberOfSeats - 1);
-      const initX = -innerR - seatR * 3 * i;
+      const initX = -innerR - seatR * dist * i;
       const initY = 0;
 
       return Array.from({ length: numberOfSeats }).map((_, j) => {
-        const nextRads = deltaRads * j;
-        const x = initX * Math.cos(nextRads) + initY * Math.sin(nextRads);
-        const y = initY * Math.cos(nextRads) + initX * Math.sin(nextRads);
+        const [x, y] = rotateCoords(initX, initY, deltaRads * j);
 
         // Side-effect: assign max x coord
         maxX = x > maxX ? x : maxX;

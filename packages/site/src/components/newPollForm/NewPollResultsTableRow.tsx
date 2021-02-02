@@ -77,6 +77,7 @@ const NewPollResultsTableRow: React.FC<Props> = ({
         ref={register()}
         name={partyColorField}
         defaultValue={defaultColor}
+        className="tc"
         hidden={true}
       >
         <ColorPickerMenu color={currentColor} onChange={handleChangeColor} />

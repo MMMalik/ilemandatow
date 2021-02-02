@@ -1,0 +1,48 @@
+{
+  "name": "@ilemandatow/api",
+  "version": "0.0.1-alpha.8",
+  "description": "API of ilemandatow",
+  "author": "Michał Malik",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "build:keystone": "yarn keystone build",
+    "build": "yarn cleanup && tsc",
+    "check-types": "tsc --noEmit",
+    "cleanup": "rimraf dist && rimraf build",
+    "db:backup:cleanup": "node build/scripts/db/custom/backup-cleanup.js",
+    "db:backup": "node build/scripts/db/custom/backup.js",
+    "db:migrate:down": "yarn knex migrate:down",
+    "db:migrate:up": "yarn knex migrate:up",
+    "db:restore": "node build/scripts/db/custom/restore.js",
+    "db:setup": "node build/scripts/db/custom/setup-tables.js && keystone create-tables && knex seed:run",
+    "develop": "yarn build && NODE_ENV=development keystone"
+  },
+  "dependencies": {
+    "@keystonejs/adapter-knex": "^13.0.0",
+    "@keystonejs/app-admin-ui": "^7.3.13",
+    "@keystonejs/app-graphql": "^6.2.1",
+    "@keystonejs/auth-password": "^6.0.0",
+    "@keystonejs/fields": "^21.0.2",
+    "@keystonejs/fields-color": "^1.0.9",
+    "@keystonejs/keystone": "^18.1.0",
+    "bcryptjs": "^2.4.3",
+    "connect-pg-simple": "^6.2.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "knex": "^0.21.16",
+    "minimist": "^1.2.5",
+    "nanoid": "^3.1.20",
+    "postgres": "^1.0.2",
+    "shelljs": "^0.8.4",
+    "slugify": "^1.4.6"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/connect-pg-simple": "^4.2.2",
+    "@types/express-session": "^1.17.3",
+    "@types/minimist": "^1.2.1",
+    "@types/shelljs": "^0.8.8"
+  }
+}

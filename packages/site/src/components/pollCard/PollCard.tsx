@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card } from "@ilemandatow/ui";
+import { DataCard } from "@ilemandatow/ui";
 import { useDateFormat } from "../../i18n";
 import { PollResultFragment } from "../../types";
 import PollCardStats from "./PollCardStats";
@@ -23,13 +23,13 @@ const PollCard: React.FC<Props> = ({
   const format = useDateFormat();
 
   return (
-    <Card
+    <DataCard
       title={polledBy}
       titleRightSide={format(new Date(publishedAt))}
       footer={<PollCardFooter pollId={id} source={source} />}
     >
       <PollCardStats results={results} />
-    </Card>
+    </DataCard>
   );
 };
 

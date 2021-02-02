@@ -43,5 +43,14 @@
   "insertRowAbove": "Insert row above",
   "insertRowBelow": "Insert row below",
   "removeRow": "Remove row",
-  "edit": "Edit"
+  "edit": "Edit",
+  "heroTitle": "It's a free, open-source platform which main purpose is to gather results of election polls to the Sejm of the Republic of Poland",
+  "free": "Free access",
+  "moreInfo": "More Info",
+  "moreInfoHeroDesc": "Learn more about us on docs page",
+  "newPollHeroDesc": "Simulate seats distribution in the future Parliament",
+  "openSourceHeroDesc": "Source code and data are available on GitHub",
+  "pollsHeroDesc": "Browse polls results in one place",
+  "pollsExplainedDesc": "We gather poll results from multiple sources and we publish them here so that everyone has an easy access. We do our best to keep our archives up to date. You can browse polls via our search feature.",
+  "quickExampleDesc": "Try out feature which lets you check seats distribution in the future Parliament. Click here to use advanced settings."
 }

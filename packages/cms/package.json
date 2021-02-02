@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/cms",
-  "version": "0.0.1-alpha.7",
+  "version": "0.0.1-alpha.8",
   "description": "CMS of ilemandatow",
   "author": "Michał Malik",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "check-types": "tsc"
   },
   "dependencies": {
-    "gatsby": "^2.29.1",
+    "gatsby": "^2.31.1",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "nanoid": "^3.1.20",
     "netlify-cms-app": "^2.14.8",

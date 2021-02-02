@@ -21,13 +21,13 @@ const Footer: React.FC<FooterProps> = ({ left, center, right }) => {
   const { textPrimary, bgPrimary } = theme;
 
   return (
-    <div className={`${textPrimary} bg-${bgPrimary}`}>
+    <footer className={`${textPrimary} bg-${bgPrimary}`}>
       <div className="flex items-center justify-center">
-        <div className="w-40 tr">{left}</div>
-        <div className="w3 tc">{center}</div>
-        <div className="w-40 tl">{right}</div>
+        <div className="dib tr">{left}</div>
+        <div className="dib tc">{center}</div>
+        <div className="dib tl">{right}</div>
       </div>
-    </div>
+    </footer>
   );
 };
 

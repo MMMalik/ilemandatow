@@ -1,7 +1,8 @@
 import * as React from "react";
+import Grid from "../grid";
 
 const DefinitionList: React.FC = ({ children }) => {
-  return <div className="flex flex-wrap item-center h-100">{children}</div>;
+  return <Grid>{children}</Grid>;
 };
 
 export default DefinitionList;

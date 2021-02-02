@@ -1,0 +1,28 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import PieChart from "./PieChart";
+import * as template from "./PieChart.stories";
+
+<Meta title="Charts/PieChart" component={PieChart} />
+
+### PieChart
+
+Chart visualizes data as pie.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      pies: [
+        { id: "P1", fill: "blue", value: 33.333 },
+        { id: "P2", fill: "red", value: 33.333 },
+        { id: "P3", fill: "green", value: 33.333 },
+      ],
+    }}
+  >
+    {template.PieChart.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={PieChart} />

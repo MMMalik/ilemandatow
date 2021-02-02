@@ -20,7 +20,6 @@ const PollCardStats: React.FC<Props> = ({ results }) => {
               className="w-third"
               label={party?.abbr ?? ""}
               value={result ?? ""}
-              disableMargin={true}
             />
           );
         })}

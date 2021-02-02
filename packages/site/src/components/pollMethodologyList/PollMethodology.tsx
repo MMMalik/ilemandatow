@@ -1,7 +1,8 @@
 import * as React from "react";
-import { DefinitionList, DefinitionItem } from "@ilemandatow/ui";
+import { DefinitionList } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
 import DateSpan from "../dateSpan";
+import PollDefinitionItem from "../pollDefinitionItem";
 
 interface Props {
   pollStartedAt?: string;
@@ -21,14 +22,14 @@ const PollMethodology: React.FC<Props> = ({
   return (
     <DefinitionList>
       {pollStartedAt && (
-        <DefinitionItem
+        <PollDefinitionItem
           label={t("conductedAt")}
           value={<DateSpan from={pollStartedAt} to={pollEndedAt} />}
         />
       )}
-      {method && <DefinitionItem label={t("method")} value={method} />}
+      {method && <PollDefinitionItem label={t("method")} value={method} />}
       {participantsCount && (
-        <DefinitionItem
+        <PollDefinitionItem
           label={t("participantsCount")}
           value={participantsCount}
         />

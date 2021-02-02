@@ -43,5 +43,14 @@
   "insertRowAbove": "Dodaj wiersz powyżej",
   "insertRowBelow": "Dodaj wiersz poniżej",
   "removeRow": "Usuń wiersz",
-  "edit": "Edytuj"
+  "edit": "Edytuj",
+  "heroTitle": "Serwis, którego podstawowym celem jest gromadzenie wyników sondaży wyborczych do Sejmu Rzeczypospolitej Polskiej",
+  "free": "Darmowy dostęp",
+  "moreInfo": "Więcej informacji",
+  "moreInfoHeroDesc": "Przejrzyj dokumentację, aby dowiedzieć się więcej",
+  "newPollHeroDesc": "Przeprowadź symulację wyborów, aby poznać rozkład miejsc w przyszłym Sejmie",
+  "openSourceHeroDesc": "Kod źródłowy oraz dane są dostępne w serwisie GitHub",
+  "pollsHeroDesc": "Wyniki sondaży dostępne są w jednym miejscu",
+  "pollsExplainedDesc": "Zbieramy sondaże z wielu źródeł i udostępniamy je tutaj, aby każdy miał do nich łatwy dostęp. Dokładamy wszelkich starań, aby strona była aktualizowana jak najczęściej. Nasz zbiór sondaży możesz łatwo filtrować, aby uzyskać interesujące Cię dane.",
+  "quickExampleDesc": "Zobacz jak mogą rozłożyć się miejsca w Sejmie w zależności od wyników wyborów. Aby przejść do zaawansowanych ustawień, kliknij tutaj."
 }

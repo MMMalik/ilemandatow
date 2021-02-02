@@ -1,8 +1,14 @@
+export * from "./barChart";
+export { default as BarChart } from "./barChart";
+
 export * from "./button";
 export { default as Button } from "./button";
 
 export * from "./card";
 export { default as Card } from "./card";
+
+export * from "./chartLegend";
+export { default as ChartLegend } from "./chartLegend";
 
 export * from "./colorPicker";
 export { default as ColorPicker } from "./colorPicker";
@@ -12,6 +18,12 @@ export { default as ColorPickerMenu } from "./colorPickerMenu";
 
 export * from "./clickAway";
 export { default as ClickAway } from "./clickAway";
+
+export * from "./dataCard";
+export { default as DataCard } from "./dataCard";
+
+export * from "./divider";
+export { default as Divider } from "./divider";
 
 export * from "./definitionList";
 export { default as DefinitionList } from "./definitionList";
@@ -49,6 +61,9 @@ export { default as Paper } from "./paper";
 export * from "./parliamentChart";
 export { default as ParliamentChart } from "./parliamentChart";
 
+export * from "./pieChart";
+export { default as PieChart } from "./pieChart";
+
 export * from "./popper";
 export { default as Popper } from "./popper";
 
@@ -60,6 +75,9 @@ export { default as Tooltip } from "./tooltip";
 
 export * from "./topbar";
 export { default as Topbar } from "./topbar";
+
+export * from "./toolbar";
+export { default as Toolbar } from "./toolbar";
 
 export * from "./theme";
 export { default as ThemeProvider } from "./theme";

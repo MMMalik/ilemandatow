@@ -1,0 +1,44 @@
+#
+# Workflow responsible for deploying to production environment. Triggered manually.
+#
+
+name: Deploy prod
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Git tag to deploy"
+        required: true
+
+jobs:
+  deploy-preprod:
+    name: Deploy preprod
+    environment:
+      name: production
+      url: https://ilemandatow.pl
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tag
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.tag }}
+
+      - name: Deploy API to preprod
+        run: |
+          MD_SSH_KEY="${{ secrets.MD_SSH_KEY }}" \
+          MD_SSH_USER="${{ secrets.MD_SSH_USER }}" \
+          MD_SSH_HOST="${{ secrets.MD_SSH_HOST }}" \
+          MD_DOMAIN="${{ secrets.MD_DOMAIN }}" \
+          DB_USER="${{ secrets.DB_USER }}" \
+          DB_PASS="${{ secrets.DB_PASS }}" \
+          DB_NAME="${{ secrets.DB_NAME }}" \
+          DB_URI="${{ secrets.DB_URI }}" \
+          COOKIE_SECRET="${{ secrets.COOKIE_SECRET }}" \
+          bash ./.github/workflows/deploy-api.sh
+
+      - name: Deploy Site to preprod
+        run: |
+          NETLIFY_AUTH_TOKEN="${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+          NETLIFY_SITE_ID="${{ secrets.NETLIFY_SITE_ID }}" \
+          bash ./.github/workflows/deploy-site.sh

@@ -1,5 +1,5 @@
 #
-# This workflow is responsible for merging changes from main branch to dev.
+# Workflow responsible for merging changes from main branch to dev.
 #
 
 name: Cleanup after release

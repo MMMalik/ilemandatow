@@ -6,16 +6,14 @@ import * as template from "./Card.stories";
 
 ### Card
 
-Default card component.
+Default card component for simple content.
 
 <Canvas>
   <Story
     name="Main"
     args={{
+      title: "Title",
       children: <div>{"Cards's child"}</div>,
-      footer: <div>{"Cards's footer"}</div>,
-      title: "Card's title",
-      titleRightSide: "Some content",
     }}
   >
     {template.Card.bind({})}

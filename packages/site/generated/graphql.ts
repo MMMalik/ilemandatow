@@ -74,7 +74,7 @@ export type ContentJsonEdge = {
   previous?: Maybe<ContentJson>;
 };
 
-export type ContentJsonFieldsEnum = 
+export type ContentJsonFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -177,6 +177,10 @@ export type ContentJsonFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
   license?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentJsonFilterListInput = {
+  elemMatch?: Maybe<ContentJsonFilterInput>;
 };
 
 export type ContentJsonGroupConnection = {
@@ -330,7 +334,7 @@ export type DirectoryEdge = {
   previous?: Maybe<Directory>;
 };
 
-export type DirectoryFieldsEnum = 
+export type DirectoryFieldsEnum =
   | 'sourceInstanceName'
   | 'absolutePath'
   | 'relativePath'
@@ -543,15 +547,30 @@ export type File = Node & {
   blocks?: Maybe<Scalars['Int']>;
   /** Copy file to static directory and return public url to it */
   publicURL?: Maybe<Scalars['String']>;
+  /** Returns all children nodes filtered by type PublishersJson */
+  childrenPublishersJson?: Maybe<Array<Maybe<PublishersJson>>>;
+  /** Returns the first child node of type PublishersJson or null if there are no children of given type on this node */
+  childPublishersJson?: Maybe<PublishersJson>;
+  /** Returns all children nodes filtered by type PollsJson */
+  childrenPollsJson?: Maybe<Array<Maybe<PollsJson>>>;
+  /** Returns the first child node of type PollsJson or null if there are no children of given type on this node */
+  childPollsJson?: Maybe<PollsJson>;
+  /** Returns all children nodes filtered by type PollCompaniesJson */
+  childrenPollCompaniesJson?: Maybe<Array<Maybe<PollCompaniesJson>>>;
+  /** Returns the first child node of type PollCompaniesJson or null if there are no children of given type on this node */
+  childPollCompaniesJson?: Maybe<PollCompaniesJson>;
+  /** Returns all children nodes filtered by type PartiesJson */
+  childrenPartiesJson?: Maybe<Array<Maybe<PartiesJson>>>;
+  /** Returns the first child node of type PartiesJson or null if there are no children of given type on this node */
+  childPartiesJson?: Maybe<PartiesJson>;
+  /** Returns all children nodes filtered by type ContentJson */
+  childrenContentJson?: Maybe<Array<Maybe<ContentJson>>>;
+  /** Returns the first child node of type ContentJson or null if there are no children of given type on this node */
+  childContentJson?: Maybe<ContentJson>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  childContentJson?: Maybe<ContentJson>;
-  childPartiesJson?: Maybe<PartiesJson>;
-  childPollsJson?: Maybe<PollsJson>;
-  childPollCompaniesJson?: Maybe<PollCompaniesJson>;
-  childPublishersJson?: Maybe<PublishersJson>;
 };
 
 
@@ -637,7 +656,7 @@ export type FileEdge = {
   previous?: Maybe<File>;
 };
 
-export type FileFieldsEnum = 
+export type FileFieldsEnum =
   | 'sourceInstanceName'
   | 'absolutePath'
   | 'relativePath'
@@ -672,6 +691,551 @@ export type FileFieldsEnum =
   | 'blksize'
   | 'blocks'
   | 'publicURL'
+  | 'childrenPublishersJson'
+  | 'childrenPublishersJson___id'
+  | 'childrenPublishersJson___parent___id'
+  | 'childrenPublishersJson___parent___parent___id'
+  | 'childrenPublishersJson___parent___parent___children'
+  | 'childrenPublishersJson___parent___children'
+  | 'childrenPublishersJson___parent___children___id'
+  | 'childrenPublishersJson___parent___children___children'
+  | 'childrenPublishersJson___parent___internal___content'
+  | 'childrenPublishersJson___parent___internal___contentDigest'
+  | 'childrenPublishersJson___parent___internal___description'
+  | 'childrenPublishersJson___parent___internal___fieldOwners'
+  | 'childrenPublishersJson___parent___internal___ignoreType'
+  | 'childrenPublishersJson___parent___internal___mediaType'
+  | 'childrenPublishersJson___parent___internal___owner'
+  | 'childrenPublishersJson___parent___internal___type'
+  | 'childrenPublishersJson___children'
+  | 'childrenPublishersJson___children___id'
+  | 'childrenPublishersJson___children___parent___id'
+  | 'childrenPublishersJson___children___parent___children'
+  | 'childrenPublishersJson___children___children'
+  | 'childrenPublishersJson___children___children___id'
+  | 'childrenPublishersJson___children___children___children'
+  | 'childrenPublishersJson___children___internal___content'
+  | 'childrenPublishersJson___children___internal___contentDigest'
+  | 'childrenPublishersJson___children___internal___description'
+  | 'childrenPublishersJson___children___internal___fieldOwners'
+  | 'childrenPublishersJson___children___internal___ignoreType'
+  | 'childrenPublishersJson___children___internal___mediaType'
+  | 'childrenPublishersJson___children___internal___owner'
+  | 'childrenPublishersJson___children___internal___type'
+  | 'childrenPublishersJson___internal___content'
+  | 'childrenPublishersJson___internal___contentDigest'
+  | 'childrenPublishersJson___internal___description'
+  | 'childrenPublishersJson___internal___fieldOwners'
+  | 'childrenPublishersJson___internal___ignoreType'
+  | 'childrenPublishersJson___internal___mediaType'
+  | 'childrenPublishersJson___internal___owner'
+  | 'childrenPublishersJson___internal___type'
+  | 'childrenPublishersJson___name'
+  | 'childrenPublishersJson___abbr'
+  | 'childPublishersJson___id'
+  | 'childPublishersJson___parent___id'
+  | 'childPublishersJson___parent___parent___id'
+  | 'childPublishersJson___parent___parent___children'
+  | 'childPublishersJson___parent___children'
+  | 'childPublishersJson___parent___children___id'
+  | 'childPublishersJson___parent___children___children'
+  | 'childPublishersJson___parent___internal___content'
+  | 'childPublishersJson___parent___internal___contentDigest'
+  | 'childPublishersJson___parent___internal___description'
+  | 'childPublishersJson___parent___internal___fieldOwners'
+  | 'childPublishersJson___parent___internal___ignoreType'
+  | 'childPublishersJson___parent___internal___mediaType'
+  | 'childPublishersJson___parent___internal___owner'
+  | 'childPublishersJson___parent___internal___type'
+  | 'childPublishersJson___children'
+  | 'childPublishersJson___children___id'
+  | 'childPublishersJson___children___parent___id'
+  | 'childPublishersJson___children___parent___children'
+  | 'childPublishersJson___children___children'
+  | 'childPublishersJson___children___children___id'
+  | 'childPublishersJson___children___children___children'
+  | 'childPublishersJson___children___internal___content'
+  | 'childPublishersJson___children___internal___contentDigest'
+  | 'childPublishersJson___children___internal___description'
+  | 'childPublishersJson___children___internal___fieldOwners'
+  | 'childPublishersJson___children___internal___ignoreType'
+  | 'childPublishersJson___children___internal___mediaType'
+  | 'childPublishersJson___children___internal___owner'
+  | 'childPublishersJson___children___internal___type'
+  | 'childPublishersJson___internal___content'
+  | 'childPublishersJson___internal___contentDigest'
+  | 'childPublishersJson___internal___description'
+  | 'childPublishersJson___internal___fieldOwners'
+  | 'childPublishersJson___internal___ignoreType'
+  | 'childPublishersJson___internal___mediaType'
+  | 'childPublishersJson___internal___owner'
+  | 'childPublishersJson___internal___type'
+  | 'childPublishersJson___name'
+  | 'childPublishersJson___abbr'
+  | 'childrenPollsJson'
+  | 'childrenPollsJson___id'
+  | 'childrenPollsJson___parent___id'
+  | 'childrenPollsJson___parent___parent___id'
+  | 'childrenPollsJson___parent___parent___children'
+  | 'childrenPollsJson___parent___children'
+  | 'childrenPollsJson___parent___children___id'
+  | 'childrenPollsJson___parent___children___children'
+  | 'childrenPollsJson___parent___internal___content'
+  | 'childrenPollsJson___parent___internal___contentDigest'
+  | 'childrenPollsJson___parent___internal___description'
+  | 'childrenPollsJson___parent___internal___fieldOwners'
+  | 'childrenPollsJson___parent___internal___ignoreType'
+  | 'childrenPollsJson___parent___internal___mediaType'
+  | 'childrenPollsJson___parent___internal___owner'
+  | 'childrenPollsJson___parent___internal___type'
+  | 'childrenPollsJson___children'
+  | 'childrenPollsJson___children___id'
+  | 'childrenPollsJson___children___parent___id'
+  | 'childrenPollsJson___children___parent___children'
+  | 'childrenPollsJson___children___children'
+  | 'childrenPollsJson___children___children___id'
+  | 'childrenPollsJson___children___children___children'
+  | 'childrenPollsJson___children___internal___content'
+  | 'childrenPollsJson___children___internal___contentDigest'
+  | 'childrenPollsJson___children___internal___description'
+  | 'childrenPollsJson___children___internal___fieldOwners'
+  | 'childrenPollsJson___children___internal___ignoreType'
+  | 'childrenPollsJson___children___internal___mediaType'
+  | 'childrenPollsJson___children___internal___owner'
+  | 'childrenPollsJson___children___internal___type'
+  | 'childrenPollsJson___internal___content'
+  | 'childrenPollsJson___internal___contentDigest'
+  | 'childrenPollsJson___internal___description'
+  | 'childrenPollsJson___internal___fieldOwners'
+  | 'childrenPollsJson___internal___ignoreType'
+  | 'childrenPollsJson___internal___mediaType'
+  | 'childrenPollsJson___internal___owner'
+  | 'childrenPollsJson___internal___type'
+  | 'childrenPollsJson___method'
+  | 'childrenPollsJson___publishedAt'
+  | 'childrenPollsJson___summary'
+  | 'childrenPollsJson___polledBy___id'
+  | 'childrenPollsJson___polledBy___parent___id'
+  | 'childrenPollsJson___polledBy___parent___children'
+  | 'childrenPollsJson___polledBy___children'
+  | 'childrenPollsJson___polledBy___children___id'
+  | 'childrenPollsJson___polledBy___children___children'
+  | 'childrenPollsJson___polledBy___internal___content'
+  | 'childrenPollsJson___polledBy___internal___contentDigest'
+  | 'childrenPollsJson___polledBy___internal___description'
+  | 'childrenPollsJson___polledBy___internal___fieldOwners'
+  | 'childrenPollsJson___polledBy___internal___ignoreType'
+  | 'childrenPollsJson___polledBy___internal___mediaType'
+  | 'childrenPollsJson___polledBy___internal___owner'
+  | 'childrenPollsJson___polledBy___internal___type'
+  | 'childrenPollsJson___polledBy___name'
+  | 'childrenPollsJson___polledBy___abbr'
+  | 'childrenPollsJson___pollEndedAt'
+  | 'childrenPollsJson___participantsCount'
+  | 'childrenPollsJson___pollStartedAt'
+  | 'childrenPollsJson___results'
+  | 'childrenPollsJson___results___party___id'
+  | 'childrenPollsJson___results___party___children'
+  | 'childrenPollsJson___results___party___memberParties'
+  | 'childrenPollsJson___results___party___name'
+  | 'childrenPollsJson___results___party___fullName'
+  | 'childrenPollsJson___results___party___abbr'
+  | 'childrenPollsJson___results___party___color'
+  | 'childrenPollsJson___results___party___colorDarkTheme'
+  | 'childrenPollsJson___results___result'
+  | 'childrenPollsJson___source'
+  | 'childrenPollsJson___publishedBy___id'
+  | 'childrenPollsJson___publishedBy___parent___id'
+  | 'childrenPollsJson___publishedBy___parent___children'
+  | 'childrenPollsJson___publishedBy___children'
+  | 'childrenPollsJson___publishedBy___children___id'
+  | 'childrenPollsJson___publishedBy___children___children'
+  | 'childrenPollsJson___publishedBy___internal___content'
+  | 'childrenPollsJson___publishedBy___internal___contentDigest'
+  | 'childrenPollsJson___publishedBy___internal___description'
+  | 'childrenPollsJson___publishedBy___internal___fieldOwners'
+  | 'childrenPollsJson___publishedBy___internal___ignoreType'
+  | 'childrenPollsJson___publishedBy___internal___mediaType'
+  | 'childrenPollsJson___publishedBy___internal___owner'
+  | 'childrenPollsJson___publishedBy___internal___type'
+  | 'childrenPollsJson___publishedBy___name'
+  | 'childrenPollsJson___publishedBy___abbr'
+  | 'childrenPollsJson___participantsMightVote'
+  | 'childrenPollsJson___participantsUndecided'
+  | 'childrenPollsJson___participantsMightNotVote'
+  | 'childrenPollsJson___participantsWillNotVote'
+  | 'childrenPollsJson___participantsWillVote'
+  | 'childrenPollsJson___error'
+  | 'childPollsJson___id'
+  | 'childPollsJson___parent___id'
+  | 'childPollsJson___parent___parent___id'
+  | 'childPollsJson___parent___parent___children'
+  | 'childPollsJson___parent___children'
+  | 'childPollsJson___parent___children___id'
+  | 'childPollsJson___parent___children___children'
+  | 'childPollsJson___parent___internal___content'
+  | 'childPollsJson___parent___internal___contentDigest'
+  | 'childPollsJson___parent___internal___description'
+  | 'childPollsJson___parent___internal___fieldOwners'
+  | 'childPollsJson___parent___internal___ignoreType'
+  | 'childPollsJson___parent___internal___mediaType'
+  | 'childPollsJson___parent___internal___owner'
+  | 'childPollsJson___parent___internal___type'
+  | 'childPollsJson___children'
+  | 'childPollsJson___children___id'
+  | 'childPollsJson___children___parent___id'
+  | 'childPollsJson___children___parent___children'
+  | 'childPollsJson___children___children'
+  | 'childPollsJson___children___children___id'
+  | 'childPollsJson___children___children___children'
+  | 'childPollsJson___children___internal___content'
+  | 'childPollsJson___children___internal___contentDigest'
+  | 'childPollsJson___children___internal___description'
+  | 'childPollsJson___children___internal___fieldOwners'
+  | 'childPollsJson___children___internal___ignoreType'
+  | 'childPollsJson___children___internal___mediaType'
+  | 'childPollsJson___children___internal___owner'
+  | 'childPollsJson___children___internal___type'
+  | 'childPollsJson___internal___content'
+  | 'childPollsJson___internal___contentDigest'
+  | 'childPollsJson___internal___description'
+  | 'childPollsJson___internal___fieldOwners'
+  | 'childPollsJson___internal___ignoreType'
+  | 'childPollsJson___internal___mediaType'
+  | 'childPollsJson___internal___owner'
+  | 'childPollsJson___internal___type'
+  | 'childPollsJson___method'
+  | 'childPollsJson___publishedAt'
+  | 'childPollsJson___summary'
+  | 'childPollsJson___polledBy___id'
+  | 'childPollsJson___polledBy___parent___id'
+  | 'childPollsJson___polledBy___parent___children'
+  | 'childPollsJson___polledBy___children'
+  | 'childPollsJson___polledBy___children___id'
+  | 'childPollsJson___polledBy___children___children'
+  | 'childPollsJson___polledBy___internal___content'
+  | 'childPollsJson___polledBy___internal___contentDigest'
+  | 'childPollsJson___polledBy___internal___description'
+  | 'childPollsJson___polledBy___internal___fieldOwners'
+  | 'childPollsJson___polledBy___internal___ignoreType'
+  | 'childPollsJson___polledBy___internal___mediaType'
+  | 'childPollsJson___polledBy___internal___owner'
+  | 'childPollsJson___polledBy___internal___type'
+  | 'childPollsJson___polledBy___name'
+  | 'childPollsJson___polledBy___abbr'
+  | 'childPollsJson___pollEndedAt'
+  | 'childPollsJson___participantsCount'
+  | 'childPollsJson___pollStartedAt'
+  | 'childPollsJson___results'
+  | 'childPollsJson___results___party___id'
+  | 'childPollsJson___results___party___children'
+  | 'childPollsJson___results___party___memberParties'
+  | 'childPollsJson___results___party___name'
+  | 'childPollsJson___results___party___fullName'
+  | 'childPollsJson___results___party___abbr'
+  | 'childPollsJson___results___party___color'
+  | 'childPollsJson___results___party___colorDarkTheme'
+  | 'childPollsJson___results___result'
+  | 'childPollsJson___source'
+  | 'childPollsJson___publishedBy___id'
+  | 'childPollsJson___publishedBy___parent___id'
+  | 'childPollsJson___publishedBy___parent___children'
+  | 'childPollsJson___publishedBy___children'
+  | 'childPollsJson___publishedBy___children___id'
+  | 'childPollsJson___publishedBy___children___children'
+  | 'childPollsJson___publishedBy___internal___content'
+  | 'childPollsJson___publishedBy___internal___contentDigest'
+  | 'childPollsJson___publishedBy___internal___description'
+  | 'childPollsJson___publishedBy___internal___fieldOwners'
+  | 'childPollsJson___publishedBy___internal___ignoreType'
+  | 'childPollsJson___publishedBy___internal___mediaType'
+  | 'childPollsJson___publishedBy___internal___owner'
+  | 'childPollsJson___publishedBy___internal___type'
+  | 'childPollsJson___publishedBy___name'
+  | 'childPollsJson___publishedBy___abbr'
+  | 'childPollsJson___participantsMightVote'
+  | 'childPollsJson___participantsUndecided'
+  | 'childPollsJson___participantsMightNotVote'
+  | 'childPollsJson___participantsWillNotVote'
+  | 'childPollsJson___participantsWillVote'
+  | 'childPollsJson___error'
+  | 'childrenPollCompaniesJson'
+  | 'childrenPollCompaniesJson___id'
+  | 'childrenPollCompaniesJson___parent___id'
+  | 'childrenPollCompaniesJson___parent___parent___id'
+  | 'childrenPollCompaniesJson___parent___parent___children'
+  | 'childrenPollCompaniesJson___parent___children'
+  | 'childrenPollCompaniesJson___parent___children___id'
+  | 'childrenPollCompaniesJson___parent___children___children'
+  | 'childrenPollCompaniesJson___parent___internal___content'
+  | 'childrenPollCompaniesJson___parent___internal___contentDigest'
+  | 'childrenPollCompaniesJson___parent___internal___description'
+  | 'childrenPollCompaniesJson___parent___internal___fieldOwners'
+  | 'childrenPollCompaniesJson___parent___internal___ignoreType'
+  | 'childrenPollCompaniesJson___parent___internal___mediaType'
+  | 'childrenPollCompaniesJson___parent___internal___owner'
+  | 'childrenPollCompaniesJson___parent___internal___type'
+  | 'childrenPollCompaniesJson___children'
+  | 'childrenPollCompaniesJson___children___id'
+  | 'childrenPollCompaniesJson___children___parent___id'
+  | 'childrenPollCompaniesJson___children___parent___children'
+  | 'childrenPollCompaniesJson___children___children'
+  | 'childrenPollCompaniesJson___children___children___id'
+  | 'childrenPollCompaniesJson___children___children___children'
+  | 'childrenPollCompaniesJson___children___internal___content'
+  | 'childrenPollCompaniesJson___children___internal___contentDigest'
+  | 'childrenPollCompaniesJson___children___internal___description'
+  | 'childrenPollCompaniesJson___children___internal___fieldOwners'
+  | 'childrenPollCompaniesJson___children___internal___ignoreType'
+  | 'childrenPollCompaniesJson___children___internal___mediaType'
+  | 'childrenPollCompaniesJson___children___internal___owner'
+  | 'childrenPollCompaniesJson___children___internal___type'
+  | 'childrenPollCompaniesJson___internal___content'
+  | 'childrenPollCompaniesJson___internal___contentDigest'
+  | 'childrenPollCompaniesJson___internal___description'
+  | 'childrenPollCompaniesJson___internal___fieldOwners'
+  | 'childrenPollCompaniesJson___internal___ignoreType'
+  | 'childrenPollCompaniesJson___internal___mediaType'
+  | 'childrenPollCompaniesJson___internal___owner'
+  | 'childrenPollCompaniesJson___internal___type'
+  | 'childrenPollCompaniesJson___name'
+  | 'childrenPollCompaniesJson___abbr'
+  | 'childPollCompaniesJson___id'
+  | 'childPollCompaniesJson___parent___id'
+  | 'childPollCompaniesJson___parent___parent___id'
+  | 'childPollCompaniesJson___parent___parent___children'
+  | 'childPollCompaniesJson___parent___children'
+  | 'childPollCompaniesJson___parent___children___id'
+  | 'childPollCompaniesJson___parent___children___children'
+  | 'childPollCompaniesJson___parent___internal___content'
+  | 'childPollCompaniesJson___parent___internal___contentDigest'
+  | 'childPollCompaniesJson___parent___internal___description'
+  | 'childPollCompaniesJson___parent___internal___fieldOwners'
+  | 'childPollCompaniesJson___parent___internal___ignoreType'
+  | 'childPollCompaniesJson___parent___internal___mediaType'
+  | 'childPollCompaniesJson___parent___internal___owner'
+  | 'childPollCompaniesJson___parent___internal___type'
+  | 'childPollCompaniesJson___children'
+  | 'childPollCompaniesJson___children___id'
+  | 'childPollCompaniesJson___children___parent___id'
+  | 'childPollCompaniesJson___children___parent___children'
+  | 'childPollCompaniesJson___children___children'
+  | 'childPollCompaniesJson___children___children___id'
+  | 'childPollCompaniesJson___children___children___children'
+  | 'childPollCompaniesJson___children___internal___content'
+  | 'childPollCompaniesJson___children___internal___contentDigest'
+  | 'childPollCompaniesJson___children___internal___description'
+  | 'childPollCompaniesJson___children___internal___fieldOwners'
+  | 'childPollCompaniesJson___children___internal___ignoreType'
+  | 'childPollCompaniesJson___children___internal___mediaType'
+  | 'childPollCompaniesJson___children___internal___owner'
+  | 'childPollCompaniesJson___children___internal___type'
+  | 'childPollCompaniesJson___internal___content'
+  | 'childPollCompaniesJson___internal___contentDigest'
+  | 'childPollCompaniesJson___internal___description'
+  | 'childPollCompaniesJson___internal___fieldOwners'
+  | 'childPollCompaniesJson___internal___ignoreType'
+  | 'childPollCompaniesJson___internal___mediaType'
+  | 'childPollCompaniesJson___internal___owner'
+  | 'childPollCompaniesJson___internal___type'
+  | 'childPollCompaniesJson___name'
+  | 'childPollCompaniesJson___abbr'
+  | 'childrenPartiesJson'
+  | 'childrenPartiesJson___id'
+  | 'childrenPartiesJson___parent___id'
+  | 'childrenPartiesJson___parent___parent___id'
+  | 'childrenPartiesJson___parent___parent___children'
+  | 'childrenPartiesJson___parent___children'
+  | 'childrenPartiesJson___parent___children___id'
+  | 'childrenPartiesJson___parent___children___children'
+  | 'childrenPartiesJson___parent___internal___content'
+  | 'childrenPartiesJson___parent___internal___contentDigest'
+  | 'childrenPartiesJson___parent___internal___description'
+  | 'childrenPartiesJson___parent___internal___fieldOwners'
+  | 'childrenPartiesJson___parent___internal___ignoreType'
+  | 'childrenPartiesJson___parent___internal___mediaType'
+  | 'childrenPartiesJson___parent___internal___owner'
+  | 'childrenPartiesJson___parent___internal___type'
+  | 'childrenPartiesJson___children'
+  | 'childrenPartiesJson___children___id'
+  | 'childrenPartiesJson___children___parent___id'
+  | 'childrenPartiesJson___children___parent___children'
+  | 'childrenPartiesJson___children___children'
+  | 'childrenPartiesJson___children___children___id'
+  | 'childrenPartiesJson___children___children___children'
+  | 'childrenPartiesJson___children___internal___content'
+  | 'childrenPartiesJson___children___internal___contentDigest'
+  | 'childrenPartiesJson___children___internal___description'
+  | 'childrenPartiesJson___children___internal___fieldOwners'
+  | 'childrenPartiesJson___children___internal___ignoreType'
+  | 'childrenPartiesJson___children___internal___mediaType'
+  | 'childrenPartiesJson___children___internal___owner'
+  | 'childrenPartiesJson___children___internal___type'
+  | 'childrenPartiesJson___internal___content'
+  | 'childrenPartiesJson___internal___contentDigest'
+  | 'childrenPartiesJson___internal___description'
+  | 'childrenPartiesJson___internal___fieldOwners'
+  | 'childrenPartiesJson___internal___ignoreType'
+  | 'childrenPartiesJson___internal___mediaType'
+  | 'childrenPartiesJson___internal___owner'
+  | 'childrenPartiesJson___internal___type'
+  | 'childrenPartiesJson___memberParties'
+  | 'childrenPartiesJson___memberParties___party___id'
+  | 'childrenPartiesJson___memberParties___party___children'
+  | 'childrenPartiesJson___memberParties___party___memberParties'
+  | 'childrenPartiesJson___memberParties___party___name'
+  | 'childrenPartiesJson___memberParties___party___fullName'
+  | 'childrenPartiesJson___memberParties___party___abbr'
+  | 'childrenPartiesJson___memberParties___party___color'
+  | 'childrenPartiesJson___memberParties___party___colorDarkTheme'
+  | 'childrenPartiesJson___memberParties___joinedAt'
+  | 'childrenPartiesJson___memberParties___leftAt'
+  | 'childrenPartiesJson___name'
+  | 'childrenPartiesJson___fullName'
+  | 'childrenPartiesJson___abbr'
+  | 'childrenPartiesJson___color'
+  | 'childrenPartiesJson___colorDarkTheme'
+  | 'childPartiesJson___id'
+  | 'childPartiesJson___parent___id'
+  | 'childPartiesJson___parent___parent___id'
+  | 'childPartiesJson___parent___parent___children'
+  | 'childPartiesJson___parent___children'
+  | 'childPartiesJson___parent___children___id'
+  | 'childPartiesJson___parent___children___children'
+  | 'childPartiesJson___parent___internal___content'
+  | 'childPartiesJson___parent___internal___contentDigest'
+  | 'childPartiesJson___parent___internal___description'
+  | 'childPartiesJson___parent___internal___fieldOwners'
+  | 'childPartiesJson___parent___internal___ignoreType'
+  | 'childPartiesJson___parent___internal___mediaType'
+  | 'childPartiesJson___parent___internal___owner'
+  | 'childPartiesJson___parent___internal___type'
+  | 'childPartiesJson___children'
+  | 'childPartiesJson___children___id'
+  | 'childPartiesJson___children___parent___id'
+  | 'childPartiesJson___children___parent___children'
+  | 'childPartiesJson___children___children'
+  | 'childPartiesJson___children___children___id'
+  | 'childPartiesJson___children___children___children'
+  | 'childPartiesJson___children___internal___content'
+  | 'childPartiesJson___children___internal___contentDigest'
+  | 'childPartiesJson___children___internal___description'
+  | 'childPartiesJson___children___internal___fieldOwners'
+  | 'childPartiesJson___children___internal___ignoreType'
+  | 'childPartiesJson___children___internal___mediaType'
+  | 'childPartiesJson___children___internal___owner'
+  | 'childPartiesJson___children___internal___type'
+  | 'childPartiesJson___internal___content'
+  | 'childPartiesJson___internal___contentDigest'
+  | 'childPartiesJson___internal___description'
+  | 'childPartiesJson___internal___fieldOwners'
+  | 'childPartiesJson___internal___ignoreType'
+  | 'childPartiesJson___internal___mediaType'
+  | 'childPartiesJson___internal___owner'
+  | 'childPartiesJson___internal___type'
+  | 'childPartiesJson___memberParties'
+  | 'childPartiesJson___memberParties___party___id'
+  | 'childPartiesJson___memberParties___party___children'
+  | 'childPartiesJson___memberParties___party___memberParties'
+  | 'childPartiesJson___memberParties___party___name'
+  | 'childPartiesJson___memberParties___party___fullName'
+  | 'childPartiesJson___memberParties___party___abbr'
+  | 'childPartiesJson___memberParties___party___color'
+  | 'childPartiesJson___memberParties___party___colorDarkTheme'
+  | 'childPartiesJson___memberParties___joinedAt'
+  | 'childPartiesJson___memberParties___leftAt'
+  | 'childPartiesJson___name'
+  | 'childPartiesJson___fullName'
+  | 'childPartiesJson___abbr'
+  | 'childPartiesJson___color'
+  | 'childPartiesJson___colorDarkTheme'
+  | 'childrenContentJson'
+  | 'childrenContentJson___id'
+  | 'childrenContentJson___parent___id'
+  | 'childrenContentJson___parent___parent___id'
+  | 'childrenContentJson___parent___parent___children'
+  | 'childrenContentJson___parent___children'
+  | 'childrenContentJson___parent___children___id'
+  | 'childrenContentJson___parent___children___children'
+  | 'childrenContentJson___parent___internal___content'
+  | 'childrenContentJson___parent___internal___contentDigest'
+  | 'childrenContentJson___parent___internal___description'
+  | 'childrenContentJson___parent___internal___fieldOwners'
+  | 'childrenContentJson___parent___internal___ignoreType'
+  | 'childrenContentJson___parent___internal___mediaType'
+  | 'childrenContentJson___parent___internal___owner'
+  | 'childrenContentJson___parent___internal___type'
+  | 'childrenContentJson___children'
+  | 'childrenContentJson___children___id'
+  | 'childrenContentJson___children___parent___id'
+  | 'childrenContentJson___children___parent___children'
+  | 'childrenContentJson___children___children'
+  | 'childrenContentJson___children___children___id'
+  | 'childrenContentJson___children___children___children'
+  | 'childrenContentJson___children___internal___content'
+  | 'childrenContentJson___children___internal___contentDigest'
+  | 'childrenContentJson___children___internal___description'
+  | 'childrenContentJson___children___internal___fieldOwners'
+  | 'childrenContentJson___children___internal___ignoreType'
+  | 'childrenContentJson___children___internal___mediaType'
+  | 'childrenContentJson___children___internal___owner'
+  | 'childrenContentJson___children___internal___type'
+  | 'childrenContentJson___internal___content'
+  | 'childrenContentJson___internal___contentDigest'
+  | 'childrenContentJson___internal___description'
+  | 'childrenContentJson___internal___fieldOwners'
+  | 'childrenContentJson___internal___ignoreType'
+  | 'childrenContentJson___internal___mediaType'
+  | 'childrenContentJson___internal___owner'
+  | 'childrenContentJson___internal___type'
+  | 'childrenContentJson___name'
+  | 'childrenContentJson___version'
+  | 'childrenContentJson___description'
+  | 'childrenContentJson___author'
+  | 'childrenContentJson___license'
+  | 'childContentJson___id'
+  | 'childContentJson___parent___id'
+  | 'childContentJson___parent___parent___id'
+  | 'childContentJson___parent___parent___children'
+  | 'childContentJson___parent___children'
+  | 'childContentJson___parent___children___id'
+  | 'childContentJson___parent___children___children'
+  | 'childContentJson___parent___internal___content'
+  | 'childContentJson___parent___internal___contentDigest'
+  | 'childContentJson___parent___internal___description'
+  | 'childContentJson___parent___internal___fieldOwners'
+  | 'childContentJson___parent___internal___ignoreType'
+  | 'childContentJson___parent___internal___mediaType'
+  | 'childContentJson___parent___internal___owner'
+  | 'childContentJson___parent___internal___type'
+  | 'childContentJson___children'
+  | 'childContentJson___children___id'
+  | 'childContentJson___children___parent___id'
+  | 'childContentJson___children___parent___children'
+  | 'childContentJson___children___children'
+  | 'childContentJson___children___children___id'
+  | 'childContentJson___children___children___children'
+  | 'childContentJson___children___internal___content'
+  | 'childContentJson___children___internal___contentDigest'
+  | 'childContentJson___children___internal___description'
+  | 'childContentJson___children___internal___fieldOwners'
+  | 'childContentJson___children___internal___ignoreType'
+  | 'childContentJson___children___internal___mediaType'
+  | 'childContentJson___children___internal___owner'
+  | 'childContentJson___children___internal___type'
+  | 'childContentJson___internal___content'
+  | 'childContentJson___internal___contentDigest'
+  | 'childContentJson___internal___description'
+  | 'childContentJson___internal___fieldOwners'
+  | 'childContentJson___internal___ignoreType'
+  | 'childContentJson___internal___mediaType'
+  | 'childContentJson___internal___owner'
+  | 'childContentJson___internal___type'
+  | 'childContentJson___name'
+  | 'childContentJson___version'
+  | 'childContentJson___description'
+  | 'childContentJson___author'
+  | 'childContentJson___license'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -757,277 +1321,7 @@ export type FileFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'childContentJson___id'
-  | 'childContentJson___parent___id'
-  | 'childContentJson___parent___parent___id'
-  | 'childContentJson___parent___parent___children'
-  | 'childContentJson___parent___children'
-  | 'childContentJson___parent___children___id'
-  | 'childContentJson___parent___children___children'
-  | 'childContentJson___parent___internal___content'
-  | 'childContentJson___parent___internal___contentDigest'
-  | 'childContentJson___parent___internal___description'
-  | 'childContentJson___parent___internal___fieldOwners'
-  | 'childContentJson___parent___internal___ignoreType'
-  | 'childContentJson___parent___internal___mediaType'
-  | 'childContentJson___parent___internal___owner'
-  | 'childContentJson___parent___internal___type'
-  | 'childContentJson___children'
-  | 'childContentJson___children___id'
-  | 'childContentJson___children___parent___id'
-  | 'childContentJson___children___parent___children'
-  | 'childContentJson___children___children'
-  | 'childContentJson___children___children___id'
-  | 'childContentJson___children___children___children'
-  | 'childContentJson___children___internal___content'
-  | 'childContentJson___children___internal___contentDigest'
-  | 'childContentJson___children___internal___description'
-  | 'childContentJson___children___internal___fieldOwners'
-  | 'childContentJson___children___internal___ignoreType'
-  | 'childContentJson___children___internal___mediaType'
-  | 'childContentJson___children___internal___owner'
-  | 'childContentJson___children___internal___type'
-  | 'childContentJson___internal___content'
-  | 'childContentJson___internal___contentDigest'
-  | 'childContentJson___internal___description'
-  | 'childContentJson___internal___fieldOwners'
-  | 'childContentJson___internal___ignoreType'
-  | 'childContentJson___internal___mediaType'
-  | 'childContentJson___internal___owner'
-  | 'childContentJson___internal___type'
-  | 'childContentJson___name'
-  | 'childContentJson___version'
-  | 'childContentJson___description'
-  | 'childContentJson___author'
-  | 'childContentJson___license'
-  | 'childPartiesJson___id'
-  | 'childPartiesJson___parent___id'
-  | 'childPartiesJson___parent___parent___id'
-  | 'childPartiesJson___parent___parent___children'
-  | 'childPartiesJson___parent___children'
-  | 'childPartiesJson___parent___children___id'
-  | 'childPartiesJson___parent___children___children'
-  | 'childPartiesJson___parent___internal___content'
-  | 'childPartiesJson___parent___internal___contentDigest'
-  | 'childPartiesJson___parent___internal___description'
-  | 'childPartiesJson___parent___internal___fieldOwners'
-  | 'childPartiesJson___parent___internal___ignoreType'
-  | 'childPartiesJson___parent___internal___mediaType'
-  | 'childPartiesJson___parent___internal___owner'
-  | 'childPartiesJson___parent___internal___type'
-  | 'childPartiesJson___children'
-  | 'childPartiesJson___children___id'
-  | 'childPartiesJson___children___parent___id'
-  | 'childPartiesJson___children___parent___children'
-  | 'childPartiesJson___children___children'
-  | 'childPartiesJson___children___children___id'
-  | 'childPartiesJson___children___children___children'
-  | 'childPartiesJson___children___internal___content'
-  | 'childPartiesJson___children___internal___contentDigest'
-  | 'childPartiesJson___children___internal___description'
-  | 'childPartiesJson___children___internal___fieldOwners'
-  | 'childPartiesJson___children___internal___ignoreType'
-  | 'childPartiesJson___children___internal___mediaType'
-  | 'childPartiesJson___children___internal___owner'
-  | 'childPartiesJson___children___internal___type'
-  | 'childPartiesJson___internal___content'
-  | 'childPartiesJson___internal___contentDigest'
-  | 'childPartiesJson___internal___description'
-  | 'childPartiesJson___internal___fieldOwners'
-  | 'childPartiesJson___internal___ignoreType'
-  | 'childPartiesJson___internal___mediaType'
-  | 'childPartiesJson___internal___owner'
-  | 'childPartiesJson___internal___type'
-  | 'childPartiesJson___memberParties'
-  | 'childPartiesJson___memberParties___party___id'
-  | 'childPartiesJson___memberParties___party___children'
-  | 'childPartiesJson___memberParties___party___memberParties'
-  | 'childPartiesJson___memberParties___party___name'
-  | 'childPartiesJson___memberParties___party___abbr'
-  | 'childPartiesJson___memberParties___party___fullName'
-  | 'childPartiesJson___memberParties___party___color'
-  | 'childPartiesJson___memberParties___party___colorDarkTheme'
-  | 'childPartiesJson___memberParties___joinedAt'
-  | 'childPartiesJson___memberParties___leftAt'
-  | 'childPartiesJson___name'
-  | 'childPartiesJson___abbr'
-  | 'childPartiesJson___fullName'
-  | 'childPartiesJson___color'
-  | 'childPartiesJson___colorDarkTheme'
-  | 'childPollsJson___id'
-  | 'childPollsJson___parent___id'
-  | 'childPollsJson___parent___parent___id'
-  | 'childPollsJson___parent___parent___children'
-  | 'childPollsJson___parent___children'
-  | 'childPollsJson___parent___children___id'
-  | 'childPollsJson___parent___children___children'
-  | 'childPollsJson___parent___internal___content'
-  | 'childPollsJson___parent___internal___contentDigest'
-  | 'childPollsJson___parent___internal___description'
-  | 'childPollsJson___parent___internal___fieldOwners'
-  | 'childPollsJson___parent___internal___ignoreType'
-  | 'childPollsJson___parent___internal___mediaType'
-  | 'childPollsJson___parent___internal___owner'
-  | 'childPollsJson___parent___internal___type'
-  | 'childPollsJson___children'
-  | 'childPollsJson___children___id'
-  | 'childPollsJson___children___parent___id'
-  | 'childPollsJson___children___parent___children'
-  | 'childPollsJson___children___children'
-  | 'childPollsJson___children___children___id'
-  | 'childPollsJson___children___children___children'
-  | 'childPollsJson___children___internal___content'
-  | 'childPollsJson___children___internal___contentDigest'
-  | 'childPollsJson___children___internal___description'
-  | 'childPollsJson___children___internal___fieldOwners'
-  | 'childPollsJson___children___internal___ignoreType'
-  | 'childPollsJson___children___internal___mediaType'
-  | 'childPollsJson___children___internal___owner'
-  | 'childPollsJson___children___internal___type'
-  | 'childPollsJson___internal___content'
-  | 'childPollsJson___internal___contentDigest'
-  | 'childPollsJson___internal___description'
-  | 'childPollsJson___internal___fieldOwners'
-  | 'childPollsJson___internal___ignoreType'
-  | 'childPollsJson___internal___mediaType'
-  | 'childPollsJson___internal___owner'
-  | 'childPollsJson___internal___type'
-  | 'childPollsJson___method'
-  | 'childPollsJson___publishedAt'
-  | 'childPollsJson___summary'
-  | 'childPollsJson___polledBy___id'
-  | 'childPollsJson___polledBy___parent___id'
-  | 'childPollsJson___polledBy___parent___children'
-  | 'childPollsJson___polledBy___children'
-  | 'childPollsJson___polledBy___children___id'
-  | 'childPollsJson___polledBy___children___children'
-  | 'childPollsJson___polledBy___internal___content'
-  | 'childPollsJson___polledBy___internal___contentDigest'
-  | 'childPollsJson___polledBy___internal___description'
-  | 'childPollsJson___polledBy___internal___fieldOwners'
-  | 'childPollsJson___polledBy___internal___ignoreType'
-  | 'childPollsJson___polledBy___internal___mediaType'
-  | 'childPollsJson___polledBy___internal___owner'
-  | 'childPollsJson___polledBy___internal___type'
-  | 'childPollsJson___polledBy___name'
-  | 'childPollsJson___polledBy___abbr'
-  | 'childPollsJson___pollEndedAt'
-  | 'childPollsJson___participantsCount'
-  | 'childPollsJson___pollStartedAt'
-  | 'childPollsJson___results'
-  | 'childPollsJson___results___party___id'
-  | 'childPollsJson___results___party___children'
-  | 'childPollsJson___results___party___memberParties'
-  | 'childPollsJson___results___party___name'
-  | 'childPollsJson___results___party___abbr'
-  | 'childPollsJson___results___party___fullName'
-  | 'childPollsJson___results___party___color'
-  | 'childPollsJson___results___party___colorDarkTheme'
-  | 'childPollsJson___results___result'
-  | 'childPollsJson___source'
-  | 'childPollsJson___publishedBy___id'
-  | 'childPollsJson___publishedBy___parent___id'
-  | 'childPollsJson___publishedBy___parent___children'
-  | 'childPollsJson___publishedBy___children'
-  | 'childPollsJson___publishedBy___children___id'
-  | 'childPollsJson___publishedBy___children___children'
-  | 'childPollsJson___publishedBy___internal___content'
-  | 'childPollsJson___publishedBy___internal___contentDigest'
-  | 'childPollsJson___publishedBy___internal___description'
-  | 'childPollsJson___publishedBy___internal___fieldOwners'
-  | 'childPollsJson___publishedBy___internal___ignoreType'
-  | 'childPollsJson___publishedBy___internal___mediaType'
-  | 'childPollsJson___publishedBy___internal___owner'
-  | 'childPollsJson___publishedBy___internal___type'
-  | 'childPollsJson___publishedBy___name'
-  | 'childPollsJson___publishedBy___abbr'
-  | 'childPollsJson___participantsMightVote'
-  | 'childPollsJson___participantsUndecided'
-  | 'childPollsJson___participantsMightNotVote'
-  | 'childPollsJson___participantsWillNotVote'
-  | 'childPollsJson___participantsWillVote'
-  | 'childPollsJson___error'
-  | 'childPollCompaniesJson___id'
-  | 'childPollCompaniesJson___parent___id'
-  | 'childPollCompaniesJson___parent___parent___id'
-  | 'childPollCompaniesJson___parent___parent___children'
-  | 'childPollCompaniesJson___parent___children'
-  | 'childPollCompaniesJson___parent___children___id'
-  | 'childPollCompaniesJson___parent___children___children'
-  | 'childPollCompaniesJson___parent___internal___content'
-  | 'childPollCompaniesJson___parent___internal___contentDigest'
-  | 'childPollCompaniesJson___parent___internal___description'
-  | 'childPollCompaniesJson___parent___internal___fieldOwners'
-  | 'childPollCompaniesJson___parent___internal___ignoreType'
-  | 'childPollCompaniesJson___parent___internal___mediaType'
-  | 'childPollCompaniesJson___parent___internal___owner'
-  | 'childPollCompaniesJson___parent___internal___type'
-  | 'childPollCompaniesJson___children'
-  | 'childPollCompaniesJson___children___id'
-  | 'childPollCompaniesJson___children___parent___id'
-  | 'childPollCompaniesJson___children___parent___children'
-  | 'childPollCompaniesJson___children___children'
-  | 'childPollCompaniesJson___children___children___id'
-  | 'childPollCompaniesJson___children___children___children'
-  | 'childPollCompaniesJson___children___internal___content'
-  | 'childPollCompaniesJson___children___internal___contentDigest'
-  | 'childPollCompaniesJson___children___internal___description'
-  | 'childPollCompaniesJson___children___internal___fieldOwners'
-  | 'childPollCompaniesJson___children___internal___ignoreType'
-  | 'childPollCompaniesJson___children___internal___mediaType'
-  | 'childPollCompaniesJson___children___internal___owner'
-  | 'childPollCompaniesJson___children___internal___type'
-  | 'childPollCompaniesJson___internal___content'
-  | 'childPollCompaniesJson___internal___contentDigest'
-  | 'childPollCompaniesJson___internal___description'
-  | 'childPollCompaniesJson___internal___fieldOwners'
-  | 'childPollCompaniesJson___internal___ignoreType'
-  | 'childPollCompaniesJson___internal___mediaType'
-  | 'childPollCompaniesJson___internal___owner'
-  | 'childPollCompaniesJson___internal___type'
-  | 'childPollCompaniesJson___name'
-  | 'childPollCompaniesJson___abbr'
-  | 'childPublishersJson___id'
-  | 'childPublishersJson___parent___id'
-  | 'childPublishersJson___parent___parent___id'
-  | 'childPublishersJson___parent___parent___children'
-  | 'childPublishersJson___parent___children'
-  | 'childPublishersJson___parent___children___id'
-  | 'childPublishersJson___parent___children___children'
-  | 'childPublishersJson___parent___internal___content'
-  | 'childPublishersJson___parent___internal___contentDigest'
-  | 'childPublishersJson___parent___internal___description'
-  | 'childPublishersJson___parent___internal___fieldOwners'
-  | 'childPublishersJson___parent___internal___ignoreType'
-  | 'childPublishersJson___parent___internal___mediaType'
-  | 'childPublishersJson___parent___internal___owner'
-  | 'childPublishersJson___parent___internal___type'
-  | 'childPublishersJson___children'
-  | 'childPublishersJson___children___id'
-  | 'childPublishersJson___children___parent___id'
-  | 'childPublishersJson___children___parent___children'
-  | 'childPublishersJson___children___children'
-  | 'childPublishersJson___children___children___id'
-  | 'childPublishersJson___children___children___children'
-  | 'childPublishersJson___children___internal___content'
-  | 'childPublishersJson___children___internal___contentDigest'
-  | 'childPublishersJson___children___internal___description'
-  | 'childPublishersJson___children___internal___fieldOwners'
-  | 'childPublishersJson___children___internal___ignoreType'
-  | 'childPublishersJson___children___internal___mediaType'
-  | 'childPublishersJson___children___internal___owner'
-  | 'childPublishersJson___children___internal___type'
-  | 'childPublishersJson___internal___content'
-  | 'childPublishersJson___internal___contentDigest'
-  | 'childPublishersJson___internal___description'
-  | 'childPublishersJson___internal___fieldOwners'
-  | 'childPublishersJson___internal___ignoreType'
-  | 'childPublishersJson___internal___mediaType'
-  | 'childPublishersJson___internal___owner'
-  | 'childPublishersJson___internal___type'
-  | 'childPublishersJson___name'
-  | 'childPublishersJson___abbr';
+  | 'internal___type';
 
 export type FileFilterInput = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -1064,15 +1358,20 @@ export type FileFilterInput = {
   blksize?: Maybe<IntQueryOperatorInput>;
   blocks?: Maybe<IntQueryOperatorInput>;
   publicURL?: Maybe<StringQueryOperatorInput>;
+  childrenPublishersJson?: Maybe<PublishersJsonFilterListInput>;
+  childPublishersJson?: Maybe<PublishersJsonFilterInput>;
+  childrenPollsJson?: Maybe<PollsJsonFilterListInput>;
+  childPollsJson?: Maybe<PollsJsonFilterInput>;
+  childrenPollCompaniesJson?: Maybe<PollCompaniesJsonFilterListInput>;
+  childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
+  childrenPartiesJson?: Maybe<PartiesJsonFilterListInput>;
+  childPartiesJson?: Maybe<PartiesJsonFilterInput>;
+  childrenContentJson?: Maybe<ContentJsonFilterListInput>;
+  childContentJson?: Maybe<ContentJsonFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  childContentJson?: Maybe<ContentJsonFilterInput>;
-  childPartiesJson?: Maybe<PartiesJsonFilterInput>;
-  childPollsJson?: Maybe<PollsJsonFilterInput>;
-  childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
-  childPublishersJson?: Maybe<PublishersJsonFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -1170,8 +1469,8 @@ export type PartiesJson = Node & {
   internal: Internal;
   memberParties?: Maybe<Array<Maybe<PartiesJsonMemberParties>>>;
   name?: Maybe<Scalars['String']>;
-  abbr?: Maybe<Scalars['String']>;
   fullName?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
 };
@@ -1203,7 +1502,7 @@ export type PartiesJsonEdge = {
   previous?: Maybe<PartiesJson>;
 };
 
-export type PartiesJsonFieldsEnum = 
+export type PartiesJsonFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1309,15 +1608,15 @@ export type PartiesJsonFieldsEnum =
   | 'memberParties___party___memberParties___joinedAt'
   | 'memberParties___party___memberParties___leftAt'
   | 'memberParties___party___name'
-  | 'memberParties___party___abbr'
   | 'memberParties___party___fullName'
+  | 'memberParties___party___abbr'
   | 'memberParties___party___color'
   | 'memberParties___party___colorDarkTheme'
   | 'memberParties___joinedAt'
   | 'memberParties___leftAt'
   | 'name'
-  | 'abbr'
   | 'fullName'
+  | 'abbr'
   | 'color'
   | 'colorDarkTheme';
 
@@ -1328,10 +1627,14 @@ export type PartiesJsonFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
   fullName?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
   color?: Maybe<StringQueryOperatorInput>;
   colorDarkTheme?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PartiesJsonFilterListInput = {
+  elemMatch?: Maybe<PartiesJsonFilterInput>;
 };
 
 export type PartiesJsonGroupConnection = {
@@ -1400,7 +1703,7 @@ export type PollCompaniesJsonEdge = {
   previous?: Maybe<PollCompaniesJson>;
 };
 
-export type PollCompaniesJsonFieldsEnum = 
+export type PollCompaniesJsonFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1499,6 +1802,10 @@ export type PollCompaniesJsonFilterInput = {
   abbr?: Maybe<StringQueryOperatorInput>;
 };
 
+export type PollCompaniesJsonFilterListInput = {
+  elemMatch?: Maybe<PollCompaniesJsonFilterInput>;
+};
+
 export type PollCompaniesJsonGroupConnection = {
   totalCount: Scalars['Int'];
   edges: Array<PollCompaniesJsonEdge>;
@@ -1587,7 +1894,7 @@ export type PollsJsonEdge = {
   previous?: Maybe<PollsJson>;
 };
 
-export type PollsJsonFieldsEnum = 
+export type PollsJsonFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1739,8 +2046,8 @@ export type PollsJsonFieldsEnum =
   | 'results___party___memberParties___joinedAt'
   | 'results___party___memberParties___leftAt'
   | 'results___party___name'
-  | 'results___party___abbr'
   | 'results___party___fullName'
+  | 'results___party___abbr'
   | 'results___party___color'
   | 'results___party___colorDarkTheme'
   | 'results___result'
@@ -1815,6 +2122,10 @@ export type PollsJsonFilterInput = {
   error?: Maybe<IntQueryOperatorInput>;
 };
 
+export type PollsJsonFilterListInput = {
+  elemMatch?: Maybe<PollsJsonFilterInput>;
+};
+
 export type PollsJsonGroupConnection = {
   totalCount: Scalars['Int'];
   edges: Array<PollsJsonEdge>;
@@ -1879,7 +2190,7 @@ export type PublishersJsonEdge = {
   previous?: Maybe<PublishersJson>;
 };
 
-export type PublishersJsonFieldsEnum = 
+export type PublishersJsonFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1978,6 +2289,10 @@ export type PublishersJsonFilterInput = {
   abbr?: Maybe<StringQueryOperatorInput>;
 };
 
+export type PublishersJsonFilterListInput = {
+  elemMatch?: Maybe<PublishersJsonFilterInput>;
+};
+
 export type PublishersJsonGroupConnection = {
   totalCount: Scalars['Int'];
   edges: Array<PublishersJsonEdge>;
@@ -2003,10 +2318,10 @@ export type Query = {
   allSitePage: SitePageConnection;
   publishersJson?: Maybe<PublishersJson>;
   allPublishersJson: PublishersJsonConnection;
-  pollCompaniesJson?: Maybe<PollCompaniesJson>;
-  allPollCompaniesJson: PollCompaniesJsonConnection;
   pollsJson?: Maybe<PollsJson>;
   allPollsJson: PollsJsonConnection;
+  pollCompaniesJson?: Maybe<PollCompaniesJson>;
+  allPollCompaniesJson: PollCompaniesJsonConnection;
   partiesJson?: Maybe<PartiesJson>;
   allPartiesJson: PartiesJsonConnection;
   contentJson?: Maybe<ContentJson>;
@@ -2053,15 +2368,20 @@ export type QueryFileArgs = {
   blksize?: Maybe<IntQueryOperatorInput>;
   blocks?: Maybe<IntQueryOperatorInput>;
   publicURL?: Maybe<StringQueryOperatorInput>;
+  childrenPublishersJson?: Maybe<PublishersJsonFilterListInput>;
+  childPublishersJson?: Maybe<PublishersJsonFilterInput>;
+  childrenPollsJson?: Maybe<PollsJsonFilterListInput>;
+  childPollsJson?: Maybe<PollsJsonFilterInput>;
+  childrenPollCompaniesJson?: Maybe<PollCompaniesJsonFilterListInput>;
+  childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
+  childrenPartiesJson?: Maybe<PartiesJsonFilterListInput>;
+  childPartiesJson?: Maybe<PartiesJsonFilterInput>;
+  childrenContentJson?: Maybe<ContentJsonFilterListInput>;
+  childContentJson?: Maybe<ContentJsonFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  childContentJson?: Maybe<ContentJsonFilterInput>;
-  childPartiesJson?: Maybe<PartiesJsonFilterInput>;
-  childPollsJson?: Maybe<PollsJsonFilterInput>;
-  childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
-  childPublishersJson?: Maybe<PublishersJsonFilterInput>;
 };
 
 
@@ -2186,24 +2506,6 @@ export type QueryAllPublishersJsonArgs = {
 };
 
 
-export type QueryPollCompaniesJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllPollCompaniesJsonArgs = {
-  filter?: Maybe<PollCompaniesJsonFilterInput>;
-  sort?: Maybe<PollCompaniesJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryPollsJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -2236,6 +2538,24 @@ export type QueryAllPollsJsonArgs = {
 };
 
 
+export type QueryPollCompaniesJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllPollCompaniesJsonArgs = {
+  filter?: Maybe<PollCompaniesJsonFilterInput>;
+  sort?: Maybe<PollCompaniesJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryPartiesJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -2243,8 +2563,8 @@ export type QueryPartiesJsonArgs = {
   internal?: Maybe<InternalFilterInput>;
   memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
   fullName?: Maybe<StringQueryOperatorInput>;
+  abbr?: Maybe<StringQueryOperatorInput>;
   color?: Maybe<StringQueryOperatorInput>;
   colorDarkTheme?: Maybe<StringQueryOperatorInput>;
 };
@@ -2382,7 +2702,7 @@ export type SiteBuildMetadataEdge = {
   previous?: Maybe<SiteBuildMetadata>;
 };
 
-export type SiteBuildMetadataFieldsEnum = 
+export type SiteBuildMetadataFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2520,7 +2840,7 @@ export type SiteEdge = {
   previous?: Maybe<Site>;
 };
 
-export type SiteFieldsEnum = 
+export type SiteFieldsEnum =
   | 'buildTime'
   | 'siteMetadata___title'
   | 'siteMetadata___description'
@@ -2754,6 +3074,15 @@ export type SitePageContextI18nCtxTranslations = {
   insertRowBelow?: Maybe<Scalars['String']>;
   removeRow?: Maybe<Scalars['String']>;
   edit?: Maybe<Scalars['String']>;
+  heroTitle?: Maybe<Scalars['String']>;
+  free?: Maybe<Scalars['String']>;
+  moreInfo?: Maybe<Scalars['String']>;
+  moreInfoHeroDesc?: Maybe<Scalars['String']>;
+  newPollHeroDesc?: Maybe<Scalars['String']>;
+  openSourceHeroDesc?: Maybe<Scalars['String']>;
+  pollsHeroDesc?: Maybe<Scalars['String']>;
+  pollsExplainedDesc?: Maybe<Scalars['String']>;
+  quickExampleDesc?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextI18nCtxTranslationsFilterInput = {
@@ -2802,6 +3131,15 @@ export type SitePageContextI18nCtxTranslationsFilterInput = {
   insertRowBelow?: Maybe<StringQueryOperatorInput>;
   removeRow?: Maybe<StringQueryOperatorInput>;
   edit?: Maybe<StringQueryOperatorInput>;
+  heroTitle?: Maybe<StringQueryOperatorInput>;
+  free?: Maybe<StringQueryOperatorInput>;
+  moreInfo?: Maybe<StringQueryOperatorInput>;
+  moreInfoHeroDesc?: Maybe<StringQueryOperatorInput>;
+  newPollHeroDesc?: Maybe<StringQueryOperatorInput>;
+  openSourceHeroDesc?: Maybe<StringQueryOperatorInput>;
+  pollsHeroDesc?: Maybe<StringQueryOperatorInput>;
+  pollsExplainedDesc?: Maybe<StringQueryOperatorInput>;
+  quickExampleDesc?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2810,7 +3148,7 @@ export type SitePageEdge = {
   previous?: Maybe<SitePage>;
 };
 
-export type SitePageFieldsEnum = 
+export type SitePageFieldsEnum =
   | 'path'
   | 'component'
   | 'internalComponentName'
@@ -2957,6 +3295,15 @@ export type SitePageFieldsEnum =
   | 'context___i18nCtx___translations___insertRowBelow'
   | 'context___i18nCtx___translations___removeRow'
   | 'context___i18nCtx___translations___edit'
+  | 'context___i18nCtx___translations___heroTitle'
+  | 'context___i18nCtx___translations___free'
+  | 'context___i18nCtx___translations___moreInfo'
+  | 'context___i18nCtx___translations___moreInfoHeroDesc'
+  | 'context___i18nCtx___translations___newPollHeroDesc'
+  | 'context___i18nCtx___translations___openSourceHeroDesc'
+  | 'context___i18nCtx___translations___pollsHeroDesc'
+  | 'context___i18nCtx___translations___pollsExplainedDesc'
+  | 'context___i18nCtx___translations___quickExampleDesc'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3106,7 +3453,7 @@ export type SitePluginEdge = {
   previous?: Maybe<SitePlugin>;
 };
 
-export type SitePluginFieldsEnum = 
+export type SitePluginFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -3441,7 +3788,7 @@ export type SiteSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type SortOrderEnum = 
+export type SortOrderEnum =
   | 'ASC'
   | 'DESC';
 

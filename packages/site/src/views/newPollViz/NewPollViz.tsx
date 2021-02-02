@@ -1,50 +1,43 @@
 import * as React from "react";
-import { Button, Grid, GridItem, Paper } from "@ilemandatow/ui";
+import { Grid, GridItem, Paper } from "@ilemandatow/ui";
 import {
   ElectionSettingsList,
-  PollParliamentChart,
+  PollChart,
   PollResultsTable,
 } from "../../components";
 import { getDhondtResults, PartyWithResult } from "../../data";
-import { useTranslation } from "../../i18n";
 
 interface Props {
   threshold?: string;
   parliamentSeats?: string;
   parties: Partial<PartyWithResult>[];
-  onRecalculate: () => void;
 }
 
 const NewPollViz: React.FC<Props> = ({
   threshold,
   parliamentSeats,
   parties,
-  onRecalculate,
 }) => {
-  const { t } = useTranslation();
   const seats = getDhondtResults(parties);
 
   return (
     <Grid>
-      <GridItem>
-        <Paper className="pa4 flex justify-between">
+      <GridItem className="w-100">
+        <Paper className="pa4">
           <ElectionSettingsList
             threshold={threshold ?? "0"}
             parliamentSeats={parliamentSeats ?? "0"}
           />
-          <Button icon="redo" onClick={onRecalculate}>
-            {t("edit")}
-          </Button>
         </Paper>
       </GridItem>
-      <GridItem className="w-third">
+      <GridItem className="w-100 w-third-l">
         <Paper className="pa4 h-100">
           <PollResultsTable parties={parties} seats={seats} />
         </Paper>
       </GridItem>
-      <GridItem className="w-two-thirds">
+      <GridItem className="w-100 w-two-thirds-l">
         <Paper className="pa4 h-100">
-          <PollParliamentChart parties={parties} seats={seats} />
+          <PollChart parties={parties} seats={seats} />
         </Paper>
       </GridItem>
     </Grid>

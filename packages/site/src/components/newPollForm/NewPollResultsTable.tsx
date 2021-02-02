@@ -34,7 +34,7 @@ const NewPollResultsTable: React.FC = () => {
       <TableHead>
         <TableHeadCell>{t("party")}</TableHeadCell>
         <TableHeadCell>{t("resultWithPerc")}</TableHeadCell>
-        <TableHeadCell>{t("color")}</TableHeadCell>
+        <TableHeadCell className="tc">{t("color")}</TableHeadCell>
         <TableHeadCell />
       </TableHead>
       <TableBody>
