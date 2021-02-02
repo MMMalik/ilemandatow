@@ -6,4 +6,4 @@ import { setupPgEnv } from "../../../config";
 setupPgEnv();
 
 // Runs pg_dump command to a custom format
-exec(`psql -f ${join(__dirname, "truncateTables.sql")}`);
+exec(`psql -f ${join(__dirname, "../raw", "truncateTables.sql")}`);

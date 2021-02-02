@@ -6,7 +6,7 @@ import { setupPgEnv } from "../../../config";
 setupPgEnv();
 
 // Creates session table
-exec(`psql -f ${join(__dirname, "sessionTable.sql")}`);
+exec(`psql -f ${join(__dirname, "../raw", "sessionTable.sql")}`);
 
 // Creates tables managed by KeystoneJs
 exec("keystone create-tables");
