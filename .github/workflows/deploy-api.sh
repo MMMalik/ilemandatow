@@ -34,6 +34,7 @@ rsync -zahR \
     app.js \
     node_modules \
     packages/api \
+    packages/content \
     $MD_SSH_USER@$MD_SSH_HOST:/usr/home/$MD_SSH_USER/domains/$MD_DOMAIN/public_nodejs
 
 # Copy env variables
