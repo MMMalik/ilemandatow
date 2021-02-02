@@ -1,9 +1,6 @@
-export const isDev = process.env.NODE_ENV === "development";
-export const isProd = process.env.NODE_ENV === "production";
+import { isDev, isProd, setupEnv } from "./env";
 
-const envConfig = isProd ? { path: process.env.API_ENV_PATH } : undefined;
-
-require("dotenv").config(envConfig);
+setupEnv();
 
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
@@ -19,7 +16,13 @@ export const config = {
     connection,
     seeds: {
       directory: "./build/seeds",
+      extension: "ts",
     },
+    migrations: {
+      directory: "./build/migrations",
+      extension: "ts",
+    },
+    drop: false,
   },
   cookie: {
     secure: isProd,
