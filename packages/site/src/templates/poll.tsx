@@ -1,27 +1,27 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import { SectionTitle } from "@ilemandatow/ui";
-import { GetPollInfoQuery } from "../types";
+import { GetPollQuery } from "../types";
 import { useTranslation } from "../i18n";
 import { PollViz } from "../views";
 
 export const query = graphql`
-  query getPollInfo($id: String!) {
-    allPollsJson(filter: { id: { eq: $id } }) {
-      nodes {
-        ...PollInfo
+  query getPoll($id: ID!) {
+    ilemandatow {
+      Poll(where: { id: $id }) {
+        ...Poll
       }
     }
   }
 `;
 
 interface Props {
-  data: GetPollInfoQuery;
+  data: GetPollQuery;
 }
 
 const Poll: React.FC<Props> = ({ data }) => {
   const { t } = useTranslation();
-  const poll = data.allPollsJson.nodes[0];
+  const poll = data.ilemandatow.Poll;
 
   return (
     <>

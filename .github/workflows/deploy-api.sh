@@ -5,8 +5,8 @@ printf "\n%s\n\n" "Install dependencies"
 yarn install
 
 # Builds packages
-printf "\n%s\n\n" "Build packages"
-yarn build
+printf "\n%s\n\n" "Build API package"
+yarn build:api
 
 # Builds KeystoneJs app
 printf "\n%s\n\n" "Build KeystoneJs app"

@@ -3,15 +3,15 @@ const { meta, translations } = require("@ilemandatow/locales");
 exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`
     query getAllPolls {
-      allPollsJson {
-        nodes {
+      ilemandatow {
+        allPolls {
           id
         }
       }
     }
   `);
 
-  return data.allPollsJson.nodes.map(({ id }) => {
+  return data.ilemandatow.allPolls.map(({ id }) => {
     Object.keys(meta).map((lang) => {
       const localizedPath = `/${meta[lang].path}/poll/${id}`;
       return actions.createPage({

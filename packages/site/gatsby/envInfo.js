@@ -1,14 +1,15 @@
-const isProd = process.env.ILEMANDATOW_ACTIVE_ENV === "production";
-const activeEnv = isProd ? "production" : "development";
-const siteUrl = isProd
-  ? "https://www.ilemandatow.pl"
-  : "https://dev.ilemandatow.pl";
-const host = isProd ? siteUrl : null;
-const siteMap = isProd ? `${host}/sitemap.xml` : null;
+if (process.env.NODE_ENV === "development") {
+  require("dotenv").config();
+}
+
+const allowRobots = process.env.ILEMANDATOW_ALLOW_ROBOTS === "true";
+const apiUrl = process.env.ILEMANDATOW_API_URL;
+const siteUrl = process.env.ILEMANDATOW_SITE_URL;
 
 module.exports = {
-  host,
+  host: allowRobots ? siteUrl : null,
+  siteMap: allowRobots ? `${siteUrl}/sitemap.xml` : null,
   siteUrl,
-  siteMap,
-  activeEnv,
+  apiUrl,
+  robots: allowRobots ? "allow" : "disallow",
 };

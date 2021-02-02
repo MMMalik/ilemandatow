@@ -29,10 +29,8 @@ jobs:
         with:
           node-version: "12"
 
-      - run: yarn install
-
       - name: Bump version via lerna
-        run: yarn lerna version prerelease --no-git-tag-version --conventional-commits --yes
+        run: npx lerna version prerelease --no-git-tag-version --conventional-commits --yes
 
       - id: set_lerna_json
         name: Set lerna json
