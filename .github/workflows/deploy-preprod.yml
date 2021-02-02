@@ -49,8 +49,11 @@ jobs:
           COOKIE_SECRET="${{ secrets.COOKIE_SECRET }}" \
           bash ./.github/workflows/deploy-api.sh
 
-      - name: Deploy Site to preprod
+      - name: Deploy site to preprod
         run: |
           NETLIFY_AUTH_TOKEN="${{ secrets.NETLIFY_AUTH_TOKEN }}" \
           NETLIFY_SITE_ID="${{ secrets.NETLIFY_SITE_ID }}" \
+          ILEMANDATOW_ALLOW_ROBOTS="${{ secrets.ILEMANDATOW_ALLOW_ROBOTS }}" \
+          ILEMANDATOW_API_URL="${{ secrets.ILEMANDATOW_API_URL }}" \
+          ILEMANDATOW_SITE_URL="${{ secrets.ILEMANDATOW_SITE_URL }}" \
           bash ./.github/workflows/deploy-site.sh
