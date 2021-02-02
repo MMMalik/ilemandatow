@@ -1,9 +1,11 @@
 import { compareDesc } from "date-fns";
-import { PollInfoFragment } from "../../types";
+import { PollFragment } from "../../types";
 
 export const sortPollsByDate = (
-  { publishedAt: publishedAt1 }: PollInfoFragment,
-  { publishedAt: publishedAt2 }: PollInfoFragment
+  { publishedAt: publishedAt1 }: PollFragment,
+  { publishedAt: publishedAt2 }: PollFragment
 ) => {
-  return compareDesc(new Date(publishedAt1), new Date(publishedAt2));
+  const date1 = publishedAt1 ? new Date(publishedAt1) : new Date();
+  const date2 = publishedAt2 ? new Date(publishedAt2) : new Date();
+  return compareDesc(date1, date2);
 };

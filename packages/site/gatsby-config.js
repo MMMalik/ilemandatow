@@ -36,13 +36,24 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: "gatsby-source-graphql",
       options: {
-        path: "../content",
-        name: "content",
+        // Arbitrary name for the remote schema Query type
+        typeName: "IleMandatow",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "ilemandatow",
+        // Url to query from
+        url: "http://localhost:3000/admin/api",
       },
     },
-    "gatsby-transformer-json",
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     path: "../content",
+    //     name: "content",
+    //   },
+    // },
+    // "gatsby-transformer-json",
     {
       resolve: "gatsby-plugin-netlify",
       options: {

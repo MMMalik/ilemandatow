@@ -4,12 +4,13 @@ import { SectionTitle } from "@ilemandatow/ui";
 import { GetAllPollsQuery } from "../types";
 import { useTranslation } from "../i18n";
 import { PollsGrid } from "../views";
+import { filterList } from "../data";
 
 export const query = graphql`
   query getAllPolls {
-    allPollsJson {
-      nodes {
-        ...PollInfo
+    ilemandatow {
+      allPolls {
+        ...Poll
       }
     }
   }
@@ -25,7 +26,7 @@ const Polls: React.FC<Props> = ({ data }) => {
   return (
     <>
       <SectionTitle title={t("polls")} />
-      <PollsGrid polls={data.allPollsJson.nodes} />
+      <PollsGrid polls={filterList(data.ilemandatow.allPolls)} />
     </>
   );
 };
