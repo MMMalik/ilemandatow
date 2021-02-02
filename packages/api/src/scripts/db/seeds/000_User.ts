@@ -7,16 +7,12 @@ export async function seed(knex: Knex): Promise<void> {
 
   const admin = process.env.APP_ADMIN;
   const adminPswd = process.env.APP_ADMIN_PASS;
-  const editor = process.env.APP_EDITOR;
-  const editorPswd = process.env.APP_EDITOR_PASS;
-  const viewer = process.env.APP_VIEWER;
-  const viewerPswd = process.env.APP_VIEWER_PASS;
 
-  if (!admin || !editor || !viewer) {
+  if (!admin) {
     throw new Error("Please provide non-empty username");
   }
 
-  if (!adminPswd || !editorPswd || !viewerPswd) {
+  if (!adminPswd) {
     throw new Error("Please provide non-empty user password");
   }
 
@@ -27,18 +23,6 @@ export async function seed(knex: Knex): Promise<void> {
       username: admin,
       password: bcryptjs.hashSync(adminPswd),
       role: "Admin",
-    },
-    {
-      id: knex.raw("gen_random_uuid()"),
-      username: editor,
-      password: bcryptjs.hashSync(editorPswd),
-      role: "Editor",
-    },
-    {
-      id: knex.raw("gen_random_uuid()"),
-      username: viewer,
-      password: bcryptjs.hashSync(viewerPswd),
-      role: "Viewer",
     },
   ]);
 }

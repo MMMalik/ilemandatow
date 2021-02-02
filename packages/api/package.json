@@ -10,12 +10,13 @@
     "build": "yarn cleanup && tsc",
     "check-types": "tsc --noEmit",
     "cleanup": "rimraf dist && rimraf build",
-    "db:seed": "knex seed:run",
-    "db:setup": "keystone create-tables && yarn knex migrate:up",
-    "db:migrate:up": "yarn knex migrate:up",
+    "db:backup:cleanup": "node build/scripts/db/custom/backup-cleanup.js",
+    "db:backup": "node build/scripts/db/custom/backup.js",
     "db:migrate:down": "yarn knex migrate:down",
-    "develop": "yarn build && NODE_ENV=development keystone",
-    "start": "NODE_ENV=production keystone start"
+    "db:migrate:up": "yarn knex migrate:up",
+    "db:restore": "node build/scripts/db/custom/restore.js",
+    "db:setup": "node build/scripts/db/custom/setup-tables.js && keystone create-tables && knex seed:run",
+    "develop": "yarn build && NODE_ENV=development keystone"
   },
   "dependencies": {
     "@keystonejs/adapter-knex": "^13.0.0",
@@ -31,13 +32,17 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "knex": "^0.21.16",
+    "minimist": "^1.2.5",
     "nanoid": "^3.1.20",
     "postgres": "^1.0.2",
+    "shelljs": "^0.8.4",
     "slugify": "^1.4.6"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/connect-pg-simple": "^4.2.2",
-    "@types/express-session": "^1.17.3"
+    "@types/express-session": "^1.17.3",
+    "@types/minimist": "^1.2.1",
+    "@types/shelljs": "^0.8.8"
   }
 }

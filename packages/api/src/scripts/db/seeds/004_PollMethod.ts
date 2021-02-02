@@ -1,5 +1,5 @@
 import * as Knex from "knex";
-import { slugId } from "../utils";
+import { slugId } from "../../../utils";
 
 export async function seed(knex: Knex): Promise<void> {
   // Deletes ALL existing entries

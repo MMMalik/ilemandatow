@@ -1,4 +1,4 @@
-import { isDev, isProd, setupEnv } from "./env";
+import { isProd, setupEnv } from "./env";
 
 setupEnv();
 
@@ -15,11 +15,11 @@ export const config = {
     client: "postgres",
     connection,
     seeds: {
-      directory: "./build/seeds",
+      directory: "./build/scripts/db/seeds",
       extension: "ts",
     },
     migrations: {
-      directory: "./build/migrations",
+      directory: "./build/scripts/db/migrations",
       extension: "ts",
     },
     drop: false,

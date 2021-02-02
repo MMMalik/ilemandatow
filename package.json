@@ -7,12 +7,16 @@
     ]
   },
   "scripts": {
-    "build": "lerna run build --stream",
     "build:api:keystone": "cd packages/api && yarn build:keystone",
+    "build": "lerna run build --stream",
     "check-types": "lerna run check-types --stream",
     "clean": "lerna run clean --stream",
+    "db:backup:cleanup": "cd packages/api && yarn db:backup:cleanup",
+    "db:backup": "cd packages/api && yarn db:backup",
+    "db:migrate:down": "cd packages/api && yarn db:migrate:down",
+    "db:migrate:up": "cd packages/api && yarn db:migrate:up",
+    "db:restore": "cd packages/api && yarn db:restore",
     "db:setup": "cd packages/api && yarn db:setup",
-    "db:seed": "cd packages/api && yarn db:seed",
     "develop:api": "cd packages/api && yarn develop",
     "develop:cms": "cd packages/cms && yarn develop",
     "develop:seats": "cd packages/seats && yarn build:watch",

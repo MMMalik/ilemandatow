@@ -1,6 +1,6 @@
 import { join } from "path";
 import * as Knex from "knex";
-import { readDir, slugId } from "../utils";
+import { readDir, slugId } from "../../../utils";
 
 export async function seed(knex: Knex): Promise<void> {
   // Deletes ALL existing entries
@@ -11,7 +11,7 @@ export async function seed(knex: Knex): Promise<void> {
   });
 
   const polls = (
-    await readDir(join(__dirname, "../../../content/polls"))
+    await readDir(join(__dirname, "../../../../../content/polls"))
   ).map((p) => JSON.parse(p));
 
   const methods = await knex("PollMethod").select();

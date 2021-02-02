@@ -1,6 +1,6 @@
 import { join } from "path";
 import * as Knex from "knex";
-import { readDir, slugId } from "../utils";
+import { readDir, slugId } from "../../../utils";
 
 export async function seed(knex: Knex): Promise<void> {
   // Deletes ALL existing entries
@@ -11,7 +11,7 @@ export async function seed(knex: Knex): Promise<void> {
   });
 
   const parties = (
-    await readDir(join(__dirname, "../../../content/parties"))
+    await readDir(join(__dirname, "../../../../../content/parties"))
   ).map((p) => JSON.parse(p));
 
   // Inserts seed entries
