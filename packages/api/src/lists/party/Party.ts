@@ -1,13 +1,12 @@
-import { Relationship, Slug, Text, Uuid } from "@keystonejs/fields";
+import { Relationship, Slug, Text } from "@keystonejs/fields";
 import { Color } from "@keystonejs/fields-color";
-import { slugId } from "../utils";
+import { slugId } from "../../utils";
+import { canEdit, canView } from "../access";
+import { idField } from "../common";
 
 export const Party = {
   fields: {
-    id: {
-      type: Uuid,
-      knexOptions: { defaultTo: (knex: any) => knex.raw("gen_random_uuid()") },
-    },
+    id: idField,
     name: { type: Text },
     fullName: { type: Text },
     abbr: { type: Text },
@@ -15,5 +14,11 @@ export const Party = {
     colorDarkTheme: { type: Color },
     memberParties: { type: Relationship, ref: "Party", many: true },
     slug: { type: Slug, generate: slugId(["name"]), regenerateOnUpdate: false },
+  },
+  access: {
+    read: canView,
+    create: canEdit,
+    update: canEdit,
+    delete: canEdit,
   },
 };

@@ -1,5 +1,6 @@
 import { Keystone } from "@keystonejs/keystone";
 import { KnexAdapter } from "@keystonejs/adapter-knex";
+import { PasswordAuthStrategy } from "@keystonejs/auth-password";
 import {
   Party,
   Poll,
@@ -7,12 +8,15 @@ import {
   PollMethod,
   PollResult,
   Publisher,
+  User,
 } from "../lists";
-import { config, isDev } from "../config";
+import { config } from "../config";
+import { sessionStore } from "./sessionStore";
 
 const pkg = require("../../package.json");
 
 export const initKeystone = () => {
+  const { drop, ...db } = config.db;
   const { secret: cookieSecret, ...cookie } = config.cookie;
 
   const keystone = new Keystone({
@@ -21,11 +25,12 @@ export const initKeystone = () => {
       addVersionToHttpHeaders: true,
     },
     adapter: new KnexAdapter({
-      dropDatabase: isDev,
-      knexOptions: config.db,
+      dropDatabase: drop,
+      knexOptions: db,
     }),
     cookie,
     cookieSecret,
+    sessionStore: sessionStore(),
   });
 
   keystone.createList("Party", Party);
@@ -34,6 +39,16 @@ export const initKeystone = () => {
   keystone.createList("PollMethod", PollMethod);
   keystone.createList("PollResult", PollResult);
   keystone.createList("Publisher", Publisher);
+  keystone.createList("User", User);
 
-  return keystone;
+  const authStrategy = keystone.createAuthStrategy({
+    type: PasswordAuthStrategy,
+    list: "User",
+    config: {
+      identityField: "username",
+      secretField: "password",
+    },
+  });
+
+  return { keystone, authStrategy };
 };
