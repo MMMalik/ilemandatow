@@ -2,10 +2,10 @@ import * as React from "react";
 import { Grid, GridItem } from "@ilemandatow/ui";
 import { filterPollResults, sortPollsByDate } from "../../data";
 import { PollCard } from "../../components";
-import { PollInfoFragment } from "../../types";
+import { PollFragment } from "../../types";
 
 interface Props {
-  polls: PollInfoFragment[];
+  polls: PollFragment[];
 }
 
 const PollsGrid: React.FC<Props> = ({ polls }) => {
@@ -14,11 +14,12 @@ const PollsGrid: React.FC<Props> = ({ polls }) => {
       {polls
         .sort(sortPollsByDate)
         .map(({ id, polledBy, publishedAt, source, results }) => {
+          const [firstPolledBy] = polledBy;
           return (
             <GridItem key={id} className="w-100 w-50-m w-third-l">
               <PollCard
                 id={id}
-                polledBy={polledBy?.abbr ?? ""}
+                polledBy={firstPolledBy?.abbr ?? ""}
                 publishedAt={publishedAt ?? ""}
                 source={source ?? ""}
                 results={filterPollResults(results)}

@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 
-export const PartyInfo = graphql`
-  fragment PartyInfo on PartiesJson {
+export const Party = graphql`
+  fragment Party on IleMandatow_Party {
     id
     name
     abbr

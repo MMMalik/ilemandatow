@@ -15,6 +15,10 @@ export type Scalars = {
    */
   Date: any;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
+  IleMandatow_JSON: any;
+  /** The `Upload` scalar type represents a file upload. */
+  IleMandatow_Upload: any;
+  /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: any;
 };
 
@@ -33,168 +37,6 @@ export type BooleanQueryOperatorInput = {
   ne?: Maybe<Scalars['Boolean']>;
   in?: Maybe<Array<Maybe<Scalars['Boolean']>>>;
   nin?: Maybe<Array<Maybe<Scalars['Boolean']>>>;
-};
-
-export type ContentJson = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  name?: Maybe<Scalars['String']>;
-  version?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
-  license?: Maybe<Scalars['String']>;
-};
-
-export type ContentJsonConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentJsonEdge>;
-  nodes: Array<ContentJson>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<ContentJsonGroupConnection>;
-};
-
-
-export type ContentJsonConnectionDistinctArgs = {
-  field: ContentJsonFieldsEnum;
-};
-
-
-export type ContentJsonConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: ContentJsonFieldsEnum;
-};
-
-export type ContentJsonEdge = {
-  next?: Maybe<ContentJson>;
-  node: ContentJson;
-  previous?: Maybe<ContentJson>;
-};
-
-export type ContentJsonFieldsEnum =
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'name'
-  | 'version'
-  | 'description'
-  | 'author'
-  | 'license';
-
-export type ContentJsonFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  version?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
-  license?: Maybe<StringQueryOperatorInput>;
-};
-
-export type ContentJsonFilterListInput = {
-  elemMatch?: Maybe<ContentJsonFilterInput>;
-};
-
-export type ContentJsonGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<ContentJsonEdge>;
-  nodes: Array<ContentJson>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type ContentJsonSortInput = {
-  fields?: Maybe<Array<Maybe<ContentJsonFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
 
@@ -243,8 +85,6 @@ export type Directory = Node & {
   birthtime?: Maybe<Scalars['Date']>;
   /** @deprecated Use `birthTime` instead */
   birthtimeMs?: Maybe<Scalars['Float']>;
-  blksize?: Maybe<Scalars['Int']>;
-  blocks?: Maybe<Scalars['Int']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -366,8 +206,6 @@ export type DirectoryFieldsEnum =
   | 'ctime'
   | 'birthtime'
   | 'birthtimeMs'
-  | 'blksize'
-  | 'blocks'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -487,8 +325,6 @@ export type DirectoryFilterInput = {
   ctime?: Maybe<DateQueryOperatorInput>;
   birthtime?: Maybe<DateQueryOperatorInput>;
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
-  blksize?: Maybe<IntQueryOperatorInput>;
-  blocks?: Maybe<IntQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -543,30 +379,6 @@ export type File = Node & {
   birthtime?: Maybe<Scalars['Date']>;
   /** @deprecated Use `birthTime` instead */
   birthtimeMs?: Maybe<Scalars['Float']>;
-  blksize?: Maybe<Scalars['Int']>;
-  blocks?: Maybe<Scalars['Int']>;
-  /** Copy file to static directory and return public url to it */
-  publicURL?: Maybe<Scalars['String']>;
-  /** Returns all children nodes filtered by type PublishersJson */
-  childrenPublishersJson?: Maybe<Array<Maybe<PublishersJson>>>;
-  /** Returns the first child node of type PublishersJson or null if there are no children of given type on this node */
-  childPublishersJson?: Maybe<PublishersJson>;
-  /** Returns all children nodes filtered by type PollsJson */
-  childrenPollsJson?: Maybe<Array<Maybe<PollsJson>>>;
-  /** Returns the first child node of type PollsJson or null if there are no children of given type on this node */
-  childPollsJson?: Maybe<PollsJson>;
-  /** Returns all children nodes filtered by type PollCompaniesJson */
-  childrenPollCompaniesJson?: Maybe<Array<Maybe<PollCompaniesJson>>>;
-  /** Returns the first child node of type PollCompaniesJson or null if there are no children of given type on this node */
-  childPollCompaniesJson?: Maybe<PollCompaniesJson>;
-  /** Returns all children nodes filtered by type PartiesJson */
-  childrenPartiesJson?: Maybe<Array<Maybe<PartiesJson>>>;
-  /** Returns the first child node of type PartiesJson or null if there are no children of given type on this node */
-  childPartiesJson?: Maybe<PartiesJson>;
-  /** Returns all children nodes filtered by type ContentJson */
-  childrenContentJson?: Maybe<Array<Maybe<ContentJson>>>;
-  /** Returns the first child node of type ContentJson or null if there are no children of given type on this node */
-  childContentJson?: Maybe<ContentJson>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -688,554 +500,6 @@ export type FileFieldsEnum =
   | 'ctime'
   | 'birthtime'
   | 'birthtimeMs'
-  | 'blksize'
-  | 'blocks'
-  | 'publicURL'
-  | 'childrenPublishersJson'
-  | 'childrenPublishersJson___id'
-  | 'childrenPublishersJson___parent___id'
-  | 'childrenPublishersJson___parent___parent___id'
-  | 'childrenPublishersJson___parent___parent___children'
-  | 'childrenPublishersJson___parent___children'
-  | 'childrenPublishersJson___parent___children___id'
-  | 'childrenPublishersJson___parent___children___children'
-  | 'childrenPublishersJson___parent___internal___content'
-  | 'childrenPublishersJson___parent___internal___contentDigest'
-  | 'childrenPublishersJson___parent___internal___description'
-  | 'childrenPublishersJson___parent___internal___fieldOwners'
-  | 'childrenPublishersJson___parent___internal___ignoreType'
-  | 'childrenPublishersJson___parent___internal___mediaType'
-  | 'childrenPublishersJson___parent___internal___owner'
-  | 'childrenPublishersJson___parent___internal___type'
-  | 'childrenPublishersJson___children'
-  | 'childrenPublishersJson___children___id'
-  | 'childrenPublishersJson___children___parent___id'
-  | 'childrenPublishersJson___children___parent___children'
-  | 'childrenPublishersJson___children___children'
-  | 'childrenPublishersJson___children___children___id'
-  | 'childrenPublishersJson___children___children___children'
-  | 'childrenPublishersJson___children___internal___content'
-  | 'childrenPublishersJson___children___internal___contentDigest'
-  | 'childrenPublishersJson___children___internal___description'
-  | 'childrenPublishersJson___children___internal___fieldOwners'
-  | 'childrenPublishersJson___children___internal___ignoreType'
-  | 'childrenPublishersJson___children___internal___mediaType'
-  | 'childrenPublishersJson___children___internal___owner'
-  | 'childrenPublishersJson___children___internal___type'
-  | 'childrenPublishersJson___internal___content'
-  | 'childrenPublishersJson___internal___contentDigest'
-  | 'childrenPublishersJson___internal___description'
-  | 'childrenPublishersJson___internal___fieldOwners'
-  | 'childrenPublishersJson___internal___ignoreType'
-  | 'childrenPublishersJson___internal___mediaType'
-  | 'childrenPublishersJson___internal___owner'
-  | 'childrenPublishersJson___internal___type'
-  | 'childrenPublishersJson___name'
-  | 'childrenPublishersJson___abbr'
-  | 'childPublishersJson___id'
-  | 'childPublishersJson___parent___id'
-  | 'childPublishersJson___parent___parent___id'
-  | 'childPublishersJson___parent___parent___children'
-  | 'childPublishersJson___parent___children'
-  | 'childPublishersJson___parent___children___id'
-  | 'childPublishersJson___parent___children___children'
-  | 'childPublishersJson___parent___internal___content'
-  | 'childPublishersJson___parent___internal___contentDigest'
-  | 'childPublishersJson___parent___internal___description'
-  | 'childPublishersJson___parent___internal___fieldOwners'
-  | 'childPublishersJson___parent___internal___ignoreType'
-  | 'childPublishersJson___parent___internal___mediaType'
-  | 'childPublishersJson___parent___internal___owner'
-  | 'childPublishersJson___parent___internal___type'
-  | 'childPublishersJson___children'
-  | 'childPublishersJson___children___id'
-  | 'childPublishersJson___children___parent___id'
-  | 'childPublishersJson___children___parent___children'
-  | 'childPublishersJson___children___children'
-  | 'childPublishersJson___children___children___id'
-  | 'childPublishersJson___children___children___children'
-  | 'childPublishersJson___children___internal___content'
-  | 'childPublishersJson___children___internal___contentDigest'
-  | 'childPublishersJson___children___internal___description'
-  | 'childPublishersJson___children___internal___fieldOwners'
-  | 'childPublishersJson___children___internal___ignoreType'
-  | 'childPublishersJson___children___internal___mediaType'
-  | 'childPublishersJson___children___internal___owner'
-  | 'childPublishersJson___children___internal___type'
-  | 'childPublishersJson___internal___content'
-  | 'childPublishersJson___internal___contentDigest'
-  | 'childPublishersJson___internal___description'
-  | 'childPublishersJson___internal___fieldOwners'
-  | 'childPublishersJson___internal___ignoreType'
-  | 'childPublishersJson___internal___mediaType'
-  | 'childPublishersJson___internal___owner'
-  | 'childPublishersJson___internal___type'
-  | 'childPublishersJson___name'
-  | 'childPublishersJson___abbr'
-  | 'childrenPollsJson'
-  | 'childrenPollsJson___id'
-  | 'childrenPollsJson___parent___id'
-  | 'childrenPollsJson___parent___parent___id'
-  | 'childrenPollsJson___parent___parent___children'
-  | 'childrenPollsJson___parent___children'
-  | 'childrenPollsJson___parent___children___id'
-  | 'childrenPollsJson___parent___children___children'
-  | 'childrenPollsJson___parent___internal___content'
-  | 'childrenPollsJson___parent___internal___contentDigest'
-  | 'childrenPollsJson___parent___internal___description'
-  | 'childrenPollsJson___parent___internal___fieldOwners'
-  | 'childrenPollsJson___parent___internal___ignoreType'
-  | 'childrenPollsJson___parent___internal___mediaType'
-  | 'childrenPollsJson___parent___internal___owner'
-  | 'childrenPollsJson___parent___internal___type'
-  | 'childrenPollsJson___children'
-  | 'childrenPollsJson___children___id'
-  | 'childrenPollsJson___children___parent___id'
-  | 'childrenPollsJson___children___parent___children'
-  | 'childrenPollsJson___children___children'
-  | 'childrenPollsJson___children___children___id'
-  | 'childrenPollsJson___children___children___children'
-  | 'childrenPollsJson___children___internal___content'
-  | 'childrenPollsJson___children___internal___contentDigest'
-  | 'childrenPollsJson___children___internal___description'
-  | 'childrenPollsJson___children___internal___fieldOwners'
-  | 'childrenPollsJson___children___internal___ignoreType'
-  | 'childrenPollsJson___children___internal___mediaType'
-  | 'childrenPollsJson___children___internal___owner'
-  | 'childrenPollsJson___children___internal___type'
-  | 'childrenPollsJson___internal___content'
-  | 'childrenPollsJson___internal___contentDigest'
-  | 'childrenPollsJson___internal___description'
-  | 'childrenPollsJson___internal___fieldOwners'
-  | 'childrenPollsJson___internal___ignoreType'
-  | 'childrenPollsJson___internal___mediaType'
-  | 'childrenPollsJson___internal___owner'
-  | 'childrenPollsJson___internal___type'
-  | 'childrenPollsJson___method'
-  | 'childrenPollsJson___publishedAt'
-  | 'childrenPollsJson___summary'
-  | 'childrenPollsJson___polledBy___id'
-  | 'childrenPollsJson___polledBy___parent___id'
-  | 'childrenPollsJson___polledBy___parent___children'
-  | 'childrenPollsJson___polledBy___children'
-  | 'childrenPollsJson___polledBy___children___id'
-  | 'childrenPollsJson___polledBy___children___children'
-  | 'childrenPollsJson___polledBy___internal___content'
-  | 'childrenPollsJson___polledBy___internal___contentDigest'
-  | 'childrenPollsJson___polledBy___internal___description'
-  | 'childrenPollsJson___polledBy___internal___fieldOwners'
-  | 'childrenPollsJson___polledBy___internal___ignoreType'
-  | 'childrenPollsJson___polledBy___internal___mediaType'
-  | 'childrenPollsJson___polledBy___internal___owner'
-  | 'childrenPollsJson___polledBy___internal___type'
-  | 'childrenPollsJson___polledBy___name'
-  | 'childrenPollsJson___polledBy___abbr'
-  | 'childrenPollsJson___pollEndedAt'
-  | 'childrenPollsJson___participantsCount'
-  | 'childrenPollsJson___pollStartedAt'
-  | 'childrenPollsJson___results'
-  | 'childrenPollsJson___results___party___id'
-  | 'childrenPollsJson___results___party___children'
-  | 'childrenPollsJson___results___party___memberParties'
-  | 'childrenPollsJson___results___party___name'
-  | 'childrenPollsJson___results___party___fullName'
-  | 'childrenPollsJson___results___party___abbr'
-  | 'childrenPollsJson___results___party___color'
-  | 'childrenPollsJson___results___party___colorDarkTheme'
-  | 'childrenPollsJson___results___result'
-  | 'childrenPollsJson___source'
-  | 'childrenPollsJson___publishedBy___id'
-  | 'childrenPollsJson___publishedBy___parent___id'
-  | 'childrenPollsJson___publishedBy___parent___children'
-  | 'childrenPollsJson___publishedBy___children'
-  | 'childrenPollsJson___publishedBy___children___id'
-  | 'childrenPollsJson___publishedBy___children___children'
-  | 'childrenPollsJson___publishedBy___internal___content'
-  | 'childrenPollsJson___publishedBy___internal___contentDigest'
-  | 'childrenPollsJson___publishedBy___internal___description'
-  | 'childrenPollsJson___publishedBy___internal___fieldOwners'
-  | 'childrenPollsJson___publishedBy___internal___ignoreType'
-  | 'childrenPollsJson___publishedBy___internal___mediaType'
-  | 'childrenPollsJson___publishedBy___internal___owner'
-  | 'childrenPollsJson___publishedBy___internal___type'
-  | 'childrenPollsJson___publishedBy___name'
-  | 'childrenPollsJson___publishedBy___abbr'
-  | 'childrenPollsJson___participantsMightVote'
-  | 'childrenPollsJson___participantsUndecided'
-  | 'childrenPollsJson___participantsMightNotVote'
-  | 'childrenPollsJson___participantsWillNotVote'
-  | 'childrenPollsJson___participantsWillVote'
-  | 'childrenPollsJson___error'
-  | 'childPollsJson___id'
-  | 'childPollsJson___parent___id'
-  | 'childPollsJson___parent___parent___id'
-  | 'childPollsJson___parent___parent___children'
-  | 'childPollsJson___parent___children'
-  | 'childPollsJson___parent___children___id'
-  | 'childPollsJson___parent___children___children'
-  | 'childPollsJson___parent___internal___content'
-  | 'childPollsJson___parent___internal___contentDigest'
-  | 'childPollsJson___parent___internal___description'
-  | 'childPollsJson___parent___internal___fieldOwners'
-  | 'childPollsJson___parent___internal___ignoreType'
-  | 'childPollsJson___parent___internal___mediaType'
-  | 'childPollsJson___parent___internal___owner'
-  | 'childPollsJson___parent___internal___type'
-  | 'childPollsJson___children'
-  | 'childPollsJson___children___id'
-  | 'childPollsJson___children___parent___id'
-  | 'childPollsJson___children___parent___children'
-  | 'childPollsJson___children___children'
-  | 'childPollsJson___children___children___id'
-  | 'childPollsJson___children___children___children'
-  | 'childPollsJson___children___internal___content'
-  | 'childPollsJson___children___internal___contentDigest'
-  | 'childPollsJson___children___internal___description'
-  | 'childPollsJson___children___internal___fieldOwners'
-  | 'childPollsJson___children___internal___ignoreType'
-  | 'childPollsJson___children___internal___mediaType'
-  | 'childPollsJson___children___internal___owner'
-  | 'childPollsJson___children___internal___type'
-  | 'childPollsJson___internal___content'
-  | 'childPollsJson___internal___contentDigest'
-  | 'childPollsJson___internal___description'
-  | 'childPollsJson___internal___fieldOwners'
-  | 'childPollsJson___internal___ignoreType'
-  | 'childPollsJson___internal___mediaType'
-  | 'childPollsJson___internal___owner'
-  | 'childPollsJson___internal___type'
-  | 'childPollsJson___method'
-  | 'childPollsJson___publishedAt'
-  | 'childPollsJson___summary'
-  | 'childPollsJson___polledBy___id'
-  | 'childPollsJson___polledBy___parent___id'
-  | 'childPollsJson___polledBy___parent___children'
-  | 'childPollsJson___polledBy___children'
-  | 'childPollsJson___polledBy___children___id'
-  | 'childPollsJson___polledBy___children___children'
-  | 'childPollsJson___polledBy___internal___content'
-  | 'childPollsJson___polledBy___internal___contentDigest'
-  | 'childPollsJson___polledBy___internal___description'
-  | 'childPollsJson___polledBy___internal___fieldOwners'
-  | 'childPollsJson___polledBy___internal___ignoreType'
-  | 'childPollsJson___polledBy___internal___mediaType'
-  | 'childPollsJson___polledBy___internal___owner'
-  | 'childPollsJson___polledBy___internal___type'
-  | 'childPollsJson___polledBy___name'
-  | 'childPollsJson___polledBy___abbr'
-  | 'childPollsJson___pollEndedAt'
-  | 'childPollsJson___participantsCount'
-  | 'childPollsJson___pollStartedAt'
-  | 'childPollsJson___results'
-  | 'childPollsJson___results___party___id'
-  | 'childPollsJson___results___party___children'
-  | 'childPollsJson___results___party___memberParties'
-  | 'childPollsJson___results___party___name'
-  | 'childPollsJson___results___party___fullName'
-  | 'childPollsJson___results___party___abbr'
-  | 'childPollsJson___results___party___color'
-  | 'childPollsJson___results___party___colorDarkTheme'
-  | 'childPollsJson___results___result'
-  | 'childPollsJson___source'
-  | 'childPollsJson___publishedBy___id'
-  | 'childPollsJson___publishedBy___parent___id'
-  | 'childPollsJson___publishedBy___parent___children'
-  | 'childPollsJson___publishedBy___children'
-  | 'childPollsJson___publishedBy___children___id'
-  | 'childPollsJson___publishedBy___children___children'
-  | 'childPollsJson___publishedBy___internal___content'
-  | 'childPollsJson___publishedBy___internal___contentDigest'
-  | 'childPollsJson___publishedBy___internal___description'
-  | 'childPollsJson___publishedBy___internal___fieldOwners'
-  | 'childPollsJson___publishedBy___internal___ignoreType'
-  | 'childPollsJson___publishedBy___internal___mediaType'
-  | 'childPollsJson___publishedBy___internal___owner'
-  | 'childPollsJson___publishedBy___internal___type'
-  | 'childPollsJson___publishedBy___name'
-  | 'childPollsJson___publishedBy___abbr'
-  | 'childPollsJson___participantsMightVote'
-  | 'childPollsJson___participantsUndecided'
-  | 'childPollsJson___participantsMightNotVote'
-  | 'childPollsJson___participantsWillNotVote'
-  | 'childPollsJson___participantsWillVote'
-  | 'childPollsJson___error'
-  | 'childrenPollCompaniesJson'
-  | 'childrenPollCompaniesJson___id'
-  | 'childrenPollCompaniesJson___parent___id'
-  | 'childrenPollCompaniesJson___parent___parent___id'
-  | 'childrenPollCompaniesJson___parent___parent___children'
-  | 'childrenPollCompaniesJson___parent___children'
-  | 'childrenPollCompaniesJson___parent___children___id'
-  | 'childrenPollCompaniesJson___parent___children___children'
-  | 'childrenPollCompaniesJson___parent___internal___content'
-  | 'childrenPollCompaniesJson___parent___internal___contentDigest'
-  | 'childrenPollCompaniesJson___parent___internal___description'
-  | 'childrenPollCompaniesJson___parent___internal___fieldOwners'
-  | 'childrenPollCompaniesJson___parent___internal___ignoreType'
-  | 'childrenPollCompaniesJson___parent___internal___mediaType'
-  | 'childrenPollCompaniesJson___parent___internal___owner'
-  | 'childrenPollCompaniesJson___parent___internal___type'
-  | 'childrenPollCompaniesJson___children'
-  | 'childrenPollCompaniesJson___children___id'
-  | 'childrenPollCompaniesJson___children___parent___id'
-  | 'childrenPollCompaniesJson___children___parent___children'
-  | 'childrenPollCompaniesJson___children___children'
-  | 'childrenPollCompaniesJson___children___children___id'
-  | 'childrenPollCompaniesJson___children___children___children'
-  | 'childrenPollCompaniesJson___children___internal___content'
-  | 'childrenPollCompaniesJson___children___internal___contentDigest'
-  | 'childrenPollCompaniesJson___children___internal___description'
-  | 'childrenPollCompaniesJson___children___internal___fieldOwners'
-  | 'childrenPollCompaniesJson___children___internal___ignoreType'
-  | 'childrenPollCompaniesJson___children___internal___mediaType'
-  | 'childrenPollCompaniesJson___children___internal___owner'
-  | 'childrenPollCompaniesJson___children___internal___type'
-  | 'childrenPollCompaniesJson___internal___content'
-  | 'childrenPollCompaniesJson___internal___contentDigest'
-  | 'childrenPollCompaniesJson___internal___description'
-  | 'childrenPollCompaniesJson___internal___fieldOwners'
-  | 'childrenPollCompaniesJson___internal___ignoreType'
-  | 'childrenPollCompaniesJson___internal___mediaType'
-  | 'childrenPollCompaniesJson___internal___owner'
-  | 'childrenPollCompaniesJson___internal___type'
-  | 'childrenPollCompaniesJson___name'
-  | 'childrenPollCompaniesJson___abbr'
-  | 'childPollCompaniesJson___id'
-  | 'childPollCompaniesJson___parent___id'
-  | 'childPollCompaniesJson___parent___parent___id'
-  | 'childPollCompaniesJson___parent___parent___children'
-  | 'childPollCompaniesJson___parent___children'
-  | 'childPollCompaniesJson___parent___children___id'
-  | 'childPollCompaniesJson___parent___children___children'
-  | 'childPollCompaniesJson___parent___internal___content'
-  | 'childPollCompaniesJson___parent___internal___contentDigest'
-  | 'childPollCompaniesJson___parent___internal___description'
-  | 'childPollCompaniesJson___parent___internal___fieldOwners'
-  | 'childPollCompaniesJson___parent___internal___ignoreType'
-  | 'childPollCompaniesJson___parent___internal___mediaType'
-  | 'childPollCompaniesJson___parent___internal___owner'
-  | 'childPollCompaniesJson___parent___internal___type'
-  | 'childPollCompaniesJson___children'
-  | 'childPollCompaniesJson___children___id'
-  | 'childPollCompaniesJson___children___parent___id'
-  | 'childPollCompaniesJson___children___parent___children'
-  | 'childPollCompaniesJson___children___children'
-  | 'childPollCompaniesJson___children___children___id'
-  | 'childPollCompaniesJson___children___children___children'
-  | 'childPollCompaniesJson___children___internal___content'
-  | 'childPollCompaniesJson___children___internal___contentDigest'
-  | 'childPollCompaniesJson___children___internal___description'
-  | 'childPollCompaniesJson___children___internal___fieldOwners'
-  | 'childPollCompaniesJson___children___internal___ignoreType'
-  | 'childPollCompaniesJson___children___internal___mediaType'
-  | 'childPollCompaniesJson___children___internal___owner'
-  | 'childPollCompaniesJson___children___internal___type'
-  | 'childPollCompaniesJson___internal___content'
-  | 'childPollCompaniesJson___internal___contentDigest'
-  | 'childPollCompaniesJson___internal___description'
-  | 'childPollCompaniesJson___internal___fieldOwners'
-  | 'childPollCompaniesJson___internal___ignoreType'
-  | 'childPollCompaniesJson___internal___mediaType'
-  | 'childPollCompaniesJson___internal___owner'
-  | 'childPollCompaniesJson___internal___type'
-  | 'childPollCompaniesJson___name'
-  | 'childPollCompaniesJson___abbr'
-  | 'childrenPartiesJson'
-  | 'childrenPartiesJson___id'
-  | 'childrenPartiesJson___parent___id'
-  | 'childrenPartiesJson___parent___parent___id'
-  | 'childrenPartiesJson___parent___parent___children'
-  | 'childrenPartiesJson___parent___children'
-  | 'childrenPartiesJson___parent___children___id'
-  | 'childrenPartiesJson___parent___children___children'
-  | 'childrenPartiesJson___parent___internal___content'
-  | 'childrenPartiesJson___parent___internal___contentDigest'
-  | 'childrenPartiesJson___parent___internal___description'
-  | 'childrenPartiesJson___parent___internal___fieldOwners'
-  | 'childrenPartiesJson___parent___internal___ignoreType'
-  | 'childrenPartiesJson___parent___internal___mediaType'
-  | 'childrenPartiesJson___parent___internal___owner'
-  | 'childrenPartiesJson___parent___internal___type'
-  | 'childrenPartiesJson___children'
-  | 'childrenPartiesJson___children___id'
-  | 'childrenPartiesJson___children___parent___id'
-  | 'childrenPartiesJson___children___parent___children'
-  | 'childrenPartiesJson___children___children'
-  | 'childrenPartiesJson___children___children___id'
-  | 'childrenPartiesJson___children___children___children'
-  | 'childrenPartiesJson___children___internal___content'
-  | 'childrenPartiesJson___children___internal___contentDigest'
-  | 'childrenPartiesJson___children___internal___description'
-  | 'childrenPartiesJson___children___internal___fieldOwners'
-  | 'childrenPartiesJson___children___internal___ignoreType'
-  | 'childrenPartiesJson___children___internal___mediaType'
-  | 'childrenPartiesJson___children___internal___owner'
-  | 'childrenPartiesJson___children___internal___type'
-  | 'childrenPartiesJson___internal___content'
-  | 'childrenPartiesJson___internal___contentDigest'
-  | 'childrenPartiesJson___internal___description'
-  | 'childrenPartiesJson___internal___fieldOwners'
-  | 'childrenPartiesJson___internal___ignoreType'
-  | 'childrenPartiesJson___internal___mediaType'
-  | 'childrenPartiesJson___internal___owner'
-  | 'childrenPartiesJson___internal___type'
-  | 'childrenPartiesJson___memberParties'
-  | 'childrenPartiesJson___memberParties___party___id'
-  | 'childrenPartiesJson___memberParties___party___children'
-  | 'childrenPartiesJson___memberParties___party___memberParties'
-  | 'childrenPartiesJson___memberParties___party___name'
-  | 'childrenPartiesJson___memberParties___party___fullName'
-  | 'childrenPartiesJson___memberParties___party___abbr'
-  | 'childrenPartiesJson___memberParties___party___color'
-  | 'childrenPartiesJson___memberParties___party___colorDarkTheme'
-  | 'childrenPartiesJson___memberParties___joinedAt'
-  | 'childrenPartiesJson___memberParties___leftAt'
-  | 'childrenPartiesJson___name'
-  | 'childrenPartiesJson___fullName'
-  | 'childrenPartiesJson___abbr'
-  | 'childrenPartiesJson___color'
-  | 'childrenPartiesJson___colorDarkTheme'
-  | 'childPartiesJson___id'
-  | 'childPartiesJson___parent___id'
-  | 'childPartiesJson___parent___parent___id'
-  | 'childPartiesJson___parent___parent___children'
-  | 'childPartiesJson___parent___children'
-  | 'childPartiesJson___parent___children___id'
-  | 'childPartiesJson___parent___children___children'
-  | 'childPartiesJson___parent___internal___content'
-  | 'childPartiesJson___parent___internal___contentDigest'
-  | 'childPartiesJson___parent___internal___description'
-  | 'childPartiesJson___parent___internal___fieldOwners'
-  | 'childPartiesJson___parent___internal___ignoreType'
-  | 'childPartiesJson___parent___internal___mediaType'
-  | 'childPartiesJson___parent___internal___owner'
-  | 'childPartiesJson___parent___internal___type'
-  | 'childPartiesJson___children'
-  | 'childPartiesJson___children___id'
-  | 'childPartiesJson___children___parent___id'
-  | 'childPartiesJson___children___parent___children'
-  | 'childPartiesJson___children___children'
-  | 'childPartiesJson___children___children___id'
-  | 'childPartiesJson___children___children___children'
-  | 'childPartiesJson___children___internal___content'
-  | 'childPartiesJson___children___internal___contentDigest'
-  | 'childPartiesJson___children___internal___description'
-  | 'childPartiesJson___children___internal___fieldOwners'
-  | 'childPartiesJson___children___internal___ignoreType'
-  | 'childPartiesJson___children___internal___mediaType'
-  | 'childPartiesJson___children___internal___owner'
-  | 'childPartiesJson___children___internal___type'
-  | 'childPartiesJson___internal___content'
-  | 'childPartiesJson___internal___contentDigest'
-  | 'childPartiesJson___internal___description'
-  | 'childPartiesJson___internal___fieldOwners'
-  | 'childPartiesJson___internal___ignoreType'
-  | 'childPartiesJson___internal___mediaType'
-  | 'childPartiesJson___internal___owner'
-  | 'childPartiesJson___internal___type'
-  | 'childPartiesJson___memberParties'
-  | 'childPartiesJson___memberParties___party___id'
-  | 'childPartiesJson___memberParties___party___children'
-  | 'childPartiesJson___memberParties___party___memberParties'
-  | 'childPartiesJson___memberParties___party___name'
-  | 'childPartiesJson___memberParties___party___fullName'
-  | 'childPartiesJson___memberParties___party___abbr'
-  | 'childPartiesJson___memberParties___party___color'
-  | 'childPartiesJson___memberParties___party___colorDarkTheme'
-  | 'childPartiesJson___memberParties___joinedAt'
-  | 'childPartiesJson___memberParties___leftAt'
-  | 'childPartiesJson___name'
-  | 'childPartiesJson___fullName'
-  | 'childPartiesJson___abbr'
-  | 'childPartiesJson___color'
-  | 'childPartiesJson___colorDarkTheme'
-  | 'childrenContentJson'
-  | 'childrenContentJson___id'
-  | 'childrenContentJson___parent___id'
-  | 'childrenContentJson___parent___parent___id'
-  | 'childrenContentJson___parent___parent___children'
-  | 'childrenContentJson___parent___children'
-  | 'childrenContentJson___parent___children___id'
-  | 'childrenContentJson___parent___children___children'
-  | 'childrenContentJson___parent___internal___content'
-  | 'childrenContentJson___parent___internal___contentDigest'
-  | 'childrenContentJson___parent___internal___description'
-  | 'childrenContentJson___parent___internal___fieldOwners'
-  | 'childrenContentJson___parent___internal___ignoreType'
-  | 'childrenContentJson___parent___internal___mediaType'
-  | 'childrenContentJson___parent___internal___owner'
-  | 'childrenContentJson___parent___internal___type'
-  | 'childrenContentJson___children'
-  | 'childrenContentJson___children___id'
-  | 'childrenContentJson___children___parent___id'
-  | 'childrenContentJson___children___parent___children'
-  | 'childrenContentJson___children___children'
-  | 'childrenContentJson___children___children___id'
-  | 'childrenContentJson___children___children___children'
-  | 'childrenContentJson___children___internal___content'
-  | 'childrenContentJson___children___internal___contentDigest'
-  | 'childrenContentJson___children___internal___description'
-  | 'childrenContentJson___children___internal___fieldOwners'
-  | 'childrenContentJson___children___internal___ignoreType'
-  | 'childrenContentJson___children___internal___mediaType'
-  | 'childrenContentJson___children___internal___owner'
-  | 'childrenContentJson___children___internal___type'
-  | 'childrenContentJson___internal___content'
-  | 'childrenContentJson___internal___contentDigest'
-  | 'childrenContentJson___internal___description'
-  | 'childrenContentJson___internal___fieldOwners'
-  | 'childrenContentJson___internal___ignoreType'
-  | 'childrenContentJson___internal___mediaType'
-  | 'childrenContentJson___internal___owner'
-  | 'childrenContentJson___internal___type'
-  | 'childrenContentJson___name'
-  | 'childrenContentJson___version'
-  | 'childrenContentJson___description'
-  | 'childrenContentJson___author'
-  | 'childrenContentJson___license'
-  | 'childContentJson___id'
-  | 'childContentJson___parent___id'
-  | 'childContentJson___parent___parent___id'
-  | 'childContentJson___parent___parent___children'
-  | 'childContentJson___parent___children'
-  | 'childContentJson___parent___children___id'
-  | 'childContentJson___parent___children___children'
-  | 'childContentJson___parent___internal___content'
-  | 'childContentJson___parent___internal___contentDigest'
-  | 'childContentJson___parent___internal___description'
-  | 'childContentJson___parent___internal___fieldOwners'
-  | 'childContentJson___parent___internal___ignoreType'
-  | 'childContentJson___parent___internal___mediaType'
-  | 'childContentJson___parent___internal___owner'
-  | 'childContentJson___parent___internal___type'
-  | 'childContentJson___children'
-  | 'childContentJson___children___id'
-  | 'childContentJson___children___parent___id'
-  | 'childContentJson___children___parent___children'
-  | 'childContentJson___children___children'
-  | 'childContentJson___children___children___id'
-  | 'childContentJson___children___children___children'
-  | 'childContentJson___children___internal___content'
-  | 'childContentJson___children___internal___contentDigest'
-  | 'childContentJson___children___internal___description'
-  | 'childContentJson___children___internal___fieldOwners'
-  | 'childContentJson___children___internal___ignoreType'
-  | 'childContentJson___children___internal___mediaType'
-  | 'childContentJson___children___internal___owner'
-  | 'childContentJson___children___internal___type'
-  | 'childContentJson___internal___content'
-  | 'childContentJson___internal___contentDigest'
-  | 'childContentJson___internal___description'
-  | 'childContentJson___internal___fieldOwners'
-  | 'childContentJson___internal___ignoreType'
-  | 'childContentJson___internal___mediaType'
-  | 'childContentJson___internal___owner'
-  | 'childContentJson___internal___type'
-  | 'childContentJson___name'
-  | 'childContentJson___version'
-  | 'childContentJson___description'
-  | 'childContentJson___author'
-  | 'childContentJson___license'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1355,19 +619,6 @@ export type FileFilterInput = {
   ctime?: Maybe<DateQueryOperatorInput>;
   birthtime?: Maybe<DateQueryOperatorInput>;
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
-  blksize?: Maybe<IntQueryOperatorInput>;
-  blocks?: Maybe<IntQueryOperatorInput>;
-  publicURL?: Maybe<StringQueryOperatorInput>;
-  childrenPublishersJson?: Maybe<PublishersJsonFilterListInput>;
-  childPublishersJson?: Maybe<PublishersJsonFilterInput>;
-  childrenPollsJson?: Maybe<PollsJsonFilterListInput>;
-  childPollsJson?: Maybe<PollsJsonFilterInput>;
-  childrenPollCompaniesJson?: Maybe<PollCompaniesJsonFilterListInput>;
-  childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
-  childrenPartiesJson?: Maybe<PartiesJsonFilterListInput>;
-  childPartiesJson?: Maybe<PartiesJsonFilterInput>;
-  childrenContentJson?: Maybe<ContentJsonFilterListInput>;
-  childContentJson?: Maybe<ContentJsonFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -1397,6 +648,1655 @@ export type FloatQueryOperatorInput = {
   lte?: Maybe<Scalars['Float']>;
   in?: Maybe<Array<Maybe<Scalars['Float']>>>;
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type GraphQlSource = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  typeName?: Maybe<Scalars['String']>;
+  fieldName?: Maybe<Scalars['String']>;
+};
+
+export type GraphQlSourceConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<GraphQlSourceEdge>;
+  nodes: Array<GraphQlSource>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<GraphQlSourceGroupConnection>;
+};
+
+
+export type GraphQlSourceConnectionDistinctArgs = {
+  field: GraphQlSourceFieldsEnum;
+};
+
+
+export type GraphQlSourceConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: GraphQlSourceFieldsEnum;
+};
+
+export type GraphQlSourceEdge = {
+  next?: Maybe<GraphQlSource>;
+  node: GraphQlSource;
+  previous?: Maybe<GraphQlSource>;
+};
+
+export type GraphQlSourceFieldsEnum =
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'typeName'
+  | 'fieldName';
+
+export type GraphQlSourceFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  typeName?: Maybe<StringQueryOperatorInput>;
+  fieldName?: Maybe<StringQueryOperatorInput>;
+};
+
+export type GraphQlSourceGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<GraphQlSourceEdge>;
+  nodes: Array<GraphQlSource>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type GraphQlSourceSortInput = {
+  fields?: Maybe<Array<Maybe<GraphQlSourceFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type IleMandatow = {
+  /**  Search for all Party items which match the where clause.  */
+  allParties?: Maybe<Array<Maybe<IleMandatow_Party>>>;
+  /**  Search for the Party item with the matching ID.  */
+  Party?: Maybe<IleMandatow_Party>;
+  /**  Perform a meta-query on all Party items which match the where clause.  */
+  _allPartiesMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the Party list.  */
+  _PartiesMeta?: Maybe<IleMandatow__ListMeta>;
+  /**  Search for all Poll items which match the where clause.  */
+  allPolls?: Maybe<Array<Maybe<IleMandatow_Poll>>>;
+  /**  Search for the Poll item with the matching ID.  */
+  Poll?: Maybe<IleMandatow_Poll>;
+  /**  Perform a meta-query on all Poll items which match the where clause.  */
+  _allPollsMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the Poll list.  */
+  _PollsMeta?: Maybe<IleMandatow__ListMeta>;
+  /**  Search for all PollCompany items which match the where clause.  */
+  allPollCompanies?: Maybe<Array<Maybe<IleMandatow_PollCompany>>>;
+  /**  Search for the PollCompany item with the matching ID.  */
+  PollCompany?: Maybe<IleMandatow_PollCompany>;
+  /**  Perform a meta-query on all PollCompany items which match the where clause.  */
+  _allPollCompaniesMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the PollCompany list.  */
+  _PollCompaniesMeta?: Maybe<IleMandatow__ListMeta>;
+  /**  Search for all PollMethod items which match the where clause.  */
+  allPollMethods?: Maybe<Array<Maybe<IleMandatow_PollMethod>>>;
+  /**  Search for the PollMethod item with the matching ID.  */
+  PollMethod?: Maybe<IleMandatow_PollMethod>;
+  /**  Perform a meta-query on all PollMethod items which match the where clause.  */
+  _allPollMethodsMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the PollMethod list.  */
+  _PollMethodsMeta?: Maybe<IleMandatow__ListMeta>;
+  /**  Search for all PollResult items which match the where clause.  */
+  allPollResults?: Maybe<Array<Maybe<IleMandatow_PollResult>>>;
+  /**  Search for the PollResult item with the matching ID.  */
+  PollResult?: Maybe<IleMandatow_PollResult>;
+  /**  Perform a meta-query on all PollResult items which match the where clause.  */
+  _allPollResultsMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the PollResult list.  */
+  _PollResultsMeta?: Maybe<IleMandatow__ListMeta>;
+  /**  Search for all Publisher items which match the where clause.  */
+  allPublishers?: Maybe<Array<Maybe<IleMandatow_Publisher>>>;
+  /**  Search for the Publisher item with the matching ID.  */
+  Publisher?: Maybe<IleMandatow_Publisher>;
+  /**  Perform a meta-query on all Publisher items which match the where clause.  */
+  _allPublishersMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the Publisher list.  */
+  _PublishersMeta?: Maybe<IleMandatow__ListMeta>;
+  /**  Search for all User items which match the where clause.  */
+  allUsers?: Maybe<Array<Maybe<IleMandatow_User>>>;
+  /**  Search for the User item with the matching ID.  */
+  User?: Maybe<IleMandatow_User>;
+  /**  Perform a meta-query on all User items which match the where clause.  */
+  _allUsersMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the User list.  */
+  _UsersMeta?: Maybe<IleMandatow__ListMeta>;
+  /**  Retrieve the meta-data for all lists.  */
+  _ksListsMeta?: Maybe<Array<Maybe<IleMandatow__ListMeta>>>;
+  /** The version of the Keystone application serving this API. */
+  appVersion?: Maybe<Scalars['String']>;
+  authenticatedUser?: Maybe<IleMandatow_User>;
+};
+
+
+export type IleMandatowAllPartiesArgs = {
+  where?: Maybe<IleMandatow_PartyWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPartiesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowPartyArgs = {
+  where: IleMandatow_PartyWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllPartiesMetaArgs = {
+  where?: Maybe<IleMandatow_PartyWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPartiesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowAllPollsArgs = {
+  where?: Maybe<IleMandatow_PollWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowPollArgs = {
+  where: IleMandatow_PollWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllPollsMetaArgs = {
+  where?: Maybe<IleMandatow_PollWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowAllPollCompaniesArgs = {
+  where?: Maybe<IleMandatow_PollCompanyWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollCompaniesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowPollCompanyArgs = {
+  where: IleMandatow_PollCompanyWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllPollCompaniesMetaArgs = {
+  where?: Maybe<IleMandatow_PollCompanyWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollCompaniesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowAllPollMethodsArgs = {
+  where?: Maybe<IleMandatow_PollMethodWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollMethodsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowPollMethodArgs = {
+  where: IleMandatow_PollMethodWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllPollMethodsMetaArgs = {
+  where?: Maybe<IleMandatow_PollMethodWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollMethodsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowAllPollResultsArgs = {
+  where?: Maybe<IleMandatow_PollResultWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollResultsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowPollResultArgs = {
+  where: IleMandatow_PollResultWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllPollResultsMetaArgs = {
+  where?: Maybe<IleMandatow_PollResultWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollResultsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowAllPublishersArgs = {
+  where?: Maybe<IleMandatow_PublisherWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPublishersBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowPublisherArgs = {
+  where: IleMandatow_PublisherWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllPublishersMetaArgs = {
+  where?: Maybe<IleMandatow_PublisherWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPublishersBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowAllUsersArgs = {
+  where?: Maybe<IleMandatow_UserWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortUsersBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowUserArgs = {
+  where: IleMandatow_UserWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllUsersMetaArgs = {
+  where?: Maybe<IleMandatow_UserWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortUsersBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatow_KsListsMetaArgs = {
+  where?: Maybe<IleMandatow__KsListsMetaInput>;
+};
+
+export type IleMandatow__KsListsMetaInput = {
+  key?: Maybe<Scalars['String']>;
+  /** Whether this is an auxiliary helper list */
+  auxiliary?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow__ListAccess = {
+  /**
+   * Access Control settings for the currently logged in (or anonymous)
+   * user when performing 'create' operations.
+   * NOTE: 'create' can only return a Boolean.
+   * It is not possible to specify a declarative Where clause for this
+   * operation
+   */
+  create?: Maybe<Scalars['Boolean']>;
+  /**
+   * Access Control settings for the currently logged in (or anonymous)
+   * user when performing 'read' operations.
+   */
+  read?: Maybe<Scalars['IleMandatow_JSON']>;
+  /**
+   * Access Control settings for the currently logged in (or anonymous)
+   * user when performing 'update' operations.
+   */
+  update?: Maybe<Scalars['IleMandatow_JSON']>;
+  /**
+   * Access Control settings for the currently logged in (or anonymous)
+   * user when performing 'delete' operations.
+   */
+  delete?: Maybe<Scalars['IleMandatow_JSON']>;
+  /**
+   * Access Control settings for the currently logged in (or anonymous)
+   * user when performing 'auth' operations.
+   */
+  auth?: Maybe<Scalars['IleMandatow_JSON']>;
+};
+
+export type IleMandatow__ListInputTypes = {
+  /** Input type for matching multiple items */
+  whereInput?: Maybe<Scalars['String']>;
+  /** Input type for matching a unique item */
+  whereUniqueInput?: Maybe<Scalars['String']>;
+  /** Create mutation input type name */
+  createInput?: Maybe<Scalars['String']>;
+  /** Create many mutation input type name */
+  createManyInput?: Maybe<Scalars['String']>;
+  /** Update mutation name input */
+  updateInput?: Maybe<Scalars['String']>;
+  /** Update many mutation name input */
+  updateManyInput?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow__ListMeta = {
+  /** The Keystone list key */
+  key?: Maybe<Scalars['String']>;
+  /**
+   * The Keystone List name
+   * @deprecated Use `key` instead
+   */
+  name?: Maybe<Scalars['String']>;
+  /** The list's user-facing description */
+  description?: Maybe<Scalars['String']>;
+  /** The list's display name in the Admin UI */
+  label?: Maybe<Scalars['String']>;
+  /** The list's singular display name */
+  singular?: Maybe<Scalars['String']>;
+  /** The list's plural display name */
+  plural?: Maybe<Scalars['String']>;
+  /** The list's data path */
+  path?: Maybe<Scalars['String']>;
+  /** Access control configuration for the currently authenticated request */
+  access?: Maybe<IleMandatow__ListAccess>;
+  /** Information on the generated GraphQL schema */
+  schema?: Maybe<IleMandatow__ListSchema>;
+};
+
+export type IleMandatow__ListMutations = {
+  /** Create mutation name */
+  create?: Maybe<Scalars['String']>;
+  /** Create many mutation name */
+  createMany?: Maybe<Scalars['String']>;
+  /** Update mutation name */
+  update?: Maybe<Scalars['String']>;
+  /** Update many mutation name */
+  updateMany?: Maybe<Scalars['String']>;
+  /** Delete mutation name */
+  delete?: Maybe<Scalars['String']>;
+  /** Delete many mutation name */
+  deleteMany?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow__ListQueries = {
+  /** Single-item query name */
+  item?: Maybe<Scalars['String']>;
+  /** All-items query name */
+  list?: Maybe<Scalars['String']>;
+  /** List metadata query name */
+  meta?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow__ListSchema = {
+  /** The typename as used in GraphQL queries */
+  type?: Maybe<Scalars['String']>;
+  /**
+   * Top level GraphQL query names which either return this type, or
+   * provide aggregate information about this type
+   */
+  queries?: Maybe<IleMandatow__ListQueries>;
+  /** Top-level GraphQL mutation names */
+  mutations?: Maybe<IleMandatow__ListMutations>;
+  /** Top-level GraphQL input types */
+  inputTypes?: Maybe<IleMandatow__ListInputTypes>;
+  /** Information about fields defined on this list */
+  fields?: Maybe<Array<Maybe<IleMandatow__ListSchemaFields>>>;
+  /**
+   * Information about fields on other types which return this type, or
+   * provide aggregate information about this type
+   */
+  relatedFields?: Maybe<Array<Maybe<IleMandatow__ListSchemaRelatedFields>>>;
+};
+
+
+export type IleMandatow__ListSchemaFieldsArgs = {
+  where?: Maybe<IleMandatow__ListSchemaFieldsInput>;
+};
+
+export type IleMandatow__ListSchemaFields = {
+  /** The path of the field in its list */
+  path?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field in its list
+   * @deprecated Use `path` instead
+   */
+  name?: Maybe<Scalars['String']>;
+  /** The field type (ie, Checkbox, Text, etc) */
+  type?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow__ListSchemaFieldsInput = {
+  type?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow__ListSchemaRelatedFields = {
+  /** The typename as used in GraphQL queries */
+  type?: Maybe<Scalars['String']>;
+  /** A list of GraphQL field names */
+  fields?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type IleMandatow__QueryMeta = {
+  count?: Maybe<Scalars['Int']>;
+};
+
+export type IleMandatow_AuthenticateUserOutput = {
+  /**  Used to make subsequent authenticated requests by setting this token in a header: 'Authorization: Bearer <token>'.  */
+  token?: Maybe<Scalars['String']>;
+  /**  Retrieve information on the newly authenticated User here.  */
+  item?: Maybe<IleMandatow_User>;
+};
+
+export type IleMandatow_CacheControlScope =
+  | 'PUBLIC'
+  | 'PRIVATE';
+
+
+export type IleMandatow_PartiesCreateInput = {
+  data?: Maybe<IleMandatow_PartyCreateInput>;
+};
+
+export type IleMandatow_PartiesUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_PartyUpdateInput>;
+};
+
+/**  A keystone list  */
+export type IleMandatow_Party = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the Party List config, or
+   *  2. As an alias to the field set on 'labelField' in the Party List config, or
+   *  3. As an alias to a 'name' field on the Party List (if one exists), or
+   *  4. As an alias to the 'id' field on the Party List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  name?: Maybe<Scalars['String']>;
+  fullName?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
+  colorDarkTheme?: Maybe<Scalars['String']>;
+  memberParties: Array<IleMandatow_Party>;
+  _memberPartiesMeta?: Maybe<IleMandatow__QueryMeta>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_PartyMemberPartiesArgs = {
+  where?: Maybe<IleMandatow_PartyWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPartiesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_Party_MemberPartiesMetaArgs = {
+  where?: Maybe<IleMandatow_PartyWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPartiesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+export type IleMandatow_PartyCreateInput = {
+  name?: Maybe<Scalars['String']>;
+  fullName?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
+  colorDarkTheme?: Maybe<Scalars['String']>;
+  memberParties?: Maybe<IleMandatow_PartyRelateToManyInput>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PartyRelateToManyInput = {
+  create?: Maybe<Array<Maybe<IleMandatow_PartyCreateInput>>>;
+  connect?: Maybe<Array<Maybe<IleMandatow_PartyWhereUniqueInput>>>;
+  disconnect?: Maybe<Array<Maybe<IleMandatow_PartyWhereUniqueInput>>>;
+  disconnectAll?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow_PartyRelateToOneInput = {
+  create?: Maybe<IleMandatow_PartyCreateInput>;
+  connect?: Maybe<IleMandatow_PartyWhereUniqueInput>;
+  disconnect?: Maybe<IleMandatow_PartyWhereUniqueInput>;
+  disconnectAll?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow_PartyUpdateInput = {
+  name?: Maybe<Scalars['String']>;
+  fullName?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
+  colorDarkTheme?: Maybe<Scalars['String']>;
+  memberParties?: Maybe<IleMandatow_PartyRelateToManyInput>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PartyWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_PartyWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_PartyWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  name?: Maybe<Scalars['String']>;
+  name_not?: Maybe<Scalars['String']>;
+  name_contains?: Maybe<Scalars['String']>;
+  name_not_contains?: Maybe<Scalars['String']>;
+  name_starts_with?: Maybe<Scalars['String']>;
+  name_not_starts_with?: Maybe<Scalars['String']>;
+  name_ends_with?: Maybe<Scalars['String']>;
+  name_not_ends_with?: Maybe<Scalars['String']>;
+  name_i?: Maybe<Scalars['String']>;
+  name_not_i?: Maybe<Scalars['String']>;
+  name_contains_i?: Maybe<Scalars['String']>;
+  name_not_contains_i?: Maybe<Scalars['String']>;
+  name_starts_with_i?: Maybe<Scalars['String']>;
+  name_not_starts_with_i?: Maybe<Scalars['String']>;
+  name_ends_with_i?: Maybe<Scalars['String']>;
+  name_not_ends_with_i?: Maybe<Scalars['String']>;
+  name_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fullName?: Maybe<Scalars['String']>;
+  fullName_not?: Maybe<Scalars['String']>;
+  fullName_contains?: Maybe<Scalars['String']>;
+  fullName_not_contains?: Maybe<Scalars['String']>;
+  fullName_starts_with?: Maybe<Scalars['String']>;
+  fullName_not_starts_with?: Maybe<Scalars['String']>;
+  fullName_ends_with?: Maybe<Scalars['String']>;
+  fullName_not_ends_with?: Maybe<Scalars['String']>;
+  fullName_i?: Maybe<Scalars['String']>;
+  fullName_not_i?: Maybe<Scalars['String']>;
+  fullName_contains_i?: Maybe<Scalars['String']>;
+  fullName_not_contains_i?: Maybe<Scalars['String']>;
+  fullName_starts_with_i?: Maybe<Scalars['String']>;
+  fullName_not_starts_with_i?: Maybe<Scalars['String']>;
+  fullName_ends_with_i?: Maybe<Scalars['String']>;
+  fullName_not_ends_with_i?: Maybe<Scalars['String']>;
+  fullName_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fullName_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  abbr?: Maybe<Scalars['String']>;
+  abbr_not?: Maybe<Scalars['String']>;
+  abbr_contains?: Maybe<Scalars['String']>;
+  abbr_not_contains?: Maybe<Scalars['String']>;
+  abbr_starts_with?: Maybe<Scalars['String']>;
+  abbr_not_starts_with?: Maybe<Scalars['String']>;
+  abbr_ends_with?: Maybe<Scalars['String']>;
+  abbr_not_ends_with?: Maybe<Scalars['String']>;
+  abbr_i?: Maybe<Scalars['String']>;
+  abbr_not_i?: Maybe<Scalars['String']>;
+  abbr_contains_i?: Maybe<Scalars['String']>;
+  abbr_not_contains_i?: Maybe<Scalars['String']>;
+  abbr_starts_with_i?: Maybe<Scalars['String']>;
+  abbr_not_starts_with_i?: Maybe<Scalars['String']>;
+  abbr_ends_with_i?: Maybe<Scalars['String']>;
+  abbr_not_ends_with_i?: Maybe<Scalars['String']>;
+  abbr_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  abbr_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  color?: Maybe<Scalars['String']>;
+  color_not?: Maybe<Scalars['String']>;
+  color_contains?: Maybe<Scalars['String']>;
+  color_not_contains?: Maybe<Scalars['String']>;
+  color_starts_with?: Maybe<Scalars['String']>;
+  color_not_starts_with?: Maybe<Scalars['String']>;
+  color_ends_with?: Maybe<Scalars['String']>;
+  color_not_ends_with?: Maybe<Scalars['String']>;
+  color_i?: Maybe<Scalars['String']>;
+  color_not_i?: Maybe<Scalars['String']>;
+  color_contains_i?: Maybe<Scalars['String']>;
+  color_not_contains_i?: Maybe<Scalars['String']>;
+  color_starts_with_i?: Maybe<Scalars['String']>;
+  color_not_starts_with_i?: Maybe<Scalars['String']>;
+  color_ends_with_i?: Maybe<Scalars['String']>;
+  color_not_ends_with_i?: Maybe<Scalars['String']>;
+  color_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  color_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  colorDarkTheme?: Maybe<Scalars['String']>;
+  colorDarkTheme_not?: Maybe<Scalars['String']>;
+  colorDarkTheme_contains?: Maybe<Scalars['String']>;
+  colorDarkTheme_not_contains?: Maybe<Scalars['String']>;
+  colorDarkTheme_starts_with?: Maybe<Scalars['String']>;
+  colorDarkTheme_not_starts_with?: Maybe<Scalars['String']>;
+  colorDarkTheme_ends_with?: Maybe<Scalars['String']>;
+  colorDarkTheme_not_ends_with?: Maybe<Scalars['String']>;
+  colorDarkTheme_i?: Maybe<Scalars['String']>;
+  colorDarkTheme_not_i?: Maybe<Scalars['String']>;
+  colorDarkTheme_contains_i?: Maybe<Scalars['String']>;
+  colorDarkTheme_not_contains_i?: Maybe<Scalars['String']>;
+  colorDarkTheme_starts_with_i?: Maybe<Scalars['String']>;
+  colorDarkTheme_not_starts_with_i?: Maybe<Scalars['String']>;
+  colorDarkTheme_ends_with_i?: Maybe<Scalars['String']>;
+  colorDarkTheme_not_ends_with_i?: Maybe<Scalars['String']>;
+  colorDarkTheme_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  colorDarkTheme_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  /**  condition must be true for all nodes  */
+  memberParties_every?: Maybe<IleMandatow_PartyWhereInput>;
+  /**  condition must be true for at least 1 node  */
+  memberParties_some?: Maybe<IleMandatow_PartyWhereInput>;
+  /**  condition must be false for all nodes  */
+  memberParties_none?: Maybe<IleMandatow_PartyWhereInput>;
+  slug?: Maybe<Scalars['String']>;
+  slug_not?: Maybe<Scalars['String']>;
+  slug_contains?: Maybe<Scalars['String']>;
+  slug_not_contains?: Maybe<Scalars['String']>;
+  slug_starts_with?: Maybe<Scalars['String']>;
+  slug_not_starts_with?: Maybe<Scalars['String']>;
+  slug_ends_with?: Maybe<Scalars['String']>;
+  slug_not_ends_with?: Maybe<Scalars['String']>;
+  slug_i?: Maybe<Scalars['String']>;
+  slug_not_i?: Maybe<Scalars['String']>;
+  slug_contains_i?: Maybe<Scalars['String']>;
+  slug_not_contains_i?: Maybe<Scalars['String']>;
+  slug_starts_with_i?: Maybe<Scalars['String']>;
+  slug_not_starts_with_i?: Maybe<Scalars['String']>;
+  slug_ends_with_i?: Maybe<Scalars['String']>;
+  slug_not_ends_with_i?: Maybe<Scalars['String']>;
+  slug_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type IleMandatow_PartyWhereUniqueInput = {
+  id: Scalars['ID'];
+};
+
+/**  A keystone list  */
+export type IleMandatow_Poll = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the Poll List config, or
+   *  2. As an alias to the field set on 'labelField' in the Poll List config, or
+   *  3. As an alias to a 'name' field on the Poll List (if one exists), or
+   *  4. As an alias to the 'id' field on the Poll List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  source?: Maybe<Scalars['String']>;
+  publishedBy: Array<IleMandatow_Publisher>;
+  _publishedByMeta?: Maybe<IleMandatow__QueryMeta>;
+  polledBy: Array<IleMandatow_PollCompany>;
+  _polledByMeta?: Maybe<IleMandatow__QueryMeta>;
+  publishedAt?: Maybe<Scalars['String']>;
+  method?: Maybe<IleMandatow_PollMethod>;
+  results: Array<IleMandatow_PollResult>;
+  _resultsMeta?: Maybe<IleMandatow__QueryMeta>;
+  participantsCount?: Maybe<Scalars['Int']>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsMightVote?: Maybe<Scalars['Float']>;
+  participantsUndecided?: Maybe<Scalars['Float']>;
+  participantsWillNotVote?: Maybe<Scalars['Float']>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
+  pollStartedAt?: Maybe<Scalars['String']>;
+  pollEndedAt?: Maybe<Scalars['String']>;
+  errorMargin?: Maybe<Scalars['Float']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_PollPublishedByArgs = {
+  where?: Maybe<IleMandatow_PublisherWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPublishersBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_Poll_PublishedByMetaArgs = {
+  where?: Maybe<IleMandatow_PublisherWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPublishersBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_PollPolledByArgs = {
+  where?: Maybe<IleMandatow_PollCompanyWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollCompaniesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_Poll_PolledByMetaArgs = {
+  where?: Maybe<IleMandatow_PollCompanyWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollCompaniesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_PollResultsArgs = {
+  where?: Maybe<IleMandatow_PollResultWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollResultsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_Poll_ResultsMetaArgs = {
+  where?: Maybe<IleMandatow_PollResultWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortPollResultsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+export type IleMandatow_PollCompaniesCreateInput = {
+  data?: Maybe<IleMandatow_PollCompanyCreateInput>;
+};
+
+export type IleMandatow_PollCompaniesUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_PollCompanyUpdateInput>;
+};
+
+/**  A keystone list  */
+export type IleMandatow_PollCompany = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the PollCompany List config, or
+   *  2. As an alias to the field set on 'labelField' in the PollCompany List config, or
+   *  3. As an alias to a 'name' field on the PollCompany List (if one exists), or
+   *  4. As an alias to the 'id' field on the PollCompany List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  name?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PollCompanyCreateInput = {
+  name?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PollCompanyRelateToManyInput = {
+  create?: Maybe<Array<Maybe<IleMandatow_PollCompanyCreateInput>>>;
+  connect?: Maybe<Array<Maybe<IleMandatow_PollCompanyWhereUniqueInput>>>;
+  disconnect?: Maybe<Array<Maybe<IleMandatow_PollCompanyWhereUniqueInput>>>;
+  disconnectAll?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow_PollCompanyUpdateInput = {
+  name?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PollCompanyWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_PollCompanyWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_PollCompanyWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  name?: Maybe<Scalars['String']>;
+  name_not?: Maybe<Scalars['String']>;
+  name_contains?: Maybe<Scalars['String']>;
+  name_not_contains?: Maybe<Scalars['String']>;
+  name_starts_with?: Maybe<Scalars['String']>;
+  name_not_starts_with?: Maybe<Scalars['String']>;
+  name_ends_with?: Maybe<Scalars['String']>;
+  name_not_ends_with?: Maybe<Scalars['String']>;
+  name_i?: Maybe<Scalars['String']>;
+  name_not_i?: Maybe<Scalars['String']>;
+  name_contains_i?: Maybe<Scalars['String']>;
+  name_not_contains_i?: Maybe<Scalars['String']>;
+  name_starts_with_i?: Maybe<Scalars['String']>;
+  name_not_starts_with_i?: Maybe<Scalars['String']>;
+  name_ends_with_i?: Maybe<Scalars['String']>;
+  name_not_ends_with_i?: Maybe<Scalars['String']>;
+  name_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  abbr?: Maybe<Scalars['String']>;
+  abbr_not?: Maybe<Scalars['String']>;
+  abbr_contains?: Maybe<Scalars['String']>;
+  abbr_not_contains?: Maybe<Scalars['String']>;
+  abbr_starts_with?: Maybe<Scalars['String']>;
+  abbr_not_starts_with?: Maybe<Scalars['String']>;
+  abbr_ends_with?: Maybe<Scalars['String']>;
+  abbr_not_ends_with?: Maybe<Scalars['String']>;
+  abbr_i?: Maybe<Scalars['String']>;
+  abbr_not_i?: Maybe<Scalars['String']>;
+  abbr_contains_i?: Maybe<Scalars['String']>;
+  abbr_not_contains_i?: Maybe<Scalars['String']>;
+  abbr_starts_with_i?: Maybe<Scalars['String']>;
+  abbr_not_starts_with_i?: Maybe<Scalars['String']>;
+  abbr_ends_with_i?: Maybe<Scalars['String']>;
+  abbr_not_ends_with_i?: Maybe<Scalars['String']>;
+  abbr_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  abbr_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Scalars['String']>;
+  slug_not?: Maybe<Scalars['String']>;
+  slug_contains?: Maybe<Scalars['String']>;
+  slug_not_contains?: Maybe<Scalars['String']>;
+  slug_starts_with?: Maybe<Scalars['String']>;
+  slug_not_starts_with?: Maybe<Scalars['String']>;
+  slug_ends_with?: Maybe<Scalars['String']>;
+  slug_not_ends_with?: Maybe<Scalars['String']>;
+  slug_i?: Maybe<Scalars['String']>;
+  slug_not_i?: Maybe<Scalars['String']>;
+  slug_contains_i?: Maybe<Scalars['String']>;
+  slug_not_contains_i?: Maybe<Scalars['String']>;
+  slug_starts_with_i?: Maybe<Scalars['String']>;
+  slug_not_starts_with_i?: Maybe<Scalars['String']>;
+  slug_ends_with_i?: Maybe<Scalars['String']>;
+  slug_not_ends_with_i?: Maybe<Scalars['String']>;
+  slug_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type IleMandatow_PollCompanyWhereUniqueInput = {
+  id: Scalars['ID'];
+};
+
+export type IleMandatow_PollCreateInput = {
+  source?: Maybe<Scalars['String']>;
+  publishedBy?: Maybe<IleMandatow_PublisherRelateToManyInput>;
+  polledBy?: Maybe<IleMandatow_PollCompanyRelateToManyInput>;
+  publishedAt?: Maybe<Scalars['String']>;
+  method?: Maybe<IleMandatow_PollMethodRelateToOneInput>;
+  results?: Maybe<IleMandatow_PollResultRelateToManyInput>;
+  participantsCount?: Maybe<Scalars['Int']>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsMightVote?: Maybe<Scalars['Float']>;
+  participantsUndecided?: Maybe<Scalars['Float']>;
+  participantsWillNotVote?: Maybe<Scalars['Float']>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
+  pollStartedAt?: Maybe<Scalars['String']>;
+  pollEndedAt?: Maybe<Scalars['String']>;
+  errorMargin?: Maybe<Scalars['Float']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+/**  A keystone list  */
+export type IleMandatow_PollMethod = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the PollMethod List config, or
+   *  2. As an alias to the field set on 'labelField' in the PollMethod List config, or
+   *  3. As an alias to a 'name' field on the PollMethod List (if one exists), or
+   *  4. As an alias to the 'id' field on the PollMethod List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  name?: Maybe<Scalars['String']>;
+  fullName?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PollMethodCreateInput = {
+  name?: Maybe<Scalars['String']>;
+  fullName?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PollMethodRelateToOneInput = {
+  create?: Maybe<IleMandatow_PollMethodCreateInput>;
+  connect?: Maybe<IleMandatow_PollMethodWhereUniqueInput>;
+  disconnect?: Maybe<IleMandatow_PollMethodWhereUniqueInput>;
+  disconnectAll?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow_PollMethodsCreateInput = {
+  data?: Maybe<IleMandatow_PollMethodCreateInput>;
+};
+
+export type IleMandatow_PollMethodsUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_PollMethodUpdateInput>;
+};
+
+export type IleMandatow_PollMethodUpdateInput = {
+  name?: Maybe<Scalars['String']>;
+  fullName?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PollMethodWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_PollMethodWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_PollMethodWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  name?: Maybe<Scalars['String']>;
+  name_not?: Maybe<Scalars['String']>;
+  name_contains?: Maybe<Scalars['String']>;
+  name_not_contains?: Maybe<Scalars['String']>;
+  name_starts_with?: Maybe<Scalars['String']>;
+  name_not_starts_with?: Maybe<Scalars['String']>;
+  name_ends_with?: Maybe<Scalars['String']>;
+  name_not_ends_with?: Maybe<Scalars['String']>;
+  name_i?: Maybe<Scalars['String']>;
+  name_not_i?: Maybe<Scalars['String']>;
+  name_contains_i?: Maybe<Scalars['String']>;
+  name_not_contains_i?: Maybe<Scalars['String']>;
+  name_starts_with_i?: Maybe<Scalars['String']>;
+  name_not_starts_with_i?: Maybe<Scalars['String']>;
+  name_ends_with_i?: Maybe<Scalars['String']>;
+  name_not_ends_with_i?: Maybe<Scalars['String']>;
+  name_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fullName?: Maybe<Scalars['String']>;
+  fullName_not?: Maybe<Scalars['String']>;
+  fullName_contains?: Maybe<Scalars['String']>;
+  fullName_not_contains?: Maybe<Scalars['String']>;
+  fullName_starts_with?: Maybe<Scalars['String']>;
+  fullName_not_starts_with?: Maybe<Scalars['String']>;
+  fullName_ends_with?: Maybe<Scalars['String']>;
+  fullName_not_ends_with?: Maybe<Scalars['String']>;
+  fullName_i?: Maybe<Scalars['String']>;
+  fullName_not_i?: Maybe<Scalars['String']>;
+  fullName_contains_i?: Maybe<Scalars['String']>;
+  fullName_not_contains_i?: Maybe<Scalars['String']>;
+  fullName_starts_with_i?: Maybe<Scalars['String']>;
+  fullName_not_starts_with_i?: Maybe<Scalars['String']>;
+  fullName_ends_with_i?: Maybe<Scalars['String']>;
+  fullName_not_ends_with_i?: Maybe<Scalars['String']>;
+  fullName_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  fullName_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Scalars['String']>;
+  slug_not?: Maybe<Scalars['String']>;
+  slug_contains?: Maybe<Scalars['String']>;
+  slug_not_contains?: Maybe<Scalars['String']>;
+  slug_starts_with?: Maybe<Scalars['String']>;
+  slug_not_starts_with?: Maybe<Scalars['String']>;
+  slug_ends_with?: Maybe<Scalars['String']>;
+  slug_not_ends_with?: Maybe<Scalars['String']>;
+  slug_i?: Maybe<Scalars['String']>;
+  slug_not_i?: Maybe<Scalars['String']>;
+  slug_contains_i?: Maybe<Scalars['String']>;
+  slug_not_contains_i?: Maybe<Scalars['String']>;
+  slug_starts_with_i?: Maybe<Scalars['String']>;
+  slug_not_starts_with_i?: Maybe<Scalars['String']>;
+  slug_ends_with_i?: Maybe<Scalars['String']>;
+  slug_not_ends_with_i?: Maybe<Scalars['String']>;
+  slug_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type IleMandatow_PollMethodWhereUniqueInput = {
+  id: Scalars['ID'];
+};
+
+/**  A keystone list  */
+export type IleMandatow_PollResult = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the PollResult List config, or
+   *  2. As an alias to the field set on 'labelField' in the PollResult List config, or
+   *  3. As an alias to a 'name' field on the PollResult List (if one exists), or
+   *  4. As an alias to the 'id' field on the PollResult List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  result?: Maybe<Scalars['Float']>;
+  party?: Maybe<IleMandatow_Party>;
+};
+
+export type IleMandatow_PollResultCreateInput = {
+  result?: Maybe<Scalars['Float']>;
+  party?: Maybe<IleMandatow_PartyRelateToOneInput>;
+};
+
+export type IleMandatow_PollResultRelateToManyInput = {
+  create?: Maybe<Array<Maybe<IleMandatow_PollResultCreateInput>>>;
+  connect?: Maybe<Array<Maybe<IleMandatow_PollResultWhereUniqueInput>>>;
+  disconnect?: Maybe<Array<Maybe<IleMandatow_PollResultWhereUniqueInput>>>;
+  disconnectAll?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow_PollResultsCreateInput = {
+  data?: Maybe<IleMandatow_PollResultCreateInput>;
+};
+
+export type IleMandatow_PollResultsUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_PollResultUpdateInput>;
+};
+
+export type IleMandatow_PollResultUpdateInput = {
+  result?: Maybe<Scalars['Float']>;
+  party?: Maybe<IleMandatow_PartyRelateToOneInput>;
+};
+
+export type IleMandatow_PollResultWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_PollResultWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_PollResultWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  result?: Maybe<Scalars['Float']>;
+  result_not?: Maybe<Scalars['Float']>;
+  result_lt?: Maybe<Scalars['Float']>;
+  result_lte?: Maybe<Scalars['Float']>;
+  result_gt?: Maybe<Scalars['Float']>;
+  result_gte?: Maybe<Scalars['Float']>;
+  result_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  result_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  party?: Maybe<IleMandatow_PartyWhereInput>;
+  party_is_null?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow_PollResultWhereUniqueInput = {
+  id: Scalars['ID'];
+};
+
+export type IleMandatow_PollsCreateInput = {
+  data?: Maybe<IleMandatow_PollCreateInput>;
+};
+
+export type IleMandatow_PollsUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_PollUpdateInput>;
+};
+
+export type IleMandatow_PollUpdateInput = {
+  source?: Maybe<Scalars['String']>;
+  publishedBy?: Maybe<IleMandatow_PublisherRelateToManyInput>;
+  polledBy?: Maybe<IleMandatow_PollCompanyRelateToManyInput>;
+  publishedAt?: Maybe<Scalars['String']>;
+  method?: Maybe<IleMandatow_PollMethodRelateToOneInput>;
+  results?: Maybe<IleMandatow_PollResultRelateToManyInput>;
+  participantsCount?: Maybe<Scalars['Int']>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsMightVote?: Maybe<Scalars['Float']>;
+  participantsUndecided?: Maybe<Scalars['Float']>;
+  participantsWillNotVote?: Maybe<Scalars['Float']>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
+  pollStartedAt?: Maybe<Scalars['String']>;
+  pollEndedAt?: Maybe<Scalars['String']>;
+  errorMargin?: Maybe<Scalars['Float']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PollWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_PollWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_PollWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  source?: Maybe<Scalars['String']>;
+  source_not?: Maybe<Scalars['String']>;
+  source_contains?: Maybe<Scalars['String']>;
+  source_not_contains?: Maybe<Scalars['String']>;
+  source_starts_with?: Maybe<Scalars['String']>;
+  source_not_starts_with?: Maybe<Scalars['String']>;
+  source_ends_with?: Maybe<Scalars['String']>;
+  source_not_ends_with?: Maybe<Scalars['String']>;
+  source_i?: Maybe<Scalars['String']>;
+  source_not_i?: Maybe<Scalars['String']>;
+  source_contains_i?: Maybe<Scalars['String']>;
+  source_not_contains_i?: Maybe<Scalars['String']>;
+  source_starts_with_i?: Maybe<Scalars['String']>;
+  source_not_starts_with_i?: Maybe<Scalars['String']>;
+  source_ends_with_i?: Maybe<Scalars['String']>;
+  source_not_ends_with_i?: Maybe<Scalars['String']>;
+  source_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  source_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  /**  condition must be true for all nodes  */
+  publishedBy_every?: Maybe<IleMandatow_PublisherWhereInput>;
+  /**  condition must be true for at least 1 node  */
+  publishedBy_some?: Maybe<IleMandatow_PublisherWhereInput>;
+  /**  condition must be false for all nodes  */
+  publishedBy_none?: Maybe<IleMandatow_PublisherWhereInput>;
+  /**  condition must be true for all nodes  */
+  polledBy_every?: Maybe<IleMandatow_PollCompanyWhereInput>;
+  /**  condition must be true for at least 1 node  */
+  polledBy_some?: Maybe<IleMandatow_PollCompanyWhereInput>;
+  /**  condition must be false for all nodes  */
+  polledBy_none?: Maybe<IleMandatow_PollCompanyWhereInput>;
+  publishedAt?: Maybe<Scalars['String']>;
+  publishedAt_not?: Maybe<Scalars['String']>;
+  publishedAt_lt?: Maybe<Scalars['String']>;
+  publishedAt_lte?: Maybe<Scalars['String']>;
+  publishedAt_gt?: Maybe<Scalars['String']>;
+  publishedAt_gte?: Maybe<Scalars['String']>;
+  publishedAt_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  publishedAt_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  method?: Maybe<IleMandatow_PollMethodWhereInput>;
+  method_is_null?: Maybe<Scalars['Boolean']>;
+  /**  condition must be true for all nodes  */
+  results_every?: Maybe<IleMandatow_PollResultWhereInput>;
+  /**  condition must be true for at least 1 node  */
+  results_some?: Maybe<IleMandatow_PollResultWhereInput>;
+  /**  condition must be false for all nodes  */
+  results_none?: Maybe<IleMandatow_PollResultWhereInput>;
+  participantsCount?: Maybe<Scalars['Int']>;
+  participantsCount_not?: Maybe<Scalars['Int']>;
+  participantsCount_lt?: Maybe<Scalars['Int']>;
+  participantsCount_lte?: Maybe<Scalars['Int']>;
+  participantsCount_gt?: Maybe<Scalars['Int']>;
+  participantsCount_gte?: Maybe<Scalars['Int']>;
+  participantsCount_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  participantsCount_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_not?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_lt?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_lte?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_gt?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_gte?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsMightNotVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsMightVote?: Maybe<Scalars['Float']>;
+  participantsMightVote_not?: Maybe<Scalars['Float']>;
+  participantsMightVote_lt?: Maybe<Scalars['Float']>;
+  participantsMightVote_lte?: Maybe<Scalars['Float']>;
+  participantsMightVote_gt?: Maybe<Scalars['Float']>;
+  participantsMightVote_gte?: Maybe<Scalars['Float']>;
+  participantsMightVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsMightVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsUndecided?: Maybe<Scalars['Float']>;
+  participantsUndecided_not?: Maybe<Scalars['Float']>;
+  participantsUndecided_lt?: Maybe<Scalars['Float']>;
+  participantsUndecided_lte?: Maybe<Scalars['Float']>;
+  participantsUndecided_gt?: Maybe<Scalars['Float']>;
+  participantsUndecided_gte?: Maybe<Scalars['Float']>;
+  participantsUndecided_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsUndecided_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsWillNotVote?: Maybe<Scalars['Float']>;
+  participantsWillNotVote_not?: Maybe<Scalars['Float']>;
+  participantsWillNotVote_lt?: Maybe<Scalars['Float']>;
+  participantsWillNotVote_lte?: Maybe<Scalars['Float']>;
+  participantsWillNotVote_gt?: Maybe<Scalars['Float']>;
+  participantsWillNotVote_gte?: Maybe<Scalars['Float']>;
+  participantsWillNotVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsWillNotVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
+  participantsWillVote_not?: Maybe<Scalars['Float']>;
+  participantsWillVote_lt?: Maybe<Scalars['Float']>;
+  participantsWillVote_lte?: Maybe<Scalars['Float']>;
+  participantsWillVote_gt?: Maybe<Scalars['Float']>;
+  participantsWillVote_gte?: Maybe<Scalars['Float']>;
+  participantsWillVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsWillVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  pollStartedAt?: Maybe<Scalars['String']>;
+  pollStartedAt_not?: Maybe<Scalars['String']>;
+  pollStartedAt_lt?: Maybe<Scalars['String']>;
+  pollStartedAt_lte?: Maybe<Scalars['String']>;
+  pollStartedAt_gt?: Maybe<Scalars['String']>;
+  pollStartedAt_gte?: Maybe<Scalars['String']>;
+  pollStartedAt_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  pollStartedAt_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  pollEndedAt?: Maybe<Scalars['String']>;
+  pollEndedAt_not?: Maybe<Scalars['String']>;
+  pollEndedAt_lt?: Maybe<Scalars['String']>;
+  pollEndedAt_lte?: Maybe<Scalars['String']>;
+  pollEndedAt_gt?: Maybe<Scalars['String']>;
+  pollEndedAt_gte?: Maybe<Scalars['String']>;
+  pollEndedAt_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  pollEndedAt_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  errorMargin?: Maybe<Scalars['Float']>;
+  errorMargin_not?: Maybe<Scalars['Float']>;
+  errorMargin_lt?: Maybe<Scalars['Float']>;
+  errorMargin_lte?: Maybe<Scalars['Float']>;
+  errorMargin_gt?: Maybe<Scalars['Float']>;
+  errorMargin_gte?: Maybe<Scalars['Float']>;
+  errorMargin_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  errorMargin_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  slug?: Maybe<Scalars['String']>;
+  slug_not?: Maybe<Scalars['String']>;
+  slug_contains?: Maybe<Scalars['String']>;
+  slug_not_contains?: Maybe<Scalars['String']>;
+  slug_starts_with?: Maybe<Scalars['String']>;
+  slug_not_starts_with?: Maybe<Scalars['String']>;
+  slug_ends_with?: Maybe<Scalars['String']>;
+  slug_not_ends_with?: Maybe<Scalars['String']>;
+  slug_i?: Maybe<Scalars['String']>;
+  slug_not_i?: Maybe<Scalars['String']>;
+  slug_contains_i?: Maybe<Scalars['String']>;
+  slug_not_contains_i?: Maybe<Scalars['String']>;
+  slug_starts_with_i?: Maybe<Scalars['String']>;
+  slug_not_starts_with_i?: Maybe<Scalars['String']>;
+  slug_ends_with_i?: Maybe<Scalars['String']>;
+  slug_not_ends_with_i?: Maybe<Scalars['String']>;
+  slug_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type IleMandatow_PollWhereUniqueInput = {
+  id: Scalars['ID'];
+};
+
+/**  A keystone list  */
+export type IleMandatow_Publisher = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the Publisher List config, or
+   *  2. As an alias to the field set on 'labelField' in the Publisher List config, or
+   *  3. As an alias to a 'name' field on the Publisher List (if one exists), or
+   *  4. As an alias to the 'id' field on the Publisher List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  name?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PublisherCreateInput = {
+  name?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PublisherRelateToManyInput = {
+  create?: Maybe<Array<Maybe<IleMandatow_PublisherCreateInput>>>;
+  connect?: Maybe<Array<Maybe<IleMandatow_PublisherWhereUniqueInput>>>;
+  disconnect?: Maybe<Array<Maybe<IleMandatow_PublisherWhereUniqueInput>>>;
+  disconnectAll?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow_PublishersCreateInput = {
+  data?: Maybe<IleMandatow_PublisherCreateInput>;
+};
+
+export type IleMandatow_PublishersUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_PublisherUpdateInput>;
+};
+
+export type IleMandatow_PublisherUpdateInput = {
+  name?: Maybe<Scalars['String']>;
+  abbr?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type IleMandatow_PublisherWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_PublisherWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_PublisherWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  name?: Maybe<Scalars['String']>;
+  name_not?: Maybe<Scalars['String']>;
+  name_contains?: Maybe<Scalars['String']>;
+  name_not_contains?: Maybe<Scalars['String']>;
+  name_starts_with?: Maybe<Scalars['String']>;
+  name_not_starts_with?: Maybe<Scalars['String']>;
+  name_ends_with?: Maybe<Scalars['String']>;
+  name_not_ends_with?: Maybe<Scalars['String']>;
+  name_i?: Maybe<Scalars['String']>;
+  name_not_i?: Maybe<Scalars['String']>;
+  name_contains_i?: Maybe<Scalars['String']>;
+  name_not_contains_i?: Maybe<Scalars['String']>;
+  name_starts_with_i?: Maybe<Scalars['String']>;
+  name_not_starts_with_i?: Maybe<Scalars['String']>;
+  name_ends_with_i?: Maybe<Scalars['String']>;
+  name_not_ends_with_i?: Maybe<Scalars['String']>;
+  name_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  abbr?: Maybe<Scalars['String']>;
+  abbr_not?: Maybe<Scalars['String']>;
+  abbr_contains?: Maybe<Scalars['String']>;
+  abbr_not_contains?: Maybe<Scalars['String']>;
+  abbr_starts_with?: Maybe<Scalars['String']>;
+  abbr_not_starts_with?: Maybe<Scalars['String']>;
+  abbr_ends_with?: Maybe<Scalars['String']>;
+  abbr_not_ends_with?: Maybe<Scalars['String']>;
+  abbr_i?: Maybe<Scalars['String']>;
+  abbr_not_i?: Maybe<Scalars['String']>;
+  abbr_contains_i?: Maybe<Scalars['String']>;
+  abbr_not_contains_i?: Maybe<Scalars['String']>;
+  abbr_starts_with_i?: Maybe<Scalars['String']>;
+  abbr_not_starts_with_i?: Maybe<Scalars['String']>;
+  abbr_ends_with_i?: Maybe<Scalars['String']>;
+  abbr_not_ends_with_i?: Maybe<Scalars['String']>;
+  abbr_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  abbr_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug?: Maybe<Scalars['String']>;
+  slug_not?: Maybe<Scalars['String']>;
+  slug_contains?: Maybe<Scalars['String']>;
+  slug_not_contains?: Maybe<Scalars['String']>;
+  slug_starts_with?: Maybe<Scalars['String']>;
+  slug_not_starts_with?: Maybe<Scalars['String']>;
+  slug_ends_with?: Maybe<Scalars['String']>;
+  slug_not_ends_with?: Maybe<Scalars['String']>;
+  slug_i?: Maybe<Scalars['String']>;
+  slug_not_i?: Maybe<Scalars['String']>;
+  slug_contains_i?: Maybe<Scalars['String']>;
+  slug_not_contains_i?: Maybe<Scalars['String']>;
+  slug_starts_with_i?: Maybe<Scalars['String']>;
+  slug_not_starts_with_i?: Maybe<Scalars['String']>;
+  slug_ends_with_i?: Maybe<Scalars['String']>;
+  slug_not_ends_with_i?: Maybe<Scalars['String']>;
+  slug_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  slug_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type IleMandatow_PublisherWhereUniqueInput = {
+  id: Scalars['ID'];
+};
+
+export type IleMandatow_SortPartiesBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'fullName_ASC'
+  | 'fullName_DESC'
+  | 'abbr_ASC'
+  | 'abbr_DESC'
+  | 'color_ASC'
+  | 'color_DESC'
+  | 'colorDarkTheme_ASC'
+  | 'colorDarkTheme_DESC'
+  | 'memberParties_ASC'
+  | 'memberParties_DESC'
+  | 'slug_ASC'
+  | 'slug_DESC';
+
+export type IleMandatow_SortPollCompaniesBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'abbr_ASC'
+  | 'abbr_DESC'
+  | 'slug_ASC'
+  | 'slug_DESC';
+
+export type IleMandatow_SortPollMethodsBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'fullName_ASC'
+  | 'fullName_DESC'
+  | 'slug_ASC'
+  | 'slug_DESC';
+
+export type IleMandatow_SortPollResultsBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'result_ASC'
+  | 'result_DESC'
+  | 'party_ASC'
+  | 'party_DESC';
+
+export type IleMandatow_SortPollsBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'source_ASC'
+  | 'source_DESC'
+  | 'publishedBy_ASC'
+  | 'publishedBy_DESC'
+  | 'polledBy_ASC'
+  | 'polledBy_DESC'
+  | 'publishedAt_ASC'
+  | 'publishedAt_DESC'
+  | 'method_ASC'
+  | 'method_DESC'
+  | 'results_ASC'
+  | 'results_DESC'
+  | 'participantsCount_ASC'
+  | 'participantsCount_DESC'
+  | 'participantsMightNotVote_ASC'
+  | 'participantsMightNotVote_DESC'
+  | 'participantsMightVote_ASC'
+  | 'participantsMightVote_DESC'
+  | 'participantsUndecided_ASC'
+  | 'participantsUndecided_DESC'
+  | 'participantsWillNotVote_ASC'
+  | 'participantsWillNotVote_DESC'
+  | 'participantsWillVote_ASC'
+  | 'participantsWillVote_DESC'
+  | 'pollStartedAt_ASC'
+  | 'pollStartedAt_DESC'
+  | 'pollEndedAt_ASC'
+  | 'pollEndedAt_DESC'
+  | 'errorMargin_ASC'
+  | 'errorMargin_DESC'
+  | 'slug_ASC'
+  | 'slug_DESC';
+
+export type IleMandatow_SortPublishersBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'abbr_ASC'
+  | 'abbr_DESC'
+  | 'slug_ASC'
+  | 'slug_DESC';
+
+export type IleMandatow_SortUsersBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'username_ASC'
+  | 'username_DESC'
+  | 'role_ASC'
+  | 'role_DESC';
+
+export type IleMandatow_UnauthenticateUserOutput = {
+  /**
+   * `true` when unauthentication succeeds.
+   * NOTE: unauthentication always succeeds when the request has an invalid or missing authentication token.
+   */
+  success?: Maybe<Scalars['Boolean']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_User = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the User List config, or
+   *  2. As an alias to the field set on 'labelField' in the User List config, or
+   *  3. As an alias to a 'name' field on the User List (if one exists), or
+   *  4. As an alias to the 'id' field on the User List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  username?: Maybe<Scalars['String']>;
+  password_is_set?: Maybe<Scalars['Boolean']>;
+  role?: Maybe<IleMandatow_UserRoleType>;
+};
+
+export type IleMandatow_UserCreateInput = {
+  username?: Maybe<Scalars['String']>;
+  password?: Maybe<Scalars['String']>;
+  role?: Maybe<IleMandatow_UserRoleType>;
+};
+
+export type IleMandatow_UserRoleType =
+  | 'Admin'
+  | 'Editor'
+  | 'Viewer';
+
+export type IleMandatow_UsersCreateInput = {
+  data?: Maybe<IleMandatow_UserCreateInput>;
+};
+
+export type IleMandatow_UsersUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_UserUpdateInput>;
+};
+
+export type IleMandatow_UserUpdateInput = {
+  username?: Maybe<Scalars['String']>;
+  password?: Maybe<Scalars['String']>;
+  role?: Maybe<IleMandatow_UserRoleType>;
+};
+
+export type IleMandatow_UserWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_UserWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_UserWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  username?: Maybe<Scalars['String']>;
+  username_not?: Maybe<Scalars['String']>;
+  username_contains?: Maybe<Scalars['String']>;
+  username_not_contains?: Maybe<Scalars['String']>;
+  username_starts_with?: Maybe<Scalars['String']>;
+  username_not_starts_with?: Maybe<Scalars['String']>;
+  username_ends_with?: Maybe<Scalars['String']>;
+  username_not_ends_with?: Maybe<Scalars['String']>;
+  username_i?: Maybe<Scalars['String']>;
+  username_not_i?: Maybe<Scalars['String']>;
+  username_contains_i?: Maybe<Scalars['String']>;
+  username_not_contains_i?: Maybe<Scalars['String']>;
+  username_starts_with_i?: Maybe<Scalars['String']>;
+  username_not_starts_with_i?: Maybe<Scalars['String']>;
+  username_ends_with_i?: Maybe<Scalars['String']>;
+  username_not_ends_with_i?: Maybe<Scalars['String']>;
+  username_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  username_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  password_is_set?: Maybe<Scalars['Boolean']>;
+  role?: Maybe<IleMandatow_UserRoleType>;
+  role_not?: Maybe<IleMandatow_UserRoleType>;
+  role_in?: Maybe<Array<Maybe<IleMandatow_UserRoleType>>>;
+  role_not_in?: Maybe<Array<Maybe<IleMandatow_UserRoleType>>>;
+};
+
+export type IleMandatow_UserWhereUniqueInput = {
+  id: Scalars['ID'];
 };
 
 export type Internal = {
@@ -1462,851 +2362,6 @@ export type PageInfo = {
   totalCount: Scalars['Int'];
 };
 
-export type PartiesJson = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  memberParties?: Maybe<Array<Maybe<PartiesJsonMemberParties>>>;
-  name?: Maybe<Scalars['String']>;
-  fullName?: Maybe<Scalars['String']>;
-  abbr?: Maybe<Scalars['String']>;
-  color?: Maybe<Scalars['String']>;
-  colorDarkTheme?: Maybe<Scalars['String']>;
-};
-
-export type PartiesJsonConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<PartiesJsonEdge>;
-  nodes: Array<PartiesJson>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<PartiesJsonGroupConnection>;
-};
-
-
-export type PartiesJsonConnectionDistinctArgs = {
-  field: PartiesJsonFieldsEnum;
-};
-
-
-export type PartiesJsonConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: PartiesJsonFieldsEnum;
-};
-
-export type PartiesJsonEdge = {
-  next?: Maybe<PartiesJson>;
-  node: PartiesJson;
-  previous?: Maybe<PartiesJson>;
-};
-
-export type PartiesJsonFieldsEnum =
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'memberParties'
-  | 'memberParties___party___id'
-  | 'memberParties___party___parent___id'
-  | 'memberParties___party___parent___children'
-  | 'memberParties___party___children'
-  | 'memberParties___party___children___id'
-  | 'memberParties___party___children___children'
-  | 'memberParties___party___internal___content'
-  | 'memberParties___party___internal___contentDigest'
-  | 'memberParties___party___internal___description'
-  | 'memberParties___party___internal___fieldOwners'
-  | 'memberParties___party___internal___ignoreType'
-  | 'memberParties___party___internal___mediaType'
-  | 'memberParties___party___internal___owner'
-  | 'memberParties___party___internal___type'
-  | 'memberParties___party___memberParties'
-  | 'memberParties___party___memberParties___joinedAt'
-  | 'memberParties___party___memberParties___leftAt'
-  | 'memberParties___party___name'
-  | 'memberParties___party___fullName'
-  | 'memberParties___party___abbr'
-  | 'memberParties___party___color'
-  | 'memberParties___party___colorDarkTheme'
-  | 'memberParties___joinedAt'
-  | 'memberParties___leftAt'
-  | 'name'
-  | 'fullName'
-  | 'abbr'
-  | 'color'
-  | 'colorDarkTheme';
-
-export type PartiesJsonFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  fullName?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
-  color?: Maybe<StringQueryOperatorInput>;
-  colorDarkTheme?: Maybe<StringQueryOperatorInput>;
-};
-
-export type PartiesJsonFilterListInput = {
-  elemMatch?: Maybe<PartiesJsonFilterInput>;
-};
-
-export type PartiesJsonGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<PartiesJsonEdge>;
-  nodes: Array<PartiesJson>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type PartiesJsonMemberParties = {
-  party?: Maybe<PartiesJson>;
-  joinedAt?: Maybe<Scalars['String']>;
-  leftAt?: Maybe<Scalars['String']>;
-};
-
-export type PartiesJsonMemberPartiesFilterInput = {
-  party?: Maybe<PartiesJsonFilterInput>;
-  joinedAt?: Maybe<StringQueryOperatorInput>;
-  leftAt?: Maybe<StringQueryOperatorInput>;
-};
-
-export type PartiesJsonMemberPartiesFilterListInput = {
-  elemMatch?: Maybe<PartiesJsonMemberPartiesFilterInput>;
-};
-
-export type PartiesJsonSortInput = {
-  fields?: Maybe<Array<Maybe<PartiesJsonFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type PollCompaniesJson = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  name?: Maybe<Scalars['String']>;
-  abbr?: Maybe<Scalars['String']>;
-};
-
-export type PollCompaniesJsonConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<PollCompaniesJsonEdge>;
-  nodes: Array<PollCompaniesJson>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<PollCompaniesJsonGroupConnection>;
-};
-
-
-export type PollCompaniesJsonConnectionDistinctArgs = {
-  field: PollCompaniesJsonFieldsEnum;
-};
-
-
-export type PollCompaniesJsonConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: PollCompaniesJsonFieldsEnum;
-};
-
-export type PollCompaniesJsonEdge = {
-  next?: Maybe<PollCompaniesJson>;
-  node: PollCompaniesJson;
-  previous?: Maybe<PollCompaniesJson>;
-};
-
-export type PollCompaniesJsonFieldsEnum =
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'name'
-  | 'abbr';
-
-export type PollCompaniesJsonFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
-};
-
-export type PollCompaniesJsonFilterListInput = {
-  elemMatch?: Maybe<PollCompaniesJsonFilterInput>;
-};
-
-export type PollCompaniesJsonGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<PollCompaniesJsonEdge>;
-  nodes: Array<PollCompaniesJson>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type PollCompaniesJsonSortInput = {
-  fields?: Maybe<Array<Maybe<PollCompaniesJsonFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type PollsJson = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  method?: Maybe<Scalars['String']>;
-  publishedAt?: Maybe<Scalars['Date']>;
-  summary?: Maybe<Scalars['String']>;
-  polledBy?: Maybe<PollCompaniesJson>;
-  pollEndedAt?: Maybe<Scalars['Date']>;
-  participantsCount?: Maybe<Scalars['Int']>;
-  pollStartedAt?: Maybe<Scalars['Date']>;
-  results?: Maybe<Array<Maybe<PollsJsonResults>>>;
-  source?: Maybe<Scalars['String']>;
-  publishedBy?: Maybe<PublishersJson>;
-  participantsMightVote?: Maybe<Scalars['Float']>;
-  participantsUndecided?: Maybe<Scalars['Float']>;
-  participantsMightNotVote?: Maybe<Scalars['Float']>;
-  participantsWillNotVote?: Maybe<Scalars['Float']>;
-  participantsWillVote?: Maybe<Scalars['Float']>;
-  error?: Maybe<Scalars['Int']>;
-};
-
-
-export type PollsJsonPublishedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type PollsJsonPollEndedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type PollsJsonPollStartedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type PollsJsonConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<PollsJsonEdge>;
-  nodes: Array<PollsJson>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<PollsJsonGroupConnection>;
-};
-
-
-export type PollsJsonConnectionDistinctArgs = {
-  field: PollsJsonFieldsEnum;
-};
-
-
-export type PollsJsonConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: PollsJsonFieldsEnum;
-};
-
-export type PollsJsonEdge = {
-  next?: Maybe<PollsJson>;
-  node: PollsJson;
-  previous?: Maybe<PollsJson>;
-};
-
-export type PollsJsonFieldsEnum =
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'method'
-  | 'publishedAt'
-  | 'summary'
-  | 'polledBy___id'
-  | 'polledBy___parent___id'
-  | 'polledBy___parent___parent___id'
-  | 'polledBy___parent___parent___children'
-  | 'polledBy___parent___children'
-  | 'polledBy___parent___children___id'
-  | 'polledBy___parent___children___children'
-  | 'polledBy___parent___internal___content'
-  | 'polledBy___parent___internal___contentDigest'
-  | 'polledBy___parent___internal___description'
-  | 'polledBy___parent___internal___fieldOwners'
-  | 'polledBy___parent___internal___ignoreType'
-  | 'polledBy___parent___internal___mediaType'
-  | 'polledBy___parent___internal___owner'
-  | 'polledBy___parent___internal___type'
-  | 'polledBy___children'
-  | 'polledBy___children___id'
-  | 'polledBy___children___parent___id'
-  | 'polledBy___children___parent___children'
-  | 'polledBy___children___children'
-  | 'polledBy___children___children___id'
-  | 'polledBy___children___children___children'
-  | 'polledBy___children___internal___content'
-  | 'polledBy___children___internal___contentDigest'
-  | 'polledBy___children___internal___description'
-  | 'polledBy___children___internal___fieldOwners'
-  | 'polledBy___children___internal___ignoreType'
-  | 'polledBy___children___internal___mediaType'
-  | 'polledBy___children___internal___owner'
-  | 'polledBy___children___internal___type'
-  | 'polledBy___internal___content'
-  | 'polledBy___internal___contentDigest'
-  | 'polledBy___internal___description'
-  | 'polledBy___internal___fieldOwners'
-  | 'polledBy___internal___ignoreType'
-  | 'polledBy___internal___mediaType'
-  | 'polledBy___internal___owner'
-  | 'polledBy___internal___type'
-  | 'polledBy___name'
-  | 'polledBy___abbr'
-  | 'pollEndedAt'
-  | 'participantsCount'
-  | 'pollStartedAt'
-  | 'results'
-  | 'results___party___id'
-  | 'results___party___parent___id'
-  | 'results___party___parent___children'
-  | 'results___party___children'
-  | 'results___party___children___id'
-  | 'results___party___children___children'
-  | 'results___party___internal___content'
-  | 'results___party___internal___contentDigest'
-  | 'results___party___internal___description'
-  | 'results___party___internal___fieldOwners'
-  | 'results___party___internal___ignoreType'
-  | 'results___party___internal___mediaType'
-  | 'results___party___internal___owner'
-  | 'results___party___internal___type'
-  | 'results___party___memberParties'
-  | 'results___party___memberParties___joinedAt'
-  | 'results___party___memberParties___leftAt'
-  | 'results___party___name'
-  | 'results___party___fullName'
-  | 'results___party___abbr'
-  | 'results___party___color'
-  | 'results___party___colorDarkTheme'
-  | 'results___result'
-  | 'source'
-  | 'publishedBy___id'
-  | 'publishedBy___parent___id'
-  | 'publishedBy___parent___parent___id'
-  | 'publishedBy___parent___parent___children'
-  | 'publishedBy___parent___children'
-  | 'publishedBy___parent___children___id'
-  | 'publishedBy___parent___children___children'
-  | 'publishedBy___parent___internal___content'
-  | 'publishedBy___parent___internal___contentDigest'
-  | 'publishedBy___parent___internal___description'
-  | 'publishedBy___parent___internal___fieldOwners'
-  | 'publishedBy___parent___internal___ignoreType'
-  | 'publishedBy___parent___internal___mediaType'
-  | 'publishedBy___parent___internal___owner'
-  | 'publishedBy___parent___internal___type'
-  | 'publishedBy___children'
-  | 'publishedBy___children___id'
-  | 'publishedBy___children___parent___id'
-  | 'publishedBy___children___parent___children'
-  | 'publishedBy___children___children'
-  | 'publishedBy___children___children___id'
-  | 'publishedBy___children___children___children'
-  | 'publishedBy___children___internal___content'
-  | 'publishedBy___children___internal___contentDigest'
-  | 'publishedBy___children___internal___description'
-  | 'publishedBy___children___internal___fieldOwners'
-  | 'publishedBy___children___internal___ignoreType'
-  | 'publishedBy___children___internal___mediaType'
-  | 'publishedBy___children___internal___owner'
-  | 'publishedBy___children___internal___type'
-  | 'publishedBy___internal___content'
-  | 'publishedBy___internal___contentDigest'
-  | 'publishedBy___internal___description'
-  | 'publishedBy___internal___fieldOwners'
-  | 'publishedBy___internal___ignoreType'
-  | 'publishedBy___internal___mediaType'
-  | 'publishedBy___internal___owner'
-  | 'publishedBy___internal___type'
-  | 'publishedBy___name'
-  | 'publishedBy___abbr'
-  | 'participantsMightVote'
-  | 'participantsUndecided'
-  | 'participantsMightNotVote'
-  | 'participantsWillNotVote'
-  | 'participantsWillVote'
-  | 'error';
-
-export type PollsJsonFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  method?: Maybe<StringQueryOperatorInput>;
-  publishedAt?: Maybe<DateQueryOperatorInput>;
-  summary?: Maybe<StringQueryOperatorInput>;
-  polledBy?: Maybe<PollCompaniesJsonFilterInput>;
-  pollEndedAt?: Maybe<DateQueryOperatorInput>;
-  participantsCount?: Maybe<IntQueryOperatorInput>;
-  pollStartedAt?: Maybe<DateQueryOperatorInput>;
-  results?: Maybe<PollsJsonResultsFilterListInput>;
-  source?: Maybe<StringQueryOperatorInput>;
-  publishedBy?: Maybe<PublishersJsonFilterInput>;
-  participantsMightVote?: Maybe<FloatQueryOperatorInput>;
-  participantsUndecided?: Maybe<FloatQueryOperatorInput>;
-  participantsMightNotVote?: Maybe<FloatQueryOperatorInput>;
-  participantsWillNotVote?: Maybe<FloatQueryOperatorInput>;
-  participantsWillVote?: Maybe<FloatQueryOperatorInput>;
-  error?: Maybe<IntQueryOperatorInput>;
-};
-
-export type PollsJsonFilterListInput = {
-  elemMatch?: Maybe<PollsJsonFilterInput>;
-};
-
-export type PollsJsonGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<PollsJsonEdge>;
-  nodes: Array<PollsJson>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type PollsJsonResults = {
-  party?: Maybe<PartiesJson>;
-  result?: Maybe<Scalars['Float']>;
-};
-
-export type PollsJsonResultsFilterInput = {
-  party?: Maybe<PartiesJsonFilterInput>;
-  result?: Maybe<FloatQueryOperatorInput>;
-};
-
-export type PollsJsonResultsFilterListInput = {
-  elemMatch?: Maybe<PollsJsonResultsFilterInput>;
-};
-
-export type PollsJsonSortInput = {
-  fields?: Maybe<Array<Maybe<PollsJsonFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type PublishersJson = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  name?: Maybe<Scalars['String']>;
-  abbr?: Maybe<Scalars['String']>;
-};
-
-export type PublishersJsonConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<PublishersJsonEdge>;
-  nodes: Array<PublishersJson>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<PublishersJsonGroupConnection>;
-};
-
-
-export type PublishersJsonConnectionDistinctArgs = {
-  field: PublishersJsonFieldsEnum;
-};
-
-
-export type PublishersJsonConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: PublishersJsonFieldsEnum;
-};
-
-export type PublishersJsonEdge = {
-  next?: Maybe<PublishersJson>;
-  node: PublishersJson;
-  previous?: Maybe<PublishersJson>;
-};
-
-export type PublishersJsonFieldsEnum =
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'name'
-  | 'abbr';
-
-export type PublishersJsonFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
-};
-
-export type PublishersJsonFilterListInput = {
-  elemMatch?: Maybe<PublishersJsonFilterInput>;
-};
-
-export type PublishersJsonGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<PublishersJsonEdge>;
-  nodes: Array<PublishersJson>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type PublishersJsonSortInput = {
-  fields?: Maybe<Array<Maybe<PublishersJsonFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
 export type Query = {
   file?: Maybe<File>;
   allFile: FileConnection;
@@ -2316,20 +2371,13 @@ export type Query = {
   allSite: SiteConnection;
   sitePage?: Maybe<SitePage>;
   allSitePage: SitePageConnection;
-  publishersJson?: Maybe<PublishersJson>;
-  allPublishersJson: PublishersJsonConnection;
-  pollsJson?: Maybe<PollsJson>;
-  allPollsJson: PollsJsonConnection;
-  pollCompaniesJson?: Maybe<PollCompaniesJson>;
-  allPollCompaniesJson: PollCompaniesJsonConnection;
-  partiesJson?: Maybe<PartiesJson>;
-  allPartiesJson: PartiesJsonConnection;
-  contentJson?: Maybe<ContentJson>;
-  allContentJson: ContentJsonConnection;
+  graphQlSource?: Maybe<GraphQlSource>;
+  allGraphQlSource: GraphQlSourceConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
   allSitePlugin: SitePluginConnection;
+  ilemandatow: IleMandatow;
 };
 
 
@@ -2365,19 +2413,6 @@ export type QueryFileArgs = {
   ctime?: Maybe<DateQueryOperatorInput>;
   birthtime?: Maybe<DateQueryOperatorInput>;
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
-  blksize?: Maybe<IntQueryOperatorInput>;
-  blocks?: Maybe<IntQueryOperatorInput>;
-  publicURL?: Maybe<StringQueryOperatorInput>;
-  childrenPublishersJson?: Maybe<PublishersJsonFilterListInput>;
-  childPublishersJson?: Maybe<PublishersJsonFilterInput>;
-  childrenPollsJson?: Maybe<PollsJsonFilterListInput>;
-  childPollsJson?: Maybe<PollsJsonFilterInput>;
-  childrenPollCompaniesJson?: Maybe<PollCompaniesJsonFilterListInput>;
-  childPollCompaniesJson?: Maybe<PollCompaniesJsonFilterInput>;
-  childrenPartiesJson?: Maybe<PartiesJsonFilterListInput>;
-  childPartiesJson?: Maybe<PartiesJsonFilterInput>;
-  childrenContentJson?: Maybe<ContentJsonFilterListInput>;
-  childContentJson?: Maybe<ContentJsonFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -2425,8 +2460,6 @@ export type QueryDirectoryArgs = {
   ctime?: Maybe<DateQueryOperatorInput>;
   birthtime?: Maybe<DateQueryOperatorInput>;
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
-  blksize?: Maybe<IntQueryOperatorInput>;
-  blocks?: Maybe<IntQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -2488,112 +2521,19 @@ export type QueryAllSitePageArgs = {
 };
 
 
-export type QueryPublishersJsonArgs = {
+export type QueryGraphQlSourceArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
+  typeName?: Maybe<StringQueryOperatorInput>;
+  fieldName?: Maybe<StringQueryOperatorInput>;
 };
 
 
-export type QueryAllPublishersJsonArgs = {
-  filter?: Maybe<PublishersJsonFilterInput>;
-  sort?: Maybe<PublishersJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryPollsJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  method?: Maybe<StringQueryOperatorInput>;
-  publishedAt?: Maybe<DateQueryOperatorInput>;
-  summary?: Maybe<StringQueryOperatorInput>;
-  polledBy?: Maybe<PollCompaniesJsonFilterInput>;
-  pollEndedAt?: Maybe<DateQueryOperatorInput>;
-  participantsCount?: Maybe<IntQueryOperatorInput>;
-  pollStartedAt?: Maybe<DateQueryOperatorInput>;
-  results?: Maybe<PollsJsonResultsFilterListInput>;
-  source?: Maybe<StringQueryOperatorInput>;
-  publishedBy?: Maybe<PublishersJsonFilterInput>;
-  participantsMightVote?: Maybe<FloatQueryOperatorInput>;
-  participantsUndecided?: Maybe<FloatQueryOperatorInput>;
-  participantsMightNotVote?: Maybe<FloatQueryOperatorInput>;
-  participantsWillNotVote?: Maybe<FloatQueryOperatorInput>;
-  participantsWillVote?: Maybe<FloatQueryOperatorInput>;
-  error?: Maybe<IntQueryOperatorInput>;
-};
-
-
-export type QueryAllPollsJsonArgs = {
-  filter?: Maybe<PollsJsonFilterInput>;
-  sort?: Maybe<PollsJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryPollCompaniesJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllPollCompaniesJsonArgs = {
-  filter?: Maybe<PollCompaniesJsonFilterInput>;
-  sort?: Maybe<PollCompaniesJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryPartiesJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  memberParties?: Maybe<PartiesJsonMemberPartiesFilterListInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  fullName?: Maybe<StringQueryOperatorInput>;
-  abbr?: Maybe<StringQueryOperatorInput>;
-  color?: Maybe<StringQueryOperatorInput>;
-  colorDarkTheme?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllPartiesJsonArgs = {
-  filter?: Maybe<PartiesJsonFilterInput>;
-  sort?: Maybe<PartiesJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  version?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
-  license?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllContentJsonArgs = {
-  filter?: Maybe<ContentJsonFilterInput>;
-  sort?: Maybe<ContentJsonSortInput>;
+export type QueryAllGraphQlSourceArgs = {
+  filter?: Maybe<GraphQlSourceFilterInput>;
+  sort?: Maybe<GraphQlSourceSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -3348,14 +3288,18 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
   | 'pluginCreator___pluginOptions___allExtensions'
-  | 'pluginCreator___pluginOptions___fileName'
-  | 'pluginCreator___pluginOptions___documentPaths'
   | 'pluginCreator___pluginOptions___output'
   | 'pluginCreator___pluginOptions___createLinkInHead'
-  | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___name'
+  | 'pluginCreator___pluginOptions___typeName'
+  | 'pluginCreator___pluginOptions___fieldName'
+  | 'pluginCreator___pluginOptions___url'
+  | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___documentPaths'
   | 'pluginCreator___pluginOptions___headers____xxxwoffxwoff2x'
+  | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___pluginOptions___host'
+  | 'pluginCreator___pluginOptions___sitemap'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3546,16 +3490,20 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
   | 'pluginOptions___allExtensions'
-  | 'pluginOptions___fileName'
-  | 'pluginOptions___documentPaths'
   | 'pluginOptions___output'
   | 'pluginOptions___createLinkInHead'
-  | 'pluginOptions___env___development___policy'
-  | 'pluginOptions___env___production___policy'
-  | 'pluginOptions___path'
-  | 'pluginOptions___name'
+  | 'pluginOptions___typeName'
+  | 'pluginOptions___fieldName'
+  | 'pluginOptions___url'
+  | 'pluginOptions___fileName'
+  | 'pluginOptions___documentPaths'
   | 'pluginOptions___headers____xxxwoffxwoff2x'
+  | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
+  | 'pluginOptions___host'
+  | 'pluginOptions___sitemap'
+  | 'pluginOptions___env___disallow___policy'
+  | 'pluginOptions___env___allow___policy'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3674,84 +3622,92 @@ export type SitePluginPluginOptions = {
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
-  fileName?: Maybe<Scalars['String']>;
-  documentPaths?: Maybe<Array<Maybe<Scalars['String']>>>;
   output?: Maybe<Scalars['String']>;
   createLinkInHead?: Maybe<Scalars['Boolean']>;
-  env?: Maybe<SitePluginPluginOptionsEnv>;
-  path?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
+  typeName?: Maybe<Scalars['String']>;
+  fieldName?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  fileName?: Maybe<Scalars['String']>;
+  documentPaths?: Maybe<Array<Maybe<Scalars['String']>>>;
   headers?: Maybe<SitePluginPluginOptionsHeaders>;
+  path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
+  host?: Maybe<Scalars['String']>;
+  sitemap?: Maybe<Scalars['String']>;
+  env?: Maybe<SitePluginPluginOptionsEnv>;
 };
 
 export type SitePluginPluginOptionsEnv = {
-  development?: Maybe<SitePluginPluginOptionsEnvDevelopment>;
-  production?: Maybe<SitePluginPluginOptionsEnvProduction>;
+  disallow?: Maybe<SitePluginPluginOptionsEnvDisallow>;
+  allow?: Maybe<SitePluginPluginOptionsEnvAllow>;
 };
 
-export type SitePluginPluginOptionsEnvDevelopment = {
-  policy?: Maybe<Array<Maybe<SitePluginPluginOptionsEnvDevelopmentPolicy>>>;
+export type SitePluginPluginOptionsEnvAllow = {
+  policy?: Maybe<Array<Maybe<SitePluginPluginOptionsEnvAllowPolicy>>>;
 };
 
-export type SitePluginPluginOptionsEnvDevelopmentFilterInput = {
-  policy?: Maybe<SitePluginPluginOptionsEnvDevelopmentPolicyFilterListInput>;
+export type SitePluginPluginOptionsEnvAllowFilterInput = {
+  policy?: Maybe<SitePluginPluginOptionsEnvAllowPolicyFilterListInput>;
 };
 
-export type SitePluginPluginOptionsEnvDevelopmentPolicy = {
-  userAgent?: Maybe<Scalars['String']>;
-  disallow?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type SitePluginPluginOptionsEnvDevelopmentPolicyFilterInput = {
-  userAgent?: Maybe<StringQueryOperatorInput>;
-  disallow?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsEnvDevelopmentPolicyFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsEnvDevelopmentPolicyFilterInput>;
-};
-
-export type SitePluginPluginOptionsEnvFilterInput = {
-  development?: Maybe<SitePluginPluginOptionsEnvDevelopmentFilterInput>;
-  production?: Maybe<SitePluginPluginOptionsEnvProductionFilterInput>;
-};
-
-export type SitePluginPluginOptionsEnvProduction = {
-  policy?: Maybe<Array<Maybe<SitePluginPluginOptionsEnvProductionPolicy>>>;
-};
-
-export type SitePluginPluginOptionsEnvProductionFilterInput = {
-  policy?: Maybe<SitePluginPluginOptionsEnvProductionPolicyFilterListInput>;
-};
-
-export type SitePluginPluginOptionsEnvProductionPolicy = {
+export type SitePluginPluginOptionsEnvAllowPolicy = {
   userAgent?: Maybe<Scalars['String']>;
   allow?: Maybe<Scalars['String']>;
 };
 
-export type SitePluginPluginOptionsEnvProductionPolicyFilterInput = {
+export type SitePluginPluginOptionsEnvAllowPolicyFilterInput = {
   userAgent?: Maybe<StringQueryOperatorInput>;
   allow?: Maybe<StringQueryOperatorInput>;
 };
 
-export type SitePluginPluginOptionsEnvProductionPolicyFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsEnvProductionPolicyFilterInput>;
+export type SitePluginPluginOptionsEnvAllowPolicyFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsEnvAllowPolicyFilterInput>;
+};
+
+export type SitePluginPluginOptionsEnvDisallow = {
+  policy?: Maybe<Array<Maybe<SitePluginPluginOptionsEnvDisallowPolicy>>>;
+};
+
+export type SitePluginPluginOptionsEnvDisallowFilterInput = {
+  policy?: Maybe<SitePluginPluginOptionsEnvDisallowPolicyFilterListInput>;
+};
+
+export type SitePluginPluginOptionsEnvDisallowPolicy = {
+  userAgent?: Maybe<Scalars['String']>;
+  disallow?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePluginPluginOptionsEnvDisallowPolicyFilterInput = {
+  userAgent?: Maybe<StringQueryOperatorInput>;
+  disallow?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsEnvDisallowPolicyFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsEnvDisallowPolicyFilterInput>;
+};
+
+export type SitePluginPluginOptionsEnvFilterInput = {
+  disallow?: Maybe<SitePluginPluginOptionsEnvDisallowFilterInput>;
+  allow?: Maybe<SitePluginPluginOptionsEnvAllowFilterInput>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
-  fileName?: Maybe<StringQueryOperatorInput>;
-  documentPaths?: Maybe<StringQueryOperatorInput>;
   output?: Maybe<StringQueryOperatorInput>;
   createLinkInHead?: Maybe<BooleanQueryOperatorInput>;
-  env?: Maybe<SitePluginPluginOptionsEnvFilterInput>;
-  path?: Maybe<StringQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
+  typeName?: Maybe<StringQueryOperatorInput>;
+  fieldName?: Maybe<StringQueryOperatorInput>;
+  url?: Maybe<StringQueryOperatorInput>;
+  fileName?: Maybe<StringQueryOperatorInput>;
+  documentPaths?: Maybe<StringQueryOperatorInput>;
   headers?: Maybe<SitePluginPluginOptionsHeadersFilterInput>;
+  path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
+  sitemap?: Maybe<StringQueryOperatorInput>;
+  env?: Maybe<SitePluginPluginOptionsEnvFilterInput>;
 };
 
 export type SitePluginPluginOptionsHeaders = {
@@ -3801,21 +3757,23 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type PartyInfoFragment = Pick<PartiesJson, 'id' | 'name' | 'abbr' | 'color' | 'colorDarkTheme'>;
+export type PartyFragment = Pick<IleMandatow_Party, 'id' | 'name' | 'abbr' | 'color' | 'colorDarkTheme'>;
 
-export type PollCompanyInfoFragment = Pick<PollCompaniesJson, 'id' | 'name' | 'abbr'>;
-
-export type PollInfoFragment = (
-  Pick<PollsJson, 'id' | 'publishedAt' | 'source' | 'pollEndedAt' | 'pollStartedAt' | 'participantsCount' | 'method'>
-  & { publishedBy?: Maybe<PublisherInfoFragment>, polledBy?: Maybe<PollCompanyInfoFragment>, results?: Maybe<Array<Maybe<PollResultFragment>>> }
+export type PollFragment = (
+  Pick<IleMandatow_Poll, 'id' | 'publishedAt' | 'source' | 'pollEndedAt' | 'pollStartedAt' | 'participantsCount'>
+  & { publishedBy: Array<PublisherFragment>, polledBy: Array<PollCompanyFragment>, results: Array<PollResultFragment>, method?: Maybe<PollMethodFragment> }
 );
+
+export type PollCompanyFragment = Pick<IleMandatow_PollCompany, 'id' | 'name' | 'abbr'>;
+
+export type PollMethodFragment = Pick<IleMandatow_PollMethod, 'id' | 'name'>;
 
 export type PollResultFragment = (
-  Pick<PollsJsonResults, 'result'>
-  & { party?: Maybe<PartyInfoFragment> }
+  Pick<IleMandatow_PollResult, 'result'>
+  & { party?: Maybe<PartyFragment> }
 );
 
-export type PublisherInfoFragment = Pick<PublishersJson, 'id' | 'name' | 'abbr'>;
+export type PublisherFragment = Pick<IleMandatow_Publisher, 'id' | 'name' | 'abbr'>;
 
 export type GetSiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3825,11 +3783,11 @@ export type GetSiteMetaDataQuery = { allSite: { nodes: Array<{ siteMetadata?: Ma
 export type GetAllPollsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllPollsQuery = { allPollsJson: { nodes: Array<PollInfoFragment> } };
+export type GetAllPollsQuery = { ilemandatow: { allPolls?: Maybe<Array<Maybe<PollFragment>>> } };
 
-export type GetPollInfoQueryVariables = Exact<{
-  id: Scalars['String'];
+export type GetPollQueryVariables = Exact<{
+  id: Scalars['ID'];
 }>;
 
 
-export type GetPollInfoQuery = { allPollsJson: { nodes: Array<PollInfoFragment> } };
+export type GetPollQuery = { ilemandatow: { Poll?: Maybe<PollFragment> } };

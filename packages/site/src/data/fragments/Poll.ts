@@ -1,14 +1,14 @@
 import { graphql } from "gatsby";
 
-export const PollInfo = graphql`
-  fragment PollInfo on PollsJson {
+export const Poll = graphql`
+  fragment Poll on IleMandatow_Poll {
     id
     publishedAt
     publishedBy {
-      ...PublisherInfo
+      ...Publisher
     }
     polledBy {
-      ...PollCompanyInfo
+      ...PollCompany
     }
     source
     results {
@@ -17,6 +17,8 @@ export const PollInfo = graphql`
     pollEndedAt
     pollStartedAt
     participantsCount
-    method
+    method {
+      ...PollMethod
+    }
   }
 `;

@@ -1,5 +1,5 @@
-import { PartyInfoFragment } from "../../types";
+import { PartyFragment } from "../../types";
 
-export const getPartyColor = (theme: string, party?: PartyInfoFragment) => {
+export const getPartyColor = (theme: string, party?: PartyFragment) => {
   return (theme === "dark" ? party?.colorDarkTheme : party?.color) ?? "black";
 };

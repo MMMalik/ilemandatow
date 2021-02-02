@@ -32,6 +32,12 @@ jobs:
         with:
           node-version: "12"
 
-      - run: yarn install
-      - run: yarn build
-      - run: yarn test
+      - name: Install dependencies
+        run: yarn install
+
+      # Skips site build as Gatsby build requires a running server
+      - name: Build packages
+        run: yarn build:api && yarn build:ui && yarn build:seats
+
+      - name: Run tests
+        run: yarn test

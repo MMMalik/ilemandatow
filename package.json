@@ -8,7 +8,10 @@
   },
   "scripts": {
     "build:api:keystone": "cd packages/api && yarn build:keystone",
-    "build": "lerna run build --stream",
+    "build:api": "cd packages/api && yarn build",
+    "build:seats": "cd packages/seats && yarn build",
+    "build:site": "cd packages/site && yarn build",
+    "build:ui": "cd packages/ui && yarn build",
     "check-types": "lerna run check-types --stream",
     "clean": "lerna run clean --stream",
     "db:backup:cleanup": "cd packages/api && yarn db:backup:cleanup",

@@ -11,6 +11,31 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-typescript",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: meta.host,
+        sitemap: meta.siteMap,
+        resolveEnv: () => meta.robots,
+        env: {
+          disallow: {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+          },
+          allow: {
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "IleMandatow",
+        fieldName: "ilemandatow",
+        url: meta.apiUrl,
+      },
+    },
     {
       resolve: "gatsby-plugin-graphql-codegen",
       options: {
@@ -18,31 +43,6 @@ module.exports = {
         documentPaths: [`./src/**/*.{ts,tsx}`],
       },
     },
-    "gatsby-plugin-sitemap",
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: meta.host,
-        sitemap: meta.siteMap,
-        resolveEnv: () => meta.activeEnv,
-        env: {
-          development: {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
-          },
-          production: {
-            policy: [{ userAgent: "*", allow: "/" }],
-          },
-        },
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: "../content",
-        name: "content",
-      },
-    },
-    "gatsby-transformer-json",
     {
       resolve: "gatsby-plugin-netlify",
       options: {
