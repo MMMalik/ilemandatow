@@ -6,6 +6,10 @@ export const isProd = process.env.NODE_ENV === "production";
  * Setups app-wide environment variables.
  */
 export const setupEnv = () => {
+  if (isProd && !process.env.API_ENV_PATH) {
+    throw new Error("Provide API_ENV_PATH in production mode");
+  }
+
   const envConfig = isProd ? { path: process.env.API_ENV_PATH } : undefined;
   require("dotenv").config(envConfig);
 };

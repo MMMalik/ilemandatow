@@ -1,0 +1,47 @@
+{
+  "participantsMightVote": 24,
+  "method": "CAWI",
+  "publishedAt": "2021-01-28",
+  "participantsUndecided": 12,
+  "participantsMightNotVote": 8,
+  "summary": "wPolityce, SC",
+  "participantsWillNotVote": 11,
+  "polledBy___NODE": "dFFJP7Auq2fZhxV4bk9S3",
+  "pollEndedAt": "2021-01-25",
+  "participantsCount": 1066,
+  "pollStartedAt": "2021-01-22",
+  "results": [
+    {
+      "party___NODE": "Mfd0x7kZWp-qMWL_Qjm66",
+      "result": 31
+    },
+    {
+      "party___NODE": "U4oQqW7Kd027-7B6GB1q1",
+      "result": 26
+    },
+    {
+      "party___NODE": "KSmBIP6ZDoRuco1stc0XO",
+      "result": 12
+    },
+    {
+      "party___NODE": "DyawCPELgfgeJobDSIwL4",
+      "result": 10
+    },
+    {
+      "party___NODE": "78QC5o-Z_wejx3EiRw5Tf",
+      "result": 5
+    },
+    {
+      "party___NODE": "cdPZEVds_Q-LJv_P2o5VI",
+      "result": 4
+    },
+    {
+      "party___NODE": "-kIwWx8uAQmiMyFjtWpE2",
+      "result": 12
+    }
+  ],
+  "source": "https://wpolityce.pl/polityka/536683-partia-holowni-wyraznie-wyprzedza-platforme-sprawdz-wyniki",
+  "id": "dGn0MBAEuYktAiMj9nCJz",
+  "publishedBy___NODE": "_sVxVjb5xl0UtS838hcTs",
+  "participantsWillVote": 45
+}
