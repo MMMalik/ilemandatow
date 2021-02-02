@@ -10,12 +10,12 @@
     "build": "yarn cleanup && tsc",
     "check-types": "tsc --noEmit",
     "cleanup": "rimraf dist && rimraf build",
-    "db:backup:cleanup": "node build/scripts/db/custom/backup-cleanup.js",
+    "db:backup:cleanup": "node build/scripts/db/custom/backupCleanup.js",
     "db:backup": "node build/scripts/db/custom/backup.js",
     "db:migrate:down": "yarn knex migrate:down",
     "db:migrate:up": "yarn knex migrate:up",
     "db:restore": "node build/scripts/db/custom/restore.js",
-    "db:setup": "node build/scripts/db/custom/setup-tables.js && keystone create-tables && knex seed:run",
+    "db:setup": "node build/scripts/db/custom/setupTables.js",
     "develop": "yarn build && NODE_ENV=development keystone"
   },
   "dependencies": {

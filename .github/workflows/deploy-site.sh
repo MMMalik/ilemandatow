@@ -5,8 +5,8 @@ printf "\n%s\n\n" "Install dependencies"
 yarn install
 
 # Build project
-printf "\n%s\n\n" "Build project"
-yarn build
+printf "\n%s\n\n" "Build project and its dependencies"
+yarn build:seats && yarn build:ui && build:site
 
 # Deploy static site
 # Requires variables: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID
