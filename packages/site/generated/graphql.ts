@@ -2478,6 +2478,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2583,6 +2585,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2787,6 +2791,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___repoUrl'
   | 'siteMetadata___appVersion'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2879,6 +2885,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3290,6 +3298,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___output'
   | 'pluginCreator___pluginOptions___createLinkInHead'
+  | 'pluginCreator___pluginOptions___host'
+  | 'pluginCreator___pluginOptions___sitemap'
   | 'pluginCreator___pluginOptions___typeName'
   | 'pluginCreator___pluginOptions___fieldName'
   | 'pluginCreator___pluginOptions___url'
@@ -3298,8 +3308,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___headers____xxxwoffxwoff2x'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
-  | 'pluginCreator___pluginOptions___host'
-  | 'pluginCreator___pluginOptions___sitemap'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3492,6 +3500,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___output'
   | 'pluginOptions___createLinkInHead'
+  | 'pluginOptions___host'
+  | 'pluginOptions___sitemap'
+  | 'pluginOptions___env___disallow___policy'
+  | 'pluginOptions___env___allow___policy'
   | 'pluginOptions___typeName'
   | 'pluginOptions___fieldName'
   | 'pluginOptions___url'
@@ -3500,10 +3512,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___headers____xxxwoffxwoff2x'
   | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
-  | 'pluginOptions___host'
-  | 'pluginOptions___sitemap'
-  | 'pluginOptions___env___disallow___policy'
-  | 'pluginOptions___env___allow___policy'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3624,6 +3632,9 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   output?: Maybe<Scalars['String']>;
   createLinkInHead?: Maybe<Scalars['Boolean']>;
+  host?: Maybe<Scalars['String']>;
+  sitemap?: Maybe<Scalars['String']>;
+  env?: Maybe<SitePluginPluginOptionsEnv>;
   typeName?: Maybe<Scalars['String']>;
   fieldName?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
@@ -3632,9 +3643,6 @@ export type SitePluginPluginOptions = {
   headers?: Maybe<SitePluginPluginOptionsHeaders>;
   path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
-  host?: Maybe<Scalars['String']>;
-  sitemap?: Maybe<Scalars['String']>;
-  env?: Maybe<SitePluginPluginOptionsEnv>;
 };
 
 export type SitePluginPluginOptionsEnv = {
@@ -3697,6 +3705,9 @@ export type SitePluginPluginOptionsFilterInput = {
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   output?: Maybe<StringQueryOperatorInput>;
   createLinkInHead?: Maybe<BooleanQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
+  sitemap?: Maybe<StringQueryOperatorInput>;
+  env?: Maybe<SitePluginPluginOptionsEnvFilterInput>;
   typeName?: Maybe<StringQueryOperatorInput>;
   fieldName?: Maybe<StringQueryOperatorInput>;
   url?: Maybe<StringQueryOperatorInput>;
@@ -3705,9 +3716,6 @@ export type SitePluginPluginOptionsFilterInput = {
   headers?: Maybe<SitePluginPluginOptionsHeadersFilterInput>;
   path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
-  sitemap?: Maybe<StringQueryOperatorInput>;
-  env?: Maybe<SitePluginPluginOptionsEnvFilterInput>;
 };
 
 export type SitePluginPluginOptionsHeaders = {
