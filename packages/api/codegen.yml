@@ -1,0 +1,8 @@
+overwrite: true
+schema: "http://localhost:3000/admin/api"
+generates:
+  generated/introspection.json:
+    plugins:
+      - introspection
+    config:
+      minify: true

@@ -1,18 +1,18 @@
 {
   "name": "@ilemandatow/api",
-  "version": "0.0.1-alpha.13",
+  "version": "0.0.1-alpha.14",
   "description": "API of ilemandatow",
   "author": "Michał Malik",
   "license": "MIT",
   "keywords": [],
   "scripts": {
+    "build:codegen": "graphql-codegen",
     "build:keystone": "yarn keystone build",
     "build": "yarn cleanup && tsc",
     "check-types": "tsc --noEmit",
     "cleanup": "rimraf dist && rimraf build",
     "db:backup:cleanup": "node build/scripts/db/custom/backupCleanup.js",
     "db:backup": "node build/scripts/db/custom/backup.js",
-    "db:cleanup": "node build/scripts/db/custom/cleanup.js",
     "db:migrate:down": "yarn knex migrate:down",
     "db:migrate:up": "yarn knex migrate:up",
     "db:restore": "node build/scripts/db/custom/restore.js",
@@ -34,7 +34,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "graphql": "^15.5.0",
     "knex": "^0.21.16",
     "minimist": "^1.2.5",
     "nanoid": "^3.1.20",
@@ -43,5 +42,9 @@
     "react-dom": "^16.4.0",
     "shelljs": "^0.8.4",
     "slugify": "^1.4.6"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.1",
+    "@graphql-codegen/introspection": "^1.18.1"
   }
 }

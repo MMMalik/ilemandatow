@@ -1,5 +1,7 @@
 const pkg = require("./package.json");
 const meta = require("./gatsby/envInfo");
+const { buildClientSchema } = require("graphql");
+const introspection = require("@ilemandatow/api/generated/introspection.json");
 
 module.exports = {
   siteMetadata: {
@@ -34,6 +36,9 @@ module.exports = {
         typeName: "IleMandatow",
         fieldName: "ilemandatow",
         url: meta.apiUrl,
+        createSchema: async () => {
+          return buildClientSchema(introspection);
+        },
       },
     },
     {
