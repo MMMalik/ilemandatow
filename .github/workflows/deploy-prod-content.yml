@@ -28,5 +28,5 @@ jobs:
           NETLIFY_SITE_ID="${{ secrets.NETLIFY_SITE_ID }}" \
           ILEMANDATOW_ALLOW_ROBOTS="${{ secrets.ILEMANDATOW_ALLOW_ROBOTS }}" \
           ILEMANDATOW_API_URL="${{ secrets.ILEMANDATOW_API_URL }}" \
-          ILEMANDATOW_SITE_URL="${{ secrets.ILEMANDATOW_SITE_URL }}" \
+          ILEMANDATOW_SITE_URL="${{ secrets.ILEMANDATOW_SITE_URL }}" \          
           bash ./.github/workflows/deploy-site.sh
