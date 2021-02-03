@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.25 (2021-02-03)
+
+
+### Bug Fixes
+
+* **deploy:** remove trailing whitespace ([f2b2d8d](https://github.com/MMMalik/ilemandatow/commit/f2b2d8d0b3fb143a945cb8cbb6a3e671cbb856be))
+
+
+
+
+
 ## 0.0.1-alpha.24 (2021-02-03)
 
 
