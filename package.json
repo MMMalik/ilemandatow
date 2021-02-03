@@ -30,7 +30,7 @@
     "develop:ui:sb": "cd packages/ui && yarn storybook",
     "develop:ui": "cd packages/ui && yarn develop",
     "lint": "eslint \"packages/**/src/**/*.{tsx,ts,js}\"",
-    "postinstall": "husky install",
+    "postinstall": "node postinstall.js",
     "test": "yarn check-types && yarn jest && yarn lint"
   },
   "devDependencies": {
@@ -62,6 +62,7 @@
     "netlify-cli": "^2.70.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
+    "shelljs": "^0.8.4",
     "typescript": "^4.1.2"
   }
 }
