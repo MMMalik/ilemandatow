@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.14 (2021-02-03)
+
+
+### Features
+
+* **db-scripts:** create and upload db scripts ([1f4f64b](https://github.com/MMMalik/ilemandatow/commit/1f4f64be84cba0bd940776c42406dc31216bed5d))
+
+
+
+
+
 ## 0.0.1-alpha.13 (2021-02-03)
 
 
