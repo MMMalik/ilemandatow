@@ -33,7 +33,7 @@ printf "\n%s\n\n" "Create scripts directory"
 mkdir ~/.db-scripts
 for i in db:backup db:backup:cleanup db:restore db:setup db:seed; do
     printf "\n%s\n\n" "Create $i script wrapper"
-    printf "cd public_nodejs && NODE_ENV=production API_ENV_PATH=$DEST_PATH/.env yarn $i" >~/.db-scripts/$i.sh
+    printf "cd $DEST_PATH/public_nodejs && NODE_ENV=production API_ENV_PATH=$DEST_PATH/.env yarn $i" >~/.db-scripts/$i.sh
 done
 
 # Creates .env file
@@ -65,3 +65,6 @@ rsync -zah ~/.db-scripts/ $MD_SSH_USER@$MD_SSH_HOST:$DEST_PATH
 # Restarts server
 printf "\n%s\n\n" "Restart server"
 ssh $MD_SSH_USER@$MD_SSH_HOST "devil www restart $MD_DOMAIN"
+
+# Hits server in order to wake it up
+curl -s $ILEMANDATOW_SITE_URL >/dev/null
