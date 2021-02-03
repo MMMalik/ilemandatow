@@ -43,7 +43,7 @@ if (!latest) {
 const src = `${srcDir}/${latest}`;
 
 // Runs pg_dump command
-exec(`pg_restore -c -d ${process.env.PGDATABASE} ${src}`);
+exec(`pg_restore -n public -c -d ${process.env.PGDATABASE} ${src}`);
 
 // Prunes user-related data
 if (pruneUsers) {
