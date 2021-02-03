@@ -13,15 +13,14 @@ import {
 import { config } from "../config";
 import { sessionStore } from "./sessionStore";
 
-const pkg = require("../../package.json");
-
 export const initKeystone = () => {
+  const { version } = config.app;
   const { drop, ...db } = config.db;
   const { secret: cookieSecret, ...cookie } = config.cookie;
 
   const keystone = new Keystone({
     appVersion: {
-      version: pkg.version,
+      version,
       addVersionToHttpHeaders: true,
     },
     adapter: new KnexAdapter({

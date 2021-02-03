@@ -1,0 +1,32 @@
+#
+# Workflow responsible for deploying content change to preprod environment.
+# Triggered by events sent from CMS.
+#
+
+name: Deploy preprod content
+
+on:
+  repository_dispatch:
+    types: [deploy-preprod-content]
+
+jobs:
+  deploy-prod-content:
+    name: Deploy preprod content
+    environment:
+      name: preprod
+      url: https://preprod.ilemandatow.pl
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tag
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.version }}
+
+      - name: Deploy site to preprod
+        run: |
+          NETLIFY_AUTH_TOKEN="${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+          NETLIFY_SITE_ID="${{ secrets.NETLIFY_SITE_ID }}" \
+          ILEMANDATOW_ALLOW_ROBOTS="${{ secrets.ILEMANDATOW_ALLOW_ROBOTS }}" \
+          ILEMANDATOW_API_URL="${{ secrets.ILEMANDATOW_API_URL }}" \
+          ILEMANDATOW_SITE_URL="${{ secrets.ILEMANDATOW_SITE_URL }}" \
+          bash ./.github/workflows/deploy-site.sh

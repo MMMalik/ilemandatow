@@ -7,7 +7,7 @@ import {
   Slug,
 } from "@keystonejs/fields";
 import { canEdit } from "../access";
-import { idField } from "../common";
+import { dispatchChangeEvt, idField } from "../common";
 import slugResolveInput from "./slugResolveInput";
 
 export const Poll = {
@@ -41,5 +41,10 @@ export const Poll = {
     create: canEdit,
     update: canEdit,
     delete: canEdit,
+  },
+  hooks: {
+    afterChange: async () => {
+      await dispatchChangeEvt();
+    },
   },
 };
