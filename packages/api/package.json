@@ -13,7 +13,6 @@
     "cleanup": "rimraf dist && rimraf build",
     "db:backup:cleanup": "node build/scripts/db/custom/backupCleanup.js",
     "db:backup": "node build/scripts/db/custom/backup.js",
-    "db:cleanup": "node build/scripts/db/custom/cleanup.js",
     "db:migrate:down": "yarn knex migrate:down",
     "db:migrate:up": "yarn knex migrate:up",
     "db:restore": "node build/scripts/db/custom/restore.js",
