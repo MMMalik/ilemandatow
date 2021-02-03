@@ -1,15 +1,15 @@
 {
   "name": "@ilemandatow/ui",
-  "version": "0.0.1-alpha.16",
+  "version": "0.0.1-alpha.17",
   "description": "UI components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Michał Malik",
   "license": "MIT",
   "scripts": {
-    "build": "yarn cleanup && tsc",
+    "build": "yarn clean && tsc",
     "check-types": "tsc --noEmit",
-    "cleanup": "rimraf dist",
+    "clean": "rimraf dist",
     "develop": "yarn cleanup && tsc --watch",
     "storybook": "start-storybook -p 9009"
   },

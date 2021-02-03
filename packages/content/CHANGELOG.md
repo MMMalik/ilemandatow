@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.17 (2021-02-03)
+
+
+### Bug Fixes
+
+* **deploy:** copy db:restore script ([e68ede1](https://github.com/MMMalik/ilemandatow/commit/e68ede13b5af4bd499f0a662eb7bf47bcab5ef79))
+
+
+
+
+
 ## 0.0.1-alpha.16 (2021-02-03)
 
 

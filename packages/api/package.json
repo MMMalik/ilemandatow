@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/api",
-  "version": "0.0.1-alpha.16",
+  "version": "0.0.1-alpha.17",
   "description": "API of ilemandatow",
   "author": "Michał Malik",
   "license": "MIT",
@@ -8,9 +8,9 @@
   "scripts": {
     "build:codegen": "graphql-codegen",
     "build:keystone": "yarn keystone build",
-    "build": "yarn cleanup && tsc",
+    "build": "yarn clean && tsc",
     "check-types": "tsc --noEmit",
-    "cleanup": "rimraf dist && rimraf build",
+    "clean": "rimraf dist && rimraf build",
     "db:backup:cleanup": "node build/scripts/db/custom/backupCleanup.js",
     "db:backup": "node build/scripts/db/custom/backup.js",
     "db:migrate:down": "yarn knex migrate:down",

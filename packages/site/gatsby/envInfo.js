@@ -1,6 +1,4 @@
-if (process.env.NODE_ENV === "development") {
-  require("dotenv").config();
-}
+require("dotenv").config();
 
 const allowRobots = process.env.ILEMANDATOW_ALLOW_ROBOTS === "true";
 const apiUrl = process.env.ILEMANDATOW_API_URL;
