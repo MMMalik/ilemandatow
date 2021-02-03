@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.13 (2021-02-03)
+
+
+### Bug Fixes
+
+* add missing command ([44b6b5d](https://github.com/MMMalik/ilemandatow/commit/44b6b5db11a598d59a727dc90504be45e683a973))
+
+
+
+
+
 ## 0.0.1-alpha.12 (2021-02-02)
 
 

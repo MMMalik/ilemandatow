@@ -6,7 +6,7 @@ yarn install
 
 # Build project
 printf "\n%s\n\n" "Build project and its dependencies"
-yarn build:seats && yarn build:ui && build:site
+yarn build:seats && yarn build:ui && yarn build:site
 
 # Deploy static site
 # Requires variables: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID
