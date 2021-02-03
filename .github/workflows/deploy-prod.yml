@@ -12,8 +12,8 @@ on:
         required: true
 
 jobs:
-  deploy-preprod:
-    name: Deploy preprod
+  deploy-prod:
+    name: Deploy prod
     environment:
       name: production
       url: https://ilemandatow.pl
