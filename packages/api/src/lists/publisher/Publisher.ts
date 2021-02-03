@@ -1,5 +1,5 @@
 import { Text, Slug } from "@keystonejs/fields";
-import { idField } from "../common";
+import { dispatchChangeEvt, idField } from "../common";
 import { slugId } from "../../utils";
 import { canEdit } from "../access";
 
@@ -15,5 +15,12 @@ export const Publisher = {
     create: canEdit,
     update: canEdit,
     delete: canEdit,
+  },
+  hooks: {
+    afterChange: async ({ operation }: any) => {
+      if (operation === "update") {
+        await dispatchChangeEvt();
+      }
+    },
   },
 };
