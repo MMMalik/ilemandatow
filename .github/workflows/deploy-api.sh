@@ -67,4 +67,4 @@ printf "\n%s\n\n" "Restart server"
 ssh $MD_SSH_USER@$MD_SSH_HOST "devil www restart $MD_DOMAIN"
 
 # Hits server in order to wake it up
-curl -s $ILEMANDATOW_SITE_URL >/dev/null
+curl -s $ILEMANDATOW_API_URL >/dev/null
