@@ -6,6 +6,7 @@
   "license": "MIT",
   "keywords": [],
   "scripts": {
+    "build:codegen": "graphql-codegen",
     "build:keystone": "yarn keystone build",
     "build": "yarn cleanup && tsc",
     "check-types": "tsc --noEmit",
@@ -34,7 +35,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "graphql": "^15.5.0",
     "knex": "^0.21.16",
     "minimist": "^1.2.5",
     "nanoid": "^3.1.20",
@@ -43,5 +43,9 @@
     "react-dom": "^16.4.0",
     "shelljs": "^0.8.4",
     "slugify": "^1.4.6"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.1",
+    "@graphql-codegen/introspection": "^1.18.1"
   }
 }
