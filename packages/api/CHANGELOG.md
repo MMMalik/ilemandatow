@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.16 (2021-02-03)
+
+
+### Bug Fixes
+
+* **scripts:** fix postinstall missing prod dependency ([33ca78e](https://github.com/MMMalik/ilemandatow/commit/33ca78e5e6bbf216c247a7a319d0320a0fd82fda))
+
+
+
+
+
 ## 0.0.1-alpha.15 (2021-02-03)
 
 **Note:** Version bump only for package @ilemandatow/api
