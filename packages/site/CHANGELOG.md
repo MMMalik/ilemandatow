@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.24 (2021-02-03)
+
+
+### Bug Fixes
+
+* **deploy-content:** fix scripts ([3180915](https://github.com/MMMalik/ilemandatow/commit/3180915ee61ffa0a5485305314721c666ce493e2))
+
+
+
+
+
 ## 0.0.1-alpha.23 (2021-02-03)
 
 **Note:** Version bump only for package @ilemandatow/site

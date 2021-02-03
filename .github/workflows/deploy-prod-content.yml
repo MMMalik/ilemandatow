@@ -20,7 +20,7 @@ jobs:
       - name: Checkout tag
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.client_payload.version }}
+          ref: v${{ github.event.client_payload.version }}
 
       - name: Deploy site to prod
         run: |
