@@ -30,6 +30,7 @@
     "react-popper": "^2.2.4"
   },
   "devDependencies": {
+    "@graphql-codegen/introspection": "^1.18.1",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-netlify": "^2.8.0",
     "gatsby-plugin-robots-txt": "^1.5.5",

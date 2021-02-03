@@ -5,5 +5,5 @@ import { setupPgEnv } from "../../../config";
 // Setups env variables for source database
 setupPgEnv();
 
-// Runs pg_dump command to a custom format
+// Truncates all tables
 exec(`psql -f ${join(__dirname, "../raw", "truncateTables.sql")}`);
