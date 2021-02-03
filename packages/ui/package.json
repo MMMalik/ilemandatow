@@ -7,9 +7,9 @@
   "author": "Michał Malik",
   "license": "MIT",
   "scripts": {
-    "build": "yarn cleanup && tsc",
+    "build": "yarn clean && tsc",
     "check-types": "tsc --noEmit",
-    "cleanup": "rimraf dist",
+    "clean": "rimraf dist",
     "develop": "yarn cleanup && tsc --watch",
     "storybook": "start-storybook -p 9009"
   },

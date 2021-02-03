@@ -8,9 +8,9 @@
   "scripts": {
     "build:codegen": "graphql-codegen",
     "build:keystone": "yarn keystone build",
-    "build": "yarn cleanup && tsc",
+    "build": "yarn clean && tsc",
     "check-types": "tsc --noEmit",
-    "cleanup": "rimraf dist && rimraf build",
+    "clean": "rimraf dist && rimraf build",
     "db:backup:cleanup": "node build/scripts/db/custom/backupCleanup.js",
     "db:backup": "node build/scripts/db/custom/backup.js",
     "db:migrate:down": "yarn knex migrate:down",
