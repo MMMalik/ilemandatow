@@ -12,8 +12,8 @@ on:
         required: true
 
 jobs:
-  deploy-preprod:
-    name: Deploy preprod
+  deploy-prod:
+    name: Deploy prod
     environment:
       name: production
       url: https://ilemandatow.pl
@@ -36,6 +36,10 @@ jobs:
           DB_URI="${{ secrets.DB_URI }}" \
           COOKIE_SECRET="${{ secrets.COOKIE_SECRET }}" \
           ILEMANDATOW_API_URL="${{ secrets.ILEMANDATOW_API_URL }}" \
+          GH_REPO="${{ secrets.GH_REPO }}" \
+          GH_REPO_OWNER="${{ secrets.GH_REPO_OWNER }}" \
+          GH_REPO_EVENT_TYPE="${{ secrets.GH_REPO_EVENT_TYPE }}" \
+          GH_ACCESS_TOKEN="${{ secrets.GH_ACCESS_TOKEN }}" \
           bash ./.github/workflows/deploy-api.sh
 
       - name: Deploy site to prod

@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/api",
-  "version": "0.0.1-alpha.22",
+  "version": "0.0.1-alpha.23",
   "description": "API of ilemandatow",
   "author": "Michał Malik",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "@keystonejs/fields": "^21.0.2",
     "@keystonejs/fields-color": "^1.0.9",
     "@keystonejs/keystone": "^18.1.0",
+    "@octokit/rest": "^18.1.0",
     "bcryptjs": "^2.4.3",
     "connect-pg-simple": "^6.2.1",
     "dotenv": "^8.2.0",

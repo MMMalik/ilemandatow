@@ -2,7 +2,7 @@ import { Relationship, Slug, Text } from "@keystonejs/fields";
 import { Color } from "@keystonejs/fields-color";
 import { slugId } from "../../utils";
 import { canEdit } from "../access";
-import { idField } from "../common";
+import { dispatchChangeEvt, idField } from "../common";
 
 export const Party = {
   fields: {
@@ -20,5 +20,12 @@ export const Party = {
     create: canEdit,
     update: canEdit,
     delete: canEdit,
+  },
+  hooks: {
+    afterChange: async ({ operation }: any) => {
+      if (operation === "update") {
+        await dispatchChangeEvt();
+      }
+    },
   },
 };

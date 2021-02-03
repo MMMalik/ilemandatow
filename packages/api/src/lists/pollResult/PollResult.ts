@@ -1,6 +1,6 @@
 import { Float, Relationship } from "@keystonejs/fields";
 import { canEdit } from "../access";
-import { idField } from "../common";
+import { dispatchChangeEvt, idField } from "../common";
 
 export const PollResult = {
   fields: {
@@ -13,5 +13,12 @@ export const PollResult = {
     create: canEdit,
     update: canEdit,
     delete: canEdit,
+  },
+  hooks: {
+    afterChange: async ({ operation }: any) => {
+      if (operation === "update") {
+        await dispatchChangeEvt();
+      }
+    },
   },
 };
