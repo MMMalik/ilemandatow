@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.17 (2021-02-03)
+
+
+### Bug Fixes
+
+* **build:** fix build scripts, rename cleanup -> clean ([7528519](https://github.com/MMMalik/ilemandatow/commit/752851937d5cf316dae4510a4f41ff3593aeb985))
+
+
+
+
+
 ## 0.0.1-alpha.16 (2021-02-03)
 
 
