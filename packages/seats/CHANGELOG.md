@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.26 (2021-02-04)
+
+**Note:** Version bump only for package @ilemandatow/seats
+
+
+
+
+
 ## 0.0.1-alpha.25 (2021-02-03)
 
 
