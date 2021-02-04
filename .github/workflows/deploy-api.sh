@@ -64,7 +64,7 @@ rsync -zah ~/.db-scripts/ $MD_SSH_USER@$MD_SSH_HOST:$DEST_PATH
 
 # Runs migrations
 printf "\n%s\n\n" "Run migrations"
-ssh $MD_SSH_USER@$MD_SSH_HOST "bash $DEST_PATH/db:migrate:up"
+ssh $MD_SSH_USER@$MD_SSH_HOST "bash $DEST_PATH/db\:migrate\:up.sh"
 
 # Restarts server
 printf "\n%s\n\n" "Restart server"
