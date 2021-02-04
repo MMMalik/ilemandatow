@@ -20,6 +20,7 @@
     "clean": "lerna run clean --stream",
     "db:backup:cleanup": "cd packages/api && yarn db:backup:cleanup",
     "db:backup": "cd packages/api && yarn db:backup",
+    "db:migrate:make": "cd packages/api && yarn db:migrate:make",
     "db:migrate:down": "cd packages/api && yarn db:migrate:down",
     "db:migrate:up": "cd packages/api && yarn db:migrate:up",
     "db:restore": "cd packages/api && yarn db:restore",
