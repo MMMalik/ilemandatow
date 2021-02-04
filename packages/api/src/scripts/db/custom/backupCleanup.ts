@@ -1,15 +1,20 @@
+import * as minimist from "minimist";
 import { rm, ls } from "shelljs";
 import { setupPgEnv } from "../../../config";
 
 // Setups env variables for source database
 setupPgEnv();
 
-// Gets content of backup folder
-const backups = ls(`~/postgres/backups/${process.env.PGDATABASE}`);
+// Parses command line args
+const args = minimist(process.argv.slice(2));
 
-if (backups.length === 0) {
-  throw new Error("No backup files were found.");
-}
+// Location folder
+const location = args["location"] || process.env.PGDATABASE;
+
+const dest = `~/postgres/backups/${location}`;
+
+// Gets content of backup folder
+const backups = ls(dest);
 
 // Sorts files by timestamp descending
 const [, , ...rest] = [...backups].sort((b1, b2) => {
@@ -19,8 +24,4 @@ const [, , ...rest] = [...backups].sort((b1, b2) => {
 });
 
 // Removes all backup files except for latest two
-if (rest.length > 0) {
-  rm(
-    rest.map((file) => `~/postgres/backups/${process.env.PGDATABASE}/${file}`)
-  );
-}
+rm(rest.map((file) => `${dest}/${file}`));
