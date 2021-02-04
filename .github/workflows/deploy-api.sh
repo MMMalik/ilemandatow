@@ -72,7 +72,7 @@ ssh $MD_SSH_USER@$MD_SSH_HOST "devil www restart $MD_DOMAIN"
 
 # Hits server in order to wake it up
 printf "\n%s\n\n" "Hit server"
-curl -s $ILEMANDATOW_API_URL
+curl -s $ILEMANDATOW_API_URL >/dev/null
 
 # Sleeps to make sure server is up
 printf "\n%s\n\n" "Sleeps"
