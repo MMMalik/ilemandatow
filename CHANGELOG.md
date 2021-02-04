@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.27 (2021-02-04)
+
+
+### Bug Fixes
+
+* **deploy:** run migrations ([1a9a431](https://github.com/MMMalik/ilemandatow/commit/1a9a4316d43b937c99a7b1a87eaff6eb90f4dee3))
+
+
+
+
+
 ## 0.0.1-alpha.26 (2021-02-04)
 
 **Note:** Version bump only for package @ilemandatow/ilemandatow
