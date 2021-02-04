@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.29 (2021-02-04)
+
+
+### Bug Fixes
+
+* **deploy:** use delete flag ([8bd28ba](https://github.com/MMMalik/ilemandatow/commit/8bd28ba2f13c3a5c74069af8d8363d2af2f0c51d))
+
+
+
+
+
 ## 0.0.1-alpha.28 (2021-02-04)
 
 
