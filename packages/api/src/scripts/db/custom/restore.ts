@@ -40,4 +40,4 @@ if (!latest) {
 const src = `${srcDir}/${latest}`;
 
 // Runs pg_dump command on selected tables
-exec(`pg_restore -c -n public -d ${process.env.PGDATABASE} ${src}`);
+exec(`pg_restore --no-owner -c -n public -d ${process.env.PGDATABASE} ${src}`);
