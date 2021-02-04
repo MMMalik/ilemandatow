@@ -7,5 +7,6 @@ export const Party = graphql`
     abbr
     color
     colorDarkTheme
+    type
   }
 `;

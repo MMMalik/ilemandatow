@@ -10,6 +10,7 @@
     ]
   },
   "scripts": {
+    "build:api:codegen": "cd packages/api && yarn build:codegen",
     "build:api:keystone": "cd packages/api && yarn build:keystone",
     "build:api": "cd packages/api && yarn build",
     "build:seats": "cd packages/seats && yarn build",
