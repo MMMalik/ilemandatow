@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.28 (2021-02-04)
+
+
+### Bug Fixes
+
+* **deploy:** fix script name ([ac7c59e](https://github.com/MMMalik/ilemandatow/commit/ac7c59eb3a1bdd85c60ec44e263ac3be3e0026b3))
+
+
+
+
+
 ## 0.0.1-alpha.27 (2021-02-04)
 
 
