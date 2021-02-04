@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.30 (2021-02-04)
+
+
+### Bug Fixes
+
+* **deploy:** pass missing arguments ([d37a9fc](https://github.com/MMMalik/ilemandatow/commit/d37a9fcf83bd359d091b396f8cd092dd96fe9405))
+
+
+
+
+
 ## 0.0.1-alpha.29 (2021-02-04)
 
 
