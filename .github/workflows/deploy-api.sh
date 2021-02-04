@@ -44,7 +44,7 @@ printf "DB_USER=$DB_USER\nDB_PASS=$DB_PASS\nDB_NAME=$DB_NAME\nDB_URI=$DB_URI\nCO
 # Copies API files
 # Requires variables: MD_SSH_USER, MD_SSH_HOST, MD_DOMAIN
 printf "\n%s\n\n" "Run rsync to copy files"
-rsync -zahR \
+rsync -zahR --delete \
     app.js \
     package.json \
     node_modules \
