@@ -14,10 +14,10 @@ export const getPartiesWithResults = (
   theme: string
 ): PartyWithResult[] => {
   return results.map(({ party, result }) => ({
-    id: party?.id ?? "",
-    name: party?.name ?? "",
-    abbr: party?.abbr ?? "",
-    result: result ?? 0,
+    id: party?.id ?? undefined,
+    name: party?.name ?? undefined,
+    abbr: party?.abbr ?? undefined,
+    result: result ?? undefined,
     color: getPartyColor(theme, party ?? undefined),
   }));
 };

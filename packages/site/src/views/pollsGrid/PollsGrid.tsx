@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Grid, GridItem } from "@ilemandatow/ui";
-import { filterPollResults, sortPollsByDate } from "../../data";
+import { filterNonRegularParties, sortPollsByDate } from "../../data";
 import { PollCard } from "../../components";
 import { PollFragment } from "../../types";
 
@@ -22,7 +22,7 @@ const PollsGrid: React.FC<Props> = ({ polls }) => {
                 polledBy={firstPolledBy?.abbr ?? ""}
                 publishedAt={publishedAt ?? ""}
                 source={source ?? ""}
-                results={filterPollResults(results)}
+                results={filterNonRegularParties(results)}
               />
             </GridItem>
           );

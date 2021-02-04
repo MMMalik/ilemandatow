@@ -1,4 +1,4 @@
-import { Relationship, Slug, Text } from "@keystonejs/fields";
+import { Select, Relationship, Slug, Text } from "@keystonejs/fields";
 import { Color } from "@keystonejs/fields-color";
 import { slugId } from "../../utils";
 import { canEdit } from "../access";
@@ -10,6 +10,17 @@ export const Party = {
     name: { type: Text },
     fullName: { type: Text },
     abbr: { type: Text },
+    type: {
+      type: Select,
+      options: [
+        { label: "Regular party", value: "regular" },
+        { label: "Undecided voters (placeholder)", value: "undecided_voters" },
+        {
+          label: "Other party voters (placeholder)",
+          value: "other_party_voters",
+        },
+      ],
+    },
     color: { type: Color },
     colorDarkTheme: { type: Color },
     memberParties: { type: Relationship, ref: "Party", many: true },

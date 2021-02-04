@@ -1,6 +1,12 @@
 import * as React from "react";
-import { Grid, GridItem, Paper } from "@ilemandatow/ui";
-import { filterPollResults, getDhondtResults } from "../../data";
+import { Grid, GridItem, Paper, useTheme } from "@ilemandatow/ui";
+import {
+  filterList,
+  filterNonRegularParties,
+  filterRegularParties,
+  getDhondtResults,
+  getPartiesWithResults,
+} from "../../data";
 import {
   PollChart,
   PollInfoList,
@@ -14,21 +20,19 @@ interface Props {
 }
 
 const PollViz: React.FC<Props> = ({ poll }) => {
-  const filteredResults = filterPollResults(poll?.results ?? []);
-  const seats = getDhondtResults(
-    filteredResults.map(({ party, result }) => ({
+  const { name } = useTheme();
+  const results = filterList(poll?.results ?? []);
+  const seatsParties = getDhondtResults(
+    filterNonRegularParties(results).map(({ party, result }) => ({
       id: party?.id ?? "",
       result: result ?? 0,
     }))
   );
-  const parties = filteredResults.map(({ party, result }) => ({
-    id: party?.id ?? "",
-    name: party?.name ?? "",
-    abbr: party?.abbr ?? "",
-    result: result ?? 0,
-    color: party?.color ?? "",
-    colorDarkTheme: party?.colorDarkTheme ?? "",
-  }));
+  const parties = getPartiesWithResults(results, name);
+  const specialParties = getPartiesWithResults(
+    filterRegularParties(results),
+    name
+  );
 
   const [firstPublishedBy] = poll?.publishedBy ?? [];
   const [firstPolledBy] = poll?.polledBy ?? [];
@@ -47,12 +51,16 @@ const PollViz: React.FC<Props> = ({ poll }) => {
       </GridItem>
       <GridItem className="w-100 w-40-l">
         <Paper className="pa4 h-100">
-          <PollResultsTable parties={parties} seats={seats} />
+          <PollResultsTable
+            parties={parties}
+            seats={seatsParties}
+            specialParties={specialParties}
+          />
         </Paper>
       </GridItem>
       <GridItem className="w-100 w-60-l">
         <Paper className="pa3 h-100">
-          <PollChart parties={parties} seats={seats} />
+          <PollChart parties={parties} seats={seatsParties} />
         </Paper>
       </GridItem>
       <GridItem className="w-100">

@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/api",
-  "version": "0.0.1-alpha.25",
+  "version": "0.0.1-alpha.26",
   "description": "API of ilemandatow",
   "author": "Michał Malik",
   "license": "MIT",
@@ -11,15 +11,18 @@
     "build": "yarn clean && tsc",
     "check-types": "tsc --noEmit",
     "clean": "rimraf dist && rimraf build",
+    "copy:knex:files": "node copy-knex-files.js",
     "db:backup:cleanup": "node build/scripts/db/custom/backupCleanup.js",
     "db:backup": "node build/scripts/db/custom/backup.js",
     "db:migrate:down": "yarn knex migrate:down",
+    "db:migrate:make": "yarn knex migrate:make",
     "db:migrate:up": "yarn knex migrate:up",
     "db:restore": "node build/scripts/db/custom/restore.js",
     "db:seed": "knex seed:run",
     "db:setup": "node build/scripts/db/custom/setupTables.js",
     "develop": "yarn build && NODE_ENV=development keystone",
-    "postbuild": "node copy-sql.js"
+    "postbuild": "node copy-sql.js",
+    "postdb:migrate:make": "yarn copy:knex:files"
   },
   "dependencies": {
     "@keystonejs/adapter-knex": "^13.0.0",
