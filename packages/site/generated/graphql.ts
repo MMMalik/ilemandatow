@@ -1231,6 +1231,7 @@ export type IleMandatow_Party = {
   name?: Maybe<Scalars['String']>;
   fullName?: Maybe<Scalars['String']>;
   abbr?: Maybe<Scalars['String']>;
+  type?: Maybe<IleMandatow_PartyTypeType>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
   memberParties: Array<IleMandatow_Party>;
@@ -1264,6 +1265,7 @@ export type IleMandatow_PartyCreateInput = {
   name?: Maybe<Scalars['String']>;
   fullName?: Maybe<Scalars['String']>;
   abbr?: Maybe<Scalars['String']>;
+  type?: Maybe<IleMandatow_PartyTypeType>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
   memberParties?: Maybe<IleMandatow_PartyRelateToManyInput>;
@@ -1284,10 +1286,16 @@ export type IleMandatow_PartyRelateToOneInput = {
   disconnectAll?: Maybe<Scalars['Boolean']>;
 };
 
+export type IleMandatow_PartyTypeType =
+  | 'regular'
+  | 'undecided_voters'
+  | 'other_party_voters';
+
 export type IleMandatow_PartyUpdateInput = {
   name?: Maybe<Scalars['String']>;
   fullName?: Maybe<Scalars['String']>;
   abbr?: Maybe<Scalars['String']>;
+  type?: Maybe<IleMandatow_PartyTypeType>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
   memberParties?: Maybe<IleMandatow_PartyRelateToManyInput>;
@@ -1355,6 +1363,10 @@ export type IleMandatow_PartyWhereInput = {
   abbr_not_ends_with_i?: Maybe<Scalars['String']>;
   abbr_in?: Maybe<Array<Maybe<Scalars['String']>>>;
   abbr_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  type?: Maybe<IleMandatow_PartyTypeType>;
+  type_not?: Maybe<IleMandatow_PartyTypeType>;
+  type_in?: Maybe<Array<Maybe<IleMandatow_PartyTypeType>>>;
+  type_not_in?: Maybe<Array<Maybe<IleMandatow_PartyTypeType>>>;
   color?: Maybe<Scalars['String']>;
   color_not?: Maybe<Scalars['String']>;
   color_contains?: Maybe<Scalars['String']>;
@@ -1442,11 +1454,11 @@ export type IleMandatow_Poll = {
   results: Array<IleMandatow_PollResult>;
   _resultsMeta?: Maybe<IleMandatow__QueryMeta>;
   participantsCount?: Maybe<Scalars['Int']>;
-  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
   participantsMightVote?: Maybe<Scalars['Float']>;
   participantsUndecided?: Maybe<Scalars['Float']>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
   participantsWillNotVote?: Maybe<Scalars['Float']>;
-  participantsWillVote?: Maybe<Scalars['Float']>;
   pollStartedAt?: Maybe<Scalars['String']>;
   pollEndedAt?: Maybe<Scalars['String']>;
   errorMargin?: Maybe<Scalars['Float']>;
@@ -1638,11 +1650,11 @@ export type IleMandatow_PollCreateInput = {
   method?: Maybe<IleMandatow_PollMethodRelateToOneInput>;
   results?: Maybe<IleMandatow_PollResultRelateToManyInput>;
   participantsCount?: Maybe<Scalars['Int']>;
-  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
   participantsMightVote?: Maybe<Scalars['Float']>;
   participantsUndecided?: Maybe<Scalars['Float']>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
   participantsWillNotVote?: Maybe<Scalars['Float']>;
-  participantsWillVote?: Maybe<Scalars['Float']>;
   pollStartedAt?: Maybe<Scalars['String']>;
   pollEndedAt?: Maybe<Scalars['String']>;
   errorMargin?: Maybe<Scalars['Float']>;
@@ -1841,11 +1853,11 @@ export type IleMandatow_PollUpdateInput = {
   method?: Maybe<IleMandatow_PollMethodRelateToOneInput>;
   results?: Maybe<IleMandatow_PollResultRelateToManyInput>;
   participantsCount?: Maybe<Scalars['Int']>;
-  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
   participantsMightVote?: Maybe<Scalars['Float']>;
   participantsUndecided?: Maybe<Scalars['Float']>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
   participantsWillNotVote?: Maybe<Scalars['Float']>;
-  participantsWillVote?: Maybe<Scalars['Float']>;
   pollStartedAt?: Maybe<Scalars['String']>;
   pollEndedAt?: Maybe<Scalars['String']>;
   errorMargin?: Maybe<Scalars['Float']>;
@@ -1913,14 +1925,14 @@ export type IleMandatow_PollWhereInput = {
   participantsCount_gte?: Maybe<Scalars['Int']>;
   participantsCount_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
   participantsCount_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
-  participantsMightNotVote?: Maybe<Scalars['Float']>;
-  participantsMightNotVote_not?: Maybe<Scalars['Float']>;
-  participantsMightNotVote_lt?: Maybe<Scalars['Float']>;
-  participantsMightNotVote_lte?: Maybe<Scalars['Float']>;
-  participantsMightNotVote_gt?: Maybe<Scalars['Float']>;
-  participantsMightNotVote_gte?: Maybe<Scalars['Float']>;
-  participantsMightNotVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
-  participantsMightNotVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsWillVote?: Maybe<Scalars['Float']>;
+  participantsWillVote_not?: Maybe<Scalars['Float']>;
+  participantsWillVote_lt?: Maybe<Scalars['Float']>;
+  participantsWillVote_lte?: Maybe<Scalars['Float']>;
+  participantsWillVote_gt?: Maybe<Scalars['Float']>;
+  participantsWillVote_gte?: Maybe<Scalars['Float']>;
+  participantsWillVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsWillVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
   participantsMightVote?: Maybe<Scalars['Float']>;
   participantsMightVote_not?: Maybe<Scalars['Float']>;
   participantsMightVote_lt?: Maybe<Scalars['Float']>;
@@ -1937,6 +1949,14 @@ export type IleMandatow_PollWhereInput = {
   participantsUndecided_gte?: Maybe<Scalars['Float']>;
   participantsUndecided_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
   participantsUndecided_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsMightNotVote?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_not?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_lt?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_lte?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_gt?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_gte?: Maybe<Scalars['Float']>;
+  participantsMightNotVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  participantsMightNotVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
   participantsWillNotVote?: Maybe<Scalars['Float']>;
   participantsWillNotVote_not?: Maybe<Scalars['Float']>;
   participantsWillNotVote_lt?: Maybe<Scalars['Float']>;
@@ -1945,14 +1965,6 @@ export type IleMandatow_PollWhereInput = {
   participantsWillNotVote_gte?: Maybe<Scalars['Float']>;
   participantsWillNotVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
   participantsWillNotVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
-  participantsWillVote?: Maybe<Scalars['Float']>;
-  participantsWillVote_not?: Maybe<Scalars['Float']>;
-  participantsWillVote_lt?: Maybe<Scalars['Float']>;
-  participantsWillVote_lte?: Maybe<Scalars['Float']>;
-  participantsWillVote_gt?: Maybe<Scalars['Float']>;
-  participantsWillVote_gte?: Maybe<Scalars['Float']>;
-  participantsWillVote_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
-  participantsWillVote_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
   pollStartedAt?: Maybe<Scalars['String']>;
   pollStartedAt_not?: Maybe<Scalars['String']>;
   pollStartedAt_lt?: Maybe<Scalars['String']>;
@@ -2121,6 +2133,8 @@ export type IleMandatow_SortPartiesBy =
   | 'fullName_DESC'
   | 'abbr_ASC'
   | 'abbr_DESC'
+  | 'type_ASC'
+  | 'type_DESC'
   | 'color_ASC'
   | 'color_DESC'
   | 'colorDarkTheme_ASC'
@@ -2175,16 +2189,16 @@ export type IleMandatow_SortPollsBy =
   | 'results_DESC'
   | 'participantsCount_ASC'
   | 'participantsCount_DESC'
-  | 'participantsMightNotVote_ASC'
-  | 'participantsMightNotVote_DESC'
+  | 'participantsWillVote_ASC'
+  | 'participantsWillVote_DESC'
   | 'participantsMightVote_ASC'
   | 'participantsMightVote_DESC'
   | 'participantsUndecided_ASC'
   | 'participantsUndecided_DESC'
+  | 'participantsMightNotVote_ASC'
+  | 'participantsMightNotVote_DESC'
   | 'participantsWillNotVote_ASC'
   | 'participantsWillNotVote_DESC'
-  | 'participantsWillVote_ASC'
-  | 'participantsWillVote_DESC'
   | 'pollStartedAt_ASC'
   | 'pollStartedAt_DESC'
   | 'pollEndedAt_ASC'
@@ -2478,6 +2492,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2583,6 +2599,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2787,6 +2805,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___repoUrl'
   | 'siteMetadata___appVersion'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2879,6 +2899,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3757,7 +3779,7 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type PartyFragment = Pick<IleMandatow_Party, 'id' | 'name' | 'abbr' | 'color' | 'colorDarkTheme'>;
+export type PartyFragment = Pick<IleMandatow_Party, 'id' | 'name' | 'abbr' | 'color' | 'colorDarkTheme' | 'type'>;
 
 export type PollFragment = (
   Pick<IleMandatow_Poll, 'id' | 'publishedAt' | 'source' | 'pollEndedAt' | 'pollStartedAt' | 'participantsCount'>

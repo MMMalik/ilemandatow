@@ -2,6 +2,7 @@ import * as React from "react";
 import { DefinitionList, DefinitionItem } from "@ilemandatow/ui";
 import { PollResultFragment } from "../../types";
 import { sortPollResults } from "../../data";
+import PollResult from "../pollResult";
 
 interface Props {
   results: PollResultFragment[];
@@ -19,7 +20,7 @@ const PollCardStats: React.FC<Props> = ({ results }) => {
               key={party?.id}
               className="w-third"
               label={party?.abbr ?? ""}
-              value={result ?? ""}
+              value={<PollResult result={result} />}
             />
           );
         })}
