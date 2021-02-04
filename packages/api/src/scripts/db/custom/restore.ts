@@ -8,14 +8,11 @@ setupPgEnv();
 // Parses command line args
 const args = minimist(process.argv.slice(2));
 
-// Restores from selected database
-const sourceDbName = args["src-db"] || process.env.PGDATABASE;
+// Restores from selected location
+const location = args["location"] || process.env.PGDATABASE;
 
 // Directory with backup files
-const srcDir = `~/postgres/backups/${sourceDbName}`;
-
-// Prunes user table after restore
-const pruneUsers = args["prune-users"];
+const srcDir = `~/postgres/backups/${location}`;
 
 // Gets content of backup folder
 const backups = ls(srcDir);
@@ -42,12 +39,5 @@ if (!latest) {
 
 const src = `${srcDir}/${latest}`;
 
-// Runs pg_dump command
-exec(`pg_restore -n public -c -d ${process.env.PGDATABASE} ${src}`);
-
-// Prunes user-related data
-if (pruneUsers) {
-  exec(
-    `psql ${process.env.PGDATABASE} -c "truncate \\"User\\"; truncate session;"`
-  );
-}
+// Runs pg_dump command on selected tables
+exec(`pg_restore -c -n public -d ${process.env.PGDATABASE} ${src}`);
