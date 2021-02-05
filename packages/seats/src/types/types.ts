@@ -8,3 +8,18 @@ export type ParliamentSeat = {
    */
   seats: number;
 };
+
+export interface ElectionResult {
+  /**
+   * Party identifier.
+   */
+  party: string;
+  /**
+   * Number of votes party received.
+   */
+  votes: number;
+  /**
+   * Any election thresholds will not be applied for this party.
+   */
+  disableThreshold?: boolean;
+}
