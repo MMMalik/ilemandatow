@@ -7,6 +7,7 @@ export interface PartyWithResult {
   abbr?: string;
   result?: number;
   color?: string;
+  parliamentOrder?: number;
 }
 
 export const getPartiesWithResults = (
@@ -18,6 +19,7 @@ export const getPartiesWithResults = (
     name: party?.name ?? undefined,
     abbr: party?.abbr ?? undefined,
     result: result ?? undefined,
+    parliamentOrder: party?.parliamentOrder ?? 5,
     color: getPartyColor(theme, party ?? undefined),
   }));
 };

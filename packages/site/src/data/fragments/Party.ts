@@ -8,5 +8,6 @@ export const Party = graphql`
     color
     colorDarkTheme
     type
+    parliamentOrder
   }
 `;

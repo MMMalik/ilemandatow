@@ -1234,6 +1234,7 @@ export type IleMandatow_Party = {
   type?: Maybe<IleMandatow_PartyTypeType>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
+  parliamentOrder?: Maybe<Scalars['Int']>;
   memberParties: Array<IleMandatow_Party>;
   _memberPartiesMeta?: Maybe<IleMandatow__QueryMeta>;
   slug?: Maybe<Scalars['String']>;
@@ -1268,6 +1269,7 @@ export type IleMandatow_PartyCreateInput = {
   type?: Maybe<IleMandatow_PartyTypeType>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
+  parliamentOrder?: Maybe<Scalars['Int']>;
   memberParties?: Maybe<IleMandatow_PartyRelateToManyInput>;
   slug?: Maybe<Scalars['String']>;
 };
@@ -1298,6 +1300,7 @@ export type IleMandatow_PartyUpdateInput = {
   type?: Maybe<IleMandatow_PartyTypeType>;
   color?: Maybe<Scalars['String']>;
   colorDarkTheme?: Maybe<Scalars['String']>;
+  parliamentOrder?: Maybe<Scalars['Int']>;
   memberParties?: Maybe<IleMandatow_PartyRelateToManyInput>;
   slug?: Maybe<Scalars['String']>;
 };
@@ -1403,6 +1406,14 @@ export type IleMandatow_PartyWhereInput = {
   colorDarkTheme_not_ends_with_i?: Maybe<Scalars['String']>;
   colorDarkTheme_in?: Maybe<Array<Maybe<Scalars['String']>>>;
   colorDarkTheme_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  parliamentOrder?: Maybe<Scalars['Int']>;
+  parliamentOrder_not?: Maybe<Scalars['Int']>;
+  parliamentOrder_lt?: Maybe<Scalars['Int']>;
+  parliamentOrder_lte?: Maybe<Scalars['Int']>;
+  parliamentOrder_gt?: Maybe<Scalars['Int']>;
+  parliamentOrder_gte?: Maybe<Scalars['Int']>;
+  parliamentOrder_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  parliamentOrder_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
   /**  condition must be true for all nodes  */
   memberParties_every?: Maybe<IleMandatow_PartyWhereInput>;
   /**  condition must be true for at least 1 node  */
@@ -2139,6 +2150,8 @@ export type IleMandatow_SortPartiesBy =
   | 'color_DESC'
   | 'colorDarkTheme_ASC'
   | 'colorDarkTheme_DESC'
+  | 'parliamentOrder_ASC'
+  | 'parliamentOrder_DESC'
   | 'memberParties_ASC'
   | 'memberParties_DESC'
   | 'slug_ASC'
@@ -3779,7 +3792,7 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type PartyFragment = Pick<IleMandatow_Party, 'id' | 'name' | 'abbr' | 'color' | 'colorDarkTheme' | 'type'>;
+export type PartyFragment = Pick<IleMandatow_Party, 'id' | 'name' | 'abbr' | 'color' | 'colorDarkTheme' | 'type' | 'parliamentOrder'>;
 
 export type PollFragment = (
   Pick<IleMandatow_Poll, 'id' | 'publishedAt' | 'source' | 'pollEndedAt' | 'pollStartedAt' | 'participantsCount'>
