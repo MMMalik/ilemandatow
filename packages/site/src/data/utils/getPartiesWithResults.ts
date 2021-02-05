@@ -7,7 +7,7 @@ export interface PartyWithResult {
   abbr?: string;
   result?: number;
   color?: string;
-  parliamentOrder: number;
+  parliamentOrder?: number;
 }
 
 export const getPartiesWithResults = (
