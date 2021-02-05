@@ -49,7 +49,6 @@ rsync -zahR --delete \
     package.json \
     node_modules \
     packages/api \
-    packages/content \
     $MD_SSH_USER@$MD_SSH_HOST:$DEST_PATH/public_nodejs
 
 # Copies env variables
