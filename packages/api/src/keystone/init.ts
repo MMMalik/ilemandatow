@@ -2,6 +2,8 @@ import { Keystone } from "@keystonejs/keystone";
 import { KnexAdapter } from "@keystonejs/adapter-knex";
 import { PasswordAuthStrategy } from "@keystonejs/auth-password";
 import {
+  ElectoralCode,
+  ElectoralDistrict,
   Party,
   Poll,
   PollCompany,
@@ -32,6 +34,8 @@ export const initKeystone = () => {
     sessionStore: sessionStore(),
   });
 
+  keystone.createList("ElectoralCode", ElectoralCode);
+  keystone.createList("ElectoralDistrict", ElectoralDistrict);
   keystone.createList("Party", Party);
   keystone.createList("Poll", Poll);
   keystone.createList("PollCompany", PollCompany);
