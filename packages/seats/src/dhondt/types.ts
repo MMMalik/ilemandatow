@@ -15,11 +15,11 @@ export interface DhondtElection {
   threshold?: number;
 }
 
-export interface DhondtElectionByRegion {
+export interface DhondtElectionByDistrict {
   /**
-   * Results in each region.
+   * Results in each district.
    */
-  resultsByRegion: DhondtElection[];
+  resultsByDistrict: DhondtElection[];
   /**
    * Percentage below which parties are excluded from seats assignment.
    */

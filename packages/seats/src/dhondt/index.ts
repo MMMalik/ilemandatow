@@ -1,3 +1,3 @@
 export * from "./types";
 export * from "./dhondt";
-export * from "./dhondtByRegions";
+export * from "./dhondtByDistricts";

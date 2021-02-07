@@ -1,9 +1,9 @@
 import { sortBySeats } from "../utils";
-import { dhondtByRegions } from "./dhondtByRegions";
+import { dhondtByDistricts } from "./dhondtByDistricts";
 
 const elections2019 = [
   {
-    region: 1,
+    district: 1,
     results: [
       { party: "PiS", votes: 183364 },
       { party: "KO", votes: 108191 },
@@ -15,7 +15,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 2,
+    district: 2,
     results: [
       { party: "PiS", votes: 114728 },
       { party: "KO", votes: 90812 },
@@ -27,7 +27,7 @@ const elections2019 = [
     totalSeats: 8,
   },
   {
-    region: 3,
+    district: 3,
     results: [
       { party: "PiS", votes: 226915 },
       { party: "KO", votes: 214629 },
@@ -39,7 +39,7 @@ const elections2019 = [
     totalSeats: 14,
   },
   {
-    region: 4,
+    district: 4,
     results: [
       { party: "PiS", votes: 167550 },
       { party: "KO", votes: 142844 },
@@ -51,7 +51,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 5,
+    district: 5,
     results: [
       { party: "PiS", votes: 182648 },
       { party: "KO", votes: 119526 },
@@ -63,7 +63,7 @@ const elections2019 = [
     totalSeats: 13,
   },
   {
-    region: 6,
+    district: 6,
     results: [
       { party: "PiS", votes: 313284 },
       { party: "KO", votes: 109185 },
@@ -75,7 +75,7 @@ const elections2019 = [
     totalSeats: 15,
   },
   {
-    region: 7,
+    district: 7,
     results: [
       { party: "PiS", votes: 238802 },
       { party: "KO", votes: 59401 },
@@ -87,7 +87,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 8,
+    district: 8,
     results: [
       { party: "PiS", votes: 150188 },
       { party: "KO", votes: 136955 },
@@ -98,7 +98,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 9,
+    district: 9,
     results: [
       { party: "KO", votes: 148830 },
       { party: "PiS", votes: 136731 },
@@ -109,7 +109,7 @@ const elections2019 = [
     totalSeats: 10,
   },
   {
-    region: 10,
+    district: 10,
     results: [
       { party: "PiS", votes: 194658 },
       { party: "KO", votes: 54160 },
@@ -120,7 +120,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 11,
+    district: 11,
     results: [
       { party: "PiS", votes: 229245 },
       { party: "KO", votes: 94268 },
@@ -132,7 +132,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 12,
+    district: 12,
     results: [
       { party: "PiS", votes: 169106 },
       { party: "KO", votes: 72869 },
@@ -143,7 +143,7 @@ const elections2019 = [
     totalSeats: 8,
   },
   {
-    region: 13,
+    district: 13,
     results: [
       { party: "PiS", votes: 256847 },
       { party: "KO", votes: 197930 },
@@ -156,7 +156,7 @@ const elections2019 = [
     totalSeats: 14,
   },
   {
-    region: 14,
+    district: 14,
     results: [
       { party: "PiS", votes: 243583 },
       { party: "KO", votes: 51183 },
@@ -167,7 +167,7 @@ const elections2019 = [
     totalSeats: 10,
   },
   {
-    region: 15,
+    district: 15,
     results: [
       { party: "PiS", votes: 206845 },
       { party: "KO", votes: 48597 },
@@ -178,7 +178,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 16,
+    district: 16,
     results: [
       { party: "PiS", votes: 194371 },
       { party: "KO", votes: 62429 },
@@ -190,7 +190,7 @@ const elections2019 = [
     totalSeats: 10,
   },
   {
-    region: 17,
+    district: 17,
     results: [
       { party: "PiS", votes: 193709 },
       { party: "KO", votes: 57449 },
@@ -203,7 +203,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 18,
+    district: 18,
     results: [
       { party: "PiS", votes: 270641 },
       { party: "KO", votes: 63124 },
@@ -216,7 +216,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 19,
+    district: 19,
     results: [
       { party: "KO", votes: 581077 },
       { party: "PiS", votes: 379880 },
@@ -227,7 +227,7 @@ const elections2019 = [
     totalSeats: 20,
   },
   {
-    region: 20,
+    district: 20,
     results: [
       { party: "PiS", votes: 244823 },
       { party: "KO", votes: 171286 },
@@ -239,7 +239,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 21,
+    district: 21,
     results: [
       { party: "PiS", votes: 152999 },
       { party: "KO", votes: 108570 },
@@ -251,7 +251,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 22,
+    district: 22,
     results: [
       { party: "PiS", votes: 247488 },
       { party: "KO", votes: 62246 },
@@ -262,7 +262,7 @@ const elections2019 = [
     totalSeats: 11,
   },
   {
-    region: 23,
+    district: 23,
     results: [
       { party: "PiS", votes: 367268 },
       { party: "KO", votes: 84703 },
@@ -274,7 +274,7 @@ const elections2019 = [
     totalSeats: 15,
   },
   {
-    region: 24,
+    district: 24,
     results: [
       { party: "PiS", votes: 270888 },
       { party: "KO", votes: 109527 },
@@ -288,7 +288,7 @@ const elections2019 = [
     totalSeats: 14,
   },
   {
-    region: 25,
+    district: 25,
     results: [
       { party: "KO", votes: 218484 },
       { party: "PiS", votes: 169753 },
@@ -299,7 +299,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 26,
+    district: 26,
     results: [
       { party: "PiS", votes: 211582 },
       { party: "KO", votes: 208208 },
@@ -310,7 +310,7 @@ const elections2019 = [
     totalSeats: 14,
   },
   {
-    region: 27,
+    district: 27,
     results: [
       { party: "PiS", votes: 182027 },
       { party: "KO", votes: 105876 },
@@ -321,7 +321,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 28,
+    district: 28,
     results: [
       { party: "PiS", votes: 125990 },
       { party: "KO", votes: 64374 },
@@ -333,7 +333,7 @@ const elections2019 = [
     totalSeats: 7,
   },
   {
-    region: 29,
+    district: 29,
     results: [
       { party: "PiS", votes: 128579 },
       { party: "KO", votes: 111078 },
@@ -345,7 +345,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 30,
+    district: 30,
     results: [
       { party: "PiS", votes: 161160 },
       { party: "KO", votes: 92493 },
@@ -357,7 +357,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 31,
+    district: 31,
     results: [
       { party: "PiS", votes: 184030 },
       { party: "KO", votes: 174683 },
@@ -368,7 +368,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 32,
+    district: 32,
     results: [
       { party: "PiS", votes: 123553 },
       { party: "KO", votes: 99499 },
@@ -379,7 +379,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 33,
+    district: 33,
     results: [
       { party: "PiS", votes: 314455 },
       { party: "KO", votes: 94880 },
@@ -392,7 +392,7 @@ const elections2019 = [
     totalSeats: 16,
   },
   {
-    region: 34,
+    district: 34,
     results: [
       { party: "PiS", votes: 102478 },
       { party: "KO", votes: 71320 },
@@ -404,7 +404,7 @@ const elections2019 = [
     totalSeats: 8,
   },
   {
-    region: 35,
+    district: 35,
     results: [
       { party: "PiS", votes: 128760 },
       { party: "KO", votes: 87780 },
@@ -416,7 +416,7 @@ const elections2019 = [
     totalSeats: 10,
   },
   {
-    region: 36,
+    district: 36,
     results: [
       { party: "PiS", votes: 195053 },
       { party: "KO", votes: 113489 },
@@ -427,7 +427,7 @@ const elections2019 = [
     totalSeats: 12,
   },
   {
-    region: 37,
+    district: 37,
     results: [
       { party: "PiS", votes: 166965 },
       { party: "KO", votes: 72295 },
@@ -439,7 +439,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 38,
+    district: 38,
     results: [
       { party: "PiS", votes: 124392 },
       { party: "KO", votes: 106810 },
@@ -450,7 +450,7 @@ const elections2019 = [
     totalSeats: 9,
   },
   {
-    region: 39,
+    district: 39,
     results: [
       { party: "KO", votes: 233474 },
       { party: "PiS", votes: 130319 },
@@ -461,7 +461,7 @@ const elections2019 = [
     totalSeats: 10,
   },
   {
-    region: 40,
+    district: 40,
     results: [
       { party: "PiS", votes: 100078 },
       { party: "KO", votes: 87799 },
@@ -472,7 +472,7 @@ const elections2019 = [
     totalSeats: 8,
   },
   {
-    region: 41,
+    district: 41,
     results: [
       { party: "KO", votes: 168022 },
       { party: "PiS", votes: 165200 },
@@ -484,16 +484,16 @@ const elections2019 = [
   },
 ];
 
-describe("dhondtByRegions", () => {
+describe("dhondtByDistricts", () => {
   it("returns empty list", () => {
-    const result = dhondtByRegions({ resultsByRegion: [] });
+    const result = dhondtByDistricts({ resultsByDistrict: [] });
     expect(result).toEqual([]);
   });
 
   it("calculates election results", () => {
     const result = sortBySeats(
-      dhondtByRegions({
-        resultsByRegion: elections2019,
+      dhondtByDistricts({
+        resultsByDistrict: elections2019,
         globalThreshold: 5,
       })
     );
