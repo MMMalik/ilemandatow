@@ -13,20 +13,24 @@ import {
   PollResultsTable,
   PollMethodologyList,
 } from "../../components";
-import { PollFragment } from "../../types";
+import { ElectoralCodeFragment, PollFragment } from "../../types";
+import { getElectoralCode } from "../../data/utils/getElectoralCode";
 
 interface Props {
   poll?: PollFragment | null;
+  codes?: ElectoralCodeFragment[] | null;
 }
 
-const PollViz: React.FC<Props> = ({ poll }) => {
+const PollViz: React.FC<Props> = ({ poll, codes }) => {
   const { name } = useTheme();
+  const code = getElectoralCode(codes ?? [], poll);
   const results = filterList(poll?.results ?? []);
   const seatsParties = getDhondtResults(
     filterNonRegularParties(results).map(({ party, result }) => ({
       id: party?.id ?? "",
       result: result ?? 0,
-    }))
+    })),
+    code
   );
   const parties = getPartiesWithResults(results, name);
   const specialParties = getPartiesWithResults(
@@ -60,7 +64,11 @@ const PollViz: React.FC<Props> = ({ poll }) => {
       </GridItem>
       <GridItem className="w-100 w-60-l">
         <Paper className="pa3 h-100">
-          <PollChart parties={parties} seats={seatsParties} />
+          <PollChart
+            parties={parties}
+            seats={seatsParties}
+            totalSeats={code?.totalSeats ?? 0}
+          />
         </Paper>
       </GridItem>
       <GridItem className="w-100">

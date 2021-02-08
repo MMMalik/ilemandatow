@@ -23,7 +23,7 @@ const QuickExample: React.FC<Props> = () => {
         </GridItem>
         <GridItem className="w-100 w-50-m w-50-l">
           <Paper>
-            <PollChart parties={[]} seats={[]} />
+            <PollChart parties={[]} seats={[]} totalSeats={100} />
           </Paper>
         </GridItem>
       </Grid>

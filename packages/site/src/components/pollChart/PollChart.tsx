@@ -14,9 +14,10 @@ import Charts from "./Charts";
 interface Props {
   parties: PartyWithResult[];
   seats: DhondtParliamentSeat[];
+  totalSeats: number;
 }
 
-const PollChart: React.FC<Props> = ({ seats, parties }) => {
+const PollChart: React.FC<Props> = ({ seats, parties, totalSeats }) => {
   const [view, setView] = React.useState<ChartView>("pie");
 
   const handleViewChange = (view: ChartView) => () => {
@@ -44,7 +45,11 @@ const PollChart: React.FC<Props> = ({ seats, parties }) => {
           active={view === "bar"}
         />
       </Toolbar>
-      <Charts parsedParties={parsedParties} view={view} />
+      <Charts
+        parsedParties={parsedParties}
+        view={view}
+        totalSeats={totalSeats}
+      />
       <ChartLegend>
         {parsedParties.map(({ id, abbr, fill }) => {
           return <ChartLegendItem key={id} label={abbr} fill={fill} />;

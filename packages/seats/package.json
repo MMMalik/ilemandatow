@@ -10,6 +10,6 @@
     "build": "yarn clean && tsc",
     "check-types": "tsc --noEmit",
     "clean": "rimraf dist",
-    "develop": "yarn cleanup && tsc --watch"
+    "develop": "yarn clean && tsc --watch"
   }
 }

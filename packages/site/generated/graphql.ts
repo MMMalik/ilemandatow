@@ -16,6 +16,8 @@ export type Scalars = {
   Date: any;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   IleMandatow_JSON: any;
+  /** DateTime custom scalar represents an ISO 8601 datetime string */
+  IleMandatow_DateTime: any;
   /** The `Upload` scalar type represents a file upload. */
   IleMandatow_Upload: any;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
@@ -800,6 +802,22 @@ export type GraphQlSourceSortInput = {
 };
 
 export type IleMandatow = {
+  /**  Search for all ElectoralCode items which match the where clause.  */
+  allElectoralCodes?: Maybe<Array<Maybe<IleMandatow_ElectoralCode>>>;
+  /**  Search for the ElectoralCode item with the matching ID.  */
+  ElectoralCode?: Maybe<IleMandatow_ElectoralCode>;
+  /**  Perform a meta-query on all ElectoralCode items which match the where clause.  */
+  _allElectoralCodesMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the ElectoralCode list.  */
+  _ElectoralCodesMeta?: Maybe<IleMandatow__ListMeta>;
+  /**  Search for all ElectoralDistrict items which match the where clause.  */
+  allElectoralDistricts?: Maybe<Array<Maybe<IleMandatow_ElectoralDistrict>>>;
+  /**  Search for the ElectoralDistrict item with the matching ID.  */
+  ElectoralDistrict?: Maybe<IleMandatow_ElectoralDistrict>;
+  /**  Perform a meta-query on all ElectoralDistrict items which match the where clause.  */
+  _allElectoralDistrictsMeta?: Maybe<IleMandatow__QueryMeta>;
+  /**  Retrieve the meta-data for the ElectoralDistrict list.  */
+  _ElectoralDistrictsMeta?: Maybe<IleMandatow__ListMeta>;
   /**  Search for all Party items which match the where clause.  */
   allParties?: Maybe<Array<Maybe<IleMandatow_Party>>>;
   /**  Search for the Party item with the matching ID.  */
@@ -861,6 +879,56 @@ export type IleMandatow = {
   /** The version of the Keystone application serving this API. */
   appVersion?: Maybe<Scalars['String']>;
   authenticatedUser?: Maybe<IleMandatow_User>;
+};
+
+
+export type IleMandatowAllElectoralCodesArgs = {
+  where?: Maybe<IleMandatow_ElectoralCodeWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortElectoralCodesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowElectoralCodeArgs = {
+  where: IleMandatow_ElectoralCodeWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllElectoralCodesMetaArgs = {
+  where?: Maybe<IleMandatow_ElectoralCodeWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortElectoralCodesBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowAllElectoralDistrictsArgs = {
+  where?: Maybe<IleMandatow_ElectoralDistrictWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortElectoralDistrictsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+export type IleMandatowElectoralDistrictArgs = {
+  where: IleMandatow_ElectoralDistrictWhereUniqueInput;
+};
+
+
+export type IleMandatow_AllElectoralDistrictsMetaArgs = {
+  where?: Maybe<IleMandatow_ElectoralDistrictWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortElectoralDistrictsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
 };
 
 
@@ -1208,6 +1276,225 @@ export type IleMandatow_CacheControlScope =
   | 'PRIVATE';
 
 
+/**  A keystone list  */
+export type IleMandatow_ElectoralCode = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the ElectoralCode List config, or
+   *  2. As an alias to the field set on 'labelField' in the ElectoralCode List config, or
+   *  3. As an alias to a 'name' field on the ElectoralCode List (if one exists), or
+   *  4. As an alias to the 'id' field on the ElectoralCode List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  inEffectSince?: Maybe<Scalars['String']>;
+  inEffectTo?: Maybe<Scalars['String']>;
+  threshold?: Maybe<Scalars['Float']>;
+  totalSeats?: Maybe<Scalars['Int']>;
+  method?: Maybe<IleMandatow_ElectoralCodeMethodType>;
+  districts: Array<IleMandatow_ElectoralDistrict>;
+  _districtsMeta?: Maybe<IleMandatow__QueryMeta>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_ElectoralCodeDistrictsArgs = {
+  where?: Maybe<IleMandatow_ElectoralDistrictWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortElectoralDistrictsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+
+/**  A keystone list  */
+export type IleMandatow_ElectoralCode_DistrictsMetaArgs = {
+  where?: Maybe<IleMandatow_ElectoralDistrictWhereInput>;
+  search?: Maybe<Scalars['String']>;
+  sortBy?: Maybe<Array<IleMandatow_SortElectoralDistrictsBy>>;
+  orderBy?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+};
+
+export type IleMandatow_ElectoralCodeCreateInput = {
+  inEffectSince?: Maybe<Scalars['String']>;
+  inEffectTo?: Maybe<Scalars['String']>;
+  threshold?: Maybe<Scalars['Float']>;
+  totalSeats?: Maybe<Scalars['Int']>;
+  method?: Maybe<IleMandatow_ElectoralCodeMethodType>;
+  districts?: Maybe<IleMandatow_ElectoralDistrictRelateToManyInput>;
+};
+
+export type IleMandatow_ElectoralCodeMethodType =
+  | 'dhondt';
+
+export type IleMandatow_ElectoralCodesCreateInput = {
+  data?: Maybe<IleMandatow_ElectoralCodeCreateInput>;
+};
+
+export type IleMandatow_ElectoralCodesUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_ElectoralCodeUpdateInput>;
+};
+
+export type IleMandatow_ElectoralCodeUpdateInput = {
+  inEffectSince?: Maybe<Scalars['String']>;
+  inEffectTo?: Maybe<Scalars['String']>;
+  threshold?: Maybe<Scalars['Float']>;
+  totalSeats?: Maybe<Scalars['Int']>;
+  method?: Maybe<IleMandatow_ElectoralCodeMethodType>;
+  districts?: Maybe<IleMandatow_ElectoralDistrictRelateToManyInput>;
+};
+
+export type IleMandatow_ElectoralCodeWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_ElectoralCodeWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_ElectoralCodeWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  inEffectSince?: Maybe<Scalars['String']>;
+  inEffectSince_not?: Maybe<Scalars['String']>;
+  inEffectSince_lt?: Maybe<Scalars['String']>;
+  inEffectSince_lte?: Maybe<Scalars['String']>;
+  inEffectSince_gt?: Maybe<Scalars['String']>;
+  inEffectSince_gte?: Maybe<Scalars['String']>;
+  inEffectSince_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  inEffectSince_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  inEffectTo?: Maybe<Scalars['String']>;
+  inEffectTo_not?: Maybe<Scalars['String']>;
+  inEffectTo_lt?: Maybe<Scalars['String']>;
+  inEffectTo_lte?: Maybe<Scalars['String']>;
+  inEffectTo_gt?: Maybe<Scalars['String']>;
+  inEffectTo_gte?: Maybe<Scalars['String']>;
+  inEffectTo_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  inEffectTo_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  threshold?: Maybe<Scalars['Float']>;
+  threshold_not?: Maybe<Scalars['Float']>;
+  threshold_lt?: Maybe<Scalars['Float']>;
+  threshold_lte?: Maybe<Scalars['Float']>;
+  threshold_gt?: Maybe<Scalars['Float']>;
+  threshold_gte?: Maybe<Scalars['Float']>;
+  threshold_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  threshold_not_in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  totalSeats?: Maybe<Scalars['Int']>;
+  totalSeats_not?: Maybe<Scalars['Int']>;
+  totalSeats_lt?: Maybe<Scalars['Int']>;
+  totalSeats_lte?: Maybe<Scalars['Int']>;
+  totalSeats_gt?: Maybe<Scalars['Int']>;
+  totalSeats_gte?: Maybe<Scalars['Int']>;
+  totalSeats_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  totalSeats_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  method?: Maybe<IleMandatow_ElectoralCodeMethodType>;
+  method_not?: Maybe<IleMandatow_ElectoralCodeMethodType>;
+  method_in?: Maybe<Array<Maybe<IleMandatow_ElectoralCodeMethodType>>>;
+  method_not_in?: Maybe<Array<Maybe<IleMandatow_ElectoralCodeMethodType>>>;
+  /**  condition must be true for all nodes  */
+  districts_every?: Maybe<IleMandatow_ElectoralDistrictWhereInput>;
+  /**  condition must be true for at least 1 node  */
+  districts_some?: Maybe<IleMandatow_ElectoralDistrictWhereInput>;
+  /**  condition must be false for all nodes  */
+  districts_none?: Maybe<IleMandatow_ElectoralDistrictWhereInput>;
+};
+
+export type IleMandatow_ElectoralCodeWhereUniqueInput = {
+  id: Scalars['ID'];
+};
+
+/**  A keystone list  */
+export type IleMandatow_ElectoralDistrict = {
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the ElectoralDistrict List config, or
+   *  2. As an alias to the field set on 'labelField' in the ElectoralDistrict List config, or
+   *  3. As an alias to a 'name' field on the ElectoralDistrict List (if one exists), or
+   *  4. As an alias to the 'id' field on the ElectoralDistrict List.
+   */
+  _label_?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  district?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  totalSeats?: Maybe<Scalars['Int']>;
+};
+
+export type IleMandatow_ElectoralDistrictCreateInput = {
+  district?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  totalSeats?: Maybe<Scalars['Int']>;
+};
+
+export type IleMandatow_ElectoralDistrictRelateToManyInput = {
+  create?: Maybe<Array<Maybe<IleMandatow_ElectoralDistrictCreateInput>>>;
+  connect?: Maybe<Array<Maybe<IleMandatow_ElectoralDistrictWhereUniqueInput>>>;
+  disconnect?: Maybe<Array<Maybe<IleMandatow_ElectoralDistrictWhereUniqueInput>>>;
+  disconnectAll?: Maybe<Scalars['Boolean']>;
+};
+
+export type IleMandatow_ElectoralDistrictsCreateInput = {
+  data?: Maybe<IleMandatow_ElectoralDistrictCreateInput>;
+};
+
+export type IleMandatow_ElectoralDistrictsUpdateInput = {
+  id: Scalars['ID'];
+  data?: Maybe<IleMandatow_ElectoralDistrictUpdateInput>;
+};
+
+export type IleMandatow_ElectoralDistrictUpdateInput = {
+  district?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  totalSeats?: Maybe<Scalars['Int']>;
+};
+
+export type IleMandatow_ElectoralDistrictWhereInput = {
+  AND?: Maybe<Array<Maybe<IleMandatow_ElectoralDistrictWhereInput>>>;
+  OR?: Maybe<Array<Maybe<IleMandatow_ElectoralDistrictWhereInput>>>;
+  id?: Maybe<Scalars['ID']>;
+  id_not?: Maybe<Scalars['ID']>;
+  id_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id_not_in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  district?: Maybe<Scalars['Int']>;
+  district_not?: Maybe<Scalars['Int']>;
+  district_lt?: Maybe<Scalars['Int']>;
+  district_lte?: Maybe<Scalars['Int']>;
+  district_gt?: Maybe<Scalars['Int']>;
+  district_gte?: Maybe<Scalars['Int']>;
+  district_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  district_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  name?: Maybe<Scalars['String']>;
+  name_not?: Maybe<Scalars['String']>;
+  name_contains?: Maybe<Scalars['String']>;
+  name_not_contains?: Maybe<Scalars['String']>;
+  name_starts_with?: Maybe<Scalars['String']>;
+  name_not_starts_with?: Maybe<Scalars['String']>;
+  name_ends_with?: Maybe<Scalars['String']>;
+  name_not_ends_with?: Maybe<Scalars['String']>;
+  name_i?: Maybe<Scalars['String']>;
+  name_not_i?: Maybe<Scalars['String']>;
+  name_contains_i?: Maybe<Scalars['String']>;
+  name_not_contains_i?: Maybe<Scalars['String']>;
+  name_starts_with_i?: Maybe<Scalars['String']>;
+  name_not_starts_with_i?: Maybe<Scalars['String']>;
+  name_ends_with_i?: Maybe<Scalars['String']>;
+  name_not_ends_with_i?: Maybe<Scalars['String']>;
+  name_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  name_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  totalSeats?: Maybe<Scalars['Int']>;
+  totalSeats_not?: Maybe<Scalars['Int']>;
+  totalSeats_lt?: Maybe<Scalars['Int']>;
+  totalSeats_lte?: Maybe<Scalars['Int']>;
+  totalSeats_gt?: Maybe<Scalars['Int']>;
+  totalSeats_gte?: Maybe<Scalars['Int']>;
+  totalSeats_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  totalSeats_not_in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type IleMandatow_ElectoralDistrictWhereUniqueInput = {
+  id: Scalars['ID'];
+};
+
+
 export type IleMandatow_PartiesCreateInput = {
   data?: Maybe<IleMandatow_PartyCreateInput>;
 };
@@ -1460,7 +1747,7 @@ export type IleMandatow_Poll = {
   _publishedByMeta?: Maybe<IleMandatow__QueryMeta>;
   polledBy: Array<IleMandatow_PollCompany>;
   _polledByMeta?: Maybe<IleMandatow__QueryMeta>;
-  publishedAt?: Maybe<Scalars['String']>;
+  publishedAt?: Maybe<Scalars['IleMandatow_DateTime']>;
   method?: Maybe<IleMandatow_PollMethod>;
   results: Array<IleMandatow_PollResult>;
   _resultsMeta?: Maybe<IleMandatow__QueryMeta>;
@@ -1657,7 +1944,7 @@ export type IleMandatow_PollCreateInput = {
   source?: Maybe<Scalars['String']>;
   publishedBy?: Maybe<IleMandatow_PublisherRelateToManyInput>;
   polledBy?: Maybe<IleMandatow_PollCompanyRelateToManyInput>;
-  publishedAt?: Maybe<Scalars['String']>;
+  publishedAt?: Maybe<Scalars['IleMandatow_DateTime']>;
   method?: Maybe<IleMandatow_PollMethodRelateToOneInput>;
   results?: Maybe<IleMandatow_PollResultRelateToManyInput>;
   participantsCount?: Maybe<Scalars['Int']>;
@@ -1860,7 +2147,7 @@ export type IleMandatow_PollUpdateInput = {
   source?: Maybe<Scalars['String']>;
   publishedBy?: Maybe<IleMandatow_PublisherRelateToManyInput>;
   polledBy?: Maybe<IleMandatow_PollCompanyRelateToManyInput>;
-  publishedAt?: Maybe<Scalars['String']>;
+  publishedAt?: Maybe<Scalars['IleMandatow_DateTime']>;
   method?: Maybe<IleMandatow_PollMethodRelateToOneInput>;
   results?: Maybe<IleMandatow_PollResultRelateToManyInput>;
   participantsCount?: Maybe<Scalars['Int']>;
@@ -1912,14 +2199,14 @@ export type IleMandatow_PollWhereInput = {
   polledBy_some?: Maybe<IleMandatow_PollCompanyWhereInput>;
   /**  condition must be false for all nodes  */
   polledBy_none?: Maybe<IleMandatow_PollCompanyWhereInput>;
-  publishedAt?: Maybe<Scalars['String']>;
-  publishedAt_not?: Maybe<Scalars['String']>;
-  publishedAt_lt?: Maybe<Scalars['String']>;
-  publishedAt_lte?: Maybe<Scalars['String']>;
-  publishedAt_gt?: Maybe<Scalars['String']>;
-  publishedAt_gte?: Maybe<Scalars['String']>;
-  publishedAt_in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  publishedAt_not_in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  publishedAt?: Maybe<Scalars['IleMandatow_DateTime']>;
+  publishedAt_not?: Maybe<Scalars['IleMandatow_DateTime']>;
+  publishedAt_lt?: Maybe<Scalars['IleMandatow_DateTime']>;
+  publishedAt_lte?: Maybe<Scalars['IleMandatow_DateTime']>;
+  publishedAt_gt?: Maybe<Scalars['IleMandatow_DateTime']>;
+  publishedAt_gte?: Maybe<Scalars['IleMandatow_DateTime']>;
+  publishedAt_in?: Maybe<Array<Maybe<Scalars['IleMandatow_DateTime']>>>;
+  publishedAt_not_in?: Maybe<Array<Maybe<Scalars['IleMandatow_DateTime']>>>;
   method?: Maybe<IleMandatow_PollMethodWhereInput>;
   method_is_null?: Maybe<Scalars['Boolean']>;
   /**  condition must be true for all nodes  */
@@ -2134,6 +2421,32 @@ export type IleMandatow_PublisherWhereInput = {
 export type IleMandatow_PublisherWhereUniqueInput = {
   id: Scalars['ID'];
 };
+
+export type IleMandatow_SortElectoralCodesBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'inEffectSince_ASC'
+  | 'inEffectSince_DESC'
+  | 'inEffectTo_ASC'
+  | 'inEffectTo_DESC'
+  | 'threshold_ASC'
+  | 'threshold_DESC'
+  | 'totalSeats_ASC'
+  | 'totalSeats_DESC'
+  | 'method_ASC'
+  | 'method_DESC'
+  | 'districts_ASC'
+  | 'districts_DESC';
+
+export type IleMandatow_SortElectoralDistrictsBy =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'district_ASC'
+  | 'district_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'totalSeats_ASC'
+  | 'totalSeats_DESC';
 
 export type IleMandatow_SortPartiesBy =
   | 'id_ASC'
@@ -3792,6 +4105,13 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type ElectoralCodeFragment = (
+  Pick<IleMandatow_ElectoralCode, 'id' | 'inEffectSince' | 'inEffectTo' | 'threshold' | 'totalSeats'>
+  & { districts: Array<ElectoralDistrictFragment> }
+);
+
+export type ElectoralDistrictFragment = Pick<IleMandatow_ElectoralDistrict, 'id' | 'district' | 'name' | 'totalSeats'>;
+
 export type PartyFragment = Pick<IleMandatow_Party, 'id' | 'name' | 'abbr' | 'color' | 'colorDarkTheme' | 'type' | 'parliamentOrder'>;
 
 export type PollFragment = (
@@ -3818,11 +4138,11 @@ export type GetSiteMetaDataQuery = { allSite: { nodes: Array<{ siteMetadata?: Ma
 export type GetAllPollsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllPollsQuery = { ilemandatow: { allPolls?: Maybe<Array<Maybe<PollFragment>>> } };
+export type GetAllPollsQuery = { ilemandatow: { allPolls?: Maybe<Array<Maybe<PollFragment>>>, allElectoralCodes?: Maybe<Array<Maybe<ElectoralCodeFragment>>> } };
 
 export type GetPollQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
-export type GetPollQuery = { ilemandatow: { Poll?: Maybe<PollFragment> } };
+export type GetPollQuery = { ilemandatow: { Poll?: Maybe<PollFragment>, allElectoralCodes?: Maybe<Array<Maybe<ElectoralCodeFragment>>> } };

@@ -36,6 +36,22 @@ describe("sortBySeats", () => {
     ]);
   });
 
+  it("solve ties alphabetically descending", () => {
+    const result = sortBySeats(
+      [
+        { party: "B", seats: 4 },
+        { party: "A", seats: 4 },
+        { party: "C", seats: 3 },
+      ],
+      "desc"
+    );
+    expect(result).toEqual([
+      { party: "A", seats: 4 },
+      { party: "B", seats: 4 },
+      { party: "C", seats: 3 },
+    ]);
+  });
+
   it("sorts in descending order - default", () => {
     const result = sortBySeats([
       { party: "A", seats: 4 },

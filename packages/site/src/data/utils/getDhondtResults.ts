@@ -1,20 +1,33 @@
-import { dhondt } from "@ilemandatow/seats";
-import { ELECTIONS_THRESHOLD, TOTAL_SEATS } from "../../constants";
+import { dhondtByDistricts } from "@ilemandatow/seats";
+import { ElectoralCodeFragment } from "../../types";
 
 interface PartyResult {
   id?: string;
   result?: number;
 }
 
-export const getDhondtResults = (results: PartyResult[]) => {
-  return dhondt({
-    results: results.map((r) => {
+export const getDhondtResults = (
+  results: PartyResult[],
+  code?: ElectoralCodeFragment
+) => {
+  if (!code) {
+    return [];
+  }
+
+  const { threshold, districts } = code;
+
+  return dhondtByDistricts({
+    resultsByDistrict: districts.map((d) => {
       return {
-        party: r.id ?? "",
-        votes: r.result ?? 0,
+        results: results.map((r) => {
+          return {
+            party: r.id ?? "",
+            votes: r.result ?? 0,
+          };
+        }),
+        totalSeats: d.totalSeats ?? 0,
       };
     }),
-    threshold: ELECTIONS_THRESHOLD,
-    totalSeats: TOTAL_SEATS,
+    globalThreshold: threshold ?? 0,
   });
 };

@@ -1,14 +1,18 @@
+import { applyThreshold } from "../utils";
 import { DhondtElection, DhondtQuotient } from "./types";
 
+/**
+ * Calculates quotients based on d'Hondt method.
+ * Sorts quotients in descending order. Returns list of quotients with length equal to the total number seats.
+ *
+ * @param input calculation input
+ */
 export const getQuotients = ({
   results,
   threshold,
   totalSeats,
 }: DhondtElection): DhondtQuotient[] => {
-  const totalVotes = results.reduce((acc, r) => acc + r.votes, 0);
-  const filteredResults = results.filter((r) =>
-    threshold ? r.votes / totalVotes > threshold / 100 : true
-  );
+  const filteredResults = applyThreshold(results, threshold);
   return Array.from({ length: totalSeats })
     .map((_, i) => {
       const nextN = i + 1;
