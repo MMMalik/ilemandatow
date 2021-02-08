@@ -53,9 +53,12 @@ const Pie: React.FC<Props> = ({
 }) => {
   const [startX, startY] = getCoords(startPointX, startPointY, startValue);
   const [endX, endY] = getCoords(startPointX, startPointY, endValue);
+  const diff = Math.abs(endValue - startValue);
+  const largeArcFlag = diff <= 50 ? 0 : 1;
   const start = `M ${startX} ${startY}`;
-  const arc = `A ${R} ${R} 0 0 1 ${endX} ${endY}`;
+  const arc = `A ${R} ${R} 0 ${largeArcFlag} 1 ${endX} ${endY}`;
   const end = `L ${endPointX} ${endPointY} Z`;
+  console.log({ diff });
 
   return (
     <path
