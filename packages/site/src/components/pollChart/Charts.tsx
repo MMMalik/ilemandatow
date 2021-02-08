@@ -1,19 +1,19 @@
 import * as React from "react";
 import { BarChart, ParliamentChart, PieChart } from "@ilemandatow/ui";
-import { TOTAL_SEATS } from "../../constants";
 import { ChartView, ParsedParties } from "./types";
 
 interface Props {
   parsedParties: ParsedParties;
   view: ChartView;
+  totalSeats: number;
 }
 
-const Charts: React.FC<Props> = ({ view, parsedParties }) => {
+const Charts: React.FC<Props> = ({ view, parsedParties, totalSeats }) => {
   const partiesWithPerc = parsedParties.map(({ id, value, fill, order }) => {
     return {
       id,
       fill,
-      value: (value * 100) / TOTAL_SEATS,
+      value: (value * 100) / totalSeats,
       order,
     };
   });
@@ -22,7 +22,7 @@ const Charts: React.FC<Props> = ({ view, parsedParties }) => {
     <div className="pv3 pv4-l ph5-l">
       {view === "parliament" && (
         <ParliamentChart
-          totalSeats={TOTAL_SEATS}
+          totalSeats={totalSeats}
           parties={[...parsedParties].sort((p1, p2) => p1.order - p2.order)}
         />
       )}

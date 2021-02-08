@@ -12,6 +12,9 @@ export const query = graphql`
       allPolls {
         ...Poll
       }
+      allElectoralCodes {
+        ...ElectoralCode
+      }
     }
   }
 `;

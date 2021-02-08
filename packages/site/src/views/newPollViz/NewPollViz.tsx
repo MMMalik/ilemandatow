@@ -37,7 +37,11 @@ const NewPollViz: React.FC<Props> = ({
       </GridItem>
       <GridItem className="w-100 w-two-thirds-l">
         <Paper className="pa4 h-100">
-          <PollChart parties={parties} seats={seats} />
+          <PollChart
+            parties={parties}
+            seats={seats}
+            totalSeats={parseInt(parliamentSeats ?? "0", 10)}
+          />
         </Paper>
       </GridItem>
     </Grid>

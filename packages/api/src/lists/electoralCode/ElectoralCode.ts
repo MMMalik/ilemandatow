@@ -11,8 +11,12 @@ import { dispatchChangeEvt, idField } from "../common";
 export const ElectoralCode = {
   fields: {
     id: idField,
-    inEffectSince: { type: CalendarDay },
-    inEffectTo: { type: CalendarDay },
+    inEffectSince: {
+      type: CalendarDay,
+    },
+    inEffectTo: {
+      type: CalendarDay,
+    },
     threshold: { type: Float },
     totalSeats: { type: Integer },
     method: { type: Select, options: [{ label: "D'Hondt", value: "dhondt" }] },

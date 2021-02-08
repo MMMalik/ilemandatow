@@ -227,8 +227,8 @@ export async function up(knex: Knex): Promise<void> {
   if (!hasElectoralCodeTable) {
     await knex.schema.createTable("ElectoralCode", (table) => {
       table.uuid("id").unique();
-      table.date("inEffectSince");
-      table.date("inEffectTo");
+      table.timestamp("inEffectSince");
+      table.timestamp("inEffectTo");
       table.float("threshold");
       table.integer("totalSeats");
       table.text("method");
@@ -259,7 +259,7 @@ export async function up(knex: Knex): Promise<void> {
     .insert([
       {
         id: knex.raw("gen_random_uuid()"),
-        inEffectSince: "2011-01-05",
+        inEffectSince: new Date("2011-01-04T23:00:00.000Z"),
         inEffectTo: null,
         threshold: 5.0,
         totalSeats: 460,
