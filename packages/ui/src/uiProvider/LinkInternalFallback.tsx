@@ -17,6 +17,7 @@ const LinkInternalFallback: React.FC<LinkInternalFallbackProps> = ({
   className,
 }) => {
   React.useEffect(() => {
+    /* eslint-disable-next-line */
     console.warn(
       "Please provide component for internal navigation. Fallback is used."
     );

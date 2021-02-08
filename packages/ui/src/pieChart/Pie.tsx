@@ -58,7 +58,6 @@ const Pie: React.FC<Props> = ({
   const start = `M ${startX} ${startY}`;
   const arc = `A ${R} ${R} 0 ${largeArcFlag} 1 ${endX} ${endY}`;
   const end = `L ${endPointX} ${endPointY} Z`;
-  console.log({ diff });
 
   return (
     <path

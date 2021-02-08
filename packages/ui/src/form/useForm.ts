@@ -25,6 +25,7 @@ const useForm = <T>({
 
   if (debug) {
     const watchedValues = watch();
+    /* eslint-disable-next-line */
     console.info("Form: %o", watchedValues);
   }
 
