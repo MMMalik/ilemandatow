@@ -2313,11 +2313,13 @@ export type PublisherFragment = { readonly __typename?: "Publisher" } & Pick<
   "id" | "name" | "abbr"
 >;
 
-export type GetAllPollsQueryVariables = Exact<{
+export type GetPollsQueryVariables = Exact<{
   sortBy?: Maybe<ReadonlyArray<SortPollsBy> | SortPollsBy>;
+  first?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
 }>;
 
-export type GetAllPollsQuery = { readonly __typename?: "Query" } & {
+export type GetPollsQuery = { readonly __typename?: "Query" } & {
   readonly allPolls?: Maybe<
     ReadonlyArray<Maybe<{ readonly __typename?: "Poll" } & PollFragment>>
   >;

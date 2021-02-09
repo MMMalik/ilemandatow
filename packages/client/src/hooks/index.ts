@@ -1,1 +1,1 @@
-export * from "./useGetAllPolls";
+export * from "./useGetPolls";

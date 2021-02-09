@@ -1,2 +1,2 @@
-export * from "./searchClient";
-export * from "./SearchProvider";
+export * from "./apiClient";
+export * from "./ApiProvider";

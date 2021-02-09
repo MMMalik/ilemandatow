@@ -14185,6 +14185,13 @@ graphql-extensions@^0.12.8:
     apollo-server-env "^3.0.0"
     apollo-server-types "^0.6.3"
 
+graphql-hooks-memcache@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/graphql-hooks-memcache/-/graphql-hooks-memcache-2.1.0.tgz#830487c7bf7e039f8fbfad520f85ae40453e79c1"
+  integrity sha512-scV7Jz4S/1sq1/hbJuTM6j1ztCDBUZXs//LZJex4ql/BusmhEXzY+J72wO9tUpDW8Do1btmhK5l9qiLCFwlGHg==
+  dependencies:
+    tiny-lru "^7.0.0"
+
 graphql-hooks@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/graphql-hooks/-/graphql-hooks-5.1.0.tgz#a3d8535f0707ff8b1e0b8db2c7702b64c85fe4ab"
@@ -21695,14 +21702,6 @@ react@^16.14.0, react@^16.4.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-react@^17.0.1:
-  version "17.0.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
-  integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
 reactcss@^1.2.0:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
@@ -24464,6 +24463,11 @@ tiny-invariant@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.1.0.tgz#634c5f8efdc27714b7f386c35e6760991d230875"
   integrity sha512-ytxQvrb1cPc9WBEI/HSeYYoGD0kWnGEOR8RY6KomWLBVhqz0RgTwVO9dLrGz7dC+nN9llyI7OKAgRq8Vq4ZBSw==
+
+tiny-lru@^7.0.0:
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/tiny-lru/-/tiny-lru-7.0.6.tgz#b0c3cdede1e5882aa2d1ae21cb2ceccf2a331f24"
+  integrity sha512-zNYO0Kvgn5rXzWpL0y3RS09sMK67eGaQj9805jlK9G6pSadfriTczzLHFXa/xcW4mIRfmlB9HyQ/+SgL0V1uow==
 
 tiny-warning@^1.0.0, tiny-warning@^1.0.3:
   version "1.0.3"

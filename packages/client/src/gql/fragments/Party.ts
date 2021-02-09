@@ -1,4 +1,4 @@
-export const Party = /* GraphQL */ `
+export const PartyFragment = /* GraphQL */ `
   fragment Party on Party {
     id
     name

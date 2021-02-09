@@ -1,3 +1,5 @@
+import { PartyFragment } from "./Party";
+
 export const PollResultFragment = /* GraphQL */ `
   fragment PollResult on PollResult {
     result
@@ -5,4 +7,5 @@ export const PollResultFragment = /* GraphQL */ `
       ...Party
     }
   }
+  ${PartyFragment}
 `;

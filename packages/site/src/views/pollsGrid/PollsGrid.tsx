@@ -1,34 +1,60 @@
 import * as React from "react";
-import { PollFragment } from "@ilemandatow/client";
-import { Grid, GridItem } from "@ilemandatow/ui";
-import { filterNonRegularParties, sortPollsByDate } from "../../data";
-import { PollCard } from "../../components";
+import { PollFragment, SortPollsBy, useGetPolls } from "@ilemandatow/client";
+import { Pagination } from "@ilemandatow/ui";
+import { PollCardsGrid } from "../../components";
+import { filterList } from "../../data";
 
 interface Props {
-  polls: PollFragment[];
+  /**
+   * Init list of polls.
+   */
+  initPolls: PollFragment[];
+  /**
+   * Total number of polls.
+   */
   totalPolls: number;
+  /**
+   * Number of items to render per page.
+   */
+  pollsPerPage: number;
 }
 
-const PollsGrid: React.FC<Props> = ({ polls }) => {
+const PollsGrid: React.FC<Props> = ({
+  initPolls,
+  totalPolls,
+  pollsPerPage,
+}) => {
+  const [polls, setPolls] = React.useState(initPolls);
+  const { fetchPolls } = useGetPolls();
+
+  const handlePageChange = React.useCallback(
+    async (page: number) => {
+      const { data } = await fetchPolls({
+        variables: {
+          sortBy: SortPollsBy.PublishedAtDesc,
+          skip: (page - 1) * pollsPerPage,
+          first: pollsPerPage,
+        },
+      });
+      setPolls(filterList(data?.allPolls) ?? []);
+    },
+    [fetchPolls, pollsPerPage]
+  );
+
   return (
-    <Grid>
-      {polls
-        .sort(sortPollsByDate)
-        .map(({ id, polledBy, publishedAt, source, results }) => {
-          const [firstPolledBy] = polledBy;
-          return (
-            <GridItem key={id} className="w-100 w-50-m w-third-l">
-              <PollCard
-                id={id}
-                polledBy={firstPolledBy?.abbr ?? ""}
-                publishedAt={publishedAt ?? ""}
-                source={source ?? ""}
-                results={filterNonRegularParties(results)}
-              />
-            </GridItem>
-          );
-        })}
-    </Grid>
+    <div>
+      <div>
+        <PollCardsGrid polls={polls} />
+      </div>
+      <div className="flex justify-center mt3">
+        <Pagination
+          perPage={pollsPerPage}
+          items={totalPolls}
+          initPage={1}
+          onChange={handlePageChange}
+        />
+      </div>
+    </div>
   );
 };
 

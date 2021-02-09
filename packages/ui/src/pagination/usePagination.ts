@@ -11,11 +11,15 @@ interface PaginationConfig {
    */
   perPage: number;
   /**
+   * Initially active page.
+   */
+  initPage: number;
+  /**
    * Starts numeration.
    */
   first: number;
   /**
-   * Callback fired upon page change.
+   * Callback invoked upon page change. It's not fired for the initial selection.
    */
   onChange?: (page: number) => void;
 }
@@ -23,11 +27,13 @@ interface PaginationConfig {
 export const usePagination = ({
   items,
   perPage,
+  initPage,
   first,
   onChange,
 }: PaginationConfig) => {
   const pages = Math.ceil(items / perPage);
-  const [currentPage, setCurrentPage] = React.useState(first);
+  const [changed, setChanged] = React.useState(false);
+  const [currentPage, setCurrentPage] = React.useState(initPage);
 
   const setPage = (page: number) => {
     setCurrentPage(page);
@@ -42,10 +48,11 @@ export const usePagination = ({
   };
 
   React.useEffect(() => {
-    if (onChange) {
+    if (onChange && changed) {
       onChange(currentPage);
     }
-  }, [currentPage, onChange]);
+    setChanged(true);
+  }, [currentPage, changed, onChange]);
 
   return {
     pages,

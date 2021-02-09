@@ -9,6 +9,9 @@ export { default as NewPollForm } from "./newPollForm";
 export * from "./pollCard";
 export { default as PollCard } from "./pollCard";
 
+export * from "./pollCardsGrid";
+export { default as PollCardsGrid } from "./pollCardsGrid";
+
 export * from "./pollInfoList";
 export { default as PollInfoList } from "./pollInfoList";
 

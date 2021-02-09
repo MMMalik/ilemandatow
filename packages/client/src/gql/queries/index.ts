@@ -1,1 +1,1 @@
-export * from "./allPolls";
+export * from "./getPolls";

@@ -14,7 +14,11 @@ export interface PaginationProps {
    */
   perPage: number;
   /**
-   * Callback invoked when a page is changed.
+   * Initially active page.
+   */
+  initPage: number;
+  /**
+   * Callback invoked when a page is changed. It's not invoked for the initial selection.
    */
   onChange?: (page: number) => void;
 }
@@ -22,6 +26,7 @@ export interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({
   items,
   perPage,
+  initPage,
   onChange,
 }) => {
   const {
@@ -33,6 +38,7 @@ const Pagination: React.FC<PaginationProps> = ({
   } = usePagination({
     perPage,
     items,
+    initPage,
     first: 1,
     onChange,
   });

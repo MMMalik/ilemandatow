@@ -9,7 +9,7 @@ import { filterList } from "../data";
 export const query = graphql`
   query getAllPolls {
     ilemandatow {
-      allPolls(first: 20) {
+      allPolls(first: 12, sortBy: publishedAt_DESC) {
         ...Poll
       }
       allElectoralCodes {
@@ -28,13 +28,17 @@ interface Props {
 
 const Polls: React.FC<Props> = ({ data }) => {
   const { t } = useTranslation();
-  const totalPolls: number = data.ilemandatow._allPollsMeta.count;
+  const totalPolls = data.ilemandatow._allPollsMeta.count;
   const polls: PollFragment[] = filterList(data.ilemandatow.allPolls);
 
   return (
     <>
       <SectionTitle title={t("polls")} />
-      <PollsGrid polls={polls} />
+      <PollsGrid
+        initPolls={polls}
+        totalPolls={totalPolls ?? 0}
+        pollsPerPage={12}
+      />
     </>
   );
 };
