@@ -55,6 +55,9 @@ export { default as SectionTitle } from "./sectionTitle";
 export * from "./pageWrapper";
 export { default as PageWrapper } from "./pageWrapper";
 
+export * from "./pagination";
+export { default as Pagination } from "./pagination";
+
 export * from "./paper";
 export { default as Paper } from "./paper";
 

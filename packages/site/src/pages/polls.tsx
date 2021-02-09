@@ -30,7 +30,7 @@ const Polls: React.FC<Props> = ({ data }) => {
   const { t } = useTranslation();
   const totalPolls: number = data.ilemandatow._allPollsMeta.count;
   const polls: PollFragment[] = filterList(data.ilemandatow.allPolls);
-  console.log({ totalPolls });
+
   return (
     <>
       <SectionTitle title={t("polls")} />
