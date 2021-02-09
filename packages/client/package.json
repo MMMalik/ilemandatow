@@ -1,0 +1,26 @@
+{
+  "name": "@ilemandatow/client",
+  "version": "0.0.1-alpha.31",
+  "description": "Client for GQL API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Michał Malik",
+  "license": "MIT",
+  "scripts": {
+    "build:codegen": "graphql-codegen",
+    "postbuild:codegen": "eslint src/generated/**/*.ts --fix",
+    "build": "yarn clean && tsc",
+    "check-types": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "develop": "yarn clean && tsc --watch"
+  },
+  "dependencies": {
+    "graphql-hooks": "^5.1.0",
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.1",
+    "@graphql-codegen/typescript": "^1.20.2",
+    "@graphql-codegen/typescript-operations": "^1.17.14"
+  }
+}

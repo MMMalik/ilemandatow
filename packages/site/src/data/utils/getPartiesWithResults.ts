@@ -1,4 +1,4 @@
-import { PollResultFragment } from "../../types";
+import { PollResultFragment } from "@ilemandatow/client";
 import { getPartyColor } from "./getPartyColor";
 
 export interface PartyWithResult {

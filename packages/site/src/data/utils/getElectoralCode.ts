@@ -1,4 +1,4 @@
-import { ElectoralCodeFragment, PollFragment } from "../../types";
+import { ElectoralCodeFragment, PollFragment } from "@ilemandatow/client";
 import { getTime } from "./getTime";
 
 export const getElectoralCode = (

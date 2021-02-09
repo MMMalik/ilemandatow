@@ -1,7 +1,7 @@
 import * as React from "react";
+import { PollResultFragment } from "@ilemandatow/client";
 import { DataCard } from "@ilemandatow/ui";
 import { useDateFormat } from "../../i18n";
-import { PollResultFragment } from "../../types";
 import PollCardStats from "./PollCardStats";
 import PollCardFooter from "./PollCardFooter";
 

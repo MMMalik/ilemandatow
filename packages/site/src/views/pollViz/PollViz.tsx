@@ -1,4 +1,5 @@
 import * as React from "react";
+import { ElectoralCodeFragment, PollFragment } from "@ilemandatow/client";
 import { Grid, GridItem, Paper, useTheme } from "@ilemandatow/ui";
 import {
   filterList,
@@ -13,7 +14,6 @@ import {
   PollResultsTable,
   PollMethodologyList,
 } from "../../components";
-import { ElectoralCodeFragment, PollFragment } from "../../types";
 import { getElectoralCode } from "../../data/utils/getElectoralCode";
 
 interface Props {

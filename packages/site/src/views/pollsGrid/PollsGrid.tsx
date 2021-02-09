@@ -1,11 +1,12 @@
 import * as React from "react";
+import { PollFragment } from "@ilemandatow/client";
 import { Grid, GridItem } from "@ilemandatow/ui";
 import { filterNonRegularParties, sortPollsByDate } from "../../data";
 import { PollCard } from "../../components";
-import { PollFragment } from "../../types";
 
 interface Props {
   polls: PollFragment[];
+  totalPolls: number;
 }
 
 const PollsGrid: React.FC<Props> = ({ polls }) => {

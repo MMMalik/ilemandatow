@@ -1,6 +1,6 @@
 import * as React from "react";
+import { PollResultFragment } from "@ilemandatow/client";
 import { DefinitionList, DefinitionItem } from "@ilemandatow/ui";
-import { PollResultFragment } from "../../types";
 import { sortPollResults } from "../../data";
 import PollResult from "../pollResult";
 

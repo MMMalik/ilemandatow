@@ -1,5 +1,5 @@
 export const filterList = <T>(
-  list: (T | null | undefined)[] | null | undefined
+  list: readonly (T | null | undefined)[] | null | undefined
 ): T[] => {
   if (!list) {
     return [];

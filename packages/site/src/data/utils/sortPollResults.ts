@@ -1,4 +1,4 @@
-import { PollResultFragment } from "../../types";
+import { PollResultFragment } from "@ilemandatow/client";
 
 export const sortPollResults = (
   { result: result1 }: PollResultFragment,

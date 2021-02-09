@@ -1,5 +1,5 @@
 import { compareDesc } from "date-fns";
-import { PollFragment } from "../../types";
+import { PollFragment } from "@ilemandatow/client";
 
 export const sortPollsByDate = (
   { publishedAt: publishedAt1 }: PollFragment,

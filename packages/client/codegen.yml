@@ -1,0 +1,10 @@
+overwrite: true
+schema: "http://localhost:3000/admin/api"
+documents: src/gql/**/*.ts
+generates:
+  src/generated/operations.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+      immutableTypes: true

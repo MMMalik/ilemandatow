@@ -1,4 +1,4 @@
-import { PollFragment } from "../../types";
+import { PollFragment } from "@ilemandatow/client";
 import { filterList } from "./filterList";
 
 export const filterRegularParties = (results: PollFragment["results"]) => {

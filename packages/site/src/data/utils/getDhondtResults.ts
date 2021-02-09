@@ -1,5 +1,5 @@
+import { ElectoralCodeFragment } from "@ilemandatow/client";
 import { dhondtByDistricts } from "@ilemandatow/seats";
-import { ElectoralCodeFragment } from "../../types";
 
 interface PartyResult {
   id?: string;
