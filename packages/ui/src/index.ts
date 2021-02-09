@@ -49,9 +49,6 @@ export { default as Link } from "./link";
 export * from "./menu";
 export { default as Menu } from "./menu";
 
-export * from "./sectionTitle";
-export { default as SectionTitle } from "./sectionTitle";
-
 export * from "./pageWrapper";
 export { default as PageWrapper } from "./pageWrapper";
 
@@ -69,6 +66,12 @@ export { default as PieChart } from "./pieChart";
 
 export * from "./popper";
 export { default as Popper } from "./popper";
+
+export * from "./sectionTitle";
+export { default as SectionTitle } from "./sectionTitle";
+
+export * from "./select";
+export { default as Select } from "./select";
 
 export * from "./table";
 export { default as Table } from "./table";

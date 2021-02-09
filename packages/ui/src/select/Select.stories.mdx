@@ -1,0 +1,23 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Select from "./Select";
+import * as template from "./Select.stories";
+
+<Meta
+  title="Inputs/Select"
+  component={Select}
+  argTypes={{ onClose: { action: "closed" }, onChange: { action: "changed" } }}
+/>
+
+### Select
+
+Default Select component.
+
+<Canvas>
+  <Story name="Main" args={{ placeholder: "Select options..." }}>
+    {template.Select.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Select} />

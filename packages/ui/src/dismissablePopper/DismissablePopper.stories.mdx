@@ -3,7 +3,11 @@ import Button from "../button";
 import DismissablePopper from "./DismissablePopper";
 import * as template from "./DismissablePopper.stories";
 
-<Meta title="Feedback/DismissablePopper" component={DismissablePopper} />
+<Meta
+  title="Feedback/DismissablePopper"
+  component={DismissablePopper}
+  argTypes={{ onClose: { action: "closed" } }}
+/>
 
 ### DismissablePopper
 
@@ -14,7 +18,7 @@ This component serves as a base for menu-like components such as `Menu`. It's a 
     name="Main"
     args={{
       children: <div className="pa3">{"Dismissiable popper's content"}</div>,
-      clickableComponent: (onClick) => (
+      ClickableComponent: ({ onClick }) => (
         <Button onClick={onClick}>{"Click me"}</Button>
       ),
     }}
