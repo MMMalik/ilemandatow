@@ -1,6 +1,6 @@
 import * as React from "react";
 import { PollFragment, SortPollsBy, useGetPolls } from "@ilemandatow/client";
-import { Pagination } from "@ilemandatow/ui";
+import { Divider, Grid, GridItem, Pagination, Paper } from "@ilemandatow/ui";
 import { PollCardsGrid } from "../../components";
 import { filterList } from "../../data";
 
@@ -42,19 +42,27 @@ const PollsGrid: React.FC<Props> = ({
   );
 
   return (
-    <div>
-      <div>
+    <Grid>
+      <GridItem className="w-100">
+        <Paper className="pa4">{"Filters"}</Paper>
+      </GridItem>
+      <GridItem className="w-100">
+        <Divider disableSpacing={true} />
+      </GridItem>
+      <GridItem>
         <PollCardsGrid polls={polls} />
-      </div>
-      <div className="flex justify-center mt3">
-        <Pagination
-          perPage={pollsPerPage}
-          items={totalPolls}
-          initPage={1}
-          onChange={handlePageChange}
-        />
-      </div>
-    </div>
+      </GridItem>
+      <GridItem className="w-100">
+        <div className="flex justify-center">
+          <Pagination
+            perPage={pollsPerPage}
+            items={totalPolls}
+            initPage={1}
+            onChange={handlePageChange}
+          />
+        </div>
+      </GridItem>
+    </Grid>
   );
 };
 

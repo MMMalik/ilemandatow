@@ -1,10 +1,10 @@
 import * as React from "react";
-import DividerCmp from "./Divider";
+import DividerCmp, { DividerProps } from "./Divider";
 
-export const Divider = () => {
+export const Divider = (args: DividerProps) => {
   return (
     <div className="w5">
-      <DividerCmp />
+      <DividerCmp {...args} />
     </div>
   );
 };
