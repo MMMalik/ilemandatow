@@ -1,14 +1,13 @@
 import * as React from "react";
-import { PollFragment } from "@ilemandatow/client";
+import { DataType, filterNonRegularParties } from "@ilemandatow/client";
 import { Grid, GridItem } from "@ilemandatow/ui";
-import { filterNonRegularParties } from "../../data";
 import { PollCard } from "../../components";
 
 interface Props {
   /**
    * List of polls to render.
    */
-  polls: PollFragment[];
+  polls: DataType.PollFragment[];
 }
 
 const PollCardsGrid: React.FC<Props> = ({ polls }) => {

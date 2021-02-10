@@ -1,12 +1,8 @@
 import * as React from "react";
 import Icon from "../icon";
-import { SelectOption as SelectOptionType } from "./types";
+import SelectLabelPlaceholder from "./SelectLabelPlaceholder";
 
 export interface SelectLabelProps {
-  /**
-   * Selected option(s).
-   */
-  selected: SelectOptionType[];
   /**
    * Selection placeholder. Displayed when no items are selected.
    */
@@ -28,7 +24,7 @@ export interface SelectLabelProps {
 const SelectLabel: React.FC<SelectLabelProps> = React.forwardRef<
   HTMLDivElement,
   SelectLabelProps
->(function SelectLabel({ selected, placeholder, onClick, menuOpen }, ref) {
+>(function SelectLabel({ placeholder, onClick, menuOpen }, ref) {
   return (
     <div
       ref={ref}
@@ -36,11 +32,7 @@ const SelectLabel: React.FC<SelectLabelProps> = React.forwardRef<
       className="w-100 ba b--black pointer pa2 br2"
     >
       <div className="w-100 flex justify-between">
-        <div className="w-80 truncate">
-          {selected.length > 0
-            ? selected.map((s) => s.label).join(", ")
-            : placeholder}
-        </div>
+        <SelectLabelPlaceholder placeholder={placeholder} />
         <Icon icon={menuOpen ? "angle-up" : "angle-down"} />
       </div>
     </div>

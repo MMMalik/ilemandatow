@@ -1,9 +1,9 @@
-import { ElectoralCodeFragment, PollFragment } from "@ilemandatow/client";
+import { DataType } from "../generated";
 import { getTime } from "./getTime";
 
 export const getElectoralCode = (
-  codes: ElectoralCodeFragment[],
-  poll?: PollFragment | null
+  codes: DataType.ElectoralCodeFragment[],
+  poll?: DataType.PollFragment | null
 ) => {
   if (!poll || !poll.publishedAt) {
     return undefined;

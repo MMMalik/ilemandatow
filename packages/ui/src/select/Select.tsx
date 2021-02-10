@@ -3,6 +3,8 @@ import { SelectOption as SelectOptionType } from "./types";
 import SelectLabel from "./SelectLabel";
 import Menu, { MenuItem } from "../menu";
 import { useTheme } from "../theme";
+import { DismissablePopperClickableComponent } from "../dismissablePopper";
+import { SelectContext } from "./context";
 
 export interface SelectProps {
   /**
@@ -14,9 +16,9 @@ export interface SelectProps {
    */
   onChange?: (selected: SelectOptionType | SelectOptionType[]) => void;
   /**
-   * Callback invoked upon closing popup. Passes selected options. Use in conjunction with `multi`.
+   * Callback invoked upon closing popup. Passes selected options.
    */
-  onClose?: (selected: SelectOptionType | SelectOptionType[]) => void;
+  onClose?: (selected: SelectOptionType[]) => void;
   /**
    * Selection placeholder. Displayed when no items are selected.
    */
@@ -64,14 +66,9 @@ const Select: React.FC<SelectProps> = ({
 
   const handleClose = React.useCallback(() => {
     if (onClose) {
-      if (multi) {
-        onClose(selected);
-      } else {
-        /* eslint-disable-next-line */
-        console.warn("Use `onClose` callback in conjunction with `multi` prop");
-      }
+      onClose(selected);
     }
-  }, [onClose, multi, selected]);
+  }, [onClose, selected]);
 
   React.useEffect(() => {
     if (onChange && touched) {
@@ -80,49 +77,59 @@ const Select: React.FC<SelectProps> = ({
   }, [onChange, selected, touched]);
 
   React.useEffect(() => {
-    if (ref && ref.current) {
-      setMenuWidth(ref.current.offsetWidth);
+    if (ref?.current?.offsetWidth) {
+      setMenuWidth(ref?.current?.offsetWidth);
     }
-  }, [ref]);
+  }, [ref?.current?.offsetWidth]);
+
+  const MenuBtn = React.useMemo(() => {
+    const labelCmp: DismissablePopperClickableComponent = ({
+      onClick,
+      isOpen,
+    }) => {
+      return (
+        <SelectLabel
+          ref={ref}
+          menuOpen={isOpen}
+          onClick={onClick}
+          placeholder={placeholder}
+        />
+      );
+    };
+    return labelCmp;
+  }, [placeholder]);
 
   return (
-    <Menu
-      keepOpen={!!multi}
-      style={{ width: menuWidth }}
-      onClose={handleClose}
-      MenuBtn={({ onClick, isOpen }) => {
-        return (
-          <SelectLabel
-            ref={ref}
-            menuOpen={isOpen}
-            onClick={onClick}
-            selected={selected}
-            placeholder={placeholder}
-          />
-        );
-      }}
-    >
-      {options.map((opt, i) => {
-        const selected = isSelected(opt);
-        return (
-          <MenuItem
-            key={`${opt.label}_${i}`}
-            icon={
-              multi
-                ? selected
-                  ? "check-square"
-                  : ["far", "square"]
-                : undefined
-            }
-            iconSize="1x"
-            iconClassName={selected ? primary : undefined}
-            onClick={handleItemClick(opt)}
-          >
-            {opt.label}
-          </MenuItem>
-        );
-      })}
-    </Menu>
+    <SelectContext.Provider value={{ selected }}>
+      <Menu
+        keepOpen={!!multi}
+        style={{ width: menuWidth }}
+        className="max-h5 overflow-auto"
+        onClose={handleClose}
+        MenuBtn={MenuBtn}
+      >
+        {options.map((opt, i) => {
+          const selected = isSelected(opt);
+          return (
+            <MenuItem
+              key={`${opt.label}_${i}`}
+              icon={
+                multi
+                  ? selected
+                    ? "check-square"
+                    : ["far", "square"]
+                  : undefined
+              }
+              iconSize="1x"
+              iconClassName={selected ? primary : undefined}
+              onClick={handleItemClick(opt)}
+            >
+              {opt.label}
+            </MenuItem>
+          );
+        })}
+      </Menu>
+    </SelectContext.Provider>
   );
 };
 

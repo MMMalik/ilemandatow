@@ -7,7 +7,7 @@ export interface MenuItemProps {
   /**
    * Callback fired upon clicking on item.
    */
-  onClick?: () => void;
+  onClick?: (evt: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
    * Name of the icon.
    */

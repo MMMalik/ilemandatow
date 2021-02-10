@@ -1,7 +1,7 @@
 import * as React from "react";
 import clsx from "clsx";
 import { TableRow, TableCell, useTheme } from "@ilemandatow/ui";
-import PollResult from "../pollResult/PollResult";
+import PollResult from "../pollResult";
 
 interface Props {
   /**

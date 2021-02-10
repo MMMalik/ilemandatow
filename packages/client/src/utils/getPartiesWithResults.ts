@@ -1,4 +1,4 @@
-import { PollResultFragment } from "@ilemandatow/client";
+import { DataType } from "../generated";
 import { getPartyColor } from "./getPartyColor";
 
 export interface PartyWithResult {
@@ -11,7 +11,7 @@ export interface PartyWithResult {
 }
 
 export const getPartiesWithResults = (
-  results: PollResultFragment[],
+  results: DataType.PollResultFragment[],
   theme: string
 ): PartyWithResult[] => {
   return results.map(({ party, result }) => ({

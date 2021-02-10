@@ -34,9 +34,13 @@ const Popper: React.FC<PopperProps> = ({
     popperElement,
     setPopperElement,
   ] = React.useState<HTMLDivElement | null>(null);
-  const { styles, attributes } = usePopper(refEl, popperElement, {
-    placement,
-  });
+  const opts = React.useMemo(
+    () => ({
+      placement,
+    }),
+    [placement]
+  );
+  const { styles, attributes } = usePopper(refEl, popperElement, opts);
   const { theme } = useTheme();
   const { bgPrimary } = theme;
 

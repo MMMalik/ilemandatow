@@ -1,11 +1,10 @@
 import * as React from "react";
-import { PollResultFragment } from "@ilemandatow/client";
+import { DataType, sortPollResults } from "@ilemandatow/client";
 import { DefinitionList, DefinitionItem } from "@ilemandatow/ui";
-import { sortPollResults } from "../../data";
 import PollResult from "../pollResult";
 
 interface Props {
-  results: PollResultFragment[];
+  results: DataType.PollResultFragment[];
 }
 
 const PollCardStats: React.FC<Props> = ({ results }) => {

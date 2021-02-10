@@ -38,9 +38,15 @@ const DismissablePopper: React.FC<DismissablePopperProps> = ({
     setTouched(true);
   };
 
-  const handlePopperClose = React.useCallback(() => {
+  const handleOutsideClick = React.useCallback(() => {
     setRefEl(null);
   }, []);
+
+  const handlePopperClick = React.useCallback(() => {
+    if (!keepOpen) {
+      setRefEl(null);
+    }
+  }, [keepOpen]);
 
   React.useEffect(() => {
     if (onClose && touched && !refEl) {
@@ -49,13 +55,9 @@ const DismissablePopper: React.FC<DismissablePopperProps> = ({
   }, [onClose, touched, refEl]);
 
   return (
-    <ClickAway onOutsideClick={handlePopperClose}>
+    <ClickAway onOutsideClick={handleOutsideClick}>
       <ClickableComponent onClick={handleClick} isOpen={!!refEl} />
-      <Popper
-        placement={placement}
-        onClick={keepOpen ? undefined : handlePopperClose}
-        refEl={refEl}
-      >
+      <Popper placement={placement} onClick={handlePopperClick} refEl={refEl}>
         {children}
       </Popper>
     </ClickAway>

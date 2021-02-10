@@ -5,3 +5,7 @@
 .h-60 {
   height: 60%;
 }
+
+.max-h5 {
+  max-height: 16rem;
+}

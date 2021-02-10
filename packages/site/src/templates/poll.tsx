@@ -1,10 +1,9 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { ElectoralCodeFragment, PollFragment } from "@ilemandatow/client";
+import { DataType, filterList } from "@ilemandatow/client";
 import { SectionTitle } from "@ilemandatow/ui";
 import { useTranslation } from "../i18n";
 import { PollViz } from "../views";
-import { filterList } from "../data";
 
 export const query = graphql`
   query getPoll($id: ID!) {
@@ -25,8 +24,8 @@ interface Props {
 
 const Poll: React.FC<Props> = ({ data }) => {
   const { t } = useTranslation();
-  const poll: PollFragment = data.ilemandatow.Poll;
-  const codes: ElectoralCodeFragment[] = filterList(
+  const poll: DataType.PollFragment = data.ilemandatow.Poll;
+  const codes: DataType.ElectoralCodeFragment[] = filterList(
     data.ilemandatow.allElectoralCodes
   );
 

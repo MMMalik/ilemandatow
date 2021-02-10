@@ -23,3 +23,6 @@ export { default as PollChart } from "./pollChart";
 
 export * from "./pollResultsTable";
 export { default as PollResultsTable } from "./pollResultsTable";
+
+export * from "./pollsFilters";
+export { default as PollsFilters } from "./pollsFilters";

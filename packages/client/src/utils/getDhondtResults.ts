@@ -1,4 +1,4 @@
-import { ElectoralCodeFragment } from "@ilemandatow/client";
+import { DataType } from "../generated";
 import { dhondtByDistricts } from "@ilemandatow/seats";
 
 interface PartyResult {
@@ -8,7 +8,7 @@ interface PartyResult {
 
 export const getDhondtResults = (
   results: PartyResult[],
-  code?: ElectoralCodeFragment
+  code?: DataType.ElectoralCodeFragment
 ) => {
   if (!code) {
     return [];

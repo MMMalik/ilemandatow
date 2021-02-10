@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PollResultFragment } from "@ilemandatow/client";
+import { DataType } from "@ilemandatow/client";
 import { DataCard } from "@ilemandatow/ui";
 import { useDateFormat } from "../../i18n";
 import PollCardStats from "./PollCardStats";
@@ -10,7 +10,7 @@ interface Props {
   polledBy: string;
   publishedAt: string;
   source: string;
-  results: PollResultFragment[];
+  results: DataType.PollResultFragment[];
 }
 
 const PollCard: React.FC<Props> = ({

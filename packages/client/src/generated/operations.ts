@@ -2317,6 +2317,7 @@ export type GetPollsQueryVariables = Exact<{
   sortBy?: Maybe<ReadonlyArray<SortPollsBy> | SortPollsBy>;
   first?: Maybe<Scalars["Int"]>;
   skip?: Maybe<Scalars["Int"]>;
+  where?: Maybe<PollWhereInput>;
 }>;
 
 export type GetPollsQuery = { readonly __typename?: "Query" } & {

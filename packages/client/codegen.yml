@@ -1,6 +1,6 @@
 overwrite: true
 schema: "http://localhost:3000/admin/api"
-documents: src/gql/**/*.ts
+documents: src/data/**/*.ts
 generates:
   src/generated/operations.ts:
     plugins:
