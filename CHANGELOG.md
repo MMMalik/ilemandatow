@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.35](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.34...v0.0.1-alpha.35) (2021-02-11)
+
+
+### Bug Fixes
+
+* **deps:** add @apollo/client as peer dependency ([adebf7e](https://github.com/MMMalik/ilemandatow/commit/adebf7ee32965e5ebf0194507d431305d0b22dd5))
+
+
+
+
+
 ## [0.0.1-alpha.34](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.33...v0.0.1-alpha.34) (2021-02-11)
 
 **Note:** Version bump only for package @ilemandatow/ilemandatow
