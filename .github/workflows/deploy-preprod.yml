@@ -17,7 +17,7 @@ jobs:
     environment:
       name: preprod
       url: https://preprod.ilemandatow.pl
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -35,6 +35,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: v${{ fromJson(steps.set_lerna_json.outputs.lernaJson).version }}
+
+      - name: Use fixed Node.js version
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.15.2"
 
       - name: Deploy API to preprod
         run: |

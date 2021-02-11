@@ -22,15 +22,15 @@ on:
 jobs:
   deploy-dev:
     name: Dev
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js 12.x
+      - name: Use fixed Node.js version
         uses: actions/setup-node@v2
         with:
-          node-version: "12"
+          node-version: "14.15.2"
 
       - name: Install dependencies
         run: yarn install
