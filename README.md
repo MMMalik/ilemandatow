@@ -1,27 +1,25 @@
-[![License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](https://github.com/MMMalik/ilemandatow/blob/main/COPYING)
+[![License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](https://github.com/MMMalik/ilemandatow/blob/main/COPYING) ![Deploy prod](https://github.com/MMMalik/ilemandatow/workflows/Deploy%20prod/badge.svg)
 
-# ilemandatow.pl
+# ilemandatow
 
-An open-source platform which purpose is to gather results of election polls to the Sejm of the Republic of Poland.
+## Introduction
 
-### Packages
+An open-source platform which main purpose is to gather results of election polls to the Sejm of the Republic of Poland.
 
-Repository contains source code of [ilemandatow.pl](https://ilemandatow.pl) website. The following packages can be found here:
+Features:
 
-| Package                                                                      | Description                                           |
-| ---------------------------------------------------------------------------- | ----------------------------------------------------- |
-| [api](https://github.com/MMMalik/ilemandatow/tree/main/packages/api)         | Headless CMS: Graphql API and admin panel             |
-| [locales](https://github.com/MMMalik/ilemandatow/tree/main/packages/locales) | Contains language specific settings and translations  |
-| [seats](https://github.com/MMMalik/ilemandatow/tree/main/packages/seats)     | Library with helpers for calculating election results |
-| [site](https://github.com/MMMalik/ilemandatow/tree/main/packages/site)       | Main website built with Gatsby                        |
-| [ui](https://github.com/MMMalik/ilemandatow/tree/main/packages/ui)           | Pure UI components                                    |
+- Gathers election polls from various publishers (newspapers, television networks, radio networks, etc.) and poll companies
+- Allows end-user to browse and filter election polls results
+- Allows end-user to create simulation of seats distribution via virtual elections
 
-### Development
+[Check it out][site] for yourself!
 
-Install dependencies
+## Packages
 
-```
-yarn install
-```
+This consists of many packages. See detailed list [here](CONTRIBUTING.md#Packages). Please use README of each package for more details.
 
-### Scripts
+## Contributing
+
+Please use [CONTRIBUTING](CONTRIBUTING.md) file.
+
+[site]: https://ilemandatow.pl
