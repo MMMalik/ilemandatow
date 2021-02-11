@@ -43,6 +43,7 @@
     "db:backup": "cd packages/api && yarn db:backup",
     "db:migrate:make": "cd packages/api && yarn db:migrate:make",
     "db:migrate:down": "cd packages/api && yarn db:migrate:down",
+    "db:migrate:latest": "cd packages/api && yarn db:migrate:latest",
     "db:migrate:up": "cd packages/api && yarn db:migrate:up",
     "db:restore": "cd packages/api && yarn db:restore",
     "db:seed": "cd packages/api && yarn db:seed",

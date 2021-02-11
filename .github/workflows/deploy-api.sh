@@ -31,7 +31,7 @@ ssh-keyscan -H $MD_SSH_HOST >~/.ssh/known_hosts
 # Creates db script wrappers
 printf "\n%s\n\n" "Create scripts directory"
 mkdir ~/.db-scripts
-for i in db:backup db:backup:cleanup db:restore db:setup db:seed db:migrate:up; do
+for i in db:backup db:backup:cleanup db:restore db:setup db:seed db:migrate:up db:migrate:down db:migrate:latest; do
     printf "\n%s\n\n" "Create $i script wrapper"
     printf "cd $DEST_PATH/public_nodejs && NODE_ENV=production API_ENV_PATH=$DEST_PATH/.env yarn $i \$1 \$2" >~/.db-scripts/$i.sh
 done
@@ -63,7 +63,7 @@ rsync -zah ~/.db-scripts/ $MD_SSH_USER@$MD_SSH_HOST:$DEST_PATH
 
 # Runs migrations
 printf "\n%s\n\n" "Run migrations"
-ssh $MD_SSH_USER@$MD_SSH_HOST "bash $DEST_PATH/db\:migrate\:up.sh"
+ssh $MD_SSH_USER@$MD_SSH_HOST "bash $DEST_PATH/db\:migrate\:latest.sh"
 
 # Restarts server
 printf "\n%s\n\n" "Restart server"
