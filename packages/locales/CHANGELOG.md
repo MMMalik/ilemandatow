@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.32 (2021-02-11)
+
+**Note:** Version bump only for package @ilemandatow/locales
+
+
+
+
+
 ## 0.0.1-alpha.31 (2021-02-04)
 
 **Note:** Version bump only for package @ilemandatow/locales
