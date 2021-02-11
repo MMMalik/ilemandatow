@@ -1,11 +1,27 @@
 {
   "name": "@ilemandatow/ui",
   "version": "0.0.1-alpha.31",
-  "description": "UI components",
+  "description": "UI components for ilemandatow",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Michał Malik",
-  "license": "MIT",
+  "author": "Michał Malik <michalmmalik@gmail.com>",
+  "homepage": "https://ilemandatow.pl",
+  "bugs": {
+    "url": "https://github.com/MMMalik/ilemandatow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MMMalik/ilemandatow.git"
+  },
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "ilemandatow",
+    "polls",
+    "elections",
+    "dhondt",
+    "Poland",
+    "Storybook"
+  ],
   "scripts": {
     "build": "yarn clean && tsc",
     "check-types": "tsc --noEmit",
@@ -19,12 +35,14 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
+    "@popperjs/core": "^2.5.4",
     "clsx": "^1.1.1",
     "fontsource-lato": "^3.0.9",
     "react": "^16.14.0",
     "react-colorful": "^4.4.4",
     "react-dom": "^16.14.0",
     "react-hook-form": "^6.14.1",
+    "react-popper": "^2.2.4",
     "tachyons": "^4.12.0"
   },
   "devDependencies": {
