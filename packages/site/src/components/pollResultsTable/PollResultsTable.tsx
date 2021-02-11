@@ -1,8 +1,8 @@
 import * as React from "react";
 import { DhondtParliamentSeat, sortBySeats } from "@ilemandatow/seats";
 import { Table, TableHead, TableBody, TableHeadCell } from "@ilemandatow/ui";
+import { PartyWithResult } from "@ilemandatow/client";
 import { useTranslation } from "../../i18n";
-import { PartyWithResult } from "../../data";
 import PollResultsTableRow from "./PollResultsTableRow";
 
 interface Props {

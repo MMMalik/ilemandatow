@@ -21,7 +21,7 @@ export const getBarChartCoords = (bars: ChartValue[], opts: BarChartOpts) => {
 
   const parsedBars = bars.map(({ value, id, fill }, i) => {
     const x = i * barWidth + margin;
-    const height = (value / highestBar.value) * maxY - 2 * margin;
+    const height = (value / highestBar.value) * maxY;
 
     return {
       id,

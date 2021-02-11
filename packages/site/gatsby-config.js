@@ -1,7 +1,7 @@
+const introspection = require("@ilemandatow/api/generated/introspection.json");
 const pkg = require("./package.json");
 const meta = require("./gatsby/envInfo");
 const { buildClientSchema } = require("graphql");
-const introspection = require("@ilemandatow/api/generated/introspection.json");
 
 module.exports = {
   siteMetadata: {
@@ -39,13 +39,6 @@ module.exports = {
         createSchema: async () => {
           return buildClientSchema(introspection);
         },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-graphql-codegen",
-      options: {
-        fileName: `./generated/graphql.ts`,
-        documentPaths: [`./src/**/*.{ts,tsx}`],
       },
     },
     {

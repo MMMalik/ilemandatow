@@ -1,32 +1,36 @@
 import * as React from "react";
-import { Grid, GridItem, Paper, useTheme } from "@ilemandatow/ui";
 import {
+  DataType,
   filterList,
   filterNonRegularParties,
   filterRegularParties,
   getDhondtResults,
   getPartiesWithResults,
-} from "../../data";
+  getElectoralCode,
+} from "@ilemandatow/client";
+import { Grid, GridItem, Paper, useTheme } from "@ilemandatow/ui";
 import {
   PollChart,
   PollInfoList,
   PollResultsTable,
   PollMethodologyList,
 } from "../../components";
-import { PollFragment } from "../../types";
 
 interface Props {
-  poll?: PollFragment | null;
+  poll?: DataType.PollFragment | null;
+  codes?: DataType.ElectoralCodeFragment[] | null;
 }
 
-const PollViz: React.FC<Props> = ({ poll }) => {
+const PollViz: React.FC<Props> = ({ poll, codes }) => {
   const { name } = useTheme();
+  const code = getElectoralCode(codes ?? [], poll);
   const results = filterList(poll?.results ?? []);
   const seatsParties = getDhondtResults(
     filterNonRegularParties(results).map(({ party, result }) => ({
       id: party?.id ?? "",
       result: result ?? 0,
-    }))
+    })),
+    code
   );
   const parties = getPartiesWithResults(results, name);
   const specialParties = getPartiesWithResults(
@@ -60,7 +64,11 @@ const PollViz: React.FC<Props> = ({ poll }) => {
       </GridItem>
       <GridItem className="w-100 w-60-l">
         <Paper className="pa3 h-100">
-          <PollChart parties={parties} seats={seatsParties} />
+          <PollChart
+            parties={parties}
+            seats={seatsParties}
+            totalSeats={code?.totalSeats ?? 0}
+          />
         </Paper>
       </GridItem>
       <GridItem className="w-100">

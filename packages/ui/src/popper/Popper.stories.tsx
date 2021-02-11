@@ -8,7 +8,8 @@ export const Popper = (args: PopperProps) => {
   const handleClick = (
     evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    setRefEl((refEl) => (refEl ? null : evt.currentTarget));
+    const target = evt.currentTarget;
+    setRefEl((refEl) => (refEl ? null : target));
   };
 
   return (

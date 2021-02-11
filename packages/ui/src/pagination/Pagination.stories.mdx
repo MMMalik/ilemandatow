@@ -1,0 +1,23 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Pagination from "./Pagination";
+import * as template from "./Pagination.stories";
+
+<Meta
+  title="Data Display/Pagination"
+  component={Pagination}
+  argTypes={{ onChange: { action: "clicked" } }}
+/>
+
+### Pagination
+
+Default Pagination component.
+
+<Canvas>
+  <Story name="Main" args={{ items: 100, perPage: 5 }}>
+    {template.Pagination.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Pagination} />

@@ -7,7 +7,7 @@ export const Menu = (args: MenuProps) => {
   return (
     <MenuCmp
       {...args}
-      menuBtn={(onClick) => (
+      MenuBtn={({ onClick }) => (
         <Icon onClick={onClick} icon="ellipsis-v" className="pointer dim" />
       )}
     >

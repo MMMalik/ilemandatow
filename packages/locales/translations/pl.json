@@ -52,5 +52,10 @@
   "openSourceHeroDesc": "Kod źródłowy oraz dane są dostępne w serwisie GitHub",
   "pollsHeroDesc": "Wyniki sondaży dostępne są w jednym miejscu",
   "pollsExplainedDesc": "Zbieramy sondaże z wielu źródeł i udostępniamy je tutaj, aby każdy miał do nich łatwy dostęp. Dokładamy wszelkich starań, aby strona była aktualizowana jak najczęściej. Nasz zbiór sondaży możesz łatwo filtrować, aby uzyskać interesujące Cię dane.",
-  "quickExampleDesc": "Zobacz jak mogą rozłożyć się miejsca w Sejmie w zależności od wyników wyborów. Aby przejść do zaawansowanych ustawień, kliknij tutaj."
+  "quickExampleDesc": "Zobacz jak mogą rozłożyć się miejsca w Sejmie w zależności od wyników wyborów. Aby przejść do zaawansowanych ustawień, kliknij tutaj.",
+  "noPollsFound": "Nie znaleziono sondaży",
+  "selectPollCompanies": "Sondażownie",
+  "selectPublishers": "Na zlecenie",
+  "pollCompanies": "Sondażownie",
+  "publishers": "Na zlecenie"
 }

@@ -1,48 +1,51 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# @ilemandatow/site
 
-## 🚀 Quick start
+## Introduction
 
-1.  **Create a Gatsby site.**
+Main site of ilemandatow.pl.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Tools & libraries
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- [Gatsby][gatsby]
 
-2.  **Start developing.**
+## Development
 
-    Navigate into your new site’s directory and start it up.
+:warning: Development rules:
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+- Logic for smaller, potentially re-usable components goes to `./src/components` folder
+- Any components without business logic should go to `@ilemandatow/ui` package
+- Logic that groups multiple components for a page goes to `./src/views` folder
+- Page logic goes to `./src/pages` folder or to `./src/templates` folder
+- Logic related to page layout goes to `./src/layout` folder
+- Gatsby GraphQL logic (static queries, fragments) should go to `./src/data` folder
+- Gatsby GraphQL logic for a page should go to page component's file
 
-3.  **Open the code and start customizing!**
+Run API (from project root):
 
-    Your site is now running at http://localhost:8000!
+```
+yarn develop:api
+```
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+Run Gatsby in development mode:
 
-4.  **Learn more**
+```
+yarn develop
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+Or from project root:
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+yarn develop:site
+```
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### Scripts
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+| Command       | Description                     | Requirements |
+| ------------- | ------------------------------- | ------------ |
+| `build`       | Builds Gatsby site (production) | Running API  |
+| `check-types` | Runs TS without emitting code   |              |
+| `clean`       | Cleans build folder             |              |
+| `develop`     | Runs Gatsby in dev mode         | Running API  |
+| `serve`       | Serves Gatsby prod build        | Running API  |
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+[gatsby]: https://www.gatsbyjs.com/

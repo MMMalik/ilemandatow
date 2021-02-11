@@ -1,4 +1,4 @@
-import { Select, Relationship, Slug, Text } from "@keystonejs/fields";
+import { Select, Relationship, Slug, Integer, Text } from "@keystonejs/fields";
 import { Color } from "@keystonejs/fields-color";
 import { slugId } from "../../utils";
 import { canEdit } from "../access";
@@ -23,6 +23,7 @@ export const Party = {
     },
     color: { type: Color },
     colorDarkTheme: { type: Color },
+    parliamentOrder: { type: Integer },
     memberParties: { type: Relationship, ref: "Party", many: true },
     slug: { type: Slug, generate: slugId(["name"]), regenerateOnUpdate: false },
   },

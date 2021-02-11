@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.32](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.31...v0.0.1-alpha.32) (2021-02-11)
+
+
+### Features
+
+* **election-regions:** allow to calculate elextion results based on regional results ([194b558](https://github.com/MMMalik/ilemandatow/commit/194b558369e4f219f0b90ca787215f03d968fcf1))
+* **election-regions:** rename to districts ([af8a853](https://github.com/MMMalik/ilemandatow/commit/af8a853e55b68ea013d4994090332ecb7a6cf2a3))
+* **election-regions:** use electoral districts and electoral code ([b8e21e0](https://github.com/MMMalik/ilemandatow/commit/b8e21e0debcfb01ed23fe1e003b7c13ce6ef94b1))
+
+
+
+
+
 ## 0.0.1-alpha.31 (2021-02-04)
 
 **Note:** Version bump only for package @ilemandatow/seats

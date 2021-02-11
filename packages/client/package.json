@@ -1,0 +1,43 @@
+{
+  "name": "@ilemandatow/client",
+  "version": "0.0.1-alpha.32",
+  "description": "Client for GraphQL API for ilemandatow",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Michał Malik <michalmmalik@gmail.com>",
+  "homepage": "https://ilemandatow.pl",
+  "bugs": {
+    "url": "https://github.com/MMMalik/ilemandatow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MMMalik/ilemandatow.git"
+  },
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "ilemandatow",
+    "polls",
+    "elections",
+    "dhondt",
+    "Poland",
+    "GraphQL"
+  ],
+  "scripts": {
+    "build:codegen": "graphql-codegen",
+    "postbuild:codegen": "eslint src/generated/**/*.ts --fix",
+    "build": "yarn clean && tsc",
+    "check-types": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "develop": "yarn clean && tsc --watch"
+  },
+  "dependencies": {
+    "@ilemandatow/seats": "^0.0.1-alpha.32",
+    "graphql-hooks": "^5.1.0",
+    "graphql-hooks-memcache": "^2.1.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.1",
+    "@graphql-codegen/typescript": "^1.20.2",
+    "@graphql-codegen/typescript-operations": "^1.17.14"
+  }
+}

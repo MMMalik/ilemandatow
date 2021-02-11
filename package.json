@@ -1,5 +1,6 @@
 {
   "name": "@ilemandatow/ilemandatow",
+  "description": "Platform for browsing election polls to the Sejm of the Republic of Poland",
   "private": true,
   "workspaces": {
     "packages": [
@@ -9,10 +10,29 @@
       "**/@keystonejs/**"
     ]
   },
+  "author": "Michał Malik <michalmmalik@gmail.com>",
+  "homepage": "https://ilemandatow.pl",
+  "bugs": {
+    "url": "https://github.com/MMMalik/ilemandatow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MMMalik/ilemandatow.git"
+  },
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "ilemandatow",
+    "polls",
+    "elections",
+    "dhondt",
+    "Poland"
+  ],
   "scripts": {
     "build:api:codegen": "cd packages/api && yarn build:codegen",
     "build:api:keystone": "cd packages/api && yarn build:keystone",
     "build:api": "cd packages/api && yarn build",
+    "build:client:codegen": "cd packages/client && yarn build:codegen",
+    "build:client": "cd packages/client && yarn build",
     "build:seats": "cd packages/seats && yarn build",
     "build:site": "cd packages/site && yarn build",
     "build:ui": "cd packages/ui && yarn build",
@@ -28,12 +48,14 @@
     "db:seed": "cd packages/api && yarn db:seed",
     "db:setup": "cd packages/api && yarn db:setup",
     "develop:api": "cd packages/api && yarn develop",
+    "develop:client": "cd packages/client && yarn develop",
     "develop:seats": "cd packages/seats && yarn develop",
     "develop:site": "cd packages/site && yarn develop",
     "develop:ui:sb": "cd packages/ui && yarn storybook",
     "develop:ui": "cd packages/ui && yarn develop",
     "lint": "eslint \"packages/**/src/**/*.{tsx,ts,js}\"",
     "postinstall": "node postinstall.js",
+    "serve:site": "cd packages/site && yarn serve",
     "test": "yarn check-types && yarn jest && yarn lint"
   },
   "dependencies": {
@@ -62,6 +84,8 @@
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "graphql": "14.7.0",
     "husky": "^5.0.8",
     "jest": "^26.6.3",
     "lerna": "^3.22.1",

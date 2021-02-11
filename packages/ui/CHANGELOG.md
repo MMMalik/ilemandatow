@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.32](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.31...v0.0.1-alpha.32) (2021-02-11)
+
+
+### Bug Fixes
+
+* **charts:** add eslint console rule ([611aeed](https://github.com/MMMalik/ilemandatow/commit/611aeedbf2c426b3f8bf9520ac0e4ac0cb256551))
+* **charts:** fix large arc flag, fix bar char negative value ([3627c1b](https://github.com/MMMalik/ilemandatow/commit/3627c1bf468d370284bffd8d43d8bac15e885ae9))
+
+
+### Features
+
+* **client:** add filtering logic, fix select ([f00ae51](https://github.com/MMMalik/ilemandatow/commit/f00ae518567b6795ebebbeaea64287e9e279a719))
+* **client:** add filters section ([10b1456](https://github.com/MMMalik/ilemandatow/commit/10b14565899b88ee2b9fed815bac9b7102470e50))
+* **client:** add pagination component ([7d82cbb](https://github.com/MMMalik/ilemandatow/commit/7d82cbb6e81f891ebeed6dae5b65d61dc456e83d))
+* **client:** add pagination on polls page ([ba7f457](https://github.com/MMMalik/ilemandatow/commit/ba7f4575d4b9f15e3d037b630fd8b8d1fd258a69))
+* **client:** add select component ([61fd50a](https://github.com/MMMalik/ilemandatow/commit/61fd50af06f521b0bf3f87cbfd062d4bae33b6bc))
+* **client:** add selection chips, improve select ([beefd81](https://github.com/MMMalik/ilemandatow/commit/beefd81b796d893961a26cb50745b5e6902aa768))
+* **client:** cleanup removed imports ([51e58c8](https://github.com/MMMalik/ilemandatow/commit/51e58c8950c6b3c140bc058ac7ed4bf0bd8a0ac6))
+* **client:** rename meta title ([27f0577](https://github.com/MMMalik/ilemandatow/commit/27f0577971e6a5639f29ef2536134e2555a22536))
+
+
+
+
+
 ## 0.0.1-alpha.31 (2021-02-04)
 
 **Note:** Version bump only for package @ilemandatow/ui

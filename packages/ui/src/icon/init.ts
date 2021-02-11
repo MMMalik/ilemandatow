@@ -4,6 +4,8 @@ import {
   faPlus,
   faMinus,
   faAngleDown,
+  faAngleRight,
+  faAngleLeft,
   faCog,
   faAngleUp,
   faTrash,
@@ -25,8 +27,12 @@ import {
   faChartPie,
   faChair,
   faUser,
+  faCheckSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
+import {
+  faQuestionCircle,
+  faSquare,
+} from "@fortawesome/free-regular-svg-icons";
 
 config.autoAddCss = false;
 
@@ -36,6 +42,8 @@ library.add(
   faTrash,
   faRedo,
   faAngleDown,
+  faAngleRight,
+  faAngleLeft,
   faAngleUp,
   faCog,
   faEllipsisV,
@@ -47,6 +55,8 @@ library.add(
   faList,
   faTh,
   faSun,
+  faSquare,
+  faCheckSquare,
   faMoon,
   faExternalLinkAlt,
   faQuestionCircle,

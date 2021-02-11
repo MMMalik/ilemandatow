@@ -8,6 +8,10 @@ export interface DataCardProps {
    */
   title: string;
   /**
+   * DataCard's sub title.
+   */
+  subTitle?: string;
+  /**
    * Part of the title that is shown on the right side.
    */
   titleRightSide: string;
@@ -19,6 +23,7 @@ export interface DataCardProps {
 
 const DataCard: React.FC<DataCardProps> = ({
   title,
+  subTitle,
   titleRightSide,
   children,
   footer,
@@ -30,7 +35,12 @@ const DataCard: React.FC<DataCardProps> = ({
     <Paper className="h5">
       <div className="h-20">
         <div className={`flex justify-between bb b--${textDisabled} pa3`}>
-          <div className="b">{title}</div>
+          <div>
+            <span className="b">{title}</span>
+            {subTitle && (
+              <span className={`ml1 ${textMuted}`}>{` / ${subTitle}`}</span>
+            )}
+          </div>
           <div className={`f6 ${textMuted}`}>{titleRightSide}</div>
         </div>
       </div>

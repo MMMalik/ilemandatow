@@ -1,19 +1,10 @@
-import { ParliamentSeat } from "../types";
+import { ElectionResult, ParliamentSeat } from "../types";
 
 export interface DhondtElection {
   /**
    * Election results.
    */
-  results: Array<{
-    /**
-     * Party identifier.
-     */
-    party: string;
-    /**
-     * Number of votes party received.
-     */
-    votes: number;
-  }>;
+  results: ElectionResult[];
   /**
    * Total number of seats in the parliament.
    */
@@ -22,6 +13,17 @@ export interface DhondtElection {
    * Percentage below which parties are excluded from seats assignment.
    */
   threshold?: number;
+}
+
+export interface DhondtElectionByDistrict {
+  /**
+   * Results in each district.
+   */
+  resultsByDistrict: DhondtElection[];
+  /**
+   * Percentage below which parties are excluded from seats assignment.
+   */
+  globalThreshold?: number;
 }
 
 export type DhondtQuotient = {

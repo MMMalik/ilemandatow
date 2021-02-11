@@ -12,7 +12,7 @@ const TableContextMenu: React.FC = ({ children }) => {
     <TableCell>
       <Menu
         placement="bottom-start"
-        menuBtn={(onClick) => (
+        MenuBtn={({ onClick }) => (
           <Icon
             onClick={onClick}
             icon="cog"

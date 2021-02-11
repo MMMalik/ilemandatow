@@ -1,3 +1,5 @@
+// This file is required by Phusion Passenger
+
 const path = require("path");
 
 process.env.NODE_ENV = "production";

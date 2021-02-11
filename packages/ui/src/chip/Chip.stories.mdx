@@ -1,0 +1,23 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Chip from "./Chip";
+import * as template from "./Chip.stories";
+
+<Meta
+  title="Data Display/Chip"
+  component={Chip}
+  argTypes={{ onRemove: { action: "removed" } }}
+/>
+
+### Chip
+
+Default Chip component.
+
+<Canvas>
+  <Story name="Main" args={{ label: "Chip label" }}>
+    {template.Chip.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Chip} />
