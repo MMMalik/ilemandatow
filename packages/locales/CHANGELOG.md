@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.32](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.31...v0.0.1-alpha.32) (2021-02-11)
+
+
+### Features
+
+* **client:** add selection chips, improve select ([beefd81](https://github.com/MMMalik/ilemandatow/commit/beefd81b796d893961a26cb50745b5e6902aa768))
+
+
+
+
+
 ## 0.0.1-alpha.31 (2021-02-04)
 
 **Note:** Version bump only for package @ilemandatow/locales

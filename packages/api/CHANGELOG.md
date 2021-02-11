@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.32](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.31...v0.0.1-alpha.32) (2021-02-11)
+
+
+### Features
+
+* **client:** add `client` package ([7185226](https://github.com/MMMalik/ilemandatow/commit/7185226ce9a44ba4b4b83f852cfd18eed1acc833))
+* **election-regions:** add election tables ([c9e7650](https://github.com/MMMalik/ilemandatow/commit/c9e76509b3f3d623b586ef62419121c3cba5a0da))
+* **election-regions:** use electoral districts and electoral code ([b8e21e0](https://github.com/MMMalik/ilemandatow/commit/b8e21e0debcfb01ed23fe1e003b7c13ce6ef94b1))
+* **parliament-order:** order parties in parliament by relative affiliation ([3f487bc](https://github.com/MMMalik/ilemandatow/commit/3f487bcbaab07239577a737ab7b799d0dacb6529))
+
+
+
+
+
 ## 0.0.1-alpha.31 (2021-02-04)
 
 **Note:** Version bump only for package @ilemandatow/api
