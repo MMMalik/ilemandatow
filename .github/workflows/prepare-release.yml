@@ -32,7 +32,7 @@ jobs:
           node-version: "14.15.2"
 
       - name: Bump version via lerna
-        run: npx lerna version prerelease --no-git-tag-version --conventional-commits --yes
+        run: npx lerna version prerelease --no-git-tag-version --force-publish --conventional-commits --yes
 
       - id: set_lerna_json
         name: Set lerna json
