@@ -1,10 +1,11 @@
 import * as React from "react";
-import { SelectOption as SelectOptionType } from "./types";
 import SelectLabel from "./SelectLabel";
 import Menu, { MenuItem } from "../menu";
 import { useTheme } from "../theme";
 import { DismissablePopperClickableComponent } from "../dismissablePopper";
+import { SelectOption as SelectOptionType } from "./types";
 import { SelectContext } from "./context";
+import { isSelected } from "./isSelected";
 
 export interface SelectProps {
   /**
@@ -12,13 +13,17 @@ export interface SelectProps {
    */
   options: SelectOptionType[];
   /**
-   * Callback invoked upon selecting an item. Passes selected options.
+   * Selected options. Use for `controlled` component only.
    */
-  onChange?: (selected: SelectOptionType | SelectOptionType[]) => void;
+  selected: SelectOptionType[];
   /**
-   * Callback invoked upon closing popup. Passes selected options.
+   * Callback invoked upon clicking on an option.
    */
-  onClose?: (selected: SelectOptionType[]) => void;
+  onOptionClick?: (opt: SelectOptionType) => void;
+  /**
+   * Callback invoked upon closing popup.
+   */
+  onClose?: () => void;
   /**
    * Selection placeholder. Displayed when no items are selected.
    */
@@ -31,50 +36,22 @@ export interface SelectProps {
 
 const Select: React.FC<SelectProps> = ({
   options,
-  onChange,
+  selected,
+  onOptionClick,
   onClose,
   multi,
   placeholder,
 }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
-  const [touched, setTouched] = React.useState(false);
   const [menuWidth, setMenuWidth] = React.useState(0);
   const { theme } = useTheme();
   const { primary } = theme;
-  const [selected, setSelected] = React.useState(
-    options.filter((opt) => opt.preSelected)
-  );
 
-  const handleItemClick = (opt: SelectOptionType) => () => {
-    if (multi) {
-      setSelected((opts) => {
-        const hasOpt = opts.some((o) => o.value === opt.value);
-        if (hasOpt) {
-          return opts.filter((o) => o.value !== opt.value);
-        }
-        return opts.concat(opt);
-      });
-    } else {
-      setSelected([opt]);
+  const handleOptionClick = (opt: SelectOptionType) => () => {
+    if (onOptionClick) {
+      onOptionClick(opt);
     }
-    setTouched(true);
   };
-
-  const isSelected = (opt: SelectOptionType) => {
-    return selected.some((o) => o.value === opt.value);
-  };
-
-  const handleClose = React.useCallback(() => {
-    if (onClose) {
-      onClose(selected);
-    }
-  }, [onClose, selected]);
-
-  React.useEffect(() => {
-    if (onChange && touched) {
-      onChange(selected);
-    }
-  }, [onChange, selected, touched]);
 
   React.useEffect(() => {
     if (ref?.current?.offsetWidth) {
@@ -105,24 +82,24 @@ const Select: React.FC<SelectProps> = ({
         keepOpen={!!multi}
         style={{ width: menuWidth }}
         className="max-h5 overflow-auto"
-        onClose={handleClose}
+        onClose={onClose}
         MenuBtn={MenuBtn}
       >
         {options.map((opt, i) => {
-          const selected = isSelected(opt);
+          const isOptSelected = isSelected(opt, selected);
           return (
             <MenuItem
               key={`${opt.label}_${i}`}
               icon={
                 multi
-                  ? selected
+                  ? isOptSelected
                     ? "check-square"
                     : ["far", "square"]
                   : undefined
               }
               iconSize="1x"
-              iconClassName={selected ? primary : undefined}
-              onClick={handleItemClick(opt)}
+              iconClassName={isOptSelected ? primary : undefined}
+              onClick={handleOptionClick(opt)}
             >
               {opt.label}
             </MenuItem>

@@ -69,6 +69,7 @@ const PollsGrid: React.FC<Props> = ({
             items={count}
             initPage={1}
             onChange={setPage}
+            hideOnSinglePage={true}
           />
         </div>
       </GridItem>

@@ -1,5 +1,5 @@
-import { DataType } from "../generated";
 import { dhondtByDistricts } from "@ilemandatow/seats";
+import { DataType } from "../generated";
 
 interface PartyResult {
   id?: string;

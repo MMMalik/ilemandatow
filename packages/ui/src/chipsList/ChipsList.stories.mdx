@@ -1,27 +1,23 @@
 import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
-import Select from "./Select";
-import * as template from "./Select.stories";
+import ChipsList from "./ChipsList";
+import * as template from "./ChipsList.stories";
 
 <Meta
-  title="Inputs/Select"
-  component={Select}
-  argTypes={{
-    onClose: { action: "closed" },
-    onOptionClick: { action: "clicked" },
-  }}
+  title="Data Display/ChipsList"
+  component={ChipsList}
+  argTypes={{ onRemove: { action: "removed" } }}
 />
 
-### Select
+### ChipsList
 
-Default Select component. It is a fully controlled component. Please use it in conjunction with `useSelect` which facilitates state management.
+Default ChipsList component.
 
 <Canvas>
   <Story
     name="Main"
     args={{
-      placeholder: "Select options...",
-      multi: true,
-      options: [
+      title: "Selected items",
+      selected: [
         { value: "test_0", label: "Test 0" },
         { value: "test_1", label: "Test 1" },
         { value: "test_2", label: "Test 2" },
@@ -32,10 +28,10 @@ Default Select component. It is a fully controlled component. Please use it in c
       ],
     }}
   >
-    {template.Select.bind({})}
+    {template.ChipsList.bind({})}
   </Story>
 </Canvas>
 
 ### Props
 
-<ArgsTable of={Select} />
+<ArgsTable of={ChipsList} />

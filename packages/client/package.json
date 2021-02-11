@@ -15,6 +15,7 @@
     "develop": "yarn clean && tsc --watch"
   },
   "dependencies": {
+    "@ilemandatow/seats": "^0.0.1-alpha.31",
     "graphql-hooks": "^5.1.0",
     "graphql-hooks-memcache": "^2.1.0"
   },

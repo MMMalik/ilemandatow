@@ -10,6 +10,12 @@ export { default as Card } from "./card";
 export * from "./chartLegend";
 export { default as ChartLegend } from "./chartLegend";
 
+export * from "./chip";
+export { default as Chip } from "./chip";
+
+export * from "./chipsList";
+export { default as ChipsList } from "./chipsList";
+
 export * from "./colorPicker";
 export { default as ColorPicker } from "./colorPicker";
 

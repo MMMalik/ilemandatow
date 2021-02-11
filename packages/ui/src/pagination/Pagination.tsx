@@ -21,6 +21,10 @@ export interface PaginationProps {
    * Callback invoked when a page is changed. It's not invoked for the initial selection.
    */
   onChange?: (page: number) => void;
+  /**
+   * Hides component if only one page is to be shown.
+   */
+  hideOnSinglePage?: boolean;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -28,8 +32,10 @@ const Pagination: React.FC<PaginationProps> = ({
   perPage,
   initPage,
   onChange,
+  hideOnSinglePage,
 }) => {
   const {
+    pages,
     setPage,
     currentPage,
     decreasePage,
@@ -46,6 +52,10 @@ const Pagination: React.FC<PaginationProps> = ({
   const handleClick = (page: number) => () => {
     setPage(page);
   };
+
+  if (pages <= 1 && hideOnSinglePage) {
+    return null;
+  }
 
   return (
     <div className="flex noselect">

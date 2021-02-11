@@ -1,20 +1,22 @@
 import * as React from "react";
 import SelectCmp, { SelectProps } from "./Select";
+import { useSelect } from "./useSelect";
 
 export const Select = (args: SelectProps) => {
+  const options = args.options;
+  const { selected, handleClose, handleSelect } = useSelect({
+    options,
+    multi: args.multi,
+  });
+
   return (
     <div className="w5">
       <SelectCmp
         {...args}
-        options={[
-          { value: "test_0", label: "Test 0" },
-          { value: "test_1", label: "Test 1" },
-          { value: "test_2", label: "Test 2" },
-          { value: "test_3", label: "Test 3" },
-          { value: "test_4", label: "Test 4" },
-          { value: "test_5", label: "Test 5" },
-          { value: "test_6", label: "Test 6" },
-        ]}
+        selected={selected}
+        options={options}
+        onClose={handleClose}
+        onOptionClick={handleSelect}
       />
     </div>
   );

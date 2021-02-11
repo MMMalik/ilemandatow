@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useTheme } from "../theme";
 import Icon from "../icon";
 import SelectLabelPlaceholder from "./SelectLabelPlaceholder";
 
@@ -25,11 +26,14 @@ const SelectLabel: React.FC<SelectLabelProps> = React.forwardRef<
   HTMLDivElement,
   SelectLabelProps
 >(function SelectLabel({ placeholder, onClick, menuOpen }, ref) {
+  const { theme } = useTheme();
+  const { textPrimary } = theme;
+
   return (
     <div
       ref={ref}
       onClick={onClick}
-      className="w-100 ba b--black pointer pa2 br2"
+      className={`w-100 ba b--${textPrimary} pointer pa2 br2`}
     >
       <div className="w-100 flex justify-between">
         <SelectLabelPlaceholder placeholder={placeholder} />

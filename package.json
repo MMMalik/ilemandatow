@@ -37,6 +37,7 @@
     "develop:ui": "cd packages/ui && yarn develop",
     "lint": "eslint \"packages/**/src/**/*.{tsx,ts,js}\"",
     "postinstall": "node postinstall.js",
+    "serve:site": "cd packages/site && yarn serve",
     "test": "yarn check-types && yarn jest && yarn lint"
   },
   "dependencies": {

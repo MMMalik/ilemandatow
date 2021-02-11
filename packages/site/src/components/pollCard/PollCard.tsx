@@ -8,6 +8,7 @@ import PollCardFooter from "./PollCardFooter";
 interface Props {
   id: string;
   polledBy: string;
+  publishedBy: string;
   publishedAt: string;
   source: string;
   results: DataType.PollResultFragment[];
@@ -17,6 +18,7 @@ const PollCard: React.FC<Props> = ({
   id,
   polledBy,
   publishedAt,
+  publishedBy,
   source,
   results,
 }) => {
@@ -25,6 +27,7 @@ const PollCard: React.FC<Props> = ({
   return (
     <DataCard
       title={polledBy}
+      subTitle={publishedBy}
       titleRightSide={format(new Date(publishedAt))}
       footer={<PollCardFooter pollId={id} source={source} />}
     >
