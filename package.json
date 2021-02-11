@@ -9,6 +9,7 @@
       "**/@keystonejs/**"
     ]
   },
+  "license": "GPL-3.0-only",
   "scripts": {
     "build:api:codegen": "cd packages/api && yarn build:codegen",
     "build:api:keystone": "cd packages/api && yarn build:keystone",

@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](https://github.com/MMMalik/ilemandatow/blob/main/COPYING)
+
 # ilemandatow.pl
 
 An open-source platform which purpose is to gather results of election polls to the Sejm of the Republic of Poland.

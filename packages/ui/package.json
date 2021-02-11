@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Michał Malik",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "scripts": {
     "build": "yarn clean && tsc",
     "check-types": "tsc --noEmit",
