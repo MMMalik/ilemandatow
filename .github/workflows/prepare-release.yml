@@ -14,7 +14,7 @@ on: workflow_dispatch
 jobs:
   prepare-release:
     name: Prepare release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -26,10 +26,10 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email noreply@github.com
 
-      - name: Use Node.js 12.x
+      - name: Use fixed Node.js version
         uses: actions/setup-node@v2
         with:
-          node-version: "12"
+          node-version: "14.15.2"
 
       - name: Bump version via lerna
         run: npx lerna version prerelease --no-git-tag-version --conventional-commits --yes
