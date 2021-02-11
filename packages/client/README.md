@@ -1,6 +1,8 @@
 # @ilemandatow/client
 
-Client-side boilerplate for interacting with GraphQL API. This includes:
+## Introduction
+
+Client-side utils for interacting with GraphQL API. This includes:
 
 - utils for filtering and manipulating data from API
 - React hooks for stateful logic related to data fetching, filtering, sorting, etc.

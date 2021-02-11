@@ -1,6 +1,8 @@
 # @ilemandatow/seats
 
-This package contains calculation logic for getting seats distributions in a parliament. Currently only D`Hondt method is supported.
+## Introduction
+
+This package contains calculation logic for seats distribution. Currently only D`Hondt method is supported.
 
 ## Development
 

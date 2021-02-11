@@ -16,7 +16,7 @@ Features:
 
 ## Packages
 
-This consists of many packages. See detailed list [here](CONTRIBUTING.md#Packages). Please use README of each package for more details.
+Project consists of many packages. See detailed list [here](CONTRIBUTING.md#Packages). Please use README of each package for more details.
 
 ## Contributing
 

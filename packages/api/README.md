@@ -1,5 +1,7 @@
 # @ilemandatow/api
 
+## Introduction
+
 This package contains headless CMS, GraphQL API and database utils.
 
 ## Tools & libraries
@@ -36,10 +38,10 @@ APP_ADMIN=admin
 APP_ADMIN_PASS=***
 ```
 
-Setup database structure by running the following command (either from project root or package root):
+Setup database structure by running the following command (either from project root or package root). It will also seed admin data.
 
 ```
-yarn db:setup // it will also seed admin data
+yarn db:setup
 ```
 
 Add more data by restoring backup file of preprod. Make sure that backup file is saved on your machine under `~/postgres/backups/ilemandatow`. Run the following command:
@@ -83,7 +85,7 @@ Makes sure to commit those changes.
 Changes to KeystoneJS data model must be associated with respective Knex migration file. For instance, if a new field is added to a list, a new migration file must be created with:
 
 ```
-yarn db:migrate:make newField
+yarn db:migrate:make newFieldLogicUpdate
 ```
 
 Logic for migration must be implemented within the new file and file must be commited.
