@@ -1,7 +1,22 @@
 {
   "name": "@ilemandatow/locales",
   "version": "0.0.1-alpha.31",
-  "description": "Locales",
-  "author": "Michał Malik",
-  "license": "GPL-3.0-only"
+  "description": "Locales for ilemandatow",
+  "author": "Michał Malik <michalmmalik@gmail.com>",
+  "homepage": "https://ilemandatow.pl",
+  "bugs": {
+    "url": "https://github.com/MMMalik/ilemandatow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MMMalik/ilemandatow.git"
+  },
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "ilemandatow",
+    "polls",
+    "elections",
+    "dhondt",
+    "Poland"
+  ]
 }
