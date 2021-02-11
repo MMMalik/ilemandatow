@@ -1,5 +1,5 @@
 import { DhondtParliamentSeat } from "@ilemandatow/seats";
-import { PartyWithResult } from "../../data";
+import { PartyWithResult } from "@ilemandatow/client";
 
 export const parseParties = (
   parties: PartyWithResult[],

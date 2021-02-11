@@ -1,10 +1,9 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import { DataType, filterList } from "@ilemandatow/client";
 import { SectionTitle } from "@ilemandatow/ui";
-import { GetPollQuery } from "../types";
 import { useTranslation } from "../i18n";
 import { PollViz } from "../views";
-import { filterList } from "../data";
 
 export const query = graphql`
   query getPoll($id: ID!) {
@@ -20,13 +19,15 @@ export const query = graphql`
 `;
 
 interface Props {
-  data: GetPollQuery;
+  data: any;
 }
 
 const Poll: React.FC<Props> = ({ data }) => {
   const { t } = useTranslation();
-  const poll = data.ilemandatow.Poll;
-  const codes = filterList(data.ilemandatow.allElectoralCodes);
+  const poll: DataType.PollFragment = data.ilemandatow.Poll;
+  const codes: DataType.ElectoralCodeFragment[] = filterList(
+    data.ilemandatow.allElectoralCodes
+  );
 
   return (
     <>

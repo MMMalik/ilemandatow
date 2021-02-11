@@ -6,7 +6,7 @@ import {
   Toolbar,
   ToolbarItem,
 } from "@ilemandatow/ui";
-import { PartyWithResult } from "../../data";
+import { PartyWithResult } from "@ilemandatow/client";
 import { parseParties } from "./parseParties";
 import { ChartView } from "./types";
 import Charts from "./Charts";

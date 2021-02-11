@@ -1,7 +1,7 @@
 import * as React from "react";
 import ColorPicker from "../colorPicker";
-import Icon from "../icon";
 import DismissablePopper from "../dismissablePopper";
+import ColorPickerMenuBtn from "./ColorPickerMenuBtn";
 
 export interface ColorPickerMenuProps {
   /**
@@ -21,8 +21,8 @@ const ColorPickerMenu: React.FC<ColorPickerMenuProps> = ({
   return (
     <DismissablePopper
       keepOpen={true}
-      clickableComponent={(onClick) => (
-        <Icon icon="circle" size="lg" onClick={onClick} style={{ color }} />
+      ClickableComponent={({ onClick }) => (
+        <ColorPickerMenuBtn onClick={onClick} color={color} />
       )}
     >
       <ColorPicker color={color} onChange={onChange} />

@@ -34,11 +34,15 @@ const Popper: React.FC<PopperProps> = ({
     popperElement,
     setPopperElement,
   ] = React.useState<HTMLDivElement | null>(null);
-  const { styles, attributes } = usePopper(refEl, popperElement, {
-    placement,
-  });
+  const opts = React.useMemo(
+    () => ({
+      placement,
+    }),
+    [placement]
+  );
+  const { styles, attributes } = usePopper(refEl, popperElement, opts);
   const { theme } = useTheme();
-  const { bgPrimary, textDisabled } = theme;
+  const { bgPrimary } = theme;
 
   return (
     <div
@@ -46,7 +50,7 @@ const Popper: React.FC<PopperProps> = ({
       onClick={onClick}
       className={clsx(
         !refEl && "dn",
-        `ba shadow-c-1 b--${textDisabled} br2 bg-${bgPrimary}`,
+        `shadow-c-1 br2 bg-${bgPrimary}`,
         className
       )}
       style={styles.popper}

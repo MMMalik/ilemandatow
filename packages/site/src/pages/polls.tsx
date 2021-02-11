@@ -1,35 +1,57 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import { DataType, filterList } from "@ilemandatow/client";
 import { SectionTitle } from "@ilemandatow/ui";
-import { GetAllPollsQuery } from "../types";
 import { useTranslation } from "../i18n";
 import { PollsGrid } from "../views";
-import { filterList } from "../data";
 
 export const query = graphql`
   query getAllPolls {
     ilemandatow {
-      allPolls {
+      allPolls(first: 12, sortBy: publishedAt_DESC) {
         ...Poll
+      }
+      allPublishers {
+        ...Publisher
+      }
+      allPollCompanies {
+        ...PollCompany
       }
       allElectoralCodes {
         ...ElectoralCode
+      }
+      _allPollsMeta {
+        count
       }
     }
   }
 `;
 
 interface Props {
-  data: GetAllPollsQuery;
+  data: any;
 }
 
 const Polls: React.FC<Props> = ({ data }) => {
   const { t } = useTranslation();
+  const totalPolls = data.ilemandatow._allPollsMeta.count;
+  const polls: DataType.PollFragment[] = filterList(data.ilemandatow.allPolls);
+  const publishers: DataType.PublisherFragment[] = filterList(
+    data.ilemandatow.allPublishers
+  );
+  const pollCompanies: DataType.PollCompanyFragment[] = filterList(
+    data.ilemandatow.allPollCompanies
+  );
 
   return (
     <>
       <SectionTitle title={t("polls")} />
-      <PollsGrid polls={filterList(data.ilemandatow.allPolls)} />
+      <PollsGrid
+        initPolls={polls}
+        totalPolls={totalPolls ?? 0}
+        pollsPerPage={12}
+        publishers={publishers}
+        pollCompanies={pollCompanies}
+      />
     </>
   );
 };

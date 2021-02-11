@@ -1,32 +1,78 @@
 import * as React from "react";
-import { Grid, GridItem } from "@ilemandatow/ui";
-import { filterNonRegularParties, sortPollsByDate } from "../../data";
-import { PollCard } from "../../components";
-import { PollFragment } from "../../types";
+import { DataType, useFilterPolls } from "@ilemandatow/client";
+import { Divider, Grid, GridItem, Pagination, Paper } from "@ilemandatow/ui";
+import { PollCardsGrid, PollsFilters } from "../../components";
 
 interface Props {
-  polls: PollFragment[];
+  /**
+   * Init list of polls.
+   */
+  initPolls: DataType.PollFragment[];
+  /**
+   * Total number of polls.
+   */
+  totalPolls: number;
+  /**
+   * Number of items to render per page.
+   */
+  pollsPerPage: number;
+  /**
+   * List of publishers.
+   */
+  publishers: DataType.PublisherFragment[];
+  /**
+   * List of poll companies.
+   */
+  pollCompanies: DataType.PollCompanyFragment[];
 }
 
-const PollsGrid: React.FC<Props> = ({ polls }) => {
+const PollsGrid: React.FC<Props> = ({
+  initPolls,
+  totalPolls,
+  pollsPerPage,
+  publishers,
+  pollCompanies,
+}) => {
+  const {
+    filteredPolls,
+    setPage,
+    setPollCompanyFilter,
+    setPublishersFilter,
+  } = useFilterPolls({
+    initPolls: { polls: initPolls, count: totalPolls },
+    pollsPerPage,
+  });
+  const { count, polls } = filteredPolls;
+
   return (
     <Grid>
-      {polls
-        .sort(sortPollsByDate)
-        .map(({ id, polledBy, publishedAt, source, results }) => {
-          const [firstPolledBy] = polledBy;
-          return (
-            <GridItem key={id} className="w-100 w-50-m w-third-l">
-              <PollCard
-                id={id}
-                polledBy={firstPolledBy?.abbr ?? ""}
-                publishedAt={publishedAt ?? ""}
-                source={source ?? ""}
-                results={filterNonRegularParties(results)}
-              />
-            </GridItem>
-          );
-        })}
+      <GridItem className="w-100">
+        <Paper className="pa4">
+          <PollsFilters
+            publishers={publishers}
+            pollCompanies={pollCompanies}
+            onPollCompaniesSelect={setPollCompanyFilter}
+            onPublishersSelect={setPublishersFilter}
+          />
+        </Paper>
+      </GridItem>
+      <GridItem className="w-100">
+        <Divider disableSpacing={true} />
+      </GridItem>
+      <GridItem className="w-100">
+        <PollCardsGrid polls={polls} />
+      </GridItem>
+      <GridItem className="w-100">
+        <div className="flex justify-center">
+          <Pagination
+            perPage={pollsPerPage}
+            items={count}
+            initPage={1}
+            onChange={setPage}
+            hideOnSinglePage={true}
+          />
+        </div>
+      </GridItem>
     </Grid>
   );
 };

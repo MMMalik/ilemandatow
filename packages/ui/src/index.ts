@@ -10,6 +10,12 @@ export { default as Card } from "./card";
 export * from "./chartLegend";
 export { default as ChartLegend } from "./chartLegend";
 
+export * from "./chip";
+export { default as Chip } from "./chip";
+
+export * from "./chipsList";
+export { default as ChipsList } from "./chipsList";
+
 export * from "./colorPicker";
 export { default as ColorPicker } from "./colorPicker";
 
@@ -49,11 +55,11 @@ export { default as Link } from "./link";
 export * from "./menu";
 export { default as Menu } from "./menu";
 
-export * from "./sectionTitle";
-export { default as SectionTitle } from "./sectionTitle";
-
 export * from "./pageWrapper";
 export { default as PageWrapper } from "./pageWrapper";
+
+export * from "./pagination";
+export { default as Pagination } from "./pagination";
 
 export * from "./paper";
 export { default as Paper } from "./paper";
@@ -66,6 +72,12 @@ export { default as PieChart } from "./pieChart";
 
 export * from "./popper";
 export { default as Popper } from "./popper";
+
+export * from "./sectionTitle";
+export { default as SectionTitle } from "./sectionTitle";
+
+export * from "./select";
+export { default as Select } from "./select";
 
 export * from "./table";
 export { default as Table } from "./table";

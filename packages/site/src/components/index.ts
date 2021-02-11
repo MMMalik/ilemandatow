@@ -9,6 +9,9 @@ export { default as NewPollForm } from "./newPollForm";
 export * from "./pollCard";
 export { default as PollCard } from "./pollCard";
 
+export * from "./pollCardsGrid";
+export { default as PollCardsGrid } from "./pollCardsGrid";
+
 export * from "./pollInfoList";
 export { default as PollInfoList } from "./pollInfoList";
 
@@ -20,3 +23,6 @@ export { default as PollChart } from "./pollChart";
 
 export * from "./pollResultsTable";
 export { default as PollResultsTable } from "./pollResultsTable";
+
+export * from "./pollsFilters";
+export { default as PollsFilters } from "./pollsFilters";

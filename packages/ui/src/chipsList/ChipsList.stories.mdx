@@ -1,0 +1,37 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import ChipsList from "./ChipsList";
+import * as template from "./ChipsList.stories";
+
+<Meta
+  title="Data Display/ChipsList"
+  component={ChipsList}
+  argTypes={{ onRemove: { action: "removed" } }}
+/>
+
+### ChipsList
+
+Default ChipsList component.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      title: "Selected items",
+      selected: [
+        { value: "test_0", label: "Test 0" },
+        { value: "test_1", label: "Test 1" },
+        { value: "test_2", label: "Test 2" },
+        { value: "test_3", label: "Test 3" },
+        { value: "test_4", label: "Test 4" },
+        { value: "test_5", label: "Test 5" },
+        { value: "test_6", label: "Test 6" },
+      ],
+    }}
+  >
+    {template.ChipsList.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={ChipsList} />

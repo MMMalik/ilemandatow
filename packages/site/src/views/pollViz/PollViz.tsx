@@ -1,24 +1,24 @@
 import * as React from "react";
-import { Grid, GridItem, Paper, useTheme } from "@ilemandatow/ui";
 import {
+  DataType,
   filterList,
   filterNonRegularParties,
   filterRegularParties,
   getDhondtResults,
   getPartiesWithResults,
-} from "../../data";
+  getElectoralCode,
+} from "@ilemandatow/client";
+import { Grid, GridItem, Paper, useTheme } from "@ilemandatow/ui";
 import {
   PollChart,
   PollInfoList,
   PollResultsTable,
   PollMethodologyList,
 } from "../../components";
-import { ElectoralCodeFragment, PollFragment } from "../../types";
-import { getElectoralCode } from "../../data/utils/getElectoralCode";
 
 interface Props {
-  poll?: PollFragment | null;
-  codes?: ElectoralCodeFragment[] | null;
+  poll?: DataType.PollFragment | null;
+  codes?: DataType.ElectoralCodeFragment[] | null;
 }
 
 const PollViz: React.FC<Props> = ({ poll, codes }) => {

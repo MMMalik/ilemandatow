@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@ilemandatow/api": "^0.0.1-alpha.31",
+    "@ilemandatow/client": "^0.0.1-alpha.31",
     "@ilemandatow/locales": "^0.0.1-alpha.31",
     "@ilemandatow/seats": "^0.0.1-alpha.31",
     "@ilemandatow/ui": "^0.0.1-alpha.31",
@@ -23,7 +24,7 @@
     "@reach/router": "^1.3.4",
     "clsx": "^1.1.1",
     "date-fns": "^2.16.1",
-    "gatsby": "^2.31.1",
+    "gatsby": "^2.32.3",
     "nanoid": "^3.1.20",
     "query-string": "^6.13.8",
     "react": "^16.14.0",
@@ -31,12 +32,10 @@
     "react-popper": "^2.2.4"
   },
   "devDependencies": {
-    "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-netlify": "^2.8.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sitemap": "^2.10.0",
     "gatsby-plugin-typescript": "^2.9.0",
-    "gatsby-source-graphql": "^2.14.0",
-    "graphql": "^14.7.0"
+    "gatsby-source-graphql": "^2.14.0"
   }
 }
