@@ -35,9 +35,9 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      # Skips site build as Gatsby build requires a running server
+      # Skips build of main site since Gatsby build requires a running server
       - name: Build packages
-        run: yarn build:api && yarn build:ui && yarn build:seats
+        run: yarn build:api && yarn build:ui && yarn build:seats && yarn build:client
 
       - name: Run tests
         run: yarn test
