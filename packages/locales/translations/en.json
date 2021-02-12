@@ -24,7 +24,7 @@
   "result": "Result",
   "seats": "Seats",
   "color": "Color",
-  "resultWithPerc": "Result (%)",
+  "resultWithPerc": "Result %",
   "pollResultsTableTitle": "Poll Results",
   "pollResultsTableDescription": "Each table row corresponds to one party. Provide party name, poll result in %, and color that will be used on the charts.",
   "partyName": "Party Name",
@@ -57,5 +57,6 @@
   "selectPollCompanies": "Select Poll Companies",
   "selectPublishers": "Select Publishers",
   "pollCompanies": "Poll Companies",
-  "publishers": "Publishers"
+  "publishers": "Publishers",
+  "valueCannotBeChanged": "Value can't be changed"
 }

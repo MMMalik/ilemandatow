@@ -24,7 +24,7 @@
   "result": "Wynik",
   "seats": "Mandaty",
   "color": "Kolor",
-  "resultWithPerc": "Wynik (%)",
+  "resultWithPerc": "Wynik %",
   "pollResultsTableTitle": "Wyniki sondażu",
   "pollResultsTableDescription": "Wprowadź dane do tabeli. Podaj nazwę partii, jej wynik oraz kolor, który będzie ją identyfikował na wykresach. Każdy wiersz odpowiada jednej partii.",
   "partyName": "Nazwa partii",
@@ -57,5 +57,6 @@
   "selectPollCompanies": "Sondażownie",
   "selectPublishers": "Na zlecenie",
   "pollCompanies": "Sondażownie",
-  "publishers": "Na zlecenie"
+  "publishers": "Na zlecenie",
+  "valueCannotBeChanged": "Tej wartości nie można zmienić"
 }

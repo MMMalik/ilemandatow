@@ -4,8 +4,8 @@ import { useTranslation } from "../../i18n";
 import PollDefinitionItem from "../pollDefinitionItem";
 
 interface Props {
-  threshold?: string;
-  parliamentSeats?: string;
+  threshold?: number;
+  parliamentSeats?: number;
 }
 
 const ElectionSettingsList: React.FC<Props> = ({

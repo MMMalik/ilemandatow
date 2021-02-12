@@ -10,16 +10,15 @@ interface Props {
 const PollCardStats: React.FC<Props> = ({ results }) => {
   return (
     <DefinitionList>
-      {results
+      {sortPollResults(results)
         .slice(0, 6)
-        .sort(sortPollResults)
         .map(({ result, party }) => {
           return (
             <DefinitionItem
               key={party?.id}
               className="w-third"
-              label={party?.abbr ?? ""}
-              value={<PollResult result={result} />}
+              label={<span>{party?.abbr ?? ""}</span>}
+              value={<PollResult result={result} showPerc={true} />}
             />
           );
         })}

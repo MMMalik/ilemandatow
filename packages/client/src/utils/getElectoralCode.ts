@@ -1,6 +1,12 @@
 import { DataType } from "../generated";
 import { getTime } from "./getTime";
 
+/**
+ * Chooses electoral code for supplied poll.
+ *
+ * @param codes list of electoral codes
+ * @param poll poll document
+ */
 export const getElectoralCode = (
   codes: DataType.ElectoralCodeFragment[],
   poll?: DataType.PollFragment | null
