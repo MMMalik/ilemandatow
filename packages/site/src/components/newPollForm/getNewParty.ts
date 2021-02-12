@@ -1,10 +1,10 @@
 import { nanoid } from "nanoid";
 
-export const getNewParty = () => {
+export const getNewParty = (name?: string, result?: string, color?: string) => {
   return {
-    id: nanoid(),
-    name: "",
-    result: "0",
-    color: "#000000",
+    id: nanoid(10),
+    name: name ?? "",
+    result: result ?? "0",
+    color: color ?? "#000000",
   };
 };
