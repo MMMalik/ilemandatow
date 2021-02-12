@@ -10,9 +10,8 @@ interface Props {
 const PollCardStats: React.FC<Props> = ({ results }) => {
   return (
     <DefinitionList>
-      {results
+      {sortPollResults(results)
         .slice(0, 6)
-        .sort(sortPollResults)
         .map(({ result, party }) => {
           return (
             <DefinitionItem

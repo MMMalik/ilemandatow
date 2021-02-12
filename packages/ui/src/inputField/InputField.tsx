@@ -44,6 +44,10 @@ export interface InputFieldProps {
    */
   required?: boolean;
   /**
+   * Marks input as disabled (UI only).
+   */
+  disabled?: boolean;
+  /**
    * Disables all styling, helper texts, labels, etc.
    */
   bare?: boolean;
@@ -75,6 +79,7 @@ const InputField: React.FC<InputFieldProps> = React.forwardRef<
     placeholder,
     helperText,
     required,
+    disabled,
     bare,
     form,
     onChange,
@@ -82,7 +87,13 @@ const InputField: React.FC<InputFieldProps> = React.forwardRef<
   ref
 ) {
   const { theme } = useTheme();
-  const { textPrimary, textDivider, textMuted } = theme;
+  const {
+    textPrimary,
+    textDivider,
+    textDisabled,
+    textMuted,
+    bgSecondary,
+  } = theme;
 
   return (
     <div className={className}>
@@ -98,13 +109,17 @@ const InputField: React.FC<InputFieldProps> = React.forwardRef<
           name={name}
           value={value}
           defaultValue={defaultValue}
+          disabled={disabled}
           type={type}
           placeholder={placeholder}
           form={form}
           onChange={onChange}
           className={clsx(
-            `input-reset db w-100 bg-transparent ${textPrimary}`,
-            bare ? "bn outline-0" : `br1 ba b--${textDivider} pa2`
+            "input-reset db w-100",
+            bare ? "bn outline-0" : `br1 ba b--${textDivider} pa2`,
+            disabled
+              ? `${textDisabled} bg-${bgSecondary}`
+              : `${textPrimary} bg-transparent`
           )}
         />
         {helperText && (

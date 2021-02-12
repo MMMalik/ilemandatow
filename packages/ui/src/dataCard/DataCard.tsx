@@ -29,12 +29,12 @@ const DataCard: React.FC<DataCardProps> = ({
   footer,
 }) => {
   const { theme } = useTheme();
-  const { textMuted, textDisabled } = theme;
+  const { textMuted, textDivider } = theme;
 
   return (
     <Paper className="h5">
       <div className="h-20">
-        <div className={`flex justify-between bb b--${textDisabled} pa3`}>
+        <div className={`flex justify-between bb b--${textDivider} pa3`}>
           <div>
             <span className="b">{title}</span>
             {subTitle && (

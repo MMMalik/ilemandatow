@@ -1,23 +1,42 @@
 import * as React from "react";
-import { navigate, PageProps } from "gatsby";
+import { navigate, graphql, PageProps } from "gatsby";
 import { parse, stringify } from "query-string";
 import { SectionTitle } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
 import { NewPollFormValues, useInitFormValues } from "../../components";
 import { NewPollForm } from "../../views";
 import { useRoutes } from "../../routes";
+import {
+  DataType,
+  filterList,
+  getLatestElectoralCode,
+} from "@ilemandatow/client";
 
-const NewPoll: React.FC<PageProps> = ({ location }) => {
+export const query = graphql`
+  query form {
+    ilemandatow {
+      allElectoralCodes {
+        ...ElectoralCode
+      }
+    }
+  }
+`;
+
+const Form: React.FC<PageProps<any>> = ({ location, data }) => {
   const { t } = useTranslation();
   const { routes } = useRoutes();
   const formValues = useInitFormValues(parse(location.search));
+  const codes: DataType.ElectoralCodeFragment[] = filterList(
+    data.ilemandatow.allElectoralCodes
+  );
+  const latestCode = getLatestElectoralCode(codes);
 
-  const handleSubmit = (data: NewPollFormValues) => {
+  const handleSubmit = (formData: NewPollFormValues) => {
     navigate(
       routes.newPollViz.link(
         stringify({
-          ...data,
-          parties: data.parties?.map((p) => JSON.stringify(p)),
+          ...formData,
+          parties: formData.parties?.map((p) => JSON.stringify(p)),
         })
       )
     );
@@ -26,9 +45,13 @@ const NewPoll: React.FC<PageProps> = ({ location }) => {
   return (
     <>
       <SectionTitle title={t("newPoll")} />
-      <NewPollForm onSubmit={handleSubmit} initValues={formValues} />
+      <NewPollForm
+        onSubmit={handleSubmit}
+        initValues={formValues}
+        totalSeats={latestCode?.totalSeats ?? 0}
+      />
     </>
   );
 };
 
-export default NewPoll;
+export default Form;

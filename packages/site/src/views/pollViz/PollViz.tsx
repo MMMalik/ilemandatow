@@ -18,12 +18,12 @@ import {
 
 interface Props {
   poll?: DataType.PollFragment | null;
-  codes?: DataType.ElectoralCodeFragment[] | null;
+  codes: DataType.ElectoralCodeFragment[];
 }
 
 const PollViz: React.FC<Props> = ({ poll, codes }) => {
   const { name } = useTheme();
-  const code = getElectoralCode(codes ?? [], poll);
+  const code = getElectoralCode(codes, poll);
   const results = filterList(poll?.results ?? []);
   const seatsParties = getDhondtResults(
     filterNonRegularParties(results).map(({ party, result }) => ({

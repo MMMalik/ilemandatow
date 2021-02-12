@@ -29,7 +29,6 @@ export const useInitFormValues = (formValues?: any) => {
       { id: nanoid(), name: t("party3"), result: "40", color: "#00f03c" },
     ],
     threshold: "5.0",
-    seats: "460",
   };
 
   const parsed = {

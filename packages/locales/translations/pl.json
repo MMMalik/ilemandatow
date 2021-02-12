@@ -57,5 +57,6 @@
   "selectPollCompanies": "Sondażownie",
   "selectPublishers": "Na zlecenie",
   "pollCompanies": "Sondażownie",
-  "publishers": "Na zlecenie"
+  "publishers": "Na zlecenie",
+  "valueCannotBeChanged": "Tej wartości nie można zmienić"
 }

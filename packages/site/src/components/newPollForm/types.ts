@@ -10,5 +10,4 @@ export interface NewPollFormParty {
 export type NewPollFormValues = FormValues<{
   parties: NewPollFormParty[];
   threshold: string;
-  seats: string;
 }>;

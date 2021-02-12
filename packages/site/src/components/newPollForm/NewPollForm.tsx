@@ -14,14 +14,19 @@ import { NewPollFormValues } from "./types";
 interface Props {
   onSubmit: (data: NewPollFormValues) => void;
   initValues: NewPollFormValues;
+  totalSeats: number;
 }
 
-const NewPollForm: React.FC<Props> = ({ onSubmit, initValues }) => {
+const NewPollForm: React.FC<Props> = ({ onSubmit, initValues, totalSeats }) => {
   const { t } = useTranslation();
   const methods = useForm<NewPollFormValues>({
     onSubmit,
     defaultValues: initValues,
   });
+
+  const handleCancel = () => {
+    methods.reset();
+  };
 
   return (
     <FormProvider {...methods}>
@@ -36,9 +41,13 @@ const NewPollForm: React.FC<Props> = ({ onSubmit, initValues }) => {
           title={t("electionSettingsTitle")}
           description={t("electionSettingsDescription")}
         >
-          <NewPollSettings />
+          <NewPollSettings totalSeats={totalSeats} />
         </FormSection>
-        <FormSubmit submitLabel={t("submit")} cancelLabel={t("cancel")} />
+        <FormSubmit
+          onCancel={handleCancel}
+          submitLabel={t("submit")}
+          cancelLabel={t("cancel")}
+        />
       </Form>
     </FormProvider>
   );

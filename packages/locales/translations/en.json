@@ -57,5 +57,6 @@
   "selectPollCompanies": "Select Poll Companies",
   "selectPublishers": "Select Publishers",
   "pollCompanies": "Poll Companies",
-  "publishers": "Publishers"
+  "publishers": "Publishers",
+  "valueCannotBeChanged": "Value can't be changed"
 }
