@@ -28,6 +28,9 @@ export { default as ClickAway } from "./clickAway";
 export * from "./dataCard";
 export { default as DataCard } from "./dataCard";
 
+export * from "./dialog";
+export { default as Dialog } from "./dialog";
+
 export * from "./divider";
 export { default as Divider } from "./divider";
 
@@ -72,6 +75,9 @@ export { default as PieChart } from "./pieChart";
 
 export * from "./popper";
 export { default as Popper } from "./popper";
+
+export * from "./search";
+export { default as Search } from "./search";
 
 export * from "./sectionTitle";
 export { default as SectionTitle } from "./sectionTitle";
