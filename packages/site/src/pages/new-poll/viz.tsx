@@ -35,7 +35,7 @@ const Viz: React.FC<PageProps<any>> = ({ location, data }) => {
   return (
     <>
       <SectionTitle
-        title={t("newPoll")}
+        title={t("simulateElections")}
         toolbar={
           <Button icon="cog" onClick={handleRecalculate}>
             {t("edit")}

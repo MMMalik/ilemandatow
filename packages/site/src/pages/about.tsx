@@ -6,7 +6,7 @@ const About: React.FC = () => {
   const { t } = useTranslation();
   return (
     <>
-      <SectionTitle title={t("aboutUs")} />
+      <SectionTitle title={t("docs")} />
     </>
   );
 };

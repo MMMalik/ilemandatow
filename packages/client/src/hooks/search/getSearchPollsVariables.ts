@@ -1,11 +1,14 @@
 import { DataType } from "../../generated";
 import { SortPollsBy } from "../../generated/operations";
+import { SearchConfig } from "./types";
 
 export const getSearchPollsVariables = (
-  phrase: string
+  phrase: string,
+  config?: SearchConfig
 ): DataType.GetPollsQueryVariables => {
   return {
     sortBy: SortPollsBy.PublishedAtDesc,
+    first: config?.limit,
     where: {
       OR: [
         {
