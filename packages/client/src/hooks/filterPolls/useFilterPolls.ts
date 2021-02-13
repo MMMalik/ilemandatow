@@ -1,7 +1,7 @@
 import * as React from "react";
 import { DataType } from "../../generated";
 import { filterList } from "../../utils";
-import { useGetPolls } from "../getPolls";
+import { useGetPollsQuery } from "../queries";
 import { getFilterVariables } from "./getFilterVariables";
 import { useFilterReducer } from "./useFilterReducer";
 
@@ -21,7 +21,7 @@ export const useFilterPolls = ({
     setPage,
   } = useFilterReducer({ pollsPerPage });
   const [filteredPolls, setFilteredPolls] = React.useState(initPolls);
-  const { fetchPolls } = useGetPolls();
+  const { fetchPolls } = useGetPollsQuery();
 
   React.useEffect(() => {
     const fetchPollsAsync = async () => {

@@ -1,12 +1,12 @@
 import { useManualQuery } from "graphql-hooks";
-import { getPolls } from "../../data/queries";
-import { DataType } from "../../generated";
+import { getPollsQuery } from "../../../data";
+import { DataType } from "../../../generated";
 
-export const useGetPolls = () => {
+export const useGetPollsQuery = () => {
   const [fetchPolls] = useManualQuery<
     DataType.GetPollsQuery,
     DataType.GetPollsQueryVariables
-  >(getPolls);
+  >(getPollsQuery);
 
   return {
     fetchPolls,

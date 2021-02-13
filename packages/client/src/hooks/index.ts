@@ -1,2 +1,2 @@
 export * from "./filterPolls";
-export * from "./getPolls";
+export * from "./search";

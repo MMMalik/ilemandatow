@@ -1,0 +1,29 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Search from "./Search";
+import * as template from "./Search.stories";
+
+<Meta
+  title="Inputs/Search"
+  component={Search}
+  argTypes={{ onSearch: { action: "clicked" } }}
+/>
+
+### Search
+
+Default Search component.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      placeholder: "Search...",
+      autofocus: true,
+    }}
+  >
+    {template.Search.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Search} />

@@ -1,0 +1,30 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import SearchDialog from "./SearchDialog";
+import * as template from "./SearchDialog.stories";
+
+<Meta
+  title="Feedback/SearchDialog"
+  component={SearchDialog}
+  argTypes={{
+    onClose: { action: "clicked" },
+  }}
+/>
+
+### SearchDialog
+
+Default SearchDialog component.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      placeholder: "Search...",
+    }}
+  >
+    {template.SearchDialog.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={SearchDialog} />

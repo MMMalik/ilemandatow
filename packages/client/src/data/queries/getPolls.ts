@@ -1,6 +1,6 @@
 import { PollFragment } from "../fragments";
 
-export const getPolls = /* GraphQL */ `
+export const getPollsQuery = /* GraphQL */ `
   query getPolls(
     $sortBy: [SortPollsBy!]
     $first: Int

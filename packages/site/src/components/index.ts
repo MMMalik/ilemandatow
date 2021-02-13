@@ -26,3 +26,6 @@ export { default as PollResultsTable } from "./pollResultsTable";
 
 export * from "./pollsFilters";
 export { default as PollsFilters } from "./pollsFilters";
+
+export * from "./searchDialog";
+export { default as SearchDialog } from "./searchDialog";

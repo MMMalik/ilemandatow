@@ -2328,3 +2328,18 @@ export type GetPollsQuery = { readonly __typename?: "Query" } & {
     { readonly __typename?: "_QueryMeta" } & Pick<_QueryMeta, "count">
   >;
 };
+
+export type SearchQueryVariables = Exact<{
+  sortBy?: Maybe<ReadonlyArray<SortPollsBy> | SortPollsBy>;
+  first?: Maybe<Scalars["Int"]>;
+  where?: Maybe<PollWhereInput>;
+}>;
+
+export type SearchQuery = { readonly __typename?: "Query" } & {
+  readonly allPolls?: Maybe<
+    ReadonlyArray<Maybe<{ readonly __typename?: "Poll" } & PollFragment>>
+  >;
+  readonly _allPollsMeta?: Maybe<
+    { readonly __typename?: "_QueryMeta" } & Pick<_QueryMeta, "count">
+  >;
+};
