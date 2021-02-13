@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = ({ title, clickable, footer, children }) => {
     <Paper
       className={clsx(
         "tc pa3 h-100 flex flex-column justify-between",
-        clickable && "pointer dim"
+        clickable && "pointer"
       )}
     >
       <div className="b f5">{title}</div>

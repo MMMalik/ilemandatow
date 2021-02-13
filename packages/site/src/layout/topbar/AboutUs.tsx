@@ -7,7 +7,7 @@ const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   const { routes } = useRoutes();
 
-  return <TopbarLink to={routes.about.link()}>{t("aboutUs")}</TopbarLink>;
+  return <TopbarLink to={routes.about.link()}>{t("docs")}</TopbarLink>;
 };
 
 export default AboutUs;

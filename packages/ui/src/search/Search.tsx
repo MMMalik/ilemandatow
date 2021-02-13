@@ -20,6 +20,10 @@ export interface SearchProps {
    * Placeholder text.
    */
   placeholder?: string;
+  /**
+   * Initial search value.
+   */
+  initPhrase?: string;
 }
 
 const Search: React.FC<SearchProps> = ({
@@ -27,10 +31,11 @@ const Search: React.FC<SearchProps> = ({
   wait,
   placeholder,
   autofocus,
+  initPhrase,
 }) => {
   const ref = React.useRef<HTMLInputElement | null>(null);
   const [searchPhrase, setSearchPhrase] = React.useState<string | undefined>(
-    undefined
+    initPhrase
   );
 
   const debouncedOnSearch = React.useMemo(() => {
@@ -42,6 +47,12 @@ const Search: React.FC<SearchProps> = ({
       ref.current.focus();
     }
   }, [ref?.current?.focus, autofocus]);
+
+  React.useEffect(() => {
+    if (initPhrase) {
+      debouncedOnSearch(initPhrase);
+    }
+  }, [initPhrase, debouncedOnSearch]);
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const value = evt.currentTarget.value;

@@ -12,7 +12,7 @@ const NewPollCard: React.FC<Props> = ({ linkTo }) => {
   return (
     <Link to={linkTo}>
       <Card
-        title={t("newPoll")}
+        title={t("simulateElections")}
         clickable={true}
         footer={<Icon icon="person-booth" size="2x" />}
       >

@@ -44,7 +44,7 @@ const Form: React.FC<PageProps<any>> = ({ location, data }) => {
 
   return (
     <>
-      <SectionTitle title={t("newPoll")} />
+      <SectionTitle title={t("simulateElections")} />
       <NewPollForm
         onSubmit={handleSubmit}
         initValues={formValues}

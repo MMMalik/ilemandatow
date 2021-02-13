@@ -17,9 +17,6 @@ export const query = graphql`
       allPollCompanies {
         ...PollCompany
       }
-      allElectoralCodes {
-        ...ElectoralCode
-      }
       _allPollsMeta {
         count
       }
