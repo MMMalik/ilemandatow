@@ -79,6 +79,9 @@ export { default as Popper } from "./popper";
 export * from "./search";
 export { default as Search } from "./search";
 
+export * from "./searchDialog";
+export { default as SearchDialog } from "./searchDialog";
+
 export * from "./sectionTitle";
 export { default as SectionTitle } from "./sectionTitle";
 

@@ -45,11 +45,9 @@ const Dialog: React.FC<DialogProps> = ({ title, onClose, children }) => {
               </div>
             </div>
             <Divider disableSpacing={true} />
-            <div className="mb3" />
-            <div className="mb3 flex-grow-1 overflow-auto">{children}</div>
+            <div className="flex-grow-1 overflow-auto">{children}</div>
             <Divider disableSpacing={true} />
-            <div className="mb3" />
-            <div className="flex-grow-0">
+            <div className="flex-grow-0 mt3">
               <div className="flex justify-end">
                 <Button onClick={onClose}>{"OK"}</Button>
               </div>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import Icon from "../icon";
 import InputField from "../inputField";
 import { debounce } from "../utils";
 
@@ -50,12 +51,14 @@ const Search: React.FC<SearchProps> = ({
 
   return (
     <div className="flex items-center">
+      <Icon icon="search" className="mr2" />
       <InputField
         ref={ref}
-        value={searchPhrase}
+        value={searchPhrase ?? ""}
         onChange={handleChange}
         name="search"
         placeholder={placeholder}
+        bare={true}
       />
     </div>
   );

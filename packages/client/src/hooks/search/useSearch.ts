@@ -10,8 +10,8 @@ export const useSearch = () => {
 
   const searchFn = React.useCallback(
     async (phrase?: string) => {
-      if (!phrase) {
-        return setResults({ polls: [] });
+      if (!phrase || phrase.length < 3) {
+        return setResults({ phrase, polls: [] });
       }
 
       const [pollsData] = await Promise.all([
@@ -21,6 +21,7 @@ export const useSearch = () => {
       ]);
 
       setResults({
+        phrase,
         polls: filterList(pollsData.data?.allPolls),
       });
     },
