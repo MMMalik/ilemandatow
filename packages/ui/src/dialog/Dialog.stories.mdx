@@ -1,0 +1,35 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Dialog from "./Dialog";
+import * as template from "./Dialog.stories";
+
+<Meta
+  title="Feedback/Dialog"
+  component={Dialog}
+  argTypes={{ onClose: { action: "clicked" } }}
+/>
+
+### Dialog
+
+Default Dialog component.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      title: <div>{"A title"}</div>,
+      children: (
+        <div className="lh-copy">
+          {Array.from({ length: 50 }).map((_, i) => {
+            return <div key={i}>{"Some not so long dialog content"}</div>;
+          })}
+        </div>
+      ),
+    }}
+  >
+    {template.Dialog.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Dialog} />

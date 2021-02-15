@@ -39,7 +39,8 @@ The app is made of the following packages:
 | `db:backup`            | Backups database                                               | Running PostgreSQL database  |
 | `db:migrate:make`      | Creates migration file for database                            |                              |
 | `db:migrate:down`      | Rollbacks last migration                                       | Running PostgreSQL database  |
-| `db:migrate:up`        | Runs latest migration                                          | Running PostgreSQL database  |
+| `db:migrate:latest`    | Runs all recent migrations                                     | Running PostgreSQL database  |
+| `db:migrate:up`        | Runs one migration                                             | Running PostgreSQL database  |
 | `db:restore`           | Restores database from latest backup                           | Running PostgreSQL database  |
 | `db:seed`              | Seeds database with init data                                  | Running PostgreSQL database  |
 | `db:setup`             | Creates init structure of databse                              | Running PostgreSQL database  |

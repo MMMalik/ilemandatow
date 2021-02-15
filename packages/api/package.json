@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/api",
-  "version": "0.0.1-alpha.35",
+  "version": "0.0.1-alpha.36",
   "description": "Headless CMS & GraphQL API for ilemandatow",
   "author": "Michał Malik <michalmmalik@gmail.com>",
   "homepage": "https://api.ilemandatow.pl",
@@ -31,6 +31,7 @@
     "db:backup:cleanup": "node build/scripts/db/custom/backupCleanup.js",
     "db:backup": "node build/scripts/db/custom/backup.js",
     "db:migrate:down": "yarn knex migrate:down",
+    "db:migrate:latest": "yarn knex migrate:latest",
     "db:migrate:make": "yarn knex migrate:make",
     "db:migrate:up": "yarn knex migrate:up",
     "db:restore": "node build/scripts/db/custom/restore.js",

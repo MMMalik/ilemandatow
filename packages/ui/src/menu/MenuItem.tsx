@@ -30,11 +30,11 @@ const MenuItem: React.FC<MenuItemProps> = ({
   icon,
 }) => {
   const { theme } = useTheme();
-  const { textMuted, textDisabled } = theme;
+  const { textMuted, textDivider } = theme;
 
   return (
     <li
-      className={`pa2 pointer hover-bg-${textDisabled} flex items-center`}
+      className={`pa2 pointer hover-bg-${textDivider} flex items-center`}
       onClick={onClick}
     >
       {icon && (

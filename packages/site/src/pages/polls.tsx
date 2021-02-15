@@ -1,12 +1,12 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import { DataType, filterList } from "@ilemandatow/client";
 import { SectionTitle } from "@ilemandatow/ui";
 import { useTranslation } from "../i18n";
 import { PollsGrid } from "../views";
 
 export const query = graphql`
-  query getAllPolls {
+  query polls {
     ilemandatow {
       allPolls(first: 12, sortBy: publishedAt_DESC) {
         ...Poll
@@ -17,9 +17,6 @@ export const query = graphql`
       allPollCompanies {
         ...PollCompany
       }
-      allElectoralCodes {
-        ...ElectoralCode
-      }
       _allPollsMeta {
         count
       }
@@ -27,11 +24,7 @@ export const query = graphql`
   }
 `;
 
-interface Props {
-  data: any;
-}
-
-const Polls: React.FC<Props> = ({ data }) => {
+const Polls: React.FC<PageProps<any>> = ({ data }) => {
   const { t } = useTranslation();
   const totalPolls = data.ilemandatow._allPollsMeta.count;
   const polls: DataType.PollFragment[] = filterList(data.ilemandatow.allPolls);

@@ -11,16 +11,21 @@ export interface FormSubmitProps {
    * Label for submit button.
    */
   submitLabel: string;
+  /**
+   * Callback fired upon clicking on cancel btn.
+   */
+  onCancel?: () => void;
 }
 
 const FormSubmit: React.FC<FormSubmitProps> = ({
   cancelLabel,
   submitLabel,
+  onCancel,
 }) => {
   return (
     <FormSection divider={false}>
       <div className="flex justify-end">
-        <Button htmlType="reset" btnType="secondary">
+        <Button onClick={onCancel} btnType="secondary">
           {cancelLabel}
         </Button>
         <Button htmlType="submit" className="ml3">

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { DataType } from "@ilemandatow/client";
 import { Divider, Grid, GridItem } from "@ilemandatow/ui";
 import { useRoutes } from "../../routes";
 import { useSiteMetaData } from "../../data";
@@ -10,7 +11,12 @@ import Intro from "./Intro";
 import PollsExplained from "./PollsExplained";
 import QuickExample from "./QuickExample";
 
-const Hero: React.FC = () => {
+interface Props {
+  latestPoll?: DataType.PollFragment;
+  codes: DataType.ElectoralCodeFragment[];
+}
+
+const Hero: React.FC<Props> = ({ codes, latestPoll }) => {
   const { repoUrl } = useSiteMetaData();
   const { routes } = useRoutes();
 
@@ -51,7 +57,7 @@ const Hero: React.FC = () => {
       <div>
         <Grid>
           <GridItem className="w-100">
-            <QuickExample linkTo={routes.newPollForm.link()} />
+            <QuickExample codes={codes} latestPoll={latestPoll} />
           </GridItem>
         </Grid>
       </div>

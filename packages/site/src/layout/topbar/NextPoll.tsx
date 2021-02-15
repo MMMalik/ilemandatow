@@ -13,7 +13,7 @@ const NextPoll: React.FC<Props> = ({ btn = true }) => {
 
   return (
     <TopbarLink btn={btn} to={routes.newPollForm.link()}>
-      {t("newPoll")}
+      {t("simulateElections")}
     </TopbarLink>
   );
 };

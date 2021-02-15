@@ -2,7 +2,11 @@ import * as React from "react";
 import { InputField, Grid, GridItem, useFormContext } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
 
-const NewPollSettings: React.FC = () => {
+interface Props {
+  totalSeats: number;
+}
+
+const NewPollSettings: React.FC<Props> = ({ totalSeats }) => {
   const { t } = useTranslation();
   const { register } = useFormContext();
 
@@ -20,12 +24,14 @@ const NewPollSettings: React.FC = () => {
       </GridItem>
       <GridItem className="w-100 w-50-l">
         <InputField
-          ref={register({ required: true })}
           name="seats"
           label={t("parliamentSeats")}
           type="number"
           required={true}
           placeholder={t("seats")}
+          disabled={true}
+          value={totalSeats}
+          helperText={t("valueCannotBeChanged")}
         />
       </GridItem>
     </Grid>

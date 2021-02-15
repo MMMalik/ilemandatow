@@ -1,5 +1,5 @@
-import { nanoid } from "nanoid";
 import { useTranslation } from "../../i18n";
+import { getNewParty } from "./getNewParty";
 import { NewPollFormValues } from "./types";
 
 const validate = (formValues?: any) => {
@@ -14,22 +14,11 @@ export const useInitFormValues = (formValues?: any) => {
 
   const defaultValues = {
     parties: [
-      {
-        id: nanoid(),
-        name: t("party1"),
-        result: "25",
-        color: "#5E2CA5",
-      },
-      {
-        id: nanoid(),
-        name: t("party2"),
-        result: "35",
-        color: "#fcba03",
-      },
-      { id: nanoid(), name: t("party3"), result: "40", color: "#00f03c" },
+      getNewParty(t("party1"), "25", "#5e2ca5"),
+      getNewParty(t("party2"), "35", "#fcba03"),
+      getNewParty(t("party3"), "40", "#00f03c"),
     ],
     threshold: "5.0",
-    seats: "460",
   };
 
   const parsed = {

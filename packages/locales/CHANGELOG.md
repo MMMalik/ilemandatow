@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.36](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.35...v0.0.1-alpha.36) (2021-02-15)
+
+
+### Bug Fixes
+
+* **new-poll:** adjust card display, use shorter id ([ba6609c](https://github.com/MMMalik/ilemandatow/commit/ba6609c8ac10129b53c81d02177ba94d9e26f74e))
+* **new-poll:** fix missing results, use electoral code ([c4b6c69](https://github.com/MMMalik/ilemandatow/commit/c4b6c6911af2a6ee37b0f238df33e0e6845c4186))
+
+
+### Features
+
+* **client-search:** add search queries and components ([db6c3e7](https://github.com/MMMalik/ilemandatow/commit/db6c3e7cc882dbf12d0db6984013176af791700d))
+* **hero:** improve hero component and search utils, adjust translations ([aaf6132](https://github.com/MMMalik/ilemandatow/commit/aaf6132e49296b2cdc7541ed29268484bf3f5761))
+
+
+
+
+
 ## [0.0.1-alpha.35](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.34...v0.0.1-alpha.35) (2021-02-11)
 
 **Note:** Version bump only for package @ilemandatow/locales
