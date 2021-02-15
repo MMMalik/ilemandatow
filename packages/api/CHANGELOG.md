@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.36](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.35...v0.0.1-alpha.36) (2021-02-15)
+
+
+### Bug Fixes
+
+* **deploy:** use `latest` knex command rather than `up` ([1327b01](https://github.com/MMMalik/ilemandatow/commit/1327b0151316b43a99fdef1a5816e2e3afc40603))
+
+
+
+
+
 ## [0.0.1-alpha.35](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.34...v0.0.1-alpha.35) (2021-02-11)
 
 **Note:** Version bump only for package @ilemandatow/api
