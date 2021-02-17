@@ -2693,6 +2693,7 @@ export type PartyFragment = { readonly __typename?: "Party" } & Pick<
 export type PollFragment = { readonly __typename?: "Poll" } & Pick<
   Poll,
   | "id"
+  | "slug"
   | "publishedAt"
   | "source"
   | "pollEndedAt"

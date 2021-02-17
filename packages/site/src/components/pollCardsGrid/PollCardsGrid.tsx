@@ -21,13 +21,13 @@ const PollCardsGrid: React.FC<Props> = ({ polls }) => {
   return (
     <Grid>
       {polls.map(
-        ({ id, polledBy, publishedBy, publishedAt, source, results }) => {
+        ({ id, polledBy, publishedBy, publishedAt, source, results, slug }) => {
           const [firstPolledBy] = polledBy;
           const [firstPublishedBy] = publishedBy;
           return (
             <GridItem key={id} className="w-100 w-50-m w-third-l">
               <PollCard
-                id={id}
+                slug={slug ?? ""}
                 polledBy={firstPolledBy?.abbr ?? ""}
                 publishedBy={firstPublishedBy?.abbr ?? ""}
                 publishedAt={publishedAt ?? ""}
