@@ -196,6 +196,248 @@ export enum CacheControlScope {
 }
 
 /**  A keystone list  */
+export type Doc = {
+  readonly __typename?: "Doc";
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the Doc List config, or
+   *  2. As an alias to the field set on 'labelField' in the Doc List config, or
+   *  3. As an alias to a 'name' field on the Doc List (if one exists), or
+   *  4. As an alias to the 'id' field on the Doc List.
+   */
+  readonly _label_?: Maybe<Scalars["String"]>;
+  readonly id: Scalars["ID"];
+  readonly title?: Maybe<Scalars["String"]>;
+  readonly body?: Maybe<Scalars["String"]>;
+  readonly order?: Maybe<Scalars["Int"]>;
+  readonly slug?: Maybe<Scalars["String"]>;
+  readonly bodyHtml?: Maybe<Scalars["String"]>;
+};
+
+export type DocCreateInput = {
+  readonly title?: Maybe<Scalars["String"]>;
+  readonly body?: Maybe<Scalars["String"]>;
+  readonly order?: Maybe<Scalars["Int"]>;
+  readonly slug?: Maybe<Scalars["String"]>;
+};
+
+export type DocRelateToManyInput = {
+  readonly create?: Maybe<ReadonlyArray<Maybe<DocCreateInput>>>;
+  readonly connect?: Maybe<ReadonlyArray<Maybe<DocWhereUniqueInput>>>;
+  readonly disconnect?: Maybe<ReadonlyArray<Maybe<DocWhereUniqueInput>>>;
+  readonly disconnectAll?: Maybe<Scalars["Boolean"]>;
+};
+
+export type DocsCreateInput = {
+  readonly data?: Maybe<DocCreateInput>;
+};
+
+/**  A keystone list  */
+export type DocSection = {
+  readonly __typename?: "DocSection";
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the DocSection List config, or
+   *  2. As an alias to the field set on 'labelField' in the DocSection List config, or
+   *  3. As an alias to a 'name' field on the DocSection List (if one exists), or
+   *  4. As an alias to the 'id' field on the DocSection List.
+   */
+  readonly _label_?: Maybe<Scalars["String"]>;
+  readonly id: Scalars["ID"];
+  readonly title?: Maybe<Scalars["String"]>;
+  readonly language?: Maybe<DocSectionLanguageType>;
+  readonly order?: Maybe<Scalars["Int"]>;
+  readonly docs: ReadonlyArray<Doc>;
+  readonly _docsMeta?: Maybe<_QueryMeta>;
+};
+
+/**  A keystone list  */
+export type DocSectionDocsArgs = {
+  where?: Maybe<DocWhereInput>;
+  search?: Maybe<Scalars["String"]>;
+  sortBy?: Maybe<ReadonlyArray<SortDocsBy>>;
+  orderBy?: Maybe<Scalars["String"]>;
+  first?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+/**  A keystone list  */
+export type DocSection_DocsMetaArgs = {
+  where?: Maybe<DocWhereInput>;
+  search?: Maybe<Scalars["String"]>;
+  sortBy?: Maybe<ReadonlyArray<SortDocsBy>>;
+  orderBy?: Maybe<Scalars["String"]>;
+  first?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type DocSectionCreateInput = {
+  readonly title?: Maybe<Scalars["String"]>;
+  readonly language?: Maybe<DocSectionLanguageType>;
+  readonly order?: Maybe<Scalars["Int"]>;
+  readonly docs?: Maybe<DocRelateToManyInput>;
+};
+
+export enum DocSectionLanguageType {
+  Pl = "pl",
+  En = "en",
+}
+
+export type DocSectionsCreateInput = {
+  readonly data?: Maybe<DocSectionCreateInput>;
+};
+
+export type DocSectionsUpdateInput = {
+  readonly id: Scalars["ID"];
+  readonly data?: Maybe<DocSectionUpdateInput>;
+};
+
+export type DocSectionUpdateInput = {
+  readonly title?: Maybe<Scalars["String"]>;
+  readonly language?: Maybe<DocSectionLanguageType>;
+  readonly order?: Maybe<Scalars["Int"]>;
+  readonly docs?: Maybe<DocRelateToManyInput>;
+};
+
+export type DocSectionWhereInput = {
+  readonly AND?: Maybe<ReadonlyArray<Maybe<DocSectionWhereInput>>>;
+  readonly OR?: Maybe<ReadonlyArray<Maybe<DocSectionWhereInput>>>;
+  readonly id?: Maybe<Scalars["ID"]>;
+  readonly id_not?: Maybe<Scalars["ID"]>;
+  readonly id_in?: Maybe<ReadonlyArray<Maybe<Scalars["ID"]>>>;
+  readonly id_not_in?: Maybe<ReadonlyArray<Maybe<Scalars["ID"]>>>;
+  readonly title?: Maybe<Scalars["String"]>;
+  readonly title_not?: Maybe<Scalars["String"]>;
+  readonly title_contains?: Maybe<Scalars["String"]>;
+  readonly title_not_contains?: Maybe<Scalars["String"]>;
+  readonly title_starts_with?: Maybe<Scalars["String"]>;
+  readonly title_not_starts_with?: Maybe<Scalars["String"]>;
+  readonly title_ends_with?: Maybe<Scalars["String"]>;
+  readonly title_not_ends_with?: Maybe<Scalars["String"]>;
+  readonly title_i?: Maybe<Scalars["String"]>;
+  readonly title_not_i?: Maybe<Scalars["String"]>;
+  readonly title_contains_i?: Maybe<Scalars["String"]>;
+  readonly title_not_contains_i?: Maybe<Scalars["String"]>;
+  readonly title_starts_with_i?: Maybe<Scalars["String"]>;
+  readonly title_not_starts_with_i?: Maybe<Scalars["String"]>;
+  readonly title_ends_with_i?: Maybe<Scalars["String"]>;
+  readonly title_not_ends_with_i?: Maybe<Scalars["String"]>;
+  readonly title_in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly title_not_in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly language?: Maybe<DocSectionLanguageType>;
+  readonly language_not?: Maybe<DocSectionLanguageType>;
+  readonly language_in?: Maybe<ReadonlyArray<Maybe<DocSectionLanguageType>>>;
+  readonly language_not_in?: Maybe<
+    ReadonlyArray<Maybe<DocSectionLanguageType>>
+  >;
+  readonly order?: Maybe<Scalars["Int"]>;
+  readonly order_not?: Maybe<Scalars["Int"]>;
+  readonly order_lt?: Maybe<Scalars["Int"]>;
+  readonly order_lte?: Maybe<Scalars["Int"]>;
+  readonly order_gt?: Maybe<Scalars["Int"]>;
+  readonly order_gte?: Maybe<Scalars["Int"]>;
+  readonly order_in?: Maybe<ReadonlyArray<Maybe<Scalars["Int"]>>>;
+  readonly order_not_in?: Maybe<ReadonlyArray<Maybe<Scalars["Int"]>>>;
+  /**  condition must be true for all nodes  */
+  readonly docs_every?: Maybe<DocWhereInput>;
+  /**  condition must be true for at least 1 node  */
+  readonly docs_some?: Maybe<DocWhereInput>;
+  /**  condition must be false for all nodes  */
+  readonly docs_none?: Maybe<DocWhereInput>;
+};
+
+export type DocSectionWhereUniqueInput = {
+  readonly id: Scalars["ID"];
+};
+
+export type DocsUpdateInput = {
+  readonly id: Scalars["ID"];
+  readonly data?: Maybe<DocUpdateInput>;
+};
+
+export type DocUpdateInput = {
+  readonly title?: Maybe<Scalars["String"]>;
+  readonly body?: Maybe<Scalars["String"]>;
+  readonly order?: Maybe<Scalars["Int"]>;
+  readonly slug?: Maybe<Scalars["String"]>;
+};
+
+export type DocWhereInput = {
+  readonly AND?: Maybe<ReadonlyArray<Maybe<DocWhereInput>>>;
+  readonly OR?: Maybe<ReadonlyArray<Maybe<DocWhereInput>>>;
+  readonly id?: Maybe<Scalars["ID"]>;
+  readonly id_not?: Maybe<Scalars["ID"]>;
+  readonly id_in?: Maybe<ReadonlyArray<Maybe<Scalars["ID"]>>>;
+  readonly id_not_in?: Maybe<ReadonlyArray<Maybe<Scalars["ID"]>>>;
+  readonly title?: Maybe<Scalars["String"]>;
+  readonly title_not?: Maybe<Scalars["String"]>;
+  readonly title_contains?: Maybe<Scalars["String"]>;
+  readonly title_not_contains?: Maybe<Scalars["String"]>;
+  readonly title_starts_with?: Maybe<Scalars["String"]>;
+  readonly title_not_starts_with?: Maybe<Scalars["String"]>;
+  readonly title_ends_with?: Maybe<Scalars["String"]>;
+  readonly title_not_ends_with?: Maybe<Scalars["String"]>;
+  readonly title_i?: Maybe<Scalars["String"]>;
+  readonly title_not_i?: Maybe<Scalars["String"]>;
+  readonly title_contains_i?: Maybe<Scalars["String"]>;
+  readonly title_not_contains_i?: Maybe<Scalars["String"]>;
+  readonly title_starts_with_i?: Maybe<Scalars["String"]>;
+  readonly title_not_starts_with_i?: Maybe<Scalars["String"]>;
+  readonly title_ends_with_i?: Maybe<Scalars["String"]>;
+  readonly title_not_ends_with_i?: Maybe<Scalars["String"]>;
+  readonly title_in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly title_not_in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly body?: Maybe<Scalars["String"]>;
+  readonly body_not?: Maybe<Scalars["String"]>;
+  readonly body_contains?: Maybe<Scalars["String"]>;
+  readonly body_not_contains?: Maybe<Scalars["String"]>;
+  readonly body_starts_with?: Maybe<Scalars["String"]>;
+  readonly body_not_starts_with?: Maybe<Scalars["String"]>;
+  readonly body_ends_with?: Maybe<Scalars["String"]>;
+  readonly body_not_ends_with?: Maybe<Scalars["String"]>;
+  readonly body_i?: Maybe<Scalars["String"]>;
+  readonly body_not_i?: Maybe<Scalars["String"]>;
+  readonly body_contains_i?: Maybe<Scalars["String"]>;
+  readonly body_not_contains_i?: Maybe<Scalars["String"]>;
+  readonly body_starts_with_i?: Maybe<Scalars["String"]>;
+  readonly body_not_starts_with_i?: Maybe<Scalars["String"]>;
+  readonly body_ends_with_i?: Maybe<Scalars["String"]>;
+  readonly body_not_ends_with_i?: Maybe<Scalars["String"]>;
+  readonly body_in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly body_not_in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly order?: Maybe<Scalars["Int"]>;
+  readonly order_not?: Maybe<Scalars["Int"]>;
+  readonly order_lt?: Maybe<Scalars["Int"]>;
+  readonly order_lte?: Maybe<Scalars["Int"]>;
+  readonly order_gt?: Maybe<Scalars["Int"]>;
+  readonly order_gte?: Maybe<Scalars["Int"]>;
+  readonly order_in?: Maybe<ReadonlyArray<Maybe<Scalars["Int"]>>>;
+  readonly order_not_in?: Maybe<ReadonlyArray<Maybe<Scalars["Int"]>>>;
+  readonly slug?: Maybe<Scalars["String"]>;
+  readonly slug_not?: Maybe<Scalars["String"]>;
+  readonly slug_contains?: Maybe<Scalars["String"]>;
+  readonly slug_not_contains?: Maybe<Scalars["String"]>;
+  readonly slug_starts_with?: Maybe<Scalars["String"]>;
+  readonly slug_not_starts_with?: Maybe<Scalars["String"]>;
+  readonly slug_ends_with?: Maybe<Scalars["String"]>;
+  readonly slug_not_ends_with?: Maybe<Scalars["String"]>;
+  readonly slug_i?: Maybe<Scalars["String"]>;
+  readonly slug_not_i?: Maybe<Scalars["String"]>;
+  readonly slug_contains_i?: Maybe<Scalars["String"]>;
+  readonly slug_not_contains_i?: Maybe<Scalars["String"]>;
+  readonly slug_starts_with_i?: Maybe<Scalars["String"]>;
+  readonly slug_not_starts_with_i?: Maybe<Scalars["String"]>;
+  readonly slug_ends_with_i?: Maybe<Scalars["String"]>;
+  readonly slug_not_ends_with_i?: Maybe<Scalars["String"]>;
+  readonly slug_in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+  readonly slug_not_in?: Maybe<ReadonlyArray<Maybe<Scalars["String"]>>>;
+};
+
+export type DocWhereUniqueInput = {
+  readonly id: Scalars["ID"];
+};
+
+/**  A keystone list  */
 export type ElectoralCode = {
   readonly __typename?: "ElectoralCode";
   /**
@@ -422,6 +664,30 @@ export type ElectoralDistrictWhereUniqueInput = {
 
 export type Mutation = {
   readonly __typename?: "Mutation";
+  /**  Create a single Doc item.  */
+  readonly createDoc?: Maybe<Doc>;
+  /**  Create multiple Doc items.  */
+  readonly createDocs?: Maybe<ReadonlyArray<Maybe<Doc>>>;
+  /**  Update a single Doc item by ID.  */
+  readonly updateDoc?: Maybe<Doc>;
+  /**  Update multiple Doc items by ID.  */
+  readonly updateDocs?: Maybe<ReadonlyArray<Maybe<Doc>>>;
+  /**  Delete a single Doc item by ID.  */
+  readonly deleteDoc?: Maybe<Doc>;
+  /**  Delete multiple Doc items by ID.  */
+  readonly deleteDocs?: Maybe<ReadonlyArray<Maybe<Doc>>>;
+  /**  Create a single DocSection item.  */
+  readonly createDocSection?: Maybe<DocSection>;
+  /**  Create multiple DocSection items.  */
+  readonly createDocSections?: Maybe<ReadonlyArray<Maybe<DocSection>>>;
+  /**  Update a single DocSection item by ID.  */
+  readonly updateDocSection?: Maybe<DocSection>;
+  /**  Update multiple DocSection items by ID.  */
+  readonly updateDocSections?: Maybe<ReadonlyArray<Maybe<DocSection>>>;
+  /**  Delete a single DocSection item by ID.  */
+  readonly deleteDocSection?: Maybe<DocSection>;
+  /**  Delete multiple DocSection items by ID.  */
+  readonly deleteDocSections?: Maybe<ReadonlyArray<Maybe<DocSection>>>;
   /**  Create a single ElectoralCode item.  */
   readonly createElectoralCode?: Maybe<ElectoralCode>;
   /**  Create multiple ElectoralCode items.  */
@@ -540,6 +806,56 @@ export type Mutation = {
   readonly authenticateUserWithPassword?: Maybe<AuthenticateUserOutput>;
   readonly unauthenticateUser?: Maybe<UnauthenticateUserOutput>;
   readonly updateAuthenticatedUser?: Maybe<User>;
+};
+
+export type MutationCreateDocArgs = {
+  data?: Maybe<DocCreateInput>;
+};
+
+export type MutationCreateDocsArgs = {
+  data?: Maybe<ReadonlyArray<Maybe<DocsCreateInput>>>;
+};
+
+export type MutationUpdateDocArgs = {
+  id: Scalars["ID"];
+  data?: Maybe<DocUpdateInput>;
+};
+
+export type MutationUpdateDocsArgs = {
+  data?: Maybe<ReadonlyArray<Maybe<DocsUpdateInput>>>;
+};
+
+export type MutationDeleteDocArgs = {
+  id: Scalars["ID"];
+};
+
+export type MutationDeleteDocsArgs = {
+  ids?: Maybe<ReadonlyArray<Scalars["ID"]>>;
+};
+
+export type MutationCreateDocSectionArgs = {
+  data?: Maybe<DocSectionCreateInput>;
+};
+
+export type MutationCreateDocSectionsArgs = {
+  data?: Maybe<ReadonlyArray<Maybe<DocSectionsCreateInput>>>;
+};
+
+export type MutationUpdateDocSectionArgs = {
+  id: Scalars["ID"];
+  data?: Maybe<DocSectionUpdateInput>;
+};
+
+export type MutationUpdateDocSectionsArgs = {
+  data?: Maybe<ReadonlyArray<Maybe<DocSectionsUpdateInput>>>;
+};
+
+export type MutationDeleteDocSectionArgs = {
+  id: Scalars["ID"];
+};
+
+export type MutationDeleteDocSectionsArgs = {
+  ids?: Maybe<ReadonlyArray<Scalars["ID"]>>;
 };
 
 export type MutationCreateElectoralCodeArgs = {
@@ -1732,6 +2048,22 @@ export type PublisherWhereUniqueInput = {
 
 export type Query = {
   readonly __typename?: "Query";
+  /**  Search for all Doc items which match the where clause.  */
+  readonly allDocs?: Maybe<ReadonlyArray<Maybe<Doc>>>;
+  /**  Search for the Doc item with the matching ID.  */
+  readonly Doc?: Maybe<Doc>;
+  /**  Perform a meta-query on all Doc items which match the where clause.  */
+  readonly _allDocsMeta?: Maybe<_QueryMeta>;
+  /**  Retrieve the meta-data for the Doc list.  */
+  readonly _DocsMeta?: Maybe<_ListMeta>;
+  /**  Search for all DocSection items which match the where clause.  */
+  readonly allDocSections?: Maybe<ReadonlyArray<Maybe<DocSection>>>;
+  /**  Search for the DocSection item with the matching ID.  */
+  readonly DocSection?: Maybe<DocSection>;
+  /**  Perform a meta-query on all DocSection items which match the where clause.  */
+  readonly _allDocSectionsMeta?: Maybe<_QueryMeta>;
+  /**  Retrieve the meta-data for the DocSection list.  */
+  readonly _DocSectionsMeta?: Maybe<_ListMeta>;
   /**  Search for all ElectoralCode items which match the where clause.  */
   readonly allElectoralCodes?: Maybe<ReadonlyArray<Maybe<ElectoralCode>>>;
   /**  Search for the ElectoralCode item with the matching ID.  */
@@ -1811,6 +2143,50 @@ export type Query = {
   /** The version of the Keystone application serving this API. */
   readonly appVersion?: Maybe<Scalars["String"]>;
   readonly authenticatedUser?: Maybe<User>;
+};
+
+export type QueryAllDocsArgs = {
+  where?: Maybe<DocWhereInput>;
+  search?: Maybe<Scalars["String"]>;
+  sortBy?: Maybe<ReadonlyArray<SortDocsBy>>;
+  orderBy?: Maybe<Scalars["String"]>;
+  first?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type QueryDocArgs = {
+  where: DocWhereUniqueInput;
+};
+
+export type Query_AllDocsMetaArgs = {
+  where?: Maybe<DocWhereInput>;
+  search?: Maybe<Scalars["String"]>;
+  sortBy?: Maybe<ReadonlyArray<SortDocsBy>>;
+  orderBy?: Maybe<Scalars["String"]>;
+  first?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type QueryAllDocSectionsArgs = {
+  where?: Maybe<DocSectionWhereInput>;
+  search?: Maybe<Scalars["String"]>;
+  sortBy?: Maybe<ReadonlyArray<SortDocSectionsBy>>;
+  orderBy?: Maybe<Scalars["String"]>;
+  first?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type QueryDocSectionArgs = {
+  where: DocSectionWhereUniqueInput;
+};
+
+export type Query_AllDocSectionsMetaArgs = {
+  where?: Maybe<DocSectionWhereInput>;
+  search?: Maybe<Scalars["String"]>;
+  sortBy?: Maybe<ReadonlyArray<SortDocSectionsBy>>;
+  orderBy?: Maybe<Scalars["String"]>;
+  first?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
 };
 
 export type QueryAllElectoralCodesArgs = {
@@ -2014,6 +2390,32 @@ export type Query_AllUsersMetaArgs = {
 export type Query_KsListsMetaArgs = {
   where?: Maybe<_KsListsMetaInput>;
 };
+
+export enum SortDocsBy {
+  IdAsc = "id_ASC",
+  IdDesc = "id_DESC",
+  TitleAsc = "title_ASC",
+  TitleDesc = "title_DESC",
+  BodyAsc = "body_ASC",
+  BodyDesc = "body_DESC",
+  OrderAsc = "order_ASC",
+  OrderDesc = "order_DESC",
+  SlugAsc = "slug_ASC",
+  SlugDesc = "slug_DESC",
+}
+
+export enum SortDocSectionsBy {
+  IdAsc = "id_ASC",
+  IdDesc = "id_DESC",
+  TitleAsc = "title_ASC",
+  TitleDesc = "title_DESC",
+  LanguageAsc = "language_ASC",
+  LanguageDesc = "language_DESC",
+  OrderAsc = "order_ASC",
+  OrderDesc = "order_DESC",
+  DocsAsc = "docs_ASC",
+  DocsDesc = "docs_DESC",
+}
 
 export enum SortElectoralCodesBy {
   IdAsc = "id_ASC",
@@ -2242,6 +2644,25 @@ export type UserWhereInput = {
 export type UserWhereUniqueInput = {
   readonly id: Scalars["ID"];
 };
+
+export type DocFragment = { readonly __typename?: "Doc" } & Pick<
+  Doc,
+  "id" | "title" | "order" | "bodyHtml" | "slug"
+>;
+
+export type DocSectionFragment = { readonly __typename?: "DocSection" } & Pick<
+  DocSection,
+  "id" | "title" | "order" | "language"
+> & {
+    readonly docs: ReadonlyArray<
+      { readonly __typename?: "Doc" } & DocShortFragment
+    >;
+  };
+
+export type DocShortFragment = { readonly __typename?: "Doc" } & Pick<
+  Doc,
+  "id" | "title" | "order" | "slug"
+>;
 
 export type ElectoralCodeFragment = {
   readonly __typename?: "ElectoralCode";

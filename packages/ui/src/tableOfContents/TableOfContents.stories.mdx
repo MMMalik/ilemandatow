@@ -1,0 +1,49 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import TableOfContents from "./TableOfContents";
+import TableOfContentsItem from "./TableOfContentsItem";
+import TableOfContentsSection from "./TableOfContentsSection";
+import * as template from "./TableOfContents.stories";
+
+<Meta title="Data Display/TableOfContents" component={TableOfContents} />
+
+### TableOfContents
+
+Default TableOfContents component.
+
+<Canvas>
+  <Story
+    name="Main"
+    args={{
+      children: (
+        <div className="lh-copy">
+          <TableOfContentsSection title="First section">
+            {Array.from({ length: 3 }).map((_, i) => {
+              return (
+                <TableOfContentsItem
+                  key={i}
+                  linkTo="https://onet.pl"
+                >{`Item ${i}`}</TableOfContentsItem>
+              );
+            })}
+          </TableOfContentsSection>
+          <TableOfContentsSection title="Next section">
+            {Array.from({ length: 3 }).map((_, i) => {
+              return (
+                <TableOfContentsItem
+                  key={i}
+                  linkTo="https://onet.pl"
+                >{`Item ${i}`}</TableOfContentsItem>
+              );
+            })}
+          </TableOfContentsSection>
+        </div>
+      ),
+    }}
+  >
+    {template.TableOfContents.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={TableOfContents} />

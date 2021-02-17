@@ -8,7 +8,7 @@ export const light: Theme = {
   textPrimary: "mid-gray",
   textOnPrimary: "white",
   textOnBgTertiary: "near-white-c-1",
-  textMuted: "silver",
+  textMuted: "gray",
   textDisabled: "moon-gray",
   textDivider: "light-gray",
   chart: {

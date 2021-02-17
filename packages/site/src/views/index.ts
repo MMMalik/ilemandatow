@@ -1,3 +1,6 @@
+export * from "./docs";
+export { default as Docs } from "./docs";
+
 export * from "./hero";
 export { default as Hero } from "./hero";
 
