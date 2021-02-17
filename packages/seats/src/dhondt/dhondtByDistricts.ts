@@ -1,4 +1,9 @@
-import { accumulateResults, applyThreshold } from "../utils";
+import {
+  accumulateResults,
+  applyThreshold,
+  fillUndecidedVoters,
+  filterPlaceholderParty,
+} from "../utils";
 import { dhondt } from "./dhondt";
 import { DhondtElectionByDistrict, DhondtParliamentSeat } from "./types";
 
@@ -12,17 +17,19 @@ import { DhondtElectionByDistrict, DhondtParliamentSeat } from "./types";
 export const dhondtByDistricts = ({
   resultsByDistrict,
   globalThreshold,
+  fillMissingPerc,
 }: DhondtElectionByDistrict): DhondtParliamentSeat[] => {
+  // Maps and flattens results.
+  const reducedResults = resultsByDistrict
+    .map((r) => (fillMissingPerc ? fillUndecidedVoters(r.results) : r.results))
+    .reduce((acc, r) => acc.concat(r), []);
+
   // Gets parties above global threshold.
-  const aboveThreshold = applyThreshold(
-    accumulateResults(
-      resultsByDistrict
-        .map((r) => r.results)
-        .reduce((acc, r) => acc.concat(r), [])
-    ),
-    globalThreshold
+  const aboveThreshold = filterPlaceholderParty(
+    applyThreshold(accumulateResults(reducedResults), globalThreshold)
   );
-  // Calculates d'Hondt for each district only for parties above global threshold.
+
+  // Calculates D'Hondt for each district only for parties above global threshold.
   // Parties below global threshold get automatically 0 seats.
   const seatsByDistrict = resultsByDistrict.map((r) => {
     const includedInDhondt = dhondt({
@@ -38,17 +45,19 @@ export const dhondtByDistricts = ({
       excludedFromDhondt.map((r) => ({
         party: r.party,
         seats: 0,
+        init: r,
       }))
     );
   });
+
   // Groups and accumulates seats per party.
   return seatsByDistrict.reduce((district, acc) => {
-    district.forEach(({ party, seats }) => {
+    district.forEach(({ party, seats, init }) => {
       const found = acc.find((p) => p.party === party);
       if (found) {
         found.seats += seats;
       } else {
-        acc.push({ party, seats });
+        acc.push({ party, seats, init });
       }
     });
     return acc;

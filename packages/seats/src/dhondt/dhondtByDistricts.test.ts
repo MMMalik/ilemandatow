@@ -510,4 +510,113 @@ describe("dhondtByDistricts", () => {
       { party: "Skuteczni", seats: 0 },
     ]);
   });
+
+  it("calculates election results - uses % values", () => {
+    const result = sortBySeats(
+      dhondtByDistricts({
+        resultsByDistrict: [
+          {
+            results: [
+              {
+                party: "A",
+                votes: 80,
+              },
+              {
+                party: "B",
+                votes: 10,
+              },
+              {
+                party: "C",
+                votes: 5,
+              },
+            ],
+            totalSeats: 230,
+          },
+          {
+            results: [
+              {
+                party: "A",
+                votes: 80,
+              },
+              {
+                party: "B",
+                votes: 10,
+              },
+              {
+                party: "C",
+                votes: 5,
+              },
+            ],
+            totalSeats: 230,
+          },
+        ],
+        globalThreshold: 5,
+        fillMissingPerc: true,
+      })
+    );
+    expect(result).toEqual([
+      { party: "A", seats: 388 },
+      { party: "B", seats: 48 },
+      { party: "C", seats: 24 },
+    ]);
+  });
+
+  it("calculates election results - uses % values with threshold", () => {
+    const result = sortBySeats(
+      dhondtByDistricts({
+        resultsByDistrict: [
+          {
+            results: [
+              {
+                party: "A",
+                votes: 80,
+              },
+              {
+                party: "B",
+                votes: 10,
+              },
+              {
+                party: "C",
+                votes: 4,
+              },
+              {
+                party: "D",
+                votes: 3,
+              },
+            ],
+            totalSeats: 230,
+          },
+          {
+            results: [
+              {
+                party: "A",
+                votes: 80,
+              },
+              {
+                party: "B",
+                votes: 10,
+              },
+              {
+                party: "C",
+                votes: 7,
+              },
+              {
+                party: "D",
+                votes: 6,
+              },
+            ],
+            totalSeats: 230,
+          },
+        ],
+        globalThreshold: 5,
+        fillMissingPerc: true,
+      })
+    );
+    expect(result).toEqual([
+      { party: "A", seats: 388 },
+      { party: "B", seats: 47 },
+      { party: "C", seats: 25 },
+      { party: "D", seats: 0 },
+    ]);
+  });
 });

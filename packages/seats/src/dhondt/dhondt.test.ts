@@ -94,4 +94,31 @@ describe("dhondt", () => {
       { party: "D", seats: 0 },
     ]);
   });
+
+  it("calculates seats - fills undecided voters", () => {
+    const result = dhondt({
+      results: [
+        {
+          party: "A",
+          votes: 80,
+        },
+        {
+          party: "B",
+          votes: 10,
+        },
+        {
+          party: "C",
+          votes: 5,
+        },
+      ],
+      threshold: 5,
+      totalSeats: 460,
+      fillMissingPerc: true,
+    });
+    expect(result).toEqual([
+      { party: "A", seats: 388 },
+      { party: "B", seats: 48 },
+      { party: "C", seats: 24 },
+    ]);
+  });
 });
