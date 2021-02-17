@@ -1,3 +1,5 @@
+export * from "./doc";
+export * from "./docSection";
 export * from "./electoralCode";
 export * from "./electoralDistrict";
 export * from "./party";

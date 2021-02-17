@@ -6,5 +6,6 @@ export * from "./getElectoralCode";
 export * from "./getLatestElectoralCode";
 export * from "./getPartiesWithResults";
 export * from "./getPartyColor";
+// export * from "./groupDocs";
 export * from "./sortByParliamentOrder";
 export * from "./sortPollResults";
