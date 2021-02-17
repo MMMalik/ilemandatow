@@ -7,6 +7,10 @@ export type ParliamentSeat = {
    * Number of seats won by the party.
    */
   seats: number;
+  /**
+   * Initial result.
+   */
+  init: ElectionResult;
 };
 
 export interface ElectionResult {

@@ -1,4 +1,5 @@
 import { ElectionResult } from "../types";
+import { sumVotes } from "./sumVotes";
 
 /**
  * Calculates total number of votes and filters results for parties below specified % threshold.
@@ -10,10 +11,10 @@ export const applyThreshold = (
   results: ElectionResult[],
   threshold?: number
 ) => {
-  const totalVotes = results.reduce((acc, r) => acc + r.votes, 0);
+  const totalVotes = sumVotes(results);
   return results.filter((r) =>
     threshold && !r.disableThreshold
-      ? r.votes / totalVotes > threshold / 100
+      ? r.votes / totalVotes >= threshold / 100
       : true
   );
 };

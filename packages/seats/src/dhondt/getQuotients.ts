@@ -1,22 +1,20 @@
-import { applyThreshold } from "../utils";
-import { DhondtElection, DhondtQuotient } from "./types";
+import { ElectionResult } from "../types";
+import { DhondtQuotient } from "./types";
 
 /**
- * Calculates quotients based on d'Hondt method.
+ * Calculates quotients based on D'Hondt method.
  * Sorts quotients in descending order. Returns list of quotients with length equal to the total number seats.
  *
  * @param input calculation input
  */
-export const getQuotients = ({
-  results,
-  threshold,
-  totalSeats,
-}: DhondtElection): DhondtQuotient[] => {
-  const filteredResults = applyThreshold(results, threshold);
+export const getQuotients = (
+  results: ElectionResult[],
+  totalSeats: number
+): DhondtQuotient[] => {
   return Array.from({ length: totalSeats })
     .map((_, i) => {
       const nextN = i + 1;
-      return filteredResults.map(({ votes, party }) => {
+      return results.map(({ votes, party }) => {
         return {
           quotient: votes / nextN,
           party,

@@ -13,6 +13,10 @@ export interface DhondtElection {
    * Percentage below which parties are excluded from seats assignment.
    */
   threshold?: number;
+  /**
+   * Fills missing votes if the results are provided in %.
+   */
+  fillMissingPerc?: boolean;
 }
 
 export interface DhondtElectionByDistrict {
@@ -24,6 +28,10 @@ export interface DhondtElectionByDistrict {
    * Percentage below which parties are excluded from seats assignment.
    */
   globalThreshold?: number;
+  /**
+   * Fills missing votes if the results are provided in %.
+   */
+  fillMissingPerc?: boolean;
 }
 
 export type DhondtQuotient = {

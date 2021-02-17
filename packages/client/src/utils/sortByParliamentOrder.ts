@@ -1,4 +1,4 @@
-import { PartyWithResult } from "./getPartiesWithResults";
+import { PartyWithResult } from "./types";
 
 export const sortByParliamentOrder = <T extends PartyWithResult>(
   parties: T[]

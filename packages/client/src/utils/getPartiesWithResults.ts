@@ -1,14 +1,6 @@
 import { DataType } from "../generated";
 import { getPartyColor } from "./getPartyColor";
-
-export interface PartyWithResult {
-  id?: string;
-  name?: string;
-  abbr?: string;
-  result?: number;
-  color?: string;
-  parliamentOrder?: number;
-}
+import { PartyWithResult } from "./types";
 
 export const getPartiesWithResults = (
   results: DataType.PollResultFragment[],
