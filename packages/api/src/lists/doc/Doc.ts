@@ -24,6 +24,7 @@ export const Doc = {
       resolver: (item: any) => converter.makeHtml(item.body),
     },
   },
+  labelResolver: (item: any) => item.title,
   access: {
     read: true,
     create: canEdit,
@@ -37,5 +38,4 @@ export const Doc = {
       }
     },
   },
-  labelResolver: (item: any) => item.title,
 };

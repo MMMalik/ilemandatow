@@ -13,6 +13,7 @@ export const DocSection = {
     order: { type: Integer },
     docs: { type: Relationship, ref: "Doc", many: true },
   },
+  labelResolver: (item: any) => item.title,
   access: {
     read: true,
     create: canEdit,
@@ -24,5 +25,4 @@ export const DocSection = {
       await dispatchChangeEvt();
     },
   },
-  labelResolver: (item: any) => item.title,
 };
