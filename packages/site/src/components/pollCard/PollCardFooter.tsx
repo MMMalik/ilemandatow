@@ -4,11 +4,11 @@ import { useTranslation } from "../../i18n";
 import { useRoutes } from "../../routes";
 
 interface Props {
-  pollId: string;
+  slug: string;
   source?: string | null;
 }
 
-const PollCardFooter: React.FC<Props> = ({ pollId, source }) => {
+const PollCardFooter: React.FC<Props> = ({ slug, source }) => {
   const { t } = useTranslation();
   const { routes } = useRoutes();
 
@@ -21,7 +21,7 @@ const PollCardFooter: React.FC<Props> = ({ pollId, source }) => {
           </Link>
         </Tooltip>
       )}
-      <Link to={routes.poll.link(pollId)} primary={true}>
+      <Link to={routes.poll.link(slug)} primary={true}>
         {t("seeDetails")}
       </Link>
     </div>

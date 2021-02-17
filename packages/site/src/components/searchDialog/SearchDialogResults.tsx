@@ -25,7 +25,7 @@ const SearchDialogResults: React.FC<Props> = ({ results }) => {
   return (
     <div>
       {results.polls.map(
-        ({ id, polledBy, publishedBy, publishedAt, results }) => {
+        ({ id, polledBy, publishedBy, publishedAt, results, slug }) => {
           const [firstPolledBy] = polledBy;
           const [firstPublishedBy] = publishedBy;
           return (
@@ -34,7 +34,7 @@ const SearchDialogResults: React.FC<Props> = ({ results }) => {
               title={firstPolledBy?.abbr ?? ""}
               subTitle={firstPublishedBy?.abbr ?? ""}
               titleRightSide={format(new Date(publishedAt ?? ""))}
-              linkTo={routes.poll.link(id)}
+              linkTo={routes.poll.link(slug ?? "")}
               highlight={searchedPhrase}
               description={results
                 .map(

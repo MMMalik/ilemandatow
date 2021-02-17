@@ -6,6 +6,7 @@ exports.createPages = async ({ actions, graphql }) => {
       ilemandatow {
         allPolls {
           id
+          slug
         }
         allDocSections {
           language
@@ -18,9 +19,9 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
 
-  data.ilemandatow.allPolls.forEach(({ id }) => {
+  data.ilemandatow.allPolls.forEach(({ id, slug }) => {
     Object.keys(meta).forEach((lang) => {
-      const localizedPath = `/${meta[lang].path}/poll/${id}`;
+      const localizedPath = `/${meta[lang].path}/poll/${slug}`;
       actions.createPage({
         path: localizedPath,
         component: require.resolve(`../src/templates/poll.tsx`),
