@@ -56,6 +56,7 @@ export const dhondtByDistricts = ({
       const found = acc.find((p) => p.party === party);
       if (found) {
         found.seats += seats;
+        found.init.votes += init.votes;
       } else {
         acc.push({ party, seats, init });
       }

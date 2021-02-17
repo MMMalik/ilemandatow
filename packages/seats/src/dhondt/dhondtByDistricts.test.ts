@@ -498,16 +498,32 @@ describe("dhondtByDistricts", () => {
       })
     );
     expect(result).toEqual([
-      { party: "PiS", seats: 235 },
-      { party: "KO", seats: 134 },
-      { party: "Lewica", seats: 49 },
-      { party: "PSL", seats: 30 },
-      { party: "Konfederacja", seats: 11 },
-      { party: "Niemiecka", seats: 1 },
-      { party: "Bezpartyjni", seats: 0 },
-      { party: "Emeryci", seats: 0 },
-      { party: "Prawica", seats: 0 },
-      { party: "Skuteczni", seats: 0 },
+      { party: "PiS", seats: 235, init: { party: "PiS", votes: 8050935 } },
+      { party: "KO", seats: 134, init: { party: "KO", votes: 5060355 } },
+      { party: "Lewica", seats: 49, init: { party: "Lewica", votes: 2319946 } },
+      { party: "PSL", seats: 30, init: { party: "PSL", votes: 1578523 } },
+      {
+        party: "Konfederacja",
+        seats: 11,
+        init: { party: "Konfederacja", votes: 1256953 },
+      },
+      {
+        party: "Niemiecka",
+        seats: 1,
+        init: { party: "Niemiecka", votes: 32094, disableThreshold: true },
+      },
+      {
+        party: "Bezpartyjni",
+        seats: 0,
+        init: { party: "Bezpartyjni", votes: 144773 },
+      },
+      {
+        party: "Skuteczni",
+        seats: 0,
+        init: { party: "Skuteczni", votes: 18918 },
+      },
+      { party: "Emeryci", seats: 0, init: { party: "Emeryci", votes: 5448 } },
+      { party: "Prawica", seats: 0, init: { party: "Prawica", votes: 1765 } },
     ]);
   });
 
@@ -555,9 +571,9 @@ describe("dhondtByDistricts", () => {
       })
     );
     expect(result).toEqual([
-      { party: "A", seats: 388 },
-      { party: "B", seats: 48 },
-      { party: "C", seats: 24 },
+      { party: "A", seats: 388, init: { party: "A", votes: 160 } },
+      { party: "B", seats: 48, init: { party: "B", votes: 20 } },
+      { party: "C", seats: 24, init: { party: "C", votes: 10 } },
     ]);
   });
 
@@ -613,10 +629,10 @@ describe("dhondtByDistricts", () => {
       })
     );
     expect(result).toEqual([
-      { party: "A", seats: 388 },
-      { party: "B", seats: 47 },
-      { party: "C", seats: 25 },
-      { party: "D", seats: 0 },
+      { party: "A", seats: 388, init: { party: "A", votes: 160 } },
+      { party: "B", seats: 47, init: { party: "B", votes: 20 } },
+      { party: "C", seats: 25, init: { party: "C", votes: 11 } },
+      { party: "D", seats: 0, init: { party: "D", votes: 9 } },
     ]);
   });
 });
