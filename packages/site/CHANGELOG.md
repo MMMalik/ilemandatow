@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.37](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.36...v0.0.1-alpha.37) (2021-02-17)
+
+
+### Bug Fixes
+
+* **chart-rounding:** adjust parliament chart rounding, change charts order ([ebbd27f](https://github.com/MMMalik/ilemandatow/commit/ebbd27f7f462aafef7ae6fe41b9e36eeeaaae70f))
+
+
+### Features
+
+* **docs:** add docs pages ([d76765b](https://github.com/MMMalik/ilemandatow/commit/d76765b1f9517a28f410998be059cf34c758f230))
+* **slug:** use slugs for polls ([1c20396](https://github.com/MMMalik/ilemandatow/commit/1c203962dac95928a1f912d24028ddf6a5cd2814))
+
+
+
+
+
 ## [0.0.1-alpha.36](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.35...v0.0.1-alpha.36) (2021-02-15)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.37](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.36...v0.0.1-alpha.37) (2021-02-17)
+
+
+### Bug Fixes
+
+* **admin-labels:** add label resolvers for better author experience ([c090505](https://github.com/MMMalik/ilemandatow/commit/c0905054f1823eaa9b362cea2f485b9585b41da3))
+
+
+### Features
+
+* **docs:** add docs pages ([d76765b](https://github.com/MMMalik/ilemandatow/commit/d76765b1f9517a28f410998be059cf34c758f230))
+
+
+
+
+
 ## [0.0.1-alpha.36](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.35...v0.0.1-alpha.36) (2021-02-15)
 
 
