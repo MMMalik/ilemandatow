@@ -19,7 +19,7 @@ export const getSeatsPerRow = (
   // Runs as long as there are seats to add
   while (seatsLeft > 0) {
     const currentLength = Math.PI * (dist * seatR * result.length + innerR);
-    const numOfSeats = Math.floor((currentLength + seatR) / (dist * seatR));
+    const numOfSeats = Math.round((currentLength + seatR) / (dist * seatR));
 
     // If number of seats to add is higher than number of seats in current row, then distribute seats among existing rows rather than adding a new row.
     if (numOfSeats > seatsLeft) {
