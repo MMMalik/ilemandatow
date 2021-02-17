@@ -10,6 +10,7 @@ export const User = {
     password: { type: Password },
     role: { type: Select, options: ["Admin", "Editor", "Viewer"] },
   },
+  labelResolver: (item: any) => item.username,
   access: {
     read: canAdmin,
     create: canAdmin,

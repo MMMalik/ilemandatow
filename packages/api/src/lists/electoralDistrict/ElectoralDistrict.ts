@@ -22,4 +22,5 @@ export const ElectoralDistrict = {
       }
     },
   },
+  labelResolver: (item: any) => item.name,
 };

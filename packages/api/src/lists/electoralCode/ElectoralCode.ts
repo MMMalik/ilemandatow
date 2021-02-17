@@ -33,4 +33,5 @@ export const ElectoralCode = {
       await dispatchChangeEvt();
     },
   },
+  labelResolver: ({ inEffectSince }: any) => inEffectSince,
 };
