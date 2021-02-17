@@ -36,6 +36,7 @@ export const Poll = {
       regenerateOnUpdate: false,
     },
   },
+  labelResolver: (item: any) => item.id,
   access: {
     read: true,
     create: canEdit,

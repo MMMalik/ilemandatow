@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/api",
-  "version": "0.0.1-alpha.36",
+  "version": "0.0.1-alpha.37",
   "description": "Headless CMS & GraphQL API for ilemandatow",
   "author": "Michał Malik <michalmmalik@gmail.com>",
   "homepage": "https://api.ilemandatow.pl",
@@ -48,6 +48,7 @@
     "@keystonejs/auth-password": "^6.0.0",
     "@keystonejs/fields": "^21.1.0",
     "@keystonejs/fields-color": "^1.0.9",
+    "@keystonejs/fields-markdown": "^5.2.14",
     "@keystonejs/keystone": "^19.1.0",
     "@octokit/rest": "^18.1.0",
     "bcryptjs": "^2.4.3",
@@ -61,10 +62,12 @@
     "postgres": "^1.0.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "showdown": "^1.9.1",
     "slugify": "^1.4.6"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.20.1",
-    "@graphql-codegen/introspection": "^1.18.1"
+    "@graphql-codegen/introspection": "^1.18.1",
+    "@types/showdown": "^1.9.3"
   }
 }

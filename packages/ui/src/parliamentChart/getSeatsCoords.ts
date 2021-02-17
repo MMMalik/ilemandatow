@@ -10,7 +10,7 @@ import {
 const defaultOpts: Required<ParliamentChartOpts> = {
   innerR: 20,
   seatR: 5,
-  dist: 2.4,
+  dist: 2.23,
 };
 
 /**

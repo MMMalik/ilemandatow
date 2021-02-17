@@ -8,6 +8,16 @@ export const PollResult = {
     result: { type: Float },
     party: { type: Relationship, ref: "Party" },
   },
+  labelResolver: async ({ result, party }: any, _: any, context: any) => {
+    const { data } = await context.executeGraphQL({
+      query: `query {
+          Party(where: {id: "${party}" }) {
+            name
+          }
+        }`,
+    });
+    return `${data.Party?.name} - ${result}%`;
+  },
   access: {
     read: true,
     create: canEdit,

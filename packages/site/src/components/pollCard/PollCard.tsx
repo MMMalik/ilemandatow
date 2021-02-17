@@ -6,7 +6,7 @@ import PollCardStats from "./PollCardStats";
 import PollCardFooter from "./PollCardFooter";
 
 interface Props {
-  id: string;
+  slug: string;
   polledBy: string;
   publishedBy: string;
   publishedAt: string;
@@ -15,7 +15,7 @@ interface Props {
 }
 
 const PollCard: React.FC<Props> = ({
-  id,
+  slug,
   polledBy,
   publishedAt,
   publishedBy,
@@ -29,7 +29,7 @@ const PollCard: React.FC<Props> = ({
       title={polledBy}
       subTitle={publishedBy}
       titleRightSide={format(new Date(publishedAt))}
-      footer={<PollCardFooter pollId={id} source={source} />}
+      footer={<PollCardFooter slug={slug} source={source} />}
     >
       <PollCardStats results={results} />
     </DataCard>

@@ -10,6 +10,7 @@ export const Publisher = {
     abbr: { type: Text },
     slug: { type: Slug, generate: slugId(["name"]), regenerateOnUpdate: false },
   },
+  labelResolver: (item: any) => item.name,
   access: {
     read: true,
     create: canEdit,

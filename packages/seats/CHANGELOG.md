@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.37](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.36...v0.0.1-alpha.37) (2021-02-17)
+
+
+### Bug Fixes
+
+* **calc:** adjust tests ([f945add](https://github.com/MMMalik/ilemandatow/commit/f945add1742e2d7a314a740ffdfe22717143026c))
+* **calc:** for the sake of thresholds fill missing % results ([09c66ee](https://github.com/MMMalik/ilemandatow/commit/09c66ee5fea443ddc56adc5cfc9e08ea54c966d4))
+
+
+
+
+
 ## [0.0.1-alpha.36](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.35...v0.0.1-alpha.36) (2021-02-15)
 
 **Note:** Version bump only for package @ilemandatow/seats

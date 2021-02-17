@@ -6,6 +6,7 @@ import { PublisherFragment } from "./Publisher";
 export const PollFragment = /* GraphQL */ `
   fragment Poll on Poll {
     id
+    slug
     publishedAt
     publishedBy {
       ...Publisher

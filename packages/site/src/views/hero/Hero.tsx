@@ -41,7 +41,7 @@ const Hero: React.FC<Props> = ({ codes, latestPoll }) => {
             <OpenSourceCard linkTo={repoUrl} />
           </GridItem>
           <GridItem className="w-100 w-50-m w-25-l">
-            <MoreInfo linkTo={routes.about.link()} />
+            <MoreInfo linkTo={routes.docs.link()} />
           </GridItem>
         </Grid>
       </div>

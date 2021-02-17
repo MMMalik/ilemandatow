@@ -215,7 +215,7 @@ export async function up(knex: Knex): Promise<void> {
 
   if (!hasElectoralDistrictTable) {
     await knex.schema.createTable("ElectoralDistrict", (table) => {
-      table.uuid("id").unique();
+      table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
       table.integer("district").unique();
       table.text("name");
       table.integer("totalSeats");
@@ -226,7 +226,7 @@ export async function up(knex: Knex): Promise<void> {
 
   if (!hasElectoralCodeTable) {
     await knex.schema.createTable("ElectoralCode", (table) => {
-      table.uuid("id").unique();
+      table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
       table.timestamp("inEffectSince");
       table.timestamp("inEffectTo");
       table.float("threshold");

@@ -91,6 +91,9 @@ export { default as Select } from "./select";
 export * from "./table";
 export { default as Table } from "./table";
 
+export * from "./tableOfContents";
+export { default as TableOfContents } from "./tableOfContents";
+
 export * from "./tooltip";
 export { default as Tooltip } from "./tooltip";
 

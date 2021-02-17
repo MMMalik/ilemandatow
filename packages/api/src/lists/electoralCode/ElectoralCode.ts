@@ -29,10 +29,9 @@ export const ElectoralCode = {
     delete: canEdit,
   },
   hooks: {
-    afterChange: async ({ operation }: any) => {
-      if (operation === "update") {
-        await dispatchChangeEvt();
-      }
+    afterChange: async () => {
+      await dispatchChangeEvt();
     },
   },
+  labelResolver: ({ inEffectSince }: any) => inEffectSince,
 };

@@ -1,11 +1,13 @@
 import { dhondtByDistricts } from "@ilemandatow/seats";
 import { DataType } from "../generated";
+import { PartyResult } from "./types";
 
-interface PartyResult {
-  id?: string;
-  result?: number;
-}
-
+/**
+ * Calculates parliament seats distribution via D'Hondt method.
+ *
+ * @param results results
+ * @param code electoral code
+ */
 export const getDhondtResults = (
   results: PartyResult[],
   code?: DataType.ElectoralCodeFragment
@@ -29,5 +31,6 @@ export const getDhondtResults = (
       };
     }),
     globalThreshold: threshold ?? 0,
+    fillMissingPerc: true,
   });
 };

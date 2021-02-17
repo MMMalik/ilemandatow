@@ -5,9 +5,6 @@ export const getRoutes = (langPath = "") => {
     home: {
       link: () => baseLink,
     },
-    election: {
-      link: (id: string) => `${baseLink}/elections/${id}`,
-    },
     newPollForm: {
       link: (query?: string) =>
         query
@@ -21,13 +18,14 @@ export const getRoutes = (langPath = "") => {
           : `${baseLink}/new-poll/viz`,
     },
     poll: {
-      link: (id: string) => `${baseLink}/poll/${id}`,
+      link: (slug: string) => `${baseLink}/poll/${slug}`,
     },
     polls: {
       link: () => `${baseLink}/polls`,
     },
-    about: {
-      link: () => `${baseLink}/about`,
+    docs: {
+      link: (slug?: string) =>
+        slug ? `${baseLink}/docs/${slug}` : `${baseLink}/docs`,
     },
     privacy: {
       link: () => `${baseLink}/privacy`,

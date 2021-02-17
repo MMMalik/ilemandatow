@@ -27,6 +27,7 @@ export const Party = {
     memberParties: { type: Relationship, ref: "Party", many: true },
     slug: { type: Slug, generate: slugId(["name"]), regenerateOnUpdate: false },
   },
+  labelResolver: (item: any) => item.name,
   access: {
     read: true,
     create: canEdit,

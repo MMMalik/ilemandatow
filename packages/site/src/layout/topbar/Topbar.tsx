@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Topbar } from "@ilemandatow/ui";
-import AboutUs from "./AboutUs";
+import Docs from "./Docs";
 import ThemeIcon from "./ThemeIcon";
 import LanguageIcon from "./LanguageIcon";
 import Home from "./Home";
@@ -23,7 +23,7 @@ const AppTopbar: React.FC = () => {
           <>
             <Home />
             <Polls />
-            <AboutUs />
+            <Docs />
           </>
         }
         mobileLinks={<Home />}
@@ -43,7 +43,7 @@ const AppTopbar: React.FC = () => {
         mobileOverlayMenuItems={
           <>
             <Polls />
-            <AboutUs />
+            <Docs />
             <NextPoll btn={false} />
             <ThemeIcon withTooltip={false} />
             <LanguageIcon withTooltip={false} />

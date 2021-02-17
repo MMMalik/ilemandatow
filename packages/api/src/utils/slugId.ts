@@ -22,14 +22,19 @@ const resolvePath = (obj: any, path: string): any => {
   return resolvePath(obj[first], split.slice(1).join("."));
 };
 
-export const slugId = (fields: string[]) => ({ resolvedData }: any) => {
-  const slugBase = fields
-    .map((f) => {
-      return slugify(resolvePath(resolvedData, f), {
-        lower: true,
-        strict: true,
-      });
-    })
-    .concat(rndSuffix());
-  return slugBase.join("-");
+export const slugId = (fields: string[], skipSuffix = false) => ({
+  resolvedData,
+}: any) => {
+  const slugBase = fields.map((f) => {
+    return slugify(resolvePath(resolvedData, f), {
+      lower: true,
+      strict: true,
+    });
+  });
+
+  if (skipSuffix) {
+    return slugBase.join("-");
+  }
+
+  return slugBase.concat(rndSuffix()).join("-");
 };

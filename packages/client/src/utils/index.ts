@@ -8,3 +8,4 @@ export * from "./getPartiesWithResults";
 export * from "./getPartyColor";
 export * from "./sortByParliamentOrder";
 export * from "./sortPollResults";
+export * from "./types";
