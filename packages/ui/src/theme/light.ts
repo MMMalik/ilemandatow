@@ -9,7 +9,7 @@ export const light: Theme = {
   textOnPrimary: "white",
   textOnBgTertiary: "near-white-c-1",
   textMuted: "mid-gray",
-  textDisabled: "moon-gray",
+  textDisabled: "light-silver",
   textDivider: "light-gray",
   chart: {
     bgFill: "#ffffff",

@@ -9,7 +9,7 @@ export const dark: Theme = {
   textOnPrimary: "light-gray",
   textOnBgTertiary: "moon-gray",
   textMuted: "silver",
-  textDisabled: "mid-gray",
+  textDisabled: "gray",
   textDivider: "dark-gray",
   chart: {
     bgFill: "#212121",
