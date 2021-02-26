@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.38](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.37...v0.0.1-alpha.38) (2021-02-26)
+
+
+### Bug Fixes
+
+* move poll results partitioning to a common module ([e3cf47b](https://github.com/MMMalik/ilemandatow/commit/e3cf47b80bfc9cdf77a66f230a0c186a0f1ea6d9))
+* **docs:** use react-markdown to style docs ([9d4a152](https://github.com/MMMalik/ilemandatow/commit/9d4a152b25c0ad75f6248d3d5d41cba36455ee37))
+
+
+
+
+
 ## [0.0.1-alpha.37](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.36...v0.0.1-alpha.37) (2021-02-17)
 
 

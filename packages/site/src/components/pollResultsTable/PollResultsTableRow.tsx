@@ -29,18 +29,19 @@ const PollResultsTableRow: React.FC<Props> = ({
   seats,
 }) => {
   const { theme } = useTheme();
-  const { textMuted } = theme;
-  const isMuted = seats === 0;
+  const { textDisabled } = theme;
+  const isDisabled = seats === 0;
+
   return (
     <TableRow>
-      <TableCell className={clsx(isMuted && textMuted)}>
+      <TableCell className={clsx(isDisabled && textDisabled)}>
         <span className="dn-ns">{abbr}</span>
         <span className="dn di-m di-l">{name}</span>
       </TableCell>
-      <TableCell className={clsx("tr", isMuted && textMuted)}>
+      <TableCell className={clsx("tr", isDisabled && textDisabled)}>
         <PollResult result={result} />
       </TableCell>
-      <TableCell className={clsx("tr", isMuted && textMuted)}>
+      <TableCell className={clsx("tr", isDisabled && textDisabled)}>
         {seats}
       </TableCell>
     </TableRow>

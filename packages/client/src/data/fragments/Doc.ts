@@ -3,7 +3,7 @@ export const Doc = /* GraphQL */ `
     id
     title
     order
-    bodyHtml
+    body
     slug
   }
 `;

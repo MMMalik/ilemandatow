@@ -33,12 +33,12 @@ const FormSection: React.FC<FormSectionProps> = ({
       <div className={clsx(divider && "mb4", "pa3-l")}>
         <Grid>
           {title && (
-            <GridItem className="w-100 w-third-l pr3-l">
-              <div className="f5 mb2">{title}</div>
-              <div className={`lh-copy ${textMuted}`}>{description}</div>
+            <GridItem className="w-100 w-40-l pr3-l">
+              <div className="f5 mb3">{title}</div>
+              <div className={`lh-copy mb3 ${textMuted}`}>{description}</div>
             </GridItem>
           )}
-          <GridItem className={clsx(title ? "w-100 w-two-thirds-l" : "w-100")}>
+          <GridItem className={clsx(title ? "w-100 w-60-l" : "w-100")}>
             {children}
           </GridItem>
         </Grid>

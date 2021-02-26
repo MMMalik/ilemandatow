@@ -5,7 +5,7 @@ export const Doc = graphql`
     id
     title
     order
-    bodyHtml
+    body
     slug
   }
 `;

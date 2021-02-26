@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.38](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.37...v0.0.1-alpha.38) (2021-02-26)
+
+
+### Bug Fixes
+
+* adjust text colors ([a1de80d](https://github.com/MMMalik/ilemandatow/commit/a1de80df5b45126ce531b3481952237880f27a6d))
+* increase base font size ([7b73d96](https://github.com/MMMalik/ilemandatow/commit/7b73d960e04ec00c8c740dd03ab78b2c85056197))
+* move poll results partitioning to a common module ([e3cf47b](https://github.com/MMMalik/ilemandatow/commit/e3cf47b80bfc9cdf77a66f230a0c186a0f1ea6d9))
+* remove unused import, fix type ([5415bfe](https://github.com/MMMalik/ilemandatow/commit/5415bfe9d7d79dd20b5af4b9ac84ee44fc8ec4c6))
+* **docs:** fix default route ([7819f48](https://github.com/MMMalik/ilemandatow/commit/7819f482ded3fa1bd470394fd9b03faf25975c5e))
+* **docs:** remove unnecessary field ([050e295](https://github.com/MMMalik/ilemandatow/commit/050e29505d358e2a1fc366e57a0b8cba5c9f19fe))
+* **docs:** use react-markdown to style docs ([9d4a152](https://github.com/MMMalik/ilemandatow/commit/9d4a152b25c0ad75f6248d3d5d41cba36455ee37))
+
+
+
+
+
 ## [0.0.1-alpha.37](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.36...v0.0.1-alpha.37) (2021-02-17)
 
 

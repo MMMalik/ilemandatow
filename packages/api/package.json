@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/api",
-  "version": "0.0.1-alpha.37",
+  "version": "0.0.1-alpha.38",
   "description": "Headless CMS & GraphQL API for ilemandatow",
   "author": "Michał Malik <michalmmalik@gmail.com>",
   "homepage": "https://api.ilemandatow.pl",
@@ -62,7 +62,6 @@
     "postgres": "^1.0.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "showdown": "^1.9.1",
     "slugify": "^1.4.6"
   },
   "devDependencies": {

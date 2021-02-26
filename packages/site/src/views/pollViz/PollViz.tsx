@@ -1,13 +1,5 @@
 import * as React from "react";
-import {
-  DataType,
-  filterList,
-  filterNonRegularParties,
-  filterRegularParties,
-  getDhondtResults,
-  getPartiesWithResults,
-  getElectoralCode,
-} from "@ilemandatow/client";
+import { DataType, getPartitionedParties } from "@ilemandatow/client";
 import { Grid, GridItem, Paper, useTheme } from "@ilemandatow/ui";
 import {
   PollChart,
@@ -23,21 +15,11 @@ interface Props {
 
 const PollViz: React.FC<Props> = ({ poll, codes }) => {
   const { name } = useTheme();
-  const code = getElectoralCode(codes, poll);
-  const results = filterList(poll?.results ?? []);
-  const seatsParties = getDhondtResults(
-    filterNonRegularParties(results).map(({ party, result }) => ({
-      id: party?.id ?? "",
-      result: result ?? 0,
-    })),
-    code
+  const { code, parties, seatsParties, specialParties } = getPartitionedParties(
+    codes,
+    name,
+    poll
   );
-  const parties = getPartiesWithResults(results, name);
-  const specialParties = getPartiesWithResults(
-    filterRegularParties(results),
-    name
-  );
-
   const [firstPublishedBy] = poll?.publishedBy ?? [];
   const [firstPolledBy] = poll?.polledBy ?? [];
 
