@@ -29,7 +29,7 @@ export interface DefinitionItemProps {
   /**
    * Sets title as bold.
    */
-  boldTitle?: string;
+  boldTitle?: boolean;
 }
 
 const DefinitionItem: React.FC<DefinitionItemProps> = ({

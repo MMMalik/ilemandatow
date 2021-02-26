@@ -3,7 +3,6 @@ import {
   Grid,
   GridItem,
   Markdown,
-  Paper,
   TableOfContents,
   TableOfContentsItem,
   TableOfContentsSection,
