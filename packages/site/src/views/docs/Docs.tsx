@@ -2,6 +2,7 @@ import * as React from "react";
 import {
   Grid,
   GridItem,
+  Markdown,
   Paper,
   TableOfContents,
   TableOfContentsItem,
@@ -44,10 +45,8 @@ const Docs: React.FC<Props> = ({ currentDoc, sections }) => {
         </div>
       </GridItem>
       <GridItem className="w-80">
-        <Paper className="pa4">
-          <div
-            dangerouslySetInnerHTML={{ __html: currentDoc?.bodyHtml ?? "" }}
-          />
+        <Paper className="pv4 ph5">
+          <Markdown>{currentDoc?.body}</Markdown>
         </Paper>
       </GridItem>
     </Grid>

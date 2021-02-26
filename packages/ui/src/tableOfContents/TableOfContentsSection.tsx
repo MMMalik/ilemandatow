@@ -16,8 +16,8 @@ const TableOfContentsSection: React.FC<TableOfContentsSectionProps> = ({
   const { textMuted } = theme;
 
   return (
-    <div className="mb3">
-      <div className={`ttu f6 mb2 ${textMuted}`}>{title}</div>
+    <div className="mb4">
+      <div className={`ttu f6 mb3 ${textMuted}`}>{title}</div>
       <div className="ml2">{children}</div>
     </div>
   );
