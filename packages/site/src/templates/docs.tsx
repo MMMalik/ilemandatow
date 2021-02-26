@@ -6,12 +6,12 @@ import { useTranslation } from "../i18n";
 import { Docs } from "../views";
 
 export const query = graphql`
-  query doc($id: ID!) {
+  query doc($id: ID!, $lang: IleMandatow_DocSectionLanguageType!) {
     ilemandatow {
       Doc(where: { id: $id }) {
         ...Doc
       }
-      allDocSections(sortBy: order_ASC) {
+      allDocSections(sortBy: order_ASC, where: { language: $lang }) {
         ...DocSection
       }
     }

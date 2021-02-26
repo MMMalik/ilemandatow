@@ -25,7 +25,7 @@ export const getRoutes = (langPath = "") => {
     },
     docs: {
       link: (slug?: string) =>
-        slug ? `${baseLink}/docs/${slug}` : `${baseLink}/docs`,
+        slug ? `${baseLink}/docs/${slug}` : `${baseLink}/docs/about`,
     },
     privacy: {
       link: () => `${baseLink}/privacy`,
