@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.38](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.37...v0.0.1-alpha.38) (2021-02-26)
+
+
+### Bug Fixes
+
+* **docs:** remove unnecessary field ([050e295](https://github.com/MMMalik/ilemandatow/commit/050e29505d358e2a1fc366e57a0b8cba5c9f19fe))
+
+
+
+
+
 ## [0.0.1-alpha.37](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.36...v0.0.1-alpha.37) (2021-02-17)
 
 
