@@ -16,7 +16,7 @@ exports.onCreatePage = async ({ page, actions, reporter }) => {
       return reporter.panicOnBuild("Default language was not found.");
     }
 
-    return createPage({
+    createPage({
       ...page,
       context: {
         ...page.context,
@@ -29,7 +29,7 @@ exports.onCreatePage = async ({ page, actions, reporter }) => {
   } else {
     Object.keys(meta).map((lang) => {
       const localizedPath = `/${meta[lang].path}${page.path}`;
-      return createPage({
+      createPage({
         ...page,
         path: removeTrailingSlash(localizedPath),
         context: {

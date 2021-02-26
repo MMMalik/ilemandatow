@@ -62,7 +62,6 @@
     "postgres": "^1.0.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "showdown": "^1.9.1",
     "slugify": "^1.4.6"
   },
   "devDependencies": {

@@ -55,6 +55,9 @@ export { default as Grid } from "./grid";
 export * from "./link";
 export { default as Link } from "./link";
 
+export * from "./markdown";
+export { default as Markdown } from "./markdown";
+
 export * from "./menu";
 export { default as Menu } from "./menu";
 

@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  DataType,
-  filterList,
-  getDhondtResults,
-  getLatestElectoralCode,
-  getPartiesWithResults,
-} from "@ilemandatow/client";
+import { DataType, getPartitionedParties } from "@ilemandatow/client";
 import { Grid, GridItem, Paper, useTheme } from "@ilemandatow/ui";
 import { useDateFormat, useTranslation } from "../../i18n";
 import { PollChart, PollResultsTable } from "../../components";
@@ -25,13 +19,15 @@ const QuickExample: React.FC<Props> = ({ codes, latestPoll }) => {
     return <div className="tc mv3">{t("noPollsFound")}</div>;
   }
 
-  const { results, polledBy, publishedBy, publishedAt } = latestPoll;
+  const { polledBy, publishedBy, publishedAt } = latestPoll;
   const [firstPolledBy] = polledBy;
   const [firstPublishedBy] = publishedBy;
-  const partiesWithResults = getPartiesWithResults(filterList(results), name);
-  const latestCode = getLatestElectoralCode(codes);
-  const totalSeats = latestCode?.totalSeats ?? 0;
-  const seats = getDhondtResults(partiesWithResults, latestCode);
+  const { code, parties, seatsParties, specialParties } = getPartitionedParties(
+    codes,
+    name,
+    latestPoll
+  );
+  const totalSeats = code?.totalSeats ?? 0;
 
   return (
     <div className="pa3">
@@ -52,16 +48,20 @@ const QuickExample: React.FC<Props> = ({ codes, latestPoll }) => {
         </GridItem>
         <GridItem className="w-100 mh3-ns">
           <Grid>
-            <GridItem className="w-100 w-50-l">
+            <GridItem className="w-100 w-40-l">
               <Paper className="h-100 pa3">
-                <PollResultsTable parties={partiesWithResults} seats={seats} />
+                <PollResultsTable
+                  parties={parties}
+                  specialParties={specialParties}
+                  seats={seatsParties}
+                />
               </Paper>
             </GridItem>
-            <GridItem className="w-100 w-50-l">
+            <GridItem className="w-100 w-60-l">
               <Paper className="h-100 pa3">
                 <PollChart
-                  parties={partiesWithResults}
-                  seats={seats}
+                  parties={parties}
+                  seats={seatsParties}
                   totalSeats={totalSeats}
                 />
               </Paper>

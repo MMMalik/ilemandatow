@@ -1,0 +1,17 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import Markdown from "./Markdown";
+import * as template from "./Markdown.stories";
+
+<Meta title="Markdown/Markdown" component={Markdown} />
+
+### Markdown
+
+Default Markdown component with custom renderers and styling.
+
+<Canvas>
+  <Story name="Main">{template.Markdown.bind({})}</Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Markdown} />

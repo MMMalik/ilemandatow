@@ -2647,7 +2647,7 @@ export type UserWhereUniqueInput = {
 
 export type DocFragment = { readonly __typename?: "Doc" } & Pick<
   Doc,
-  "id" | "title" | "order" | "bodyHtml" | "slug"
+  "id" | "title" | "order" | "body" | "slug"
 >;
 
 export type DocSectionFragment = { readonly __typename?: "DocSection" } & Pick<

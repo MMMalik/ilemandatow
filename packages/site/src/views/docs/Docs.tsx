@@ -2,7 +2,7 @@ import * as React from "react";
 import {
   Grid,
   GridItem,
-  Paper,
+  Markdown,
   TableOfContents,
   TableOfContentsItem,
   TableOfContentsSection,
@@ -20,35 +20,31 @@ const Docs: React.FC<Props> = ({ currentDoc, sections }) => {
 
   return (
     <Grid>
-      <GridItem className="w-20">
-        <div>
-          <TableOfContents>
-            {sections.map(({ id, title, docs }) => {
-              return (
-                <TableOfContentsSection title={title ?? ""} key={id}>
-                  {docs.map(({ id, slug, title }) => {
-                    return (
-                      <TableOfContentsItem
-                        linkTo={routes.routes.docs.link(slug ?? "")}
-                        active={currentDoc?.id === id}
-                        key={id}
-                      >
-                        {title}
-                      </TableOfContentsItem>
-                    );
-                  })}
-                </TableOfContentsSection>
-              );
-            })}
-          </TableOfContents>
-        </div>
+      <GridItem className="w-100 w-20-l">
+        <TableOfContents>
+          {sections.map(({ id, title, docs }) => {
+            return (
+              <TableOfContentsSection title={title ?? ""} key={id}>
+                {docs.map(({ id, slug, title }) => {
+                  return (
+                    <TableOfContentsItem
+                      linkTo={routes.routes.docs.link(slug ?? "")}
+                      active={currentDoc?.id === id}
+                      key={id}
+                    >
+                      {title}
+                    </TableOfContentsItem>
+                  );
+                })}
+              </TableOfContentsSection>
+            );
+          })}
+        </TableOfContents>
       </GridItem>
-      <GridItem className="w-80">
-        <Paper className="pa4">
-          <div
-            dangerouslySetInnerHTML={{ __html: currentDoc?.bodyHtml ?? "" }}
-          />
-        </Paper>
+      <GridItem className="w-100 w-80-l">
+        <div className="">
+          <Markdown>{currentDoc?.body}</Markdown>
+        </div>
       </GridItem>
     </Grid>
   );

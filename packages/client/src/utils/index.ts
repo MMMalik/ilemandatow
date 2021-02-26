@@ -5,6 +5,7 @@ export * from "./getDhondtResults";
 export * from "./getElectoralCode";
 export * from "./getLatestElectoralCode";
 export * from "./getPartiesWithResults";
+export * from "./getPartitionedParties";
 export * from "./getPartyColor";
 export * from "./sortByParliamentOrder";
 export * from "./sortPollResults";

@@ -44,6 +44,7 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve(`../src/templates/docs.tsx`),
         context: {
           id,
+          lang: language,
           i18nCtx: {
             ...meta[language],
             translations: translations[language],

@@ -1,11 +1,8 @@
-import { Integer, Text, Slug, Virtual } from "@keystonejs/fields";
+import { Integer, Text, Slug } from "@keystonejs/fields";
 import { Markdown } from "@keystonejs/fields-markdown";
-import * as showdown from "showdown";
 import { slugId } from "../../utils";
 import { canEdit } from "../access";
 import { dispatchChangeEvt, idField } from "../common";
-
-const converter = new showdown.Converter();
 
 export const Doc = {
   fields: {
@@ -18,10 +15,6 @@ export const Doc = {
       generate: slugId(["title"], true),
       isUnique: true,
       regenerateOnUpdate: false,
-    },
-    bodyHtml: {
-      type: Virtual,
-      resolver: (item: any) => converter.makeHtml(item.body),
     },
   },
   labelResolver: (item: any) => item.title,
