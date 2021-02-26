@@ -17,7 +17,7 @@ const PollCardStats: React.FC<Props> = ({ results }) => {
             <DefinitionItem
               key={party?.id}
               className="w-third"
-              label={<span>{party?.abbr ?? ""}</span>}
+              label={<span className="f6">{party?.abbr ?? ""}</span>}
               value={<PollResult result={result} showPerc={true} />}
             />
           );

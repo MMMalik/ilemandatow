@@ -26,7 +26,7 @@ const TableOfContentsItem: React.FC<TableOfContentsItemProps> = ({
     <Link
       to={linkTo}
       className={clsx(
-        `f6 mt2 db hover-${primary} pointer`,
+        `mt2 db hover-${primary} pointer`,
         active ? primary : `${textPrimary} hover-${primary}`
       )}
     >

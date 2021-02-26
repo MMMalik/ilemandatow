@@ -17,7 +17,7 @@ const TableOfContentsSection: React.FC<TableOfContentsSectionProps> = ({
 
   return (
     <div className="mb4">
-      <div className={`ttu f6 mb3 ${textMuted}`}>{title}</div>
+      <div className={`ttu mb3 ${textMuted}`}>{title}</div>
       <div className="ml2">{children}</div>
     </div>
   );

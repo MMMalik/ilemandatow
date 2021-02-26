@@ -52,12 +52,12 @@ const QuickExample: React.FC<Props> = ({ codes, latestPoll }) => {
         </GridItem>
         <GridItem className="w-100 mh3-ns">
           <Grid>
-            <GridItem className="w-100 w-50-l">
+            <GridItem className="w-100 w-40-l">
               <Paper className="h-100 pa3">
                 <PollResultsTable parties={partiesWithResults} seats={seats} />
               </Paper>
             </GridItem>
-            <GridItem className="w-100 w-50-l">
+            <GridItem className="w-100 w-60-l">
               <Paper className="h-100 pa3">
                 <PollChart
                   parties={partiesWithResults}
