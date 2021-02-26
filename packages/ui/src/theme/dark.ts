@@ -5,10 +5,10 @@ export const dark: Theme = {
   bgPrimary: "gray-c-1",
   bgSecondary: "gray-c-2",
   bgTertiary: "mid-gray",
-  textPrimary: "moon-gray",
+  textPrimary: "light-gray",
   textOnPrimary: "light-gray",
   textOnBgTertiary: "moon-gray",
-  textMuted: "gray",
+  textMuted: "silver",
   textDisabled: "mid-gray",
   textDivider: "dark-gray",
   chart: {

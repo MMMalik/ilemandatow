@@ -5,10 +5,10 @@ export const light: Theme = {
   bgPrimary: "white",
   bgSecondary: "near-white-c-1",
   bgTertiary: "silver",
-  textPrimary: "mid-gray",
+  textPrimary: "dark-gray",
   textOnPrimary: "white",
   textOnBgTertiary: "near-white-c-1",
-  textMuted: "gray",
+  textMuted: "mid-gray",
   textDisabled: "moon-gray",
   textDivider: "light-gray",
   chart: {

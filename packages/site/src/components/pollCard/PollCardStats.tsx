@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DataType, sortPollResults } from "@ilemandatow/client";
-import { DefinitionList, DefinitionItem } from "@ilemandatow/ui";
+import { DefinitionList, DefinitionItem, useTheme } from "@ilemandatow/ui";
 import PollResult from "../pollResult";
 
 interface Props {
@@ -8,6 +8,9 @@ interface Props {
 }
 
 const PollCardStats: React.FC<Props> = ({ results }) => {
+  const { theme } = useTheme();
+  const { textMuted } = theme;
+
   return (
     <DefinitionList>
       {sortPollResults(results)
@@ -17,7 +20,10 @@ const PollCardStats: React.FC<Props> = ({ results }) => {
             <DefinitionItem
               key={party?.id}
               className="w-third"
-              label={<span className="f6">{party?.abbr ?? ""}</span>}
+              boldTitle={false}
+              label={
+                <span className={`f6 ${textMuted}`}>{party?.abbr ?? ""}</span>
+              }
               value={<PollResult result={result} showPerc={true} />}
             />
           );

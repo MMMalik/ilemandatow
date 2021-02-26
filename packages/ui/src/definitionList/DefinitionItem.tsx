@@ -1,4 +1,5 @@
 import * as React from "react";
+import clsx from "clsx";
 import { GridItem } from "../grid";
 import Icon from "../icon";
 import Link from "../link";
@@ -25,6 +26,10 @@ export interface DefinitionItemProps {
    * Optional class name passed to root.
    */
   className?: string;
+  /**
+   * Sets title as bold.
+   */
+  boldTitle?: string;
 }
 
 const DefinitionItem: React.FC<DefinitionItemProps> = ({
@@ -33,6 +38,7 @@ const DefinitionItem: React.FC<DefinitionItemProps> = ({
   linkTo,
   linkExternal,
   className,
+  boldTitle = true,
 }) => {
   const { theme } = useTheme();
   const { textMuted } = theme;
@@ -48,7 +54,7 @@ const DefinitionItem: React.FC<DefinitionItemProps> = ({
 
   return (
     <GridItem className={className ?? ""}>
-      <div className="f6 mb2 b">{label}</div>
+      <div className={clsx("f6 mb2", boldTitle && "b")}>{label}</div>
       <div>{content}</div>
     </GridItem>
   );
