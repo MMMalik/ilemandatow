@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.40](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.39...v0.0.1-alpha.40) (2021-02-28)
+
+
+### Features
+
+* **seo:** add gatsby plugin for ssr ([f1335bf](https://github.com/MMMalik/ilemandatow/commit/f1335bf4330bfb3ed03925c32063f94e3d161393))
+
+
+
+
+
 ## [0.0.1-alpha.39](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.38...v0.0.1-alpha.39) (2021-02-28)
 
 
