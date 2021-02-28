@@ -20,6 +20,7 @@ const SEO: React.FC<Props> = ({ title, description }) => {
       <html lang={language} />
       <title>{title}</title>
       <meta name="description" content={description} />
+      <link rel="icon" type="image/png" href="favicon.png" />
     </Helmet>
   );
 };
