@@ -1,6 +1,6 @@
 {
   "name": "@ilemandatow/client",
-  "version": "0.0.1-alpha.38",
+  "version": "0.0.1-alpha.39",
   "description": "Client for GraphQL API for ilemandatow",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,7 +31,7 @@
     "develop": "yarn clean && tsc --watch"
   },
   "dependencies": {
-    "@ilemandatow/seats": "^0.0.1-alpha.38",
+    "@ilemandatow/seats": "^0.0.1-alpha.39",
     "graphql-hooks": "^5.1.0",
     "graphql-hooks-memcache": "^2.1.0"
   },

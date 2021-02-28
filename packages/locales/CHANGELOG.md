@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.39](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.38...v0.0.1-alpha.39) (2021-02-28)
+
+
+### Features
+
+* **seo:** add page titles and descriptions ([5fdc678](https://github.com/MMMalik/ilemandatow/commit/5fdc678584b186063c1eb283d9dfc99ebede8d6b))
+
+
+
+
+
 ## [0.0.1-alpha.38](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.37...v0.0.1-alpha.38) (2021-02-26)
 
 **Note:** Version bump only for package @ilemandatow/locales
