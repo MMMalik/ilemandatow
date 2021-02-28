@@ -4,6 +4,7 @@ import { DataType, filterList } from "@ilemandatow/client";
 import { SectionTitle } from "@ilemandatow/ui";
 import { useTranslation } from "../i18n";
 import { PollsGrid } from "../views";
+import { SEO } from "../components";
 
 export const query = graphql`
   query polls {
@@ -37,6 +38,7 @@ const Polls: React.FC<PageProps<any>> = ({ data }) => {
 
   return (
     <>
+      <SEO title={t("pollsPageTitle")} description={t("pollsPageDesc")} />
       <SectionTitle title={t("polls")} />
       <PollsGrid
         initPolls={polls}

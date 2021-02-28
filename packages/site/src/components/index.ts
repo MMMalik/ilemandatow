@@ -29,3 +29,6 @@ export { default as PollsFilters } from "./pollsFilters";
 
 export * from "./searchDialog";
 export { default as SearchDialog } from "./searchDialog";
+
+export * from "./seo";
+export { default as SEO } from "./seo";
