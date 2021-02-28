@@ -4,6 +4,7 @@ import { DataType, filterList } from "@ilemandatow/client";
 import { SectionTitle } from "@ilemandatow/ui";
 import { useTranslation } from "../i18n";
 import { Docs } from "../views";
+import { SEO } from "../components";
 
 export const query = graphql`
   query doc($id: ID!, $lang: IleMandatow_DocSectionLanguageType!) {
@@ -27,6 +28,10 @@ const Doc: React.FC<PageProps<any>> = ({ data }) => {
 
   return (
     <>
+      <SEO
+        title={`${currentDoc?.title} - ${t("docsPageTitle")}`}
+        description={`${currentDoc?.title}: ${t("docsPageDesc")}`}
+      />
       <SectionTitle title={t("docs")} />
       <Docs currentDoc={currentDoc} sections={sections} />
     </>

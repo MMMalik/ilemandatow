@@ -3,7 +3,7 @@ import { navigate, graphql, PageProps } from "gatsby";
 import { parse, stringify } from "query-string";
 import { SectionTitle } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
-import { NewPollFormValues, useInitFormValues } from "../../components";
+import { NewPollFormValues, SEO, useInitFormValues } from "../../components";
 import { NewPollForm } from "../../views";
 import { useRoutes } from "../../routes";
 import {
@@ -44,6 +44,10 @@ const Form: React.FC<PageProps<any>> = ({ location, data }) => {
 
   return (
     <>
+      <SEO
+        title={t("newPollFormPageTitle")}
+        description={t("newPollFormPageDesc")}
+      />
       <SectionTitle title={t("simulateElections")} />
       <NewPollForm
         onSubmit={handleSubmit}
