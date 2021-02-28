@@ -4,7 +4,7 @@ import { parse } from "query-string";
 import { DataType, filterList } from "@ilemandatow/client";
 import { Button, SectionTitle } from "@ilemandatow/ui";
 import { useTranslation } from "../../i18n";
-import { useInitFormValues } from "../../components";
+import { SEO, useInitFormValues } from "../../components";
 import { NewPollViz } from "../../views";
 import { useRoutes } from "../../routes";
 
@@ -34,6 +34,10 @@ const Viz: React.FC<PageProps<any>> = ({ location, data }) => {
 
   return (
     <>
+      <SEO
+        title={t("newPollVizPageTitle")}
+        description={t("newPollVizPageDesc")}
+      />
       <SectionTitle
         title={t("simulateElections")}
         toolbar={
