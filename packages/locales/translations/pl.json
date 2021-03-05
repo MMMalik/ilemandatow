@@ -42,6 +42,7 @@
   "poll": "Sondaż",
   "pollCompanies": "Sondażownie",
   "pollPageDesc": "Sprawdź najnowszy sondaż zarejestrowany przez ilemandatow.",
+  "pollPageTitle": "Sondaż - ilemandatow",
   "pollResult": "Wynik",
   "pollResults": "Wyniki sondażu",
   "pollResultsTableDescription": "Wprowadź dane do tabeli. Podaj nazwę partii, jej wynik oraz kolor, który będzie ją identyfikował na wykresach. Każdy wiersz odpowiada jednej partii.",
