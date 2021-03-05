@@ -42,6 +42,7 @@
   "poll": "Poll",
   "pollCompanies": "Poll Companies",
   "pollPageDesc": "Check out latest poll registered by ilemandatow.",
+  "pollPageTitle": "Poll - ilemandatow",
   "pollResult": "Poll Result",
   "pollResults": "Poll Results",
   "pollResultsTableDescription": "Each table row corresponds to one party. Provide party name, poll result in %, and color that will be used on the charts.",
