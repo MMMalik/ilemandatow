@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.41](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.40...v0.0.1-alpha.41) (2021-03-05)
+
+
+### Bug Fixes
+
+* **seo:** fix poll page title and desc ([229b77b](https://github.com/MMMalik/ilemandatow/commit/229b77bc6485e0666e6162477cefab2d05086a21))
+
+
+
+
+
 ## [0.0.1-alpha.40](https://github.com/MMMalik/ilemandatow/compare/v0.0.1-alpha.39...v0.0.1-alpha.40) (2021-02-28)
 
 
